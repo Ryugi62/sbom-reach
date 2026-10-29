@@ -24,7 +24,7 @@ def explain(r: Remediation, llm: Optional[LlmPort], verdict: Verdict, trace: Tra
         return replace(r, text=base, text_source="template")
     prompt = guardrails.mask_secrets(
         "당신은 보안 운영 담당에게 조치안을 설명하는 도우미입니다. 아래 사실만 사용해 한국어 두 문장 이내로 쓰세요. "
-        "버전 숫자는 주어진 것만, 안전하다는 단정과 판정 변경 금지.\n"
+        "버전 숫자는 주어진 것만 쓰고 버전 이동은 「올립니다」로 표현하세요. 판정 단어(도달·사용·미확인)를 바꾸거나 안전하다고 단정하지 마세요.\n"
         f"패키지 {r.package} · 현재 {r.current} · 목표 {r.target} · 판정 {verdict.ko} · 경보 {', '.join(r.advisory_ids)}\n{context}")
     t0 = time.time()
     try:

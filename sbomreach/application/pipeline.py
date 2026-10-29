@@ -134,12 +134,15 @@ def plan_remediation(res: ScanResult, scope: str, direct_names: Set[str]) -> Lis
             "all": set(Verdict)}[scope]
     groups: Dict[Tuple[str, str, str], List[Judgement]] = {}
     for j in res.judgements:
-        if j.verdict in want:
-            c = j.alert.component
-            groups.setdefault((c.name, c.version, c.ecosystem), []).append(j)
+        c = j.alert.component
+        groups.setdefault((c.name, c.version, c.ecosystem), []).append(j)
     out = []
     for (name, ver, eco), js in groups.items():
-        tgt = target_version(ver, [list(j.alert.advisory.fixed_versions) for j in js])
+        if not any(j.verdict in want for j in js):
+            continue
+        # 목표 버전은 범위 밖 경보까지 포함해 그 패키지 버전의 알려진 경보를 모두 덜어내는 가장 낮은 버전
+        fixable = [list(j.alert.advisory.fixed_versions) for j in js if j.alert.advisory.fixed_versions]
+        tgt = target_version(ver, fixable) if fixable else None
         best = max((j.verdict for j in js), key=lambda v: _ORDER[v])
         key = normalize(name) if eco == "PyPI" else name.lower()
         out.append(Remediation(name, eco, ver, tgt or "", tuple(j.alert.advisory.id for j in js), best,

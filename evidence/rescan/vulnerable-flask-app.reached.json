@@ -1,0 +1,70 @@
+{
+ "target": "vulnerable-flask-app",
+ "scope": "reached",
+ "packages_changed": 3,
+ "no_fix_packages": [],
+ "changed_files": [
+  "requirements.txt"
+ ],
+ "diff": {
+  "before_total": 89,
+  "after_total": 60,
+  "resolved": 33,
+  "remaining": 56,
+  "new": 4,
+  "reached_before": 6,
+  "reached_after": 1,
+  "used_before": 48,
+  "used_after": 24
+ },
+ "after_stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "after_incomplete": [],
+ "llm_texts": 3,
+ "plan": [
+  {
+   "package": "pyjwt",
+   "current": "1.5.2",
+   "target": "2.14.0",
+   "verdict": "REACHED",
+   "advisories": [
+    "GHSA-752w-5fwx-jx9f",
+    "GHSA-ffc3-869f-jxw9",
+    "GHSA-pxh4-856f-4h89"
+   ],
+   "direct": true,
+   "text": "pyjwt 패키지를 1.5.2에서 2.14.0으로 업데이트해야 합니다. 이 업데이트는 GHSA-752w-5fwx-jx9f, GHSA-ffc3-869f-jxw9, GHSA-pxh4-856f-4h89 경보를 해결합니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "pyyaml",
+   "current": "3.12",
+   "target": "5.1",
+   "verdict": "REACHED",
+   "advisories": [
+    "GHSA-rprw-h62v-c2w7"
+   ],
+   "direct": true,
+   "text": "pyyaml 패키지는 현재 3.12 버전이며, 목표 버전인 5.1에 도달했습니다. 이 업데이트는 GHSA-rprw-h62v-c2w7 경보를 해결합니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "tornado",
+   "current": "4.5.1",
+   "target": "6.5.9",
+   "verdict": "REACHED",
+   "advisories": [
+    "GHSA-3hv7-mjh2-fv65",
+    "GHSA-mgf9-4vpg-hj56"
+   ],
+   "direct": true,
+   "text": "Tornado 패키지를 4.5.1에서 6.5.9로 업데이트하여 GHSA-3hv7-mjh2-fv65 및 GHSA-mgf9-4vpg-hj56 경보를 해결해야 합니다. 이 조치는 현재 도달 판정을 받았습니다.",
+   "text_source": "llm"
+  }
+ ]
+}

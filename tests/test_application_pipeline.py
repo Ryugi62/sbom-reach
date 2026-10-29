@@ -175,3 +175,15 @@ def test_template_text_mentions_override_for_transitive_npm():
     r = replace(_rem(), direct=False)
     out = explain(r, None, Verdict.USED, Tr())
     assert "overrides" in out.text and out.text_source == "template"
+
+
+def test_plan_target_clears_out_of_scope_advisories_of_same_package():
+    # 도달 경보 A1은 1.0.5에서 고쳐지지만 같은 패키지의 범위 밖 경보 A2는 1.2.0에서 고쳐진다 -> 목표 1.2.0
+    r = mk([Component("pkga", "1.0.0", "PyPI")], {"pkga": [adv("A1", fixed=("1.0.5",)), adv("A2", fixed=("1.2.0",), syms=())]}).run("/r")
+    p = plan_remediation(r, "reached", {"pkga"})
+    assert p[0].target == "1.2.0" and set(p[0].advisory_ids) == {"A1", "A2"}
+
+
+def test_plan_partial_fix_uses_fixable_advisories_only():
+    r = mk([Component("pkga", "1.0.0", "PyPI")], {"pkga": [adv("A1", fixed=("1.0.5",)), adv("A2", fixed=())]}).run("/r")
+    assert plan_remediation(r, "all", {"pkga"})[0].target == "1.0.5"
