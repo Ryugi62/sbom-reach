@@ -1,51 +1,51 @@
-{"run_id": "nodegoat-all", "seq": 1, "ts": "2026-10-30T08:10:45+0900", "tool": "sbom", "ms": 807, "tool_name": "syft", "components": 381, "fallback": false}
-{"run_id": "nodegoat-all", "seq": 2, "ts": "2026-10-30T08:10:45+0900", "tool": "source_index", "ms": 50, "imported_modules": 23, "referenced_symbols": 47}
-{"run_id": "nodegoat-all", "seq": 3, "ts": "2026-10-30T08:10:45+0900", "tool": "vuln_lookup", "ms": 65, "alerts": 90, "incomplete": 0}
-{"run_id": "nodegoat-all", "seq": 4, "ts": "2026-10-30T08:10:45+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
-{"run_id": "nodegoat-all", "seq": 5, "ts": "2026-10-30T08:10:45+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "express:GHSA-rv95-896h-c2vc:4.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0"]}
-{"run_id": "nodegoat-all", "seq": 6, "ts": "2026-10-30T08:10:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 7, "ts": "2026-10-30T08:10:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 8, "ts": "2026-10-30T08:10:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 9, "ts": "2026-10-30T08:10:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 10, "ts": "2026-10-30T08:10:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 11, "ts": "2026-10-30T08:10:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 12, "ts": "2026-10-30T08:10:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 13, "ts": "2026-10-30T08:10:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 14, "ts": "2026-10-30T08:10:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 15, "ts": "2026-10-30T08:10:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 16, "ts": "2026-10-30T08:10:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 17, "ts": "2026-10-30T08:10:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 18, "ts": "2026-10-30T08:10:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 19, "ts": "2026-10-30T08:10:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 20, "ts": "2026-10-30T08:10:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 21, "ts": "2026-10-30T08:10:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 22, "ts": "2026-10-30T08:10:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 23, "ts": "2026-10-30T08:10:53+0900", "tool": "llm_explain", "package": "micromatch", "ms": 1109, "chars": 94}
-{"run_id": "nodegoat-all", "seq": 24, "ts": "2026-10-30T08:10:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 25, "ts": "2026-10-30T08:10:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 26, "ts": "2026-10-30T08:10:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 27, "ts": "2026-10-30T08:10:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 28, "ts": "2026-10-30T08:10:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 29, "ts": "2026-10-30T08:10:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 30, "ts": "2026-10-30T08:10:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 31, "ts": "2026-10-30T08:10:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 32, "ts": "2026-10-30T08:10:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 33, "ts": "2026-10-30T08:10:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 34, "ts": "2026-10-30T08:10:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 35, "ts": "2026-10-30T08:10:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 36, "ts": "2026-10-30T08:10:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 37, "ts": "2026-10-30T08:10:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 38, "ts": "2026-10-30T08:10:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 39, "ts": "2026-10-30T08:10:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 40, "ts": "2026-10-30T08:10:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 41, "ts": "2026-10-30T08:11:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 42, "ts": "2026-10-30T08:11:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 43, "ts": "2026-10-30T08:11:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 44, "ts": "2026-10-30T08:11:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 45, "ts": "2026-10-30T08:11:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 46, "ts": "2026-10-30T08:11:01+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 33}
-{"run_id": "nodegoat-all", "seq": 47, "ts": "2026-10-30T08:11:08+0900", "tool": "sbom", "ms": 1697, "tool_name": "syft", "components": 348, "fallback": false}
-{"run_id": "nodegoat-all", "seq": 48, "ts": "2026-10-30T08:11:08+0900", "tool": "source_index", "ms": 69, "imported_modules": 23, "referenced_symbols": 47}
-{"run_id": "nodegoat-all", "seq": 49, "ts": "2026-10-30T08:11:13+0900", "tool": "vuln_lookup", "ms": 89, "alerts": 42, "incomplete": 0}
-{"run_id": "nodegoat-all", "seq": 50, "ts": "2026-10-30T08:11:13+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 3, "unseen": 39}
-{"run_id": "nodegoat-all", "seq": 51, "ts": "2026-10-30T08:11:13+0900", "tool": "rank", "ms": 0, "top": ["body-parser:GHSA-27r3-jxmh-p828:2.45", "swig:GHSA-2rq5-699j-x7p6:2.45", "minimist:GHSA-xvch-5gv4-984h:1.0"]}
+{"run_id": "nodegoat-all", "seq": 1, "ts": "2026-10-30T08:13:27+0900", "tool": "sbom", "ms": 850, "tool_name": "syft", "components": 381, "fallback": false}
+{"run_id": "nodegoat-all", "seq": 2, "ts": "2026-10-30T08:13:27+0900", "tool": "source_index", "ms": 46, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat-all", "seq": 3, "ts": "2026-10-30T08:13:27+0900", "tool": "vuln_lookup", "ms": 25, "alerts": 90, "incomplete": 0}
+{"run_id": "nodegoat-all", "seq": 4, "ts": "2026-10-30T08:13:27+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
+{"run_id": "nodegoat-all", "seq": 5, "ts": "2026-10-30T08:13:27+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "express:GHSA-rv95-896h-c2vc:4.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0"]}
+{"run_id": "nodegoat-all", "seq": 6, "ts": "2026-10-30T08:13:28+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 7, "ts": "2026-10-30T08:13:28+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 8, "ts": "2026-10-30T08:13:28+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 9, "ts": "2026-10-30T08:13:29+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 10, "ts": "2026-10-30T08:13:29+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 11, "ts": "2026-10-30T08:13:29+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 12, "ts": "2026-10-30T08:13:30+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 13, "ts": "2026-10-30T08:13:30+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 14, "ts": "2026-10-30T08:13:30+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 15, "ts": "2026-10-30T08:13:31+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 16, "ts": "2026-10-30T08:13:31+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 17, "ts": "2026-10-30T08:13:32+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 18, "ts": "2026-10-30T08:13:32+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 19, "ts": "2026-10-30T08:13:32+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 20, "ts": "2026-10-30T08:13:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 21, "ts": "2026-10-30T08:13:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 22, "ts": "2026-10-30T08:13:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 23, "ts": "2026-10-30T08:13:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 24, "ts": "2026-10-30T08:13:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 25, "ts": "2026-10-30T08:13:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 26, "ts": "2026-10-30T08:13:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 27, "ts": "2026-10-30T08:13:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 28, "ts": "2026-10-30T08:13:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 29, "ts": "2026-10-30T08:13:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 30, "ts": "2026-10-30T08:13:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 31, "ts": "2026-10-30T08:13:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 32, "ts": "2026-10-30T08:13:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 33, "ts": "2026-10-30T08:13:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 34, "ts": "2026-10-30T08:13:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 35, "ts": "2026-10-30T08:13:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 36, "ts": "2026-10-30T08:13:39+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 37, "ts": "2026-10-30T08:13:39+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 38, "ts": "2026-10-30T08:13:40+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 39, "ts": "2026-10-30T08:13:40+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 40, "ts": "2026-10-30T08:14:20+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 41, "ts": "2026-10-30T08:14:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 42, "ts": "2026-10-30T08:14:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 43, "ts": "2026-10-30T08:14:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 44, "ts": "2026-10-30T08:14:22+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 45, "ts": "2026-10-30T08:14:22+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-all", "seq": 46, "ts": "2026-10-30T08:14:22+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 33}
+{"run_id": "nodegoat-all", "seq": 47, "ts": "2026-10-30T08:14:24+0900", "tool": "sbom", "ms": 1124, "tool_name": "syft", "components": 348, "fallback": false}
+{"run_id": "nodegoat-all", "seq": 48, "ts": "2026-10-30T08:14:24+0900", "tool": "source_index", "ms": 52, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat-all", "seq": 49, "ts": "2026-10-30T08:14:24+0900", "tool": "vuln_lookup", "ms": 25, "alerts": 42, "incomplete": 0}
+{"run_id": "nodegoat-all", "seq": 50, "ts": "2026-10-30T08:14:24+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 3, "unseen": 39}
+{"run_id": "nodegoat-all", "seq": 51, "ts": "2026-10-30T08:14:24+0900", "tool": "rank", "ms": 0, "top": ["body-parser:GHSA-27r3-jxmh-p828:2.45", "swig:GHSA-2rq5-699j-x7p6:2.45", "minimist:GHSA-xvch-5gv4-984h:1.0"]}

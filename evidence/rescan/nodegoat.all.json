@@ -247,8 +247,8 @@
       "GHSA-952p-6rrq-rcjv"
      ],
      "direct": false,
-     "text": "micromatch 패키지는 현재 3.1.10 버전이며, 목표 버전 4.0.8로 올립니다. 이 버전은 GHSA-952p-6rrq-rcjv 경보에 대해 미확인 판정입니다.",
-     "text_source": "llm"
+     "text": "micromatch 3.1.10 → 4.0.8: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-952p-6rrq-rcjv) 해소 대상, 판정 미확인.",
+     "text_source": "template"
     },
     {
      "package": "minimatch",
@@ -570,6 +570,6 @@
  },
  "after_incomplete": [],
  "reached_after_items": [],
- "llm_texts": 1,
+ "llm_texts": 0,
  "unfixed_alerts_after": 1
 }

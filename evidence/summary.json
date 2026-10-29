@@ -1,0 +1,340 @@
+{
+ "repos": [
+  {
+   "name": "vulnerable-flask-app",
+   "language": "Python",
+   "url": "https://github.com/we45/Vulnerable-Flask-App",
+   "commit": "b6a4f97",
+   "components": 28,
+   "alerts": 89,
+   "reached": 6,
+   "used": 48,
+   "unseen": 35,
+   "reached_weak": 0,
+   "elapsed_sec": 1.27,
+   "stage_status": {
+    "sbom": "ok",
+    "source": "ok",
+    "scan": "ok",
+    "reach": "ok",
+    "rank": "ok"
+   },
+   "incomplete": 0
+  },
+  {
+   "name": "pygoat",
+   "language": "Python",
+   "url": "https://github.com/adeyosemanputra/pygoat",
+   "commit": "46fef96",
+   "components": 38,
+   "alerts": 201,
+   "reached": 9,
+   "used": 50,
+   "unseen": 142,
+   "reached_weak": 0,
+   "elapsed_sec": 0.89,
+   "stage_status": {
+    "sbom": "ok",
+    "source": "ok",
+    "scan": "ok",
+    "reach": "ok",
+    "rank": "ok"
+   },
+   "incomplete": 0
+  },
+  {
+   "name": "nodejs-goof",
+   "language": "JavaScript",
+   "url": "https://github.com/snyk-labs/nodejs-goof",
+   "commit": "add14ba",
+   "components": 566,
+   "alerts": 235,
+   "reached": 16,
+   "used": 59,
+   "unseen": 160,
+   "reached_weak": 3,
+   "elapsed_sec": 0.9,
+   "stage_status": {
+    "sbom": "ok",
+    "source": "ok",
+    "scan": "ok",
+    "reach": "ok",
+    "rank": "ok"
+   },
+   "incomplete": 0
+  },
+  {
+   "name": "nodegoat",
+   "language": "JavaScript",
+   "url": "https://github.com/OWASP/NodeGoat",
+   "commit": "c5cb68a",
+   "components": 381,
+   "alerts": 90,
+   "reached": 4,
+   "used": 11,
+   "unseen": 75,
+   "reached_weak": 2,
+   "elapsed_sec": 0.86,
+   "stage_status": {
+    "sbom": "ok",
+    "source": "ok",
+    "scan": "ok",
+    "reach": "ok",
+    "rank": "ok"
+   },
+   "incomplete": 0
+  }
+ ],
+ "totals": {
+  "components": 1013,
+  "alerts": 615,
+  "reached": 35,
+  "used": 168,
+  "unseen": 412,
+  "reached_weak": 5
+ },
+ "languages": [
+  "JavaScript",
+  "Python"
+ ],
+ "accuracy": {
+  "v0_dev": {
+   "total": 66,
+   "matched": 52,
+   "rate": 78.8,
+   "reached_precision": 90.0,
+   "reached_recall": 42.9,
+   "confusion": {
+    "REACHED->REACHED": 9,
+    "REACHED->USED": 12,
+    "UNSEEN->UNSEEN": 21,
+    "USED->REACHED": 1,
+    "USED->UNSEEN": 1,
+    "USED->USED": 22
+   },
+   "per_repo": {
+    "nodegoat": [
+     8,
+     11
+    ],
+    "nodejs-goof": [
+     16,
+     22
+    ],
+    "pygoat": [
+     10,
+     13
+    ],
+    "vulnerable-flask-app": [
+     18,
+     20
+    ]
+   }
+  },
+  "v1_dev": {
+   "total": 66,
+   "matched": 57,
+   "rate": 86.4,
+   "reached_precision": 92.9,
+   "reached_recall": 61.9,
+   "confusion": {
+    "REACHED->REACHED": 13,
+    "REACHED->USED": 8,
+    "UNSEEN->UNSEEN": 21,
+    "USED->REACHED": 1,
+    "USED->USED": 23
+   },
+   "per_repo": {
+    "nodegoat": [
+     9,
+     11
+    ],
+    "nodejs-goof": [
+     19,
+     22
+    ],
+    "pygoat": [
+     11,
+     13
+    ],
+    "vulnerable-flask-app": [
+     18,
+     20
+    ]
+   }
+  },
+  "v1_holdout": {
+   "total": 37,
+   "matched": 30,
+   "rate": 81.1,
+   "reached_precision": 57.1,
+   "reached_recall": 57.1,
+   "confusion": {
+    "REACHED->REACHED": 4,
+    "REACHED->USED": 3,
+    "UNSEEN->UNSEEN": 15,
+    "USED->REACHED": 3,
+    "USED->UNSEEN": 1,
+    "USED->USED": 11
+   },
+   "per_repo": {
+    "nodegoat": [
+     6,
+     7
+    ],
+    "nodejs-goof": [
+     10,
+     12
+    ],
+    "pygoat": [
+     8,
+     10
+    ],
+    "vulnerable-flask-app": [
+     6,
+     8
+    ]
+   }
+  }
+ },
+ "rescan": {
+  "nodegoat.all": {
+   "target": "nodegoat",
+   "scope": "all",
+   "rounds": 1,
+   "packages_changed": 40,
+   "alerts_before": 80,
+   "alerts_after": 40,
+   "resolved": 41,
+   "new": 1,
+   "reached_before": 4,
+   "reached_after": 0,
+   "used_before": 11,
+   "used_after": 3,
+   "llm_texts": 0,
+   "reached_after_items": []
+  },
+  "nodegoat.reached": {
+   "target": "nodegoat",
+   "scope": "reached",
+   "rounds": 1,
+   "packages_changed": 2,
+   "alerts_before": 80,
+   "alerts_after": 71,
+   "resolved": 12,
+   "new": 3,
+   "reached_before": 4,
+   "reached_after": 0,
+   "used_before": 11,
+   "used_after": 6,
+   "llm_texts": 0,
+   "reached_after_items": []
+  },
+  "nodejs-goof.all": {
+   "target": "nodejs-goof",
+   "scope": "all",
+   "rounds": 2,
+   "packages_changed": 92,
+   "alerts_before": 172,
+   "alerts_after": 76,
+   "resolved": 97,
+   "new": 1,
+   "reached_before": 16,
+   "reached_after": 1,
+   "used_before": 59,
+   "used_after": 14,
+   "llm_texts": 0,
+   "reached_after_items": [
+    "ms@0.6.2:GHSA-3fx5-fwvr-xrjg"
+   ]
+  },
+  "nodejs-goof.reached": {
+   "target": "nodejs-goof",
+   "scope": "reached",
+   "rounds": 2,
+   "packages_changed": 11,
+   "alerts_before": 172,
+   "alerts_after": 121,
+   "resolved": 54,
+   "new": 3,
+   "reached_before": 16,
+   "reached_after": 1,
+   "used_before": 59,
+   "used_after": 36,
+   "llm_texts": 0,
+   "reached_after_items": [
+    "ms@0.6.2:GHSA-3fx5-fwvr-xrjg"
+   ]
+  },
+  "pygoat.all": {
+   "target": "pygoat",
+   "scope": "all",
+   "rounds": 1,
+   "packages_changed": 18,
+   "alerts_before": 193,
+   "alerts_after": 2,
+   "resolved": 193,
+   "new": 2,
+   "reached_before": 9,
+   "reached_after": 0,
+   "used_before": 50,
+   "used_after": 0,
+   "llm_texts": 5,
+   "reached_after_items": []
+  },
+  "pygoat.reached": {
+   "target": "pygoat",
+   "scope": "reached",
+   "rounds": 1,
+   "packages_changed": 3,
+   "alerts_before": 193,
+   "alerts_after": 137,
+   "resolved": 56,
+   "new": 0,
+   "reached_before": 9,
+   "reached_after": 0,
+   "used_before": 50,
+   "used_after": 3,
+   "llm_texts": 0,
+   "reached_after_items": []
+  },
+  "vulnerable-flask-app.all": {
+   "target": "vulnerable-flask-app",
+   "scope": "all",
+   "rounds": 2,
+   "packages_changed": 15,
+   "alerts_before": 89,
+   "alerts_after": 2,
+   "resolved": 88,
+   "new": 1,
+   "reached_before": 6,
+   "reached_after": 0,
+   "used_before": 48,
+   "used_after": 0,
+   "llm_texts": 1,
+   "reached_after_items": []
+  },
+  "vulnerable-flask-app.reached": {
+   "target": "vulnerable-flask-app",
+   "scope": "reached",
+   "rounds": 2,
+   "packages_changed": 4,
+   "alerts_before": 89,
+   "alerts_after": 52,
+   "resolved": 37,
+   "new": 0,
+   "reached_before": 6,
+   "reached_after": 0,
+   "used_before": 48,
+   "used_after": 17,
+   "llm_texts": 1,
+   "reached_after_items": []
+  }
+ },
+ "effect": {
+  "label": "가정: 건당 15분 · 시간당 50000원은 실측이 아니라 입력값",
+  "minutes_saved": 8700,
+  "hours_saved": 145.0,
+  "cost_saved": 7250000
+ }
+}

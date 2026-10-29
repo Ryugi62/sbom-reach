@@ -1,0 +1,1308 @@
+{
+ "target": "nodejs-goof",
+ "scope": "all",
+ "rounds": [
+  {
+   "round": 1,
+   "scope": "all",
+   "packages_changed": 90,
+   "changed_files": [
+    "package.json",
+    "package-lock.json"
+   ],
+   "reached_after": 2,
+   "alerts_after": 82,
+   "plan": [
+    {
+     "package": "adm-zip",
+     "current": "0.4.7",
+     "target": "0.6.1",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-3v6h-hqm4-2rg6",
+      "GHSA-7q85-xj36-vmfc",
+      "GHSA-8238-w5pm-2374",
+      "GHSA-c6fg-446q-cg94",
+      "GHSA-j5f4-cc29-5x44",
+      "GHSA-p634-w6r4-rjp2",
+      "GHSA-rcw4-f5rp-g42v",
+      "GHSA-xcpc-8h2w-3j85"
+     ],
+     "direct": true,
+     "text": "adm-zip 0.4.7 → 0.6.1: package.json 직접 선언을 올립니다. 경보 8건(GHSA-3v6h-hqm4-2rg6, GHSA-7q85-xj36-vmfc, GHSA-8238-w5pm-2374 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "express",
+     "current": "4.12.4",
+     "target": "4.20.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-qw6h-vgh9-j6wx",
+      "GHSA-rv95-896h-c2vc"
+     ],
+     "direct": true,
+     "text": "express 4.12.4 → 4.20.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-qw6h-vgh9-j6wx, GHSA-rv95-896h-c2vc) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "marked",
+     "current": "0.3.5",
+     "target": "4.0.10",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-5v2h-r2cx-5xgj",
+      "GHSA-7px7-7xjx-hxm8",
+      "GHSA-p9wx-2529-fp83",
+      "GHSA-rrrm-qjm4-v8hf",
+      "GHSA-vfvf-mqq8-rwqc",
+      "GHSA-x5pg-88wf-qq4p"
+     ],
+     "direct": true,
+     "text": "marked 0.3.5 → 4.0.10: package.json 직접 선언을 올립니다. 경보 6건(GHSA-5v2h-r2cx-5xgj, GHSA-7px7-7xjx-hxm8, GHSA-p9wx-2529-fp83 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "moment",
+     "current": "2.15.1",
+     "target": "2.29.2",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-446m-mv8f-q348",
+      "GHSA-8hfj-j24r-96c4"
+     ],
+     "direct": true,
+     "text": "moment 2.15.1 → 2.29.2: package.json 직접 선언을 올립니다. 경보 2건(GHSA-446m-mv8f-q348, GHSA-8hfj-j24r-96c4) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "mongoose",
+     "current": "4.2.4",
+     "target": "6.13.10",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-664h-wqgq-64gw",
+      "GHSA-8687-vv9j-hgph",
+      "GHSA-9m93-w8w6-76hh",
+      "GHSA-f825-f98c-gj3g",
+      "GHSA-h8hf-x3f4-xwgp",
+      "GHSA-m7xq-9374-9rvx",
+      "GHSA-r5xw-q988-826m",
+      "GHSA-vg7j-7cwx-8wgw",
+      "GHSA-wpg9-53fq-2r8h"
+     ],
+     "direct": true,
+     "text": "mongoose 4.2.4 → 6.13.10: package.json 직접 선언을 올립니다. 경보 9건(GHSA-664h-wqgq-64gw, GHSA-8687-vv9j-hgph, GHSA-9m93-w8w6-76hh 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "ms",
+     "current": "0.6.2",
+     "target": "2.0.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-3fx5-fwvr-xrjg",
+      "GHSA-w9mr-4mfr-499f"
+     ],
+     "direct": true,
+     "text": "ms 0.6.2 → 2.0.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-3fx5-fwvr-xrjg, GHSA-w9mr-4mfr-499f) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "st",
+     "current": "0.2.4",
+     "target": "1.2.2",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-69rr-wvh9-6c4q",
+      "GHSA-72fg-jqhx-c68p"
+     ],
+     "direct": true,
+     "text": "st 0.2.4 → 1.2.2: package.json 직접 선언을 올립니다. 경보 2건(GHSA-69rr-wvh9-6c4q, GHSA-72fg-jqhx-c68p) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "typeorm",
+     "current": "0.2.24",
+     "target": "0.3.31",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-2rp8-mm9q-fp49",
+      "GHSA-9ggv-8w38-r7pm",
+      "GHSA-fx4w-v43j-vc45",
+      "GHSA-pf2j-9qmp-jqr2",
+      "GHSA-q2pj-6v73-8rgj"
+     ],
+     "direct": true,
+     "text": "typeorm 0.2.24 → 0.3.31: package.json 직접 선언을 올립니다. 경보 5건(GHSA-2rp8-mm9q-fp49, GHSA-9ggv-8w38-r7pm, GHSA-fx4w-v43j-vc45 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "validator",
+     "current": "13.5.2",
+     "target": "13.15.22",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-9965-vmph-33xx",
+      "GHSA-qgmg-gppg-76g5",
+      "GHSA-vghf-hv5q-vc2g",
+      "GHSA-xx4c-jj58-r7x6"
+     ],
+     "direct": true,
+     "text": "validator 13.5.2 → 13.15.22: package.json 직접 선언을 올립니다. 경보 4건(GHSA-9965-vmph-33xx, GHSA-qgmg-gppg-76g5, GHSA-vghf-hv5q-vc2g 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "body-parser",
+     "current": "1.9.0",
+     "target": "1.20.9",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-27r3-jxmh-p828",
+      "GHSA-qwcr-r2fm-qrc7",
+      "GHSA-v422-hmwv-36x6"
+     ],
+     "direct": true,
+     "text": "body-parser 1.9.0 → 1.20.9: package.json 직접 선언을 올립니다. 경보 3건(GHSA-27r3-jxmh-p828, GHSA-qwcr-r2fm-qrc7, GHSA-v422-hmwv-36x6) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "dustjs-linkedin",
+     "current": "2.5.0",
+     "target": "3.0.0",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-c6rp-wrp9-qr4q"
+     ],
+     "direct": true,
+     "text": "dustjs-linkedin 2.5.0 → 3.0.0: package.json 직접 선언을 올립니다. 경보 1건(GHSA-c6rp-wrp9-qr4q) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "express-fileupload",
+     "current": "0.0.5",
+     "target": "1.1.9",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-9wcg-jrwf-8gg7",
+      "GHSA-q3w9-g74q-vp5f",
+      "GHSA-w4m6-x6c2-j5c9"
+     ],
+     "direct": true,
+     "text": "express-fileupload 0.0.5 → 1.1.9: package.json 직접 선언을 올립니다. 경보 3건(GHSA-9wcg-jrwf-8gg7, GHSA-q3w9-g74q-vp5f, GHSA-w4m6-x6c2-j5c9) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "lodash",
+     "current": "4.17.10",
+     "target": "4.18.0",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-29mw-wpgm-hmr9",
+      "GHSA-35jh-r3h4-6jhm",
+      "GHSA-4xc9-xhrj-v574",
+      "GHSA-f23m-r3pf-42rh",
+      "GHSA-jf85-cpcp-j695",
+      "GHSA-p6mc-m468-83gw",
+      "GHSA-r5fr-rjxr-66jc",
+      "GHSA-x5rq-j2xg-h7qm",
+      "GHSA-xxjr-mmjv-4gpg"
+     ],
+     "direct": true,
+     "text": "lodash 4.17.10 → 4.18.0: package.json 직접 선언을 올립니다. 경보 9건(GHSA-29mw-wpgm-hmr9, GHSA-35jh-r3h4-6jhm, GHSA-4xc9-xhrj-v574 외) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "lodash",
+     "current": "4.17.21",
+     "target": "4.18.0",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-f23m-r3pf-42rh",
+      "GHSA-r5fr-rjxr-66jc",
+      "GHSA-xxjr-mmjv-4gpg"
+     ],
+     "direct": true,
+     "text": "lodash 4.17.21 → 4.18.0: package.json 직접 선언을 올립니다. 경보 3건(GHSA-f23m-r3pf-42rh, GHSA-r5fr-rjxr-66jc, GHSA-xxjr-mmjv-4gpg) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "lodash",
+     "current": "4.17.4",
+     "target": "4.18.0",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-29mw-wpgm-hmr9",
+      "GHSA-35jh-r3h4-6jhm",
+      "GHSA-4xc9-xhrj-v574",
+      "GHSA-f23m-r3pf-42rh",
+      "GHSA-fvqr-27wr-82fm",
+      "GHSA-jf85-cpcp-j695",
+      "GHSA-p6mc-m468-83gw",
+      "GHSA-r5fr-rjxr-66jc",
+      "GHSA-x5rq-j2xg-h7qm",
+      "GHSA-xxjr-mmjv-4gpg"
+     ],
+     "direct": true,
+     "text": "lodash 4.17.4 → 4.18.0: package.json 직접 선언을 올립니다. 경보 10건(GHSA-29mw-wpgm-hmr9, GHSA-35jh-r3h4-6jhm, GHSA-4xc9-xhrj-v574 외) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "morgan",
+     "current": "1.10.0",
+     "target": "1.12.1",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-4vj7-5mj6-jm8m",
+      "GHSA-9f6g-j8ch-79g4",
+      "GHSA-jxfw-x594-9x9m"
+     ],
+     "direct": true,
+     "text": "morgan 1.10.0 → 1.12.1: package.json 직접 선언을 올립니다. 경보 3건(GHSA-4vj7-5mj6-jm8m, GHSA-9f6g-j8ch-79g4, GHSA-jxfw-x594-9x9m) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "ms",
+     "current": "0.7.1",
+     "target": "2.0.0",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-w9mr-4mfr-499f"
+     ],
+     "direct": true,
+     "text": "ms 0.7.1 → 2.0.0: package.json 직접 선언을 올립니다. 경보 1건(GHSA-w9mr-4mfr-499f) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "ms",
+     "current": "0.7.3",
+     "target": "2.0.0",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-w9mr-4mfr-499f"
+     ],
+     "direct": true,
+     "text": "ms 0.7.3 → 2.0.0: package.json 직접 선언을 올립니다. 경보 1건(GHSA-w9mr-4mfr-499f) 해소 대상, 판정 사용.",
+     "text_source": "template"
+    },
+    {
+     "package": "ajv",
+     "current": "6.10.2",
+     "target": "6.14.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-2g4f-4pwh-qvx6",
+      "GHSA-v88g-cgmw-v5xw"
+     ],
+     "direct": false,
+     "text": "ajv 6.10.2 → 6.14.0: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-2g4f-4pwh-qvx6, GHSA-v88g-cgmw-v5xw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ansi-regex",
+     "current": "3.0.0",
+     "target": "3.0.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-93q8-gq69-wqmw"
+     ],
+     "direct": false,
+     "text": "ansi-regex 3.0.0 → 3.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-93q8-gq69-wqmw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ansi-regex",
+     "current": "4.1.0",
+     "target": "4.1.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-93q8-gq69-wqmw"
+     ],
+     "direct": false,
+     "text": "ansi-regex 4.1.0 → 4.1.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-93q8-gq69-wqmw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ansi-regex",
+     "current": "5.0.0",
+     "target": "5.0.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-93q8-gq69-wqmw"
+     ],
+     "direct": false,
+     "text": "ansi-regex 5.0.0 → 5.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-93q8-gq69-wqmw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "async",
+     "current": "2.6.3",
+     "target": "2.6.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-fwr7-v2mv-hh25"
+     ],
+     "direct": false,
+     "text": "async 2.6.3 → 2.6.4: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-fwr7-v2mv-hh25) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "bl",
+     "current": "2.2.0",
+     "target": "2.2.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-pp7h-53gx-mx7r"
+     ],
+     "direct": false,
+     "text": "bl 2.2.0 → 2.2.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-pp7h-53gx-mx7r) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "brace-expansion",
+     "current": "1.1.11",
+     "target": "1.1.21",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3jxr-9vmj-r5cp",
+      "GHSA-6j4f-fj2g-mc7p",
+      "GHSA-f886-m6hf-6m8v",
+      "GHSA-mh99-v99m-4gvg",
+      "GHSA-q2hr-2g5m-vwhr",
+      "GHSA-qhr7-859c-m2p7",
+      "GHSA-rgw5-rvv9-x895",
+      "GHSA-v6h2-p8h4-qcjw"
+     ],
+     "direct": false,
+     "text": "brace-expansion 1.1.11 → 1.1.21: overrides로 전이 의존 버전을 고정합니다. 경보 8건(GHSA-3jxr-9vmj-r5cp, GHSA-6j4f-fj2g-mc7p, GHSA-f886-m6hf-6m8v 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "braces",
+     "current": "2.3.2",
+     "target": "3.0.3",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-grv7-fg5c-xmjg"
+     ],
+     "direct": false,
+     "text": "braces 2.3.2 → 3.0.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-grv7-fg5c-xmjg) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "bson",
+     "current": "0.4.23",
+     "target": "1.1.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-4jwp-vfvf-657p",
+      "GHSA-v8w9-2789-6hhr"
+     ],
+     "direct": false,
+     "text": "bson 0.4.23 → 1.1.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-4jwp-vfvf-657p, GHSA-v8w9-2789-6hhr) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "cookie",
+     "current": "0.1.2",
+     "target": "0.7.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-pxg6-pf52-xh8x"
+     ],
+     "direct": false,
+     "text": "cookie 0.1.2 → 0.7.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-pxg6-pf52-xh8x) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "cookie",
+     "current": "0.4.1",
+     "target": "0.7.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-pxg6-pf52-xh8x"
+     ],
+     "direct": false,
+     "text": "cookie 0.4.1 → 0.7.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-pxg6-pf52-xh8x) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "cross-spawn",
+     "current": "4.0.2",
+     "target": "6.0.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3xgq-45jj-v275"
+     ],
+     "direct": false,
+     "text": "cross-spawn 4.0.2 → 6.0.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-3xgq-45jj-v275) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "cross-spawn",
+     "current": "5.1.0",
+     "target": "6.0.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3xgq-45jj-v275"
+     ],
+     "direct": false,
+     "text": "cross-spawn 5.1.0 → 6.0.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-3xgq-45jj-v275) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "debug",
+     "current": "2.2.0",
+     "target": "2.6.9",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-9vvw-cc9w-f27h",
+      "GHSA-gxpj-cx7g-858c"
+     ],
+     "direct": false,
+     "text": "debug 2.2.0 → 2.6.9: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-9vvw-cc9w-f27h, GHSA-gxpj-cx7g-858c) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "debug",
+     "current": "4.1.1",
+     "target": "4.3.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-gxpj-cx7g-858c"
+     ],
+     "direct": false,
+     "text": "debug 4.1.1 → 4.3.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-gxpj-cx7g-858c) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "decode-uri-component",
+     "current": "0.2.0",
+     "target": "0.5.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-qr28-fpjm-wq7f",
+      "GHSA-vcc3-ghjq-m6fr",
+      "GHSA-w573-4hg7-7wgq"
+     ],
+     "direct": false,
+     "text": "decode-uri-component 0.2.0 → 0.5.1: overrides로 전이 의존 버전을 고정합니다. 경보 3건(GHSA-qr28-fpjm-wq7f, GHSA-vcc3-ghjq-m6fr, GHSA-w573-4hg7-7wgq) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "diff",
+     "current": "1.4.0",
+     "target": "3.5.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-73rr-hh4g-fpgx",
+      "GHSA-h6ch-v84p-w6p9"
+     ],
+     "direct": false,
+     "text": "diff 1.4.0 → 3.5.1: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-73rr-hh4g-fpgx, GHSA-h6ch-v84p-w6p9) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ejs",
+     "current": "0.8.8",
+     "target": "3.1.10",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3w5v-p54c-f74x",
+      "GHSA-6x77-rpqf-j6mw",
+      "GHSA-ghr5-ch3p-vcr6",
+      "GHSA-hwcf-pp87-7x6p",
+      "GHSA-phwq-j96m-2c2q"
+     ],
+     "direct": true,
+     "text": "ejs 0.8.8 → 3.1.10: package.json 직접 선언을 올립니다. 경보 5건(GHSA-3w5v-p54c-f74x, GHSA-6x77-rpqf-j6mw, GHSA-ghr5-ch3p-vcr6 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ejs",
+     "current": "1.0.0",
+     "target": "3.1.10",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3w5v-p54c-f74x",
+      "GHSA-6x77-rpqf-j6mw",
+      "GHSA-ghr5-ch3p-vcr6",
+      "GHSA-hwcf-pp87-7x6p",
+      "GHSA-phwq-j96m-2c2q"
+     ],
+     "direct": true,
+     "text": "ejs 1.0.0 → 3.1.10: package.json 직접 선언을 올립니다. 경보 5건(GHSA-3w5v-p54c-f74x, GHSA-6x77-rpqf-j6mw, GHSA-ghr5-ch3p-vcr6 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "figlet",
+     "current": "1.5.0",
+     "target": "1.11.3",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-62ch-8vmq-8xm7"
+     ],
+     "direct": false,
+     "text": "figlet 1.5.0 → 1.11.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-62ch-8vmq-8xm7) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "form-data",
+     "current": "2.3.3",
+     "target": "2.5.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-fjxv-7rqg-78g4",
+      "GHSA-hmw2-7cc7-3qxx"
+     ],
+     "direct": false,
+     "text": "form-data 2.3.3 → 2.5.6: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-fjxv-7rqg-78g4, GHSA-hmw2-7cc7-3qxx) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "fresh",
+     "current": "0.2.4",
+     "target": "0.5.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-9qj9-36jm-prpv"
+     ],
+     "direct": false,
+     "text": "fresh 0.2.4 → 0.5.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-9qj9-36jm-prpv) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "handlebars",
+     "current": "4.0.11",
+     "target": "4.7.10",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-2cf5-4w76-r9qv",
+      "GHSA-2qvq-rjwj-gvw9",
+      "GHSA-2w6w-674q-4c4q",
+      "GHSA-3cqr-58rm-57f8",
+      "GHSA-3mfm-83xf-c92r",
+      "GHSA-442j-39wm-28r2",
+      "GHSA-62gr-4qp9-h98f",
+      "GHSA-765h-qjxv-5f44",
+      "GHSA-8r5x-fm3f-whwj",
+      "GHSA-9cx6-37pm-9jff",
+      "GHSA-f2jv-r9rf-7988",
+      "GHSA-f52g-6jhx-586p",
+      "GHSA-g9r4-xpmj-mj65",
+      "GHSA-p8wg-vrv2-v86f",
+      "GHSA-q2c6-c6pm-g3gh",
+      "GHSA-q42p-pg8m-cqh6",
+      "GHSA-w457-6q6x-cgp9",
+      "GHSA-xhpv-hc6g-r9c6",
+      "GHSA-xjpj-3mr7-gcpf",
+      "GHSA-xw65-4hp5-5hc7"
+     ],
+     "direct": false,
+     "text": "handlebars 4.0.11 → 4.7.10: overrides로 전이 의존 버전을 고정합니다. 경보 20건(GHSA-2cf5-4w76-r9qv, GHSA-2qvq-rjwj-gvw9, GHSA-2w6w-674q-4c4q 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "handlebars",
+     "current": "4.0.14",
+     "target": "4.7.10",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-2cf5-4w76-r9qv",
+      "GHSA-2qvq-rjwj-gvw9",
+      "GHSA-2w6w-674q-4c4q",
+      "GHSA-3cqr-58rm-57f8",
+      "GHSA-3mfm-83xf-c92r",
+      "GHSA-442j-39wm-28r2",
+      "GHSA-62gr-4qp9-h98f",
+      "GHSA-765h-qjxv-5f44",
+      "GHSA-8r5x-fm3f-whwj",
+      "GHSA-9cx6-37pm-9jff",
+      "GHSA-f2jv-r9rf-7988",
+      "GHSA-f52g-6jhx-586p",
+      "GHSA-g9r4-xpmj-mj65",
+      "GHSA-p8wg-vrv2-v86f",
+      "GHSA-q2c6-c6pm-g3gh",
+      "GHSA-w457-6q6x-cgp9",
+      "GHSA-xhpv-hc6g-r9c6",
+      "GHSA-xjpj-3mr7-gcpf",
+      "GHSA-xw65-4hp5-5hc7"
+     ],
+     "direct": false,
+     "text": "handlebars 4.0.14 → 4.7.10: overrides로 전이 의존 버전을 고정합니다. 경보 19건(GHSA-2cf5-4w76-r9qv, GHSA-2qvq-rjwj-gvw9, GHSA-2w6w-674q-4c4q 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "highlight.js",
+     "current": "9.18.1",
+     "target": "10.4.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-7wwv-vh3v-89cq",
+      "GHSA-vfrc-7r7c-w9mx"
+     ],
+     "direct": false,
+     "text": "highlight.js 9.18.1 → 10.4.1: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-7wwv-vh3v-89cq, GHSA-vfrc-7r7c-w9mx) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "hosted-git-info",
+     "current": "2.6.0",
+     "target": "2.8.9",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-43f8-2h32-f4cj"
+     ],
+     "direct": false,
+     "text": "hosted-git-info 2.6.0 → 2.8.9: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-43f8-2h32-f4cj) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ini",
+     "current": "1.1.0",
+     "target": "1.3.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-qqgx-2p2h-9c37"
+     ],
+     "direct": false,
+     "text": "ini 1.1.0 → 1.3.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-qqgx-2p2h-9c37) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "ini",
+     "current": "1.3.5",
+     "target": "1.3.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-qqgx-2p2h-9c37"
+     ],
+     "direct": false,
+     "text": "ini 1.3.5 → 1.3.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-qqgx-2p2h-9c37) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "jquery",
+     "current": "2.2.4",
+     "target": "3.5.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-6c3j-c64m-qhgq",
+      "GHSA-gxr4-xjj5-5px2",
+      "GHSA-jpcq-cgw6-v4j6",
+      "GHSA-rmxg-73gg-4p98"
+     ],
+     "direct": true,
+     "text": "jquery 2.2.4 → 3.5.0: package.json 직접 선언을 올립니다. 경보 4건(GHSA-6c3j-c64m-qhgq, GHSA-gxr4-xjj5-5px2, GHSA-jpcq-cgw6-v4j6 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "js-yaml",
+     "current": "3.13.1",
+     "target": "3.15.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-2883-xcg3-v3hh",
+      "GHSA-52cp-r559-cp3m",
+      "GHSA-5p4m-2wfm-xmqj",
+      "GHSA-h67p-54hq-rp68",
+      "GHSA-mh29-5h37-fv8m"
+     ],
+     "direct": false,
+     "text": "js-yaml 3.13.1 → 3.15.2: overrides로 전이 의존 버전을 고정합니다. 경보 5건(GHSA-2883-xcg3-v3hh, GHSA-52cp-r559-cp3m, GHSA-5p4m-2wfm-xmqj 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "json-schema",
+     "current": "0.2.3",
+     "target": "0.4.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-896r-f27r-55mw"
+     ],
+     "direct": false,
+     "text": "json-schema 0.2.3 → 0.4.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-896r-f27r-55mw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "kerberos",
+     "current": "0.0.24",
+     "target": "1.0.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-m2mx-rfpw-jghv"
+     ],
+     "direct": false,
+     "text": "kerberos 0.0.24 → 1.0.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-m2mx-rfpw-jghv) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "kind-of",
+     "current": "6.0.2",
+     "target": "6.0.3",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-6c8f-qphg-qjgp"
+     ],
+     "direct": false,
+     "text": "kind-of 6.0.2 → 6.0.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-6c8f-qphg-qjgp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mem",
+     "current": "1.1.0",
+     "target": "4.0.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-4xcv-9jjx-gfj3"
+     ],
+     "direct": false,
+     "text": "mem 1.1.0 → 4.0.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-4xcv-9jjx-gfj3) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "micromatch",
+     "current": "3.1.10",
+     "target": "4.0.8",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-952p-6rrq-rcjv"
+     ],
+     "direct": false,
+     "text": "micromatch 3.1.10 → 4.0.8: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-952p-6rrq-rcjv) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mime",
+     "current": "1.2.11",
+     "target": "1.4.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-wrvr-8mpx-r7pp"
+     ],
+     "direct": false,
+     "text": "mime 1.2.11 → 1.4.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-wrvr-8mpx-r7pp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mime",
+     "current": "1.3.4",
+     "target": "1.4.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-wrvr-8mpx-r7pp"
+     ],
+     "direct": false,
+     "text": "mime 1.3.4 → 1.4.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-wrvr-8mpx-r7pp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "minimatch",
+     "current": "3.0.4",
+     "target": "3.1.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-23c5-xmqv-rm74",
+      "GHSA-3ppc-4f35-3m26",
+      "GHSA-7r86-cg39-jmmj",
+      "GHSA-f8q6-p94x-37v3"
+     ],
+     "direct": false,
+     "text": "minimatch 3.0.4 → 3.1.4: overrides로 전이 의존 버전을 고정합니다. 경보 4건(GHSA-23c5-xmqv-rm74, GHSA-3ppc-4f35-3m26, GHSA-7r86-cg39-jmmj 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "minimist",
+     "current": "0.0.10",
+     "target": "0.2.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-vh95-rmgr-6w4m",
+      "GHSA-xvch-5gv4-984h"
+     ],
+     "direct": false,
+     "text": "minimist 0.0.10 → 0.2.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-vh95-rmgr-6w4m, GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "minimist",
+     "current": "0.0.8",
+     "target": "0.2.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-vh95-rmgr-6w4m",
+      "GHSA-xvch-5gv4-984h"
+     ],
+     "direct": false,
+     "text": "minimist 0.0.8 → 0.2.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-vh95-rmgr-6w4m, GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "minimist",
+     "current": "1.2.0",
+     "target": "1.2.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-vh95-rmgr-6w4m",
+      "GHSA-xvch-5gv4-984h"
+     ],
+     "direct": false,
+     "text": "minimist 1.2.0 → 1.2.6: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-vh95-rmgr-6w4m, GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "minimist",
+     "current": "1.2.5",
+     "target": "1.2.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-xvch-5gv4-984h"
+     ],
+     "direct": false,
+     "text": "minimist 1.2.5 → 1.2.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mixin-deep",
+     "current": "1.3.1",
+     "target": "1.3.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-fhjf-83wg-r2j9"
+     ],
+     "direct": false,
+     "text": "mixin-deep 1.3.1 → 1.3.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-fhjf-83wg-r2j9) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mongodb",
+     "current": "2.0.46",
+     "target": "3.1.13",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-mh5c-679w-hh4r"
+     ],
+     "direct": true,
+     "text": "mongodb 2.0.46 → 3.1.13: package.json 직접 선언을 올립니다. 경보 1건(GHSA-mh5c-679w-hh4r) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mpath",
+     "current": "0.1.1",
+     "target": "0.8.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-h466-j336-74wx",
+      "GHSA-p92x-r36w-9395"
+     ],
+     "direct": false,
+     "text": "mpath 0.1.1 → 0.8.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-h466-j336-74wx, GHSA-p92x-r36w-9395) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "mquery",
+     "current": "1.6.3",
+     "target": "3.2.3",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-45q2-34rf-mr94"
+     ],
+     "direct": false,
+     "text": "mquery 1.6.3 → 3.2.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-45q2-34rf-mr94) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "negotiator",
+     "current": "0.2.8",
+     "target": "0.6.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-7mc5-chhp-fmc3"
+     ],
+     "direct": false,
+     "text": "negotiator 0.2.8 → 0.6.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-7mc5-chhp-fmc3) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "negotiator",
+     "current": "0.4.9",
+     "target": "0.6.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-7mc5-chhp-fmc3"
+     ],
+     "direct": false,
+     "text": "negotiator 0.4.9 → 0.6.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-7mc5-chhp-fmc3) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "negotiator",
+     "current": "0.5.3",
+     "target": "0.6.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-7mc5-chhp-fmc3"
+     ],
+     "direct": false,
+     "text": "negotiator 0.5.3 → 0.6.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-7mc5-chhp-fmc3) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "npmconf",
+     "current": "0.0.24",
+     "target": "2.1.3",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-57cf-349j-352g"
+     ],
+     "direct": true,
+     "text": "npmconf 0.0.24 → 2.1.3: package.json 직접 선언을 올립니다. 경보 1건(GHSA-57cf-349j-352g) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "on-headers",
+     "current": "1.0.2",
+     "target": "1.1.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-76c9-3jph-rj3q"
+     ],
+     "direct": false,
+     "text": "on-headers 1.0.2 → 1.1.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-76c9-3jph-rj3q) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "path-parse",
+     "current": "1.0.5",
+     "target": "1.0.7",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-hj48-42vr-x3v9"
+     ],
+     "direct": false,
+     "text": "path-parse 1.0.5 → 1.0.7: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-hj48-42vr-x3v9) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "path-to-regexp",
+     "current": "0.1.3",
+     "target": "0.1.12",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-37ch-88jc-xwx2",
+      "GHSA-rhx6-c78j-4q9w"
+     ],
+     "direct": false,
+     "text": "path-to-regexp 0.1.3 → 0.1.12: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-37ch-88jc-xwx2, GHSA-rhx6-c78j-4q9w) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "qs",
+     "current": "2.2.4",
+     "target": "6.14.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-6rw7-vpxm-498p",
+      "GHSA-gqgv-6jq5-jjj9",
+      "GHSA-hrpp-h998-j3pp"
+     ],
+     "direct": false,
+     "text": "qs 2.2.4 → 6.14.1: overrides로 전이 의존 버전을 고정합니다. 경보 3건(GHSA-6rw7-vpxm-498p, GHSA-gqgv-6jq5-jjj9, GHSA-hrpp-h998-j3pp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "qs",
+     "current": "2.4.2",
+     "target": "6.16.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-4mjr-xmp4-gh2g",
+      "GHSA-6rw7-vpxm-498p",
+      "GHSA-gqgv-6jq5-jjj9",
+      "GHSA-hrpp-h998-j3pp"
+     ],
+     "direct": false,
+     "text": "qs 2.4.2 → 6.16.0: overrides로 전이 의존 버전을 고정합니다. 경보 4건(GHSA-4mjr-xmp4-gh2g, GHSA-6rw7-vpxm-498p, GHSA-gqgv-6jq5-jjj9 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "qs",
+     "current": "6.5.2",
+     "target": "6.16.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-4mjr-xmp4-gh2g",
+      "GHSA-6rw7-vpxm-498p",
+      "GHSA-hrpp-h998-j3pp"
+     ],
+     "direct": false,
+     "text": "qs 6.5.2 → 6.16.0: overrides로 전이 의존 버전을 고정합니다. 경보 3건(GHSA-4mjr-xmp4-gh2g, GHSA-6rw7-vpxm-498p, GHSA-hrpp-h998-j3pp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "semver",
+     "current": "1.1.4",
+     "target": "4.3.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-x6fg-f45m-jf5q"
+     ],
+     "direct": false,
+     "text": "semver 1.1.4 → 4.3.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-x6fg-f45m-jf5q) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "semver",
+     "current": "5.5.0",
+     "target": "5.7.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-c2qf-rxjj-qqgw"
+     ],
+     "direct": false,
+     "text": "semver 5.5.0 → 5.7.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c2qf-rxjj-qqgw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "semver",
+     "current": "5.7.0",
+     "target": "5.7.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-c2qf-rxjj-qqgw"
+     ],
+     "direct": false,
+     "text": "semver 5.7.0 → 5.7.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c2qf-rxjj-qqgw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "send",
+     "current": "0.12.3",
+     "target": "0.19.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-m6fv-jmcg-4jfg"
+     ],
+     "direct": false,
+     "text": "send 0.12.3 → 0.19.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-m6fv-jmcg-4jfg) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "serve-static",
+     "current": "1.9.3",
+     "target": "1.16.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-cm22-4g7w-348p"
+     ],
+     "direct": false,
+     "text": "serve-static 1.9.3 → 1.16.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-cm22-4g7w-348p) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "set-value",
+     "current": "0.4.3",
+     "target": "2.0.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-4g88-fppr-53pp",
+      "GHSA-4jqc-8m5r-9rpr"
+     ],
+     "direct": false,
+     "text": "set-value 0.4.3 → 2.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-4g88-fppr-53pp, GHSA-4jqc-8m5r-9rpr) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "set-value",
+     "current": "2.0.0",
+     "target": "2.0.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-4g88-fppr-53pp",
+      "GHSA-4jqc-8m5r-9rpr"
+     ],
+     "direct": false,
+     "text": "set-value 2.0.0 → 2.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-4g88-fppr-53pp, GHSA-4jqc-8m5r-9rpr) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "sha.js",
+     "current": "2.4.11",
+     "target": "2.4.12",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-95m3-7q98-8xr5"
+     ],
+     "direct": false,
+     "text": "sha.js 2.4.11 → 2.4.12: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-95m3-7q98-8xr5) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "tough-cookie",
+     "current": "2.4.3",
+     "target": "4.1.3",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-72xf-g2v4-qvf3"
+     ],
+     "direct": false,
+     "text": "tough-cookie 2.4.3 → 4.1.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-72xf-g2v4-qvf3) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "underscore",
+     "current": "1.9.1",
+     "target": "1.13.8",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-cf4h-3jhx-xvhq",
+      "GHSA-qpx9-hpmf-5gmw"
+     ],
+     "direct": false,
+     "text": "underscore 1.9.1 → 1.13.8: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-cf4h-3jhx-xvhq, GHSA-qpx9-hpmf-5gmw) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "uuid",
+     "current": "3.3.2",
+     "target": "11.1.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-w5hq-g745-h8pq"
+     ],
+     "direct": false,
+     "text": "uuid 3.3.2 → 11.1.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-w5hq-g745-h8pq) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "xml2js",
+     "current": "0.4.23",
+     "target": "0.5.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-776f-qx25-q3cc"
+     ],
+     "direct": false,
+     "text": "xml2js 0.4.23 → 0.5.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-776f-qx25-q3cc) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "y18n",
+     "current": "3.2.1",
+     "target": "3.2.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-c4w7-xm78-47vh"
+     ],
+     "direct": false,
+     "text": "y18n 3.2.1 → 3.2.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c4w7-xm78-47vh) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "y18n",
+     "current": "4.0.0",
+     "target": "4.0.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-c4w7-xm78-47vh"
+     ],
+     "direct": false,
+     "text": "y18n 4.0.0 → 4.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c4w7-xm78-47vh) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "yargs-parser",
+     "current": "8.1.0",
+     "target": "13.1.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-p9pc-299p-vxgp"
+     ],
+     "direct": false,
+     "text": "yargs-parser 8.1.0 → 13.1.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-p9pc-299p-vxgp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "yargs-parser",
+     "current": "9.0.2",
+     "target": "13.1.2",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-p9pc-299p-vxgp"
+     ],
+     "direct": false,
+     "text": "yargs-parser 9.0.2 → 13.1.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-p9pc-299p-vxgp) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "scope": "reached",
+   "packages_changed": 2,
+   "changed_files": [
+    "package.json",
+    "package-lock.json"
+   ],
+   "reached_after": 1,
+   "alerts_after": 80,
+   "plan": [
+    {
+     "package": "moment",
+     "current": "2.29.2",
+     "target": "2.31.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-4p3w-j4w9-5jqw",
+      "GHSA-wc69-rhjr-hc9g"
+     ],
+     "direct": true,
+     "text": "moment 2.29.2 → 2.31.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-4p3w-j4w9-5jqw, GHSA-wc69-rhjr-hc9g) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "ms",
+     "current": "0.6.2",
+     "target": "2.0.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-3fx5-fwvr-xrjg",
+      "GHSA-w9mr-4mfr-499f"
+     ],
+     "direct": true,
+     "text": "ms 0.6.2 → 2.0.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-3fx5-fwvr-xrjg, GHSA-w9mr-4mfr-499f) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    }
+   ]
+  }
+ ],
+ "packages_changed": 92,
+ "changed_files": [
+  "package-lock.json",
+  "package.json"
+ ],
+ "diff": {
+  "before_total": 172,
+  "after_total": 76,
+  "resolved": 97,
+  "remaining": 75,
+  "new": 1,
+  "reached_before": 16,
+  "reached_after": 1,
+  "used_before": 59,
+  "used_after": 14
+ },
+ "after_stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "after_incomplete": [],
+ "reached_after_items": [
+  "ms@0.6.2:GHSA-3fx5-fwvr-xrjg"
+ ],
+ "llm_texts": 0,
+ "unfixed_alerts_after": 5
+}

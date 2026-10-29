@@ -1,111 +1,112 @@
-{"run_id": "nodejs-goof-all", "seq": 1, "ts": "2026-10-30T08:11:40+0900", "tool": "sbom", "ms": 803, "tool_name": "syft", "components": 566, "fallback": false}
-{"run_id": "nodejs-goof-all", "seq": 2, "ts": "2026-10-30T08:11:40+0900", "tool": "source_index", "ms": 12, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof-all", "seq": 3, "ts": "2026-10-30T08:11:40+0900", "tool": "vuln_lookup", "ms": 100, "alerts": 235, "incomplete": 0}
-{"run_id": "nodejs-goof-all", "seq": 4, "ts": "2026-10-30T08:11:40+0900", "tool": "reach_judge", "ms": 4, "reached": 16, "used": 59, "unseen": 160}
-{"run_id": "nodejs-goof-all", "seq": 5, "ts": "2026-10-30T08:11:40+0900", "tool": "rank", "ms": 1, "top": ["mongoose:GHSA-h8hf-x3f4-xwgp:10.0", "adm-zip:GHSA-j5f4-cc29-5x44:7.0", "adm-zip:GHSA-rcw4-f5rp-g42v:7.0"]}
-{"run_id": "nodejs-goof-all", "seq": 6, "ts": "2026-10-30T08:11:40+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 7, "ts": "2026-10-30T08:11:41+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 8, "ts": "2026-10-30T08:11:41+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 9, "ts": "2026-10-30T08:11:42+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 10, "ts": "2026-10-30T08:11:42+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 11, "ts": "2026-10-30T08:11:42+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 12, "ts": "2026-10-30T08:11:43+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 13, "ts": "2026-10-30T08:11:43+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 14, "ts": "2026-10-30T08:11:44+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 15, "ts": "2026-10-30T08:11:44+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 16, "ts": "2026-10-30T08:11:44+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 17, "ts": "2026-10-30T08:11:45+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 18, "ts": "2026-10-30T08:11:45+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 19, "ts": "2026-10-30T08:11:45+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 20, "ts": "2026-10-30T08:11:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 21, "ts": "2026-10-30T08:11:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 22, "ts": "2026-10-30T08:11:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 23, "ts": "2026-10-30T08:11:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 24, "ts": "2026-10-30T08:11:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 25, "ts": "2026-10-30T08:11:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 26, "ts": "2026-10-30T08:11:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 27, "ts": "2026-10-30T08:11:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 28, "ts": "2026-10-30T08:11:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 29, "ts": "2026-10-30T08:11:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 30, "ts": "2026-10-30T08:11:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 31, "ts": "2026-10-30T08:11:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 32, "ts": "2026-10-30T08:11:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 33, "ts": "2026-10-30T08:11:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 34, "ts": "2026-10-30T08:11:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 35, "ts": "2026-10-30T08:11:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 36, "ts": "2026-10-30T08:11:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 37, "ts": "2026-10-30T08:11:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 38, "ts": "2026-10-30T08:11:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 39, "ts": "2026-10-30T08:11:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 40, "ts": "2026-10-30T08:11:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 41, "ts": "2026-10-30T08:11:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 42, "ts": "2026-10-30T08:11:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 43, "ts": "2026-10-30T08:11:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 44, "ts": "2026-10-30T08:11:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 45, "ts": "2026-10-30T08:11:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 46, "ts": "2026-10-30T08:11:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 47, "ts": "2026-10-30T08:11:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 48, "ts": "2026-10-30T08:11:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 49, "ts": "2026-10-30T08:11:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 50, "ts": "2026-10-30T08:11:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 51, "ts": "2026-10-30T08:11:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 52, "ts": "2026-10-30T08:11:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 53, "ts": "2026-10-30T08:11:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 54, "ts": "2026-10-30T08:11:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 55, "ts": "2026-10-30T08:11:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 56, "ts": "2026-10-30T08:11:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 57, "ts": "2026-10-30T08:11:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 58, "ts": "2026-10-30T08:12:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 59, "ts": "2026-10-30T08:12:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 60, "ts": "2026-10-30T08:12:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 61, "ts": "2026-10-30T08:12:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 62, "ts": "2026-10-30T08:12:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 63, "ts": "2026-10-30T08:12:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 64, "ts": "2026-10-30T08:12:02+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 65, "ts": "2026-10-30T08:12:02+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 66, "ts": "2026-10-30T08:12:02+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 67, "ts": "2026-10-30T08:12:03+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 68, "ts": "2026-10-30T08:12:03+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 69, "ts": "2026-10-30T08:12:03+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 70, "ts": "2026-10-30T08:12:04+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 71, "ts": "2026-10-30T08:12:04+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 72, "ts": "2026-10-30T08:12:04+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 73, "ts": "2026-10-30T08:12:05+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 74, "ts": "2026-10-30T08:12:05+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 75, "ts": "2026-10-30T08:12:05+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 76, "ts": "2026-10-30T08:12:06+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 77, "ts": "2026-10-30T08:12:06+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 78, "ts": "2026-10-30T08:12:07+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 79, "ts": "2026-10-30T08:12:07+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 80, "ts": "2026-10-30T08:12:07+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 81, "ts": "2026-10-30T08:12:08+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 82, "ts": "2026-10-30T08:12:08+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 83, "ts": "2026-10-30T08:12:08+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 84, "ts": "2026-10-30T08:12:09+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 85, "ts": "2026-10-30T08:12:09+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 86, "ts": "2026-10-30T08:12:10+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 87, "ts": "2026-10-30T08:12:10+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 88, "ts": "2026-10-30T08:12:10+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 89, "ts": "2026-10-30T08:12:11+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 90, "ts": "2026-10-30T08:12:11+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 91, "ts": "2026-10-30T08:12:12+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 92, "ts": "2026-10-30T08:12:12+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 93, "ts": "2026-10-30T08:12:13+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 94, "ts": "2026-10-30T08:12:13+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 95, "ts": "2026-10-30T08:12:14+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 96, "ts": "2026-10-30T08:12:14+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 65}
-{"run_id": "nodejs-goof-all", "seq": 97, "ts": "2026-10-30T08:12:19+0900", "tool": "sbom", "ms": 1136, "tool_name": "syft", "components": 628, "fallback": false}
-{"run_id": "nodejs-goof-all", "seq": 98, "ts": "2026-10-30T08:12:19+0900", "tool": "source_index", "ms": 11, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof-all", "seq": 99, "ts": "2026-10-30T08:12:23+0900", "tool": "vuln_lookup", "ms": 106, "alerts": 82, "incomplete": 0}
-{"run_id": "nodejs-goof-all", "seq": 100, "ts": "2026-10-30T08:12:23+0900", "tool": "reach_judge", "ms": 0, "reached": 2, "used": 15, "unseen": 65}
-{"run_id": "nodejs-goof-all", "seq": 101, "ts": "2026-10-30T08:12:23+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "moment:GHSA-4p3w-j4w9-5jqw:4.0", "lodash:GHSA-jf85-cpcp-j695:3.5"]}
-{"run_id": "nodejs-goof-all", "seq": 102, "ts": "2026-10-30T08:12:23+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 103, "ts": "2026-10-30T08:12:24+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 104, "ts": "2026-10-30T08:12:24+0900", "tool": "apply_branch", "round": 2, "ecosystem": "npm", "bumps": 2}
-{"run_id": "nodejs-goof-all", "seq": 105, "ts": "2026-10-30T08:12:26+0900", "tool": "sbom", "ms": 1384, "tool_name": "syft", "components": 628, "fallback": false}
-{"run_id": "nodejs-goof-all", "seq": 106, "ts": "2026-10-30T08:12:26+0900", "tool": "source_index", "ms": 10, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof-all", "seq": 107, "ts": "2026-10-30T08:12:26+0900", "tool": "vuln_lookup", "ms": 36, "alerts": 80, "incomplete": 0}
-{"run_id": "nodejs-goof-all", "seq": 108, "ts": "2026-10-30T08:12:26+0900", "tool": "reach_judge", "ms": 0, "reached": 1, "used": 14, "unseen": 65}
-{"run_id": "nodejs-goof-all", "seq": 109, "ts": "2026-10-30T08:12:26+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "lodash:GHSA-jf85-cpcp-j695:3.5", "body-parser:GHSA-27r3-jxmh-p828:2.45"]}
-{"run_id": "nodejs-goof-all", "seq": 110, "ts": "2026-10-30T08:12:26+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-all", "seq": 111, "ts": "2026-10-30T08:12:26+0900", "tool": "apply_branch", "round": 3, "ecosystem": "npm", "bumps": 1}
+{"run_id": "nodejs-goof-all", "seq": 1, "ts": "2026-10-30T08:12:41+0900", "tool": "sbom", "ms": 858, "tool_name": "syft", "components": 566, "fallback": false}
+{"run_id": "nodejs-goof-all", "seq": 2, "ts": "2026-10-30T08:12:41+0900", "tool": "source_index", "ms": 12, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof-all", "seq": 3, "ts": "2026-10-30T08:12:41+0900", "tool": "vuln_lookup", "ms": 48, "alerts": 235, "incomplete": 0}
+{"run_id": "nodejs-goof-all", "seq": 4, "ts": "2026-10-30T08:12:41+0900", "tool": "reach_judge", "ms": 1, "reached": 16, "used": 59, "unseen": 160}
+{"run_id": "nodejs-goof-all", "seq": 5, "ts": "2026-10-30T08:12:41+0900", "tool": "rank", "ms": 0, "top": ["mongoose:GHSA-h8hf-x3f4-xwgp:10.0", "adm-zip:GHSA-j5f4-cc29-5x44:7.0", "adm-zip:GHSA-rcw4-f5rp-g42v:7.0"]}
+{"run_id": "nodejs-goof-all", "seq": 6, "ts": "2026-10-30T08:12:41+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 7, "ts": "2026-10-30T08:12:42+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 8, "ts": "2026-10-30T08:12:42+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 9, "ts": "2026-10-30T08:12:42+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 10, "ts": "2026-10-30T08:12:43+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 11, "ts": "2026-10-30T08:12:43+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 12, "ts": "2026-10-30T08:12:43+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 13, "ts": "2026-10-30T08:12:44+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 14, "ts": "2026-10-30T08:12:44+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 15, "ts": "2026-10-30T08:12:44+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 16, "ts": "2026-10-30T08:12:45+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 17, "ts": "2026-10-30T08:12:45+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 18, "ts": "2026-10-30T08:12:45+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 19, "ts": "2026-10-30T08:12:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 20, "ts": "2026-10-30T08:12:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 21, "ts": "2026-10-30T08:12:46+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 22, "ts": "2026-10-30T08:12:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 23, "ts": "2026-10-30T08:12:47+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 24, "ts": "2026-10-30T08:12:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 25, "ts": "2026-10-30T08:12:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 26, "ts": "2026-10-30T08:12:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 27, "ts": "2026-10-30T08:12:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 28, "ts": "2026-10-30T08:12:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 29, "ts": "2026-10-30T08:12:49+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 30, "ts": "2026-10-30T08:12:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 31, "ts": "2026-10-30T08:12:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 32, "ts": "2026-10-30T08:12:50+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 33, "ts": "2026-10-30T08:12:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 34, "ts": "2026-10-30T08:12:51+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 35, "ts": "2026-10-30T08:12:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 36, "ts": "2026-10-30T08:12:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 37, "ts": "2026-10-30T08:12:52+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 38, "ts": "2026-10-30T08:12:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 39, "ts": "2026-10-30T08:12:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 40, "ts": "2026-10-30T08:12:53+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 41, "ts": "2026-10-30T08:12:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 42, "ts": "2026-10-30T08:12:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 43, "ts": "2026-10-30T08:12:54+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 44, "ts": "2026-10-30T08:12:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 45, "ts": "2026-10-30T08:12:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 46, "ts": "2026-10-30T08:12:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 47, "ts": "2026-10-30T08:12:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 48, "ts": "2026-10-30T08:12:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 49, "ts": "2026-10-30T08:12:56+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 50, "ts": "2026-10-30T08:12:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 51, "ts": "2026-10-30T08:12:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 52, "ts": "2026-10-30T08:12:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 53, "ts": "2026-10-30T08:12:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 54, "ts": "2026-10-30T08:12:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 55, "ts": "2026-10-30T08:12:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 56, "ts": "2026-10-30T08:12:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 57, "ts": "2026-10-30T08:12:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 58, "ts": "2026-10-30T08:13:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 59, "ts": "2026-10-30T08:13:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 60, "ts": "2026-10-30T08:13:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 61, "ts": "2026-10-30T08:13:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 62, "ts": "2026-10-30T08:13:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 63, "ts": "2026-10-30T08:13:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 64, "ts": "2026-10-30T08:13:02+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 65, "ts": "2026-10-30T08:13:02+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 66, "ts": "2026-10-30T08:13:02+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 67, "ts": "2026-10-30T08:13:03+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 68, "ts": "2026-10-30T08:13:03+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 69, "ts": "2026-10-30T08:13:04+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 70, "ts": "2026-10-30T08:13:04+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 71, "ts": "2026-10-30T08:13:04+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 72, "ts": "2026-10-30T08:13:05+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 73, "ts": "2026-10-30T08:13:05+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 74, "ts": "2026-10-30T08:13:05+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 75, "ts": "2026-10-30T08:13:06+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 76, "ts": "2026-10-30T08:13:06+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 77, "ts": "2026-10-30T08:13:06+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 78, "ts": "2026-10-30T08:13:07+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 79, "ts": "2026-10-30T08:13:07+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 80, "ts": "2026-10-30T08:13:07+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 81, "ts": "2026-10-30T08:13:08+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 82, "ts": "2026-10-30T08:13:08+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 83, "ts": "2026-10-30T08:13:09+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 84, "ts": "2026-10-30T08:13:09+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 85, "ts": "2026-10-30T08:13:09+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 86, "ts": "2026-10-30T08:13:10+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 87, "ts": "2026-10-30T08:13:10+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 88, "ts": "2026-10-30T08:13:10+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 89, "ts": "2026-10-30T08:13:11+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 90, "ts": "2026-10-30T08:13:11+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 91, "ts": "2026-10-30T08:13:11+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 92, "ts": "2026-10-30T08:13:12+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 93, "ts": "2026-10-30T08:13:12+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 94, "ts": "2026-10-30T08:13:12+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 95, "ts": "2026-10-30T08:13:13+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 96, "ts": "2026-10-30T08:13:13+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 65}
+{"run_id": "nodejs-goof-all", "seq": 97, "ts": "2026-10-30T08:13:15+0900", "tool": "sbom", "ms": 959, "tool_name": "syft", "components": 628, "fallback": false}
+{"run_id": "nodejs-goof-all", "seq": 98, "ts": "2026-10-30T08:13:15+0900", "tool": "source_index", "ms": 12, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof-all", "seq": 99, "ts": "2026-10-30T08:13:15+0900", "tool": "vuln_lookup", "ms": 38, "alerts": 82, "incomplete": 0}
+{"run_id": "nodejs-goof-all", "seq": 100, "ts": "2026-10-30T08:13:15+0900", "tool": "reach_judge", "ms": 0, "reached": 2, "used": 15, "unseen": 65}
+{"run_id": "nodejs-goof-all", "seq": 101, "ts": "2026-10-30T08:13:15+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "moment:GHSA-4p3w-j4w9-5jqw:4.0", "lodash:GHSA-jf85-cpcp-j695:3.5"]}
+{"run_id": "nodejs-goof-all", "seq": 102, "ts": "2026-10-30T08:13:15+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 103, "ts": "2026-10-30T08:13:16+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 104, "ts": "2026-10-30T08:13:16+0900", "tool": "apply_branch", "round": 2, "ecosystem": "npm", "bumps": 2}
+{"run_id": "nodejs-goof-all", "seq": 105, "ts": "2026-10-30T08:13:17+0900", "tool": "sbom", "ms": 763, "tool_name": "syft", "components": 628, "fallback": false}
+{"run_id": "nodejs-goof-all", "seq": 106, "ts": "2026-10-30T08:13:17+0900", "tool": "source_index", "ms": 9, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof-all", "seq": 107, "ts": "2026-10-30T08:13:17+0900", "tool": "vuln_lookup", "ms": 29, "alerts": 80, "incomplete": 0}
+{"run_id": "nodejs-goof-all", "seq": 108, "ts": "2026-10-30T08:13:17+0900", "tool": "reach_judge", "ms": 0, "reached": 1, "used": 14, "unseen": 65}
+{"run_id": "nodejs-goof-all", "seq": 109, "ts": "2026-10-30T08:13:17+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "lodash:GHSA-jf85-cpcp-j695:3.5", "body-parser:GHSA-27r3-jxmh-p828:2.45"]}
+{"run_id": "nodejs-goof-all", "seq": 110, "ts": "2026-10-30T08:13:18+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-all", "seq": 111, "ts": "2026-10-30T08:13:18+0900", "tool": "apply_branch", "round": 3, "ecosystem": "npm", "bumps": 1}
+{"run_id": "nodejs-goof-all", "seq": 112, "ts": "2026-10-30T08:13:18+0900", "tool": "apply_branch", "round": 3, "result": "no_progress"}

@@ -1,30 +1,31 @@
-{"run_id": "nodejs-goof-reached", "seq": 1, "ts": "2026-10-30T08:11:14+0900", "tool": "sbom", "ms": 1046, "tool_name": "syft", "components": 566, "fallback": false}
-{"run_id": "nodejs-goof-reached", "seq": 2, "ts": "2026-10-30T08:11:14+0900", "tool": "source_index", "ms": 16, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof-reached", "seq": 3, "ts": "2026-10-30T08:11:14+0900", "tool": "vuln_lookup", "ms": 266, "alerts": 235, "incomplete": 0}
-{"run_id": "nodejs-goof-reached", "seq": 4, "ts": "2026-10-30T08:11:14+0900", "tool": "reach_judge", "ms": 1, "reached": 16, "used": 59, "unseen": 160}
-{"run_id": "nodejs-goof-reached", "seq": 5, "ts": "2026-10-30T08:11:14+0900", "tool": "rank", "ms": 0, "top": ["mongoose:GHSA-h8hf-x3f4-xwgp:10.0", "adm-zip:GHSA-j5f4-cc29-5x44:7.0", "adm-zip:GHSA-rcw4-f5rp-g42v:7.0"]}
-{"run_id": "nodejs-goof-reached", "seq": 6, "ts": "2026-10-30T08:11:15+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 7, "ts": "2026-10-30T08:11:15+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 8, "ts": "2026-10-30T08:11:16+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 9, "ts": "2026-10-30T08:11:16+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 10, "ts": "2026-10-30T08:11:16+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 11, "ts": "2026-10-30T08:11:17+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 12, "ts": "2026-10-30T08:11:17+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 13, "ts": "2026-10-30T08:11:17+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 14, "ts": "2026-10-30T08:11:18+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 15, "ts": "2026-10-30T08:11:18+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 9}
-{"run_id": "nodejs-goof-reached", "seq": 16, "ts": "2026-10-30T08:11:24+0900", "tool": "sbom", "ms": 988, "tool_name": "syft", "components": 618, "fallback": false}
-{"run_id": "nodejs-goof-reached", "seq": 17, "ts": "2026-10-30T08:11:24+0900", "tool": "source_index", "ms": 10, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof-reached", "seq": 18, "ts": "2026-10-30T08:11:35+0900", "tool": "vuln_lookup", "ms": 126, "alerts": 180, "incomplete": 0}
-{"run_id": "nodejs-goof-reached", "seq": 19, "ts": "2026-10-30T08:11:35+0900", "tool": "reach_judge", "ms": 0, "reached": 2, "used": 37, "unseen": 141}
-{"run_id": "nodejs-goof-reached", "seq": 20, "ts": "2026-10-30T08:11:35+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "moment:GHSA-4p3w-j4w9-5jqw:4.0", "express-fileupload:GHSA-9wcg-jrwf-8gg7:3.5"]}
-{"run_id": "nodejs-goof-reached", "seq": 21, "ts": "2026-10-30T08:11:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 22, "ts": "2026-10-30T08:11:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 23, "ts": "2026-10-30T08:11:36+0900", "tool": "apply_branch", "round": 2, "ecosystem": "npm", "bumps": 2}
-{"run_id": "nodejs-goof-reached", "seq": 24, "ts": "2026-10-30T08:11:37+0900", "tool": "sbom", "ms": 1004, "tool_name": "syft", "components": 618, "fallback": false}
-{"run_id": "nodejs-goof-reached", "seq": 25, "ts": "2026-10-30T08:11:37+0900", "tool": "source_index", "ms": 11, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof-reached", "seq": 26, "ts": "2026-10-30T08:11:38+0900", "tool": "vuln_lookup", "ms": 46, "alerts": 178, "incomplete": 0}
-{"run_id": "nodejs-goof-reached", "seq": 27, "ts": "2026-10-30T08:11:38+0900", "tool": "reach_judge", "ms": 1, "reached": 1, "used": 36, "unseen": 141}
-{"run_id": "nodejs-goof-reached", "seq": 28, "ts": "2026-10-30T08:11:38+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "express-fileupload:GHSA-9wcg-jrwf-8gg7:3.5", "lodash:GHSA-jf85-cpcp-j695:3.5"]}
-{"run_id": "nodejs-goof-reached", "seq": 29, "ts": "2026-10-30T08:11:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodejs-goof-reached", "seq": 30, "ts": "2026-10-30T08:11:38+0900", "tool": "apply_branch", "round": 3, "ecosystem": "npm", "bumps": 1}
+{"run_id": "nodejs-goof-reached", "seq": 1, "ts": "2026-10-30T08:12:32+0900", "tool": "sbom", "ms": 1123, "tool_name": "syft", "components": 566, "fallback": false}
+{"run_id": "nodejs-goof-reached", "seq": 2, "ts": "2026-10-30T08:12:32+0900", "tool": "source_index", "ms": 12, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof-reached", "seq": 3, "ts": "2026-10-30T08:12:32+0900", "tool": "vuln_lookup", "ms": 79, "alerts": 235, "incomplete": 0}
+{"run_id": "nodejs-goof-reached", "seq": 4, "ts": "2026-10-30T08:12:32+0900", "tool": "reach_judge", "ms": 1, "reached": 16, "used": 59, "unseen": 160}
+{"run_id": "nodejs-goof-reached", "seq": 5, "ts": "2026-10-30T08:12:32+0900", "tool": "rank", "ms": 0, "top": ["mongoose:GHSA-h8hf-x3f4-xwgp:10.0", "adm-zip:GHSA-j5f4-cc29-5x44:7.0", "adm-zip:GHSA-rcw4-f5rp-g42v:7.0"]}
+{"run_id": "nodejs-goof-reached", "seq": 6, "ts": "2026-10-30T08:12:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 7, "ts": "2026-10-30T08:12:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 8, "ts": "2026-10-30T08:12:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 9, "ts": "2026-10-30T08:12:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 10, "ts": "2026-10-30T08:12:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 11, "ts": "2026-10-30T08:12:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 12, "ts": "2026-10-30T08:12:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 13, "ts": "2026-10-30T08:12:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 14, "ts": "2026-10-30T08:12:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 15, "ts": "2026-10-30T08:12:35+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 9}
+{"run_id": "nodejs-goof-reached", "seq": 16, "ts": "2026-10-30T08:12:37+0900", "tool": "sbom", "ms": 763, "tool_name": "syft", "components": 618, "fallback": false}
+{"run_id": "nodejs-goof-reached", "seq": 17, "ts": "2026-10-30T08:12:37+0900", "tool": "source_index", "ms": 9, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof-reached", "seq": 18, "ts": "2026-10-30T08:12:37+0900", "tool": "vuln_lookup", "ms": 46, "alerts": 180, "incomplete": 0}
+{"run_id": "nodejs-goof-reached", "seq": 19, "ts": "2026-10-30T08:12:37+0900", "tool": "reach_judge", "ms": 0, "reached": 2, "used": 37, "unseen": 141}
+{"run_id": "nodejs-goof-reached", "seq": 20, "ts": "2026-10-30T08:12:37+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "moment:GHSA-4p3w-j4w9-5jqw:4.0", "express-fileupload:GHSA-9wcg-jrwf-8gg7:3.5"]}
+{"run_id": "nodejs-goof-reached", "seq": 21, "ts": "2026-10-30T08:12:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 22, "ts": "2026-10-30T08:12:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 23, "ts": "2026-10-30T08:12:38+0900", "tool": "apply_branch", "round": 2, "ecosystem": "npm", "bumps": 2}
+{"run_id": "nodejs-goof-reached", "seq": 24, "ts": "2026-10-30T08:12:39+0900", "tool": "sbom", "ms": 759, "tool_name": "syft", "components": 618, "fallback": false}
+{"run_id": "nodejs-goof-reached", "seq": 25, "ts": "2026-10-30T08:12:39+0900", "tool": "source_index", "ms": 9, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof-reached", "seq": 26, "ts": "2026-10-30T08:12:39+0900", "tool": "vuln_lookup", "ms": 42, "alerts": 178, "incomplete": 0}
+{"run_id": "nodejs-goof-reached", "seq": 27, "ts": "2026-10-30T08:12:39+0900", "tool": "reach_judge", "ms": 1, "reached": 1, "used": 36, "unseen": 141}
+{"run_id": "nodejs-goof-reached", "seq": 28, "ts": "2026-10-30T08:12:39+0900", "tool": "rank", "ms": 0, "top": ["ms:GHSA-3fx5-fwvr-xrjg:7.0", "express-fileupload:GHSA-9wcg-jrwf-8gg7:3.5", "lodash:GHSA-jf85-cpcp-j695:3.5"]}
+{"run_id": "nodejs-goof-reached", "seq": 29, "ts": "2026-10-30T08:12:40+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodejs-goof-reached", "seq": 30, "ts": "2026-10-30T08:12:40+0900", "tool": "apply_branch", "round": 3, "ecosystem": "npm", "bumps": 1}
+{"run_id": "nodejs-goof-reached", "seq": 31, "ts": "2026-10-30T08:12:40+0900", "tool": "apply_branch", "round": 3, "result": "no_progress"}
