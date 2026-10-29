@@ -138,6 +138,20 @@ def cmd_eval(a):
     print(md)
 
 
+def cmd_summary(a):
+    import glob
+    from ..application.summary import summarize
+    load = lambda p: json.load(open(p, encoding="utf-8"))
+    rows = lambda p: [json.loads(x) for x in open(p, encoding="utf-8") if x.strip()]
+    tg = targets()
+    runs = {n: load(os.path.join(EV, "runs", f"{n}.json")) for n in tg}
+    v0 = {n: load(os.path.join(EV, "runs-v0", f"{n}.json")) for n in tg}
+    rs = {os.path.basename(p)[:-5]: load(p) for p in sorted(glob.glob(os.path.join(EV, "rescan", "*.json")))}
+    out = summarize(tg, runs, rs, rows(os.path.join(EV, "gold.jsonl")), rows(os.path.join(EV, "gold-holdout.jsonl")), v0)
+    json.dump(out, open(os.path.join(EV, "summary.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print(json.dumps(out["totals"], ensure_ascii=False), out["accuracy"]["v1_holdout"]["rate"])
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="sbomreach")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -149,6 +163,7 @@ def main(argv=None):
             s.add_argument("--no-llm", action="store_true")
             s.add_argument("--max-rounds", type=int, default=3)
         s.set_defaults(fn=f)
+    sub.add_parser("summary").set_defaults(fn=cmd_summary)
     e = sub.add_parser("eval")
     e.add_argument("--gold", default="gold.jsonl")
     e.add_argument("--out", default="accuracy.md")
