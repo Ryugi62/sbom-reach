@@ -64,3 +64,19 @@ def test_relative_import_ignored():
 def test_nested_attribute_chain_records_each_attr():
     idx = analyze_python({"n.py": "import django\ndjango.utils.html.mark_safe('x')\n"})
     assert ("django", "mark_safe") in idx.refs and ("django", "utils") in idx.refs
+
+
+def test_instance_attribute_is_ref_of_module():
+    idx = analyze_python({"d.py": "from docx import Document\ndoc = Document('a')\nfor p in doc.paragraphs:\n    pass\n"})
+    assert ("docx", "paragraphs") in idx.refs
+
+
+def test_string_mentions_of_dotted_names():
+    idx = analyze_python({"s.py": 'INSTALLED_APPS = ["allauth", "allauth.account"]\nURL = "https://x.y/z"\n'})
+    assert idx.mentions["allauth"][0].line == 1
+    assert "https" not in idx.mentions
+
+
+def test_weak_refs_python_attribute_on_unresolved_receiver():
+    idx = analyze_python({"w.py": "def f(request):\n    return request.body\n"})
+    assert idx.weak_refs["body"][0].line == 2

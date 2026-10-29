@@ -72,3 +72,38 @@ def test_symbol_in_other_module_does_not_match():
     idx = SourceIndex(imports={"yaml": [ev("a.py", 1)]},
                       refs={("json", "load"): [ev("a.py", 5)]})
     assert judge(mk_alert(), idx).verdict is Verdict.USED
+
+
+def test_weak_method_name_match_reaches_with_weak_flag():
+    idx = SourceIndex(imports={"express": [ev("a.js", 1)]}, weak_refs={"redirect": [ev("b.js", 7, "res.redirect(x)")]})
+    j = judge(mk_alert(name="express", eco="npm", symbols=("response.redirect",), version="4.12.4"), idx)
+    assert j.verdict is Verdict.REACHED and j.weak is True and j.evidence[0].line == 7
+    assert "타입 추론 없음" in j.reason
+
+
+def test_weak_match_needs_qualified_symbol_and_import():
+    idx = SourceIndex(imports={"express": [ev("a.js", 1)]}, weak_refs={"redirect": [ev("b.js", 7)]})
+    # 한정되지 않은 심볼은 약한 근거를 쓰지 않는다
+    assert judge(mk_alert(name="express", eco="npm", symbols=("redirect",), version="1"), idx).verdict is Verdict.USED
+    # import가 없으면 약한 근거도 쓰지 않는다
+    idx2 = SourceIndex(imports={}, weak_refs={"redirect": [ev("b.js", 7)]})
+    assert judge(mk_alert(name="express", eco="npm", symbols=("response.redirect",), version="1"), idx2).verdict is Verdict.UNSEEN
+
+
+def test_generic_method_names_are_not_weak_evidence():
+    idx = SourceIndex(imports={"django": [ev("a.py", 1)]}, weak_refs={"filter": [ev("b.py", 3)]})
+    al = mk_alert(name="Django", symbols=("QuerySet.filter",), version="4.2")
+    assert judge(al, idx).verdict is Verdict.USED
+
+
+def test_strong_hit_is_not_weak():
+    idx = SourceIndex(imports={"yaml": [ev("a.py", 1)]}, refs={("yaml", "load"): [ev("a.py", 9)]}, weak_refs={"load": [ev("a.py", 9)]})
+    j = judge(mk_alert(), idx)
+    assert j.verdict is Verdict.REACHED and j.weak is False
+
+
+def test_string_mention_gives_used_not_unseen():
+    idx = SourceIndex(mentions={"allauth": [ev("settings.py", 48, '"allauth",')]})
+    al = mk_alert(name="django-allauth", symbols=(), version="0.52.0")
+    j = judge(al, idx)
+    assert j.verdict is Verdict.USED and "문자열" in j.reason

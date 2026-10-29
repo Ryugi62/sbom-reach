@@ -68,3 +68,13 @@ def test_severity_from_cvss_vector_when_no_label():
     assert parse_vuln(d, Component("PyYAML", "5.1", "PyPI")).severity == "CRITICAL"
     d["severity"] = [{"type": "CVSS_V3", "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N"}]
     assert parse_vuln(d, Component("PyYAML", "5.1", "PyPI")).severity == "MODERATE"
+
+
+def test_extract_dotted_module_function_without_backticks():
+    syms = extract_symbols("Path Traversal: 'dir/../../filename' in moment.locale", "")
+    assert "moment.locale" in syms
+
+
+def test_extract_functions_enumeration_phrase():
+    syms = extract_symbols("Prototype Pollution in lodash", "suffers from a MID vulnerability via defaultsDeep, merge, and mergeWith functions")
+    assert {"defaultsDeep", "merge", "mergeWith"} <= set(syms)

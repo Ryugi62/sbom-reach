@@ -77,3 +77,15 @@ def test_relative_require_ignored():
 def test_member_chain_on_module_binding():
     idx = analyze_js({"e.js": "const m = require('moment');\nm.utc().format();\n"})
     assert ("moment", "utc") in idx.refs
+
+
+def test_instance_variable_methods_are_refs_of_the_module():
+    src = "var AdmZip = require('adm-zip');\nvar zip = AdmZip(buf);\nzip.extractAllTo('/tmp', true);\nvar z2 = new AdmZip();\nz2.getData(e);\n"
+    idx = analyze_js({"a.js": src})
+    assert idx.refs[("adm-zip", "extractAllTo")][0].line == 3
+    assert idx.refs[("adm-zip", "getData")][0].line == 5
+
+
+def test_weak_refs_record_method_names_on_unresolved_receivers():
+    idx = analyze_js({"r.js": "function h(req, res) {\n  return res.redirect(req.query.u);\n}\n"})
+    assert idx.weak_refs["redirect"][0].line == 2
