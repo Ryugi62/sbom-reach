@@ -4,7 +4,7 @@
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 38,
- "elapsed_sec": 1.28,
+ "elapsed_sec": 0.98,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -15,9 +15,10 @@
  "incomplete": [],
  "counts": {
   "alerts": 201,
-  "REACHED": 4,
-  "USED": 52,
-  "UNSEEN": 145
+  "REACHED": 9,
+  "USED": 50,
+  "UNSEEN": 142,
+  "REACHED_weak": 0
  },
  "alerts": [
   {
@@ -42,8 +43,14 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 Q, _connector, exclude, filter, get 의 참조·호출 근거 줄이 있음",
    "evidence": [
+    {
+     "path": "introduction/tests.py",
+     "line": 66,
+     "text": "self.assertTrue(User.objects.filter(username=\"newbie\").exists())"
+    },
     {
      "path": "scoring/signals.py",
      "line": 72,
@@ -53,16 +60,99 @@
      "path": "scoring/signals.py",
      "line": 73,
      "text": "models.Q(content_type='lab', content_id__in=lab_ids)"
-    },
-    {
-     "path": "introduction/tests.py",
-     "line": 66,
-     "text": "self.assertTrue(User.objects.filter(username=\"newbie\").exists())"
     }
    ]
   },
   {
    "rank": 2,
+   "score": 7.0,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-9jmf-237g-qf46",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.7",
+    "4.2.14"
+   ],
+   "symbols": [
+    "django.core.files.storage.Storage",
+    "generate_filename",
+    "save",
+    "django.core"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Storage, core, generate_filename, save 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "introduction/migrations/0009_auto_20210517_2047.py",
+     "line": 18,
+     "text": "validators=[django.core.validators.MaxValueValidator(300)]"
+    },
+    {
+     "path": "scoring/migrations/0001_initial.py",
+     "line": 85,
+     "text": "django.core.validators.MinValueValidator(0.1),"
+    },
+    {
+     "path": "scoring/migrations/0001_initial.py",
+     "line": 86,
+     "text": "django.core.validators.MaxValueValidator(10.0),"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 7.0,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-m9g8-fxxm-xg86",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.10",
+    "5.1.4",
+    "4.2.17"
+   ],
+   "symbols": [
+    "django.db"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 db 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 46,
+     "text": "on_delete=django.db.models.deletion.CASCADE,"
+    },
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 53,
+     "text": "on_delete=django.db.models.deletion.CASCADE,"
+    },
+    {
+     "path": "challenge/migrations/0007_labcategorymapping.py",
+     "line": 48,
+     "text": "on_delete=django.db.models.deletion.CASCADE,"
+    },
+    {
+     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
+     "line": 22,
+     "text": "on_delete=django.db.models.deletion.SET_NULL,"
+    },
+    {
+     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
+     "line": 33,
+     "text": "on_delete=django.db.models.deletion.SET_NULL,"
+    }
+   ]
+  },
+  {
+   "rank": 4,
    "score": 7.0,
    "package": "django",
    "version": "4.2",
@@ -77,11 +167,14 @@
    "symbols": [
     "django.http.HttpResponseRedirect",
     "django.http.HttpResponsePermanentRedirect",
-    "django.shortcuts.redirect"
+    "django.shortcuts.redirect",
+    "django.http",
+    "django.shortcuts"
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
-   "reason": "취약 심볼 HttpResponsePermanentRedirect, HttpResponseRedirect, redirect 의 참조·호출 근거 줄이 있음",
+   "weak": false,
+   "reason": "취약 심볼 HttpResponsePermanentRedirect, HttpResponseRedirect, http, redirect, shortcuts 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
      "path": "challenge/views.py",
@@ -111,7 +204,7 @@
    ]
   },
   {
-   "rank": 3,
+   "rank": 5,
    "score": 4.0,
    "package": "django",
    "version": "4.2",
@@ -129,37 +222,161 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 CharField, DomainNameValidator, HttpResponse 의 참조·호출 근거 줄이 있음",
    "evidence": [
+    {
+     "path": "introduction/views.py",
+     "line": 77,
+     "text": "return HttpResponse(status=401)"
+    },
+    {
+     "path": "introduction/views.py",
+     "line": 90,
+     "text": "return HttpResponse(status=403)"
+    },
+    {
+     "path": "introduction/views.py",
+     "line": 97,
+     "text": "return HttpResponse(status=403)"
+    },
+    {
+     "path": "introduction/views.py",
+     "line": 99,
+     "text": "response = HttpResponse(status=200)"
+    },
     {
      "path": "challenge/migrations/0001_initial.py",
      "line": 21,
      "text": "(\"name\", models.CharField(max_length=100)),"
-    },
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 23,
-     "text": "(\"docker_image\", models.CharField(max_length=100)),"
-    },
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 28,
-     "text": "(\"flag\", models.CharField(max_length=100)),"
-    },
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 36,
-     "text": "(\"container_id\", models.CharField(max_length=100)),"
-    },
-    {
-     "path": "challenge/migrations/0003_alter_challenge_docker_image_alter_challenge_id_and_more.py",
-     "line": 16,
-     "text": "field=models.CharField(max_length=100, unique=True),"
     }
    ]
   },
   {
-   "rank": 4,
+   "rank": 6,
+   "score": 4.0,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-qcgg-j2x8-h9g8",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.1.5",
+    "5.0.11",
+    "4.2.18"
+   ],
+   "symbols": [
+    "clean_ipv6_address",
+    "is_valid_ipv6_address",
+    "django.forms.GenericIPAddressField",
+    "django.forms",
+    "django.db"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 GenericIPAddressField, clean_ipv6_address, db, forms, is_valid_ipv6_address 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 46,
+     "text": "on_delete=django.db.models.deletion.CASCADE,"
+    },
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 53,
+     "text": "on_delete=django.db.models.deletion.CASCADE,"
+    },
+    {
+     "path": "challenge/migrations/0007_labcategorymapping.py",
+     "line": 48,
+     "text": "on_delete=django.db.models.deletion.CASCADE,"
+    },
+    {
+     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
+     "line": 22,
+     "text": "on_delete=django.db.models.deletion.SET_NULL,"
+    },
+    {
+     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
+     "line": 33,
+     "text": "on_delete=django.db.models.deletion.SET_NULL,"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "score": 4.0,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-vrcr-9hj9-jcg6",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
+   ],
+   "symbols": [
+    "django.core.serializers.xml_serializer.getInnerText",
+    "Deserializer",
+    "django.core"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Deserializer, core, getInnerText 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "introduction/migrations/0009_auto_20210517_2047.py",
+     "line": 18,
+     "text": "validators=[django.core.validators.MaxValueValidator(300)]"
+    },
+    {
+     "path": "scoring/migrations/0001_initial.py",
+     "line": 85,
+     "text": "django.core.validators.MinValueValidator(0.1),"
+    },
+    {
+     "path": "scoring/migrations/0001_initial.py",
+     "line": 86,
+     "text": "django.core.validators.MaxValueValidator(10.0),"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "score": 4.0,
+   "package": "requests",
+   "version": "2.28.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-j8r2-6x86-q33q",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.31.0",
+    "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+   ],
+   "symbols": [
+    "rebuild_proxies",
+    "proxy_manager_for",
+    "proxy_headers",
+    "allow_redirects",
+    "requests.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 allow_redirects, get, proxy_headers, proxy_manager_for, rebuild_proxies 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "challenge/views.py",
+     "line": 38,
+     "text": "response = requests.get(traefik_url, timeout=5)"
+    }
+   ]
+  },
+  {
+   "rank": 9,
    "score": 3.5,
    "package": "django",
    "version": "4.2",
@@ -173,240 +390,8 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
-   "evidence": [
-    {
-     "path": "challenge/admin.py",
-     "line": 1,
-     "text": "from django.contrib import admin"
-    },
-    {
-     "path": "challenge/apps.py",
-     "line": 1,
-     "text": "from django.apps import AppConfig"
-    },
-    {
-     "path": "challenge/management/commands/populate_challenges.py",
-     "line": 3,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/populate_labs.py",
-     "line": 1,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/startuplabs.py",
-     "line": 3,
-     "text": "from django.conf import settings"
-    }
-   ]
-  },
-  {
-   "rank": 5,
-   "score": 3.5,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-r3xc-prgr-mg9p",
-   "severity": "CRITICAL",
-   "fixed": [
-    "3.2.19",
-    "4.1.9",
-    "4.2.1"
-   ],
-   "symbols": [],
-   "symbol_source": "none",
-   "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
-   "evidence": [
-    {
-     "path": "challenge/admin.py",
-     "line": 1,
-     "text": "from django.contrib import admin"
-    },
-    {
-     "path": "challenge/apps.py",
-     "line": 1,
-     "text": "from django.apps import AppConfig"
-    },
-    {
-     "path": "challenge/management/commands/populate_challenges.py",
-     "line": 3,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/populate_labs.py",
-     "line": 1,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/startuplabs.py",
-     "line": 3,
-     "text": "from django.conf import settings"
-    }
-   ]
-  },
-  {
-   "rank": 6,
-   "score": 2.45,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-6w2r-r2m5-xq5w",
-   "severity": "HIGH",
-   "fixed": [
-    "4.2.24",
-    "5.1.12",
-    "5.2.6"
-   ],
-   "symbols": [],
-   "symbol_source": "none",
-   "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
-   "evidence": [
-    {
-     "path": "challenge/admin.py",
-     "line": 1,
-     "text": "from django.contrib import admin"
-    },
-    {
-     "path": "challenge/apps.py",
-     "line": 1,
-     "text": "from django.apps import AppConfig"
-    },
-    {
-     "path": "challenge/management/commands/populate_challenges.py",
-     "line": 3,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/populate_labs.py",
-     "line": 1,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/startuplabs.py",
-     "line": 3,
-     "text": "from django.conf import settings"
-    }
-   ]
-  },
-  {
-   "rank": 7,
-   "score": 2.45,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-8p8v-wh79-9r56",
-   "severity": "HIGH",
-   "fixed": [
-    "6.0.3",
-    "5.2.12",
-    "4.2.29"
-   ],
-   "symbols": [
-    "URLField.to_python",
-    "urllib.parse.urlsplit"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 to_python, urlsplit 의 참조·호출 근거 줄은 없음",
-   "evidence": [
-    {
-     "path": "challenge/admin.py",
-     "line": 1,
-     "text": "from django.contrib import admin"
-    },
-    {
-     "path": "challenge/apps.py",
-     "line": 1,
-     "text": "from django.apps import AppConfig"
-    },
-    {
-     "path": "challenge/management/commands/populate_challenges.py",
-     "line": 3,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/populate_labs.py",
-     "line": 1,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/startuplabs.py",
-     "line": 3,
-     "text": "from django.conf import settings"
-    }
-   ]
-  },
-  {
-   "rank": 8,
-   "score": 2.45,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-933h-hp56-hf7m",
-   "severity": "HIGH",
-   "fixed": [
-    "6.0.4",
-    "5.2.13",
-    "4.2.30"
-   ],
-   "symbols": [
-    "HttpRequest.body"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 body 의 참조·호출 근거 줄은 없음",
-   "evidence": [
-    {
-     "path": "challenge/admin.py",
-     "line": 1,
-     "text": "from django.contrib import admin"
-    },
-    {
-     "path": "challenge/apps.py",
-     "line": 1,
-     "text": "from django.apps import AppConfig"
-    },
-    {
-     "path": "challenge/management/commands/populate_challenges.py",
-     "line": 3,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/populate_labs.py",
-     "line": 1,
-     "text": "from django.core.management.base import BaseCommand"
-    },
-    {
-     "path": "challenge/management/commands/startuplabs.py",
-     "line": 3,
-     "text": "from django.conf import settings"
-    }
-   ]
-  },
-  {
-   "rank": 9,
-   "score": 2.45,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-9jmf-237g-qf46",
-   "severity": "HIGH",
-   "fixed": [
-    "5.0.7",
-    "4.2.14"
-   ],
-   "symbols": [
-    "django.core.files.storage.Storage",
-    "generate_filename",
-    "save"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 Storage, generate_filename, save 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -437,22 +422,22 @@
   },
   {
    "rank": 10,
-   "score": 2.45,
+   "score": 3.5,
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-f6f8-9mx6-9mx2",
-   "severity": "HIGH",
+   "advisory": "GHSA-r3xc-prgr-mg9p",
+   "severity": "CRITICAL",
    "fixed": [
-    "5.0.7",
-    "4.2.14"
+    "3.2.19",
+    "4.1.9",
+    "4.2.1"
    ],
-   "symbols": [
-    "get_supported_language_variant"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 get_supported_language_variant 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -487,26 +472,18 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-gvg8-93h5-g6qq",
+   "advisory": "GHSA-6w2r-r2m5-xq5w",
    "severity": "HIGH",
    "fixed": [
-    "6.0.2",
-    "5.2.11",
-    "4.2.28"
+    "4.2.24",
+    "5.1.12",
+    "5.2.6"
    ],
-   "symbols": [
-    "FilteredRelation",
-    "QuerySet",
-    "annotate",
-    "aggregate",
-    "extra",
-    "values",
-    "values_list",
-    "alias"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 FilteredRelation, QuerySet, aggregate, alias, annotate, extra, values, values_list 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -541,17 +518,21 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-h8gc-pgj2-vjm3",
+   "advisory": "GHSA-8p8v-wh79-9r56",
    "severity": "HIGH",
    "fixed": [
-    "3.2.22",
-    "4.1.12",
-    "4.2.6"
+    "6.0.3",
+    "5.2.12",
+    "4.2.29"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "URLField.to_python",
+    "urllib.parse.urlsplit"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 to_python, urlsplit 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -586,17 +567,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-hpr9-3m2g-3j9p",
+   "advisory": "GHSA-933h-hp56-hf7m",
    "severity": "HIGH",
    "fixed": [
-    "4.2.25",
-    "5.1.13",
-    "5.2.7"
+    "6.0.4",
+    "5.2.13",
+    "4.2.30"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "HttpRequest.body"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 body 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -631,20 +615,19 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-jh3w-4vvf-mjgr",
+   "advisory": "GHSA-f6f8-9mx6-9mx2",
    "severity": "HIGH",
    "fixed": [
-    "3.2.20",
-    "4.1.10",
-    "4.2.3"
+    "5.0.7",
+    "4.2.14"
    ],
    "symbols": [
-    "EmailValidator",
-    "URLValidator"
+    "get_supported_language_variant"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 EmailValidator, URLValidator 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 get_supported_language_variant 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -679,17 +662,27 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-m9g8-fxxm-xg86",
+   "advisory": "GHSA-gvg8-93h5-g6qq",
    "severity": "HIGH",
    "fixed": [
-    "5.0.10",
-    "5.1.4",
-    "4.2.17"
+    "6.0.2",
+    "5.2.11",
+    "4.2.28"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "FilteredRelation",
+    "QuerySet",
+    "annotate",
+    "aggregate",
+    "extra",
+    "values",
+    "values_list",
+    "alias"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 FilteredRelation, QuerySet, aggregate, alias, annotate, extra, values, values_list 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -724,19 +717,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-mvfq-ggxm-9mc5",
+   "advisory": "GHSA-h8gc-pgj2-vjm3",
    "severity": "HIGH",
    "fixed": [
-    "6.0.4",
-    "5.2.13",
-    "4.2.30"
+    "3.2.22",
+    "4.1.12",
+    "4.2.6"
    ],
    "symbols": [
-    "ASGIRequest"
+    "django.utils"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 ASGIRequest 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -771,19 +765,18 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-mwm9-4648-f68q",
+   "advisory": "GHSA-hpr9-3m2g-3j9p",
    "severity": "HIGH",
    "fixed": [
-    "6.0.2",
-    "5.2.11",
-    "4.2.28"
+    "4.2.25",
+    "5.1.13",
+    "5.2.7"
    ],
-   "symbols": [
-    "RasterField"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 RasterField 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -818,16 +811,21 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-qg2p-9jwr-mmqf",
+   "advisory": "GHSA-jh3w-4vvf-mjgr",
    "severity": "HIGH",
    "fixed": [
-    "4.2.14",
-    "5.0.7"
+    "3.2.20",
+    "4.1.10",
+    "4.2.3"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "EmailValidator",
+    "URLValidator"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 EmailValidator, URLValidator 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -862,17 +860,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-qmf9-6jqf-j8fq",
+   "advisory": "GHSA-mvfq-ggxm-9mc5",
    "severity": "HIGH",
    "fixed": [
-    "3.2.23",
-    "4.1.13",
-    "4.2.7"
+    "6.0.4",
+    "5.2.13",
+    "4.2.30"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "ASGIRequest"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 ASGIRequest 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -907,22 +908,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-wvqv-fj8w-qmhm",
+   "advisory": "GHSA-mwm9-4648-f68q",
    "severity": "HIGH",
    "fixed": [
-    "5.2.17",
-    "6.0.8"
+    "6.0.2",
+    "5.2.11",
+    "4.2.28"
    ],
    "symbols": [
-    "django.contrib.gis.gdal.GDALRaster",
-    "GeometryField",
-    "RasterField",
-    "dict",
-    "str"
+    "RasterField"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 GDALRaster, GeometryField, RasterField, dict, str 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 RasterField 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -957,16 +956,16 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-xxj9-f6rv-m3x4",
+   "advisory": "GHSA-qg2p-9jwr-mmqf",
    "severity": "HIGH",
    "fixed": [
-    "3.2.24",
-    "4.2.10",
-    "5.0.2"
+    "4.2.14",
+    "5.0.7"
    ],
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -998,21 +997,24 @@
   },
   {
    "rank": 22,
-   "score": 1.4,
+   "score": 2.45,
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-5hgc-2vfp-mqvc",
-   "severity": "MODERATE",
+   "advisory": "GHSA-qmf9-6jqf-j8fq",
+   "severity": "HIGH",
    "fixed": [
-    "5.1.1",
-    "5.0.9",
-    "4.2.16"
+    "3.2.23",
+    "4.1.13",
+    "4.2.7"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "django.contrib"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 contrib 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1043,23 +1045,28 @@
   },
   {
    "rank": 23,
-   "score": 1.4,
+   "score": 2.45,
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-5mf9-h53q-7mhq",
-   "severity": "MODERATE",
+   "advisory": "GHSA-wvqv-fj8w-qmhm",
+   "severity": "HIGH",
    "fixed": [
-    "6.0.4",
-    "5.2.13",
-    "4.2.30"
+    "5.2.17",
+    "6.0.8"
    ],
    "symbols": [
-    "MultiPartParser"
+    "django.contrib.gis.gdal.GDALRaster",
+    "GeometryField",
+    "RasterField",
+    "dict",
+    "str",
+    "django.contrib"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 MultiPartParser 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 GDALRaster, GeometryField, RasterField, contrib, dict, str 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1090,23 +1097,22 @@
   },
   {
    "rank": 24,
-   "score": 1.4,
+   "score": 2.45,
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-6426-9fv3-65x8",
-   "severity": "MODERATE",
+   "advisory": "GHSA-xxj9-f6rv-m3x4",
+   "severity": "HIGH",
    "fixed": [
-    "6.0.2",
-    "5.2.11",
-    "4.2.28"
+    "3.2.24",
+    "4.2.10",
+    "5.0.2"
    ],
-   "symbols": [
-    "FilteredRelation"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 FilteredRelation 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1141,15 +1147,17 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-795c-9xpc-xw6g",
+   "advisory": "GHSA-5hgc-2vfp-mqvc",
    "severity": "MODERATE",
    "fixed": [
-    "5.0.8",
-    "4.2.15"
+    "5.1.1",
+    "5.0.9",
+    "4.2.16"
    ],
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -1185,17 +1193,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-7h4p-27mh-hmrw",
+   "advisory": "GHSA-5mf9-h53q-7mhq",
    "severity": "MODERATE",
    "fixed": [
-    "3.2.21",
-    "4.1.11",
-    "4.2.5"
+    "6.0.4",
+    "5.2.13",
+    "4.2.30"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "MultiPartParser"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 MultiPartParser 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1230,17 +1241,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-7xr5-9hcq-chf9",
+   "advisory": "GHSA-6426-9fv3-65x8",
    "severity": "MODERATE",
    "fixed": [
-    "5.2.2",
-    "5.1.10",
-    "4.2.22"
+    "6.0.2",
+    "5.2.11",
+    "4.2.28"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "FilteredRelation"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 FilteredRelation 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1275,16 +1289,16 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-8498-2h75-472j",
+   "advisory": "GHSA-795c-9xpc-xw6g",
    "severity": "MODERATE",
    "fixed": [
-    "5.1.4",
-    "4.2.17",
-    "5.0.10"
+    "5.0.8",
+    "4.2.15"
    ],
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -1320,17 +1334,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-8j24-cjrq-gr2m",
+   "advisory": "GHSA-7h4p-27mh-hmrw",
    "severity": "MODERATE",
    "fixed": [
-    "4.2.21",
-    "5.1.9",
-    "5.2.1"
+    "3.2.21",
+    "4.1.11",
+    "4.2.5"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1365,19 +1382,18 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-crhf-3pfg-w68w",
+   "advisory": "GHSA-7xr5-9hcq-chf9",
    "severity": "MODERATE",
    "fixed": [
-    "5.2.16",
-    "6.0.7"
+    "5.2.2",
+    "5.1.10",
+    "4.2.22"
    ],
-   "symbols": [
-    "django.contrib.gis.gdal.GDALRaster",
-    "vsi_buffer"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 GDALRaster, vsi_buffer 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1412,16 +1428,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-jh75-99hh-qvx9",
+   "advisory": "GHSA-8498-2h75-472j",
    "severity": "MODERATE",
    "fixed": [
-    "5.0.8",
-    "4.2.15"
+    "5.1.4",
+    "4.2.17",
+    "5.0.10"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1456,17 +1476,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-p3fp-8748-vqfq",
+   "advisory": "GHSA-8j24-cjrq-gr2m",
    "severity": "MODERATE",
    "fixed": [
-    "4.2.20",
-    "5.0.13",
-    "5.1.7"
+    "4.2.21",
+    "5.1.9",
+    "5.2.1"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1501,20 +1524,21 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-q238-5cxm-5c9h",
+   "advisory": "GHSA-crhf-3pfg-w68w",
    "severity": "MODERATE",
    "fixed": [
-    "5.2.17",
-    "6.0.8",
-    "6.1.1"
+    "5.2.16",
+    "6.0.7"
    ],
    "symbols": [
-    "django.contrib.gis.geos.GEOSGeometry",
-    "django.contrib.gis.forms.GeometryField"
+    "django.contrib.gis.gdal.GDALRaster",
+    "vsi_buffer",
+    "django.contrib"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 GEOSGeometry, GeometryField 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 GDALRaster, contrib, vsi_buffer 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1549,21 +1573,17 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-qcgg-j2x8-h9g8",
+   "advisory": "GHSA-jh75-99hh-qvx9",
    "severity": "MODERATE",
    "fixed": [
-    "5.1.5",
-    "5.0.11",
-    "4.2.18"
+    "5.0.8",
+    "4.2.15"
    ],
-   "symbols": [
-    "clean_ipv6_address",
-    "is_valid_ipv6_address",
-    "django.forms.GenericIPAddressField"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 GenericIPAddressField, clean_ipv6_address, is_valid_ipv6_address 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1598,16 +1618,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-r836-hh6v-rg5g",
+   "advisory": "GHSA-p3fp-8748-vqfq",
    "severity": "MODERATE",
    "fixed": [
-    "5.0.8",
-    "4.2.15"
+    "4.2.20",
+    "5.0.13",
+    "5.1.7"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1642,21 +1666,22 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-rqw2-ghq9-44m7",
+   "advisory": "GHSA-q238-5cxm-5c9h",
    "severity": "MODERATE",
    "fixed": [
-    "5.2.9",
-    "5.1.15",
-    "4.2.27"
+    "5.2.17",
+    "6.0.8",
+    "6.1.1"
    ],
    "symbols": [
-    "FilteredRelation",
-    "QuerySet.annotate",
-    "QuerySet.alias"
+    "django.contrib.gis.geos.GEOSGeometry",
+    "django.contrib.gis.forms.GeometryField",
+    "django.contrib"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 FilteredRelation, alias, annotate 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 GEOSGeometry, GeometryField, contrib 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1691,16 +1716,16 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-rrqc-c2jx-6jgv",
+   "advisory": "GHSA-r836-hh6v-rg5g",
    "severity": "MODERATE",
    "fixed": [
-    "5.1.1",
-    "5.0.9",
-    "4.2.16"
+    "5.0.8",
+    "4.2.15"
    ],
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -1736,17 +1761,22 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-vm8q-m57g-pff3",
+   "advisory": "GHSA-rqw2-ghq9-44m7",
    "severity": "MODERATE",
    "fixed": [
-    "3.2.25",
-    "4.2.11",
-    "5.0.3"
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "FilteredRelation",
+    "QuerySet.annotate",
+    "QuerySet.alias"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 FilteredRelation, alias, annotate 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1781,20 +1811,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-vrcr-9hj9-jcg6",
+   "advisory": "GHSA-rrqc-c2jx-6jgv",
    "severity": "MODERATE",
    "fixed": [
-    "5.2.9",
-    "5.1.15",
-    "4.2.27"
+    "5.1.1",
+    "5.0.9",
+    "4.2.16"
    ],
    "symbols": [
-    "django.core.serializers.xml_serializer.getInnerText",
-    "Deserializer"
+    "django.contrib"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 Deserializer, getInnerText 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 contrib 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1829,18 +1859,20 @@
    "package": "django",
    "version": "4.2",
    "ecosystem": "PyPI",
-   "advisory": "GHSA-x7q2-wr7g-xqmf",
+   "advisory": "GHSA-vm8q-m57g-pff3",
    "severity": "MODERATE",
    "fixed": [
-    "5.0.7",
-    "4.2.14"
+    "3.2.25",
+    "4.2.11",
+    "5.0.3"
    ],
    "symbols": [
-    "django.contrib.auth.backends.ModelBackend.authenticate"
+    "django.utils"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 authenticate 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -1872,6 +1904,186 @@
   {
    "rank": 41,
    "score": 1.4,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-x7q2-wr7g-xqmf",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.7",
+    "4.2.14"
+   ],
+   "symbols": [
+    "django.contrib.auth.backends.ModelBackend.authenticate",
+    "django.contrib"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 authenticate, contrib 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "challenge/admin.py",
+     "line": 1,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "challenge/apps.py",
+     "line": 1,
+     "text": "from django.apps import AppConfig"
+    },
+    {
+     "path": "challenge/management/commands/populate_challenges.py",
+     "line": 3,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/populate_labs.py",
+     "line": 1,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/startuplabs.py",
+     "line": 3,
+     "text": "from django.conf import settings"
+    }
+   ]
+  },
+  {
+   "rank": 42,
+   "score": 1.4,
+   "package": "django-allauth",
+   "version": "0.52.0",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-2jpr-83rg-v67j",
+   "severity": "MODERATE",
+   "fixed": [
+    "65.14.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 문은 없으나 설정 등에 모듈 이름이 문자열로 나옴 — 설정으로 로딩될 수 있음",
+   "evidence": [
+    {
+     "path": "introduction/urls.py",
+     "line": 6,
+     "text": "path(\"accounts/\", include(\"allauth.urls\")),"
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 48,
+     "text": "\"allauth\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 49,
+     "text": "\"allauth.account\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 50,
+     "text": "\"allauth.socialaccount\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 51,
+     "text": "\"allauth.socialaccount.providers.google\","
+    }
+   ]
+  },
+  {
+   "rank": 43,
+   "score": 1.4,
+   "package": "django-allauth",
+   "version": "0.52.0",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8m3c-c723-h4p4",
+   "severity": "MODERATE",
+   "fixed": [
+    "65.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 문은 없으나 설정 등에 모듈 이름이 문자열로 나옴 — 설정으로 로딩될 수 있음",
+   "evidence": [
+    {
+     "path": "introduction/urls.py",
+     "line": 6,
+     "text": "path(\"accounts/\", include(\"allauth.urls\")),"
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 48,
+     "text": "\"allauth\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 49,
+     "text": "\"allauth.account\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 50,
+     "text": "\"allauth.socialaccount\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 51,
+     "text": "\"allauth.socialaccount.providers.google\","
+    }
+   ]
+  },
+  {
+   "rank": 44,
+   "score": 1.4,
+   "package": "django-allauth",
+   "version": "0.52.0",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-qhmc-3mvr-f2j4",
+   "severity": "MODERATE",
+   "fixed": [
+    "65.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 문은 없으나 설정 등에 모듈 이름이 문자열로 나옴 — 설정으로 로딩될 수 있음",
+   "evidence": [
+    {
+     "path": "introduction/urls.py",
+     "line": 6,
+     "text": "path(\"accounts/\", include(\"allauth.urls\")),"
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 48,
+     "text": "\"allauth\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 49,
+     "text": "\"allauth.account\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 50,
+     "text": "\"allauth.socialaccount\","
+    },
+    {
+     "path": "pygoat/settings.py",
+     "line": 51,
+     "text": "\"allauth.socialaccount.providers.google\","
+    }
+   ]
+  },
+  {
+   "rank": 45,
+   "score": 1.4,
    "package": "requests",
    "version": "2.28.2",
    "ecosystem": "PyPI",
@@ -1880,10 +2092,14 @@
    "fixed": [
     "2.32.4"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "requests.readthedocs",
+    "requests.Session"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Session, readthedocs 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/views.py",
@@ -1893,7 +2109,7 @@
    ]
   },
   {
-   "rank": 42,
+   "rank": 46,
    "score": 1.4,
    "package": "requests",
    "version": "2.28.2",
@@ -1910,6 +2126,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 Session, requests 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1920,7 +2137,7 @@
    ]
   },
   {
-   "rank": 43,
+   "rank": 47,
    "score": 1.4,
    "package": "requests",
    "version": "2.28.2",
@@ -1932,11 +2149,13 @@
    ],
    "symbols": [
     "requests.utils.extract_zipped_paths",
-    "extract_zipped_paths"
+    "extract_zipped_paths",
+    "requests.utils"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 extract_zipped_paths 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 extract_zipped_paths, utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/views.py",
@@ -1946,36 +2165,7 @@
    ]
   },
   {
-   "rank": 44,
-   "score": 1.4,
-   "package": "requests",
-   "version": "2.28.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-j8r2-6x86-q33q",
-   "severity": "MODERATE",
-   "fixed": [
-    "2.31.0",
-    "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
-   ],
-   "symbols": [
-    "rebuild_proxies",
-    "proxy_manager_for",
-    "proxy_headers",
-    "allow_redirects"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 allow_redirects, proxy_headers, proxy_manager_for, rebuild_proxies 의 참조·호출 근거 줄은 없음",
-   "evidence": [
-    {
-     "path": "challenge/views.py",
-     "line": 23,
-     "text": "import requests"
-    }
-   ]
-  },
-  {
-   "rank": 45,
+   "rank": 48,
    "score": 1.0,
    "package": "black",
    "version": "26.1.0",
@@ -1988,11 +2178,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 46,
+   "rank": 49,
    "score": 1.0,
    "package": "certifi",
    "version": "2022.12.7",
@@ -2009,11 +2200,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 47,
+   "rank": 50,
    "score": 1.0,
    "package": "flask",
    "version": "2.3.3",
@@ -2029,6 +2221,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 in, session 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -2059,7 +2252,7 @@
    ]
   },
   {
-   "rank": 48,
+   "rank": 51,
    "score": 1.0,
    "package": "pillow",
    "version": "12.1.0",
@@ -2119,11 +2312,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 49,
+   "rank": 52,
    "score": 1.0,
    "package": "pillow",
    "version": "12.1.0",
@@ -2156,11 +2350,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 50,
+   "rank": 53,
    "score": 1.0,
    "package": "pillow",
    "version": "12.1.0",
@@ -2201,11 +2396,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 51,
+   "rank": 54,
    "score": 1.0,
    "package": "pillow",
    "version": "12.1.0",
@@ -2236,11 +2432,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 52,
+   "rank": 55,
    "score": 1.0,
    "package": "pillow",
    "version": "12.1.0",
@@ -2266,11 +2463,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 53,
+   "rank": 56,
    "score": 1.0,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -2296,11 +2494,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 54,
+   "rank": 57,
    "score": 1.0,
    "package": "pyyaml",
    "version": "5.1",
@@ -2314,11 +2513,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 55,
+   "rank": 58,
    "score": 1.0,
    "package": "pyyaml",
    "version": "5.1",
@@ -2333,11 +2533,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 56,
+   "rank": 59,
    "score": 1.0,
    "package": "pyyaml",
    "version": "5.1",
@@ -2352,11 +2553,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 57,
+   "rank": 60,
    "score": 0.7,
    "package": "black",
    "version": "26.1.0",
@@ -2369,11 +2571,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 58,
+   "rank": 61,
    "score": 0.7,
    "package": "black",
    "version": "26.1.0",
@@ -2385,15 +2588,17 @@
    ],
    "symbols": [
     "use_pyproject",
-    "pyproject.toml"
+    "pyproject.toml",
+    "black.required"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 59,
+   "rank": 62,
    "score": 0.7,
    "package": "certifi",
    "version": "2022.12.7",
@@ -2406,11 +2611,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 60,
+   "rank": 63,
    "score": 0.7,
    "package": "cryptography",
    "version": "39.0.1",
@@ -2423,11 +2629,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 61,
+   "rank": 64,
    "score": 0.7,
    "package": "cryptography",
    "version": "39.0.1",
@@ -2440,11 +2647,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 62,
+   "rank": 65,
    "score": 0.7,
    "package": "cryptography",
    "version": "39.0.1",
@@ -2463,11 +2671,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 63,
+   "rank": 66,
    "score": 0.7,
    "package": "cryptography",
    "version": "39.0.1",
@@ -2486,11 +2695,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 64,
+   "rank": 67,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2553,11 +2763,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 65,
+   "rank": 68,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2608,11 +2819,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 66,
+   "rank": 69,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2627,11 +2839,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 67,
+   "rank": 70,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2655,11 +2868,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 68,
+   "rank": 71,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2677,11 +2891,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 69,
+   "rank": 72,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2707,11 +2922,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 70,
+   "rank": 73,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2763,11 +2979,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 71,
+   "rank": 74,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2799,11 +3016,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 72,
+   "rank": 75,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2859,11 +3077,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 73,
+   "rank": 76,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2891,11 +3110,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 74,
+   "rank": 77,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2922,15 +3142,17 @@
     "opj_event_mgr_t",
     "opj_msg_callback",
     "opj_event_msg",
-    "rip"
+    "rip",
+    "pillow.libs"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 75,
+   "rank": 78,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -2984,11 +3206,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 76,
+   "rank": 79,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3013,11 +3236,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 77,
+   "rank": 80,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3038,11 +3262,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 78,
+   "rank": 81,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3063,11 +3288,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 79,
+   "rank": 82,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3123,15 +3349,17 @@
     "ImageWidth",
     "ImageLength",
     "int",
-    "TiffImagePlugin"
+    "TiffImagePlugin",
+    "either"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 80,
+   "rank": 83,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3143,15 +3371,17 @@
    ],
    "symbols": [
     "Image.open",
-    "formats"
+    "formats",
+    "pillow.readthedocs"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 81,
+   "rank": 84,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3172,11 +3402,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 82,
+   "rank": 85,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3225,11 +3456,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 83,
+   "rank": 86,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3249,11 +3481,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 84,
+   "rank": 87,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3319,11 +3552,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 85,
+   "rank": 88,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3336,11 +3570,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 86,
+   "rank": 89,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3355,11 +3590,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 87,
+   "rank": 90,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3379,11 +3615,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 88,
+   "rank": 91,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3428,11 +3665,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 89,
+   "rank": 92,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3454,11 +3692,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 90,
+   "rank": 93,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3485,11 +3724,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 91,
+   "rank": 94,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3508,11 +3748,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 92,
+   "rank": 95,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3538,11 +3779,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 93,
+   "rank": 96,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3570,11 +3812,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 94,
+   "rank": 97,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3587,11 +3830,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 95,
+   "rank": 98,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3635,11 +3879,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 96,
+   "rank": 99,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3657,11 +3902,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 97,
+   "rank": 100,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3671,14 +3917,17 @@
    "fixed": [
     "12.2.0"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "pillow.readthedocs"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 98,
+   "rank": 101,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3702,11 +3951,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 99,
+   "rank": 102,
    "score": 0.7,
    "package": "pillow",
    "version": "12.1.0",
@@ -3777,11 +4027,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 100,
+   "rank": 103,
    "score": 0.7,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -3799,11 +4050,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 101,
+   "rank": 104,
    "score": 0.7,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -3820,11 +4072,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 102,
+   "rank": 105,
    "score": 0.7,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -3851,11 +4104,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 103,
+   "rank": 106,
    "score": 0.7,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -3894,11 +4148,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 104,
+   "rank": 107,
    "score": 0.7,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -3911,11 +4166,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 105,
+   "rank": 108,
    "score": 0.7,
    "package": "pyjwt",
    "version": "2.4.0",
@@ -3926,11 +4182,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 106,
+   "rank": 109,
    "score": 0.7,
    "package": "sqlparse",
    "version": "0.3.1",
@@ -3940,14 +4197,18 @@
    "fixed": [
     "0.5.0"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "sqlparse.parse",
+    "sqlparse.exceptions"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 107,
+   "rank": 110,
    "score": 0.7,
    "package": "sqlparse",
    "version": "0.3.1",
@@ -3965,15 +4226,17 @@
     "token_next_by",
     "token_not_matching",
     "_group_matching",
-    "parse"
+    "parse",
+    "sqlparse.format"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 108,
+   "rank": 111,
    "score": 0.7,
    "package": "sqlparse",
    "version": "0.3.1",
@@ -3992,15 +4255,18 @@
     "sqlparse.parse",
     "sqlparse.format",
     "sqlparse.split",
-    "Dockerfile"
+    "Dockerfile",
+    "sqlparse.exceptions",
+    "sqlparse.__version__"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 109,
+   "rank": 112,
    "score": 0.7,
    "package": "sqlparse",
    "version": "0.3.1",
@@ -4039,15 +4305,19 @@
     "format",
     "reindent",
     "_flatten_up_to_token",
-    "test_nested_paren_within_cap_under_50ms"
+    "test_nested_paren_within_cap_under_50ms",
+    "sqlparse.format",
+    "sqlparse.split",
+    "sqlparse.exceptions"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 110,
+   "rank": 113,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4063,15 +4333,17 @@
     "br",
     "zstd",
     "stream",
-    "urllib3.HTTPResponse"
+    "urllib3.HTTPResponse",
+    "urllib3.readthedocs"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 111,
+   "rank": 114,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4085,15 +4357,17 @@
     "gzip",
     "deflate",
     "br",
-    "zstd"
+    "zstd",
+    "urllib3.readthedocs"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 112,
+   "rank": 115,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4114,11 +4388,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 113,
+   "rank": 116,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4128,14 +4403,17 @@
    "fixed": [
     "2.6.0"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "urllib3.readthedocs"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 114,
+   "rank": 117,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4158,11 +4436,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 115,
+   "rank": 118,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4180,11 +4459,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 116,
+   "rank": 119,
    "score": 0.7,
    "package": "urllib3",
    "version": "1.26.9",
@@ -4194,14 +4474,18 @@
    "fixed": [
     "2.8.0"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "urllib3.readthedocs",
+    "urllib3.response"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 117,
+   "rank": 120,
    "score": 0.7,
    "package": "werkzeug",
    "version": "2.1.2",
@@ -4214,11 +4498,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 118,
+   "rank": 121,
    "score": 0.7,
    "package": "werkzeug",
    "version": "2.1.2",
@@ -4236,11 +4521,12 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 119,
+   "rank": 122,
    "score": 0.7,
    "package": "werkzeug",
    "version": "2.3.7",
@@ -4253,11 +4539,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 120,
+   "rank": 123,
    "score": 0.4,
    "package": "cryptography",
    "version": "39.0.1",
@@ -4270,11 +4557,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 121,
+   "rank": 124,
    "score": 0.4,
    "package": "cryptography",
    "version": "39.0.1",
@@ -4287,11 +4575,12 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
   {
-   "rank": 122,
+   "rank": 125,
    "score": 0.4,
    "package": "cryptography",
    "version": "39.0.1",
@@ -4304,61 +4593,12 @@
    ],
    "symbols": [
     "load_pem_pkcs7_certificates",
-    "load_der_pkcs7_certificates"
+    "load_der_pkcs7_certificates",
+    "cryptography.hazmat"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 123,
-   "score": 0.4,
-   "package": "django-allauth",
-   "version": "0.52.0",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-2jpr-83rg-v67j",
-   "severity": "MODERATE",
-   "fixed": [
-    "65.14.1"
-   ],
-   "symbols": [],
-   "symbol_source": "none",
-   "verdict": "UNSEEN",
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 124,
-   "score": 0.4,
-   "package": "django-allauth",
-   "version": "0.52.0",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-8m3c-c723-h4p4",
-   "severity": "MODERATE",
-   "fixed": [
-    "65.13.0"
-   ],
-   "symbols": [],
-   "symbol_source": "none",
-   "verdict": "UNSEEN",
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 125,
-   "score": 0.4,
-   "package": "django-allauth",
-   "version": "0.52.0",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-qhmc-3mvr-f2j4",
-   "severity": "MODERATE",
-   "fixed": [
-    "65.13.0"
-   ],
-   "symbols": [],
-   "symbol_source": "none",
-   "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4380,6 +4620,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4400,6 +4641,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4419,6 +4661,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4436,6 +4679,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4455,6 +4699,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4474,6 +4719,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4494,6 +4740,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4518,10 +4765,12 @@
     "prepare_token_revocation_request",
     "da775de",
     "b85f89a",
-    "package.hello_world"
+    "package.hello_world",
+    "oauthlib.oauth2"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4547,6 +4796,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4564,6 +4814,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4589,6 +4840,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4616,6 +4868,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4643,6 +4896,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4667,6 +4921,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4694,6 +4949,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4719,6 +4975,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4740,6 +4997,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4755,10 +5013,12 @@
     "13.0.0"
    ],
    "symbols": [
-    "aligned_linesize"
+    "aligned_linesize",
+    "pillow.readthedocs"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4796,6 +5056,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4817,6 +5078,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4838,6 +5100,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4873,6 +5136,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4890,6 +5154,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4907,6 +5172,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4953,6 +5219,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -4993,6 +5260,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5010,6 +5278,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5056,6 +5325,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5078,6 +5348,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5120,6 +5391,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5150,10 +5422,14 @@
     "http.DefaultTransport",
     "HttpDocumentRetriever",
     "PyJWKClient.__init__",
-    "PyJWKClientError"
+    "PyJWKClientError",
+    "pyjwt.encode",
+    "pyjwt.get_unverified_header",
+    "pyjwt.decode"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5175,6 +5451,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5194,6 +5471,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5220,6 +5498,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5237,6 +5516,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5251,9 +5531,12 @@
    "fixed": [
     "0.6.0"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "sqlparse.format"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5271,10 +5554,12 @@
    "symbols": [
     "ReindentFilter",
     "ReindentFilter._get_offset",
-    "_flatten_up_to_token"
+    "_flatten_up_to_token",
+    "sqlparse.format"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5297,6 +5582,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5317,6 +5603,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5336,6 +5623,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5354,10 +5642,14 @@
     "Retry",
     "PoolManager",
     "retries",
-    "request"
+    "request",
+    "urllib3.request",
+    "urllib3.PoolManager",
+    "urllib3.Retry"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5378,6 +5670,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5398,6 +5691,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5418,6 +5712,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5438,6 +5733,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5458,6 +5754,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5478,6 +5775,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5498,6 +5796,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5518,6 +5817,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5538,6 +5838,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5558,6 +5859,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5578,6 +5880,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5598,6 +5901,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5618,6 +5922,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5638,6 +5943,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5659,6 +5965,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -5677,11 +5984,13 @@
    ],
    "symbols": [
     "django.contrib.auth.handlers.modwsgi.check_password",
-    "mod_wsgi"
+    "mod_wsgi",
+    "django.contrib"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 check_password, mod_wsgi 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 check_password, contrib, mod_wsgi 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -5728,6 +6037,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 ASGIRequest 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -5775,6 +6085,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 UpdateCacheMiddleware, cache_page 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -5821,11 +6132,13 @@
     "django.utils.text.Truncator.chars",
     "Truncator.words",
     "truncatechars_html",
-    "truncatewords_html"
+    "truncatewords_html",
+    "django.utils"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 chars, truncatechars_html, truncatewords_html, words 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 chars, truncatechars_html, truncatewords_html, utils, words 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -5867,11 +6180,13 @@
     "6.0.6"
    ],
    "symbols": [
-    "django.middleware.cache.UpdateCacheMiddleware"
+    "django.middleware.cache.UpdateCacheMiddleware",
+    "django.middleware"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 UpdateCacheMiddleware 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 UpdateCacheMiddleware, middleware 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -5914,11 +6229,13 @@
    ],
    "symbols": [
     "django.utils.cache.has_vary_header",
-    "Vary"
+    "Vary",
+    "django.utils"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 Vary, has_vary_header 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Vary, has_vary_header, utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -5960,11 +6277,13 @@
     "6.0.6"
    ],
    "symbols": [
-    "django.http.HttpRequest.get_signed_cookie"
+    "django.http.HttpRequest.get_signed_cookie",
+    "django.http"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 get_signed_cookie 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 get_signed_cookie, http 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -6011,6 +6330,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 umask 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -6058,6 +6378,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 list_editable 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -6105,6 +6426,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 GenericInlineModelAdmin 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -6147,10 +6469,13 @@
     "5.1.13",
     "5.2.7"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",
@@ -6191,10 +6516,13 @@
     "49.0.0"
    ],
    "symbols": [
-    "build_chain_inner"
+    "build_chain_inner",
+    "cryptography.hazmat",
+    "cryptography.x509"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6211,10 +6539,13 @@
    ],
    "symbols": [
     "foo.example.com",
-    "bar.example.com"
+    "bar.example.com",
+    "cryptography.x509",
+    "cryptography.hazmat"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6233,6 +6564,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6250,6 +6582,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6267,6 +6600,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6286,6 +6620,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6303,6 +6638,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6320,6 +6656,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -6338,6 +6675,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   }

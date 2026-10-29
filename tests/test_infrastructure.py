@@ -166,3 +166,11 @@ def test_osv_prefetch_fills_cache_in_parallel_and_skips_failures(tmp_path):
     comps = [Component(n, "1", "npm") for n in ("a", "b", "bad")]
     p.prefetch(comps)
     assert len(list(tmp_path.iterdir())) == 2
+
+
+def test_repo_source_merges_weak_refs_and_mentions_from_both_languages(tmp_path):
+    from sbomreach.infrastructure.repo_source import RepoSource
+    (tmp_path / "a.py").write_text("APPS = ['allauth']\ndef f(r):\n    return r.body\n")
+    (tmp_path / "b.js").write_text("function h(req, res) { return res.redirect('/x'); }\n")
+    idx = RepoSource().index(str(tmp_path))
+    assert "allauth" in idx.mentions and "body" in idx.weak_refs and "redirect" in idx.weak_refs

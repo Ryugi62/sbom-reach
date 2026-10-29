@@ -20,4 +20,8 @@ class RepoSource:
             py.imports.setdefault(k, []).extend(v)
         for k, v in js.refs.items():
             py.refs.setdefault(k, []).extend(v)
+        for k, v in js.weak_refs.items():
+            py.weak_refs.setdefault(k, []).extend(v)
+        for k, v in js.mentions.items():
+            py.mentions.setdefault(k, []).extend(v)
         return py

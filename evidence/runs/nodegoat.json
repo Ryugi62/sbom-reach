@@ -4,7 +4,7 @@
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 381,
- "elapsed_sec": 0.9,
+ "elapsed_sec": 1.33,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -17,7 +17,8 @@
   "alerts": 90,
   "REACHED": 2,
   "USED": 13,
-  "UNSEEN": 75
+  "UNSEEN": 75,
+  "REACHED_weak": 0
  },
  "alerts": [
   {
@@ -36,6 +37,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 marked 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -61,6 +63,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 marked 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -82,11 +85,13 @@
     "1.12.1"
    ],
    "symbols": [
-    "underscore"
+    "underscore",
+    "template"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 underscore 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 template, underscore 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "config/config.js",
@@ -112,6 +117,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 gzip 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -135,6 +141,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -156,11 +163,13 @@
     "4.0.10"
    ],
    "symbols": [
-    "inline.reflinkSearch"
+    "inline.reflinkSearch",
+    "marked.parse"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 reflinkSearch 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 parse, reflinkSearch 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "server.js",
@@ -181,11 +190,13 @@
     "4.0.10"
    ],
    "symbols": [
-    "block.def"
+    "block.def",
+    "marked.parse"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 def 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 def, parse 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "server.js",
@@ -210,6 +221,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 mongodb 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -236,6 +248,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -263,6 +276,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 flatten, isEqual, parse 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -292,6 +306,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 encodeurl, location, redirect 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -320,6 +335,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -343,6 +359,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -366,6 +383,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -383,6 +401,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -403,6 +422,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -423,6 +443,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -443,6 +464,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -463,6 +485,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -483,6 +506,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -503,6 +527,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -521,6 +546,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -539,6 +565,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -559,6 +586,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -577,10 +605,12 @@
    ],
    "symbols": [
     "expand_",
-    "post"
+    "post",
+    "brace-expansion.expand"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -615,6 +645,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -639,10 +670,12 @@
     "expand_",
     "minimatch",
     "glob",
-    "maxLength"
+    "maxLength",
+    "brace-expansion.expand"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -674,6 +707,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -703,6 +737,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -722,6 +757,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -742,6 +778,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -764,6 +801,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -781,6 +819,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -798,6 +837,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -818,6 +858,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -835,6 +876,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -867,6 +909,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -894,6 +937,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -924,6 +968,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -943,6 +988,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -960,6 +1006,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -977,6 +1024,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -999,6 +1047,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1016,6 +1065,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1041,6 +1091,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1060,6 +1111,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1079,6 +1131,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1098,6 +1151,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1117,6 +1171,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1133,10 +1188,12 @@
    ],
    "symbols": [
     "this.cwd",
+    "tar.extract",
     "tarHeader"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1158,10 +1215,12 @@
     "preservePaths",
     "onentry",
     "entry.path",
-    "filter"
+    "filter",
+    "tar.x"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1183,6 +1242,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1206,6 +1266,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1228,10 +1289,13 @@
     "entry.linkpath",
     "path.resolve",
     "this.cwd",
-    "fs.symlink"
+    "fs.symlink",
+    "tar.Header",
+    "tar.x"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1252,6 +1316,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1277,6 +1342,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1298,10 +1364,12 @@
     "entry",
     "entry.path",
     "fs.realpath",
-    "path.resolve"
+    "path.resolve",
+    "tar.x"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1325,6 +1393,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1341,9 +1410,12 @@
     "5.0.10",
     "6.1.9"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "tar.x"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1378,10 +1450,13 @@
     "while",
     "Header",
     "Parser",
-    "mkdir"
+    "mkdir",
+    "tar.x",
+    "tar.gz"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1401,10 +1476,12 @@
    ],
    "symbols": [
     "stat",
-    "filter"
+    "filter",
+    "tar.x"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1422,10 +1499,13 @@
    "symbols": [
     "ss",
     "PathReservations",
-    "SymbolicLink"
+    "SymbolicLink",
+    "tar.Header",
+    "tar.Unpack"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1445,6 +1525,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1462,10 +1543,13 @@
     "5.0.5"
    ],
    "symbols": [
-    "y18n"
+    "y18n",
+    "y18n.setLocale",
+    "y18n.updateLocale"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1490,6 +1574,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1518,6 +1603,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1535,6 +1621,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1554,6 +1641,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1573,6 +1661,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1593,6 +1682,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1615,6 +1705,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1637,6 +1728,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1659,6 +1751,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1676,6 +1769,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1709,6 +1803,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1726,10 +1821,12 @@
    "symbols": [
     "arrayLimit",
     "parameterLimit",
-    "options.arrayLimit"
+    "options.arrayLimit",
+    "qs.parse"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1744,9 +1841,12 @@
    "fixed": [
     "6.2.1"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "tar.gz"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1792,6 +1892,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1836,6 +1937,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1853,10 +1955,12 @@
    "symbols": [
     "parseKV",
     "path",
-    "linkpath"
+    "linkpath",
+    "tar.extract"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1879,6 +1983,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 NaN, limit, parse 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1905,6 +2010,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 redirect 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1933,6 +2039,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1955,6 +2062,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1975,6 +2083,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1998,6 +2107,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2021,6 +2131,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2040,6 +2151,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2059,6 +2171,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2079,6 +2192,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   }

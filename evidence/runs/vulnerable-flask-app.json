@@ -4,7 +4,7 @@
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 28,
- "elapsed_sec": 1.43,
+ "elapsed_sec": 0.92,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -17,7 +17,8 @@
   "alerts": 89,
   "REACHED": 6,
   "USED": 48,
-  "UNSEEN": 35
+  "UNSEEN": 35,
+  "REACHED_weak": 0
  },
  "alerts": [
   {
@@ -47,6 +48,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 InvalidAlgorithmError, InvalidKeyError, PyJWK, cryptography, decode, enforce_minimum_key_length, is_pem_format, key_bytes, load_pem_public_key, prepare_key, superadmin 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -78,6 +80,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 load, safe_load 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -106,6 +109,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 _validate_headers, cnf, crit, decode 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -160,6 +164,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 HMACAlgorithm, InsecureKeyLengthWarning, PyJWK, PyJWKClient, PyJWKSet, PyJWT, __init__, _verify_signature, af8181ca0bec5e6b372fbba9afbe23702b787ceb, decode, from_jwk, get_signing_key_from_jwt, k, kid, master, oct, prepare_key, pyjwt, rst, sub, test_hmac_from_jwk_rejects_empty_k, test_hmac_from_jwk_should_raise_exception_if_empty_json, test_hmac_prepare_key_rejects_empty_key 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -192,6 +197,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
+   "weak": false,
    "reason": "취약 심볼 CurlAsyncHTTPClient, HTTPServer, max_body_size 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
@@ -228,11 +234,14 @@
     "ValueError",
     "HTTPInputError",
     "httputil_test",
-    "web_test"
+    "web_test",
+    "tornado.escape",
+    "tornado.web"
    ],
    "symbol_source": "auto",
    "verdict": "REACHED",
-   "reason": "취약 심볼 Application, HTTPInputError, IOLoop, ValueError, __init__, httputil_test, max_arguments, max_header_size, max_num_fields, parse_body_arguments, parse_qs, parse_qs_bytes, parse_qsl, set_parse_body_config, web_test 의 참조·호출 근거 줄이 있음",
+   "weak": false,
+   "reason": "취약 심볼 Application, HTTPInputError, IOLoop, ValueError, __init__, escape, httputil_test, max_arguments, max_header_size, max_num_fields, parse_body_arguments, parse_qs, parse_qs_bytes, parse_qsl, set_parse_body_config, web, web_test 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
      "path": "app.py",
@@ -257,6 +266,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 full_load 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -280,6 +290,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -303,6 +314,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -327,11 +339,14 @@
     "afd63b16170b7c047f5758eb910c416511e9c965"
    ],
    "symbols": [
-    "session"
+    "session",
+    "flask.palletsprojects",
+    "flask.session"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 session 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 palletsprojects, session 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -358,6 +373,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 PyJWKClient, kid, master 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -389,6 +405,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 get_default_algorithms 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -417,6 +434,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -443,6 +461,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -471,6 +490,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -500,6 +520,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 Authorization, Cookie, CurlAsyncHTTPClient, SimpleAsyncHTTPClient, libcurl 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -533,6 +554,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -566,6 +588,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -600,11 +623,15 @@
     "os.path.abspath",
     "link",
     "os.path.exists",
-    "os.path.isfile"
+    "os.path.isfile",
+    "both",
+    "tornado.web",
+    "tornado.ioloop"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 abspath, exists, isfile, link 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 abspath, both, exists, ioloop, isfile, link, web 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -640,6 +667,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 add, max_header_size 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -687,11 +715,13 @@
     "CurlAsyncHTTPClient",
     "sys.path",
     "victim_curl_rss.log",
-    "initialize"
+    "initialize",
+    "tornado.curl_httpclient"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 BytesIO, CurlAsyncHTTPClient, MAXFILESIZE, SimpleAsyncHTTPClient, _GzipMessageDelegate, fetch, initialize, log, max_body_size, max_buffer_size, path, request_timeout, streaming_callback, write 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BytesIO, CurlAsyncHTTPClient, MAXFILESIZE, SimpleAsyncHTTPClient, _GzipMessageDelegate, curl_httpclient, fetch, initialize, log, max_body_size, max_buffer_size, path, request_timeout, streaming_callback, write 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -727,6 +757,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 _parseparam, count 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -771,6 +802,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 AsyncHTTPClient, ValueError, _execute, _parse_body, e530031405e2154654dedc4c84d5656b557ea310, max_buffer_size, max_num_fields, parse_body_arguments, parse_qs, parse_qs_bytes 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -803,11 +835,13 @@
    ],
    "symbols": [
     "max_body_size",
-    "tornado.httputil.ParseMultipartConfig"
+    "tornado.httputil.ParseMultipartConfig",
+    "tornado.httputil"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 ParseMultipartConfig, max_body_size 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 ParseMultipartConfig, httputil, max_body_size 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -840,6 +874,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -864,6 +899,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -887,6 +923,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -915,6 +952,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 data, files, form 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -941,6 +979,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -969,6 +1008,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 PyJWKClient, ba4853a, kid, master 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1001,6 +1041,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 e6f48401001609a8f99e71fcaf355fb895d508a8, jti, master 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1031,6 +1072,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 is_pem_format 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1059,6 +1101,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -1084,10 +1127,13 @@
    "fixed": [
     "6.4.1"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "tornado.web"
+   ],
+   "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 web 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -1125,6 +1171,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 domain, path, samesite, set_cookie 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1161,6 +1208,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 max_parts, parse_multipart_form_data 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1194,6 +1242,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -1229,6 +1278,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 max_header_size 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1265,11 +1315,13 @@
     "tornado.web.HTTPError",
     "HTTPError",
     "set_status",
-    "log_message"
+    "log_message",
+    "tornado.web"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 HTTPError, log_message, reason, set_status 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 HTTPError, log_message, reason, set_status, web 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -1312,11 +1364,14 @@
     "proxy_username",
     "request.network_interface",
     "HTTPRequest",
-    "SimpleAsyncHTTPClient"
+    "SimpleAsyncHTTPClient",
+    "tornado.httpclient",
+    "tornado.curl_httpclient"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 CurlAsyncHTTPClient, HTTPRequest, SimpleAsyncHTTPClient, _curl_setup_request, _finish, _process_queue, client_cert, else, network_interface, proxy_host, proxy_username, pycurl, reset 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 CurlAsyncHTTPClient, HTTPRequest, SimpleAsyncHTTPClient, _curl_setup_request, _finish, _process_queue, client_cert, curl_httpclient, else, httpclient, network_interface, proxy_host, proxy_username, pycurl, reset 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -1352,6 +1407,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 _, int 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1389,6 +1445,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 SimpleAsyncHTTPClient, data_received, max_body_size 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1426,6 +1483,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 AsyncHTTPClient, CurlAsyncHTTPClient 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1462,6 +1520,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1488,6 +1547,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1514,6 +1574,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 isabs, safe_join 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1540,6 +1601,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1566,6 +1628,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -1590,6 +1653,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -1614,6 +1678,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1632,6 +1697,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1649,6 +1715,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1666,6 +1733,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1683,6 +1751,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1701,6 +1770,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1723,6 +1793,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1744,6 +1815,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1762,6 +1834,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1782,10 +1855,12 @@
     "br",
     "zstd",
     "stream",
-    "urllib3.HTTPResponse"
+    "urllib3.HTTPResponse",
+    "urllib3.readthedocs"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1807,6 +1882,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1829,6 +1905,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1843,9 +1920,13 @@
    "fixed": [
     "2.8.0"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "urllib3.readthedocs",
+    "urllib3.response"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1867,6 +1948,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1887,6 +1969,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1906,6 +1989,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1923,6 +2007,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1942,6 +2027,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1961,6 +2047,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -1981,6 +2068,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2001,6 +2089,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2024,6 +2113,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2041,6 +2131,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2056,9 +2147,13 @@
     "4.9.1",
     "86368e9cf70a0ad23cccd5ee32de847149af0c6f"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "iterwalk",
+    "canonicalize"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2077,6 +2172,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2091,9 +2187,13 @@
    "fixed": [
     "2.32.4"
    ],
-   "symbols": [],
-   "symbol_source": "none",
+   "symbols": [
+    "requests.readthedocs",
+    "requests.Session"
+   ],
+   "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2115,6 +2215,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2131,10 +2232,12 @@
    ],
    "symbols": [
     "requests.utils.extract_zipped_paths",
-    "extract_zipped_paths"
+    "extract_zipped_paths",
+    "requests.utils"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2154,10 +2257,12 @@
     "rebuild_proxies",
     "proxy_manager_for",
     "proxy_headers",
-    "allow_redirects"
+    "allow_redirects",
+    "requests.get"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2178,6 +2283,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2197,6 +2303,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2215,6 +2322,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2233,10 +2341,14 @@
     "Retry",
     "PoolManager",
     "retries",
-    "request"
+    "request",
+    "urllib3.request",
+    "urllib3.PoolManager",
+    "urllib3.Retry"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2254,6 +2366,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2274,6 +2387,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
+   "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
    "evidence": []
   },
@@ -2294,6 +2408,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 in, session 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -2317,6 +2432,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
@@ -2349,6 +2465,7 @@
    ],
    "symbol_source": "auto",
    "verdict": "USED",
+   "weak": false,
    "reason": "패키지는 import되나 취약 심볼 mask, speedups, websocket_mask 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
@@ -2386,11 +2503,13 @@
     "RequestHandler.redirect",
     "redirect",
     "StaticFileHandler",
-    "self.redirect"
+    "self.redirect",
+    "tornado.web"
    ],
    "symbol_source": "auto",
    "verdict": "USED",
-   "reason": "패키지는 import되나 취약 심볼 RedirectHandler, StaticFileHandler, or, redirect 의 참조·호출 근거 줄은 없음",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 RedirectHandler, StaticFileHandler, or, redirect, web 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "app.py",
@@ -2424,6 +2543,7 @@
    "symbols": [],
    "symbol_source": "none",
    "verdict": "USED",
+   "weak": false,
    "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
    "evidence": [
     {
