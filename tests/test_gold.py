@@ -33,3 +33,11 @@ def test_gold_has_all_three_classes_and_two_languages():
     r = rows()
     assert {x["verdict"] for x in r} == {"REACHED", "USED", "UNSEEN"}
     assert {"vulnerable-flask-app", "nodejs-goof"} <= {x["repo"] for x in r}
+
+
+def test_holdout_is_disjoint_from_dev_gold_and_sizeable():
+    dev = {(x["repo"], x["package"], x["version"], x["advisory"]) for x in rows()}
+    hold = [json.loads(x) for x in open(os.path.join(EV, "gold-holdout.jsonl"), encoding="utf-8") if x.strip()]
+    keys = {(x["repo"], x["package"], x["version"], x["advisory"]) for x in hold}
+    assert len(hold) >= 30 and not (dev & keys)
+    assert all("홀드아웃" in x["labeler"] and "AI" in x["labeler"] for x in hold)

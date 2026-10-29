@@ -107,7 +107,7 @@ def cmd_remediate(a):
 
 def cmd_eval(a):
     gold = {}
-    for line in open(os.path.join(EV, "gold.jsonl"), encoding="utf-8"):
+    for line in open(os.path.join(EV, a.gold), encoding="utf-8"):
         if line.strip():
             g = json.loads(line)
             gold[(g["repo"], f'{g["package"].lower()}@{g["version"]}|{g["advisory"]}')] = g["verdict"]
@@ -118,7 +118,7 @@ def cmd_eval(a):
             for x in json.load(open(p, encoding="utf-8"))["alerts"]:
                 pred[(name, f'{x["package"].lower()}@{x["version"]}|{x["advisory"]}')] = x["verdict"]
     md = render_accuracy_md(agreement(gold, pred))
-    open(os.path.join(EV, "accuracy.md"), "w", encoding="utf-8").write(md + "\n")
+    open(os.path.join(EV, a.out), "w", encoding="utf-8").write(md + "\n")
     print(md)
 
 
@@ -132,7 +132,10 @@ def main(argv=None):
             s.add_argument("--scope", default="reached", choices=["reached", "reached+used", "all"])
             s.add_argument("--no-llm", action="store_true")
         s.set_defaults(fn=f)
-    sub.add_parser("eval").set_defaults(fn=cmd_eval)
+    e = sub.add_parser("eval")
+    e.add_argument("--gold", default="gold.jsonl")
+    e.add_argument("--out", default="accuracy.md")
+    e.set_defaults(fn=cmd_eval)
     a = p.parse_args(argv)
     a.fn(a)
 
