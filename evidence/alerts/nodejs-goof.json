@@ -1,0 +1,4902 @@
+{
+ "target": "nodejs-goof",
+ "commit": "add14ba",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3v6h-hqm4-2rg6",
+   "aliases": [
+    "CVE-2018-1002204"
+   ],
+   "severity": "MODERATE",
+   "summary": "Arbitrary File Write in adm-zip",
+   "fixed": [
+    "0.4.11"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-7q85-xj36-vmfc",
+   "aliases": [
+    "CVE-2026-77301"
+   ],
+   "severity": "HIGH",
+   "summary": "adm-zip: Uncontrolled memory allocation via the declared uncompressed size (DoS)",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "size",
+    "getData"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8238-w5pm-2374",
+   "aliases": [
+    "CVE-2026-114102"
+   ],
+   "severity": "HIGH",
+   "summary": "adm-zip: Unhandled error event in async DEFLATE decompression crashes Node.js process (DoS)",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "inflateAsync",
+    "EventEmitter",
+    "readFileAsync",
+    "readAsTextAsync",
+    "extractAllToAsync",
+    "ZipEntry.getDataAsync",
+    "Buffer.alloc",
+    "maxOutputLength",
+    "zlib.inflateRawSync",
+    "zlib.createInflateRaw",
+    "InflateRaw",
+    "callback",
+    "err"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-c6fg-446q-cg94",
+   "aliases": [
+    "CVE-2026-114103"
+   ],
+   "severity": "MODERATE",
+   "summary": "adm-zip: getDataAsync() bypasses the maxOutputLength size guard enforced by the synchronous getData() path",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "maxOutputLength",
+    "getData",
+    "getDataAsync",
+    "inflateRawSync",
+    "createInflateRaw"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-j5f4-cc29-5x44",
+   "aliases": [
+    "CVE-2026-102282"
+   ],
+   "severity": "HIGH",
+   "summary": "adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -> local privilege escalation",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "fs.chmodSync",
+    "extractAllTo",
+    "extractEntryTo"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-p634-w6r4-rjp2",
+   "aliases": [
+    "CVE-2026-114104"
+   ],
+   "severity": "MODERATE",
+   "summary": "adm-zip: Duplicate ZIP entry names: getEntry() and extractAllTo() resolve to different content",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "extractAllTo",
+    "getEntry",
+    "entryList",
+    "entryTable"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rcw4-f5rp-g42v",
+   "aliases": [
+    "CVE-2026-92000"
+   ],
+   "severity": "HIGH",
+   "summary": "adm-zip: Decompression-bomb protection (fix for CVE-2026-39244) can be bypassed by declaring uncompressed size as 0",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "expectedLength",
+    "option",
+    "readFile",
+    "readAsText",
+    "extractAllTo",
+    "maxOutputLength"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xcpc-8h2w-3j85",
+   "aliases": [
+    "CVE-2026-39244"
+   ],
+   "severity": "HIGH",
+   "summary": "adm-zip: Crafted ZIP file triggers 4GB memory allocation",
+   "fixed": [
+    "0.6.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ajv",
+   "version": "6.10.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2g4f-4pwh-qvx6",
+   "aliases": [
+    "CVE-2025-69873"
+   ],
+   "severity": "MODERATE",
+   "summary": "ajv has ReDoS when using `$data` option",
+   "fixed": [
+    "8.18.0",
+    "6.14.0"
+   ],
+   "symbols": [
+    "$data",
+    "RegExp"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ajv",
+   "version": "6.10.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v88g-cgmw-v5xw",
+   "aliases": [
+    "CVE-2020-15366"
+   ],
+   "severity": "MODERATE",
+   "summary": "Prototype Pollution in Ajv",
+   "fixed": [
+    "6.12.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ansi-regex",
+   "version": "3.0.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-93q8-gq69-wqmw",
+   "aliases": [
+    "CVE-2021-3807"
+   ],
+   "severity": "HIGH",
+   "summary": "Inefficient Regular Expression Complexity in chalk/ansi-regex",
+   "fixed": [
+    "6.0.1",
+    "5.0.1",
+    "4.1.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ansi-regex",
+   "version": "4.1.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-93q8-gq69-wqmw",
+   "aliases": [
+    "CVE-2021-3807"
+   ],
+   "severity": "HIGH",
+   "summary": "Inefficient Regular Expression Complexity in chalk/ansi-regex",
+   "fixed": [
+    "6.0.1",
+    "5.0.1",
+    "4.1.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ansi-regex",
+   "version": "5.0.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-93q8-gq69-wqmw",
+   "aliases": [
+    "CVE-2021-3807"
+   ],
+   "severity": "HIGH",
+   "summary": "Inefficient Regular Expression Complexity in chalk/ansi-regex",
+   "fixed": [
+    "6.0.1",
+    "5.0.1",
+    "4.1.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "async",
+   "version": "2.6.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-fwr7-v2mv-hh25",
+   "aliases": [
+    "CVE-2021-43138"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in async",
+   "fixed": [
+    "3.2.2",
+    "2.6.4"
+   ],
+   "symbols": [
+    "mapValues"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "babel-traverse",
+   "version": "6.26.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-67hx-6x53-jw92",
+   "aliases": [
+    "CVE-2023-45133"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Babel vulnerable to arbitrary code execution when compiling specifically crafted malicious code",
+   "fixed": [],
+   "symbols": [
+    "path.evaluate",
+    "path.evaluateTruthy",
+    "useBuiltIns"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "bl",
+   "version": "2.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-pp7h-53gx-mx7r",
+   "aliases": [
+    "CVE-2020-8244"
+   ],
+   "severity": "MODERATE",
+   "summary": "Remote Memory Exposure in bl",
+   "fixed": [
+    "1.2.3",
+    "2.2.1",
+    "3.0.1",
+    "4.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "body-parser",
+   "version": "1.9.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-27r3-jxmh-p828",
+   "aliases": [
+    "CVE-2026-111181"
+   ],
+   "severity": "HIGH",
+   "summary": "body-parser vulnerable to Denial of Service via trailing bytes after a compressed request body",
+   "fixed": [
+    "2.4.0",
+    "1.20.9"
+   ],
+   "symbols": [
+    "gzip"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "body-parser",
+   "version": "1.9.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-qwcr-r2fm-qrc7",
+   "aliases": [
+    "CVE-2024-45590"
+   ],
+   "severity": "HIGH",
+   "summary": "body-parser vulnerable to denial of service when url encoding is enabled",
+   "fixed": [
+    "1.20.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "body-parser",
+   "version": "1.9.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-v422-hmwv-36x6",
+   "aliases": [
+    "CVE-2026-12590"
+   ],
+   "severity": "LOW",
+   "summary": "body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement",
+   "fixed": [
+    "1.20.6",
+    "2.3.0"
+   ],
+   "symbols": [
+    "limit",
+    "NaN",
+    "bytes.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3jxr-9vmj-r5cp",
+   "aliases": [
+    "CVE-2026-13149"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+   "fixed": [
+    "5.0.7",
+    "1.1.16",
+    "2.1.2"
+   ],
+   "symbols": [
+    "expand_",
+    "post"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6j4f-fj2g-mc7p",
+   "aliases": [
+    "CVE-2026-102276"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+   "fixed": [
+    "5.0.10",
+    "3.0.7",
+    "2.1.5",
+    "1.1.19"
+   ],
+   "symbols": [
+    "parseCommaParts",
+    "expand_",
+    "post",
+    "push.apply",
+    "Function.prototype.apply",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "minimatch.braceExpand",
+    "a"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f886-m6hf-6m8v",
+   "aliases": [
+    "CVE-2026-33750"
+   ],
+   "severity": "MODERATE",
+   "summary": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+   "fixed": [
+    "5.0.5",
+    "3.0.2",
+    "2.0.3",
+    "1.1.13"
+   ],
+   "symbols": [
+    "test",
+    "RangeError",
+    "expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-mh99-v99m-4gvg",
+   "aliases": [
+    "CVE-2026-14257"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+   "fixed": [
+    "5.0.8",
+    "3.0.3",
+    "2.1.3",
+    "1.1.17"
+   ],
+   "symbols": [
+    "expand",
+    "max",
+    "N",
+    "expand_",
+    "minimatch",
+    "glob",
+    "maxLength"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q2hr-2g5m-vwhr",
+   "aliases": [
+    "CVE-2026-102277"
+   ],
+   "severity": "MODERATE",
+   "summary": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+   "fixed": [
+    "5.0.12",
+    "3.0.9",
+    "2.1.7",
+    "1.1.21"
+   ],
+   "symbols": [
+    "n",
+    "escClose",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qhr7-859c-m2p7",
+   "aliases": [
+    "CVE-2026-102278"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+   "fixed": [
+    "5.0.11",
+    "3.0.8",
+    "2.1.6",
+    "1.1.20"
+   ],
+   "symbols": [
+    "expand_",
+    "m.post",
+    "parseCommaParts",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "maxDepth"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rgw5-rvv9-x895",
+   "aliases": [
+    "CVE-2026-69152"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+   "fixed": [
+    "1.1.18",
+    "2.1.4",
+    "3.0.6",
+    "5.0.9"
+   ],
+   "symbols": [
+    "maxLength",
+    "expand",
+    "combine",
+    "expand_",
+    "values",
+    "A",
+    "expandSequence",
+    "max"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v6h2-p8h4-qcjw",
+   "aliases": [
+    "CVE-2025-5889"
+   ],
+   "severity": "LOW",
+   "summary": "brace-expansion Regular Expression Denial of Service vulnerability",
+   "fixed": [
+    "2.0.2",
+    "1.1.12",
+    "3.0.1",
+    "4.0.1"
+   ],
+   "symbols": [
+    "a5b98a4f30d7813266b221435e1eaaf25a1b0ac5"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "braces",
+   "version": "2.3.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-grv7-fg5c-xmjg",
+   "aliases": [
+    "CVE-2024-4068"
+   ],
+   "severity": "HIGH",
+   "summary": "Uncontrolled resource consumption in braces",
+   "fixed": [
+    "3.0.3"
+   ],
+   "symbols": [
+    "braces"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "bson",
+   "version": "0.4.23",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4jwp-vfvf-657p",
+   "aliases": [
+    "CVE-2019-2391"
+   ],
+   "severity": "MODERATE",
+   "summary": "Deserialization of Untrusted Data in bson",
+   "fixed": [
+    "1.1.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "bson",
+   "version": "0.4.23",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v8w9-2789-6hhr",
+   "aliases": [
+    "CVE-2020-7610",
+    "SNYK-JS-BSON-561052"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Deserialization of Untrusted Data in bson",
+   "fixed": [
+    "1.1.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "cookie",
+   "version": "0.1.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-pxg6-pf52-xh8x",
+   "aliases": [
+    "CVE-2024-47764"
+   ],
+   "severity": "LOW",
+   "summary": "cookie accepts cookie name, path, and domain with out of bounds characters",
+   "fixed": [
+    "0.7.0"
+   ],
+   "symbols": [
+    "path",
+    "domain"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "cookie",
+   "version": "0.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-pxg6-pf52-xh8x",
+   "aliases": [
+    "CVE-2024-47764"
+   ],
+   "severity": "LOW",
+   "summary": "cookie accepts cookie name, path, and domain with out of bounds characters",
+   "fixed": [
+    "0.7.0"
+   ],
+   "symbols": [
+    "path",
+    "domain"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "cross-spawn",
+   "version": "4.0.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3xgq-45jj-v275",
+   "aliases": [
+    "CVE-2024-21538"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+   "fixed": [
+    "7.0.5",
+    "6.0.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "cross-spawn",
+   "version": "5.1.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3xgq-45jj-v275",
+   "aliases": [
+    "CVE-2024-21538"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+   "fixed": [
+    "7.0.5",
+    "6.0.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "debug",
+   "version": "2.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-9vvw-cc9w-f27h",
+   "aliases": [
+    "CVE-2017-20165"
+   ],
+   "severity": "HIGH",
+   "summary": "debug Inefficient Regular Expression Complexity vulnerability",
+   "fixed": [
+    "3.1.0",
+    "2.6.9"
+   ],
+   "symbols": [
+    "useColors"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "debug",
+   "version": "2.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-gxpj-cx7g-858c",
+   "aliases": [
+    "CVE-2017-16137"
+   ],
+   "severity": "LOW",
+   "summary": "Regular Expression Denial of Service in debug",
+   "fixed": [
+    "2.6.9",
+    "3.1.0",
+    "3.2.7",
+    "4.3.1"
+   ],
+   "symbols": [
+    "debug",
+    "o"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "debug",
+   "version": "4.1.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-gxpj-cx7g-858c",
+   "aliases": [
+    "CVE-2017-16137"
+   ],
+   "severity": "LOW",
+   "summary": "Regular Expression Denial of Service in debug",
+   "fixed": [
+    "2.6.9",
+    "3.1.0",
+    "3.2.7",
+    "4.3.1"
+   ],
+   "symbols": [
+    "debug",
+    "o"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "decode-uri-component",
+   "version": "0.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qr28-fpjm-wq7f",
+   "aliases": [
+    "CVE-2026-118664"
+   ],
+   "severity": "HIGH",
+   "summary": "decode-uri-component vulnerable to denial of service via quadratic replacement of percent-encoded runs",
+   "fixed": [
+    "0.5.1"
+   ],
+   "symbols": [
+    "decodeUriComponent",
+    "customDecodeURIComponent",
+    "fa479da",
+    "decode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "decode-uri-component",
+   "version": "0.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vcc3-ghjq-m6fr",
+   "aliases": [
+    "CVE-2026-45822"
+   ],
+   "severity": "MODERATE",
+   "summary": "decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input",
+   "fixed": [
+    "0.5.0"
+   ],
+   "symbols": [
+    "decodeUriComponent"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "decode-uri-component",
+   "version": "0.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-w573-4hg7-7wgq",
+   "aliases": [
+    "CVE-2022-38900"
+   ],
+   "severity": "HIGH",
+   "summary": "decode-uri-component vulnerable to Denial of Service (DoS)",
+   "fixed": [
+    "0.2.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "dicer",
+   "version": "0.3.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-wm7h-9275-46v2",
+   "aliases": [
+    "CVE-2022-24434"
+   ],
+   "severity": "HIGH",
+   "summary": "Crash in HeaderParser in dicer",
+   "fixed": [],
+   "symbols": [
+    "dicer"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "diff",
+   "version": "1.4.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-73rr-hh4g-fpgx",
+   "aliases": [
+    "CVE-2026-24001"
+   ],
+   "severity": "LOW",
+   "summary": "jsdiff has a Denial of Service vulnerability in parsePatch and applyPatch",
+   "fixed": [
+    "8.0.3",
+    "5.2.2",
+    "4.0.4",
+    "3.5.1"
+   ],
+   "symbols": [
+    "parsePatch",
+    "applyPatch"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "diff",
+   "version": "1.4.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-h6ch-v84p-w6p9",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service (ReDoS)",
+   "fixed": [
+    "3.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "dustjs-linkedin",
+   "version": "2.5.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-c6rp-wrp9-qr4q",
+   "aliases": [
+    "CVE-2021-4264"
+   ],
+   "severity": "HIGH",
+   "summary": "dustjs-linkedin vulnerable to Prototype Pollution",
+   "fixed": [
+    "3.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3w5v-p54c-f74x",
+   "aliases": [
+    "CVE-2017-1000228"
+   ],
+   "severity": "CRITICAL",
+   "summary": "ejs is vulnerable to remote code execution due to weak input validation",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6x77-rpqf-j6mw",
+   "aliases": [
+    "CVE-2017-1000189"
+   ],
+   "severity": "HIGH",
+   "summary": "ejs vulnerable to DoS due to weak input validation",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-ghr5-ch3p-vcr6",
+   "aliases": [
+    "CVE-2024-33883"
+   ],
+   "severity": "MODERATE",
+   "summary": "ejs lacks certain pollution protection",
+   "fixed": [
+    "3.1.10"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-hwcf-pp87-7x6p",
+   "aliases": [
+    "CVE-2017-1000188"
+   ],
+   "severity": "MODERATE",
+   "summary": "mde ejs vulnerable to XSS",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-phwq-j96m-2c2q",
+   "aliases": [
+    "CVE-2022-29078"
+   ],
+   "severity": "CRITICAL",
+   "summary": "ejs template injection vulnerability",
+   "fixed": [
+    "3.1.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3w5v-p54c-f74x",
+   "aliases": [
+    "CVE-2017-1000228"
+   ],
+   "severity": "CRITICAL",
+   "summary": "ejs is vulnerable to remote code execution due to weak input validation",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6x77-rpqf-j6mw",
+   "aliases": [
+    "CVE-2017-1000189"
+   ],
+   "severity": "HIGH",
+   "summary": "ejs vulnerable to DoS due to weak input validation",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-ghr5-ch3p-vcr6",
+   "aliases": [
+    "CVE-2024-33883"
+   ],
+   "severity": "MODERATE",
+   "summary": "ejs lacks certain pollution protection",
+   "fixed": [
+    "3.1.10"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-hwcf-pp87-7x6p",
+   "aliases": [
+    "CVE-2017-1000188"
+   ],
+   "severity": "MODERATE",
+   "summary": "mde ejs vulnerable to XSS",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-phwq-j96m-2c2q",
+   "aliases": [
+    "CVE-2022-29078"
+   ],
+   "severity": "CRITICAL",
+   "summary": "ejs template injection vulnerability",
+   "fixed": [
+    "3.1.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "express",
+   "version": "4.12.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-qw6h-vgh9-j6wx",
+   "aliases": [
+    "CVE-2024-43796"
+   ],
+   "severity": "LOW",
+   "summary": "express vulnerable to XSS via response.redirect()",
+   "fixed": [
+    "4.20.0",
+    "5.0.0"
+   ],
+   "symbols": [
+    "response.redirect"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "express",
+   "version": "4.12.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rv95-896h-c2vc",
+   "aliases": [
+    "CVE-2024-29041"
+   ],
+   "severity": "MODERATE",
+   "summary": "Express.js Open Redirect in malformed URLs",
+   "fixed": [
+    "4.19.2",
+    "5.0.0-beta.3"
+   ],
+   "symbols": [
+    "encodeurl",
+    "location",
+    "res.location",
+    "res.redirect"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "express-fileupload",
+   "version": "0.0.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9wcg-jrwf-8gg7",
+   "aliases": [
+    "CVE-2020-7699",
+    "SNYK-JS-EXPRESSFILEUPLOAD-595969"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in express-fileupload",
+   "fixed": [
+    "1.1.9"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "express-fileupload",
+   "version": "0.0.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-q3w9-g74q-vp5f",
+   "aliases": [],
+   "severity": "LOW",
+   "summary": "Denial of Service in express-fileupload",
+   "fixed": [
+    "1.1.6-alpha.6"
+   ],
+   "symbols": [
+    "filename"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "express-fileupload",
+   "version": "0.0.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w4m6-x6c2-j5c9",
+   "aliases": [
+    "CVE-2022-27261"
+   ],
+   "severity": "HIGH",
+   "summary": "Express-FileUpload Arbitrary File Overwrite",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "figlet",
+   "version": "1.5.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-62ch-8vmq-8xm7",
+   "aliases": [
+    "CVE-2026-96780"
+   ],
+   "severity": "HIGH",
+   "summary": "figlet is vulnerable to denial of service via unbounded loop when whitespaceBreak is used with a small width",
+   "fixed": [
+    "1.11.3"
+   ],
+   "symbols": [
+    "text",
+    "textSync",
+    "width",
+    "breakWord",
+    "generateFigTextLines",
+    "whitespaceBreak"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "form-data",
+   "version": "2.3.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-fjxv-7rqg-78g4",
+   "aliases": [
+    "CVE-2025-7783"
+   ],
+   "severity": "CRITICAL",
+   "summary": "form-data uses unsafe random function in form-data for choosing boundary",
+   "fixed": [
+    "2.5.4",
+    "3.0.4",
+    "4.0.4"
+   ],
+   "symbols": [
+    "Math.random",
+    "undici",
+    "parrot409"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "form-data",
+   "version": "2.3.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-hmw2-7cc7-3qxx",
+   "aliases": [
+    "CVE-2026-12143"
+   ],
+   "severity": "HIGH",
+   "summary": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+   "fixed": [
+    "2.5.6",
+    "3.0.5",
+    "4.0.6"
+   ],
+   "symbols": [
+    "field",
+    "filename",
+    "_multiPartHeader",
+    "_getContentDisposition",
+    "is_admin",
+    "role",
+    "append"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fresh",
+   "version": "0.2.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-9qj9-36jm-prpv",
+   "aliases": [
+    "CVE-2017-16119"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in fresh",
+   "fixed": [
+    "0.5.2"
+   ],
+   "symbols": [
+    "fresh"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2cf5-4w76-r9qv",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Arbitrary Code Execution in handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.2"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2qvq-rjwj-gvw9",
+   "aliases": [
+    "CVE-2026-33916"
+   ],
+   "severity": "MODERATE",
+   "summary": "Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "options.partials",
+    "Object.prototype",
+    "invokePartial",
+    "hasOwnProperty",
+    "widget",
+    "qs",
+    "minimist"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2w6w-674q-4c4q",
+   "aliases": [
+    "CVE-2026-33937"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "NumberLiteral",
+    "compile",
+    "req.body.text",
+    "id"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3cqr-58rm-57f8",
+   "aliases": [
+    "CVE-2019-20920",
+    "SNYK-JS-HANDLEBARS-534478"
+   ],
+   "severity": "HIGH",
+   "summary": "Arbitrary Code Execution in Handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3mfm-83xf-c92r",
+   "aliases": [
+    "CVE-2026-33938"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "invokePartial",
+    "env.compile",
+    "merge",
+    "compile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-442j-39wm-28r2",
+   "aliases": [],
+   "severity": "LOW",
+   "summary": "Handlebars.js has a Property Access Validation Bypass in container.lookup",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "container.lookup",
+    "container.lookupProperty",
+    "lookupProperty",
+    "depthedLookup",
+    "hasOwnProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-62gr-4qp9-h98f",
+   "aliases": [
+    "CVE-2019-20922",
+    "SNYK-JS-HANDLEBARS-480388"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in Handlebars",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-765h-qjxv-5f44",
+   "aliases": [
+    "CVE-2021-23383"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-8r5x-fm3f-whwj",
+   "aliases": [
+    "CVE-2026-106446"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Handlebars: JavaScript Injection via AST Type Confusion in compile (bypass of CVE-2026-33937)",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "Handlebars.precompile",
+    "PathExpression",
+    "NumberLiteral",
+    "BooleanLiteral",
+    "compile",
+    "precompile",
+    "parseWithoutProcessing",
+    "type",
+    "Program.blockParams.length",
+    "depth",
+    "StringLiteral",
+    "StringLiteral.value",
+    "PathExpression.original",
+    "Program",
+    "blockParams",
+    "length",
+    "program.blockParams.length",
+    "text",
+    "missingHelper",
+    "Program.blockParams",
+    "PathExpression.depth"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-9cx6-37pm-9jff",
+   "aliases": [
+    "CVE-2026-33939"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "compile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f2jv-r9rf-7988",
+   "aliases": [
+    "CVE-2021-23369"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Remote code execution in handlebars when compiling templates",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f52g-6jhx-586p",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Denial of Service in handlebars",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-g9r4-xpmj-mj65",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p8wg-vrv2-v86f",
+   "aliases": [
+    "CVE-2026-106445"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Handlebars: JavaScript Injection via Own Property Check Bypass",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Function.prototype",
+    "lookupProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q2c6-c6pm-g3gh",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Arbitrary Code Execution in handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q42p-pg8m-cqh6",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "4.1.2",
+    "4.0.14",
+    "3.0.7"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-w457-6q6x-cgp9",
+   "aliases": [
+    "CVE-2019-19919"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "4.3.0",
+    "3.0.8"
+   ],
+   "symbols": [
+    "handlebars",
+    "__defineGetter__"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xhpv-hc6g-r9c6",
+   "aliases": [
+    "CVE-2026-33940"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "invokePartial",
+    "env.compile",
+    "partial.call",
+    "options.partials",
+    "partial",
+    "compile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xjpj-3mr7-gcpf",
+   "aliases": [
+    "CVE-2026-33941"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "template.name",
+    "opts.namespace",
+    "opts.commonjs",
+    "opts.handlebarPath",
+    "require",
+    "pwned"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xw65-4hp5-5hc7",
+   "aliases": [
+    "CVE-2026-106444"
+   ],
+   "severity": "MODERATE",
+   "summary": "Handlebars: JavaScript Injection via Unsafe Inline Embedding of Precompiled Templates",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.precompile",
+    "quotedString",
+    "output"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2cf5-4w76-r9qv",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Arbitrary Code Execution in handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.2"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2qvq-rjwj-gvw9",
+   "aliases": [
+    "CVE-2026-33916"
+   ],
+   "severity": "MODERATE",
+   "summary": "Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "options.partials",
+    "Object.prototype",
+    "invokePartial",
+    "hasOwnProperty",
+    "widget",
+    "qs",
+    "minimist"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2w6w-674q-4c4q",
+   "aliases": [
+    "CVE-2026-33937"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "NumberLiteral",
+    "compile",
+    "req.body.text",
+    "id"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3cqr-58rm-57f8",
+   "aliases": [
+    "CVE-2019-20920",
+    "SNYK-JS-HANDLEBARS-534478"
+   ],
+   "severity": "HIGH",
+   "summary": "Arbitrary Code Execution in Handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3mfm-83xf-c92r",
+   "aliases": [
+    "CVE-2026-33938"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "invokePartial",
+    "env.compile",
+    "merge",
+    "compile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-442j-39wm-28r2",
+   "aliases": [],
+   "severity": "LOW",
+   "summary": "Handlebars.js has a Property Access Validation Bypass in container.lookup",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "container.lookup",
+    "container.lookupProperty",
+    "lookupProperty",
+    "depthedLookup",
+    "hasOwnProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-62gr-4qp9-h98f",
+   "aliases": [
+    "CVE-2019-20922",
+    "SNYK-JS-HANDLEBARS-480388"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in Handlebars",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-765h-qjxv-5f44",
+   "aliases": [
+    "CVE-2021-23383"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-8r5x-fm3f-whwj",
+   "aliases": [
+    "CVE-2026-106446"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Handlebars: JavaScript Injection via AST Type Confusion in compile (bypass of CVE-2026-33937)",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "Handlebars.precompile",
+    "PathExpression",
+    "NumberLiteral",
+    "BooleanLiteral",
+    "compile",
+    "precompile",
+    "parseWithoutProcessing",
+    "type",
+    "Program.blockParams.length",
+    "depth",
+    "StringLiteral",
+    "StringLiteral.value",
+    "PathExpression.original",
+    "Program",
+    "blockParams",
+    "length",
+    "program.blockParams.length",
+    "text",
+    "missingHelper",
+    "Program.blockParams",
+    "PathExpression.depth"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-9cx6-37pm-9jff",
+   "aliases": [
+    "CVE-2026-33939"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "compile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f2jv-r9rf-7988",
+   "aliases": [
+    "CVE-2021-23369"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Remote code execution in handlebars when compiling templates",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f52g-6jhx-586p",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Denial of Service in handlebars",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-g9r4-xpmj-mj65",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p8wg-vrv2-v86f",
+   "aliases": [
+    "CVE-2026-106445"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Handlebars: JavaScript Injection via Own Property Check Bypass",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Function.prototype",
+    "lookupProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q2c6-c6pm-g3gh",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Arbitrary Code Execution in handlebars",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-w457-6q6x-cgp9",
+   "aliases": [
+    "CVE-2019-19919"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in handlebars",
+   "fixed": [
+    "4.3.0",
+    "3.0.8"
+   ],
+   "symbols": [
+    "handlebars",
+    "__defineGetter__"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xhpv-hc6g-r9c6",
+   "aliases": [
+    "CVE-2026-33940"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "invokePartial",
+    "env.compile",
+    "partial.call",
+    "options.partials",
+    "partial",
+    "compile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xjpj-3mr7-gcpf",
+   "aliases": [
+    "CVE-2026-33941"
+   ],
+   "severity": "HIGH",
+   "summary": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "template.name",
+    "opts.namespace",
+    "opts.commonjs",
+    "opts.handlebarPath",
+    "require",
+    "pwned"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xw65-4hp5-5hc7",
+   "aliases": [
+    "CVE-2026-106444"
+   ],
+   "severity": "MODERATE",
+   "summary": "Handlebars: JavaScript Injection via Unsafe Inline Embedding of Precompiled Templates",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.precompile",
+    "quotedString",
+    "output"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "hbs",
+   "version": "4.0.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-7f5c-rpf4-86p8",
+   "aliases": [
+    "CVE-2021-32822"
+   ],
+   "severity": "MODERATE",
+   "summary": "hbs: Insertion of Sensitive Information into Externally-Accessible File or Directory and Exposure of Sensitive Information to an Unauthorized Actor",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "highlight.js",
+   "version": "9.18.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7wwv-vh3v-89cq",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "ReDOS vulnerabities: multiple grammars",
+   "fixed": [
+    "10.4.1"
+   ],
+   "symbols": [
+    "highlightAuto",
+    "hpp",
+    "cpp",
+    "ruby",
+    "rb"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "highlight.js",
+   "version": "9.18.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vfrc-7r7c-w9mx",
+   "aliases": [
+    "CVE-2020-26237"
+   ],
+   "severity": "MODERATE",
+   "summary": "Prototype Pollution in highlight.js",
+   "fixed": [
+    "9.18.2",
+    "10.1.2"
+   ],
+   "symbols": [
+    "languages",
+    "aliases"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "hosted-git-info",
+   "version": "2.6.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-43f8-2h32-f4cj",
+   "aliases": [
+    "CVE-2021-23362"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service in hosted-git-info",
+   "fixed": [
+    "2.8.9",
+    "3.0.8"
+   ],
+   "symbols": [
+    "fromUrl"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ini",
+   "version": "1.1.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qqgx-2p2h-9c37",
+   "aliases": [
+    "CVE-2020-7788",
+    "SNYK-JS-INI-1048974"
+   ],
+   "severity": "HIGH",
+   "summary": "ini before 1.3.6 vulnerable to Prototype Pollution via ini.parse",
+   "fixed": [
+    "1.3.6"
+   ],
+   "symbols": [
+    "ini",
+    "ini.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ini",
+   "version": "1.3.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qqgx-2p2h-9c37",
+   "aliases": [
+    "CVE-2020-7788",
+    "SNYK-JS-INI-1048974"
+   ],
+   "severity": "HIGH",
+   "summary": "ini before 1.3.6 vulnerable to Prototype Pollution via ini.parse",
+   "fixed": [
+    "1.3.6"
+   ],
+   "symbols": [
+    "ini",
+    "ini.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6c3j-c64m-qhgq",
+   "aliases": [
+    "CVE-2019-11358",
+    "DRUPAL-CORE-2019-006",
+    "PYSEC-2026-628",
+    "SNYK-JS-JQUERY-174006"
+   ],
+   "severity": "MODERATE",
+   "summary": "XSS in jQuery as used in Drupal, Backdrop CMS, and other products",
+   "fixed": [
+    "3.4.0"
+   ],
+   "symbols": [
+    "Object.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-gxr4-xjj5-5px2",
+   "aliases": [
+    "BIT-drupal-2020-11022",
+    "CVE-2020-11022"
+   ],
+   "severity": "MODERATE",
+   "summary": "Potential XSS vulnerability in jQuery",
+   "fixed": [
+    "3.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jpcq-cgw6-v4j6",
+   "aliases": [
+    "BIT-drupal-2020-11023",
+    "CVE-2020-11023"
+   ],
+   "severity": "MODERATE",
+   "summary": "Potential XSS vulnerability in jQuery",
+   "fixed": [
+    "3.5.0"
+   ],
+   "symbols": [
+    "jQuery"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rmxg-73gg-4p98",
+   "aliases": [
+    "CVE-2015-9251"
+   ],
+   "severity": "MODERATE",
+   "summary": "Cross-Site Scripting (XSS) in jquery",
+   "fixed": [
+    "1.12.2",
+    "3.0.0"
+   ],
+   "symbols": [
+    "jquery",
+    "jQuery.globalEval",
+    "dataType"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2883-xcg3-v3hh",
+   "aliases": [
+    "CVE-2026-84375"
+   ],
+   "severity": "HIGH",
+   "summary": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources",
+   "fixed": [
+    "4.3.2",
+    "3.15.2"
+   ],
+   "symbols": [
+    "maxTotalMergeKeys",
+    "N",
+    "arr",
+    "totalMergeKeys"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-52cp-r559-cp3m",
+   "aliases": [
+    "CVE-2026-59869"
+   ],
+   "severity": "HIGH",
+   "summary": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+   "fixed": [
+    "3.15.0",
+    "4.3.0"
+   ],
+   "symbols": [
+    "makeMergeChain"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-5p4m-2wfm-xmqj",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) — CVE-2026-59870 fix not backported",
+   "fixed": [
+    "4.3.1",
+    "3.15.1"
+   ],
+   "symbols": [
+    "resolveYamlOmap",
+    "yaml.load",
+    "objectKeys",
+    "Array.prototype.indexOf",
+    "n",
+    "maxOmapLength"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-h67p-54hq-rp68",
+   "aliases": [
+    "CVE-2026-53550"
+   ],
+   "severity": "MODERATE",
+   "summary": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
+   "fixed": [
+    "4.2.0",
+    "3.15.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-mh29-5h37-fv8m",
+   "aliases": [
+    "CVE-2025-64718"
+   ],
+   "severity": "MODERATE",
+   "summary": "js-yaml has prototype pollution in merge (<<)",
+   "fixed": [
+    "4.1.1",
+    "3.14.2"
+   ],
+   "symbols": [
+    "deno"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "json-schema",
+   "version": "0.2.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-896r-f27r-55mw",
+   "aliases": [
+    "CVE-2021-3918"
+   ],
+   "severity": "CRITICAL",
+   "summary": "json-schema is vulnerable to Prototype Pollution",
+   "fixed": [
+    "0.4.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "kerberos",
+   "version": "0.0.24",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-m2mx-rfpw-jghv",
+   "aliases": [
+    "CVE-2020-13110"
+   ],
+   "severity": "HIGH",
+   "summary": "DLL Injection in kerberos",
+   "fixed": [
+    "1.0.0"
+   ],
+   "symbols": [
+    "kerberos"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "kind-of",
+   "version": "6.0.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6c8f-qphg-qjgp",
+   "aliases": [
+    "CVE-2019-20149"
+   ],
+   "severity": "HIGH",
+   "summary": "Validation Bypass in kind-of",
+   "fixed": [
+    "6.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-29mw-wpgm-hmr9",
+   "aliases": [
+    "CVE-2020-28500"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "toNumber",
+    "trim",
+    "trimEnd",
+    "build_blank"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-35jh-r3h4-6jhm",
+   "aliases": [
+    "CVE-2021-23337"
+   ],
+   "severity": "HIGH",
+   "summary": "Command Injection in lodash",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4xc9-xhrj-v574",
+   "aliases": [
+    "CVE-2018-16487"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "aliases": [
+    "CVE-2026-2950"
+   ],
+   "severity": "MODERATE",
+   "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jf85-cpcp-j695",
+   "aliases": [
+    "CVE-2019-10744",
+    "SNYK-JS-LODASH-450202"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.12"
+   ],
+   "symbols": [
+    "lodash",
+    "defaultsDeep"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-p6mc-m468-83gw",
+   "aliases": [
+    "CVE-2020-8203"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.19"
+   ],
+   "symbols": [
+    "pick",
+    "setWith",
+    "update",
+    "updateWith",
+    "zipObjectDeep"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "aliases": [
+    "CVE-2026-4800"
+   ],
+   "severity": "HIGH",
+   "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-x5rq-j2xg-h7qm",
+   "aliases": [
+    "CVE-2019-1010266",
+    "SNYK-JS-LODASH-73639"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "aliases": [
+    "CVE-2025-13465"
+   ],
+   "severity": "MODERATE",
+   "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "aliases": [
+    "CVE-2026-2950"
+   ],
+   "severity": "MODERATE",
+   "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "aliases": [
+    "CVE-2026-4800"
+   ],
+   "severity": "HIGH",
+   "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "aliases": [
+    "CVE-2025-13465"
+   ],
+   "severity": "MODERATE",
+   "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-29mw-wpgm-hmr9",
+   "aliases": [
+    "CVE-2020-28500"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "toNumber",
+    "trim",
+    "trimEnd",
+    "build_blank"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-35jh-r3h4-6jhm",
+   "aliases": [
+    "CVE-2021-23337"
+   ],
+   "severity": "HIGH",
+   "summary": "Command Injection in lodash",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4xc9-xhrj-v574",
+   "aliases": [
+    "CVE-2018-16487"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "aliases": [
+    "CVE-2026-2950"
+   ],
+   "severity": "MODERATE",
+   "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-fvqr-27wr-82fm",
+   "aliases": [
+    "CVE-2018-3721"
+   ],
+   "severity": "MODERATE",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.5"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jf85-cpcp-j695",
+   "aliases": [
+    "CVE-2019-10744",
+    "SNYK-JS-LODASH-450202"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.12"
+   ],
+   "symbols": [
+    "lodash",
+    "defaultsDeep"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-p6mc-m468-83gw",
+   "aliases": [
+    "CVE-2020-8203"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in lodash",
+   "fixed": [
+    "4.17.19"
+   ],
+   "symbols": [
+    "pick",
+    "setWith",
+    "update",
+    "updateWith",
+    "zipObjectDeep"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "aliases": [
+    "CVE-2026-4800"
+   ],
+   "severity": "HIGH",
+   "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-x5rq-j2xg-h7qm",
+   "aliases": [
+    "CVE-2019-1010266",
+    "SNYK-JS-LODASH-73639"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "aliases": [
+    "CVE-2025-13465"
+   ],
+   "severity": "MODERATE",
+   "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-5v2h-r2cx-5xgj",
+   "aliases": [
+    "CVE-2022-21681"
+   ],
+   "severity": "HIGH",
+   "summary": "Inefficient Regular Expression Complexity in marked",
+   "fixed": [
+    "4.0.10"
+   ],
+   "symbols": [
+    "inline.reflinkSearch"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-7px7-7xjx-hxm8",
+   "aliases": [
+    "CVE-2017-1000427"
+   ],
+   "severity": "MODERATE",
+   "summary": "Marked vulnerable to XSS from data URIs",
+   "fixed": [
+    "0.3.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-p9wx-2529-fp83",
+   "aliases": [
+    "CVE-2018-25110"
+   ],
+   "severity": "MODERATE",
+   "summary": "Marked allows Regular Expression Denial of Service (ReDoS) attacks",
+   "fixed": [
+    "0.3.17"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rrrm-qjm4-v8hf",
+   "aliases": [
+    "CVE-2022-21680"
+   ],
+   "severity": "HIGH",
+   "summary": "Inefficient Regular Expression Complexity in marked",
+   "fixed": [
+    "4.0.10"
+   ],
+   "symbols": [
+    "block.def"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vfvf-mqq8-rwqc",
+   "aliases": [
+    "CVE-2016-10531"
+   ],
+   "severity": "MODERATE",
+   "summary": "Sanitization bypass using HTML Entities in marked",
+   "fixed": [
+    "0.3.6"
+   ],
+   "symbols": [
+    "marked"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-x5pg-88wf-qq4p",
+   "aliases": [
+    "CVE-2017-16114"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in marked",
+   "fixed": [
+    "0.3.9"
+   ],
+   "symbols": [
+    "marked"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mem",
+   "version": "1.1.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4xcv-9jjx-gfj3",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Denial of Service in mem",
+   "fixed": [
+    "4.0.0"
+   ],
+   "symbols": [
+    "mem",
+    "maxAge"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "micromatch",
+   "version": "3.1.10",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-952p-6rrq-rcjv",
+   "aliases": [
+    "CVE-2024-4067"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service (ReDoS) in micromatch",
+   "fixed": [
+    "4.0.8"
+   ],
+   "symbols": [
+    "micromatch",
+    "micromatch.braces"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mime",
+   "version": "1.2.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-wrvr-8mpx-r7pp",
+   "aliases": [
+    "CVE-2017-16138"
+   ],
+   "severity": "HIGH",
+   "summary": "mime Regular Expression Denial of Service when MIME lookup performed on untrusted user input",
+   "fixed": [
+    "2.0.3",
+    "1.4.1"
+   ],
+   "symbols": [
+    "mime"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mime",
+   "version": "1.3.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-wrvr-8mpx-r7pp",
+   "aliases": [
+    "CVE-2017-16138"
+   ],
+   "severity": "HIGH",
+   "summary": "mime Regular Expression Denial of Service when MIME lookup performed on untrusted user input",
+   "fixed": [
+    "2.0.3",
+    "1.4.1"
+   ],
+   "symbols": [
+    "mime"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-23c5-xmqv-rm74",
+   "aliases": [
+    "CVE-2026-27904"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.4"
+   ],
+   "symbols": [
+    "minimatch",
+    "AST.toRegExpSource",
+    "a",
+    "z",
+    "this.set",
+    "matchOne",
+    "time_total"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3ppc-4f35-3m26",
+   "aliases": [
+    "CVE-2026-26996"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+   "fixed": [
+    "10.2.1",
+    "9.0.6",
+    "8.0.5",
+    "7.4.7",
+    "6.2.1",
+    "5.1.7",
+    "4.2.4",
+    "3.1.3"
+   ],
+   "symbols": [
+    "minimatch",
+    "X"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7r86-cg39-jmmj",
+   "aliases": [
+    "CVE-2026-27903"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.3"
+   ],
+   "symbols": [
+    "matchOne",
+    "n",
+    "k",
+    "minimatch",
+    "time_total"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f8q6-p94x-37v3",
+   "aliases": [
+    "CVE-2022-3517"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch ReDoS vulnerability",
+   "fixed": [
+    "3.0.5"
+   ],
+   "symbols": [
+    "braceExpand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "0.0.10",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vh95-rmgr-6w4m",
+   "aliases": [
+    "CVE-2020-7598"
+   ],
+   "severity": "MODERATE",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "0.2.1",
+    "1.2.3"
+   ],
+   "symbols": [
+    "minimist",
+    "y",
+    "Polluted"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "0.0.10",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "aliases": [
+    "CVE-2021-44906"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "0.0.8",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vh95-rmgr-6w4m",
+   "aliases": [
+    "CVE-2020-7598"
+   ],
+   "severity": "MODERATE",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "0.2.1",
+    "1.2.3"
+   ],
+   "symbols": [
+    "minimist",
+    "y",
+    "Polluted"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "0.0.8",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "aliases": [
+    "CVE-2021-44906"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "1.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vh95-rmgr-6w4m",
+   "aliases": [
+    "CVE-2020-7598"
+   ],
+   "severity": "MODERATE",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "0.2.1",
+    "1.2.3"
+   ],
+   "symbols": [
+    "minimist",
+    "y",
+    "Polluted"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "1.2.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "aliases": [
+    "CVE-2021-44906"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimist",
+   "version": "1.2.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "aliases": [
+    "CVE-2021-44906"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in minimist",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mixin-deep",
+   "version": "1.3.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-fhjf-83wg-r2j9",
+   "aliases": [
+    "CVE-2019-10746",
+    "SNYK-JS-MIXINDEEP-450212"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in mixin-deep",
+   "fixed": [
+    "1.3.2",
+    "2.0.1"
+   ],
+   "symbols": [
+    "mixinDeep"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "moment",
+   "version": "2.15.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-446m-mv8f-q348",
+   "aliases": [
+    "CVE-2017-18214"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in moment",
+   "fixed": [
+    "2.19.3"
+   ],
+   "symbols": [
+    "moment"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "moment",
+   "version": "2.15.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8hfj-j24r-96c4",
+   "aliases": [
+    "CVE-2022-24785"
+   ],
+   "severity": "HIGH",
+   "summary": "Path Traversal: 'dir/../../filename' in moment.locale",
+   "fixed": [
+    "2.29.2"
+   ],
+   "symbols": [
+    "fr"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongodb",
+   "version": "2.0.46",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-mh5c-679w-hh4r",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Denial of Service in mongodb",
+   "fixed": [
+    "3.1.13"
+   ],
+   "symbols": [
+    "mongodb"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-664h-wqgq-64gw",
+   "aliases": [
+    "BIT-mongoose-2026-73562",
+    "CVE-2026-73562"
+   ],
+   "severity": "MODERATE",
+   "summary": "Mongoose: Prototype pollution in mongoose update casting via __proto__-prefixed dotted path (Schema._getSchema/path getter)",
+   "fixed": [
+    "6.13.10",
+    "7.8.10",
+    "8.24.1",
+    "9.7.2"
+   ],
+   "symbols": [
+    "$fullPath",
+    "$parentSchemaDocArray",
+    "Object.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8687-vv9j-hgph",
+   "aliases": [
+    "CVE-2019-17426"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Improper Input Validation in Automattic Mongoose",
+   "fixed": [
+    "5.7.5",
+    "4.13.21"
+   ],
+   "symbols": [
+    "_bsontype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9m93-w8w6-76hh",
+   "aliases": [
+    "BIT-mongoose-2023-3696",
+    "CVE-2023-3696"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Mongoose Prototype Pollution vulnerability",
+   "fixed": [
+    "7.3.3",
+    "6.11.3",
+    "5.13.20"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-f825-f98c-gj3g",
+   "aliases": [
+    "BIT-mongoose-2022-2564",
+    "CVE-2022-2564"
+   ],
+   "severity": "HIGH",
+   "summary": "automattic/mongoose vulnerable to Prototype pollution via Schema.path",
+   "fixed": [
+    "6.4.6",
+    "5.13.15"
+   ],
+   "symbols": [
+    "Schema.path"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-h8hf-x3f4-xwgp",
+   "aliases": [
+    "CVE-2022-24304"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Mongoose Vulnerable to Prototype Pollution in Schema Object",
+   "fixed": [
+    "6.4.6",
+    "5.13.15"
+   ],
+   "symbols": [
+    "Schema.path",
+    "schema"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-m7xq-9374-9rvx",
+   "aliases": [
+    "BIT-mongoose-2024-53900",
+    "CVE-2024-53900"
+   ],
+   "severity": "HIGH",
+   "summary": "Mongoose search injection vulnerability",
+   "fixed": [
+    "8.8.3",
+    "7.8.3",
+    "6.13.5",
+    "5.13.23"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r5xw-q988-826m",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Remote Memory Exposure in mongoose",
+   "fixed": [
+    "3.8.39",
+    "4.3.6"
+   ],
+   "symbols": [
+    "mongoose"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vg7j-7cwx-8wgw",
+   "aliases": [
+    "BIT-mongoose-2025-23061",
+    "CVE-2025-23061"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Mongoose search injection vulnerability",
+   "fixed": [
+    "8.9.5",
+    "7.8.4",
+    "6.13.6"
+   ],
+   "symbols": [
+    "$where"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-wpg9-53fq-2r8h",
+   "aliases": [
+    "BIT-mongoose-2026-42334",
+    "CVE-2026-42334"
+   ],
+   "severity": "HIGH",
+   "summary": "Mongoose's Improper Sanitization of $nor in sanitizeFilter May Allow NoSQL Injection",
+   "fixed": [
+    "6.13.9",
+    "7.8.9",
+    "8.22.1",
+    "9.1.6"
+   ],
+   "symbols": [
+    "$nor",
+    "$eq",
+    "$and",
+    "$or",
+    "hasDollarKeys",
+    "$ne",
+    "$gt",
+    "$regex",
+    "sanitizeFilter"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "morgan",
+   "version": "1.10.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4vj7-5mj6-jm8m",
+   "aliases": [
+    "CVE-2026-5078"
+   ],
+   "severity": "MODERATE",
+   "summary": "morgan vulnerable to Log Forging via unneutralized control characters in :remote-user",
+   "fixed": [
+    "1.11.0"
+   ],
+   "symbols": [
+    "Authorization",
+    "combined",
+    "common",
+    "short"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "morgan",
+   "version": "1.10.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9f6g-j8ch-79g4",
+   "aliases": [
+    "CVE-2026-87859"
+   ],
+   "severity": "MODERATE",
+   "summary": "morgan vulnerable to Log Injection via unescaped double quote in quoted log fields",
+   "fixed": [
+    "1.12.1"
+   ],
+   "symbols": [
+    "combined",
+    "common"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "morgan",
+   "version": "1.10.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jxfw-x594-9x9m",
+   "aliases": [
+    "CVE-2026-15603"
+   ],
+   "severity": "MODERATE",
+   "summary": "morgan vulnerable to Log Forging via unescaped Unicode line separators",
+   "fixed": [
+    "1.12.0"
+   ],
+   "symbols": [
+    "combined",
+    "common",
+    "short"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mpath",
+   "version": "0.1.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-h466-j336-74wx",
+   "aliases": [
+    "CVE-2018-16490"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in mpath",
+   "fixed": [
+    "0.5.1"
+   ],
+   "symbols": [
+    "mpath"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mpath",
+   "version": "0.1.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p92x-r36w-9395",
+   "aliases": [
+    "CVE-2021-23438"
+   ],
+   "severity": "MODERATE",
+   "summary": "Type confusion in mpath",
+   "fixed": [
+    "0.8.4"
+   ],
+   "symbols": [
+    "Array.prototype.indexOf",
+    "String.prototype.indexOf"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mquery",
+   "version": "1.6.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-45q2-34rf-mr94",
+   "aliases": [
+    "CVE-2020-35149"
+   ],
+   "severity": "MODERATE",
+   "summary": "Code Injection in mquery",
+   "fixed": [
+    "3.2.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ms",
+   "version": "0.6.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3fx5-fwvr-xrjg",
+   "aliases": [
+    "CVE-2015-8315"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in ms",
+   "fixed": [
+    "0.7.1"
+   ],
+   "symbols": [
+    "ms"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ms",
+   "version": "0.6.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w9mr-4mfr-499f",
+   "aliases": [
+    "CVE-2017-20162"
+   ],
+   "severity": "MODERATE",
+   "summary": "Vercel ms Inefficient Regular Expression Complexity vulnerability",
+   "fixed": [
+    "2.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ms",
+   "version": "0.7.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w9mr-4mfr-499f",
+   "aliases": [
+    "CVE-2017-20162"
+   ],
+   "severity": "MODERATE",
+   "summary": "Vercel ms Inefficient Regular Expression Complexity vulnerability",
+   "fixed": [
+    "2.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ms",
+   "version": "0.7.3",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w9mr-4mfr-499f",
+   "aliases": [
+    "CVE-2017-20162"
+   ],
+   "severity": "MODERATE",
+   "summary": "Vercel ms Inefficient Regular Expression Complexity vulnerability",
+   "fixed": [
+    "2.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "negotiator",
+   "version": "0.2.8",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7mc5-chhp-fmc3",
+   "aliases": [
+    "CVE-2016-10539"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in negotiator",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "negotiator"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "negotiator",
+   "version": "0.4.9",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7mc5-chhp-fmc3",
+   "aliases": [
+    "CVE-2016-10539"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in negotiator",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "negotiator"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "negotiator",
+   "version": "0.5.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7mc5-chhp-fmc3",
+   "aliases": [
+    "CVE-2016-10539"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in negotiator",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "negotiator"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "npmconf",
+   "version": "0.0.24",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-57cf-349j-352g",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Out-of-bounds Read in npmconf",
+   "fixed": [
+    "2.1.3"
+   ],
+   "symbols": [
+    "npmconf"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "on-headers",
+   "version": "1.0.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-76c9-3jph-rj3q",
+   "aliases": [
+    "CVE-2025-7339"
+   ],
+   "severity": "LOW",
+   "summary": "on-headers is vulnerable to http response header manipulation",
+   "fixed": [
+    "1.1.0"
+   ],
+   "symbols": [
+    "response.writeHead"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "path-parse",
+   "version": "1.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-hj48-42vr-x3v9",
+   "aliases": [
+    "CVE-2021-23343"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service in path-parse",
+   "fixed": [
+    "1.0.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "path-to-regexp",
+   "version": "0.1.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-37ch-88jc-xwx2",
+   "aliases": [
+    "CVE-2024-45296",
+    "CVE-2026-4867",
+    "GHSA-9wv6-86v2-598j"
+   ],
+   "severity": "HIGH",
+   "summary": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters",
+   "fixed": [
+    "0.1.13",
+    "1.9.0",
+    "0.1.10",
+    "8.0.0",
+    "3.3.0",
+    "6.3.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "path-to-regexp",
+   "version": "0.1.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rhx6-c78j-4q9w",
+   "aliases": [
+    "CVE-2024-52798"
+   ],
+   "severity": "HIGH",
+   "summary": "path-to-regexp contains a ReDoS",
+   "fixed": [
+    "0.1.12"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "qs",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "aliases": [
+    "CVE-2025-15284"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-gqgv-6jq5-jjj9",
+   "aliases": [
+    "CVE-2017-1000048"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution Protection Bypass in qs",
+   "fixed": [
+    "6.0.4",
+    "6.1.2",
+    "6.2.3",
+    "6.3.2"
+   ],
+   "symbols": [
+    "qs",
+    "qs.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-hrpp-h998-j3pp",
+   "aliases": [
+    "CVE-2022-24999"
+   ],
+   "severity": "HIGH",
+   "summary": "qs vulnerable to Prototype Pollution",
+   "fixed": [
+    "6.10.3",
+    "6.9.7",
+    "6.8.3",
+    "6.7.3",
+    "6.6.1",
+    "6.5.3",
+    "6.4.1",
+    "6.3.3",
+    "6.2.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "aliases": [
+    "CVE-2026-82417"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs: Denial of Service via Attacker Controlled isBuffer",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "aliases": [
+    "CVE-2025-15284"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-gqgv-6jq5-jjj9",
+   "aliases": [
+    "CVE-2017-1000048"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution Protection Bypass in qs",
+   "fixed": [
+    "6.0.4",
+    "6.1.2",
+    "6.2.3",
+    "6.3.2"
+   ],
+   "symbols": [
+    "qs",
+    "qs.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-hrpp-h998-j3pp",
+   "aliases": [
+    "CVE-2022-24999"
+   ],
+   "severity": "HIGH",
+   "summary": "qs vulnerable to Prototype Pollution",
+   "fixed": [
+    "6.10.3",
+    "6.9.7",
+    "6.8.3",
+    "6.7.3",
+    "6.6.1",
+    "6.5.3",
+    "6.4.1",
+    "6.3.3",
+    "6.2.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "aliases": [
+    "CVE-2026-82417"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs: Denial of Service via Attacker Controlled isBuffer",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "aliases": [
+    "CVE-2025-15284"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-hrpp-h998-j3pp",
+   "aliases": [
+    "CVE-2022-24999"
+   ],
+   "severity": "HIGH",
+   "summary": "qs vulnerable to Prototype Pollution",
+   "fixed": [
+    "6.10.3",
+    "6.9.7",
+    "6.8.3",
+    "6.7.3",
+    "6.6.1",
+    "6.5.3",
+    "6.4.1",
+    "6.3.3",
+    "6.2.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "request",
+   "version": "2.88.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p8p7-x288-28g6",
+   "aliases": [
+    "CVE-2023-28155"
+   ],
+   "severity": "MODERATE",
+   "summary": "Server-Side Request Forgery in Request",
+   "fixed": [],
+   "symbols": [
+    "request"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "semver",
+   "version": "1.1.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-x6fg-f45m-jf5q",
+   "aliases": [
+    "CVE-2015-8855"
+   ],
+   "severity": "HIGH",
+   "summary": "Regular Expression Denial of Service in semver",
+   "fixed": [
+    "4.3.2"
+   ],
+   "symbols": [
+    "semver"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "semver",
+   "version": "5.5.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-c2qf-rxjj-qqgw",
+   "aliases": [
+    "CVE-2022-25883"
+   ],
+   "severity": "HIGH",
+   "summary": "semver vulnerable to Regular Expression Denial of Service",
+   "fixed": [
+    "7.5.2",
+    "6.3.1",
+    "5.7.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "semver",
+   "version": "5.7.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-c2qf-rxjj-qqgw",
+   "aliases": [
+    "CVE-2022-25883"
+   ],
+   "severity": "HIGH",
+   "summary": "semver vulnerable to Regular Expression Denial of Service",
+   "fixed": [
+    "7.5.2",
+    "6.3.1",
+    "5.7.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "send",
+   "version": "0.12.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-m6fv-jmcg-4jfg",
+   "aliases": [
+    "CVE-2024-43799"
+   ],
+   "severity": "LOW",
+   "summary": "send vulnerable to template injection that can lead to XSS",
+   "fixed": [
+    "0.19.0"
+   ],
+   "symbols": [
+    "SendStream.redirect"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "serve-static",
+   "version": "1.9.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-cm22-4g7w-348p",
+   "aliases": [
+    "CVE-2024-43800"
+   ],
+   "severity": "LOW",
+   "summary": "serve-static vulnerable to template injection that can lead to XSS",
+   "fixed": [
+    "1.16.0",
+    "2.1.0"
+   ],
+   "symbols": [
+    "redirect"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "set-value",
+   "version": "0.4.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4g88-fppr-53pp",
+   "aliases": [
+    "CVE-2019-10747",
+    "SNYK-JS-SETVALUE-450213"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in set-value",
+   "fixed": [
+    "2.0.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "set-value",
+   "version": "0.4.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4jqc-8m5r-9rpr",
+   "aliases": [
+    "CVE-2021-23440"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in set-value",
+   "fixed": [
+    "4.0.1",
+    "2.0.1",
+    "3.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "set-value",
+   "version": "2.0.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4g88-fppr-53pp",
+   "aliases": [
+    "CVE-2019-10747",
+    "SNYK-JS-SETVALUE-450213"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in set-value",
+   "fixed": [
+    "2.0.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "set-value",
+   "version": "2.0.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4jqc-8m5r-9rpr",
+   "aliases": [
+    "CVE-2021-23440"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in set-value",
+   "fixed": [
+    "4.0.1",
+    "2.0.1",
+    "3.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "sha.js",
+   "version": "2.4.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-95m3-7q98-8xr5",
+   "aliases": [
+    "CVE-2025-9288"
+   ],
+   "severity": "CRITICAL",
+   "summary": "sha.js is missing type checks leading to hash rewind and passing on crafted data",
+   "fixed": [
+    "2.4.12"
+   ],
+   "symbols": [
+    "Buffer",
+    "buf"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "st",
+   "version": "0.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-69rr-wvh9-6c4q",
+   "aliases": [
+    "CVE-2014-3744"
+   ],
+   "severity": "HIGH",
+   "summary": "Directory Traversal in st",
+   "fixed": [
+    "0.2.5"
+   ],
+   "symbols": [
+    "st"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "st",
+   "version": "0.2.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-72fg-jqhx-c68p",
+   "aliases": [
+    "CVE-2017-16224"
+   ],
+   "severity": "MODERATE",
+   "summary": "Open Redirect in st",
+   "fixed": [
+    "1.2.2"
+   ],
+   "symbols": [
+    "st"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tough-cookie",
+   "version": "2.4.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-72xf-g2v4-qvf3",
+   "aliases": [
+    "CVE-2023-26136"
+   ],
+   "severity": "MODERATE",
+   "summary": "tough-cookie Prototype Pollution vulnerability",
+   "fixed": [
+    "4.1.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-2rp8-mm9q-fp49",
+   "aliases": [
+    "CVE-2026-73651"
+   ],
+   "severity": "MODERATE",
+   "summary": " TypeORM: migration:generate template-literal code injection",
+   "fixed": [
+    "0.3.31",
+    "1.1.0"
+   ],
+   "symbols": [
+    "escapeComment",
+    "import",
+    "require",
+    "information_schema.CHECK_CONSTRAINTS",
+    "ViewEntity",
+    "pg_get_viewdef",
+    "JSON.stringify",
+    "id",
+    "user",
+    "down",
+    "up"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9ggv-8w38-r7pm",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "TypeORM: SQL Injection in UpdateQueryBuilder/SoftDeleteQueryBuilder orderBy (MySQL/MariaDB)",
+   "fixed": [
+    "0.3.29"
+   ],
+   "symbols": [
+    "UpdateQueryBuilder",
+    "SoftDeleteQueryBuilder",
+    "addOrderBy",
+    "order",
+    "SelectQueryBuilder.orderBy",
+    "orderBy"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-fx4w-v43j-vc45",
+   "aliases": [
+    "CVE-2022-33171"
+   ],
+   "severity": "CRITICAL",
+   "summary": "SQL injection in typeORM",
+   "fixed": [
+    "0.3.0"
+   ],
+   "symbols": [
+    "findOne"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-pf2j-9qmp-jqr2",
+   "aliases": [
+    "CVE-2020-8158"
+   ],
+   "severity": "CRITICAL",
+   "summary": "TypeORM vulnerable to MAID and Prototype Pollution",
+   "fixed": [
+    "0.2.25"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-q2pj-6v73-8rgj",
+   "aliases": [
+    "CVE-2025-60542"
+   ],
+   "severity": "HIGH",
+   "summary": "TypeORM vulnerable to SQL injection via crafted request to repository.save or repository.update",
+   "fixed": [
+    "0.3.26"
+   ],
+   "symbols": [
+    "user",
+    "username",
+    "city",
+    "id",
+    "role",
+    "Javad"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "underscore",
+   "version": "1.9.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-cf4h-3jhx-xvhq",
+   "aliases": [
+    "CVE-2021-23358"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Arbitrary Code Execution in underscore",
+   "fixed": [
+    "1.12.1"
+   ],
+   "symbols": [
+    "underscore"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "underscore",
+   "version": "1.9.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qpx9-hpmf-5gmw",
+   "aliases": [
+    "CVE-2026-27601"
+   ],
+   "severity": "HIGH",
+   "summary": "Underscore has unlimited recursion in _.flatten and _.isEqual, potential for DoS attack",
+   "fixed": [
+    "1.13.8"
+   ],
+   "symbols": [
+    "_.flatten",
+    "_.isEqual",
+    "JSON.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "uuid",
+   "version": "3.3.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-w5hq-g745-h8pq",
+   "aliases": [
+    "CVE-2026-41907",
+    "CVE-2026-41988"
+   ],
+   "severity": "MODERATE",
+   "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+   "fixed": [
+    "11.1.1",
+    "12.0.1",
+    "13.0.1"
+   ],
+   "symbols": [
+    "v3",
+    "v5",
+    "v6",
+    "uuid",
+    "buf",
+    "offset",
+    "v4",
+    "v1",
+    "v7",
+    "RangeError"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9965-vmph-33xx",
+   "aliases": [
+    "CVE-2025-56200"
+   ],
+   "severity": "MODERATE",
+   "summary": "validator.js has a URL validation bypass vulnerability in its isURL function",
+   "fixed": [
+    "13.15.20"
+   ],
+   "symbols": [
+    "isURL"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-qgmg-gppg-76g5",
+   "aliases": [
+    "CVE-2021-3765"
+   ],
+   "severity": "MODERATE",
+   "summary": "Inefficient Regular Expression Complexity in validator.js",
+   "fixed": [
+    "13.7.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vghf-hv5q-vc2g",
+   "aliases": [
+    "CVE-2025-12758"
+   ],
+   "severity": "HIGH",
+   "summary": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
+   "fixed": [
+    "13.15.22"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xx4c-jj58-r7x6",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Inefficient Regular Expression Complexity in Validator.js",
+   "fixed": [
+    "13.7.0"
+   ],
+   "symbols": [
+    "validator",
+    "rtrim",
+    "trim"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "xml2js",
+   "version": "0.4.23",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-776f-qx25-q3cc",
+   "aliases": [
+    "CVE-2023-0842"
+   ],
+   "severity": "MODERATE",
+   "summary": "xml2js is vulnerable to prototype pollution",
+   "fixed": [
+    "0.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "y18n",
+   "version": "3.2.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-c4w7-xm78-47vh",
+   "aliases": [
+    "CVE-2020-7774"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in y18n",
+   "fixed": [
+    "3.2.2",
+    "4.0.1",
+    "5.0.5"
+   ],
+   "symbols": [
+    "y18n"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "y18n",
+   "version": "4.0.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-c4w7-xm78-47vh",
+   "aliases": [
+    "CVE-2020-7774"
+   ],
+   "severity": "HIGH",
+   "summary": "Prototype Pollution in y18n",
+   "fixed": [
+    "3.2.2",
+    "4.0.1",
+    "5.0.5"
+   ],
+   "symbols": [
+    "y18n"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "yargs-parser",
+   "version": "8.1.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p9pc-299p-vxgp",
+   "aliases": [
+    "CVE-2020-7608",
+    "SNYK-JS-YARGSPARSER-560381"
+   ],
+   "severity": "MODERATE",
+   "summary": "yargs-parser Vulnerable to Prototype Pollution",
+   "fixed": [
+    "13.1.2",
+    "15.0.1",
+    "18.1.1",
+    "5.0.1"
+   ],
+   "symbols": [
+    "bar",
+    "baz"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "yargs-parser",
+   "version": "9.0.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p9pc-299p-vxgp",
+   "aliases": [
+    "CVE-2020-7608",
+    "SNYK-JS-YARGSPARSER-560381"
+   ],
+   "severity": "MODERATE",
+   "summary": "yargs-parser Vulnerable to Prototype Pollution",
+   "fixed": [
+    "13.1.2",
+    "15.0.1",
+    "18.1.1",
+    "5.0.1"
+   ],
+   "symbols": [
+    "bar",
+    "baz"
+   ],
+   "symbol_source": "auto"
+  }
+ ]
+}
