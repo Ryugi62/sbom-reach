@@ -16,11 +16,18 @@ _STOP = {"true", "false", "null", "none", "undefined", "this", "self", "object",
          "javascript", "json", "html", "http", "https", "url", "get", "set", "options", "default", "name", "value",
          "data", "window", "document", "global", "root", "src", "div", "script"}
 _EXT = (".js", ".py", ".json", ".md", ".html", ".txt", ".xml", ".yml", ".yaml", ".ts", ".css", ".cfg", ".ini", ".lock")
+_EXT_WORDS = {"js", "py", "json", "com", "org", "io", "net", "md", "html"}
 _NAMED = re.compile(r"\b([A-Za-z]+_[A-Za-z_]+|[a-z]+[A-Z][A-Za-z]+)\s+(?:method|function|API)\b|"
                     r"\b(?:method|function)\s+([A-Za-z]+_[A-Za-z_]+|[a-z]+[A-Z][A-Za-z]+)\b")
 
 
-def extract_symbols(summary: str, details: str) -> Tuple[str, ...]:
+_ENUM = re.compile(r"\b(?:via|in|using|through|by|of)\s+(?:the\s+)?((?:[A-Za-z_]\w*\s*,\s*)*(?:and\s+)?[A-Za-z_]\w*(?:\s*,?\s+and\s+[A-Za-z_]\w*)?)\s+(?:functions?|methods?)\b")
+_ENUM_STOP = {"the", "a", "an", "certain", "some", "specific", "these", "those", "following", "various", "other", "affected",
+              "vulnerable", "same", "this", "that", "all", "and", "or", "any", "each", "every", "such", "its", "their", "which", "particular",
+              "public", "private", "internal", "helper", "utility", "standard", "built", "in", "of", "with", "user", "another", "one", "two"}
+
+
+def extract_symbols(summary: str, details: str, package: str = "") -> Tuple[str, ...]:
     text = f"{summary}\n{details}"
     out: List[str] = []
     for tok in _BACKTICK.findall(text):
@@ -35,6 +42,17 @@ def extract_symbols(summary: str, details: str) -> Tuple[str, ...]:
             continue
         if t not in out:
             out.append(t)
+    for m in _ENUM.finditer(text):
+        for w in re.split(r"\s*,\s*|\s+and\s+|\s*,?\s+", m.group(1)):
+            w = w.strip()
+            if w and w.lower() not in _ENUM_STOP and w.lower() not in _STOP and len(w) > 2 and w not in out:
+                out.append(w)
+    if package:
+        pk = re.escape(package)
+        for m in re.finditer(r"\b(" + pk + r")\.([A-Za-z_]\w*)\b", text):
+            t = f"{m.group(1)}.{m.group(2)}"
+            if m.group(2).lower() not in _EXT_WORDS and t not in out:
+                out.append(t)
     for m in _NAMED.finditer(text):
         t = m.group(1) or m.group(2)
         if t and t.lower() not in _STOP and t not in out:
@@ -97,7 +115,7 @@ def _fixed_for(raw: dict, c: Component) -> Tuple[str, ...]:
 
 def parse_vuln(raw: dict, c: Component) -> Advisory:
     summary = raw.get("summary") or ""
-    syms = extract_symbols(summary, raw.get("details") or "")
+    syms = extract_symbols(summary, raw.get("details") or "", package=c.name)
     return Advisory(id=raw.get("id", ""), aliases=tuple(raw.get("aliases") or ()), summary=summary,
                     severity=_severity(raw), fixed_versions=_fixed_for(raw, c), symbols=syms,
                     symbol_source="auto" if syms else "none")

@@ -19,7 +19,8 @@ def test_alerts_dict_has_no_verdict_so_gold_can_be_written_blind():
 
 def test_scan_dict_has_verdict_evidence_and_counts():
     d = scan_to_dict(res(), name="demo")
-    assert d["counts"] == {"alerts": 2, "REACHED": 1, "USED": 0, "UNSEEN": 1}
+    assert d["counts"] == {"alerts": 2, "REACHED": 1, "USED": 0, "UNSEEN": 1, "REACHED_weak": 0}
+    assert d["alerts"][0]["weak"] is False
     top = d["alerts"][0]
     assert top["verdict"] == "REACHED" and top["evidence"][0]["line"] == 5 and top["rank"] == 1
     assert d["stage_status"]["scan"] == "ok"

@@ -71,7 +71,7 @@ def test_severity_from_cvss_vector_when_no_label():
 
 
 def test_extract_dotted_module_function_without_backticks():
-    syms = extract_symbols("Path Traversal: 'dir/../../filename' in moment.locale", "")
+    syms = extract_symbols("Path Traversal: 'dir/../../filename' in moment.locale", "", package="moment")
     assert "moment.locale" in syms
 
 

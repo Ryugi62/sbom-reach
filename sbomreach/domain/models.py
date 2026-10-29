@@ -59,6 +59,7 @@ class Judgement:
     verdict: Verdict
     evidence: Tuple[Evidence, ...]
     reason: str
+    weak: bool = False   # 메서드 이름만 일치한 약한 근거(타입 추론 없음)
 
     def __post_init__(self):
         if self.verdict is Verdict.REACHED and not self.evidence:

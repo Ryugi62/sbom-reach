@@ -29,13 +29,14 @@ def scan_to_dict(res: ScanResult, name: str) -> Dict:
         c, a = j.alert.component, j.alert.advisory
         alerts.append({"rank": r.rank, "score": r.score, "package": c.name, "version": c.version, "ecosystem": c.ecosystem,
                        "advisory": a.id, "severity": a.severity, "fixed": list(a.fixed_versions), "symbols": list(a.symbols),
-                       "symbol_source": a.symbol_source, "verdict": j.verdict.value, "reason": j.reason,
+                       "symbol_source": a.symbol_source, "verdict": j.verdict.value, "weak": j.weak, "reason": j.reason,
                        "evidence": [{"path": e.path, "line": e.line, "text": e.text} for e in j.evidence]})
     return {"name": name, "repo": res.repo, "sbom_tool": res.sbom_tool, "fallback_used": res.fallback_used,
             "components": len(res.components), "elapsed_sec": res.elapsed, "stage_status": res.stage_status,
             "incomplete": [f"{c.name}@{c.version}" for c in res.incomplete],
             "counts": {"alerts": len(res.judgements), "REACHED": res.count(Verdict.REACHED),
-                       "USED": res.count(Verdict.USED), "UNSEEN": res.count(Verdict.UNSEEN)},
+                       "USED": res.count(Verdict.USED), "UNSEEN": res.count(Verdict.UNSEEN),
+                       "REACHED_weak": sum(1 for j in res.judgements if j.weak)},
             "alerts": alerts}
 
 

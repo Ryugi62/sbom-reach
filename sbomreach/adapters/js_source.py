@@ -148,13 +148,23 @@ def analyze_js(files: Dict[str, str]) -> SourceIndex:
             root, _ = _root(modstr(m.end()))
             if root:
                 add_import(root, m.start())
+        # 한 단계 인스턴스 추적: var zip = AdmZip(buf) / new AdmZip() -> zip.method 는 모듈의 참조
+        whole = {i: r for i, r, m, _, _ in bindings if m == ""}
+        for m in re.finditer(r"(?:const|let|var)\s+([\w$]+)\s*=\s*(?:new\s+)?([\w$]+)\s*\(", nostr):
+            if m.group(2) in whole and m.group(1) not in whole:
+                bindings.append((m.group(1), whole[m.group(2)], "inst:", m.start(), m.end()))
+        for m in re.finditer(r"\.\s*([A-Za-z_$][\w$]*)\s*\(", nostr):
+            idx.weak_refs.setdefault(m.group(1), []).append(ev(m.start()))
         for ident, root, member, s0, s1 in bindings:
             rx = re.compile(r"(?<![\w$.])" + re.escape(ident) + r"(?![\w$])(\s*\.\s*([\w$]+))?")
             base = root.split("/")[-1]
             for u in rx.finditer(nostr):
                 if s0 <= u.start() < s1:
                     continue
-                if member.startswith("member:"):
+                if member == "inst:":
+                    if u.group(2):
+                        add_ref(root, u.group(2), u.start())
+                elif member.startswith("member:"):
                     add_ref(root, member[7:], u.start())
                 elif member:
                     add_ref(root, member.split("/")[-1], u.start())
