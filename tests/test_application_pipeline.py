@@ -168,3 +168,10 @@ def test_explain_masks_secrets_in_prompt():
     r = replace(_rem(), package="lodash")
     explain(r, llm, Verdict.REACHED, Tr(), context="mail me@x.com key AIzaSyA1234567890abcdefghijklmnopqrstuv")
     assert "me@x.com" not in llm.prompt and "AIza" not in llm.prompt
+
+
+def test_template_text_mentions_override_for_transitive_npm():
+    from dataclasses import replace
+    r = replace(_rem(), direct=False)
+    out = explain(r, None, Verdict.USED, Tr())
+    assert "overrides" in out.text and out.text_source == "template"
