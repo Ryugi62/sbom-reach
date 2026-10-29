@@ -54,3 +54,13 @@ def test_evidence_text_is_source_line():
     idx = analyze_python({"a.py": SRC})
     assert idx.refs[("yaml", "load")][0].text == "a = yaml.load(x)"
     assert idx.refs[("yaml", "load")][0].path == "a.py"
+
+
+def test_relative_import_ignored():
+    idx = analyze_python({"r.py": "from . import x\nfrom .y import z\nz()\n"})
+    assert idx.imports == {} and idx.refs == {}
+
+
+def test_nested_attribute_chain_records_each_attr():
+    idx = analyze_python({"n.py": "import django\ndjango.utils.html.mark_safe('x')\n"})
+    assert ("django", "mark_safe") in idx.refs and ("django", "utils") in idx.refs

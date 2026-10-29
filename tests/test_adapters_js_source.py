@@ -62,3 +62,18 @@ def test_inline_require_call():
 def test_scoped_package_root():
     idx = analyze_js({"b.js": "const x = require('@scope/pkg/sub');\nx.go();\n"})
     assert "@scope/pkg" in idx.imports
+
+
+def test_url_in_string_is_not_a_comment():
+    idx = analyze_js({"c.js": "const u = 'http://x.y/z'; const m = require('marked'); m(u);\n"})
+    assert ("marked", "marked") in idx.refs
+
+
+def test_relative_require_ignored():
+    idx = analyze_js({"d.js": "const a = require('./local'); a.x();\n"})
+    assert idx.imports == {}
+
+
+def test_member_chain_on_module_binding():
+    idx = analyze_js({"e.js": "const m = require('moment');\nm.utc().format();\n"})
+    assert ("moment", "utc") in idx.refs
