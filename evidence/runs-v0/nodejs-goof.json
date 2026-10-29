@@ -1,0 +1,5465 @@
+{
+ "name": "nodejs-goof",
+ "repo": "untrusted/nodejs-goof",
+ "sbom_tool": "syft",
+ "fallback_used": false,
+ "components": 566,
+ "elapsed_sec": 1.05,
+ "stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "incomplete": [],
+ "counts": {
+  "alerts": 235,
+  "REACHED": 7,
+  "USED": 68,
+  "UNSEEN": 160
+ },
+ "alerts": [
+  {
+   "rank": 1,
+   "score": 7.0,
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-x5pg-88wf-qq4p",
+   "severity": "HIGH",
+   "fixed": [
+    "0.3.9"
+   ],
+   "symbols": [
+    "marked"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 marked 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 76,
+     "text": "app.locals.marked = marked;"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "score": 7.0,
+   "package": "moment",
+   "version": "2.15.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-446m-mv8f-q348",
+   "severity": "HIGH",
+   "fixed": [
+    "2.19.3"
+   ],
+   "symbols": [
+    "moment"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 moment 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 293,
+     "text": "var d = moment(when);"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 7.0,
+   "package": "ms",
+   "version": "0.6.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3fx5-fwvr-xrjg",
+   "severity": "HIGH",
+   "fixed": [
+    "0.7.1"
+   ],
+   "symbols": [
+    "ms"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 ms 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 159,
+     "text": "t += ' [' + ms(period) + ']';"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "score": 7.0,
+   "package": "st",
+   "version": "0.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-69rr-wvh9-6c4q",
+   "severity": "HIGH",
+   "fixed": [
+    "0.2.5"
+   ],
+   "symbols": [
+    "st"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 st 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 72,
+     "text": "app.use(st({ path: './public', url: '/public' }));"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "score": 4.0,
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vfvf-mqq8-rwqc",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.6"
+   ],
+   "symbols": [
+    "marked"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 marked 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 76,
+     "text": "app.locals.marked = marked;"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "score": 4.0,
+   "package": "st",
+   "version": "0.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-72fg-jqhx-c68p",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.2.2"
+   ],
+   "symbols": [
+    "st"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 st 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 72,
+     "text": "app.use(st({ path: './public', url: '/public' }));"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "score": 4.0,
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xx4c-jj58-r7x6",
+   "severity": "MODERATE",
+   "fixed": [
+    "13.7.0"
+   ],
+   "symbols": [
+    "validator",
+    "rtrim",
+    "trim"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 rtrim, trim, validator 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 116,
+     "text": "profile.firstname = validator.rtrim(profile.firstname)"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 117,
+     "text": "profile.lastname = validator.rtrim(profile.lastname)"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "score": 3.5,
+   "package": "express-fileupload",
+   "version": "0.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9wcg-jrwf-8gg7",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.1.9"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 22,
+     "text": "var fileUpload = require('express-fileupload');"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "score": 3.5,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jf85-cpcp-j695",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.17.12"
+   ],
+   "symbols": [
+    "lodash",
+    "defaultsDeep"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 defaultsDeep, lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "score": 3.5,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jf85-cpcp-j695",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.17.12"
+   ],
+   "symbols": [
+    "lodash",
+    "defaultsDeep"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 defaultsDeep, lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "score": 3.5,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8687-vv9j-hgph",
+   "severity": "CRITICAL",
+   "fixed": [
+    "5.7.5",
+    "4.13.21"
+   ],
+   "symbols": [
+    "_bsontype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 _bsontype 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "score": 3.5,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9m93-w8w6-76hh",
+   "severity": "CRITICAL",
+   "fixed": [
+    "7.3.3",
+    "6.11.3",
+    "5.13.20"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "score": 3.5,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-h8hf-x3f4-xwgp",
+   "severity": "CRITICAL",
+   "fixed": [
+    "6.4.6",
+    "5.13.15"
+   ],
+   "symbols": [
+    "Schema.path",
+    "schema"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 path, schema 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "score": 3.5,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vg7j-7cwx-8wgw",
+   "severity": "CRITICAL",
+   "fixed": [
+    "8.9.5",
+    "7.8.4",
+    "6.13.6"
+   ],
+   "symbols": [
+    "$where"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 $where 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "score": 3.5,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fx4w-v43j-vc45",
+   "severity": "CRITICAL",
+   "fixed": [
+    "0.3.0"
+   ],
+   "symbols": [
+    "findOne"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 findOne 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/users.js",
+     "line": 3,
+     "text": "var typeorm = require(\"typeorm\");"
+    },
+    {
+     "path": "typeorm-db.js",
+     "line": 1,
+     "text": "var typeorm = require(\"typeorm\");"
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "score": 3.5,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pf2j-9qmp-jqr2",
+   "severity": "CRITICAL",
+   "fixed": [
+    "0.2.25"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/users.js",
+     "line": 3,
+     "text": "var typeorm = require(\"typeorm\");"
+    },
+    {
+     "path": "typeorm-db.js",
+     "line": 1,
+     "text": "var typeorm = require(\"typeorm\");"
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "score": 2.45,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7q85-xj36-vmfc",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "size",
+    "getData"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 getData, size 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "score": 2.45,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8238-w5pm-2374",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "inflateAsync",
+    "EventEmitter",
+    "readFileAsync",
+    "readAsTextAsync",
+    "extractAllToAsync",
+    "ZipEntry.getDataAsync",
+    "Buffer.alloc",
+    "maxOutputLength",
+    "zlib.inflateRawSync",
+    "zlib.createInflateRaw",
+    "InflateRaw",
+    "callback",
+    "err"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 EventEmitter, InflateRaw, alloc, callback, createInflateRaw, err, extractAllToAsync, getDataAsync, inflateAsync, inflateRawSync, maxOutputLength, readAsTextAsync, readFileAsync 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "score": 2.45,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-j5f4-cc29-5x44",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "fs.chmodSync",
+    "extractAllTo",
+    "extractEntryTo"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 chmodSync, extractAllTo, extractEntryTo 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "score": 2.45,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rcw4-f5rp-g42v",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "expectedLength",
+    "option",
+    "readFile",
+    "readAsText",
+    "extractAllTo",
+    "maxOutputLength"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 expectedLength, extractAllTo, maxOutputLength, option, readAsText, readFile 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "score": 2.45,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xcpc-8h2w-3j85",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "score": 2.45,
+   "package": "body-parser",
+   "version": "1.9.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-27r3-jxmh-p828",
+   "severity": "HIGH",
+   "fixed": [
+    "2.4.0",
+    "1.20.9"
+   ],
+   "symbols": [
+    "gzip"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 gzip 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 15,
+     "text": "var bodyParser = require('body-parser');"
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "score": 2.45,
+   "package": "body-parser",
+   "version": "1.9.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qwcr-r2fm-qrc7",
+   "severity": "HIGH",
+   "fixed": [
+    "1.20.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 15,
+     "text": "var bodyParser = require('body-parser');"
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "score": 2.45,
+   "package": "dustjs-linkedin",
+   "version": "2.5.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c6rp-wrp9-qr4q",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 23,
+     "text": "var dust = require('dustjs-linkedin');"
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "score": 2.45,
+   "package": "express-fileupload",
+   "version": "0.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w4m6-x6c2-j5c9",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 22,
+     "text": "var fileUpload = require('express-fileupload');"
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-35jh-r3h4-6jhm",
+   "severity": "HIGH",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4xc9-xhrj-v574",
+   "severity": "HIGH",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p6mc-m468-83gw",
+   "severity": "HIGH",
+   "fixed": [
+    "4.17.19"
+   ],
+   "symbols": [
+    "pick",
+    "setWith",
+    "update",
+    "updateWith",
+    "zipObjectDeep"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 pick, setWith, update, updateWith, zipObjectDeep 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "severity": "HIGH",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 assignInWith, assignWith, imports, importsKeys, prototype, reForbiddenIdentifierChars, template, variable 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "severity": "HIGH",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 assignInWith, assignWith, imports, importsKeys, prototype, reForbiddenIdentifierChars, template, variable 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-35jh-r3h4-6jhm",
+   "severity": "HIGH",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4xc9-xhrj-v574",
+   "severity": "HIGH",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p6mc-m468-83gw",
+   "severity": "HIGH",
+   "fixed": [
+    "4.17.19"
+   ],
+   "symbols": [
+    "pick",
+    "setWith",
+    "update",
+    "updateWith",
+    "zipObjectDeep"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 pick, setWith, update, updateWith, zipObjectDeep 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "score": 2.45,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "severity": "HIGH",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 assignInWith, assignWith, imports, importsKeys, prototype, reForbiddenIdentifierChars, template, variable 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "score": 2.45,
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-5v2h-r2cx-5xgj",
+   "severity": "HIGH",
+   "fixed": [
+    "4.0.10"
+   ],
+   "symbols": [
+    "inline.reflinkSearch"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 reflinkSearch 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 21,
+     "text": "var marked = require('marked');"
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "score": 2.45,
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rrrm-qjm4-v8hf",
+   "severity": "HIGH",
+   "fixed": [
+    "4.0.10"
+   ],
+   "symbols": [
+    "block.def"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 def 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 21,
+     "text": "var marked = require('marked');"
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "score": 2.45,
+   "package": "moment",
+   "version": "2.15.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8hfj-j24r-96c4",
+   "severity": "HIGH",
+   "fixed": [
+    "2.29.2"
+   ],
+   "symbols": [
+    "fr"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 fr 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 10,
+     "text": "var moment = require('moment');"
+    }
+   ]
+  },
+  {
+   "rank": 38,
+   "score": 2.45,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f825-f98c-gj3g",
+   "severity": "HIGH",
+   "fixed": [
+    "6.4.6",
+    "5.13.15"
+   ],
+   "symbols": [
+    "Schema.path"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 path 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 39,
+   "score": 2.45,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m7xq-9374-9rvx",
+   "severity": "HIGH",
+   "fixed": [
+    "8.8.3",
+    "7.8.3",
+    "6.13.5",
+    "5.13.23"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "score": 2.45,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wpg9-53fq-2r8h",
+   "severity": "HIGH",
+   "fixed": [
+    "6.13.9",
+    "7.8.9",
+    "8.22.1",
+    "9.1.6"
+   ],
+   "symbols": [
+    "$nor",
+    "$eq",
+    "$and",
+    "$or",
+    "hasDollarKeys",
+    "$ne",
+    "$gt",
+    "$regex",
+    "sanitizeFilter"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 $and, $eq, $gt, $ne, $nor, $or, $regex, hasDollarKeys, sanitizeFilter 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 41,
+   "score": 2.45,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q2pj-6v73-8rgj",
+   "severity": "HIGH",
+   "fixed": [
+    "0.3.26"
+   ],
+   "symbols": [
+    "user",
+    "username",
+    "city",
+    "id",
+    "role",
+    "Javad"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 Javad, city, id, role, user, username 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/users.js",
+     "line": 3,
+     "text": "var typeorm = require(\"typeorm\");"
+    },
+    {
+     "path": "typeorm-db.js",
+     "line": 1,
+     "text": "var typeorm = require(\"typeorm\");"
+    }
+   ]
+  },
+  {
+   "rank": 42,
+   "score": 2.45,
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vghf-hv5q-vc2g",
+   "severity": "HIGH",
+   "fixed": [
+    "13.15.22"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 12,
+     "text": "var validator = require('validator');"
+    }
+   ]
+  },
+  {
+   "rank": 43,
+   "score": 1.4,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3v6h-hqm4-2rg6",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.4.11"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 44,
+   "score": 1.4,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c6fg-446q-cg94",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "maxOutputLength",
+    "getData",
+    "getDataAsync",
+    "inflateRawSync",
+    "createInflateRaw"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 createInflateRaw, getData, getDataAsync, inflateRawSync, maxOutputLength 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 45,
+   "score": 1.4,
+   "package": "adm-zip",
+   "version": "0.4.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p634-w6r4-rjp2",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "extractAllTo",
+    "getEntry",
+    "entryList",
+    "entryTable"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 entryList, entryTable, extractAllTo, getEntry 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 16,
+     "text": "var AdmZip = require('adm-zip');"
+    }
+   ]
+  },
+  {
+   "rank": 46,
+   "score": 1.4,
+   "package": "express",
+   "version": "4.12.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rv95-896h-c2vc",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.19.2",
+    "5.0.0-beta.3"
+   ],
+   "symbols": [
+    "encodeurl",
+    "location",
+    "res.location",
+    "res.redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 encodeurl, location, redirect 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 11,
+     "text": "var express = require('express');"
+    },
+    {
+     "path": "routes/users.js",
+     "line": 2,
+     "text": "var express = require('express')"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "score": 1.4,
+   "package": "hbs",
+   "version": "4.0.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7f5c-rpf4-86p8",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 26,
+     "text": "const hbs = require('hbs')"
+    }
+   ]
+  },
+  {
+   "rank": 48,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-29mw-wpgm-hmr9",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "toNumber",
+    "trim",
+    "trimEnd",
+    "build_blank"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 build_blank, toNumber, trim, trimEnd 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 49,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 omit, prototype, unset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 50,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-x5rq-j2xg-h7qm",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 51,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 omit, unset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 52,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 omit, prototype, unset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 53,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 omit, unset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 54,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-29mw-wpgm-hmr9",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.21"
+   ],
+   "symbols": [
+    "toNumber",
+    "trim",
+    "trimEnd",
+    "build_blank"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 build_blank, toNumber, trim, trimEnd 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 55,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 omit, prototype, unset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 56,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fvqr-27wr-82fm",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.5"
+   ],
+   "symbols": [
+    "lodash"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 lodash 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 57,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-x5rq-j2xg-h7qm",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.11"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 58,
+   "score": 1.4,
+   "package": "lodash",
+   "version": "4.17.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 omit, unset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 20,
+     "text": "var _ = require('lodash');"
+    }
+   ]
+  },
+  {
+   "rank": 59,
+   "score": 1.4,
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7px7-7xjx-hxm8",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 21,
+     "text": "var marked = require('marked');"
+    }
+   ]
+  },
+  {
+   "rank": 60,
+   "score": 1.4,
+   "package": "marked",
+   "version": "0.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p9wx-2529-fp83",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.17"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 21,
+     "text": "var marked = require('marked');"
+    }
+   ]
+  },
+  {
+   "rank": 61,
+   "score": 1.4,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-664h-wqgq-64gw",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.13.10",
+    "7.8.10",
+    "8.24.1",
+    "9.7.2"
+   ],
+   "symbols": [
+    "$fullPath",
+    "$parentSchemaDocArray",
+    "Object.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 $fullPath, $parentSchemaDocArray, prototype 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 62,
+   "score": 1.4,
+   "package": "mongoose",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r5xw-q988-826m",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.8.39",
+    "4.3.6"
+   ],
+   "symbols": [
+    "mongoose"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 mongoose 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 1,
+     "text": "var mongoose = require('mongoose');"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 2,
+     "text": "var mongoose = require('mongoose');"
+    }
+   ]
+  },
+  {
+   "rank": 63,
+   "score": 1.4,
+   "package": "morgan",
+   "version": "1.10.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4vj7-5mj6-jm8m",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.11.0"
+   ],
+   "symbols": [
+    "Authorization",
+    "combined",
+    "common",
+    "short"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 Authorization, combined, common, short 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 18,
+     "text": "var logger = require('morgan');"
+    }
+   ]
+  },
+  {
+   "rank": 64,
+   "score": 1.4,
+   "package": "morgan",
+   "version": "1.10.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9f6g-j8ch-79g4",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.12.1"
+   ],
+   "symbols": [
+    "combined",
+    "common"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 combined, common 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 18,
+     "text": "var logger = require('morgan');"
+    }
+   ]
+  },
+  {
+   "rank": 65,
+   "score": 1.4,
+   "package": "morgan",
+   "version": "1.10.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jxfw-x594-9x9m",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.12.0"
+   ],
+   "symbols": [
+    "combined",
+    "common",
+    "short"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 combined, common, short 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 18,
+     "text": "var logger = require('morgan');"
+    }
+   ]
+  },
+  {
+   "rank": 66,
+   "score": 1.4,
+   "package": "ms",
+   "version": "0.6.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w9mr-4mfr-499f",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 7,
+     "text": "var ms = require('ms');"
+    }
+   ]
+  },
+  {
+   "rank": 67,
+   "score": 1.4,
+   "package": "ms",
+   "version": "0.7.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w9mr-4mfr-499f",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 7,
+     "text": "var ms = require('ms');"
+    }
+   ]
+  },
+  {
+   "rank": 68,
+   "score": 1.4,
+   "package": "ms",
+   "version": "0.7.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w9mr-4mfr-499f",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.0.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 7,
+     "text": "var ms = require('ms');"
+    }
+   ]
+  },
+  {
+   "rank": 69,
+   "score": 1.4,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2rp8-mm9q-fp49",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.31",
+    "1.1.0"
+   ],
+   "symbols": [
+    "escapeComment",
+    "import",
+    "require",
+    "information_schema.CHECK_CONSTRAINTS",
+    "ViewEntity",
+    "pg_get_viewdef",
+    "JSON.stringify",
+    "id",
+    "user",
+    "down",
+    "up"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 CHECK_CONSTRAINTS, ViewEntity, down, escapeComment, id, import, pg_get_viewdef, require, stringify, up, user 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/users.js",
+     "line": 3,
+     "text": "var typeorm = require(\"typeorm\");"
+    },
+    {
+     "path": "typeorm-db.js",
+     "line": 1,
+     "text": "var typeorm = require(\"typeorm\");"
+    }
+   ]
+  },
+  {
+   "rank": 70,
+   "score": 1.4,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9ggv-8w38-r7pm",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.29"
+   ],
+   "symbols": [
+    "UpdateQueryBuilder",
+    "SoftDeleteQueryBuilder",
+    "addOrderBy",
+    "order",
+    "SelectQueryBuilder.orderBy",
+    "orderBy"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 SoftDeleteQueryBuilder, UpdateQueryBuilder, addOrderBy, order, orderBy 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/users.js",
+     "line": 3,
+     "text": "var typeorm = require(\"typeorm\");"
+    },
+    {
+     "path": "typeorm-db.js",
+     "line": 1,
+     "text": "var typeorm = require(\"typeorm\");"
+    }
+   ]
+  },
+  {
+   "rank": 71,
+   "score": 1.4,
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9965-vmph-33xx",
+   "severity": "MODERATE",
+   "fixed": [
+    "13.15.20"
+   ],
+   "symbols": [
+    "isURL"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 isURL 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 12,
+     "text": "var validator = require('validator');"
+    }
+   ]
+  },
+  {
+   "rank": 72,
+   "score": 1.4,
+   "package": "validator",
+   "version": "13.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qgmg-gppg-76g5",
+   "severity": "MODERATE",
+   "fixed": [
+    "13.7.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 12,
+     "text": "var validator = require('validator');"
+    }
+   ]
+  },
+  {
+   "rank": 73,
+   "score": 1.0,
+   "package": "babel-traverse",
+   "version": "6.26.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-67hx-6x53-jw92",
+   "severity": "CRITICAL",
+   "fixed": [],
+   "symbols": [
+    "path.evaluate",
+    "path.evaluateTruthy",
+    "useBuiltIns"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 74,
+   "score": 1.0,
+   "package": "bson",
+   "version": "0.4.23",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v8w9-2789-6hhr",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.1.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 75,
+   "score": 1.0,
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3w5v-p54c-f74x",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 76,
+   "score": 1.0,
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-phwq-j96m-2c2q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "3.1.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 77,
+   "score": 1.0,
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3w5v-p54c-f74x",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 78,
+   "score": 1.0,
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-phwq-j96m-2c2q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "3.1.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 79,
+   "score": 1.0,
+   "package": "form-data",
+   "version": "2.3.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fjxv-7rqg-78g4",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.5.4",
+    "3.0.4",
+    "4.0.4"
+   ],
+   "symbols": [
+    "Math.random",
+    "undici",
+    "parrot409"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 80,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2w6w-674q-4c4q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "NumberLiteral",
+    "compile",
+    "req.body.text",
+    "id"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 81,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-765h-qjxv-5f44",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 82,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8r5x-fm3f-whwj",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "Handlebars.precompile",
+    "PathExpression",
+    "NumberLiteral",
+    "BooleanLiteral",
+    "compile",
+    "precompile",
+    "parseWithoutProcessing",
+    "type",
+    "Program.blockParams.length",
+    "depth",
+    "StringLiteral",
+    "StringLiteral.value",
+    "PathExpression.original",
+    "Program",
+    "blockParams",
+    "length",
+    "program.blockParams.length",
+    "text",
+    "missingHelper",
+    "Program.blockParams",
+    "PathExpression.depth"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 83,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f2jv-r9rf-7988",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 84,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p8wg-vrv2-v86f",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Function.prototype",
+    "lookupProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 85,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w457-6q6x-cgp9",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.3.0",
+    "3.0.8"
+   ],
+   "symbols": [
+    "handlebars",
+    "__defineGetter__"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 86,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2w6w-674q-4c4q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "NumberLiteral",
+    "compile",
+    "req.body.text",
+    "id"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 87,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-765h-qjxv-5f44",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 88,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8r5x-fm3f-whwj",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "Handlebars.precompile",
+    "PathExpression",
+    "NumberLiteral",
+    "BooleanLiteral",
+    "compile",
+    "precompile",
+    "parseWithoutProcessing",
+    "type",
+    "Program.blockParams.length",
+    "depth",
+    "StringLiteral",
+    "StringLiteral.value",
+    "PathExpression.original",
+    "Program",
+    "blockParams",
+    "length",
+    "program.blockParams.length",
+    "text",
+    "missingHelper",
+    "Program.blockParams",
+    "PathExpression.depth"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 89,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f2jv-r9rf-7988",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 90,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p8wg-vrv2-v86f",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Function.prototype",
+    "lookupProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 91,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w457-6q6x-cgp9",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.3.0",
+    "3.0.8"
+   ],
+   "symbols": [
+    "handlebars",
+    "__defineGetter__"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 92,
+   "score": 1.0,
+   "package": "json-schema",
+   "version": "0.2.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-896r-f27r-55mw",
+   "severity": "CRITICAL",
+   "fixed": [
+    "0.4.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 93,
+   "score": 1.0,
+   "package": "minimist",
+   "version": "0.0.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 94,
+   "score": 1.0,
+   "package": "minimist",
+   "version": "0.0.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 95,
+   "score": 1.0,
+   "package": "minimist",
+   "version": "1.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 96,
+   "score": 1.0,
+   "package": "minimist",
+   "version": "1.2.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xvch-5gv4-984h",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.2.6",
+    "0.2.4"
+   ],
+   "symbols": [
+    "setKey"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 97,
+   "score": 1.0,
+   "package": "mixin-deep",
+   "version": "1.3.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fhjf-83wg-r2j9",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.3.2",
+    "2.0.1"
+   ],
+   "symbols": [
+    "mixinDeep"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 98,
+   "score": 1.0,
+   "package": "set-value",
+   "version": "0.4.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4g88-fppr-53pp",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.0.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 99,
+   "score": 1.0,
+   "package": "set-value",
+   "version": "2.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4g88-fppr-53pp",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.0.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 100,
+   "score": 1.0,
+   "package": "sha.js",
+   "version": "2.4.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-95m3-7q98-8xr5",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.4.12"
+   ],
+   "symbols": [
+    "Buffer",
+    "buf"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 101,
+   "score": 1.0,
+   "package": "underscore",
+   "version": "1.9.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-cf4h-3jhx-xvhq",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.12.1"
+   ],
+   "symbols": [
+    "underscore"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 102,
+   "score": 0.7,
+   "package": "ansi-regex",
+   "version": "3.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-93q8-gq69-wqmw",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.1",
+    "5.0.1",
+    "4.1.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 103,
+   "score": 0.7,
+   "package": "ansi-regex",
+   "version": "4.1.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-93q8-gq69-wqmw",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.1",
+    "5.0.1",
+    "4.1.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 104,
+   "score": 0.7,
+   "package": "ansi-regex",
+   "version": "5.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-93q8-gq69-wqmw",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.1",
+    "5.0.1",
+    "4.1.1",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 105,
+   "score": 0.7,
+   "package": "async",
+   "version": "2.6.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fwr7-v2mv-hh25",
+   "severity": "HIGH",
+   "fixed": [
+    "3.2.2",
+    "2.6.4"
+   ],
+   "symbols": [
+    "mapValues"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 106,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3jxr-9vmj-r5cp",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.7",
+    "1.1.16",
+    "2.1.2"
+   ],
+   "symbols": [
+    "expand_",
+    "post"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 107,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6j4f-fj2g-mc7p",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.10",
+    "3.0.7",
+    "2.1.5",
+    "1.1.19"
+   ],
+   "symbols": [
+    "parseCommaParts",
+    "expand_",
+    "post",
+    "push.apply",
+    "Function.prototype.apply",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "minimatch.braceExpand",
+    "a"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 108,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mh99-v99m-4gvg",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.8",
+    "3.0.3",
+    "2.1.3",
+    "1.1.17"
+   ],
+   "symbols": [
+    "expand",
+    "max",
+    "N",
+    "expand_",
+    "minimatch",
+    "glob",
+    "maxLength"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 109,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qhr7-859c-m2p7",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.11",
+    "3.0.8",
+    "2.1.6",
+    "1.1.20"
+   ],
+   "symbols": [
+    "expand_",
+    "m.post",
+    "parseCommaParts",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "maxDepth"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 110,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rgw5-rvv9-x895",
+   "severity": "HIGH",
+   "fixed": [
+    "1.1.18",
+    "2.1.4",
+    "3.0.6",
+    "5.0.9"
+   ],
+   "symbols": [
+    "maxLength",
+    "expand",
+    "combine",
+    "expand_",
+    "values",
+    "A",
+    "expandSequence",
+    "max"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 111,
+   "score": 0.7,
+   "package": "braces",
+   "version": "2.3.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-grv7-fg5c-xmjg",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.3"
+   ],
+   "symbols": [
+    "braces"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 112,
+   "score": 0.7,
+   "package": "cross-spawn",
+   "version": "4.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3xgq-45jj-v275",
+   "severity": "HIGH",
+   "fixed": [
+    "7.0.5",
+    "6.0.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 113,
+   "score": 0.7,
+   "package": "cross-spawn",
+   "version": "5.1.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3xgq-45jj-v275",
+   "severity": "HIGH",
+   "fixed": [
+    "7.0.5",
+    "6.0.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 114,
+   "score": 0.7,
+   "package": "debug",
+   "version": "2.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9vvw-cc9w-f27h",
+   "severity": "HIGH",
+   "fixed": [
+    "3.1.0",
+    "2.6.9"
+   ],
+   "symbols": [
+    "useColors"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 115,
+   "score": 0.7,
+   "package": "decode-uri-component",
+   "version": "0.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qr28-fpjm-wq7f",
+   "severity": "HIGH",
+   "fixed": [
+    "0.5.1"
+   ],
+   "symbols": [
+    "decodeUriComponent",
+    "customDecodeURIComponent",
+    "fa479da",
+    "decode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 116,
+   "score": 0.7,
+   "package": "decode-uri-component",
+   "version": "0.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w573-4hg7-7wgq",
+   "severity": "HIGH",
+   "fixed": [
+    "0.2.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 117,
+   "score": 0.7,
+   "package": "dicer",
+   "version": "0.3.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wm7h-9275-46v2",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [
+    "dicer"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 118,
+   "score": 0.7,
+   "package": "diff",
+   "version": "1.4.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-h6ch-v84p-w6p9",
+   "severity": "HIGH",
+   "fixed": [
+    "3.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 119,
+   "score": 0.7,
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6x77-rpqf-j6mw",
+   "severity": "HIGH",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 120,
+   "score": 0.7,
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6x77-rpqf-j6mw",
+   "severity": "HIGH",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 121,
+   "score": 0.7,
+   "package": "figlet",
+   "version": "1.5.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-62ch-8vmq-8xm7",
+   "severity": "HIGH",
+   "fixed": [
+    "1.11.3"
+   ],
+   "symbols": [
+    "text",
+    "textSync",
+    "width",
+    "breakWord",
+    "generateFigTextLines",
+    "whitespaceBreak"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 122,
+   "score": 0.7,
+   "package": "form-data",
+   "version": "2.3.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hmw2-7cc7-3qxx",
+   "severity": "HIGH",
+   "fixed": [
+    "2.5.6",
+    "3.0.5",
+    "4.0.6"
+   ],
+   "symbols": [
+    "field",
+    "filename",
+    "_multiPartHeader",
+    "_getContentDisposition",
+    "is_admin",
+    "role",
+    "append"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 123,
+   "score": 0.7,
+   "package": "fresh",
+   "version": "0.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9qj9-36jm-prpv",
+   "severity": "HIGH",
+   "fixed": [
+    "0.5.2"
+   ],
+   "symbols": [
+    "fresh"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 124,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2cf5-4w76-r9qv",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.2"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 125,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3cqr-58rm-57f8",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 126,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3mfm-83xf-c92r",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "invokePartial",
+    "env.compile",
+    "merge",
+    "compile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 127,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-62gr-4qp9-h98f",
+   "severity": "HIGH",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 128,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9cx6-37pm-9jff",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "compile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 129,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g9r4-xpmj-mj65",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 130,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q2c6-c6pm-g3gh",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 131,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q42p-pg8m-cqh6",
+   "severity": "HIGH",
+   "fixed": [
+    "4.1.2",
+    "4.0.14",
+    "3.0.7"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 132,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xhpv-hc6g-r9c6",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "invokePartial",
+    "env.compile",
+    "partial.call",
+    "options.partials",
+    "partial",
+    "compile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 133,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xjpj-3mr7-gcpf",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "template.name",
+    "opts.namespace",
+    "opts.commonjs",
+    "opts.handlebarPath",
+    "require",
+    "pwned"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 134,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2cf5-4w76-r9qv",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.2"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 135,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3cqr-58rm-57f8",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 136,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3mfm-83xf-c92r",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "invokePartial",
+    "env.compile",
+    "merge",
+    "compile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 137,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-62gr-4qp9-h98f",
+   "severity": "HIGH",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 138,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9cx6-37pm-9jff",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "compile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 139,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g9r4-xpmj-mj65",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 140,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q2c6-c6pm-g3gh",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.8",
+    "4.5.3"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 141,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xhpv-hc6g-r9c6",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "invokePartial",
+    "env.compile",
+    "partial.call",
+    "options.partials",
+    "partial",
+    "compile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 142,
+   "score": 0.7,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xjpj-3mr7-gcpf",
+   "severity": "HIGH",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "template.name",
+    "opts.namespace",
+    "opts.commonjs",
+    "opts.handlebarPath",
+    "require",
+    "pwned"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 143,
+   "score": 0.7,
+   "package": "ini",
+   "version": "1.1.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qqgx-2p2h-9c37",
+   "severity": "HIGH",
+   "fixed": [
+    "1.3.6"
+   ],
+   "symbols": [
+    "ini",
+    "ini.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 144,
+   "score": 0.7,
+   "package": "ini",
+   "version": "1.3.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qqgx-2p2h-9c37",
+   "severity": "HIGH",
+   "fixed": [
+    "1.3.6"
+   ],
+   "symbols": [
+    "ini",
+    "ini.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 145,
+   "score": 0.7,
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2883-xcg3-v3hh",
+   "severity": "HIGH",
+   "fixed": [
+    "4.3.2",
+    "3.15.2"
+   ],
+   "symbols": [
+    "maxTotalMergeKeys",
+    "N",
+    "arr",
+    "totalMergeKeys"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 146,
+   "score": 0.7,
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-52cp-r559-cp3m",
+   "severity": "HIGH",
+   "fixed": [
+    "3.15.0",
+    "4.3.0"
+   ],
+   "symbols": [
+    "makeMergeChain"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 147,
+   "score": 0.7,
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-5p4m-2wfm-xmqj",
+   "severity": "HIGH",
+   "fixed": [
+    "4.3.1",
+    "3.15.1"
+   ],
+   "symbols": [
+    "resolveYamlOmap",
+    "yaml.load",
+    "objectKeys",
+    "Array.prototype.indexOf",
+    "n",
+    "maxOmapLength"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 148,
+   "score": 0.7,
+   "package": "kerberos",
+   "version": "0.0.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m2mx-rfpw-jghv",
+   "severity": "HIGH",
+   "fixed": [
+    "1.0.0"
+   ],
+   "symbols": [
+    "kerberos"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 149,
+   "score": 0.7,
+   "package": "kind-of",
+   "version": "6.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6c8f-qphg-qjgp",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 150,
+   "score": 0.7,
+   "package": "mime",
+   "version": "1.2.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wrvr-8mpx-r7pp",
+   "severity": "HIGH",
+   "fixed": [
+    "2.0.3",
+    "1.4.1"
+   ],
+   "symbols": [
+    "mime"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 151,
+   "score": 0.7,
+   "package": "mime",
+   "version": "1.3.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wrvr-8mpx-r7pp",
+   "severity": "HIGH",
+   "fixed": [
+    "2.0.3",
+    "1.4.1"
+   ],
+   "symbols": [
+    "mime"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 152,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-23c5-xmqv-rm74",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.4"
+   ],
+   "symbols": [
+    "minimatch",
+    "AST.toRegExpSource",
+    "a",
+    "z",
+    "this.set",
+    "matchOne",
+    "time_total"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 153,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3ppc-4f35-3m26",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.1",
+    "9.0.6",
+    "8.0.5",
+    "7.4.7",
+    "6.2.1",
+    "5.1.7",
+    "4.2.4",
+    "3.1.3"
+   ],
+   "symbols": [
+    "minimatch",
+    "X"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 154,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7r86-cg39-jmmj",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.3"
+   ],
+   "symbols": [
+    "matchOne",
+    "n",
+    "k",
+    "minimatch",
+    "time_total"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 155,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.0.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f8q6-p94x-37v3",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.5"
+   ],
+   "symbols": [
+    "braceExpand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 156,
+   "score": 0.7,
+   "package": "mongodb",
+   "version": "2.0.46",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mh5c-679w-hh4r",
+   "severity": "HIGH",
+   "fixed": [
+    "3.1.13"
+   ],
+   "symbols": [
+    "mongodb"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 157,
+   "score": 0.7,
+   "package": "mpath",
+   "version": "0.1.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-h466-j336-74wx",
+   "severity": "HIGH",
+   "fixed": [
+    "0.5.1"
+   ],
+   "symbols": [
+    "mpath"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 158,
+   "score": 0.7,
+   "package": "negotiator",
+   "version": "0.2.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7mc5-chhp-fmc3",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "negotiator"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 159,
+   "score": 0.7,
+   "package": "negotiator",
+   "version": "0.4.9",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7mc5-chhp-fmc3",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "negotiator"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 160,
+   "score": 0.7,
+   "package": "negotiator",
+   "version": "0.5.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7mc5-chhp-fmc3",
+   "severity": "HIGH",
+   "fixed": [
+    "0.6.1"
+   ],
+   "symbols": [
+    "negotiator"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 161,
+   "score": 0.7,
+   "package": "path-to-regexp",
+   "version": "0.1.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-37ch-88jc-xwx2",
+   "severity": "HIGH",
+   "fixed": [
+    "0.1.13",
+    "1.9.0",
+    "0.1.10",
+    "8.0.0",
+    "3.3.0",
+    "6.3.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 162,
+   "score": 0.7,
+   "package": "path-to-regexp",
+   "version": "0.1.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rhx6-c78j-4q9w",
+   "severity": "HIGH",
+   "fixed": [
+    "0.1.12"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 163,
+   "score": 0.7,
+   "package": "qs",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gqgv-6jq5-jjj9",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.4",
+    "6.1.2",
+    "6.2.3",
+    "6.3.2"
+   ],
+   "symbols": [
+    "qs",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 164,
+   "score": 0.7,
+   "package": "qs",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hrpp-h998-j3pp",
+   "severity": "HIGH",
+   "fixed": [
+    "6.10.3",
+    "6.9.7",
+    "6.8.3",
+    "6.7.3",
+    "6.6.1",
+    "6.5.3",
+    "6.4.1",
+    "6.3.3",
+    "6.2.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 165,
+   "score": 0.7,
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gqgv-6jq5-jjj9",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.4",
+    "6.1.2",
+    "6.2.3",
+    "6.3.2"
+   ],
+   "symbols": [
+    "qs",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 166,
+   "score": 0.7,
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hrpp-h998-j3pp",
+   "severity": "HIGH",
+   "fixed": [
+    "6.10.3",
+    "6.9.7",
+    "6.8.3",
+    "6.7.3",
+    "6.6.1",
+    "6.5.3",
+    "6.4.1",
+    "6.3.3",
+    "6.2.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 167,
+   "score": 0.7,
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hrpp-h998-j3pp",
+   "severity": "HIGH",
+   "fixed": [
+    "6.10.3",
+    "6.9.7",
+    "6.8.3",
+    "6.7.3",
+    "6.6.1",
+    "6.5.3",
+    "6.4.1",
+    "6.3.3",
+    "6.2.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 168,
+   "score": 0.7,
+   "package": "semver",
+   "version": "1.1.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-x6fg-f45m-jf5q",
+   "severity": "HIGH",
+   "fixed": [
+    "4.3.2"
+   ],
+   "symbols": [
+    "semver"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 169,
+   "score": 0.7,
+   "package": "semver",
+   "version": "5.5.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c2qf-rxjj-qqgw",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.2",
+    "6.3.1",
+    "5.7.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 170,
+   "score": 0.7,
+   "package": "semver",
+   "version": "5.7.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c2qf-rxjj-qqgw",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.2",
+    "6.3.1",
+    "5.7.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 171,
+   "score": 0.7,
+   "package": "set-value",
+   "version": "0.4.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4jqc-8m5r-9rpr",
+   "severity": "HIGH",
+   "fixed": [
+    "4.0.1",
+    "2.0.1",
+    "3.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 172,
+   "score": 0.7,
+   "package": "set-value",
+   "version": "2.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4jqc-8m5r-9rpr",
+   "severity": "HIGH",
+   "fixed": [
+    "4.0.1",
+    "2.0.1",
+    "3.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 173,
+   "score": 0.7,
+   "package": "underscore",
+   "version": "1.9.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qpx9-hpmf-5gmw",
+   "severity": "HIGH",
+   "fixed": [
+    "1.13.8"
+   ],
+   "symbols": [
+    "_.flatten",
+    "_.isEqual",
+    "JSON.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 174,
+   "score": 0.7,
+   "package": "y18n",
+   "version": "3.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c4w7-xm78-47vh",
+   "severity": "HIGH",
+   "fixed": [
+    "3.2.2",
+    "4.0.1",
+    "5.0.5"
+   ],
+   "symbols": [
+    "y18n"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 175,
+   "score": 0.7,
+   "package": "y18n",
+   "version": "4.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c4w7-xm78-47vh",
+   "severity": "HIGH",
+   "fixed": [
+    "3.2.2",
+    "4.0.1",
+    "5.0.5"
+   ],
+   "symbols": [
+    "y18n"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 176,
+   "score": 0.4,
+   "package": "ajv",
+   "version": "6.10.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2g4f-4pwh-qvx6",
+   "severity": "MODERATE",
+   "fixed": [
+    "8.18.0",
+    "6.14.0"
+   ],
+   "symbols": [
+    "$data",
+    "RegExp"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 177,
+   "score": 0.4,
+   "package": "ajv",
+   "version": "6.10.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v88g-cgmw-v5xw",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.12.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 178,
+   "score": 0.4,
+   "package": "bl",
+   "version": "2.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pp7h-53gx-mx7r",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.2.3",
+    "2.2.1",
+    "3.0.1",
+    "4.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 179,
+   "score": 0.4,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f886-m6hf-6m8v",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.5",
+    "3.0.2",
+    "2.0.3",
+    "1.1.13"
+   ],
+   "symbols": [
+    "test",
+    "RangeError",
+    "expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 180,
+   "score": 0.4,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q2hr-2g5m-vwhr",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.12",
+    "3.0.9",
+    "2.1.7",
+    "1.1.21"
+   ],
+   "symbols": [
+    "n",
+    "escClose",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 181,
+   "score": 0.4,
+   "package": "bson",
+   "version": "0.4.23",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4jwp-vfvf-657p",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.1.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 182,
+   "score": 0.4,
+   "package": "decode-uri-component",
+   "version": "0.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vcc3-ghjq-m6fr",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.5.0"
+   ],
+   "symbols": [
+    "decodeUriComponent"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 183,
+   "score": 0.4,
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-ghr5-ch3p-vcr6",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.10"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 184,
+   "score": 0.4,
+   "package": "ejs",
+   "version": "0.8.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hwcf-pp87-7x6p",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 185,
+   "score": 0.4,
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-ghr5-ch3p-vcr6",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.10"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 186,
+   "score": 0.4,
+   "package": "ejs",
+   "version": "1.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hwcf-pp87-7x6p",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.5.5"
+   ],
+   "symbols": [
+    "ejs.renderFile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 187,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2qvq-rjwj-gvw9",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "options.partials",
+    "Object.prototype",
+    "invokePartial",
+    "hasOwnProperty",
+    "widget",
+    "qs",
+    "minimist"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 188,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f52g-6jhx-586p",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 189,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xw65-4hp5-5hc7",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.precompile",
+    "quotedString",
+    "output"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 190,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2qvq-rjwj-gvw9",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "options.partials",
+    "Object.prototype",
+    "invokePartial",
+    "hasOwnProperty",
+    "widget",
+    "qs",
+    "minimist"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 191,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f52g-6jhx-586p",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.4.5"
+   ],
+   "symbols": [
+    "handlebars"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 192,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xw65-4hp5-5hc7",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.7.10"
+   ],
+   "symbols": [
+    "Handlebars.precompile",
+    "quotedString",
+    "output"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 193,
+   "score": 0.4,
+   "package": "highlight.js",
+   "version": "9.18.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7wwv-vh3v-89cq",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.4.1"
+   ],
+   "symbols": [
+    "highlightAuto",
+    "hpp",
+    "cpp",
+    "ruby",
+    "rb"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 194,
+   "score": 0.4,
+   "package": "highlight.js",
+   "version": "9.18.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vfrc-7r7c-w9mx",
+   "severity": "MODERATE",
+   "fixed": [
+    "9.18.2",
+    "10.1.2"
+   ],
+   "symbols": [
+    "languages",
+    "aliases"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 195,
+   "score": 0.4,
+   "package": "hosted-git-info",
+   "version": "2.6.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-43f8-2h32-f4cj",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.8.9",
+    "3.0.8"
+   ],
+   "symbols": [
+    "fromUrl"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 196,
+   "score": 0.4,
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6c3j-c64m-qhgq",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.4.0"
+   ],
+   "symbols": [
+    "Object.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 197,
+   "score": 0.4,
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gxr4-xjj5-5px2",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 198,
+   "score": 0.4,
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jpcq-cgw6-v4j6",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.5.0"
+   ],
+   "symbols": [
+    "jQuery"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 199,
+   "score": 0.4,
+   "package": "jquery",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rmxg-73gg-4p98",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.12.2",
+    "3.0.0"
+   ],
+   "symbols": [
+    "jquery",
+    "jQuery.globalEval",
+    "dataType"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 200,
+   "score": 0.4,
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-h67p-54hq-rp68",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.2.0",
+    "3.15.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 201,
+   "score": 0.4,
+   "package": "js-yaml",
+   "version": "3.13.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mh29-5h37-fv8m",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.1.1",
+    "3.14.2"
+   ],
+   "symbols": [
+    "deno"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 202,
+   "score": 0.4,
+   "package": "mem",
+   "version": "1.1.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4xcv-9jjx-gfj3",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.0.0"
+   ],
+   "symbols": [
+    "mem",
+    "maxAge"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 203,
+   "score": 0.4,
+   "package": "micromatch",
+   "version": "3.1.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-952p-6rrq-rcjv",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.0.8"
+   ],
+   "symbols": [
+    "micromatch",
+    "micromatch.braces"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 204,
+   "score": 0.4,
+   "package": "minimist",
+   "version": "0.0.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vh95-rmgr-6w4m",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.2.1",
+    "1.2.3"
+   ],
+   "symbols": [
+    "minimist",
+    "y",
+    "Polluted"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 205,
+   "score": 0.4,
+   "package": "minimist",
+   "version": "0.0.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vh95-rmgr-6w4m",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.2.1",
+    "1.2.3"
+   ],
+   "symbols": [
+    "minimist",
+    "y",
+    "Polluted"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 206,
+   "score": 0.4,
+   "package": "minimist",
+   "version": "1.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vh95-rmgr-6w4m",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.2.1",
+    "1.2.3"
+   ],
+   "symbols": [
+    "minimist",
+    "y",
+    "Polluted"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 207,
+   "score": 0.4,
+   "package": "mpath",
+   "version": "0.1.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p92x-r36w-9395",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.8.4"
+   ],
+   "symbols": [
+    "Array.prototype.indexOf",
+    "String.prototype.indexOf"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 208,
+   "score": 0.4,
+   "package": "mquery",
+   "version": "1.6.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-45q2-34rf-mr94",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.2.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 209,
+   "score": 0.4,
+   "package": "npmconf",
+   "version": "0.0.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-57cf-349j-352g",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.1.3"
+   ],
+   "symbols": [
+    "npmconf"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 210,
+   "score": 0.4,
+   "package": "path-parse",
+   "version": "1.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hj48-42vr-x3v9",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.0.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 211,
+   "score": 0.4,
+   "package": "qs",
+   "version": "2.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 212,
+   "score": 0.4,
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 213,
+   "score": 0.4,
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 214,
+   "score": 0.4,
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 215,
+   "score": 0.4,
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 216,
+   "score": 0.4,
+   "package": "request",
+   "version": "2.88.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p8p7-x288-28g6",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [
+    "request"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 217,
+   "score": 0.4,
+   "package": "tough-cookie",
+   "version": "2.4.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-72xf-g2v4-qvf3",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.1.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 218,
+   "score": 0.4,
+   "package": "uuid",
+   "version": "3.3.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w5hq-g745-h8pq",
+   "severity": "MODERATE",
+   "fixed": [
+    "11.1.1",
+    "12.0.1",
+    "13.0.1"
+   ],
+   "symbols": [
+    "v3",
+    "v5",
+    "v6",
+    "uuid",
+    "buf",
+    "offset",
+    "v4",
+    "v1",
+    "v7",
+    "RangeError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 219,
+   "score": 0.4,
+   "package": "xml2js",
+   "version": "0.4.23",
+   "ecosystem": "npm",
+   "advisory": "GHSA-776f-qx25-q3cc",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 220,
+   "score": 0.4,
+   "package": "yargs-parser",
+   "version": "8.1.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p9pc-299p-vxgp",
+   "severity": "MODERATE",
+   "fixed": [
+    "13.1.2",
+    "15.0.1",
+    "18.1.1",
+    "5.0.1"
+   ],
+   "symbols": [
+    "bar",
+    "baz"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 221,
+   "score": 0.4,
+   "package": "yargs-parser",
+   "version": "9.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p9pc-299p-vxgp",
+   "severity": "MODERATE",
+   "fixed": [
+    "13.1.2",
+    "15.0.1",
+    "18.1.1",
+    "5.0.1"
+   ],
+   "symbols": [
+    "bar",
+    "baz"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 222,
+   "score": 0.35,
+   "package": "body-parser",
+   "version": "1.9.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v422-hmwv-36x6",
+   "severity": "LOW",
+   "fixed": [
+    "1.20.6",
+    "2.3.0"
+   ],
+   "symbols": [
+    "limit",
+    "NaN",
+    "bytes.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 NaN, limit, parse 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 15,
+     "text": "var bodyParser = require('body-parser');"
+    }
+   ]
+  },
+  {
+   "rank": 223,
+   "score": 0.35,
+   "package": "express",
+   "version": "4.12.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qw6h-vgh9-j6wx",
+   "severity": "LOW",
+   "fixed": [
+    "4.20.0",
+    "5.0.0"
+   ],
+   "symbols": [
+    "response.redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 redirect 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 11,
+     "text": "var express = require('express');"
+    },
+    {
+     "path": "routes/users.js",
+     "line": 2,
+     "text": "var express = require('express')"
+    }
+   ]
+  },
+  {
+   "rank": 224,
+   "score": 0.35,
+   "package": "express-fileupload",
+   "version": "0.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q3w9-g74q-vp5f",
+   "severity": "LOW",
+   "fixed": [
+    "1.1.6-alpha.6"
+   ],
+   "symbols": [
+    "filename"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 filename 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.js",
+     "line": 22,
+     "text": "var fileUpload = require('express-fileupload');"
+    }
+   ]
+  },
+  {
+   "rank": 225,
+   "score": 0.1,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v6h2-p8h4-qcjw",
+   "severity": "LOW",
+   "fixed": [
+    "2.0.2",
+    "1.1.12",
+    "3.0.1",
+    "4.0.1"
+   ],
+   "symbols": [
+    "a5b98a4f30d7813266b221435e1eaaf25a1b0ac5"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 226,
+   "score": 0.1,
+   "package": "cookie",
+   "version": "0.1.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pxg6-pf52-xh8x",
+   "severity": "LOW",
+   "fixed": [
+    "0.7.0"
+   ],
+   "symbols": [
+    "path",
+    "domain"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 227,
+   "score": 0.1,
+   "package": "cookie",
+   "version": "0.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pxg6-pf52-xh8x",
+   "severity": "LOW",
+   "fixed": [
+    "0.7.0"
+   ],
+   "symbols": [
+    "path",
+    "domain"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 228,
+   "score": 0.1,
+   "package": "debug",
+   "version": "2.2.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gxpj-cx7g-858c",
+   "severity": "LOW",
+   "fixed": [
+    "2.6.9",
+    "3.1.0",
+    "3.2.7",
+    "4.3.1"
+   ],
+   "symbols": [
+    "debug",
+    "o"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 229,
+   "score": 0.1,
+   "package": "debug",
+   "version": "4.1.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gxpj-cx7g-858c",
+   "severity": "LOW",
+   "fixed": [
+    "2.6.9",
+    "3.1.0",
+    "3.2.7",
+    "4.3.1"
+   ],
+   "symbols": [
+    "debug",
+    "o"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 230,
+   "score": 0.1,
+   "package": "diff",
+   "version": "1.4.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-73rr-hh4g-fpgx",
+   "severity": "LOW",
+   "fixed": [
+    "8.0.3",
+    "5.2.2",
+    "4.0.4",
+    "3.5.1"
+   ],
+   "symbols": [
+    "parsePatch",
+    "applyPatch"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 231,
+   "score": 0.1,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-442j-39wm-28r2",
+   "severity": "LOW",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "container.lookup",
+    "container.lookupProperty",
+    "lookupProperty",
+    "depthedLookup",
+    "hasOwnProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 232,
+   "score": 0.1,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
+   "advisory": "GHSA-442j-39wm-28r2",
+   "severity": "LOW",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "container.lookup",
+    "container.lookupProperty",
+    "lookupProperty",
+    "depthedLookup",
+    "hasOwnProperty",
+    "resultIsAllowed"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 233,
+   "score": 0.1,
+   "package": "on-headers",
+   "version": "1.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-76c9-3jph-rj3q",
+   "severity": "LOW",
+   "fixed": [
+    "1.1.0"
+   ],
+   "symbols": [
+    "response.writeHead"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 234,
+   "score": 0.1,
+   "package": "send",
+   "version": "0.12.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m6fv-jmcg-4jfg",
+   "severity": "LOW",
+   "fixed": [
+    "0.19.0"
+   ],
+   "symbols": [
+    "SendStream.redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 235,
+   "score": 0.1,
+   "package": "serve-static",
+   "version": "1.9.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-cm22-4g7w-348p",
+   "severity": "LOW",
+   "fixed": [
+    "1.16.0",
+    "2.1.0"
+   ],
+   "symbols": [
+    "redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  }
+ ]
+}

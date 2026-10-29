@@ -1,0 +1,2437 @@
+{
+ "name": "vulnerable-flask-app",
+ "repo": "untrusted/Vulnerable-Flask-App/app",
+ "sbom_tool": "syft",
+ "fallback_used": false,
+ "components": 28,
+ "elapsed_sec": 1.43,
+ "stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "incomplete": [],
+ "counts": {
+  "alerts": 89,
+  "REACHED": 6,
+  "USED": 48,
+  "UNSEEN": 35
+ },
+ "alerts": [
+  {
+   "rank": 1,
+   "score": 10.0,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-ffc3-869f-jxw9",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jwt.decode",
+    "PyJWK",
+    "cryptography",
+    "is_pem_format",
+    "cryptography.load_pem_public_key",
+    "HMACAlgorithm.prepare_key",
+    "key_bytes",
+    "load_pem_public_key",
+    "superadmin",
+    "InvalidKeyError",
+    "InvalidAlgorithmError",
+    "enforce_minimum_key_length"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 InvalidAlgorithmError, InvalidKeyError, PyJWK, cryptography, decode, enforce_minimum_key_length, is_pem_format, key_bytes, load_pem_public_key, prepare_key, superadmin 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 86,
+     "text": "decoded = jwt.decode(token, app.config['SECRET_KEY_HMAC'], verify=True, issuer = 'we45', leeway=10, algorithms=['HS256'])"
+    },
+    {
+     "path": "app.py",
+     "line": 97,
+     "text": "decoded = jwt.decode(token, verify = False)"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "score": 10.0,
+   "package": "pyyaml",
+   "version": "3.12",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-rprw-h62v-c2w7",
+   "severity": "CRITICAL",
+   "fixed": [
+    "5.1"
+   ],
+   "symbols": [
+    "yaml.load",
+    "yaml.safe_load"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 load, safe_load 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 329,
+     "text": "ydata = yaml.load(y)"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 7.0,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-752w-5fwx-jx9f",
+   "severity": "HIGH",
+   "fixed": [
+    "2.12.0"
+   ],
+   "symbols": [
+    "crit",
+    "cnf",
+    "_validate_headers",
+    "decode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 _validate_headers, cnf, crit, decode 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 86,
+     "text": "decoded = jwt.decode(token, app.config['SECRET_KEY_HMAC'], verify=True, issuer = 'we45', leeway=10, algorithms=['HS256'])"
+    },
+    {
+     "path": "app.py",
+     "line": 97,
+     "text": "decoded = jwt.decode(token, verify = False)"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "score": 7.0,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pxh4-856f-4h89",
+   "severity": "HIGH",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "HMACAlgorithm.from_jwk",
+    "k",
+    "PyJWK",
+    "PyJWKSet",
+    "PyJWKClient",
+    "kid",
+    "HMACAlgorithm.prepare_key",
+    "from_jwk",
+    "InsecureKeyLengthWarning",
+    "PyJWT",
+    "pyjwt",
+    "master",
+    "prepare_key",
+    "_verify_signature",
+    "PyJWK.__init__",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "CHANGELOG.rst",
+    "test_hmac_prepare_key_rejects_empty_key",
+    "test_hmac_from_jwk_should_raise_exception_if_empty_json",
+    "jwt.decode",
+    "sub",
+    "HMACAlgorithm",
+    "test_hmac_from_jwk_rejects_empty_k",
+    "oct",
+    "af8181ca0bec5e6b372fbba9afbe23702b787ceb"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 HMACAlgorithm, InsecureKeyLengthWarning, PyJWK, PyJWKClient, PyJWKSet, PyJWT, __init__, _verify_signature, af8181ca0bec5e6b372fbba9afbe23702b787ceb, decode, from_jwk, get_signing_key_from_jwt, k, kid, master, oct, prepare_key, pyjwt, rst, sub, test_hmac_from_jwk_rejects_empty_k, test_hmac_from_jwk_should_raise_exception_if_empty_json, test_hmac_prepare_key_rejects_empty_key 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 86,
+     "text": "decoded = jwt.decode(token, app.config['SECRET_KEY_HMAC'], verify=True, issuer = 'we45', leeway=10, algorithms=['HS256'])"
+    },
+    {
+     "path": "app.py",
+     "line": 97,
+     "text": "decoded = jwt.decode(token, verify = False)"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "score": 7.0,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-mgf9-4vpg-hj56",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.6"
+   ],
+   "symbols": [
+    "HTTPServer",
+    "max_body_size",
+    "CurlAsyncHTTPClient"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 CurlAsyncHTTPClient, HTTPServer, max_body_size 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 336,
+     "text": "http_server = HTTPServer(WSGIContainer(app))"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "score": 4.0,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-3hv7-mjh2-fv65",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.5.9"
+   ],
+   "symbols": [
+    "HTTPServerRequest.__init__",
+    "parse_qs_bytes",
+    "parse_body_arguments",
+    "tornado.escape.parse_qs_bytes",
+    "urllib.parse.parse_qs",
+    "max_num_fields",
+    "urllib.parse.parse_qsl",
+    "max_header_size",
+    "IOLoop",
+    "tornado.web.Application",
+    "ParseUrlEncodedConfig.max_arguments",
+    "set_parse_body_config",
+    "ValueError",
+    "HTTPInputError",
+    "httputil_test",
+    "web_test"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "reason": "취약 심볼 Application, HTTPInputError, IOLoop, ValueError, __init__, httputil_test, max_arguments, max_header_size, max_num_fields, parse_body_arguments, parse_qs, parse_qs_bytes, parse_qsl, set_parse_body_config, web_test 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 338,
+     "text": "IOLoop.instance().start()"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "score": 3.5,
+   "package": "pyyaml",
+   "version": "3.12",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8q59-q68h-6hv4",
+   "severity": "CRITICAL",
+   "fixed": [
+    "5.4"
+   ],
+   "symbols": [
+    "full_load"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 full_load 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 13,
+     "text": "import yaml"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "score": 2.45,
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-562c-5r94-xh97",
+   "severity": "HIGH",
+   "fixed": [
+    "0.12.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 1,
+     "text": "from flask import session, Flask, jsonify, request, Response, render_template, render_template_string, url_for"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "score": 2.45,
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-5wv5-4vpf-pj6m",
+   "severity": "HIGH",
+   "fixed": [
+    "1.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 1,
+     "text": "from flask import session, Flask, jsonify, request, Response, render_template, render_template_string, url_for"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "score": 2.45,
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-m2qf-hxjv-5gpq",
+   "severity": "HIGH",
+   "fixed": [
+    "2.3.2",
+    "2.2.5",
+    "70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+    "afd63b16170b7c047f5758eb910c416511e9c965"
+   ],
+   "symbols": [
+    "session"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 session 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 1,
+     "text": "from flask import session, Flask, jsonify, request, Response, render_template, render_template_string, url_for"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-9v7f-9g4p-ffgj",
+   "severity": "HIGH",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "PyJWKClient",
+    "kid",
+    "master"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 PyJWKClient, kid, master 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-ffqj-6fqr-9h24",
+   "severity": "HIGH",
+   "fixed": [
+    "2.4.0",
+    "9c528670c455b8d948aff95ed50e22940d1ad3fc"
+   ],
+   "symbols": [
+    "jwt.algorithms.get_default_algorithms"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 get_default_algorithms 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-xgmm-8j9v-c9wx",
+   "severity": "HIGH",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2025-183",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "score": 2.45,
+   "package": "python-docx",
+   "version": "0.8.5",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-34wj-p5jm-2p96",
+   "severity": "HIGH",
+   "fixed": [
+    "0.8.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 12,
+     "text": "from docx import Document"
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-3x9g-8vmp-wqvf",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.6"
+   ],
+   "symbols": [
+    "SimpleAsyncHTTPClient",
+    "libcurl",
+    "CurlAsyncHTTPClient",
+    "Authorization",
+    "Cookie"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 Authorization, Cookie, CurlAsyncHTTPClient, SimpleAsyncHTTPClient, libcurl 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-7cx3-6m66-7c5m",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8w49-h785-mj3c",
+   "severity": "HIGH",
+   "fixed": [
+    "6.4.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-c2m8-h5v5-343r",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.9"
+   ],
+   "symbols": [
+    "os.path.abspath",
+    "link",
+    "os.path.exists",
+    "os.path.isfile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 abspath, exists, isfile, link 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-c98p-7wgm-6p64",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.3"
+   ],
+   "symbols": [
+    "HTTPHeaders.add",
+    "max_header_size"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 add, max_header_size 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-chx6-46f5-w4vp",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.9"
+   ],
+   "symbols": [
+    "tornado.curl_httpclient.CurlAsyncHTTPClient",
+    "fetch",
+    "max_body_size",
+    "SimpleAsyncHTTPClient",
+    "_GzipMessageDelegate",
+    "BytesIO",
+    "request_timeout",
+    "pycurl.MAXFILESIZE",
+    "max_buffer_size",
+    "streaming_callback",
+    "SimpleAsyncHTTPClient.initialize",
+    "CurlAsyncHTTPClient.initialize",
+    "buffer.write",
+    "CurlAsyncHTTPClient",
+    "sys.path",
+    "victim_curl_rss.log",
+    "initialize"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 BytesIO, CurlAsyncHTTPClient, MAXFILESIZE, SimpleAsyncHTTPClient, _GzipMessageDelegate, fetch, initialize, log, max_body_size, max_buffer_size, path, request_timeout, streaming_callback, write 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-jhmp-mqwm-3gq8",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.3"
+   ],
+   "symbols": [
+    "_parseparam",
+    "string.count"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 _parseparam, count 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-mpf4-983q-p7j4",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.8"
+   ],
+   "symbols": [
+    "urllib.parse.parse_qs",
+    "max_num_fields",
+    "e530031405e2154654dedc4c84d5656b557ea310",
+    "RequestHandler._execute",
+    "HTTPServerRequest._parse_body",
+    "parse_body_arguments",
+    "parse_qs_bytes",
+    "max_buffer_size",
+    "ValueError",
+    "AsyncHTTPClient"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 AsyncHTTPClient, ValueError, _execute, _parse_body, e530031405e2154654dedc4c84d5656b557ea310, max_buffer_size, max_num_fields, parse_body_arguments, parse_qs, parse_qs_bytes 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "score": 2.45,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-qjxf-f2mg-c6mc",
+   "severity": "HIGH",
+   "fixed": [
+    "6.5.5"
+   ],
+   "symbols": [
+    "max_body_size",
+    "tornado.httputil.ParseMultipartConfig"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 ParseMultipartConfig, max_body_size 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "score": 2.45,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-2g68-c3qc-8985",
+   "severity": "HIGH",
+   "fixed": [
+    "3.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "score": 2.45,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-gq9m-qvpx-68hc",
+   "severity": "HIGH",
+   "fixed": [
+    "0.15.3",
+    "00bc43b1672e662e5e3b8cecd79e67fc968fa246"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "score": 2.45,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-j544-7q9p-6xp8",
+   "severity": "HIGH",
+   "fixed": [
+    "0.15.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "score": 2.45,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-xg9f-g7g7-2323",
+   "severity": "HIGH",
+   "fixed": [
+    "2.2.3",
+    "517cac5a804e8c4dc4ed038bb20dacd038e7a9f1"
+   ],
+   "symbols": [
+    "request.data",
+    "request.form",
+    "request.files"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 data, files, form 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "score": 2.45,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2023-221",
+   "severity": "HIGH",
+   "fixed": [
+    "f3c803b3ade485a45f12b6d6617595350c0f03e2",
+    "f2300208d5e2a5076cbbb4c2aad71096fd040ef9",
+    "2.3.8",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-2gx3-rcp4-g85q",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "kid",
+    "master",
+    "ba4853a",
+    "PyJWKClient"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 PyJWKClient, ba4853a, kid, master 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-hxm8-2xgr-2p9m",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jti",
+    "master",
+    "e6f48401001609a8f99e71fcaf355fb895d508a8"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 e6f48401001609a8f99e71fcaf355fb895d508a8, jti, master 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-jwrc-g2q2-pq5p",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "is_pem_format"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 is_pem_format 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2026-175",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-753j-mpmx-qq6g",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.4.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-78cv-mqj4-43f7",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.5.5"
+   ],
+   "symbols": [
+    "domain",
+    "path",
+    "samesite",
+    "RequestHandler.set_cookie"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 domain, path, samesite, set_cookie 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8423-8fgw-73vq",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.5.8"
+   ],
+   "symbols": [
+    "parse_multipart_form_data",
+    "max_parts"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 max_parts, parse_multipart_form_data 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-hj3f-6gcp-jg8j",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.3.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 38,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pcg2-g6cj-q92c",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.6"
+   ],
+   "symbols": [
+    "max_header_size"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 max_header_size 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 39,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pr2v-jx2c-wg9f",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.5.3"
+   ],
+   "symbols": [
+    "reason",
+    "RequestHandler.set_status",
+    "tornado.web.HTTPError",
+    "HTTPError",
+    "set_status",
+    "log_message"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 HTTPError, log_message, reason, set_status 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pw6j-qg29-8w7f",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.5.7"
+   ],
+   "symbols": [
+    "CurlAsyncHTTPClient",
+    "pycurl",
+    "_process_queue",
+    "_finish",
+    "_curl_setup_request",
+    "curl.reset",
+    "client_cert",
+    "else",
+    "proxy_host",
+    "proxy_username",
+    "request.network_interface",
+    "HTTPRequest",
+    "SimpleAsyncHTTPClient"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 CurlAsyncHTTPClient, HTTPRequest, SimpleAsyncHTTPClient, _curl_setup_request, _finish, _process_queue, client_cert, else, network_interface, proxy_host, proxy_username, pycurl, reset 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 41,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-qppv-j76h-2rpx",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.3.3"
+   ],
+   "symbols": [
+    "_",
+    "int"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 _, int 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 42,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-r4j5-9xpp-3985",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.6"
+   ],
+   "symbols": [
+    "max_body_size",
+    "SimpleAsyncHTTPClient",
+    "data_received"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 SimpleAsyncHTTPClient, data_received, max_body_size 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 43,
+   "score": 1.4,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-w235-7p84-xx57",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.4.1"
+   ],
+   "symbols": [
+    "curl_httpclient.CurlAsyncHTTPClient",
+    "CurlAsyncHTTPClient",
+    "AsyncHTTPClient"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 AsyncHTTPClient, CurlAsyncHTTPClient 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 44,
+   "score": 1.4,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-29vq-49wr-vm6x",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.6"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 45,
+   "score": 1.4,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-87hc-h4r5-73f7",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.5"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 46,
+   "score": 1.4,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-f9vj-2wh5-fj8j",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.0.6"
+   ],
+   "symbols": [
+    "os.path.isabs",
+    "safe_join"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 isabs, safe_join 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "score": 1.4,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-g6x2-hccm-hh4m",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.9"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 48,
+   "score": 1.4,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-hgf8-39gv-g3f2",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.4"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 safe_join, send_from_directory 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 49,
+   "score": 1.05,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2022-203",
+   "severity": "UNKNOWN",
+   "fixed": [
+    "9a3a981d70d2e9ec3344b5192f86fcaf3210cd85",
+    "2.1.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  },
+  {
+   "rank": 50,
+   "score": 1.0,
+   "package": "gevent",
+   "version": "1.2.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-x7m3-jprg-wc5g",
+   "severity": "CRITICAL",
+   "fixed": [
+    "23.9.0",
+    "2f53c851eaf926767fbac62385615efd4886221c"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 51,
+   "score": 1.0,
+   "package": "sqlalchemy",
+   "version": "1.1.11",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-38fc-9xqv-7f7q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.2.19",
+    "1.2.18"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 52,
+   "score": 1.0,
+   "package": "sqlalchemy",
+   "version": "1.1.11",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-887w-45rq-vxgf",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.3.0b3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 53,
+   "score": 1.0,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-www2-v7xj-xrc6",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.23"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 54,
+   "score": 0.7,
+   "package": "certifi",
+   "version": "2017.4.17",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-xqr8-7jwr-rhp7",
+   "severity": "HIGH",
+   "fixed": [
+    "2023.7.22"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 55,
+   "score": 0.7,
+   "package": "certifi",
+   "version": "2017.4.17",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2024-230",
+   "severity": "HIGH",
+   "fixed": [
+    "bd8153872e9c6fc98f4023df9c2deaffea2fa463",
+    "2024.7.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 56,
+   "score": 0.7,
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-462w-v97r-4m45",
+   "severity": "HIGH",
+   "fixed": [
+    "2.10.1"
+   ],
+   "symbols": [
+    "str.format_map",
+    "str.format",
+    "is_safe_attribute",
+    "format_map"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 57,
+   "score": 0.7,
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-vfmq-68hx-4jfw",
+   "severity": "HIGH",
+   "fixed": [
+    "6.1.0"
+   ],
+   "symbols": [
+    "resolve_entities",
+    "iterparse",
+    "ETCompatXMLParser"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 58,
+   "score": 0.7,
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-x84v-xcm2-53pg",
+   "severity": "HIGH",
+   "fixed": [
+    "2.20.0",
+    "c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 59,
+   "score": 0.7,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-2xpw-w6gg-jr37",
+   "severity": "HIGH",
+   "fixed": [
+    "2.6.0"
+   ],
+   "symbols": [
+    "gzip",
+    "deflate",
+    "br",
+    "zstd",
+    "stream",
+    "urllib3.HTTPResponse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 60,
+   "score": 0.7,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-mh33-7rrq-662w",
+   "severity": "HIGH",
+   "fixed": [
+    "1.24.2"
+   ],
+   "symbols": [
+    "ssl_context",
+    "ca_certs",
+    "ca_certs_dir"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 61,
+   "score": 0.7,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-v845-jxx5-vc9f",
+   "severity": "HIGH",
+   "fixed": [
+    "2.0.6",
+    "1.26.17",
+    "644124ecd0b6e417c527191f866daa05a5a2056d",
+    "01220354d389cd05474713f8c982d05c9b17aafb"
+   ],
+   "symbols": [
+    "Cookie"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 62,
+   "score": 0.7,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-vxq7-64xx-v4gw",
+   "severity": "HIGH",
+   "fixed": [
+    "2.8.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 63,
+   "score": 0.4,
+   "package": "idna",
+   "version": "2.5",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-65pc-fj4g-8rjx",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.15"
+   ],
+   "symbols": [
+    "valid_contexto",
+    "N",
+    "idna.encode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 64,
+   "score": 0.4,
+   "package": "idna",
+   "version": "2.5",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-jjg7-2v4v-x38h",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.7",
+    "1d365e17e10d72d0b7876316fc7b9ca0eebdd38d"
+   ],
+   "symbols": [
+    "idna.encode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 65,
+   "score": 0.4,
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-cpwx-vrp4-4pq7",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.6"
+   ],
+   "symbols": [
+    "str.format"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 66,
+   "score": 0.4,
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-g3rq-g295-4j3m",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.11.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 67,
+   "score": 0.4,
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-h5c8-rqwp-cp95",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.3"
+   ],
+   "symbols": [
+    "xmlattr"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 68,
+   "score": 0.4,
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-h75v-3vvj-5mfj",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.4"
+   ],
+   "symbols": [
+    "xmlattr"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 69,
+   "score": 0.4,
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-q2x7-8rv6-6q7h",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.5"
+   ],
+   "symbols": [
+    "str.format",
+    "format"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 70,
+   "score": 0.4,
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-55x5-fj6c-h6m8",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.6.5",
+    "f2330237440df7e8f39c3ad1b1aa8852be3b27c0",
+    "12fa9669007180a7bb87d990c375cf91ca5b664a",
+    "a3eacbc0dcf1de1c822ec29fb7d090a4b1712a9c"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 71,
+   "score": 0.4,
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-jq4v-f5q6-mjqq",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.6.3",
+    "a5f9cb52079dc57477c460dbe6ba0f775e14a999"
+   ],
+   "symbols": [
+    "lxml",
+    "forms",
+    "Cleaner",
+    "formaction"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 72,
+   "score": 0.4,
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pgww-xf46-h92r",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.6.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 73,
+   "score": 0.4,
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-wrxv-2j5q-m38w",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.9.1",
+    "86368e9cf70a0ad23cccd5ee32de847149af0c6f"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 74,
+   "score": 0.4,
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-xp26-p53h-6h2p",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.2.5",
+    "6be1d081b49c97cfd7b3fbd934a193b668629109"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 75,
+   "score": 0.4,
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-9hjg-9r4m-mvj7",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.32.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 76,
+   "score": 0.4,
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-9wx4-h78v-vm56",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.32.0"
+   ],
+   "symbols": [
+    "Session",
+    "requests.Session",
+    "requests"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 77,
+   "score": 0.4,
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-gc5v-m9x4-r6x2",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.33.0"
+   ],
+   "symbols": [
+    "requests.utils.extract_zipped_paths",
+    "extract_zipped_paths"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 78,
+   "score": 0.4,
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-j8r2-6x86-q33q",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.31.0",
+    "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+   ],
+   "symbols": [
+    "rebuild_proxies",
+    "proxy_manager_for",
+    "proxy_headers",
+    "allow_redirects"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 79,
+   "score": 0.4,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-34jh-p97f-mpxf",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.26.19",
+    "2.2.2"
+   ],
+   "symbols": [
+    "ProxyManager"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 80,
+   "score": 0.4,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-g4mx-q9vg-27p4",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.0.7",
+    "1.26.18",
+    "4e98d57809dacab1cbe625fddeec1a290c478ea9"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 81,
+   "score": 0.4,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-gwvm-45gx-3cf8",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.24.2",
+    "adb358f8e06865406d1f05e581a16cbea2136fbc"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 82,
+   "score": 0.4,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pq67-6m6q-mj2v",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.5.0"
+   ],
+   "symbols": [
+    "Retry",
+    "PoolManager",
+    "retries",
+    "request"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 83,
+   "score": 0.4,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-r64q-w8jr-g9qp",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.24.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 84,
+   "score": 0.4,
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-wqvq-5m8c-6g24",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.25.9",
+    "1dd69c5c5982fae7c87a620d487c2ebf7a6b436b"
+   ],
+   "symbols": [
+    "putrequest"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 85,
+   "score": 0.35,
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-68rp-wp8r-4726",
+   "severity": "LOW",
+   "fixed": [
+    "3.1.3"
+   ],
+   "symbols": [
+    "session",
+    "in"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 in, session 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 1,
+     "text": "from flask import session, Flask, jsonify, request, Response, render_template, render_template_string, url_for"
+    }
+   ]
+  },
+  {
+   "rank": 86,
+   "score": 0.35,
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2026-177",
+   "severity": "LOW",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 3,
+     "text": "import jwt"
+    },
+    {
+     "path": "app.py",
+     "line": 4,
+     "text": "from jwt.exceptions import DecodeError, MissingRequiredClaimError, InvalidKeyError"
+    }
+   ]
+  },
+  {
+   "rank": 87,
+   "score": 0.35,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-cx3h-4qpv-8hc9",
+   "severity": "LOW",
+   "fixed": [
+    "6.5.6"
+   ],
+   "symbols": [
+    "tornado.speedups",
+    "websocket_mask",
+    "mask"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 mask, speedups, websocket_mask 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 88,
+   "score": 0.35,
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pw9p-v7r6-gx4p",
+   "severity": "LOW",
+   "fixed": [
+    "6.6"
+   ],
+   "symbols": [
+    "tornado.web.RedirectHandler",
+    "RedirectHandler",
+    "or",
+    "RequestHandler.redirect",
+    "redirect",
+    "StaticFileHandler",
+    "self.redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "reason": "패키지는 import되나 취약 심볼 RedirectHandler, StaticFileHandler, or, redirect 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 15,
+     "text": "from tornado.wsgi import WSGIContainer"
+    },
+    {
+     "path": "app.py",
+     "line": 16,
+     "text": "from tornado.httpserver import HTTPServer"
+    },
+    {
+     "path": "app.py",
+     "line": 17,
+     "text": "from tornado.ioloop import IOLoop"
+    }
+   ]
+  },
+  {
+   "rank": 89,
+   "score": 0.35,
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-px8h-6qxv-m22q",
+   "severity": "LOW",
+   "fixed": [
+    "2.2.3",
+    "cf275f42acad1b5950c50ffe8ef58fe62cdce028"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "app.py",
+     "line": 11,
+     "text": "from werkzeug.utils import secure_filename"
+    }
+   ]
+  }
+ ]
+}

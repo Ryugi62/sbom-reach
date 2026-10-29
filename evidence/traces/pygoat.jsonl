@@ -1,0 +1,5 @@
+{"run_id": "pygoat", "seq": 1, "ts": "2026-10-30T08:04:22+0900", "tool": "sbom", "ms": 1167, "tool_name": "syft", "components": 38, "fallback": false}
+{"run_id": "pygoat", "seq": 2, "ts": "2026-10-30T08:04:22+0900", "tool": "source_index", "ms": 46, "imported_modules": 36, "referenced_symbols": 229}
+{"run_id": "pygoat", "seq": 3, "ts": "2026-10-30T08:04:22+0900", "tool": "vuln_lookup", "ms": 65, "alerts": 201, "incomplete": 0}
+{"run_id": "pygoat", "seq": 4, "ts": "2026-10-30T08:04:22+0900", "tool": "reach_judge", "ms": 1, "reached": 4, "used": 52, "unseen": 145}
+{"run_id": "pygoat", "seq": 5, "ts": "2026-10-30T08:04:22+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-qw25-v68c-qjf3:7.0", "django:GHSA-8qcx-xf44-272x:4.0"]}

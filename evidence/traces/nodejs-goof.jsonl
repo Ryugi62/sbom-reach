@@ -1,0 +1,5 @@
+{"run_id": "nodejs-goof", "seq": 1, "ts": "2026-10-30T08:04:23+0900", "tool": "sbom", "ms": 977, "tool_name": "syft", "components": 566, "fallback": false}
+{"run_id": "nodejs-goof", "seq": 2, "ts": "2026-10-30T08:04:23+0900", "tool": "source_index", "ms": 10, "imported_modules": 33, "referenced_symbols": 40}
+{"run_id": "nodejs-goof", "seq": 3, "ts": "2026-10-30T08:04:23+0900", "tool": "vuln_lookup", "ms": 56, "alerts": 235, "incomplete": 0}
+{"run_id": "nodejs-goof", "seq": 4, "ts": "2026-10-30T08:04:23+0900", "tool": "reach_judge", "ms": 1, "reached": 7, "used": 68, "unseen": 160}
+{"run_id": "nodejs-goof", "seq": 5, "ts": "2026-10-30T08:04:23+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "moment:GHSA-446m-mv8f-q348:7.0", "ms:GHSA-3fx5-fwvr-xrjg:7.0"]}
