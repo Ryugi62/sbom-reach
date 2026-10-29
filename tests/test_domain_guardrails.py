@@ -43,3 +43,9 @@ def test_g6_incomplete_scan_cannot_report_zero_as_safe():
     assert g.safe_to_say_clean(alert_count=0, scan_incomplete=True) is False
     assert g.safe_to_say_clean(alert_count=0, scan_incomplete=False) is True
     assert g.safe_to_say_clean(alert_count=3, scan_incomplete=False) is False
+
+
+def test_g2_version_followed_by_korean_particle_and_period():
+    assert g.check_llm_text("4.17.21.", {"4.17.21"}, Verdict.USED).ok
+    assert g.check_llm_text("4.17.21로 올리세요", {"4.17.21"}, Verdict.USED).ok
+    assert not g.check_llm_text("4.17.22로 올리세요", {"4.17.21"}, Verdict.USED).ok
