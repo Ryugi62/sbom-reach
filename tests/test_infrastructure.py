@@ -126,3 +126,12 @@ def test_workcopy_creates_branch_and_applies_python_bump(tmp_path):
     assert "requests==2.18.1" in (tmp_path / "work/demo/requirements.txt").read_text()
     # 원본은 그대로
     assert "PyYAML==5.1" in (src / "requirements.txt").read_text()
+
+
+def test_repo_source_merges_python_and_js(tmp_path):
+    from sbomreach.infrastructure.repo_source import RepoSource
+    (tmp_path / "a.py").write_text("import yaml\nyaml.load(1)\n")
+    (tmp_path / "b.js").write_text("const _ = require('lodash');\n_.template(1);\n")
+    idx = RepoSource().index(str(tmp_path))
+    assert "yaml" in idx.imports and "lodash" in idx.imports
+    assert ("yaml", "load") in idx.refs and ("lodash", "template") in idx.refs
