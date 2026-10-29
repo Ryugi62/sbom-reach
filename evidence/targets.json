@@ -1,0 +1,6 @@
+[
+ {"name": "vulnerable-flask-app", "language": "Python", "url": "https://github.com/we45/Vulnerable-Flask-App", "commit": "b6a4f97", "path": "untrusted/Vulnerable-Flask-App", "scan_dir": "app", "excludes": []},
+ {"name": "pygoat", "language": "Python", "url": "https://github.com/adeyosemanputra/pygoat", "commit": "46fef96", "path": "untrusted/pygoat", "scan_dir": "", "excludes": ["dockerized_labs"]},
+ {"name": "nodejs-goof", "language": "JavaScript", "url": "https://github.com/snyk-labs/nodejs-goof", "commit": "add14ba", "path": "untrusted/nodejs-goof", "scan_dir": "", "excludes": []},
+ {"name": "nodegoat", "language": "JavaScript", "url": "https://github.com/OWASP/NodeGoat", "commit": "c5cb68a", "path": "untrusted/NodeGoat", "scan_dir": "", "excludes": []}
+]

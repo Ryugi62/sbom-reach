@@ -135,3 +135,22 @@ def test_repo_source_merges_python_and_js(tmp_path):
     idx = RepoSource().index(str(tmp_path))
     assert "yaml" in idx.imports and "lodash" in idx.imports
     assert ("yaml", "load") in idx.refs and ("lodash", "template") in idx.refs
+
+
+def test_gemini_adapter_builds_request_and_reads_text():
+    from sbomreach.infrastructure.gemini import GeminiLlm
+    seen = {}
+
+    def post(url, body):
+        seen["url"], seen["body"] = url, body
+        return {"candidates": [{"content": {"parts": [{"text": "문장"}]}}]}
+
+    assert GeminiLlm("K", model="m", post=post).complete("p") == "문장"
+    assert "models/m:generateContent" in seen["url"] and seen["body"]["generationConfig"]["temperature"] == 0
+
+
+def test_targets_file_has_two_languages_and_four_repos():
+    import os
+    from sbomreach.infrastructure import cli
+    t = cli.targets()
+    assert len(t) >= 3 and {x["language"] for x in t.values()} >= {"Python", "JavaScript"}
