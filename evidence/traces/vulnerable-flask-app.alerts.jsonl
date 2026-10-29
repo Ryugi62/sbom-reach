@@ -1,0 +1,5 @@
+{"run_id": "vulnerable-flask-app-alerts", "seq": 1, "ts": "2026-10-30T07:56:52+0900", "tool": "sbom", "ms": 1100, "tool_name": "syft", "components": 28, "fallback": false}
+{"run_id": "vulnerable-flask-app-alerts", "seq": 2, "ts": "2026-10-30T07:56:52+0900", "tool": "source_index", "ms": 3, "imported_modules": 14, "referenced_symbols": 37}
+{"run_id": "vulnerable-flask-app-alerts", "seq": 3, "ts": "2026-10-30T07:57:10+0900", "tool": "vuln_lookup", "ms": 18158, "alerts": 89, "incomplete": 0}
+{"run_id": "vulnerable-flask-app-alerts", "seq": 4, "ts": "2026-10-30T07:57:10+0900", "tool": "reach_judge", "ms": 0, "reached": 6, "used": 48, "unseen": 35}
+{"run_id": "vulnerable-flask-app-alerts", "seq": 5, "ts": "2026-10-30T07:57:10+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-ffc3-869f-jxw9:10.0", "pyyaml:GHSA-rprw-h62v-c2w7:10.0", "pyjwt:GHSA-752w-5fwx-jx9f:7.0"]}

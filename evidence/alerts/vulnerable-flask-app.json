@@ -1,0 +1,1901 @@
+{
+ "target": "vulnerable-flask-app",
+ "commit": "b6a4f97",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "certifi",
+   "version": "2017.4.17",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-xqr8-7jwr-rhp7",
+   "aliases": [
+    "CVE-2023-37920",
+    "PYSEC-2023-135"
+   ],
+   "severity": "HIGH",
+   "summary": "Removal of e-Tugra root certificate",
+   "fixed": [
+    "2023.7.22"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "certifi",
+   "version": "2017.4.17",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2024-230",
+   "aliases": [
+    "CVE-2024-39689",
+    "GHSA-248v-346w-9cwc"
+   ],
+   "severity": "HIGH",
+   "summary": "",
+   "fixed": [
+    "bd8153872e9c6fc98f4023df9c2deaffea2fa463",
+    "2024.7.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-562c-5r94-xh97",
+   "aliases": [
+    "CVE-2018-1000656",
+    "PYSEC-2018-66"
+   ],
+   "severity": "HIGH",
+   "summary": "Flask is vulnerable to Denial of Service via incorrect encoding of JSON data",
+   "fixed": [
+    "0.12.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-5wv5-4vpf-pj6m",
+   "aliases": [
+    "CVE-2019-1010083",
+    "PYSEC-2019-179"
+   ],
+   "severity": "HIGH",
+   "summary": "Pallets Project Flask is vulnerable to Denial of Service via Unexpected memory usage",
+   "fixed": [
+    "1.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-68rp-wp8r-4726",
+   "aliases": [
+    "CVE-2026-27205",
+    "PYSEC-2026-2151"
+   ],
+   "severity": "LOW",
+   "summary": "Flask session does not add `Vary: Cookie` header when accessed in some ways",
+   "fixed": [
+    "3.1.3"
+   ],
+   "symbols": [
+    "session",
+    "in"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "flask",
+   "version": "0.12.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-m2qf-hxjv-5gpq",
+   "aliases": [
+    "CVE-2023-30861",
+    "PYSEC-2023-62"
+   ],
+   "severity": "HIGH",
+   "summary": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+   "fixed": [
+    "2.3.2",
+    "2.2.5",
+    "70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+    "afd63b16170b7c047f5758eb910c416511e9c965"
+   ],
+   "symbols": [
+    "session"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "gevent",
+   "version": "1.2.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-x7m3-jprg-wc5g",
+   "aliases": [
+    "CVE-2023-41419",
+    "PYSEC-2023-177"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Gevent allows remote attacker to escalate privileges",
+   "fixed": [
+    "23.9.0",
+    "2f53c851eaf926767fbac62385615efd4886221c"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "idna",
+   "version": "2.5",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-65pc-fj4g-8rjx",
+   "aliases": [
+    "CVE-2026-45409",
+    "PYSEC-2026-215"
+   ],
+   "severity": "MODERATE",
+   "summary": "Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix",
+   "fixed": [
+    "3.15"
+   ],
+   "symbols": [
+    "valid_contexto",
+    "N",
+    "idna.encode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "idna",
+   "version": "2.5",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-jjg7-2v4v-x38h",
+   "aliases": [
+    "CVE-2024-3651",
+    "PYSEC-2024-60"
+   ],
+   "severity": "MODERATE",
+   "summary": "Internationalized Domain Names in Applications (IDNA) vulnerable to denial of service from specially crafted inputs to idna.encode",
+   "fixed": [
+    "3.7",
+    "1d365e17e10d72d0b7876316fc7b9ca0eebdd38d"
+   ],
+   "symbols": [
+    "idna.encode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-462w-v97r-4m45",
+   "aliases": [
+    "CVE-2019-10906",
+    "PYSEC-2019-217"
+   ],
+   "severity": "HIGH",
+   "summary": "Jinja2 sandbox escape via string formatting",
+   "fixed": [
+    "2.10.1"
+   ],
+   "symbols": [
+    "str.format_map",
+    "str.format",
+    "is_safe_attribute",
+    "format_map"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-cpwx-vrp4-4pq7",
+   "aliases": [
+    "CVE-2025-27516",
+    "PYSEC-2026-1471"
+   ],
+   "severity": "MODERATE",
+   "summary": "Jinja2 vulnerable to sandbox breakout through attr filter selecting format method",
+   "fixed": [
+    "3.1.6"
+   ],
+   "symbols": [
+    "str.format"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-g3rq-g295-4j3m",
+   "aliases": [
+    "CVE-2020-28493",
+    "PYSEC-2021-66",
+    "SNYK-PYTHON-JINJA2-1012994"
+   ],
+   "severity": "MODERATE",
+   "summary": "Regular Expression Denial of Service (ReDoS) in Jinja2",
+   "fixed": [
+    "2.11.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-h5c8-rqwp-cp95",
+   "aliases": [
+    "CVE-2024-22195",
+    "PYSEC-2026-1473"
+   ],
+   "severity": "MODERATE",
+   "summary": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+   "fixed": [
+    "3.1.3"
+   ],
+   "symbols": [
+    "xmlattr"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-h75v-3vvj-5mfj",
+   "aliases": [
+    "CVE-2024-34064",
+    "PYSEC-2026-1474"
+   ],
+   "severity": "MODERATE",
+   "summary": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+   "fixed": [
+    "3.1.4"
+   ],
+   "symbols": [
+    "xmlattr"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jinja2",
+   "version": "2.9.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-q2x7-8rv6-6q7h",
+   "aliases": [
+    "CVE-2024-56326",
+    "PYSEC-2026-1475"
+   ],
+   "severity": "MODERATE",
+   "summary": "Jinja has a sandbox breakout through indirect reference to format method",
+   "fixed": [
+    "3.1.5"
+   ],
+   "symbols": [
+    "str.format",
+    "format"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-55x5-fj6c-h6m8",
+   "aliases": [
+    "CVE-2021-43818",
+    "PYSEC-2021-852"
+   ],
+   "severity": "MODERATE",
+   "summary": "lxml's HTML Cleaner allows crafted and SVG embedded scripts to pass through",
+   "fixed": [
+    "4.6.5",
+    "f2330237440df7e8f39c3ad1b1aa8852be3b27c0",
+    "12fa9669007180a7bb87d990c375cf91ca5b664a",
+    "a3eacbc0dcf1de1c822ec29fb7d090a4b1712a9c"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-jq4v-f5q6-mjqq",
+   "aliases": [
+    "CVE-2021-28957",
+    "PYSEC-2021-19"
+   ],
+   "severity": "MODERATE",
+   "summary": "lxml vulnerable to Cross-Site Scripting ",
+   "fixed": [
+    "4.6.3",
+    "a5f9cb52079dc57477c460dbe6ba0f775e14a999"
+   ],
+   "symbols": [
+    "lxml",
+    "forms",
+    "Cleaner",
+    "formaction"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pgww-xf46-h92r",
+   "aliases": [
+    "CVE-2020-27783",
+    "PYSEC-2020-62"
+   ],
+   "severity": "MODERATE",
+   "summary": "lxml vulnerable to Cross-site Scripting",
+   "fixed": [
+    "4.6.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-vfmq-68hx-4jfw",
+   "aliases": [
+    "CVE-2026-41066",
+    "PYSEC-2026-87"
+   ],
+   "severity": "HIGH",
+   "summary": "lxml: Default configuration of iterparse() and ETCompatXMLParser() allows XXE to local files",
+   "fixed": [
+    "6.1.0"
+   ],
+   "symbols": [
+    "resolve_entities",
+    "iterparse",
+    "ETCompatXMLParser"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-wrxv-2j5q-m38w",
+   "aliases": [
+    "CVE-2022-2309",
+    "PYSEC-2022-230"
+   ],
+   "severity": "MODERATE",
+   "summary": "lxml NULL Pointer Dereference allows attackers to cause a denial of service",
+   "fixed": [
+    "4.9.1",
+    "86368e9cf70a0ad23cccd5ee32de847149af0c6f"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "lxml",
+   "version": "4.2.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-xp26-p53h-6h2p",
+   "aliases": [
+    "CVE-2018-19787",
+    "PYSEC-2018-12"
+   ],
+   "severity": "MODERATE",
+   "summary": "Improper Neutralization of Input During Web Page Generation in LXML",
+   "fixed": [
+    "4.2.5",
+    "6be1d081b49c97cfd7b3fbd934a193b668629109"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-2gx3-rcp4-g85q",
+   "aliases": [
+    "CVE-2026-101917",
+    "PYSEC-2026-4140"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: PyJWKClient still amplifies unauthenticated JWKS fetches on unknown kid values (incomplete fix of CVE-2026-48524)",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "kid",
+    "master",
+    "ba4853a",
+    "PyJWKClient"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-752w-5fwx-jx9f",
+   "aliases": [
+    "CVE-2026-32597",
+    "PYSEC-2026-120"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT accepts unknown `crit` header extensions",
+   "fixed": [
+    "2.12.0"
+   ],
+   "symbols": [
+    "crit",
+    "cnf",
+    "_validate_headers",
+    "decode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-9v7f-9g4p-ffgj",
+   "aliases": [
+    "CVE-2026-102267",
+    "PYSEC-2026-4144"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT: PyJWKClient follows redirects when fetching JWKS",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "PyJWKClient",
+    "kid",
+    "master"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-ffc3-869f-jxw9",
+   "aliases": [
+    "CVE-2026-102268",
+    "PYSEC-2026-4145"
+   ],
+   "severity": "CRITICAL",
+   "summary": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jwt.decode",
+    "PyJWK",
+    "cryptography",
+    "is_pem_format",
+    "cryptography.load_pem_public_key",
+    "HMACAlgorithm.prepare_key",
+    "key_bytes",
+    "load_pem_public_key",
+    "superadmin",
+    "InvalidKeyError",
+    "InvalidAlgorithmError",
+    "enforce_minimum_key_length"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-ffqj-6fqr-9h24",
+   "aliases": [
+    "CVE-2022-29217",
+    "PYSEC-2022-202"
+   ],
+   "severity": "HIGH",
+   "summary": "Key confusion through non-blocklisted public key formats",
+   "fixed": [
+    "2.4.0",
+    "9c528670c455b8d948aff95ed50e22940d1ad3fc"
+   ],
+   "symbols": [
+    "jwt.algorithms.get_default_algorithms"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-hxm8-2xgr-2p9m",
+   "aliases": [
+    "CVE-2026-102269",
+    "PYSEC-2026-4147"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: Non-canonical signature segments enable raw-token revocation bypass",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jti",
+    "master",
+    "e6f48401001609a8f99e71fcaf355fb895d508a8"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-jwrc-g2q2-pq5p",
+   "aliases": [
+    "CVE-2026-102270",
+    "PYSEC-2026-4148"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: ReDoS vulnerability when calling the `is_pem_format` function.",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "is_pem_format"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pxh4-856f-4h89",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "HMACAlgorithm.from_jwk",
+    "k",
+    "PyJWK",
+    "PyJWKSet",
+    "PyJWKClient",
+    "kid",
+    "HMACAlgorithm.prepare_key",
+    "from_jwk",
+    "InsecureKeyLengthWarning",
+    "PyJWT",
+    "pyjwt",
+    "master",
+    "prepare_key",
+    "_verify_signature",
+    "PyJWK.__init__",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "CHANGELOG.rst",
+    "test_hmac_prepare_key_rejects_empty_key",
+    "test_hmac_from_jwk_should_raise_exception_if_empty_json",
+    "jwt.decode",
+    "sub",
+    "HMACAlgorithm",
+    "test_hmac_from_jwk_rejects_empty_k",
+    "oct",
+    "af8181ca0bec5e6b372fbba9afbe23702b787ceb"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-xgmm-8j9v-c9wx",
+   "aliases": [
+    "CVE-2026-48526",
+    "PYSEC-2026-179"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT: Public-key JWK accepted as HMAC secret enables forged HS256 tokens when mixed families are allowed",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2025-183",
+   "aliases": [
+    "CVE-2025-45768"
+   ],
+   "severity": "HIGH",
+   "summary": "",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2026-175",
+   "aliases": [
+    "CVE-2026-48522",
+    "GHSA-993g-76c3-p5m4"
+   ],
+   "severity": "MODERATE",
+   "summary": "",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyjwt",
+   "version": "1.5.2",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2026-177",
+   "aliases": [
+    "CVE-2026-48524",
+    "GHSA-fhv5-28vv-h8m8"
+   ],
+   "severity": "LOW",
+   "summary": "",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "python-docx",
+   "version": "0.8.5",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-34wj-p5jm-2p96",
+   "aliases": [
+    "CVE-2016-5851",
+    "PYSEC-2016-21"
+   ],
+   "severity": "HIGH",
+   "summary": "Improper Restriction of XML External Entity Reference in python-docx",
+   "fixed": [
+    "0.8.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyyaml",
+   "version": "3.12",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-8q59-q68h-6hv4",
+   "aliases": [
+    "CVE-2020-14343",
+    "PYSEC-2021-142"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Improper Input Validation in PyYAML",
+   "fixed": [
+    "5.4"
+   ],
+   "symbols": [
+    "full_load"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyyaml",
+   "version": "3.12",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-rprw-h62v-c2w7",
+   "aliases": [
+    "CVE-2017-18342",
+    "PYSEC-2018-49"
+   ],
+   "severity": "CRITICAL",
+   "summary": "PyYAML insecurely deserializes YAML strings leading to arbitrary code execution",
+   "fixed": [
+    "5.1"
+   ],
+   "symbols": [
+    "yaml.load",
+    "yaml.safe_load"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-9hjg-9r4m-mvj7",
+   "aliases": [
+    "CVE-2024-47081",
+    "PYSEC-2026-1872"
+   ],
+   "severity": "MODERATE",
+   "summary": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+   "fixed": [
+    "2.32.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-9wx4-h78v-vm56",
+   "aliases": [
+    "CVE-2024-35195",
+    "PYSEC-2026-1873"
+   ],
+   "severity": "MODERATE",
+   "summary": "Requests `Session` object does not verify requests after making first request with verify=False",
+   "fixed": [
+    "2.32.0"
+   ],
+   "symbols": [
+    "Session",
+    "requests.Session",
+    "requests"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-gc5v-m9x4-r6x2",
+   "aliases": [
+    "CVE-2026-25645",
+    "PYSEC-2026-2275"
+   ],
+   "severity": "MODERATE",
+   "summary": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+   "fixed": [
+    "2.33.0"
+   ],
+   "symbols": [
+    "requests.utils.extract_zipped_paths",
+    "extract_zipped_paths"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-j8r2-6x86-q33q",
+   "aliases": [
+    "CVE-2023-32681",
+    "PYSEC-2023-74"
+   ],
+   "severity": "MODERATE",
+   "summary": "Unintended leak of Proxy-Authorization header in requests",
+   "fixed": [
+    "2.31.0",
+    "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+   ],
+   "symbols": [
+    "rebuild_proxies",
+    "proxy_manager_for",
+    "proxy_headers",
+    "allow_redirects"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "requests",
+   "version": "2.18.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-x84v-xcm2-53pg",
+   "aliases": [
+    "CVE-2018-18074",
+    "PYSEC-2018-28"
+   ],
+   "severity": "HIGH",
+   "summary": "Insufficiently Protected Credentials in Requests",
+   "fixed": [
+    "2.20.0",
+    "c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "sqlalchemy",
+   "version": "1.1.11",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-38fc-9xqv-7f7q",
+   "aliases": [
+    "CVE-2019-7548",
+    "PYSEC-2019-124"
+   ],
+   "severity": "CRITICAL",
+   "summary": "SQLAlchemy is vulnerable to SQL Injection via group_by parameter ",
+   "fixed": [
+    "1.2.19",
+    "1.2.18"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "sqlalchemy",
+   "version": "1.1.11",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-887w-45rq-vxgf",
+   "aliases": [
+    "CVE-2019-7164",
+    "PYSEC-2019-123"
+   ],
+   "severity": "CRITICAL",
+   "summary": "SQLAlchemy vulnerable to SQL Injection via order_by parameter",
+   "fixed": [
+    "1.3.0b3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-3hv7-mjh2-fv65",
+   "aliases": [
+    "CVE-2026-103261"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado: Unbounded query-string argument count allows event-loop-stalling DoS",
+   "fixed": [
+    "6.5.9"
+   ],
+   "symbols": [
+    "HTTPServerRequest.__init__",
+    "parse_qs_bytes",
+    "parse_body_arguments",
+    "tornado.escape.parse_qs_bytes",
+    "urllib.parse.parse_qs",
+    "max_num_fields",
+    "urllib.parse.parse_qsl",
+    "max_header_size",
+    "IOLoop",
+    "tornado.web.Application",
+    "ParseUrlEncodedConfig.max_arguments",
+    "set_parse_body_config",
+    "ValueError",
+    "HTTPInputError",
+    "httputil_test",
+    "web_test"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-3x9g-8vmp-wqvf",
+   "aliases": [
+    "CVE-2026-49853",
+    "PYSEC-2026-3387"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado: Authorization header forwarded across cross-origin redirects in SimpleAsyncHTTPClient",
+   "fixed": [
+    "6.5.6"
+   ],
+   "symbols": [
+    "SimpleAsyncHTTPClient",
+    "libcurl",
+    "CurlAsyncHTTPClient",
+    "Authorization",
+    "Cookie"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-753j-mpmx-qq6g",
+   "aliases": [
+    "CVE-2024-14029"
+   ],
+   "severity": "MODERATE",
+   "summary": "Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') in tornado",
+   "fixed": [
+    "6.4.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-78cv-mqj4-43f7",
+   "aliases": [
+    "CVE-2026-35536",
+    "GHSA-fqwm-6jpj-5wxc",
+    "PYSEC-2026-2287"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado has incomplete validation of cookie attributes",
+   "fixed": [
+    "6.5.5"
+   ],
+   "symbols": [
+    "domain",
+    "path",
+    "samesite",
+    "RequestHandler.set_cookie"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-7cx3-6m66-7c5m",
+   "aliases": [
+    "CVE-2025-47287",
+    "PYSEC-2026-1974"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado vulnerable to excessive logging caused by malformed multipart form data",
+   "fixed": [
+    "6.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-8423-8fgw-73vq",
+   "aliases": [
+    "CVE-2026-91990"
+   ],
+   "severity": "MODERATE",
+   "summary": "tornado: multipart split() creates huge temp list before max_parts check -> memory amplification DoS (httputil.py:34)",
+   "fixed": [
+    "6.5.8"
+   ],
+   "symbols": [
+    "parse_multipart_form_data",
+    "max_parts"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-8w49-h785-mj3c",
+   "aliases": [
+    "CVE-2024-52804",
+    "PYSEC-2026-1975"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado has an HTTP cookie parsing DoS vulnerability",
+   "fixed": [
+    "6.4.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-c2m8-h5v5-343r",
+   "aliases": [
+    "CVE-2026-103263"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado: StaticFileHandler follows symlinks outside static root (path traversal)",
+   "fixed": [
+    "6.5.9"
+   ],
+   "symbols": [
+    "os.path.abspath",
+    "link",
+    "os.path.exists",
+    "os.path.isfile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-c98p-7wgm-6p64",
+   "aliases": [
+    "CVE-2025-67725",
+    "PYSEC-2025-266"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado: Quadratic DoS via Repeated Header Coalescing",
+   "fixed": [
+    "6.5.3"
+   ],
+   "symbols": [
+    "HTTPHeaders.add",
+    "max_header_size"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-chx6-46f5-w4vp",
+   "aliases": [
+    "CVE-2026-103262"
+   ],
+   "severity": "HIGH",
+   "summary": "tornado: CurlAsyncHTTPClient enforces no response-size limit — decompression bomb drives unbounded memory accumulation to OOM",
+   "fixed": [
+    "6.5.9"
+   ],
+   "symbols": [
+    "tornado.curl_httpclient.CurlAsyncHTTPClient",
+    "fetch",
+    "max_body_size",
+    "SimpleAsyncHTTPClient",
+    "_GzipMessageDelegate",
+    "BytesIO",
+    "request_timeout",
+    "pycurl.MAXFILESIZE",
+    "max_buffer_size",
+    "streaming_callback",
+    "SimpleAsyncHTTPClient.initialize",
+    "CurlAsyncHTTPClient.initialize",
+    "buffer.write",
+    "CurlAsyncHTTPClient",
+    "sys.path",
+    "victim_curl_rss.log",
+    "initialize"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-cx3h-4qpv-8hc9",
+   "aliases": [
+    "CVE-2026-49854",
+    "PYSEC-2026-3388"
+   ],
+   "severity": "LOW",
+   "summary": "Tornado has out-of-bounds memory access via C extension",
+   "fixed": [
+    "6.5.6"
+   ],
+   "symbols": [
+    "tornado.speedups",
+    "websocket_mask",
+    "mask"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-hj3f-6gcp-jg8j",
+   "aliases": [
+    "CVE-2023-28370",
+    "PYSEC-2023-75"
+   ],
+   "severity": "MODERATE",
+   "summary": "Open redirect in Tornado",
+   "fixed": [
+    "6.3.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-jhmp-mqwm-3gq8",
+   "aliases": [
+    "CVE-2025-67726",
+    "PYSEC-2025-267"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado: Quadratic DoS via Crafted Multipart Parameters",
+   "fixed": [
+    "6.5.3"
+   ],
+   "symbols": [
+    "_parseparam",
+    "string.count"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-mgf9-4vpg-hj56",
+   "aliases": [
+    "CVE-2026-49855",
+    "PYSEC-2026-3389"
+   ],
+   "severity": "HIGH",
+   "summary": "tornado AsyncHTTPClient accumulates decompressed chunks without size limit (gzip bomb)",
+   "fixed": [
+    "6.5.6"
+   ],
+   "symbols": [
+    "HTTPServer",
+    "max_body_size",
+    "CurlAsyncHTTPClient"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-mpf4-983q-p7j4",
+   "aliases": [
+    "CVE-2026-82397",
+    "PYSEC-2026-3928"
+   ],
+   "severity": "HIGH",
+   "summary": " Tornado: Urlencoded body parsing omits max_num_fields, so one request can stall the event loop",
+   "fixed": [
+    "6.5.8"
+   ],
+   "symbols": [
+    "urllib.parse.parse_qs",
+    "max_num_fields",
+    "e530031405e2154654dedc4c84d5656b557ea310",
+    "RequestHandler._execute",
+    "HTTPServerRequest._parse_body",
+    "parse_body_arguments",
+    "parse_qs_bytes",
+    "max_buffer_size",
+    "ValueError",
+    "AsyncHTTPClient"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pcg2-g6cj-q92c",
+   "aliases": [
+    "CVE-2026-116577"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado: Quadratic CPU usage when parsing HTTP headers with line folding",
+   "fixed": [
+    "6.6"
+   ],
+   "symbols": [
+    "max_header_size"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pr2v-jx2c-wg9f",
+   "aliases": [
+    "CVE-2025-67724",
+    "PYSEC-2025-265"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado vulnerable to Header Injection and XSS via reason argument",
+   "fixed": [
+    "6.5.3"
+   ],
+   "symbols": [
+    "reason",
+    "RequestHandler.set_status",
+    "tornado.web.HTTPError",
+    "HTTPError",
+    "set_status",
+    "log_message"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pw6j-qg29-8w7f",
+   "aliases": [
+    "CVE-2026-91992"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado: CurlAsyncHTTPClient leaks per-request credentials on handle reuse",
+   "fixed": [
+    "6.5.7"
+   ],
+   "symbols": [
+    "CurlAsyncHTTPClient",
+    "pycurl",
+    "_process_queue",
+    "_finish",
+    "_curl_setup_request",
+    "curl.reset",
+    "client_cert",
+    "else",
+    "proxy_host",
+    "proxy_username",
+    "request.network_interface",
+    "HTTPRequest",
+    "SimpleAsyncHTTPClient"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pw9p-v7r6-gx4p",
+   "aliases": [
+    "CVE-2026-116578"
+   ],
+   "severity": "LOW",
+   "summary": "Tornado: Open redirect in RedirectHandler via protocol-relative URLs",
+   "fixed": [
+    "6.6"
+   ],
+   "symbols": [
+    "tornado.web.RedirectHandler",
+    "RedirectHandler",
+    "or",
+    "RequestHandler.redirect",
+    "redirect",
+    "StaticFileHandler",
+    "self.redirect"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-qjxf-f2mg-c6mc",
+   "aliases": [
+    "CVE-2026-31958",
+    "PYSEC-2026-140"
+   ],
+   "severity": "HIGH",
+   "summary": "Tornado is vulnerable to DoS due to too many multipart parts",
+   "fixed": [
+    "6.5.5"
+   ],
+   "symbols": [
+    "max_body_size",
+    "tornado.httputil.ParseMultipartConfig"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-qppv-j76h-2rpx",
+   "aliases": [
+    "CVE-2023-54397"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado vulnerable to HTTP request smuggling via improper parsing of `Content-Length` fields and chunk lengths",
+   "fixed": [
+    "6.3.3"
+   ],
+   "symbols": [
+    "_",
+    "int"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-r4j5-9xpp-3985",
+   "aliases": [
+    "CVE-2026-115927"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado: Event loop blocking and excess memory use from chunked bodies with many small chunks",
+   "fixed": [
+    "6.6"
+   ],
+   "symbols": [
+    "max_body_size",
+    "SimpleAsyncHTTPClient",
+    "data_received"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tornado",
+   "version": "4.5.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-w235-7p84-xx57",
+   "aliases": [
+    "CVE-2024-58384"
+   ],
+   "severity": "MODERATE",
+   "summary": "Tornado has a CRLF injection in CurlAsyncHTTPClient headers",
+   "fixed": [
+    "6.4.1"
+   ],
+   "symbols": [
+    "curl_httpclient.CurlAsyncHTTPClient",
+    "CurlAsyncHTTPClient",
+    "AsyncHTTPClient"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-2xpw-w6gg-jr37",
+   "aliases": [
+    "CVE-2025-66471",
+    "PYSEC-2026-1994"
+   ],
+   "severity": "HIGH",
+   "summary": "urllib3 streaming API improperly handles highly compressed data",
+   "fixed": [
+    "2.6.0"
+   ],
+   "symbols": [
+    "gzip",
+    "deflate",
+    "br",
+    "zstd",
+    "stream",
+    "urllib3.HTTPResponse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-34jh-p97f-mpxf",
+   "aliases": [
+    "CVE-2024-37891",
+    "PYSEC-2026-1995"
+   ],
+   "severity": "MODERATE",
+   "summary": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+   "fixed": [
+    "1.26.19",
+    "2.2.2"
+   ],
+   "symbols": [
+    "ProxyManager"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-g4mx-q9vg-27p4",
+   "aliases": [
+    "CVE-2023-45803",
+    "PYSEC-2023-212"
+   ],
+   "severity": "MODERATE",
+   "summary": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+   "fixed": [
+    "2.0.7",
+    "1.26.18",
+    "4e98d57809dacab1cbe625fddeec1a290c478ea9"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-gwvm-45gx-3cf8",
+   "aliases": [
+    "CVE-2018-25091",
+    "PYSEC-2023-207"
+   ],
+   "severity": "MODERATE",
+   "summary": "Authorization Header forwarded on redirect",
+   "fixed": [
+    "1.24.2",
+    "adb358f8e06865406d1f05e581a16cbea2136fbc"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-mh33-7rrq-662w",
+   "aliases": [
+    "CVE-2019-11324",
+    "PYSEC-2019-133"
+   ],
+   "severity": "HIGH",
+   "summary": "Improper Certificate Validation in urllib3",
+   "fixed": [
+    "1.24.2"
+   ],
+   "symbols": [
+    "ssl_context",
+    "ca_certs",
+    "ca_certs_dir"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pq67-6m6q-mj2v",
+   "aliases": [
+    "CVE-2025-50181",
+    "PYSEC-2026-1999"
+   ],
+   "severity": "MODERATE",
+   "summary": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+   "fixed": [
+    "2.5.0"
+   ],
+   "symbols": [
+    "Retry",
+    "PoolManager",
+    "retries",
+    "request"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-r64q-w8jr-g9qp",
+   "aliases": [
+    "CVE-2019-11236",
+    "PYSEC-2019-132"
+   ],
+   "severity": "MODERATE",
+   "summary": "Improper Neutralization of CRLF Sequences in urllib3 library for Python",
+   "fixed": [
+    "1.24.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-v845-jxx5-vc9f",
+   "aliases": [
+    "CVE-2023-43804",
+    "PYSEC-2023-192"
+   ],
+   "severity": "HIGH",
+   "summary": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+   "fixed": [
+    "2.0.6",
+    "1.26.17",
+    "644124ecd0b6e417c527191f866daa05a5a2056d",
+    "01220354d389cd05474713f8c982d05c9b17aafb"
+   ],
+   "symbols": [
+    "Cookie"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-vxq7-64xx-v4gw",
+   "aliases": [
+    "CVE-2026-97689",
+    "PYSEC-2026-4177"
+   ],
+   "severity": "HIGH",
+   "summary": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+   "fixed": [
+    "2.8.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-wqvq-5m8c-6g24",
+   "aliases": [
+    "CVE-2020-26137",
+    "PYSEC-2020-148"
+   ],
+   "severity": "MODERATE",
+   "summary": "CRLF injection in urllib3",
+   "fixed": [
+    "1.25.9",
+    "1dd69c5c5982fae7c87a620d487c2ebf7a6b436b"
+   ],
+   "symbols": [
+    "putrequest"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "urllib3",
+   "version": "1.21.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-www2-v7xj-xrc6",
+   "aliases": [
+    "CVE-2018-20060",
+    "PYSEC-2018-32"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Exposure of Sensitive Information to an Unauthorized Actor in urllib3",
+   "fixed": [
+    "1.23"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-29vq-49wr-vm6x",
+   "aliases": [
+    "CVE-2026-27199",
+    "PYSEC-2026-2320"
+   ],
+   "severity": "MODERATE",
+   "summary": " Werkzeug safe_join() allows Windows special device names",
+   "fixed": [
+    "3.1.6"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-2g68-c3qc-8985",
+   "aliases": [
+    "CVE-2024-34069",
+    "PYSEC-2026-2043"
+   ],
+   "severity": "HIGH",
+   "summary": "Werkzeug debugger vulnerable to remote execution when interacting with attacker controlled domain",
+   "fixed": [
+    "3.0.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-87hc-h4r5-73f7",
+   "aliases": [
+    "CVE-2026-21860",
+    "PYSEC-2026-2044"
+   ],
+   "severity": "MODERATE",
+   "summary": " Werkzeug safe_join() allows Windows special device names with compound extensions",
+   "fixed": [
+    "3.1.5"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-f9vj-2wh5-fj8j",
+   "aliases": [
+    "CVE-2024-49766",
+    "PYSEC-2026-2045"
+   ],
+   "severity": "MODERATE",
+   "summary": "Werkzeug safe_join not safe on Windows",
+   "fixed": [
+    "3.0.6"
+   ],
+   "symbols": [
+    "os.path.isabs",
+    "safe_join"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-g6x2-hccm-hh4m",
+   "aliases": [
+    "CVE-2026-102598",
+    "PYSEC-2026-4312"
+   ],
+   "severity": "MODERATE",
+   "summary": "Werkzeug safe_join() allows Windows special device names",
+   "fixed": [
+    "3.1.9"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-gq9m-qvpx-68hc",
+   "aliases": [
+    "CVE-2019-14806",
+    "PYSEC-2019-140"
+   ],
+   "severity": "HIGH",
+   "summary": "Pallets Werkzeug Insufficient Entropy",
+   "fixed": [
+    "0.15.3",
+    "00bc43b1672e662e5e3b8cecd79e67fc968fa246"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-hgf8-39gv-g3f2",
+   "aliases": [
+    "CVE-2025-66221",
+    "PYSEC-2026-2046"
+   ],
+   "severity": "MODERATE",
+   "summary": "Werkzeug safe_join() allows Windows special device names",
+   "fixed": [
+    "3.1.4"
+   ],
+   "symbols": [
+    "safe_join",
+    "send_from_directory"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-j544-7q9p-6xp8",
+   "aliases": [
+    "CVE-2019-14322",
+    "PYSEC-2026-1065"
+   ],
+   "severity": "HIGH",
+   "summary": "Pallets Werkzeug vulnerable to Path Traversal",
+   "fixed": [
+    "0.15.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-px8h-6qxv-m22q",
+   "aliases": [
+    "CVE-2023-23934",
+    "PYSEC-2023-57"
+   ],
+   "severity": "LOW",
+   "summary": "Incorrect parsing of nameless cookies leads to __Host- cookies bypass",
+   "fixed": [
+    "2.2.3",
+    "cf275f42acad1b5950c50ffe8ef58fe62cdce028"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-xg9f-g7g7-2323",
+   "aliases": [
+    "CVE-2023-25577",
+    "PYSEC-2023-58"
+   ],
+   "severity": "HIGH",
+   "summary": "High resource usage when parsing multipart form data with many fields",
+   "fixed": [
+    "2.2.3",
+    "517cac5a804e8c4dc4ed038bb20dacd038e7a9f1"
+   ],
+   "symbols": [
+    "request.data",
+    "request.form",
+    "request.files"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2022-203",
+   "aliases": [
+    "CVE-2022-29361"
+   ],
+   "severity": "UNKNOWN",
+   "summary": "",
+   "fixed": [
+    "9a3a981d70d2e9ec3344b5192f86fcaf3210cd85",
+    "2.1.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "werkzeug",
+   "version": "0.14.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2023-221",
+   "aliases": [
+    "CVE-2023-46136",
+    "GHSA-hrfv-mqp8-q5rw"
+   ],
+   "severity": "HIGH",
+   "summary": "",
+   "fixed": [
+    "f3c803b3ade485a45f12b6d6617595350c0f03e2",
+    "f2300208d5e2a5076cbbb4c2aad71096fd040ef9",
+    "2.3.8",
+    "3.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  }
+ ]
+}

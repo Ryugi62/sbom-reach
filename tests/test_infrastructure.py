@@ -154,3 +154,15 @@ def test_targets_file_has_two_languages_and_four_repos():
     from sbomreach.infrastructure import cli
     t = cli.targets()
     assert len(t) >= 3 and {x["language"] for x in t.values()} >= {"Python", "JavaScript"}
+
+
+def test_osv_prefetch_fills_cache_in_parallel_and_skips_failures(tmp_path):
+    def http(url, body):
+        if body["package"]["name"] == "bad":
+            raise OSError("x")
+        return {"vulns": []}
+
+    p = OsvVulnPort(http_post=http, cache_dir=str(tmp_path), overrides={})
+    comps = [Component(n, "1", "npm") for n in ("a", "b", "bad")]
+    p.prefetch(comps)
+    assert len(list(tmp_path.iterdir())) == 2

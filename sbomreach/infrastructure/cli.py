@@ -48,7 +48,8 @@ def scan_target(t, repo, tag, trace_path):
 def cmd_alerts(a):
     t = targets()[a.target]
     repo = os.path.join(t["path"], t["scan_dir"]) if t["scan_dir"] else t["path"]
-    res = scan_target(t, repo, f"{a.target}-alerts", "/dev/null")
+    os.makedirs(os.path.join(EV, "traces"), exist_ok=True)
+    res = scan_target(t, repo, f"{a.target}-alerts", os.path.join(EV, "traces", f"{a.target}.alerts.jsonl"))
     out = os.path.join(EV, "alerts", f"{a.target}.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     json.dump({"target": a.target, "commit": t["commit"], "incomplete": [c.name for c in res.incomplete],

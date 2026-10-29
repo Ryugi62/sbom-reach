@@ -89,6 +89,8 @@ class ScanUseCase:
         index = self.source.index(repo)
         status["source"] = "ok"
         self._t("source_index", t0, imported_modules=len(index.imports), referenced_symbols=len(index.refs))
+        if hasattr(self.vulns, "prefetch"):
+            self.vulns.prefetch(comps)
         t0 = time.time()
         alerts: List[Alert] = []
         incomplete: List[Component] = []

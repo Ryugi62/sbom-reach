@@ -5,6 +5,7 @@ import json
 import os
 import re
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, Dict, List, Optional
 
 from ..adapters.osv import apply_overrides, parse_vuln
@@ -56,3 +57,16 @@ class OsvVulnPort:
             if p:
                 json.dump(raw, open(p, "w", encoding="utf-8"), ensure_ascii=False)
         return [apply_overrides(parse_vuln(v, c), self.overrides) for v in raw]
+
+    def prefetch(self, comps: List[Component], workers: int = 8) -> None:
+        """캐시에 없는 부품만 병렬 조회. 실패는 조용히 넘기고(캐시 안 함) advisories()가 다시 시도·보고한다."""
+        def one(c: Component):
+            p = self._path(c)
+            if p and os.path.exists(p):
+                return
+            try:
+                self.advisories(c)
+            except VulnLookupError:
+                pass
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            list(ex.map(one, comps))
