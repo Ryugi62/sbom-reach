@@ -1,0 +1,8 @@
+{"id": "GHSA-29mw-wpgm-hmr9", "aliases": ["CVE-2020-28500"],
+ "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+ "details": "All versions of package lodash prior to 4.17.21 are vulnerable to ReDoS via the `toNumber`, `trim` and `trimEnd` functions. See `package.json` and `true`.",
+ "database_specific": {"severity": "MODERATE"},
+ "affected": [{"package": {"name": "lodash", "ecosystem": "npm"},
+   "ranges": [{"type": "SEMVER", "events": [{"introduced": "0"}, {"fixed": "4.17.21"}]}]},
+  {"package": {"name": "lodash-es", "ecosystem": "npm"},
+   "ranges": [{"type": "SEMVER", "events": [{"introduced": "0"}, {"fixed": "9.9.9"}]}]}]}
