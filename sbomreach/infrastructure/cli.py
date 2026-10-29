@@ -97,6 +97,9 @@ def cmd_remediate(a):
             bumps = {r.package: r.target for r in plan if r.ecosystem == eco}
             trace.record({"tool": "apply_branch", "round": n, "ecosystem": eco, "bumps": len(bumps)})
             changed += apply_and_commit(wc, "fix/sbomreach", bumps, eco, excludes=t["excludes"])
+        if not changed:
+            trace.record({"tool": "apply_branch", "round": n, "result": "no_progress"})
+            break
         all_changed += changed
         after = build(t, wc, trace).run(wc)
         rounds.append({"round": n, "scope": scope, "packages_changed": len(plan), "changed_files": changed,

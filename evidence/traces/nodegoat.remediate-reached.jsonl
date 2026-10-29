@@ -1,0 +1,13 @@
+{"run_id": "nodegoat-reached", "seq": 1, "ts": "2026-10-30T08:10:35+0900", "tool": "sbom", "ms": 1346, "tool_name": "syft", "components": 381, "fallback": false}
+{"run_id": "nodegoat-reached", "seq": 2, "ts": "2026-10-30T08:10:35+0900", "tool": "source_index", "ms": 56, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat-reached", "seq": 3, "ts": "2026-10-30T08:10:35+0900", "tool": "vuln_lookup", "ms": 237, "alerts": 90, "incomplete": 0}
+{"run_id": "nodegoat-reached", "seq": 4, "ts": "2026-10-30T08:10:35+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
+{"run_id": "nodegoat-reached", "seq": 5, "ts": "2026-10-30T08:10:35+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "express:GHSA-rv95-896h-c2vc:4.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0"]}
+{"run_id": "nodegoat-reached", "seq": 6, "ts": "2026-10-30T08:10:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-reached", "seq": 7, "ts": "2026-10-30T08:10:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
+{"run_id": "nodegoat-reached", "seq": 8, "ts": "2026-10-30T08:10:36+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 2}
+{"run_id": "nodegoat-reached", "seq": 9, "ts": "2026-10-30T08:10:39+0900", "tool": "sbom", "ms": 1272, "tool_name": "syft", "components": 404, "fallback": false}
+{"run_id": "nodegoat-reached", "seq": 10, "ts": "2026-10-30T08:10:40+0900", "tool": "source_index", "ms": 47, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat-reached", "seq": 11, "ts": "2026-10-30T08:10:44+0900", "tool": "vuln_lookup", "ms": 279, "alerts": 86, "incomplete": 0}
+{"run_id": "nodegoat-reached", "seq": 12, "ts": "2026-10-30T08:10:44+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 6, "unseen": 80}
+{"run_id": "nodegoat-reached", "seq": 13, "ts": "2026-10-30T08:10:44+0900", "tool": "rank", "ms": 0, "top": ["underscore:GHSA-cf4h-3jhx-xvhq:3.5", "body-parser:GHSA-27r3-jxmh-p828:2.45", "mongodb:GHSA-mh5c-679w-hh4r:2.45"]}

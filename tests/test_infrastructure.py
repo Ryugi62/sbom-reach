@@ -183,3 +183,11 @@ def test_cli_parser_accepts_rounds_and_scope():
     # 인자 정의가 깨지지 않았는지: --max-rounds 기본 3
     import inspect
     assert "max_rounds" in inspect.getsource(cli.cmd_remediate)
+
+
+def test_workcopy_noop_bump_returns_empty_without_crash(tmp_path):
+    src = tmp_path / "src"
+    src.mkdir()
+    (src / "requirements.txt").write_text("PyYAML==5.4\n")
+    wc = make_workcopy(str(src), str(tmp_path / "work"), name="demo")
+    assert apply_and_commit(wc, branch="fix/sbomreach", bumps={"PyYAML": "5.4"}, ecosystem="PyPI") == []

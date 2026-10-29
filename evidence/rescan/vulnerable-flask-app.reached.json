@@ -1,21 +1,129 @@
 {
  "target": "vulnerable-flask-app",
  "scope": "reached",
- "packages_changed": 3,
- "no_fix_packages": [],
+ "rounds": [
+  {
+   "round": 1,
+   "scope": "reached",
+   "packages_changed": 3,
+   "changed_files": [
+    "requirements.txt"
+   ],
+   "reached_after": 1,
+   "alerts_after": 54,
+   "plan": [
+    {
+     "package": "pyjwt",
+     "current": "1.5.2",
+     "target": "2.14.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-2gx3-rcp4-g85q",
+      "GHSA-752w-5fwx-jx9f",
+      "GHSA-9v7f-9g4p-ffgj",
+      "GHSA-ffc3-869f-jxw9",
+      "GHSA-ffqj-6fqr-9h24",
+      "GHSA-hxm8-2xgr-2p9m",
+      "GHSA-jwrc-g2q2-pq5p",
+      "GHSA-pxh4-856f-4h89",
+      "GHSA-xgmm-8j9v-c9wx",
+      "PYSEC-2025-183",
+      "PYSEC-2026-175",
+      "PYSEC-2026-177"
+     ],
+     "direct": true,
+     "text": "pyjwt 1.5.2 → 2.14.0: requirements 고정 버전을 올립니다. 경보 12건(GHSA-2gx3-rcp4-g85q, GHSA-752w-5fwx-jx9f, GHSA-9v7f-9g4p-ffgj 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "pyyaml",
+     "current": "3.12",
+     "target": "5.4",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-8q59-q68h-6hv4",
+      "GHSA-rprw-h62v-c2w7"
+     ],
+     "direct": true,
+     "text": "pyyaml 3.12 → 5.4: requirements 고정 버전을 올립니다. 경보 2건(GHSA-8q59-q68h-6hv4, GHSA-rprw-h62v-c2w7) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "tornado",
+     "current": "4.5.1",
+     "target": "6.6",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-3hv7-mjh2-fv65",
+      "GHSA-3x9g-8vmp-wqvf",
+      "GHSA-753j-mpmx-qq6g",
+      "GHSA-78cv-mqj4-43f7",
+      "GHSA-7cx3-6m66-7c5m",
+      "GHSA-8423-8fgw-73vq",
+      "GHSA-8w49-h785-mj3c",
+      "GHSA-c2m8-h5v5-343r",
+      "GHSA-c98p-7wgm-6p64",
+      "GHSA-chx6-46f5-w4vp",
+      "GHSA-cx3h-4qpv-8hc9",
+      "GHSA-hj3f-6gcp-jg8j",
+      "GHSA-jhmp-mqwm-3gq8",
+      "GHSA-mgf9-4vpg-hj56",
+      "GHSA-mpf4-983q-p7j4",
+      "GHSA-pcg2-g6cj-q92c",
+      "GHSA-pr2v-jx2c-wg9f",
+      "GHSA-pw6j-qg29-8w7f",
+      "GHSA-pw9p-v7r6-gx4p",
+      "GHSA-qjxf-f2mg-c6mc",
+      "GHSA-qppv-j76h-2rpx",
+      "GHSA-r4j5-9xpp-3985",
+      "GHSA-w235-7p84-xx57"
+     ],
+     "direct": true,
+     "text": "tornado 4.5.1 → 6.6: requirements 고정 버전을 올립니다. 경보 23건(GHSA-3hv7-mjh2-fv65, GHSA-3x9g-8vmp-wqvf, GHSA-753j-mpmx-qq6g 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "scope": "reached",
+   "packages_changed": 1,
+   "changed_files": [
+    "requirements.txt"
+   ],
+   "reached_after": 0,
+   "alerts_after": 52,
+   "plan": [
+    {
+     "package": "pyjwt",
+     "current": "2.14.0",
+     "target": "2.15.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-42vr-xj54-vc7v",
+      "GHSA-x33g-cr3x-6449"
+     ],
+     "direct": true,
+     "text": "pyjwt 패키지의 현재 버전 2.14.0에서 목표 버전 2.15.0으로 올립니다. 이 조치는 GHSA-42vr-xj54-vc7v 및 GHSA-x33g-cr3x-6449 경보에 도달합니다.",
+     "text_source": "llm"
+    }
+   ]
+  }
+ ],
+ "packages_changed": 4,
  "changed_files": [
   "requirements.txt"
  ],
  "diff": {
   "before_total": 89,
-  "after_total": 54,
+  "after_total": 52,
   "resolved": 37,
   "remaining": 52,
-  "new": 2,
+  "new": 0,
   "reached_before": 6,
-  "reached_after": 1,
+  "reached_after": 0,
   "used_before": 48,
-  "used_after": 18
+  "used_after": 17
  },
  "after_stage_status": {
   "sbom": "ok",
@@ -25,80 +133,7 @@
   "rank": "ok"
  },
  "after_incomplete": [],
- "reached_after_items": [
-  "pyjwt@2.14.0:GHSA-42vr-xj54-vc7v"
- ],
+ "reached_after_items": [],
  "llm_texts": 1,
- "plan": [
-  {
-   "package": "pyjwt",
-   "current": "1.5.2",
-   "target": "2.14.0",
-   "verdict": "REACHED",
-   "advisories": [
-    "GHSA-2gx3-rcp4-g85q",
-    "GHSA-752w-5fwx-jx9f",
-    "GHSA-9v7f-9g4p-ffgj",
-    "GHSA-ffc3-869f-jxw9",
-    "GHSA-ffqj-6fqr-9h24",
-    "GHSA-hxm8-2xgr-2p9m",
-    "GHSA-jwrc-g2q2-pq5p",
-    "GHSA-pxh4-856f-4h89",
-    "GHSA-xgmm-8j9v-c9wx",
-    "PYSEC-2025-183",
-    "PYSEC-2026-175",
-    "PYSEC-2026-177"
-   ],
-   "direct": true,
-   "text": "pyjwt 1.5.2 → 2.14.0: requirements 고정 버전을 올립니다. 경보 12건(GHSA-2gx3-rcp4-g85q, GHSA-752w-5fwx-jx9f, GHSA-9v7f-9g4p-ffgj 외) 해소 대상, 판정 도달.",
-   "text_source": "template"
-  },
-  {
-   "package": "pyyaml",
-   "current": "3.12",
-   "target": "5.4",
-   "verdict": "REACHED",
-   "advisories": [
-    "GHSA-8q59-q68h-6hv4",
-    "GHSA-rprw-h62v-c2w7"
-   ],
-   "direct": true,
-   "text": "pyyaml 3.12 → 5.4: requirements 고정 버전을 올립니다. 경보 2건(GHSA-8q59-q68h-6hv4, GHSA-rprw-h62v-c2w7) 해소 대상, 판정 도달.",
-   "text_source": "template"
-  },
-  {
-   "package": "tornado",
-   "current": "4.5.1",
-   "target": "6.6",
-   "verdict": "REACHED",
-   "advisories": [
-    "GHSA-3hv7-mjh2-fv65",
-    "GHSA-3x9g-8vmp-wqvf",
-    "GHSA-753j-mpmx-qq6g",
-    "GHSA-78cv-mqj4-43f7",
-    "GHSA-7cx3-6m66-7c5m",
-    "GHSA-8423-8fgw-73vq",
-    "GHSA-8w49-h785-mj3c",
-    "GHSA-c2m8-h5v5-343r",
-    "GHSA-c98p-7wgm-6p64",
-    "GHSA-chx6-46f5-w4vp",
-    "GHSA-cx3h-4qpv-8hc9",
-    "GHSA-hj3f-6gcp-jg8j",
-    "GHSA-jhmp-mqwm-3gq8",
-    "GHSA-mgf9-4vpg-hj56",
-    "GHSA-mpf4-983q-p7j4",
-    "GHSA-pcg2-g6cj-q92c",
-    "GHSA-pr2v-jx2c-wg9f",
-    "GHSA-pw6j-qg29-8w7f",
-    "GHSA-pw9p-v7r6-gx4p",
-    "GHSA-qjxf-f2mg-c6mc",
-    "GHSA-qppv-j76h-2rpx",
-    "GHSA-r4j5-9xpp-3985",
-    "GHSA-w235-7p84-xx57"
-   ],
-   "direct": true,
-   "text": "패키지 tornado는 현재 4.5.1 버전이며, 목표 버전 6.6에 도달했습니다. 이 조치로 GHSA-3hv7-mjh2-fv65 외 22개 경보가 해결됩니다.",
-   "text_source": "llm"
-  }
- ]
+ "unfixed_alerts_after": 0
 }

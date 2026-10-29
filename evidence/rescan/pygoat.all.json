@@ -1,0 +1,449 @@
+{
+ "target": "pygoat",
+ "scope": "all",
+ "rounds": [
+  {
+   "round": 1,
+   "scope": "all",
+   "packages_changed": 18,
+   "changed_files": [
+    "requirements.txt",
+    "challenge/labs/security_headers_lab/requirements.txt",
+    "challenge/labs/business_logic_lab/requirements.txt",
+    "challenge/labs/bopla_lab/requirements.txt"
+   ],
+   "reached_after": 0,
+   "alerts_after": 2,
+   "plan": [
+    {
+     "package": "django",
+     "current": "4.2",
+     "target": "5.2.17",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-2mcm-79hx-8fxw",
+      "GHSA-33mw-q7rj-mjwj",
+      "GHSA-3h9f-r86x-qvjx",
+      "GHSA-4rrr-2h4v-f3j9",
+      "GHSA-5hgc-2vfp-mqvc",
+      "GHSA-5mf9-h53q-7mhq",
+      "GHSA-6426-9fv3-65x8",
+      "GHSA-6w2r-r2m5-xq5w",
+      "GHSA-795c-9xpc-xw6g",
+      "GHSA-7h4p-27mh-hmrw",
+      "GHSA-7xr5-9hcq-chf9",
+      "GHSA-8498-2h75-472j",
+      "GHSA-8cjm-8mp7-r2xf",
+      "GHSA-8j24-cjrq-gr2m",
+      "GHSA-8p8v-wh79-9r56",
+      "GHSA-8qcx-xf44-272x",
+      "GHSA-923m-gv2p-w5qp",
+      "GHSA-933h-hp56-hf7m",
+      "GHSA-9jmf-237g-qf46",
+      "GHSA-crhf-3pfg-w68w",
+      "GHSA-f6f8-9mx6-9mx2",
+      "GHSA-frmv-pr5f-9mcr",
+      "GHSA-gvg8-93h5-g6qq",
+      "GHSA-h7pc-vwp9-298g",
+      "GHSA-h8gc-pgj2-vjm3",
+      "GHSA-hpr9-3m2g-3j9p",
+      "GHSA-jh3w-4vvf-mjgr",
+      "GHSA-jh75-99hh-qvx9",
+      "GHSA-m9g8-fxxm-xg86",
+      "GHSA-mjgh-79qc-68w3",
+      "GHSA-mmwr-2jhp-mc7j",
+      "GHSA-mvfq-ggxm-9mc5",
+      "GHSA-mwm9-4648-f68q",
+      "GHSA-p3fp-8748-vqfq",
+      "GHSA-pv4p-cwwg-4rph",
+      "GHSA-pwjp-ccjc-ghwg",
+      "GHSA-q238-5cxm-5c9h",
+      "GHSA-q95w-c7qg-hrff",
+      "GHSA-qcgg-j2x8-h9g8",
+      "GHSA-qg2p-9jwr-mmqf",
+      "GHSA-qmf9-6jqf-j8fq",
+      "GHSA-qw25-v68c-qjf3",
+      "GHSA-r3xc-prgr-mg9p",
+      "GHSA-r836-hh6v-rg5g",
+      "GHSA-rqw2-ghq9-44m7",
+      "GHSA-rrqc-c2jx-6jgv",
+      "GHSA-vm8q-m57g-pff3",
+      "GHSA-vrcr-9hj9-jcg6",
+      "GHSA-wvqv-fj8w-qmhm",
+      "GHSA-x7q2-wr7g-xqmf",
+      "GHSA-xxj9-f6rv-m3x4"
+     ],
+     "direct": true,
+     "text": "django 4.2 → 5.2.17: requirements 고정 버전을 올립니다. 경보 51건(GHSA-2mcm-79hx-8fxw, GHSA-33mw-q7rj-mjwj, GHSA-3h9f-r86x-qvjx 외) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "flask",
+     "current": "2.3.3",
+     "target": "3.1.3",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-68rp-wp8r-4726"
+     ],
+     "direct": true,
+     "text": "flask 2.3.3 → 3.1.3: requirements 고정 버전을 올립니다. 경보 1건(GHSA-68rp-wp8r-4726) 해소 대상, 판정 도달.",
+     "text_source": "template"
+    },
+    {
+     "package": "requests",
+     "current": "2.28.2",
+     "target": "2.33.0",
+     "verdict": "REACHED",
+     "advisories": [
+      "GHSA-9hjg-9r4m-mvj7",
+      "GHSA-9wx4-h78v-vm56",
+      "GHSA-gc5v-m9x4-r6x2",
+      "GHSA-j8r2-6x86-q33q"
+     ],
+     "direct": true,
+     "text": "requests 패키지의 현재 버전 2.28.2는 목표 버전 2.33.0에 도달했습니다. GHSA-9hjg-9r4m-mvj7, GHSA-9wx4-h78v-vm56, GHSA-gc5v-m9x4-r6x2, GHSA-j8r2-6x86-q33q 경보를 해결하기 위해 requests 패키지를 2.33.0으로 올립니다.",
+     "text_source": "llm"
+    },
+    {
+     "package": "django-allauth",
+     "current": "0.52.0",
+     "target": "65.14.1",
+     "verdict": "USED",
+     "advisories": [
+      "GHSA-2jpr-83rg-v67j",
+      "GHSA-8m3c-c723-h4p4",
+      "GHSA-qhmc-3mvr-f2j4"
+     ],
+     "direct": true,
+     "text": "django-allauth 패키지는 현재 0.52.0 버전이 사용 중이며, 목표 버전 65.14.1로 올립니다. GHSA-2jpr-83rg-v67j, GHSA-8m3c-c723-h4p4, GHSA-qhmc-3mvr-f2j4 경보가 있습니다.",
+     "text_source": "llm"
+    },
+    {
+     "package": "black",
+     "current": "26.1.0",
+     "target": "26.10.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3936-cmfr-pm3m",
+      "GHSA-cg8m-r9f2-5wm2",
+      "PYSEC-2026-2120"
+     ],
+     "direct": true,
+     "text": "black 26.1.0 → 26.10.1: requirements 고정 버전을 올립니다. 경보 3건(GHSA-3936-cmfr-pm3m, GHSA-cg8m-r9f2-5wm2, PYSEC-2026-2120) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "certifi",
+     "current": "2022.12.7",
+     "target": "2026.10.18",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-248v-346w-9cwc",
+      "GHSA-6q48-6c7w-9gw2",
+      "GHSA-xqr8-7jwr-rhp7"
+     ],
+     "direct": true,
+     "text": "certifi 패키지의 현재 버전은 2022.12.7이며, 목표 버전 2026.10.18로 올립니다. 이 패키지는 GHSA-248v-346w-9cwc, GHSA-6q48-6c7w-9gw2, GHSA-xqr8-7jwr-rhp7 경보와 관련하여 판정 미확인 상태입니다.",
+     "text_source": "llm"
+    },
+    {
+     "package": "cryptography",
+     "current": "39.0.1",
+     "target": "49.0.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3ww4-gg4f-jr7f",
+      "GHSA-537c-gmf6-5ccf",
+      "GHSA-5cpq-8wj7-hf2v",
+      "GHSA-6vqw-3v5j-54x4",
+      "GHSA-9v9h-cgj8-h64p",
+      "GHSA-h4gh-qq45-vh27",
+      "GHSA-jfhm-5ghh-2f97",
+      "GHSA-jm77-qphf-c4w8",
+      "GHSA-m959-cc7f-wv43",
+      "GHSA-r6ph-v2qm-q3c2",
+      "GHSA-v8gr-m533-ghj9",
+      "PYSEC-2026-3553",
+      "PYSEC-2026-3554"
+     ],
+     "direct": true,
+     "text": "cryptography 패키지를 39.0.1에서 49.0.0으로 올립니다. 현재 판정은 미확인이며, GHSA-3ww4-gg4f-jr7f 외 11개 경보가 있습니다.",
+     "text_source": "llm"
+    },
+    {
+     "package": "idna",
+     "current": "3.4",
+     "target": "3.15",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-65pc-fj4g-8rjx",
+      "GHSA-jjg7-2v4v-x38h"
+     ],
+     "direct": true,
+     "text": "idna 3.4 → 3.15: requirements 고정 버전을 올립니다. 경보 2건(GHSA-65pc-fj4g-8rjx, GHSA-jjg7-2v4v-x38h) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "jinja2",
+     "current": "3.1.2",
+     "target": "3.1.6",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-cpwx-vrp4-4pq7",
+      "GHSA-gmj6-6f8f-6699",
+      "GHSA-h5c8-rqwp-cp95",
+      "GHSA-h75v-3vvj-5mfj",
+      "GHSA-q2x7-8rv6-6q7h"
+     ],
+     "direct": true,
+     "text": "jinja2 3.1.2 → 3.1.6: requirements 고정 버전을 올립니다. 경보 5건(GHSA-cpwx-vrp4-4pq7, GHSA-gmj6-6f8f-6699, GHSA-h5c8-rqwp-cp95 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "oauthlib",
+     "current": "3.2.2",
+     "target": "4.0.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-hj66-6f7g-4r5v",
+      "GHSA-xpv3-w29h-x7cv"
+     ],
+     "direct": true,
+     "text": "oauthlib 3.2.2 → 4.0.0: requirements 고정 버전을 올립니다. 경보 2건(GHSA-hj66-6f7g-4r5v, GHSA-xpv3-w29h-x7cv) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "pillow",
+     "current": "12.1.0",
+     "target": "13.0.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-22hg-r758-rrw9",
+      "GHSA-24rc-8hj2-v98c",
+      "GHSA-254f-3936-288h",
+      "GHSA-27h8-gf7j-v5hc",
+      "GHSA-332p-7hrc-92wf",
+      "GHSA-3j72-p6qg-6xp7",
+      "GHSA-4558-3h8r-v8xp",
+      "GHSA-45hq-cxwh-f6vc",
+      "GHSA-462x-pgg6-55fp",
+      "GHSA-4rm8-3hmm-39fg",
+      "GHSA-4rr5-89j8-mwwm",
+      "GHSA-4x4j-2g7c-83w6",
+      "GHSA-58r4-6rv3-gfh8",
+      "GHSA-5x8w-8jj5-q52h",
+      "GHSA-5x94-69rx-g8h2",
+      "GHSA-5xm2-6676-qcp9",
+      "GHSA-5xmw-vc9v-4wf2",
+      "GHSA-62p4-gmf7-7g93",
+      "GHSA-654x-cwwv-5j9c",
+      "GHSA-65qm-jvmh-6pqg",
+      "GHSA-6r8x-57c9-28j4",
+      "GHSA-74r2-7ff9-mjj2",
+      "GHSA-78g4-xqwv-q3g8",
+      "GHSA-7mwm-ghpf-9vrm",
+      "GHSA-8g5g-8vmr-9782",
+      "GHSA-8v84-f9pq-wr9x",
+      "GHSA-9hw9-ch79-4vh6",
+      "GHSA-9v9v-9qvf-h2hj",
+      "GHSA-c6hw-5grf-ff96",
+      "GHSA-cfh3-3jmp-rvhc",
+      "GHSA-cp9v-662q-vvx9",
+      "GHSA-f2g6-542v-9j58",
+      "GHSA-fc9g-5qg7-mf45",
+      "GHSA-fj7v-r99m-22gq",
+      "GHSA-g4qv-2jxx-769h",
+      "GHSA-g7cr-3p24-7wf7",
+      "GHSA-g842-9rc4-69pw",
+      "GHSA-gg2r-wvfm-q9rx",
+      "GHSA-j4m9-6w36-pw47",
+      "GHSA-jg86-v3jv-hrpm",
+      "GHSA-jjj6-mw9f-p565",
+      "GHSA-mrfp-p49p-3hf2",
+      "GHSA-p4wg-p73j-c528",
+      "GHSA-p8hx-v2p6-rp84",
+      "GHSA-pchr-8j38-3x4p",
+      "GHSA-pg7v-jwj7-p798",
+      "GHSA-phj9-mv4w-65pm",
+      "GHSA-pwv6-vv43-88gr",
+      "GHSA-q45j-58j2-45rg",
+      "GHSA-r73j-pqj5-w3x7",
+      "GHSA-rfgq-q3w2-pmv2",
+      "GHSA-v9pv-5gc8-w2m6",
+      "GHSA-vjc4-5qp5-m44j",
+      "GHSA-vx6w-vv9f-6gvg",
+      "GHSA-w889-685w-c8fh",
+      "GHSA-whj4-6x5x-4v2j",
+      "GHSA-wjx4-4jcj-g98j",
+      "GHSA-xgh8-jp6q-p5x8",
+      "GHSA-xj96-63gp-2gmr",
+      "GHSA-xvh5-g6gv-559v"
+     ],
+     "direct": true,
+     "text": "pillow 패키지의 현재 버전 12.1.0은 미확인 판정이며, 목표 버전 13.0.0으로 올립니다. 다수의 경보(GHSA-22hg-r758-rrw9 외 60개)가 확인되었습니다.",
+     "text_source": "llm"
+    },
+    {
+     "package": "pyjwt",
+     "current": "2.4.0",
+     "target": "2.15.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-2gx3-rcp4-g85q",
+      "GHSA-42vr-xj54-vc7v",
+      "GHSA-752w-5fwx-jx9f",
+      "GHSA-993g-76c3-p5m4",
+      "GHSA-9v7f-9g4p-ffgj",
+      "GHSA-ffc3-869f-jxw9",
+      "GHSA-fhv5-28vv-h8m8",
+      "GHSA-hxm8-2xgr-2p9m",
+      "GHSA-jwrc-g2q2-pq5p",
+      "GHSA-p4g4-x82p-q773",
+      "GHSA-pxh4-856f-4h89",
+      "GHSA-x33g-cr3x-6449",
+      "GHSA-xgmm-8j9v-c9wx",
+      "PYSEC-2025-183"
+     ],
+     "direct": true,
+     "text": "pyjwt 2.4.0 → 2.15.0: requirements 고정 버전을 올립니다. 경보 14건(GHSA-2gx3-rcp4-g85q, GHSA-42vr-xj54-vc7v, GHSA-752w-5fwx-jx9f 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "pyyaml",
+     "current": "5.1",
+     "target": "5.4",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-3pqx-4fqf-j49f",
+      "GHSA-6757-jp84-gxfx",
+      "GHSA-8q59-q68h-6hv4"
+     ],
+     "direct": true,
+     "text": "pyyaml 5.1 → 5.4: requirements 고정 버전을 올립니다. 경보 3건(GHSA-3pqx-4fqf-j49f, GHSA-6757-jp84-gxfx, GHSA-8q59-q68h-6hv4) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "sqlparse",
+     "current": "0.3.1",
+     "target": "0.6.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-27jp-wm6q-gp25",
+      "GHSA-2m57-hf25-phgg",
+      "GHSA-3496-9g83-7v6x",
+      "GHSA-cfqr-cjx5-5jcm",
+      "GHSA-f2ff-p2ww-7p4p",
+      "GHSA-prg7-hcfm-mfcr",
+      "GHSA-pwgv-4x5q-6m9f",
+      "GHSA-rrm6-wvj7-cwh2"
+     ],
+     "direct": true,
+     "text": "sqlparse 0.3.1 → 0.6.0: requirements 고정 버전을 올립니다. 경보 8건(GHSA-27jp-wm6q-gp25, GHSA-2m57-hf25-phgg, GHSA-3496-9g83-7v6x 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "urllib3",
+     "current": "1.26.9",
+     "target": "2.8.0",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-2xpw-w6gg-jr37",
+      "GHSA-34jh-p97f-mpxf",
+      "GHSA-38jv-5279-wg99",
+      "GHSA-8988-9cw3-xx77",
+      "GHSA-g4mx-q9vg-27p4",
+      "GHSA-gm62-xv2j-4w53",
+      "GHSA-pq67-6m6q-mj2v",
+      "GHSA-qccp-gfcp-xxvc",
+      "GHSA-v845-jxx5-vc9f",
+      "GHSA-vxq7-64xx-v4gw"
+     ],
+     "direct": true,
+     "text": "urllib3 1.26.9 → 2.8.0: requirements 고정 버전을 올립니다. 경보 10건(GHSA-2xpw-w6gg-jr37, GHSA-34jh-p97f-mpxf, GHSA-38jv-5279-wg99 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "werkzeug",
+     "current": "2.1.2",
+     "target": "3.1.9",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-29vq-49wr-vm6x",
+      "GHSA-2g68-c3qc-8985",
+      "GHSA-87hc-h4r5-73f7",
+      "GHSA-f9vj-2wh5-fj8j",
+      "GHSA-g6x2-hccm-hh4m",
+      "GHSA-hgf8-39gv-g3f2",
+      "GHSA-hrfv-mqp8-q5rw",
+      "GHSA-px8h-6qxv-m22q",
+      "GHSA-q34m-jh98-gwm2",
+      "GHSA-xg9f-g7g7-2323"
+     ],
+     "direct": true,
+     "text": "werkzeug 2.1.2 → 3.1.9: requirements 고정 버전을 올립니다. 경보 10건(GHSA-29vq-49wr-vm6x, GHSA-2g68-c3qc-8985, GHSA-87hc-h4r5-73f7 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "werkzeug",
+     "current": "2.3.7",
+     "target": "3.1.9",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-29vq-49wr-vm6x",
+      "GHSA-2g68-c3qc-8985",
+      "GHSA-87hc-h4r5-73f7",
+      "GHSA-f9vj-2wh5-fj8j",
+      "GHSA-g6x2-hccm-hh4m",
+      "GHSA-hgf8-39gv-g3f2",
+      "GHSA-hrfv-mqp8-q5rw",
+      "GHSA-q34m-jh98-gwm2"
+     ],
+     "direct": true,
+     "text": "werkzeug 2.3.7 → 3.1.9: requirements 고정 버전을 올립니다. 경보 8건(GHSA-29vq-49wr-vm6x, GHSA-2g68-c3qc-8985, GHSA-87hc-h4r5-73f7 외) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    },
+    {
+     "package": "zipp",
+     "current": "3.8.0",
+     "target": "3.19.1",
+     "verdict": "UNSEEN",
+     "advisories": [
+      "GHSA-jfmj-5v4g-7637"
+     ],
+     "direct": true,
+     "text": "zipp 3.8.0 → 3.19.1: requirements 고정 버전을 올립니다. 경보 1건(GHSA-jfmj-5v4g-7637) 해소 대상, 판정 미확인.",
+     "text_source": "template"
+    }
+   ]
+  }
+ ],
+ "packages_changed": 18,
+ "changed_files": [
+  "challenge/labs/bopla_lab/requirements.txt",
+  "challenge/labs/business_logic_lab/requirements.txt",
+  "challenge/labs/security_headers_lab/requirements.txt",
+  "requirements.txt"
+ ],
+ "diff": {
+  "before_total": 193,
+  "after_total": 2,
+  "resolved": 193,
+  "remaining": 0,
+  "new": 2,
+  "reached_before": 9,
+  "reached_after": 0,
+  "used_before": 50,
+  "used_after": 0
+ },
+ "after_stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "after_incomplete": [],
+ "reached_after_items": [],
+ "llm_texts": 5,
+ "unfixed_alerts_after": 0
+}

@@ -58,6 +58,8 @@ def apply_and_commit(wc: str, branch: str, bumps: Dict[str, str], ecosystem: str
         run(["npm", "install", "--package-lock-only", "--ignore-scripts", "--legacy-peer-deps", "--no-audit", "--no-fund"], wc)
         changed.append("package-lock.json")
     run(["git", "add", "-A"], wc)
+    if not run(["git", "status", "--porcelain"], wc).strip():
+        return []   # 바뀐 것이 없으면 커밋하지 않는다(진전 없음 신호)
     run(["git", "commit", "-q", "-m", f"sbomreach: {ecosystem} 취약 의존성 {len(bumps)}개 버전 조치"], wc)
     return changed
 
