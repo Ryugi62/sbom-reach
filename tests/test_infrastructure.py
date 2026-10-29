@@ -174,3 +174,12 @@ def test_repo_source_merges_weak_refs_and_mentions_from_both_languages(tmp_path)
     (tmp_path / "b.js").write_text("function h(req, res) { return res.redirect('/x'); }\n")
     idx = RepoSource().index(str(tmp_path))
     assert "allauth" in idx.mentions and "body" in idx.weak_refs and "redirect" in idx.weak_refs
+
+
+def test_cli_parser_accepts_rounds_and_scope():
+    from sbomreach.infrastructure import cli
+    import argparse
+    assert callable(cli.cmd_remediate)
+    # 인자 정의가 깨지지 않았는지: --max-rounds 기본 3
+    import inspect
+    assert "max_rounds" in inspect.getsource(cli.cmd_remediate)

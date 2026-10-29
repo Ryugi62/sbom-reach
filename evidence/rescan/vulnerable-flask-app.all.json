@@ -1,0 +1,277 @@
+{
+ "target": "vulnerable-flask-app",
+ "scope": "all",
+ "packages_changed": 14,
+ "no_fix_packages": [],
+ "changed_files": [
+  "requirements.txt"
+ ],
+ "diff": {
+  "before_total": 89,
+  "after_total": 4,
+  "resolved": 88,
+  "remaining": 1,
+  "new": 3,
+  "reached_before": 6,
+  "reached_after": 1,
+  "used_before": 48,
+  "used_after": 1
+ },
+ "after_stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "after_incomplete": [],
+ "reached_after_items": [
+  "pyjwt@2.14.0:GHSA-42vr-xj54-vc7v"
+ ],
+ "llm_texts": 8,
+ "plan": [
+  {
+   "package": "pyjwt",
+   "current": "1.5.2",
+   "target": "2.14.0",
+   "verdict": "REACHED",
+   "advisories": [
+    "GHSA-2gx3-rcp4-g85q",
+    "GHSA-752w-5fwx-jx9f",
+    "GHSA-9v7f-9g4p-ffgj",
+    "GHSA-ffc3-869f-jxw9",
+    "GHSA-ffqj-6fqr-9h24",
+    "GHSA-hxm8-2xgr-2p9m",
+    "GHSA-jwrc-g2q2-pq5p",
+    "GHSA-pxh4-856f-4h89",
+    "GHSA-xgmm-8j9v-c9wx",
+    "PYSEC-2025-183",
+    "PYSEC-2026-175",
+    "PYSEC-2026-177"
+   ],
+   "direct": true,
+   "text": "pyjwt 패키지는 현재 1.5.2 버전이며, 목표 버전 2.14.0에 도달했습니다. pyjwt 버전을 2.14.0으로 올립니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "pyyaml",
+   "current": "3.12",
+   "target": "5.4",
+   "verdict": "REACHED",
+   "advisories": [
+    "GHSA-8q59-q68h-6hv4",
+    "GHSA-rprw-h62v-c2w7"
+   ],
+   "direct": true,
+   "text": "pyyaml 3.12 → 5.4: requirements 고정 버전을 올립니다. 경보 2건(GHSA-8q59-q68h-6hv4, GHSA-rprw-h62v-c2w7) 해소 대상, 판정 도달.",
+   "text_source": "template"
+  },
+  {
+   "package": "tornado",
+   "current": "4.5.1",
+   "target": "6.6",
+   "verdict": "REACHED",
+   "advisories": [
+    "GHSA-3hv7-mjh2-fv65",
+    "GHSA-3x9g-8vmp-wqvf",
+    "GHSA-753j-mpmx-qq6g",
+    "GHSA-78cv-mqj4-43f7",
+    "GHSA-7cx3-6m66-7c5m",
+    "GHSA-8423-8fgw-73vq",
+    "GHSA-8w49-h785-mj3c",
+    "GHSA-c2m8-h5v5-343r",
+    "GHSA-c98p-7wgm-6p64",
+    "GHSA-chx6-46f5-w4vp",
+    "GHSA-cx3h-4qpv-8hc9",
+    "GHSA-hj3f-6gcp-jg8j",
+    "GHSA-jhmp-mqwm-3gq8",
+    "GHSA-mgf9-4vpg-hj56",
+    "GHSA-mpf4-983q-p7j4",
+    "GHSA-pcg2-g6cj-q92c",
+    "GHSA-pr2v-jx2c-wg9f",
+    "GHSA-pw6j-qg29-8w7f",
+    "GHSA-pw9p-v7r6-gx4p",
+    "GHSA-qjxf-f2mg-c6mc",
+    "GHSA-qppv-j76h-2rpx",
+    "GHSA-r4j5-9xpp-3985",
+    "GHSA-w235-7p84-xx57"
+   ],
+   "direct": true,
+   "text": "tornado 4.5.1 → 6.6: requirements 고정 버전을 올립니다. 경보 23건(GHSA-3hv7-mjh2-fv65, GHSA-3x9g-8vmp-wqvf, GHSA-753j-mpmx-qq6g 외) 해소 대상, 판정 도달.",
+   "text_source": "template"
+  },
+  {
+   "package": "flask",
+   "current": "0.12.2",
+   "target": "3.1.3",
+   "verdict": "USED",
+   "advisories": [
+    "GHSA-562c-5r94-xh97",
+    "GHSA-5wv5-4vpf-pj6m",
+    "GHSA-68rp-wp8r-4726",
+    "GHSA-m2qf-hxjv-5gpq"
+   ],
+   "direct": true,
+   "text": "Flask 패키지는 현재 0.12.2 버전이 사용 중이며, GHSA-562c-5r94-xh97 외 3개의 경보가 확인되었습니다. 목표 버전 3.1.3으로 올립니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "python-docx",
+   "current": "0.8.5",
+   "target": "0.8.6",
+   "verdict": "USED",
+   "advisories": [
+    "GHSA-34wj-p5jm-2p96"
+   ],
+   "direct": true,
+   "text": "보안 운영 담당자님, 패키지 `python-docx`는 현재 0.8.5 버전이 사용 중이며, 목표 버전 0.8.6으로 올립니다. GHSA-34wj-p5jm-2p96 경보가 있습니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "werkzeug",
+   "current": "0.14.1",
+   "target": "3.1.9",
+   "verdict": "USED",
+   "advisories": [
+    "GHSA-29vq-49wr-vm6x",
+    "GHSA-2g68-c3qc-8985",
+    "GHSA-87hc-h4r5-73f7",
+    "GHSA-f9vj-2wh5-fj8j",
+    "GHSA-g6x2-hccm-hh4m",
+    "GHSA-gq9m-qvpx-68hc",
+    "GHSA-hgf8-39gv-g3f2",
+    "GHSA-j544-7q9p-6xp8",
+    "GHSA-px8h-6qxv-m22q",
+    "GHSA-xg9f-g7g7-2323",
+    "PYSEC-2022-203",
+    "PYSEC-2023-221"
+   ],
+   "direct": true,
+   "text": "werkzeug 패키지는 현재 0.14.1 버전이 사용 중이며, 목표 버전 3.1.9로 올립니다. 이 조치는 GHSA-29vq-49wr-vm6x 외 11개 경보에 대한 것입니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "certifi",
+   "current": "2017.4.17",
+   "target": "2024.7.4",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-xqr8-7jwr-rhp7",
+    "PYSEC-2024-230"
+   ],
+   "direct": true,
+   "text": "certifi 패키지는 현재 2017.4.17 버전이며, 목표 버전 2024.7.4로 올립니다. 이 패키지는 GHSA-xqr8-7jwr-rhp7 및 PYSEC-2024-230 경보와 함께 판정 미확인 상태입니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "gevent",
+   "current": "1.2.2",
+   "target": "2f53c851eaf926767fbac62385615efd4886221c",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-x7m3-jprg-wc5g"
+   ],
+   "direct": true,
+   "text": "gevent 패키지의 현재 버전 1.2.2는 목표 버전 2f53c851eaf926767fbac6238615efd4886221c에 대해 미확인 판정이며, 경보 GHSA-x7m3-jprg-wc5g가 있습니다. gevent 패키지를 목표 버전으로 올립니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "idna",
+   "current": "2.5",
+   "target": "3.15",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-65pc-fj4g-8rjx",
+    "GHSA-jjg7-2v4v-x38h"
+   ],
+   "direct": true,
+   "text": "idna 패키지의 현재 버전 2.5를 목표 버전 3.15로 올립니다. 이 패키지는 GHSA-65pc-fj4g-8rjx 및 GHSA-jjg7-2v4v-x38h 경보와 관련하여 미확인 판정입니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "jinja2",
+   "current": "2.9.6",
+   "target": "3.1.6",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-462w-v97r-4m45",
+    "GHSA-cpwx-vrp4-4pq7",
+    "GHSA-g3rq-g295-4j3m",
+    "GHSA-h5c8-rqwp-cp95",
+    "GHSA-h75v-3vvj-5mfj",
+    "GHSA-q2x7-8rv6-6q7h"
+   ],
+   "direct": true,
+   "text": "jinja2 패키지의 현재 버전 2.9.6에서 목표 버전 3.1.6으로 올립니다. 이 패키지는 GHSA-462w-v97r-4m45 외 5개의 경보가 있으며, 판정은 미확인입니다.",
+   "text_source": "llm"
+  },
+  {
+   "package": "lxml",
+   "current": "4.2.1",
+   "target": "6.1.0",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-55x5-fj6c-h6m8",
+    "GHSA-jq4v-f5q6-mjqq",
+    "GHSA-pgww-xf46-h92r",
+    "GHSA-vfmq-68hx-4jfw",
+    "GHSA-wrxv-2j5q-m38w",
+    "GHSA-xp26-p53h-6h2p"
+   ],
+   "direct": true,
+   "text": "lxml 4.2.1 → 6.1.0: requirements 고정 버전을 올립니다. 경보 6건(GHSA-55x5-fj6c-h6m8, GHSA-jq4v-f5q6-mjqq, GHSA-pgww-xf46-h92r 외) 해소 대상, 판정 미확인.",
+   "text_source": "template"
+  },
+  {
+   "package": "requests",
+   "current": "2.18.1",
+   "target": "2.33.0",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-9hjg-9r4m-mvj7",
+    "GHSA-9wx4-h78v-vm56",
+    "GHSA-gc5v-m9x4-r6x2",
+    "GHSA-j8r2-6x86-q33q",
+    "GHSA-x84v-xcm2-53pg"
+   ],
+   "direct": true,
+   "text": "requests 2.18.1 → 2.33.0: requirements 고정 버전을 올립니다. 경보 5건(GHSA-9hjg-9r4m-mvj7, GHSA-9wx4-h78v-vm56, GHSA-gc5v-m9x4-r6x2 외) 해소 대상, 판정 미확인.",
+   "text_source": "template"
+  },
+  {
+   "package": "sqlalchemy",
+   "current": "1.1.11",
+   "target": "1.3.0b3",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-38fc-9xqv-7f7q",
+    "GHSA-887w-45rq-vxgf"
+   ],
+   "direct": true,
+   "text": "sqlalchemy 1.1.11 → 1.3.0b3: requirements 고정 버전을 올립니다. 경보 2건(GHSA-38fc-9xqv-7f7q, GHSA-887w-45rq-vxgf) 해소 대상, 판정 미확인.",
+   "text_source": "template"
+  },
+  {
+   "package": "urllib3",
+   "current": "1.21.1",
+   "target": "2.8.0",
+   "verdict": "UNSEEN",
+   "advisories": [
+    "GHSA-2xpw-w6gg-jr37",
+    "GHSA-34jh-p97f-mpxf",
+    "GHSA-g4mx-q9vg-27p4",
+    "GHSA-gwvm-45gx-3cf8",
+    "GHSA-mh33-7rrq-662w",
+    "GHSA-pq67-6m6q-mj2v",
+    "GHSA-r64q-w8jr-g9qp",
+    "GHSA-v845-jxx5-vc9f",
+    "GHSA-vxq7-64xx-v4gw",
+    "GHSA-wqvq-5m8c-6g24",
+    "GHSA-www2-v7xj-xrc6"
+   ],
+   "direct": true,
+   "text": "urllib3 1.21.1 → 2.8.0: requirements 고정 버전을 올립니다. 경보 11건(GHSA-2xpw-w6gg-jr37, GHSA-34jh-p97f-mpxf, GHSA-g4mx-q9vg-27p4 외) 해소 대상, 판정 미확인.",
+   "text_source": "template"
+  }
+ ]
+}

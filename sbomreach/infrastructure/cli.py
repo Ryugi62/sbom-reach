@@ -77,32 +77,45 @@ def cmd_remediate(a):
         os.remove(tp)
     trace = JsonlTrace(tp, run_id=f"{a.target}-{a.scope}")
     before = build(t, repo, trace).run(repo)
-    plan = plan_remediation(before, a.scope, before.direct_names)
     key = None if a.no_llm else load_key()
     llm = GeminiLlm(key) if key else None
-    vmap = {}
-    for j in before.judgements:
-        k = (j.alert.component.name, j.alert.component.version)
-        if k not in vmap or j.verdict is Verdict.REACHED:
-            vmap[k] = j.verdict
-    plan = [explain(r, llm, vmap.get((r.package, r.current), Verdict.USED), trace) for r in plan]
     wc = make_workcopy(repo, os.path.join(ROOT, "work", f"{a.target}-{a.scope}"), name="repo")
-    changed = []
-    for eco in sorted({r.ecosystem for r in plan if r.target}):
-        bumps = {r.package: r.target for r in plan if r.ecosystem == eco and r.target}
-        trace.record({"tool": "apply_branch", "ecosystem": eco, "bumps": len(bumps)})
-        changed += apply_and_commit(wc, "fix/sbomreach", bumps, eco, excludes=t["excludes"])
-    after = build(t, wc, trace).run(wc)
-    d = compare_scans(before, after)
-    out = {"target": a.target, "scope": a.scope, "packages_changed": sum(1 for r in plan if r.target),
-           "no_fix_packages": [r.package for r in plan if not r.target], "changed_files": changed,
-           "diff": d.__dict__, "after_stage_status": after.stage_status, "after_incomplete": [c.name for c in after.incomplete],
-           "llm_texts": sum(1 for r in plan if r.text_source == "llm"),
-           "plan": [{"package": r.package, "current": r.current, "target": r.target, "verdict": r.best_verdict.value,
-                     "advisories": list(r.advisory_ids), "direct": r.direct, "text": r.text, "text_source": r.text_source} for r in plan]}
+    cur, rounds, all_changed = before, [], []
+    for n in range(1, a.max_rounds + 1):
+        scope = a.scope if n == 1 else "reached"   # 개선 순환: 2바퀴부터는 남은·새 도달 경보만
+        plan = [r for r in plan_remediation(cur, scope, cur.direct_names) if r.target]
+        if not plan:
+            break
+        vmap = {}
+        for j in cur.judgements:
+            k = (j.alert.component.name, j.alert.component.version)
+            if k not in vmap or j.verdict is Verdict.REACHED:
+                vmap[k] = j.verdict
+        plan = [explain(r, llm, vmap.get((r.package, r.current), Verdict.USED), trace) for r in plan]
+        changed = []
+        for eco in sorted({r.ecosystem for r in plan}):
+            bumps = {r.package: r.target for r in plan if r.ecosystem == eco}
+            trace.record({"tool": "apply_branch", "round": n, "ecosystem": eco, "bumps": len(bumps)})
+            changed += apply_and_commit(wc, "fix/sbomreach", bumps, eco, excludes=t["excludes"])
+        all_changed += changed
+        after = build(t, wc, trace).run(wc)
+        rounds.append({"round": n, "scope": scope, "packages_changed": len(plan), "changed_files": changed,
+                       "reached_after": after.count(Verdict.REACHED), "alerts_after": len(after.judgements),
+                       "plan": [{"package": r.package, "current": r.current, "target": r.target, "verdict": r.best_verdict.value,
+                                 "advisories": list(r.advisory_ids), "direct": r.direct, "text": r.text, "text_source": r.text_source} for r in plan]})
+        cur = after
+        if after.count(Verdict.REACHED) == 0:
+            break
+    d = compare_scans(before, cur)
+    out = {"target": a.target, "scope": a.scope, "rounds": rounds,
+           "packages_changed": sum(r["packages_changed"] for r in rounds), "changed_files": sorted(set(all_changed)),
+           "diff": d.__dict__, "after_stage_status": cur.stage_status, "after_incomplete": [c.name for c in cur.incomplete],
+           "reached_after_items": [f"{j.alert.component.name}@{j.alert.component.version}:{j.alert.advisory.id}" for j in cur.judgements if j.verdict is Verdict.REACHED],
+           "llm_texts": sum(1 for rr in rounds for p in rr["plan"] if p["text_source"] == "llm"),
+           "unfixed_alerts_after": sum(1 for j in cur.judgements if not j.alert.advisory.fixed_versions)}
     os.makedirs(os.path.join(EV, "rescan"), exist_ok=True)
     json.dump(out, open(os.path.join(EV, "rescan", f"{a.target}.{a.scope}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(a.target, a.scope, "패키지 조치", out["packages_changed"], d.__dict__)
+    print(a.target, a.scope, "라운드", len(rounds), "패키지 조치", out["packages_changed"], d.__dict__)
 
 
 def cmd_eval(a):
@@ -131,6 +144,7 @@ def main(argv=None):
         if n == "remediate":
             s.add_argument("--scope", default="reached", choices=["reached", "reached+used", "all"])
             s.add_argument("--no-llm", action="store_true")
+            s.add_argument("--max-rounds", type=int, default=3)
         s.set_defaults(fn=f)
     e = sub.add_parser("eval")
     e.add_argument("--gold", default="gold.jsonl")
