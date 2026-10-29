@@ -1,5 +1,5 @@
-{"run_id": "nodegoat", "seq": 1, "ts": "2026-10-30T08:07:32+0900", "tool": "sbom", "ms": 1230, "tool_name": "syft", "components": 381, "fallback": false}
-{"run_id": "nodegoat", "seq": 2, "ts": "2026-10-30T08:07:32+0900", "tool": "source_index", "ms": 51, "imported_modules": 23, "referenced_symbols": 47}
-{"run_id": "nodegoat", "seq": 3, "ts": "2026-10-30T08:07:32+0900", "tool": "vuln_lookup", "ms": 42, "alerts": 90, "incomplete": 0}
-{"run_id": "nodegoat", "seq": 4, "ts": "2026-10-30T08:07:32+0900", "tool": "reach_judge", "ms": 0, "reached": 2, "used": 13, "unseen": 75}
-{"run_id": "nodegoat", "seq": 5, "ts": "2026-10-30T08:07:32+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0", "underscore:GHSA-cf4h-3jhx-xvhq:3.5"]}
+{"run_id": "nodegoat", "seq": 1, "ts": "2026-10-30T08:07:50+0900", "tool": "sbom", "ms": 756, "tool_name": "syft", "components": 381, "fallback": false}
+{"run_id": "nodegoat", "seq": 2, "ts": "2026-10-30T08:07:50+0900", "tool": "source_index", "ms": 49, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat", "seq": 3, "ts": "2026-10-30T08:07:50+0900", "tool": "vuln_lookup", "ms": 50, "alerts": 90, "incomplete": 0}
+{"run_id": "nodegoat", "seq": 4, "ts": "2026-10-30T08:07:50+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
+{"run_id": "nodegoat", "seq": 5, "ts": "2026-10-30T08:07:50+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "express:GHSA-rv95-896h-c2vc:4.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0"]}

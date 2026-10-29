@@ -4,7 +4,7 @@
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 38,
- "elapsed_sec": 0.98,
+ "elapsed_sec": 0.89,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -226,29 +226,29 @@
    "reason": "취약 심볼 CharField, DomainNameValidator, HttpResponse 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
-     "path": "introduction/views.py",
-     "line": 77,
-     "text": "return HttpResponse(status=401)"
-    },
-    {
-     "path": "introduction/views.py",
-     "line": 90,
-     "text": "return HttpResponse(status=403)"
-    },
-    {
-     "path": "introduction/views.py",
-     "line": 97,
-     "text": "return HttpResponse(status=403)"
-    },
-    {
-     "path": "introduction/views.py",
-     "line": 99,
-     "text": "response = HttpResponse(status=200)"
-    },
-    {
      "path": "challenge/migrations/0001_initial.py",
      "line": 21,
      "text": "(\"name\", models.CharField(max_length=100)),"
+    },
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 23,
+     "text": "(\"docker_image\", models.CharField(max_length=100)),"
+    },
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 28,
+     "text": "(\"flag\", models.CharField(max_length=100)),"
+    },
+    {
+     "path": "challenge/migrations/0001_initial.py",
+     "line": 36,
+     "text": "(\"container_id\", models.CharField(max_length=100)),"
+    },
+    {
+     "path": "challenge/migrations/0003_alter_challenge_docker_image_alter_challenge_id_and_more.py",
+     "line": 16,
+     "text": "field=models.CharField(max_length=100, unique=True),"
     }
    ]
   },
@@ -278,6 +278,11 @@
    "reason": "취약 심볼 GenericIPAddressField, clean_ipv6_address, db, forms, is_valid_ipv6_address 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
+     "path": "introduction/forms.py",
+     "line": 9,
+     "text": "email = forms.EmailField(required=True)"
+    },
+    {
      "path": "challenge/migrations/0001_initial.py",
      "line": 46,
      "text": "on_delete=django.db.models.deletion.CASCADE,"
@@ -295,11 +300,6 @@
     {
      "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
      "line": 22,
-     "text": "on_delete=django.db.models.deletion.SET_NULL,"
-    },
-    {
-     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
-     "line": 33,
      "text": "on_delete=django.db.models.deletion.SET_NULL,"
     }
    ]

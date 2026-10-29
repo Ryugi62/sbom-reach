@@ -4,7 +4,7 @@
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 28,
- "elapsed_sec": 0.92,
+ "elapsed_sec": 1.27,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",

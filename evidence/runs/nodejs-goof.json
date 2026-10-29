@@ -4,7 +4,7 @@
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 566,
- "elapsed_sec": 0.82,
+ "elapsed_sec": 0.9,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -15,10 +15,10 @@
  "incomplete": [],
  "counts": {
   "alerts": 235,
-  "REACHED": 13,
-  "USED": 62,
+  "REACHED": 16,
+  "USED": 59,
   "UNSEEN": 160,
-  "REACHED_weak": 0
+  "REACHED_weak": 3
  },
  "alerts": [
   {
@@ -272,6 +272,56 @@
   {
    "rank": 10,
    "score": 4.0,
+   "package": "express",
+   "version": "4.12.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rv95-896h-c2vc",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.19.2",
+    "5.0.0-beta.3"
+   ],
+   "symbols": [
+    "encodeurl",
+    "location",
+    "res.location",
+    "res.redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 29,
+     "text": "return res.redirect(redirectPage)"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 31,
+     "text": "return res.redirect('/admin')"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 74,
+     "text": "return res.redirect(redirectPage)"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 76,
+     "text": "return res.redirect('/admin')"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 132,
+     "text": "return res.redirect('/')"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "score": 4.0,
    "package": "marked",
    "version": "0.3.5",
    "ecosystem": "npm",
@@ -296,7 +346,7 @@
    ]
   },
   {
-   "rank": 11,
+   "rank": 12,
    "score": 4.0,
    "package": "mongoose",
    "version": "4.2.4",
@@ -349,7 +399,7 @@
    ]
   },
   {
-   "rank": 12,
+   "rank": 13,
    "score": 4.0,
    "package": "st",
    "version": "0.2.4",
@@ -375,7 +425,49 @@
    ]
   },
   {
-   "rank": 13,
+   "rank": 14,
+   "score": 4.0,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2rp8-mm9q-fp49",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.31",
+    "1.1.0"
+   ],
+   "symbols": [
+    "escapeComment",
+    "import",
+    "require",
+    "information_schema.CHECK_CONSTRAINTS",
+    "ViewEntity",
+    "pg_get_viewdef",
+    "JSON.stringify",
+    "id",
+    "user",
+    "down",
+    "up"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "mongoose-db.js",
+     "line": 21,
+     "text": "console.log(JSON.stringify(cfenv.getAppEnv()));"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 312,
+     "text": "console.log(JSON.stringify(req.query));"
+    }
+   ]
+  },
+  {
+   "rank": 15,
    "score": 4.0,
    "package": "validator",
    "version": "13.5.2",
@@ -408,7 +500,7 @@
    ]
   },
   {
-   "rank": 14,
+   "rank": 16,
    "score": 3.5,
    "package": "express-fileupload",
    "version": "0.0.5",
@@ -432,7 +524,7 @@
    ]
   },
   {
-   "rank": 15,
+   "rank": 17,
    "score": 3.5,
    "package": "lodash",
    "version": "4.17.10",
@@ -459,7 +551,7 @@
    ]
   },
   {
-   "rank": 16,
+   "rank": 18,
    "score": 3.5,
    "package": "lodash",
    "version": "4.17.4",
@@ -486,7 +578,7 @@
    ]
   },
   {
-   "rank": 17,
+   "rank": 19,
    "score": 3.5,
    "package": "mongoose",
    "version": "4.2.4",
@@ -518,7 +610,7 @@
    ]
   },
   {
-   "rank": 18,
+   "rank": 20,
    "score": 3.5,
    "package": "mongoose",
    "version": "4.2.4",
@@ -549,7 +641,7 @@
    ]
   },
   {
-   "rank": 19,
+   "rank": 21,
    "score": 3.5,
    "package": "mongoose",
    "version": "4.2.4",
@@ -582,7 +674,7 @@
    ]
   },
   {
-   "rank": 20,
+   "rank": 22,
    "score": 3.5,
    "package": "typeorm",
    "version": "0.2.24",
@@ -613,7 +705,7 @@
    ]
   },
   {
-   "rank": 21,
+   "rank": 23,
    "score": 3.5,
    "package": "typeorm",
    "version": "0.2.24",
@@ -642,7 +734,7 @@
    ]
   },
   {
-   "rank": 22,
+   "rank": 24,
    "score": 2.45,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -669,7 +761,7 @@
    ]
   },
   {
-   "rank": 23,
+   "rank": 25,
    "score": 2.45,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -707,7 +799,7 @@
    ]
   },
   {
-   "rank": 24,
+   "rank": 26,
    "score": 2.45,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -731,7 +823,7 @@
    ]
   },
   {
-   "rank": 25,
+   "rank": 27,
    "score": 2.45,
    "package": "body-parser",
    "version": "1.9.0",
@@ -758,7 +850,7 @@
    ]
   },
   {
-   "rank": 26,
+   "rank": 28,
    "score": 2.45,
    "package": "body-parser",
    "version": "1.9.0",
@@ -782,7 +874,7 @@
    ]
   },
   {
-   "rank": 27,
+   "rank": 29,
    "score": 2.45,
    "package": "dustjs-linkedin",
    "version": "2.5.0",
@@ -806,7 +898,7 @@
    ]
   },
   {
-   "rank": 28,
+   "rank": 30,
    "score": 2.45,
    "package": "express-fileupload",
    "version": "0.0.5",
@@ -828,7 +920,7 @@
    ]
   },
   {
-   "rank": 29,
+   "rank": 31,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -855,7 +947,7 @@
    ]
   },
   {
-   "rank": 30,
+   "rank": 32,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -881,7 +973,7 @@
    ]
   },
   {
-   "rank": 31,
+   "rank": 33,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -911,7 +1003,7 @@
    ]
   },
   {
-   "rank": 32,
+   "rank": 34,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -944,7 +1036,7 @@
    ]
   },
   {
-   "rank": 33,
+   "rank": 35,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.21",
@@ -977,7 +1069,7 @@
    ]
   },
   {
-   "rank": 34,
+   "rank": 36,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1004,7 +1096,7 @@
    ]
   },
   {
-   "rank": 35,
+   "rank": 37,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1030,7 +1122,7 @@
    ]
   },
   {
-   "rank": 36,
+   "rank": 38,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1060,7 +1152,7 @@
    ]
   },
   {
-   "rank": 37,
+   "rank": 39,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1093,7 +1185,7 @@
    ]
   },
   {
-   "rank": 38,
+   "rank": 40,
    "score": 2.45,
    "package": "marked",
    "version": "0.3.5",
@@ -1120,7 +1212,7 @@
    ]
   },
   {
-   "rank": 39,
+   "rank": 41,
    "score": 2.45,
    "package": "marked",
    "version": "0.3.5",
@@ -1147,7 +1239,7 @@
    ]
   },
   {
-   "rank": 40,
+   "rank": 42,
    "score": 2.45,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1179,7 +1271,7 @@
    ]
   },
   {
-   "rank": 41,
+   "rank": 43,
    "score": 2.45,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1211,7 +1303,7 @@
    ]
   },
   {
-   "rank": 42,
+   "rank": 44,
    "score": 2.45,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1253,7 +1345,7 @@
    ]
   },
   {
-   "rank": 43,
+   "rank": 45,
    "score": 2.45,
    "package": "typeorm",
    "version": "0.2.24",
@@ -1289,7 +1381,7 @@
    ]
   },
   {
-   "rank": 44,
+   "rank": 46,
    "score": 2.45,
    "package": "validator",
    "version": "13.5.2",
@@ -1313,7 +1405,7 @@
    ]
   },
   {
-   "rank": 45,
+   "rank": 47,
    "score": 1.4,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -1337,7 +1429,7 @@
    ]
   },
   {
-   "rank": 46,
+   "rank": 48,
    "score": 1.4,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -1367,42 +1459,7 @@
    ]
   },
   {
-   "rank": 47,
-   "score": 1.4,
-   "package": "express",
-   "version": "4.12.4",
-   "ecosystem": "npm",
-   "advisory": "GHSA-rv95-896h-c2vc",
-   "severity": "MODERATE",
-   "fixed": [
-    "4.19.2",
-    "5.0.0-beta.3"
-   ],
-   "symbols": [
-    "encodeurl",
-    "location",
-    "res.location",
-    "res.redirect"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "weak": false,
-   "reason": "패키지는 import되나 취약 심볼 encodeurl, location, redirect 의 참조·호출 근거 줄은 없음",
-   "evidence": [
-    {
-     "path": "app.js",
-     "line": 11,
-     "text": "var express = require('express');"
-    },
-    {
-     "path": "routes/users.js",
-     "line": 2,
-     "text": "var express = require('express')"
-    }
-   ]
-  },
-  {
-   "rank": 48,
+   "rank": 49,
    "score": 1.4,
    "package": "hbs",
    "version": "4.0.4",
@@ -1424,7 +1481,7 @@
    ]
   },
   {
-   "rank": 49,
+   "rank": 50,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1453,7 +1510,7 @@
    ]
   },
   {
-   "rank": 50,
+   "rank": 51,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1483,7 +1540,7 @@
    ]
   },
   {
-   "rank": 51,
+   "rank": 52,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1507,7 +1564,7 @@
    ]
   },
   {
-   "rank": 52,
+   "rank": 53,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1534,7 +1591,7 @@
    ]
   },
   {
-   "rank": 53,
+   "rank": 54,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.21",
@@ -1564,7 +1621,7 @@
    ]
   },
   {
-   "rank": 54,
+   "rank": 55,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.21",
@@ -1591,7 +1648,7 @@
    ]
   },
   {
-   "rank": 55,
+   "rank": 56,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1620,7 +1677,7 @@
    ]
   },
   {
-   "rank": 56,
+   "rank": 57,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1650,7 +1707,7 @@
    ]
   },
   {
-   "rank": 57,
+   "rank": 58,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1676,7 +1733,7 @@
    ]
   },
   {
-   "rank": 58,
+   "rank": 59,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1700,7 +1757,7 @@
    ]
   },
   {
-   "rank": 59,
+   "rank": 60,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1727,7 +1784,7 @@
    ]
   },
   {
-   "rank": 60,
+   "rank": 61,
    "score": 1.4,
    "package": "marked",
    "version": "0.3.5",
@@ -1751,7 +1808,7 @@
    ]
   },
   {
-   "rank": 61,
+   "rank": 62,
    "score": 1.4,
    "package": "marked",
    "version": "0.3.5",
@@ -1775,7 +1832,7 @@
    ]
   },
   {
-   "rank": 62,
+   "rank": 63,
    "score": 1.4,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1807,7 +1864,7 @@
    ]
   },
   {
-   "rank": 63,
+   "rank": 64,
    "score": 1.4,
    "package": "morgan",
    "version": "1.10.0",
@@ -1836,7 +1893,7 @@
    ]
   },
   {
-   "rank": 64,
+   "rank": 65,
    "score": 1.4,
    "package": "morgan",
    "version": "1.10.0",
@@ -1863,7 +1920,7 @@
    ]
   },
   {
-   "rank": 65,
+   "rank": 66,
    "score": 1.4,
    "package": "morgan",
    "version": "1.10.0",
@@ -1891,7 +1948,7 @@
    ]
   },
   {
-   "rank": 66,
+   "rank": 67,
    "score": 1.4,
    "package": "ms",
    "version": "0.6.2",
@@ -1915,7 +1972,7 @@
    ]
   },
   {
-   "rank": 67,
+   "rank": 68,
    "score": 1.4,
    "package": "ms",
    "version": "0.7.1",
@@ -1939,7 +1996,7 @@
    ]
   },
   {
-   "rank": 68,
+   "rank": 69,
    "score": 1.4,
    "package": "ms",
    "version": "0.7.3",
@@ -1959,48 +2016,6 @@
      "path": "routes/index.js",
      "line": 7,
      "text": "var ms = require('ms');"
-    }
-   ]
-  },
-  {
-   "rank": 69,
-   "score": 1.4,
-   "package": "typeorm",
-   "version": "0.2.24",
-   "ecosystem": "npm",
-   "advisory": "GHSA-2rp8-mm9q-fp49",
-   "severity": "MODERATE",
-   "fixed": [
-    "0.3.31",
-    "1.1.0"
-   ],
-   "symbols": [
-    "escapeComment",
-    "import",
-    "require",
-    "information_schema.CHECK_CONSTRAINTS",
-    "ViewEntity",
-    "pg_get_viewdef",
-    "JSON.stringify",
-    "id",
-    "user",
-    "down",
-    "up"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "weak": false,
-   "reason": "패키지는 import되나 취약 심볼 CHECK_CONSTRAINTS, ViewEntity, down, escapeComment, id, import, pg_get_viewdef, require, stringify, up, user 의 참조·호출 근거 줄은 없음",
-   "evidence": [
-    {
-     "path": "routes/users.js",
-     "line": 3,
-     "text": "var typeorm = require(\"typeorm\");"
-    },
-    {
-     "path": "typeorm-db.js",
-     "line": 1,
-     "text": "var typeorm = require(\"typeorm\");"
     }
    ]
   },
@@ -2207,6 +2222,53 @@
   {
    "rank": 79,
    "score": 1.0,
+   "package": "express",
+   "version": "4.12.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qw6h-vgh9-j6wx",
+   "severity": "LOW",
+   "fixed": [
+    "4.20.0",
+    "5.0.0"
+   ],
+   "symbols": [
+    "response.redirect"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "routes/index.js",
+     "line": 29,
+     "text": "return res.redirect(redirectPage)"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 31,
+     "text": "return res.redirect('/admin')"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 74,
+     "text": "return res.redirect(redirectPage)"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 76,
+     "text": "return res.redirect('/admin')"
+    },
+    {
+     "path": "routes/index.js",
+     "line": 132,
+     "text": "return res.redirect('/')"
+    }
+   ]
+  },
+  {
+   "rank": 80,
+   "score": 1.0,
    "package": "form-data",
    "version": "2.3.3",
    "ecosystem": "npm",
@@ -2229,7 +2291,7 @@
    "evidence": []
   },
   {
-   "rank": 80,
+   "rank": 81,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.11",
@@ -2253,7 +2315,7 @@
    "evidence": []
   },
   {
-   "rank": 81,
+   "rank": 82,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.11",
@@ -2271,7 +2333,7 @@
    "evidence": []
   },
   {
-   "rank": 82,
+   "rank": 83,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.11",
@@ -2312,7 +2374,7 @@
    "evidence": []
   },
   {
-   "rank": 83,
+   "rank": 84,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.11",
@@ -2330,7 +2392,7 @@
    "evidence": []
   },
   {
-   "rank": 84,
+   "rank": 85,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.11",
@@ -2352,7 +2414,7 @@
    "evidence": []
   },
   {
-   "rank": 85,
+   "rank": 86,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.11",
@@ -2366,30 +2428,6 @@
    "symbols": [
     "handlebars",
     "__defineGetter__"
-   ],
-   "symbol_source": "auto",
-   "verdict": "UNSEEN",
-   "weak": false,
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 86,
-   "score": 1.0,
-   "package": "handlebars",
-   "version": "4.0.14",
-   "ecosystem": "npm",
-   "advisory": "GHSA-2w6w-674q-4c4q",
-   "severity": "CRITICAL",
-   "fixed": [
-    "4.7.9"
-   ],
-   "symbols": [
-    "Handlebars.compile",
-    "NumberLiteral",
-    "compile",
-    "req.body.text",
-    "id"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
@@ -2403,6 +2441,30 @@
    "package": "handlebars",
    "version": "4.0.14",
    "ecosystem": "npm",
+   "advisory": "GHSA-2w6w-674q-4c4q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "Handlebars.compile",
+    "NumberLiteral",
+    "compile",
+    "req.body.text",
+    "id"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 88,
+   "score": 1.0,
+   "package": "handlebars",
+   "version": "4.0.14",
+   "ecosystem": "npm",
    "advisory": "GHSA-765h-qjxv-5f44",
    "severity": "CRITICAL",
    "fixed": [
@@ -2416,7 +2478,7 @@
    "evidence": []
   },
   {
-   "rank": 88,
+   "rank": 89,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.14",
@@ -2457,7 +2519,7 @@
    "evidence": []
   },
   {
-   "rank": 89,
+   "rank": 90,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.14",
@@ -2475,7 +2537,7 @@
    "evidence": []
   },
   {
-   "rank": 90,
+   "rank": 91,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.14",
@@ -2497,7 +2559,7 @@
    "evidence": []
   },
   {
-   "rank": 91,
+   "rank": 92,
    "score": 1.0,
    "package": "handlebars",
    "version": "4.0.14",
@@ -2519,7 +2581,7 @@
    "evidence": []
   },
   {
-   "rank": 92,
+   "rank": 93,
    "score": 1.0,
    "package": "json-schema",
    "version": "0.2.3",
@@ -2537,7 +2599,7 @@
    "evidence": []
   },
   {
-   "rank": 93,
+   "rank": 94,
    "score": 1.0,
    "package": "minimist",
    "version": "0.0.10",
@@ -2558,7 +2620,7 @@
    "evidence": []
   },
   {
-   "rank": 94,
+   "rank": 95,
    "score": 1.0,
    "package": "minimist",
    "version": "0.0.8",
@@ -2579,7 +2641,7 @@
    "evidence": []
   },
   {
-   "rank": 95,
+   "rank": 96,
    "score": 1.0,
    "package": "minimist",
    "version": "1.2.0",
@@ -2600,7 +2662,7 @@
    "evidence": []
   },
   {
-   "rank": 96,
+   "rank": 97,
    "score": 1.0,
    "package": "minimist",
    "version": "1.2.5",
@@ -2621,7 +2683,7 @@
    "evidence": []
   },
   {
-   "rank": 97,
+   "rank": 98,
    "score": 1.0,
    "package": "mixin-deep",
    "version": "1.3.1",
@@ -2642,7 +2704,7 @@
    "evidence": []
   },
   {
-   "rank": 98,
+   "rank": 99,
    "score": 1.0,
    "package": "set-value",
    "version": "0.4.3",
@@ -2661,7 +2723,7 @@
    "evidence": []
   },
   {
-   "rank": 99,
+   "rank": 100,
    "score": 1.0,
    "package": "set-value",
    "version": "2.0.0",
@@ -2680,7 +2742,7 @@
    "evidence": []
   },
   {
-   "rank": 100,
+   "rank": 101,
    "score": 1.0,
    "package": "sha.js",
    "version": "2.4.11",
@@ -2701,7 +2763,7 @@
    "evidence": []
   },
   {
-   "rank": 101,
+   "rank": 102,
    "score": 1.0,
    "package": "underscore",
    "version": "1.9.1",
@@ -2722,7 +2784,7 @@
    "evidence": []
   },
   {
-   "rank": 102,
+   "rank": 103,
    "score": 0.7,
    "package": "ansi-regex",
    "version": "3.0.0",
@@ -2743,7 +2805,7 @@
    "evidence": []
   },
   {
-   "rank": 103,
+   "rank": 104,
    "score": 0.7,
    "package": "ansi-regex",
    "version": "4.1.0",
@@ -2764,7 +2826,7 @@
    "evidence": []
   },
   {
-   "rank": 104,
+   "rank": 105,
    "score": 0.7,
    "package": "ansi-regex",
    "version": "5.0.0",
@@ -2785,7 +2847,7 @@
    "evidence": []
   },
   {
-   "rank": 105,
+   "rank": 106,
    "score": 0.7,
    "package": "async",
    "version": "2.6.3",
@@ -2806,7 +2868,7 @@
    "evidence": []
   },
   {
-   "rank": 106,
+   "rank": 107,
    "score": 0.7,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -2830,7 +2892,7 @@
    "evidence": []
   },
   {
-   "rank": 107,
+   "rank": 108,
    "score": 0.7,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -2865,7 +2927,7 @@
    "evidence": []
   },
   {
-   "rank": 108,
+   "rank": 109,
    "score": 0.7,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -2895,7 +2957,7 @@
    "evidence": []
   },
   {
-   "rank": 109,
+   "rank": 110,
    "score": 0.7,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -2927,7 +2989,7 @@
    "evidence": []
   },
   {
-   "rank": 110,
+   "rank": 111,
    "score": 0.7,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -2957,7 +3019,7 @@
    "evidence": []
   },
   {
-   "rank": 111,
+   "rank": 112,
    "score": 0.7,
    "package": "braces",
    "version": "2.3.2",
@@ -2977,7 +3039,7 @@
    "evidence": []
   },
   {
-   "rank": 112,
+   "rank": 113,
    "score": 0.7,
    "package": "cross-spawn",
    "version": "4.0.2",
@@ -2996,7 +3058,7 @@
    "evidence": []
   },
   {
-   "rank": 113,
+   "rank": 114,
    "score": 0.7,
    "package": "cross-spawn",
    "version": "5.1.0",
@@ -3015,7 +3077,7 @@
    "evidence": []
   },
   {
-   "rank": 114,
+   "rank": 115,
    "score": 0.7,
    "package": "debug",
    "version": "2.2.0",
@@ -3036,7 +3098,7 @@
    "evidence": []
   },
   {
-   "rank": 115,
+   "rank": 116,
    "score": 0.7,
    "package": "decode-uri-component",
    "version": "0.2.0",
@@ -3059,7 +3121,7 @@
    "evidence": []
   },
   {
-   "rank": 116,
+   "rank": 117,
    "score": 0.7,
    "package": "decode-uri-component",
    "version": "0.2.0",
@@ -3077,7 +3139,7 @@
    "evidence": []
   },
   {
-   "rank": 117,
+   "rank": 118,
    "score": 0.7,
    "package": "dicer",
    "version": "0.3.0",
@@ -3095,7 +3157,7 @@
    "evidence": []
   },
   {
-   "rank": 118,
+   "rank": 119,
    "score": 0.7,
    "package": "diff",
    "version": "1.4.0",
@@ -3113,7 +3175,7 @@
    "evidence": []
   },
   {
-   "rank": 119,
+   "rank": 120,
    "score": 0.7,
    "package": "ejs",
    "version": "0.8.8",
@@ -3133,7 +3195,7 @@
    "evidence": []
   },
   {
-   "rank": 120,
+   "rank": 121,
    "score": 0.7,
    "package": "ejs",
    "version": "1.0.0",
@@ -3153,7 +3215,7 @@
    "evidence": []
   },
   {
-   "rank": 121,
+   "rank": 122,
    "score": 0.7,
    "package": "figlet",
    "version": "1.5.0",
@@ -3178,7 +3240,7 @@
    "evidence": []
   },
   {
-   "rank": 122,
+   "rank": 123,
    "score": 0.7,
    "package": "form-data",
    "version": "2.3.3",
@@ -3206,7 +3268,7 @@
    "evidence": []
   },
   {
-   "rank": 123,
+   "rank": 124,
    "score": 0.7,
    "package": "fresh",
    "version": "0.2.4",
@@ -3226,7 +3288,7 @@
    "evidence": []
   },
   {
-   "rank": 124,
+   "rank": 125,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3247,7 +3309,7 @@
    "evidence": []
   },
   {
-   "rank": 125,
+   "rank": 126,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3266,7 +3328,7 @@
    "evidence": []
   },
   {
-   "rank": 126,
+   "rank": 127,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3290,7 +3352,7 @@
    "evidence": []
   },
   {
-   "rank": 127,
+   "rank": 128,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3308,7 +3370,7 @@
    "evidence": []
   },
   {
-   "rank": 128,
+   "rank": 129,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3328,7 +3390,7 @@
    "evidence": []
   },
   {
-   "rank": 129,
+   "rank": 130,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3349,7 +3411,7 @@
    "evidence": []
   },
   {
-   "rank": 130,
+   "rank": 131,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3370,7 +3432,7 @@
    "evidence": []
   },
   {
-   "rank": 131,
+   "rank": 132,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3392,7 +3454,7 @@
    "evidence": []
   },
   {
-   "rank": 132,
+   "rank": 133,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3419,7 +3481,7 @@
    "evidence": []
   },
   {
-   "rank": 133,
+   "rank": 134,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.11",
@@ -3445,7 +3507,7 @@
    "evidence": []
   },
   {
-   "rank": 134,
+   "rank": 135,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3466,7 +3528,7 @@
    "evidence": []
   },
   {
-   "rank": 135,
+   "rank": 136,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3485,7 +3547,7 @@
    "evidence": []
   },
   {
-   "rank": 136,
+   "rank": 137,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3509,7 +3571,7 @@
    "evidence": []
   },
   {
-   "rank": 137,
+   "rank": 138,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3527,7 +3589,7 @@
    "evidence": []
   },
   {
-   "rank": 138,
+   "rank": 139,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3547,7 +3609,7 @@
    "evidence": []
   },
   {
-   "rank": 139,
+   "rank": 140,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3568,7 +3630,7 @@
    "evidence": []
   },
   {
-   "rank": 140,
+   "rank": 141,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3589,7 +3651,7 @@
    "evidence": []
   },
   {
-   "rank": 141,
+   "rank": 142,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3616,7 +3678,7 @@
    "evidence": []
   },
   {
-   "rank": 142,
+   "rank": 143,
    "score": 0.7,
    "package": "handlebars",
    "version": "4.0.14",
@@ -3642,7 +3704,7 @@
    "evidence": []
   },
   {
-   "rank": 143,
+   "rank": 144,
    "score": 0.7,
    "package": "ini",
    "version": "1.1.0",
@@ -3663,7 +3725,7 @@
    "evidence": []
   },
   {
-   "rank": 144,
+   "rank": 145,
    "score": 0.7,
    "package": "ini",
    "version": "1.3.5",
@@ -3684,7 +3746,7 @@
    "evidence": []
   },
   {
-   "rank": 145,
+   "rank": 146,
    "score": 0.7,
    "package": "js-yaml",
    "version": "3.13.1",
@@ -3708,7 +3770,7 @@
    "evidence": []
   },
   {
-   "rank": 146,
+   "rank": 147,
    "score": 0.7,
    "package": "js-yaml",
    "version": "3.13.1",
@@ -3729,7 +3791,7 @@
    "evidence": []
   },
   {
-   "rank": 147,
+   "rank": 148,
    "score": 0.7,
    "package": "js-yaml",
    "version": "3.13.1",
@@ -3755,7 +3817,7 @@
    "evidence": []
   },
   {
-   "rank": 148,
+   "rank": 149,
    "score": 0.7,
    "package": "kerberos",
    "version": "0.0.24",
@@ -3775,7 +3837,7 @@
    "evidence": []
   },
   {
-   "rank": 149,
+   "rank": 150,
    "score": 0.7,
    "package": "kind-of",
    "version": "6.0.2",
@@ -3793,7 +3855,7 @@
    "evidence": []
   },
   {
-   "rank": 150,
+   "rank": 151,
    "score": 0.7,
    "package": "mime",
    "version": "1.2.11",
@@ -3814,7 +3876,7 @@
    "evidence": []
   },
   {
-   "rank": 151,
+   "rank": 152,
    "score": 0.7,
    "package": "mime",
    "version": "1.3.4",
@@ -3835,7 +3897,7 @@
    "evidence": []
   },
   {
-   "rank": 152,
+   "rank": 153,
    "score": 0.7,
    "package": "minimatch",
    "version": "3.0.4",
@@ -3868,7 +3930,7 @@
    "evidence": []
   },
   {
-   "rank": 153,
+   "rank": 154,
    "score": 0.7,
    "package": "minimatch",
    "version": "3.0.4",
@@ -3896,7 +3958,7 @@
    "evidence": []
   },
   {
-   "rank": 154,
+   "rank": 155,
    "score": 0.7,
    "package": "minimatch",
    "version": "3.0.4",
@@ -3927,7 +3989,7 @@
    "evidence": []
   },
   {
-   "rank": 155,
+   "rank": 156,
    "score": 0.7,
    "package": "minimatch",
    "version": "3.0.4",
@@ -3947,7 +4009,7 @@
    "evidence": []
   },
   {
-   "rank": 156,
+   "rank": 157,
    "score": 0.7,
    "package": "mongodb",
    "version": "2.0.46",
@@ -3967,7 +4029,7 @@
    "evidence": []
   },
   {
-   "rank": 157,
+   "rank": 158,
    "score": 0.7,
    "package": "mpath",
    "version": "0.1.1",
@@ -3987,7 +4049,7 @@
    "evidence": []
   },
   {
-   "rank": 158,
+   "rank": 159,
    "score": 0.7,
    "package": "negotiator",
    "version": "0.2.8",
@@ -4007,7 +4069,7 @@
    "evidence": []
   },
   {
-   "rank": 159,
+   "rank": 160,
    "score": 0.7,
    "package": "negotiator",
    "version": "0.4.9",
@@ -4027,7 +4089,7 @@
    "evidence": []
   },
   {
-   "rank": 160,
+   "rank": 161,
    "score": 0.7,
    "package": "negotiator",
    "version": "0.5.3",
@@ -4047,7 +4109,7 @@
    "evidence": []
   },
   {
-   "rank": 161,
+   "rank": 162,
    "score": 0.7,
    "package": "path-to-regexp",
    "version": "0.1.3",
@@ -4070,7 +4132,7 @@
    "evidence": []
   },
   {
-   "rank": 162,
+   "rank": 163,
    "score": 0.7,
    "package": "path-to-regexp",
    "version": "0.1.3",
@@ -4088,7 +4150,7 @@
    "evidence": []
   },
   {
-   "rank": 163,
+   "rank": 164,
    "score": 0.7,
    "package": "qs",
    "version": "2.2.4",
@@ -4112,7 +4174,7 @@
    "evidence": []
   },
   {
-   "rank": 164,
+   "rank": 165,
    "score": 0.7,
    "package": "qs",
    "version": "2.2.4",
@@ -4132,30 +4194,6 @@
    ],
    "symbols": [],
    "symbol_source": "none",
-   "verdict": "UNSEEN",
-   "weak": false,
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 165,
-   "score": 0.7,
-   "package": "qs",
-   "version": "2.4.2",
-   "ecosystem": "npm",
-   "advisory": "GHSA-gqgv-6jq5-jjj9",
-   "severity": "HIGH",
-   "fixed": [
-    "6.0.4",
-    "6.1.2",
-    "6.2.3",
-    "6.3.2"
-   ],
-   "symbols": [
-    "qs",
-    "qs.parse"
-   ],
-   "symbol_source": "auto",
    "verdict": "UNSEEN",
    "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
@@ -4167,6 +4205,30 @@
    "package": "qs",
    "version": "2.4.2",
    "ecosystem": "npm",
+   "advisory": "GHSA-gqgv-6jq5-jjj9",
+   "severity": "HIGH",
+   "fixed": [
+    "6.0.4",
+    "6.1.2",
+    "6.2.3",
+    "6.3.2"
+   ],
+   "symbols": [
+    "qs",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 167,
+   "score": 0.7,
+   "package": "qs",
+   "version": "2.4.2",
+   "ecosystem": "npm",
    "advisory": "GHSA-hrpp-h998-j3pp",
    "severity": "HIGH",
    "fixed": [
@@ -4188,7 +4250,7 @@
    "evidence": []
   },
   {
-   "rank": 167,
+   "rank": 168,
    "score": 0.7,
    "package": "qs",
    "version": "6.5.2",
@@ -4214,7 +4276,7 @@
    "evidence": []
   },
   {
-   "rank": 168,
+   "rank": 169,
    "score": 0.7,
    "package": "semver",
    "version": "1.1.4",
@@ -4234,7 +4296,7 @@
    "evidence": []
   },
   {
-   "rank": 169,
+   "rank": 170,
    "score": 0.7,
    "package": "semver",
    "version": "5.5.0",
@@ -4254,7 +4316,7 @@
    "evidence": []
   },
   {
-   "rank": 170,
+   "rank": 171,
    "score": 0.7,
    "package": "semver",
    "version": "5.7.0",
@@ -4274,7 +4336,7 @@
    "evidence": []
   },
   {
-   "rank": 171,
+   "rank": 172,
    "score": 0.7,
    "package": "set-value",
    "version": "0.4.3",
@@ -4294,7 +4356,7 @@
    "evidence": []
   },
   {
-   "rank": 172,
+   "rank": 173,
    "score": 0.7,
    "package": "set-value",
    "version": "2.0.0",
@@ -4314,7 +4376,7 @@
    "evidence": []
   },
   {
-   "rank": 173,
+   "rank": 174,
    "score": 0.7,
    "package": "underscore",
    "version": "1.9.1",
@@ -4336,7 +4398,7 @@
    "evidence": []
   },
   {
-   "rank": 174,
+   "rank": 175,
    "score": 0.7,
    "package": "y18n",
    "version": "3.2.1",
@@ -4360,7 +4422,7 @@
    "evidence": []
   },
   {
-   "rank": 175,
+   "rank": 176,
    "score": 0.7,
    "package": "y18n",
    "version": "4.0.0",
@@ -4384,7 +4446,7 @@
    "evidence": []
   },
   {
-   "rank": 176,
+   "rank": 177,
    "score": 0.4,
    "package": "ajv",
    "version": "6.10.2",
@@ -4406,7 +4468,7 @@
    "evidence": []
   },
   {
-   "rank": 177,
+   "rank": 178,
    "score": 0.4,
    "package": "ajv",
    "version": "6.10.2",
@@ -4426,7 +4488,7 @@
    "evidence": []
   },
   {
-   "rank": 178,
+   "rank": 179,
    "score": 0.4,
    "package": "bl",
    "version": "2.2.0",
@@ -4447,7 +4509,7 @@
    "evidence": []
   },
   {
-   "rank": 179,
+   "rank": 180,
    "score": 0.4,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -4472,7 +4534,7 @@
    "evidence": []
   },
   {
-   "rank": 180,
+   "rank": 181,
    "score": 0.4,
    "package": "brace-expansion",
    "version": "1.1.11",
@@ -4501,7 +4563,7 @@
    "evidence": []
   },
   {
-   "rank": 181,
+   "rank": 182,
    "score": 0.4,
    "package": "bson",
    "version": "0.4.23",
@@ -4519,7 +4581,7 @@
    "evidence": []
   },
   {
-   "rank": 182,
+   "rank": 183,
    "score": 0.4,
    "package": "decode-uri-component",
    "version": "0.2.0",
@@ -4539,7 +4601,7 @@
    "evidence": []
   },
   {
-   "rank": 183,
+   "rank": 184,
    "score": 0.4,
    "package": "ejs",
    "version": "0.8.8",
@@ -4557,7 +4619,7 @@
    "evidence": []
   },
   {
-   "rank": 184,
+   "rank": 185,
    "score": 0.4,
    "package": "ejs",
    "version": "0.8.8",
@@ -4571,24 +4633,6 @@
     "ejs.renderFile"
    ],
    "symbol_source": "auto",
-   "verdict": "UNSEEN",
-   "weak": false,
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 185,
-   "score": 0.4,
-   "package": "ejs",
-   "version": "1.0.0",
-   "ecosystem": "npm",
-   "advisory": "GHSA-ghr5-ch3p-vcr6",
-   "severity": "MODERATE",
-   "fixed": [
-    "3.1.10"
-   ],
-   "symbols": [],
-   "symbol_source": "none",
    "verdict": "UNSEEN",
    "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
@@ -4600,15 +4644,13 @@
    "package": "ejs",
    "version": "1.0.0",
    "ecosystem": "npm",
-   "advisory": "GHSA-hwcf-pp87-7x6p",
+   "advisory": "GHSA-ghr5-ch3p-vcr6",
    "severity": "MODERATE",
    "fixed": [
-    "2.5.5"
+    "3.1.10"
    ],
-   "symbols": [
-    "ejs.renderFile"
-   ],
-   "symbol_source": "auto",
+   "symbols": [],
+   "symbol_source": "none",
    "verdict": "UNSEEN",
    "weak": false,
    "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
@@ -4617,23 +4659,16 @@
   {
    "rank": 187,
    "score": 0.4,
-   "package": "handlebars",
-   "version": "4.0.11",
+   "package": "ejs",
+   "version": "1.0.0",
    "ecosystem": "npm",
-   "advisory": "GHSA-2qvq-rjwj-gvw9",
+   "advisory": "GHSA-hwcf-pp87-7x6p",
    "severity": "MODERATE",
    "fixed": [
-    "4.7.9"
+    "2.5.5"
    ],
    "symbols": [
-    "resolvePartial",
-    "options.partials",
-    "Object.prototype",
-    "invokePartial",
-    "hasOwnProperty",
-    "widget",
-    "qs",
-    "minimist"
+    "ejs.renderFile"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
@@ -4647,6 +4682,33 @@
    "package": "handlebars",
    "version": "4.0.11",
    "ecosystem": "npm",
+   "advisory": "GHSA-2qvq-rjwj-gvw9",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.7.9"
+   ],
+   "symbols": [
+    "resolvePartial",
+    "options.partials",
+    "Object.prototype",
+    "invokePartial",
+    "hasOwnProperty",
+    "widget",
+    "qs",
+    "minimist"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 189,
+   "score": 0.4,
+   "package": "handlebars",
+   "version": "4.0.11",
+   "ecosystem": "npm",
    "advisory": "GHSA-f52g-6jhx-586p",
    "severity": "MODERATE",
    "fixed": [
@@ -4662,7 +4724,7 @@
    "evidence": []
   },
   {
-   "rank": 189,
+   "rank": 190,
    "score": 0.4,
    "package": "handlebars",
    "version": "4.0.11",
@@ -4684,7 +4746,7 @@
    "evidence": []
   },
   {
-   "rank": 190,
+   "rank": 191,
    "score": 0.4,
    "package": "handlebars",
    "version": "4.0.14",
@@ -4711,7 +4773,7 @@
    "evidence": []
   },
   {
-   "rank": 191,
+   "rank": 192,
    "score": 0.4,
    "package": "handlebars",
    "version": "4.0.14",
@@ -4731,7 +4793,7 @@
    "evidence": []
   },
   {
-   "rank": 192,
+   "rank": 193,
    "score": 0.4,
    "package": "handlebars",
    "version": "4.0.14",
@@ -4753,7 +4815,7 @@
    "evidence": []
   },
   {
-   "rank": 193,
+   "rank": 194,
    "score": 0.4,
    "package": "highlight.js",
    "version": "9.18.1",
@@ -4777,7 +4839,7 @@
    "evidence": []
   },
   {
-   "rank": 194,
+   "rank": 195,
    "score": 0.4,
    "package": "highlight.js",
    "version": "9.18.1",
@@ -4799,7 +4861,7 @@
    "evidence": []
   },
   {
-   "rank": 195,
+   "rank": 196,
    "score": 0.4,
    "package": "hosted-git-info",
    "version": "2.6.0",
@@ -4820,7 +4882,7 @@
    "evidence": []
   },
   {
-   "rank": 196,
+   "rank": 197,
    "score": 0.4,
    "package": "jquery",
    "version": "2.2.4",
@@ -4840,7 +4902,7 @@
    "evidence": []
   },
   {
-   "rank": 197,
+   "rank": 198,
    "score": 0.4,
    "package": "jquery",
    "version": "2.2.4",
@@ -4858,7 +4920,7 @@
    "evidence": []
   },
   {
-   "rank": 198,
+   "rank": 199,
    "score": 0.4,
    "package": "jquery",
    "version": "2.2.4",
@@ -4878,7 +4940,7 @@
    "evidence": []
   },
   {
-   "rank": 199,
+   "rank": 200,
    "score": 0.4,
    "package": "jquery",
    "version": "2.2.4",
@@ -4901,7 +4963,7 @@
    "evidence": []
   },
   {
-   "rank": 200,
+   "rank": 201,
    "score": 0.4,
    "package": "js-yaml",
    "version": "3.13.1",
@@ -4920,7 +4982,7 @@
    "evidence": []
   },
   {
-   "rank": 201,
+   "rank": 202,
    "score": 0.4,
    "package": "js-yaml",
    "version": "3.13.1",
@@ -4941,7 +5003,7 @@
    "evidence": []
   },
   {
-   "rank": 202,
+   "rank": 203,
    "score": 0.4,
    "package": "mem",
    "version": "1.1.0",
@@ -4962,7 +5024,7 @@
    "evidence": []
   },
   {
-   "rank": 203,
+   "rank": 204,
    "score": 0.4,
    "package": "micromatch",
    "version": "3.1.10",
@@ -4983,7 +5045,7 @@
    "evidence": []
   },
   {
-   "rank": 204,
+   "rank": 205,
    "score": 0.4,
    "package": "minimist",
    "version": "0.0.10",
@@ -5006,7 +5068,7 @@
    "evidence": []
   },
   {
-   "rank": 205,
+   "rank": 206,
    "score": 0.4,
    "package": "minimist",
    "version": "0.0.8",
@@ -5029,7 +5091,7 @@
    "evidence": []
   },
   {
-   "rank": 206,
+   "rank": 207,
    "score": 0.4,
    "package": "minimist",
    "version": "1.2.0",
@@ -5052,7 +5114,7 @@
    "evidence": []
   },
   {
-   "rank": 207,
+   "rank": 208,
    "score": 0.4,
    "package": "mpath",
    "version": "0.1.1",
@@ -5073,7 +5135,7 @@
    "evidence": []
   },
   {
-   "rank": 208,
+   "rank": 209,
    "score": 0.4,
    "package": "mquery",
    "version": "1.6.3",
@@ -5091,7 +5153,7 @@
    "evidence": []
   },
   {
-   "rank": 209,
+   "rank": 210,
    "score": 0.4,
    "package": "npmconf",
    "version": "0.0.24",
@@ -5111,7 +5173,7 @@
    "evidence": []
   },
   {
-   "rank": 210,
+   "rank": 211,
    "score": 0.4,
    "package": "path-parse",
    "version": "1.0.5",
@@ -5129,7 +5191,7 @@
    "evidence": []
   },
   {
-   "rank": 211,
+   "rank": 212,
    "score": 0.4,
    "package": "qs",
    "version": "2.2.4",
@@ -5152,7 +5214,7 @@
    "evidence": []
   },
   {
-   "rank": 212,
+   "rank": 213,
    "score": 0.4,
    "package": "qs",
    "version": "2.4.2",
@@ -5186,7 +5248,7 @@
    "evidence": []
   },
   {
-   "rank": 213,
+   "rank": 214,
    "score": 0.4,
    "package": "qs",
    "version": "2.4.2",
@@ -5201,40 +5263,6 @@
     "parameterLimit",
     "options.arrayLimit",
     "qs.parse"
-   ],
-   "symbol_source": "auto",
-   "verdict": "UNSEEN",
-   "weak": false,
-   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
-   "evidence": []
-  },
-  {
-   "rank": 214,
-   "score": 0.4,
-   "package": "qs",
-   "version": "6.5.2",
-   "ecosystem": "npm",
-   "advisory": "GHSA-4mjr-xmp4-gh2g",
-   "severity": "MODERATE",
-   "fixed": [
-    "6.16.0"
-   ],
-   "symbols": [
-    "qs.stringify",
-    "utils.isBuffer",
-    "constructor.isBuffer",
-    "qs",
-    "TypeError",
-    "qs.parse",
-    "parse",
-    "stringify",
-    "JSON.parse",
-    "plainObjects",
-    "obj.constructor.isBuffer",
-    "isBuffer",
-    "utils.isRegExp",
-    "Object.prototype.toString",
-    "handleRequestAsync"
    ],
    "symbol_source": "auto",
    "verdict": "UNSEEN",
@@ -5248,6 +5276,40 @@
    "package": "qs",
    "version": "6.5.2",
    "ecosystem": "npm",
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 216,
+   "score": 0.4,
+   "package": "qs",
+   "version": "6.5.2",
+   "ecosystem": "npm",
    "advisory": "GHSA-6rw7-vpxm-498p",
    "severity": "MODERATE",
    "fixed": [
@@ -5266,7 +5328,7 @@
    "evidence": []
   },
   {
-   "rank": 216,
+   "rank": 217,
    "score": 0.4,
    "package": "request",
    "version": "2.88.0",
@@ -5284,7 +5346,7 @@
    "evidence": []
   },
   {
-   "rank": 217,
+   "rank": 218,
    "score": 0.4,
    "package": "tough-cookie",
    "version": "2.4.3",
@@ -5302,7 +5364,7 @@
    "evidence": []
   },
   {
-   "rank": 218,
+   "rank": 219,
    "score": 0.4,
    "package": "uuid",
    "version": "3.3.2",
@@ -5333,7 +5395,7 @@
    "evidence": []
   },
   {
-   "rank": 219,
+   "rank": 220,
    "score": 0.4,
    "package": "xml2js",
    "version": "0.4.23",
@@ -5351,7 +5413,7 @@
    "evidence": []
   },
   {
-   "rank": 220,
+   "rank": 221,
    "score": 0.4,
    "package": "yargs-parser",
    "version": "8.1.0",
@@ -5375,7 +5437,7 @@
    "evidence": []
   },
   {
-   "rank": 221,
+   "rank": 222,
    "score": 0.4,
    "package": "yargs-parser",
    "version": "9.0.2",
@@ -5399,7 +5461,7 @@
    "evidence": []
   },
   {
-   "rank": 222,
+   "rank": 223,
    "score": 0.35,
    "package": "body-parser",
    "version": "1.9.0",
@@ -5424,38 +5486,6 @@
      "path": "app.js",
      "line": 15,
      "text": "var bodyParser = require('body-parser');"
-    }
-   ]
-  },
-  {
-   "rank": 223,
-   "score": 0.35,
-   "package": "express",
-   "version": "4.12.4",
-   "ecosystem": "npm",
-   "advisory": "GHSA-qw6h-vgh9-j6wx",
-   "severity": "LOW",
-   "fixed": [
-    "4.20.0",
-    "5.0.0"
-   ],
-   "symbols": [
-    "response.redirect"
-   ],
-   "symbol_source": "auto",
-   "verdict": "USED",
-   "weak": false,
-   "reason": "패키지는 import되나 취약 심볼 redirect 의 참조·호출 근거 줄은 없음",
-   "evidence": [
-    {
-     "path": "app.js",
-     "line": 11,
-     "text": "var express = require('express');"
-    },
-    {
-     "path": "routes/users.js",
-     "line": 2,
-     "text": "var express = require('express')"
     }
    ]
   },

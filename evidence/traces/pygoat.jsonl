@@ -1,5 +1,5 @@
-{"run_id": "pygoat", "seq": 1, "ts": "2026-10-30T08:07:29+0900", "tool": "sbom", "ms": 857, "tool_name": "syft", "components": 38, "fallback": false}
-{"run_id": "pygoat", "seq": 2, "ts": "2026-10-30T08:07:29+0900", "tool": "source_index", "ms": 36, "imported_modules": 36, "referenced_symbols": 272}
-{"run_id": "pygoat", "seq": 3, "ts": "2026-10-30T08:07:29+0900", "tool": "vuln_lookup", "ms": 81, "alerts": 201, "incomplete": 0}
-{"run_id": "pygoat", "seq": 4, "ts": "2026-10-30T08:07:29+0900", "tool": "reach_judge", "ms": 1, "reached": 9, "used": 50, "unseen": 142}
-{"run_id": "pygoat", "seq": 5, "ts": "2026-10-30T08:07:29+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-9jmf-237g-qf46:7.0", "django:GHSA-m9g8-fxxm-xg86:7.0"]}
+{"run_id": "pygoat", "seq": 1, "ts": "2026-10-30T08:07:48+0900", "tool": "sbom", "ms": 760, "tool_name": "syft", "components": 38, "fallback": false}
+{"run_id": "pygoat", "seq": 2, "ts": "2026-10-30T08:07:48+0900", "tool": "source_index", "ms": 36, "imported_modules": 36, "referenced_symbols": 272}
+{"run_id": "pygoat", "seq": 3, "ts": "2026-10-30T08:07:49+0900", "tool": "vuln_lookup", "ms": 92, "alerts": 201, "incomplete": 0}
+{"run_id": "pygoat", "seq": 4, "ts": "2026-10-30T08:07:49+0900", "tool": "reach_judge", "ms": 1, "reached": 9, "used": 50, "unseen": 142}
+{"run_id": "pygoat", "seq": 5, "ts": "2026-10-30T08:07:49+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-9jmf-237g-qf46:7.0", "django:GHSA-m9g8-fxxm-xg86:7.0"]}

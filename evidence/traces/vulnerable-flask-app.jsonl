@@ -1,5 +1,5 @@
-{"run_id": "vulnerable-flask-app", "seq": 1, "ts": "2026-10-30T08:07:28+0900", "tool": "sbom", "ms": 891, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app", "seq": 2, "ts": "2026-10-30T08:07:28+0900", "tool": "source_index", "ms": 4, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app", "seq": 3, "ts": "2026-10-30T08:07:28+0900", "tool": "vuln_lookup", "ms": 21, "alerts": 89, "incomplete": 0}
-{"run_id": "vulnerable-flask-app", "seq": 4, "ts": "2026-10-30T08:07:28+0900", "tool": "reach_judge", "ms": 0, "reached": 6, "used": 48, "unseen": 35}
-{"run_id": "vulnerable-flask-app", "seq": 5, "ts": "2026-10-30T08:07:28+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-ffc3-869f-jxw9:10.0", "pyyaml:GHSA-rprw-h62v-c2w7:10.0", "pyjwt:GHSA-752w-5fwx-jx9f:7.0"]}
+{"run_id": "vulnerable-flask-app", "seq": 1, "ts": "2026-10-30T08:07:48+0900", "tool": "sbom", "ms": 1221, "tool_name": "syft", "components": 28, "fallback": false}
+{"run_id": "vulnerable-flask-app", "seq": 2, "ts": "2026-10-30T08:07:48+0900", "tool": "source_index", "ms": 4, "imported_modules": 14, "referenced_symbols": 62}
+{"run_id": "vulnerable-flask-app", "seq": 3, "ts": "2026-10-30T08:07:48+0900", "tool": "vuln_lookup", "ms": 36, "alerts": 89, "incomplete": 0}
+{"run_id": "vulnerable-flask-app", "seq": 4, "ts": "2026-10-30T08:07:48+0900", "tool": "reach_judge", "ms": 0, "reached": 6, "used": 48, "unseen": 35}
+{"run_id": "vulnerable-flask-app", "seq": 5, "ts": "2026-10-30T08:07:48+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-ffc3-869f-jxw9:10.0", "pyyaml:GHSA-rprw-h62v-c2w7:10.0", "pyjwt:GHSA-752w-5fwx-jx9f:7.0"]}

@@ -4,8 +4,8 @@
 | 2 | django | 4.2 | GHSA-9jmf-237g-qf46 | HIGH | 도달 | introduction/migrations/0009_auto_20210517_2047.py:18; scoring/migrations/0001_initial.py:85 |
 | 3 | django | 4.2 | GHSA-m9g8-fxxm-xg86 | HIGH | 도달 | challenge/migrations/0001_initial.py:46; challenge/migrations/0001_initial.py:53 |
 | 4 | django | 4.2 | GHSA-qw25-v68c-qjf3 | HIGH | 도달 | challenge/views.py:49; challenge/views.py:66 |
-| 5 | django | 4.2 | GHSA-8qcx-xf44-272x | MODERATE | 도달 | introduction/views.py:77; introduction/views.py:90 |
-| 6 | django | 4.2 | GHSA-qcgg-j2x8-h9g8 | MODERATE | 도달 | challenge/migrations/0001_initial.py:46; challenge/migrations/0001_initial.py:53 |
+| 5 | django | 4.2 | GHSA-8qcx-xf44-272x | MODERATE | 도달 | challenge/migrations/0001_initial.py:21; challenge/migrations/0001_initial.py:23 |
+| 6 | django | 4.2 | GHSA-qcgg-j2x8-h9g8 | MODERATE | 도달 | introduction/forms.py:9; challenge/migrations/0001_initial.py:46 |
 | 7 | django | 4.2 | GHSA-vrcr-9hj9-jcg6 | MODERATE | 도달 | introduction/migrations/0009_auto_20210517_2047.py:18; scoring/migrations/0001_initial.py:85 |
 | 8 | requests | 2.28.2 | GHSA-j8r2-6x86-q33q | MODERATE | 도달 | challenge/views.py:38 |
 | 9 | django | 4.2 | GHSA-pv4p-cwwg-4rph | CRITICAL | 사용 | challenge/admin.py:1; challenge/apps.py:1 |

@@ -1,5 +1,5 @@
-{"run_id": "nodejs-goof", "seq": 1, "ts": "2026-10-30T08:07:30+0900", "tool": "sbom", "ms": 750, "tool_name": "syft", "components": 566, "fallback": false}
-{"run_id": "nodejs-goof", "seq": 2, "ts": "2026-10-30T08:07:30+0900", "tool": "source_index", "ms": 12, "imported_modules": 33, "referenced_symbols": 50}
-{"run_id": "nodejs-goof", "seq": 3, "ts": "2026-10-30T08:07:30+0900", "tool": "vuln_lookup", "ms": 47, "alerts": 235, "incomplete": 0}
-{"run_id": "nodejs-goof", "seq": 4, "ts": "2026-10-30T08:07:30+0900", "tool": "reach_judge", "ms": 1, "reached": 13, "used": 62, "unseen": 160}
-{"run_id": "nodejs-goof", "seq": 5, "ts": "2026-10-30T08:07:30+0900", "tool": "rank", "ms": 0, "top": ["mongoose:GHSA-h8hf-x3f4-xwgp:10.0", "adm-zip:GHSA-j5f4-cc29-5x44:7.0", "adm-zip:GHSA-rcw4-f5rp-g42v:7.0"]}
+{"run_id": "nodejs-goof", "seq": 1, "ts": "2026-10-30T08:07:49+0900", "tool": "sbom", "ms": 761, "tool_name": "syft", "components": 566, "fallback": false}
+{"run_id": "nodejs-goof", "seq": 2, "ts": "2026-10-30T08:07:49+0900", "tool": "source_index", "ms": 12, "imported_modules": 33, "referenced_symbols": 50}
+{"run_id": "nodejs-goof", "seq": 3, "ts": "2026-10-30T08:07:50+0900", "tool": "vuln_lookup", "ms": 122, "alerts": 235, "incomplete": 0}
+{"run_id": "nodejs-goof", "seq": 4, "ts": "2026-10-30T08:07:50+0900", "tool": "reach_judge", "ms": 1, "reached": 16, "used": 59, "unseen": 160}
+{"run_id": "nodejs-goof", "seq": 5, "ts": "2026-10-30T08:07:50+0900", "tool": "rank", "ms": 0, "top": ["mongoose:GHSA-h8hf-x3f4-xwgp:10.0", "adm-zip:GHSA-j5f4-cc29-5x44:7.0", "adm-zip:GHSA-rcw4-f5rp-g42v:7.0"]}
