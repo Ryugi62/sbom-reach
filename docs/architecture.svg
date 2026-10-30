@@ -31,7 +31,7 @@
 <path d="M174 140 H214" class="ln"/><path d="M404 140 H444" class="ln"/><path d="M634 140 H674" class="ln"/><path d="M924 140 H964" class="ln"/>
 
 <rect x="964" y="250" width="212" height="110" class="llm"/>
-<text x="980" y="276" class="h">5 조치안 문장</text><text x="980" y="300" class="s">Gemini: 두 문장 이내 설명만</text><text x="980" y="320" class="s">판정·버전 결정은 하지 않음</text><text x="980" y="340" class="s">실패 시 템플릿 문장</text>
+<text x="980" y="276" class="h">5 조치안 문장</text><text x="980" y="300" class="s">Gemini: 두 문장 이내 설명만</text><text x="980" y="320" class="s">판정·고칠 버전 결정은 코드(4)가 함</text><text x="980" y="340" class="s">실패 시 템플릿 문장</text>
 <path d="M1070 200 V250" class="ln"/>
 
 <rect x="674" y="250" width="250" height="110" class="code"/>
@@ -59,15 +59,16 @@
 <rect x="616" y="400" width="560" height="170" class="eval"/>
 <text x="632" y="426" class="h">평가 (Evals)</text>
 <text x="632" y="452" class="s">· 개발 Gold 66건 + 홀드아웃 37건 = 103건: 판정 3분류 일치율·도달 정밀도·재현율</text>
-<text x="632" y="474" class="s">· 단위 시험 125건(오프라인, 1초 미만) + 아키텍처 의존 방향 시험</text>
-<text x="632" y="496" class="s">· 합격 기준: 일치율 ≥80%(홀드아웃 기준) · 도달 경보 재스캔 후 0 · 거짓 도달 구조 차단</text>
-<text x="632" y="518" class="s">· trace: 도구 호출 1건 = JSONL 1줄(단계·건수·ms·가드레일 차단·대체 경로)</text>
-<text x="632" y="540" class="s">· 평가가 틀린 곳(인스턴스 메서드·설정 로딩)을 한계 표에 그대로 공개</text>
+<text x="632" y="472" class="s">· 단위 시험(pytest, 오프라인, 1초 미만) + 아키텍처 의존 방향 시험</text>
+<text x="632" y="492" class="s">· 목표 일치율 ≥80%: 홀드아웃 동결 직후 78.4%(미달), 수정 뒤 81.1%(사후 수정)</text>
+<text x="632" y="512" class="s">· 목표: 도달 경보 재스캔 후 0 · 거짓 도달 구조 차단</text>
+<text x="632" y="532" class="s">· trace: 도구 호출 1건 = JSONL 1줄(단계·건수·ms·가드레일 차단·대체 경로)</text>
+<text x="632" y="552" class="s">· 평가가 틀린 곳(인스턴스 메서드·설정 로딩)을 한계 표에 그대로 공개</text>
 
 <rect x="24" y="600" width="1152" height="130" class="fail"/>
 <text x="40" y="626" class="h">실패 처리 (조용히 넘어가지 않는다)</text>
 <text x="40" y="652" class="s">OSV 조회 실패 → 최초 1 + 재시도 2회 → 그 부품을 incomplete로 표시, 보고서에 「스캔 미완」(깨끗하다고 말하지 않음)</text>
-<text x="40" y="674" class="s">syft 실행 불가 → 잠금 파일 파서로 대체하고 trace에 fallback 기록 · Gemini 실패(429·키 없음) → 템플릿 문장으로 계속</text>
+<text x="40" y="674" class="s">syft 실행 불가 → 잠금 파일 파서로 대체하고 trace에 fallback 기록 · Gemini 호출 실패(HTTPError·키 없음) → 템플릿 문장으로 계속</text>
 <text x="40" y="696" class="s">소스 분석이 못 보는 것(동적 import·인스턴스 타입) → 「미확인」 또는 「약한 근거」 표시 · 조치 후 새 경보가 생기면 신규로 따로 집계</text>
 <text x="40" y="718" class="s">고쳐진 버전이 없는 경보 → 목표 버전 공란 + 「대체 패키지·호출 우회 검토」 문장</text>
 </svg>

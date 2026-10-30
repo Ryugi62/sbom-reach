@@ -6,3 +6,5 @@ __pycache__/
 .env
 data/osv-cache/
 docs/_*.html
+untrusted/
+docs/out/

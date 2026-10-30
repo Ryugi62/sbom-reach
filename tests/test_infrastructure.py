@@ -1,3 +1,4 @@
+import os
 import json
 import subprocess
 
@@ -191,3 +192,21 @@ def test_workcopy_noop_bump_returns_empty_without_crash(tmp_path):
     (src / "requirements.txt").write_text("PyYAML==5.4\n")
     wc = make_workcopy(str(src), str(tmp_path / "work"), name="demo")
     assert apply_and_commit(wc, branch="fix/sbomreach", bumps={"PyYAML": "5.4"}, ecosystem="PyPI") == []
+
+
+def test_targets_have_no_absolute_or_personal_paths():
+    from sbomreach.infrastructure import cli
+    for t in cli.targets().values():
+        assert not os.path.isabs(t["path"]) and "Users" not in t["path"]
+        assert os.path.isabs(cli.target_repo_dir(t))
+        assert cli.target_repo_dir(t).startswith(cli.ROOT)
+
+
+def test_workcopy_git_identity_is_not_personal():
+    from sbomreach.infrastructure import workcopy
+    assert "gmail" not in workcopy.ENV["GIT_AUTHOR_EMAIL"] and "@" in workcopy.ENV["GIT_AUTHOR_EMAIL"]
+
+
+def test_gemini_key_file_default_is_not_personal_path():
+    from sbomreach.infrastructure import gemini
+    assert "jarvis" not in gemini.ENV_FILE

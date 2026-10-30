@@ -5,7 +5,7 @@ import os
 import urllib.request
 from typing import Callable, Optional
 
-ENV_FILE = os.path.expanduser("~/.config/sbomreach/gemini.env")
+ENV_FILE = os.environ.get("SBOMREACH_ENV_FILE", os.path.expanduser("~/.config/sbomreach/gemini.env"))
 
 
 def load_key(path: str = ENV_FILE) -> Optional[str]:

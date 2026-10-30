@@ -24,6 +24,12 @@ EV = os.path.join(ROOT, "evidence")
 SYFT = os.path.join(ROOT, "tools", "bin", "syft")
 
 
+def target_repo_dir(t):
+    """targets.json의 path는 저장소 루트 기준 상대경로(scripts/clone_targets.py가 받아 둔다)."""
+    base = t["path"] if os.path.isabs(t["path"]) else os.path.join(ROOT, t["path"])
+    return os.path.join(base, t["scan_dir"]) if t["scan_dir"] else base
+
+
 def targets():
     return {t["name"]: t for t in json.load(open(os.path.join(EV, "targets.json"), encoding="utf-8"))}
 
@@ -47,7 +53,7 @@ def scan_target(t, repo, tag, trace_path):
 
 def cmd_alerts(a):
     t = targets()[a.target]
-    repo = os.path.join(t["path"], t["scan_dir"]) if t["scan_dir"] else t["path"]
+    repo = target_repo_dir(t)
     os.makedirs(os.path.join(EV, "traces"), exist_ok=True)
     res = scan_target(t, repo, f"{a.target}-alerts", os.path.join(EV, "traces", f"{a.target}.alerts.jsonl"))
     out = os.path.join(EV, "alerts", f"{a.target}.json")
@@ -59,7 +65,7 @@ def cmd_alerts(a):
 
 def cmd_scan(a):
     t = targets()[a.target]
-    repo = os.path.join(t["path"], t["scan_dir"]) if t["scan_dir"] else t["path"]
+    repo = target_repo_dir(t)
     os.makedirs(os.path.join(EV, "traces"), exist_ok=True)
     res = scan_target(t, repo, a.target, os.path.join(EV, "traces", f"{a.target}.jsonl"))
     d = scan_to_dict(res, a.target)
@@ -71,7 +77,7 @@ def cmd_scan(a):
 
 def cmd_remediate(a):
     t = targets()[a.target]
-    repo = os.path.join(t["path"], t["scan_dir"]) if t["scan_dir"] else t["path"]
+    repo = target_repo_dir(t)
     tp = os.path.join(EV, "traces", f"{a.target}.remediate-{a.scope}.jsonl")
     if os.path.exists(tp):
         os.remove(tp)

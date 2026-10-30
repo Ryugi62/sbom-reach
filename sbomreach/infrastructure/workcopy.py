@@ -10,8 +10,8 @@ from ..adapters.manifest import bump_package_json, bump_requirements
 from ..domain import guardrails
 from .repo_files import SKIP_DIRS
 
-ENV = dict(os.environ, GIT_AUTHOR_NAME="Jarvis", GIT_AUTHOR_EMAIL="sbomreach@example.invalid",
-           GIT_COMMITTER_NAME="Jarvis", GIT_COMMITTER_EMAIL="sbomreach@example.invalid")
+ENV = dict(os.environ, GIT_AUTHOR_NAME="sbomreach", GIT_AUTHOR_EMAIL="sbomreach@example.invalid",
+           GIT_COMMITTER_NAME="sbomreach", GIT_COMMITTER_EMAIL="sbomreach@example.invalid")
 
 
 def default_run(argv: List[str], cwd: str) -> str:

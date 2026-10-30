@@ -22,3 +22,12 @@ def test_reached_precision_recall():
     r = agreement(gold, pred)
     assert abs(r.reached_precision - 0.5) < 1e-9
     assert abs(r.reached_recall - 0.5) < 1e-9
+
+
+def test_wilson_interval_known_values():
+    from sbomreach.domain.evals import wilson
+    lo, hi = wilson(15, 22)
+    assert round(lo, 3) == 0.473 and round(hi, 3) == 0.836
+    assert wilson(0, 0) == (0.0, 1.0)
+    lo, hi = wilson(37, 37)
+    assert hi == 1.0 and lo > 0.9
