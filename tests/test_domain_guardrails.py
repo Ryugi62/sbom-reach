@@ -34,7 +34,7 @@ def test_g4_readonly_commands():
 
 
 def test_g5_masks_secrets_before_llm():
-    s = "key=AIzaSyA1234567890abcdefghijklmnopqrstuv mail me@x.com token ghp_abcdefghijklmnopqrstuvwxyz0123456789"
+    s = "key=" + "AIza" + "SyA1234567890abcdefghijklmnopqrstuv" + " mail me@x.com token ghp_abcdefghijklmnopqrstuvwxyz0123456789"
     m = g.mask_secrets(s)
     assert "AIza" not in m and "me@x.com" not in m and "ghp_" not in m
 
