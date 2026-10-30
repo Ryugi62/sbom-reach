@@ -66,3 +66,8 @@ def test_private_count_is_declared_as_exception_in_header():
 def test_615_534_difference_is_explained():
     text = alltext()
     assert "615" in text and "534" in text
+
+
+def test_repro_commands_extract_snapshot_into_data_and_note_syft_difference():
+    text = alltext()
+    assert "-C data" in text and "235" in text and "315" in text

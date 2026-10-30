@@ -8,13 +8,13 @@ SBOM 생성 → 취약점 조회(OSV) → 취약 함수 도달 판정(근거 줄
 ```
 python3 -m pytest -q                                  # 오프라인 시험
 python3 scripts/clone_targets.py                      # targets.json의 4저장소를 고정 커밋으로 untrusted/에 받기(코드 실행·설치 없음)
-tar xzf evidence/osv-snapshot-2026-10-30.tar.gz       # OSV 응답 스냅샷 → data/osv-cache/
+mkdir -p data && tar xzf evidence/osv-snapshot-2026-10-30.tar.gz -C data   # OSV 응답 스냅샷 → data/osv-cache/
 python3 -m sbomreach.infrastructure.cli scan --target nodejs-goof      # 대상: evidence/targets.json의 name
 python3 -m sbomreach.infrastructure.cli remediate --target nodejs-goof --scope reached
 python3 -m sbomreach.infrastructure.cli eval --gold gold-holdout.jsonl --out accuracy-v1-holdout.md
 python3 -m sbomreach.infrastructure.cli summary                        # evidence/summary.json
 ```
-`evidence/targets.json`의 `path`는 저장소 루트 기준 상대경로다. 조치안 문장(Gemini)은 `GEMINI_API_KEY` 환경변수나 `SBOMREACH_ENV_FILE`(기본 `~/.config/sbomreach/gemini.env`)에 키가 있을 때만 쓰고, 없으면 템플릿 문장으로 계속한다. syft는 `tools/bin/syft` 또는 PATH.
+`evidence/targets.json`의 `path`는 저장소 루트 기준 상대경로다. 조치안 문장(Gemini)은 `GEMINI_API_KEY` 환경변수나 `SBOMREACH_ENV_FILE`(기본 `~/.config/sbomreach/gemini.env`)에 키가 있을 때만 쓰고, 없으면 템플릿 문장으로 계속한다. syft는 `tools/bin/syft` 또는 PATH. syft 없이 돌리면 잠금 파일 파서로 대체되어 부품·경보 수가 달라진다(nodejs-goof 경보 235 → 315, 도달 16은 같음).
 
 ## 증거 위치
 `evidence/runs-v1/`(판정·순위) · `evidence/rescan/`(재스캔) · `evidence/accuracy-*.md` · `evidence/gold*.jsonl` · `evidence/traces/`(도구 호출 trace) · `docs/`(구조도·문서 빌드)

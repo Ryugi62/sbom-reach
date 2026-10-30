@@ -255,8 +255,9 @@ p4 = f"""<div class=brow>AI 문제해결방안 · 효과, 한계, 일정</div>
 <p>레포 <code>{REPO}</code> (공개, 로그인 없이 열림). <b>실행은 표준 라이브러리만</b>(파이썬 3.9+, 스캔은 syft가 있으면 사용·없으면 잠금 파일 파서), <b>시험은 pytest</b>입니다. 새 클론에서 순서대로:</p>
 <ul><li><code>python3 -m pytest -q</code> — 시험 {TESTS}건, 오프라인, 1초 안팎.</li>
 <li><code>python3 scripts/clone_targets.py</code> — <code>evidence/targets.json</code>(저장소 루트 기준 상대경로·고정 커밋)의 4저장소를 <code>untrusted/</code> 아래에 받음(받기만 하고 코드는 실행하지 않음).</li>
-<li><code>tar xzf evidence/osv-snapshot-2026-10-30.tar.gz</code> — OSV 응답 스냅샷을 <code>data/osv-cache/</code>로 풀어 같은 날 조회 결과를 오프라인으로 재현.</li>
+<li><code>mkdir -p data &amp;&amp; tar xzf evidence/osv-snapshot-2026-10-30.tar.gz -C data</code> — OSV 응답 스냅샷을 <code>data/osv-cache/</code>로 풀어 같은 날 조회 결과를 재사용(없는 부품만 새로 조회).</li>
 <li><code>python3 -m sbomreach.infrastructure.cli scan --target nodejs-goof</code> → <code>... remediate --target nodejs-goof --scope reached</code> → <code>... eval --gold gold-holdout.jsonl</code> (대상은 4저장소 이름 모두 가능).</li></ul>
+<p class=note>syft 없이 새 클론에서 nodejs-goof를 돌리면 잠금 파일 파서로 대체되어 부품·경보 수가 다릅니다(경보 235 → 315건 실측). 도달 16건은 같았습니다. 위 5장 수치는 syft 사용 실행 기준입니다.</p>
 <p>정답 파일은 <code>evidence/gold*.jsonl</code>, 작성 규약은 <code>evidence/GOLD.md</code>, 코드 구조 규칙은 <code>SPEC.md</code>입니다.</p>"""
 
 SOL = [p1, p2, p3, p4]
