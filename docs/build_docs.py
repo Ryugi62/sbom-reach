@@ -7,7 +7,7 @@ import glob, json, os, re, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = os.environ.get("DOCS_OUT") or os.path.join(HERE, "out")
-VER = "v1.1"
+VER = "v1.2"
 sys.path.insert(0, ROOT)
 from sbomreach.domain.evals import wilson  # noqa: E402
 S = json.load(open(os.path.join(ROOT, "evidence/summary.json"), encoding="utf-8"))
@@ -100,7 +100,7 @@ CSS = """
 @font-face{font-family:P;font-weight:700;src:url('_fonts/Pretendard-Bold.ttf')}
 @font-face{font-family:P;font-weight:800;src:url('_fonts/Pretendard-ExtraBold.ttf')}
 @page{size:A4;margin:0}*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:P,'Apple SD Gothic Neo',sans-serif;font-size:8.9pt;line-height:1.52;color:#191F28}
+body{font-family:P,'Apple SD Gothic Neo',sans-serif;font-size:8.6pt;line-height:1.46;color:#191F28}
 .page{width:210mm;height:297mm;padding:13mm 15mm 11mm;page-break-after:always;overflow:hidden;position:relative}
 .page:last-child{page-break-after:auto}
 .brow{font-size:7.8pt;font-weight:700;color:#3182F6;letter-spacing:.05em;margin-bottom:1.5mm}
@@ -161,16 +161,19 @@ TL = open(os.path.join(ROOT, "evidence/trace-sample.jsonl"), encoding="utf-8").r
 TRACE = [l for l in TL if '"reach_judge"' in l][:1] + [l for l in TL if '"tool": "fallback"' in l][:1]
 TRACE_TXT = "<br>".join(re.sub(r'"run_id": "[^"]+", ', "", l).replace("<", "&lt;")[:150] for l in TRACE)
 
+RANK = [l for l in open(os.path.join(ROOT, "evidence/runs-v1/nodejs-goof.ranking.md"), encoding="utf-8").read().split("\n") if l.startswith("| ")]
+RANK_ROWS = "".join("<tr>" + "".join(f"<td>{c.strip()}</td>" for c in l.strip("|").split("|")) + "</tr>" for l in RANK[1:6])
 SIMILAR = """<table><tr><th style="width:23%">서비스</th><th style="width:44%">방식(공개 문서 기준)</th><th>우리가 다른 점</th></tr>
-<tr><td>Endor Labs<br><span class=note>endorlabs.com/learn/benchmarking-endor-labs-vs-snyks-github-apps</span></td><td>호출 그래프로 취약 함수가 실제 호출되는지 판정, EPSS 결합(상용 SaaS, 수치는 자사 벤치마크)</td><td rowspan=4>① 판정마다 <b>근거 줄(파일:줄)</b>을 붙이고 근거가 없으면 「도달」이라 하지 못하게 코드로 막음 ② 조치 후 <b>재스캔 감소를 같은 출력에</b> 냄 ③ 정답 103건(AI가 작성)과의 <b>일치율·틀린 곳을 공개</b> ④ 로컬·무료 도구만으로 재현</td></tr>
+<tr><td>Endor Labs<br><span class=note>endorlabs.com/learn/benchmarking-endor-labs-vs-snyks-github-apps</span></td><td>호출 그래프로 취약 함수가 실제 호출되는지 판정, EPSS 결합(상용 SaaS, 수치는 자사 벤치마크)</td><td rowspan=5>① 판정마다 <b>근거 줄(파일:줄)</b>을 붙이고 근거가 없으면 「도달」이라 하지 못하게 코드로 막음 ② 조치 후 <b>재스캔 감소를 같은 출력에</b> 냄 ③ 정답 103건(AI가 작성)과의 <b>일치율·틀린 곳을 공개</b> ④ 로컬·무료 도구만으로 재현</td></tr>
 <tr><td>Snyk Reachability<br><span class=note>docs.snyk.io/manage-risk/prioritize-issues-for-fixing/reachability</span></td><td>애플리케이션과 의존성의 호출 그래프를 분석(문서상 CLI·IDE 연동에서는 미지원)</td></tr>
 <tr><td>Semgrep Supply Chain<br><span class=note>semgrep.dev/docs/faq/comparisons/endor-labs</span></td><td>직접 의존성에 대한 데이터플로 도달성(벤더 자체 주장)</td></tr>
-<tr><td>래브라도 SCM<br><span class=note>m.boannews.com/html/detail.html?idx=132104</span></td><td>국내 SBOM 교환·취약점 이슈 파악 플랫폼(공개 기사에서 도달성 판정은 확인하지 못함)</td></tr></table>"""
+<tr><td>래브라도 SCM<br><span class=note>m.boannews.com/html/detail.html?idx=132104</span></td><td>국내 SBOM 교환·취약점 이슈 파악 플랫폼(공개 기사에서 도달성 판정은 확인하지 못함)</td></tr>
+<tr><td>롯데이노베이트 자사 SBOM·취약점 제품</td><td>2026-11-02 검색엔진 질의 7회(제품 소개·매뉴얼, 특허, 채용공고, 뉴스, 정부과제·논문 5유형)에서 <b>찾지 못함</b>. 특허청 KIPRIS·전자공시·채용 사이트 원문은 직접 열람하지 못했으므로 「없다」고 단정하지 않음</td></tr></table>"""
 
 # ───────── 해결방안 4쪽
 p1 = f"""<div class=brow>AI 문제해결방안 · LOTTE AX Challenge 2026 · 롯데이노베이트</div>
-<h1>SBOM·취약점 스캔 결과의 영향도·우선순위 연결 구조 설계,<br>그리고 조치안 도출·개선을 도는 AI 에이전트</h1>
-<p class=lede>경보 {T['alerts']}건 중 코드가 실제로 호출하는 {T['reached']}건({pc(T['reached'], T['alerts'])})을 근거 줄과 함께 먼저 올리고, 조치 후 재스캔으로 줄었는지 숫자로 확인합니다. 도달 판정과 고칠 버전 선택은 코드가 하고, AI는 그 결과를 설명하는 문장만 씁니다.</p>
+<h1>SBOM·취약점 스캔 결과의 영향도·우선순위 연결 구조 설계,<br>그리고 조치안 도출 및 개선을 도는 AI 에이전트</h1>
+<p class=lede>과제 「SBOM 생성과 취약점 스캔 결과의 영향도·우선순위 연결 구조 설계」「AI 에이전트 기반 조치안 도출 및 개선」에 대한 작동 프로토타입입니다 — 공개 레포 <code>{REPO}</code>(비로그인 열림, 시험 {TESTS}건)에서 경보 {T['alerts']}건 중 코드가 실제로 호출하는 {T['reached']}건({pc(T['reached'], T['alerts'])})을 근거 줄과 함께 먼저 올리고, 조치 후 재스캔으로 줄었는지 숫자로 확인합니다. 도달 판정과 고칠 버전 선택은 코드가 하고, AI는 설명 문장만 씁니다.</p>
 <div class=big><div><b>{T['alerts']} → {T['reached']}</b><span>공개 저장소 {len(S['repos'])}곳(Python·JavaScript)의 경보 수 → 취약 함수 호출 근거가 있는 도달 경보 수</span></div>
 <div><b>{FZ['rate']}%</b><span>정답 동결 직후 홀드아웃 {FZ['total']}건 일치율({FZ['matched']}/{FZ['total']}, 95% 구간 {WZ[0]}~{WZ[1]}%). 판정기 수정 뒤 같은 정답 {AH['rate']}%는 사후 수정이라 독립 검증이 아님</span></div>
 <div><b>{rs_sum('reached','reached_before')} → {rs_sum('reached','reached_after')}</b><span>조치 적용 가지에서 재스캔한 도달 경보. 패키지 {rs_sum('reached','packages_changed')}개만 올림(전부 올리면 {rs_sum('all','packages_changed')}개)</span></div></div>
@@ -188,7 +191,7 @@ p1 = f"""<div class=brow>AI 문제해결방안 · LOTTE AX Challenge 2026 · 롯
 <tr><td>… 및 <b>개선</b></td><td>6 조치 가지 → 7 재스캔 → (순환)</td><td>해소·남음·신규 경보 수</td></tr></table>"""
 
 p2 = f"""<div class=brow>AI 문제해결방안 · 구조와 평가</div>
-<img class=fig src="architecture.svg" style="width:90%;display:block;margin:0 auto">
+<img class=fig src="architecture.svg" style="width:74%;display:block;margin:0 auto">
 <p class=cap>그림 1. 에이전트 구조도 — 도구 호출 순서, 사람/에이전트 경계(8), 평가(Evals), 가드레일, 실패 처리</p>
 <h2><span class=n>4</span>가드레일과 평가</h2>
 <table><tr><th style="width:11%">규칙</th><th style="width:52%">내용(코드로 집행)</th><th>시험</th></tr>
@@ -205,12 +208,11 @@ p2 = f"""<div class=brow>AI 문제해결방안 · 구조와 평가</div>
 <p class=note>미확인(소스에 그 패키지를 쓰는 줄이 없음)은 홀드아웃 {FZ['rows']['UNSEEN'][2]}건 모두 맞혀 일치율을 올리므로, 정답이 도달·사용인 <b>비자명 {NH['n']}건</b>만 따로 보면 동결 직후 {NZ['ok']}/{NZ['n']}({NZ['rate']}%, 95% 구간 {NZ['lo']}~{NZ['hi']}%), 수정 뒤 {NH['ok']}/{NH['n']}(<b>{NH['rate']}%</b>, 95% 구간 {NH['lo']}~{NH['hi']}%)입니다. 합격선으로 둔 80%(SPEC S2)는 동결 직후 값으로는 넘지 못했습니다.</p>
 <p><b>틀린 곳.</b> 홀드아웃에서 도달 정밀도는 동결 직후 {FZ['reached_precision']}%, 수정 뒤 {AH['reached_precision']}%에 그칩니다. 어드바이저리 본문에서 뽑은 함수 이름이 일반 이름(decode 등)이면 호출만으로 「도달」이 되는 오탐이 있고, 객체 인스턴스 메서드·설정 파일 로딩은 놓치거나 「약한 근거」 표시로 내립니다(약한 근거 {T['reached_weak']}건). 본선에서는 심볼 검증을 가장 먼저 개선합니다.</p>
 <p class=cap>trace 샘플(도구 호출 1건 = 1줄, 부록 파일 trace-sample.jsonl) — 도달 판정 1줄, AI 호출 실패 1줄</p>
-<div class=box style="font-family:Menlo,monospace;font-size:6.6pt;line-height:1.35;word-break:break-all">{TRACE_TXT}</div>"""
+<div class=box style="font-family:Menlo,monospace;font-size:6.6pt;line-height:1.35;word-break:break-all">{TRACE_TXT}</div>
+<p><b>실패 처리.</b> 취약점 조회가 실패하면 재시도 2회 뒤 그 부품을 「스캔 미완」으로 표시하고 경보 0을 깨끗하다고 말하지 않습니다. syft가 없으면 잠금 파일 파서로, AI 호출이 실패하면 템플릿 문장으로 계속 진행합니다. 이번 실행의 trace 전체(재스캔 포함)에서 AI 문장 {LLM_OK}건이 채택되었고 {LLM_FB}건은 AI 호출이 <code>HTTPError</code>로 실패해 템플릿 문장이 되었습니다. trace에는 예외 종류만 남기고 상태 코드는 기록하지 않아 실패 원인은 확정하지 못했습니다. 따라서 조치안 문장은 대부분 템플릿이고 조치안(버전)은 AI와 무관합니다.</p>"""
 
 p3 = f"""<div class=brow>AI 문제해결방안 · 실행 증거</div>
-<h2 style="margin-top:0"><span class=n>4</span>실패 처리와 trace (4장 계속)</h2>
-<p><b>실패 처리.</b> 취약점 조회가 실패하면 재시도 2회 뒤 그 부품을 「스캔 미완」으로 표시하고 경보 0을 깨끗하다고 말하지 않습니다. syft가 없으면 잠금 파일 파서로, AI 호출이 실패하면 템플릿 문장으로 계속 진행합니다. 이번 실행의 trace 전체(재스캔 포함)에서 AI 문장 {LLM_OK}건이 채택되었고 {LLM_FB}건은 AI 호출이 <code>HTTPError</code>로 실패해 템플릿 문장이 되었습니다. trace에는 예외 종류만 남기고 상태 코드는 기록하지 않아 실패 원인은 확정하지 못했습니다. 따라서 본 문서의 조치안 문장은 대부분 템플릿이며, 조치안(버전)은 AI와 무관합니다.</p>
-<h2><span class=n>5</span>실행 결과 — 공개 저장소 {len(S['repos'])}곳, 언어 {len(S['languages'])}개</h2>
+<h2 style="margin-top:0"><span class=n>5</span>실행 결과 — 공개 저장소 {len(S['repos'])}곳, 언어 {len(S['languages'])}개</h2>
 <table><tr><th>저장소(고정 커밋)</th><th>언어</th><th class=r>부품</th><th class=r>경보</th><th class=r>도달</th><th class=r>사용</th><th class=r>미확인</th><th class=r>소요</th></tr>{repo_rows()}</table>
 <p class=note>저장소: """ + " · ".join(f"{r['url'].replace('https://','')} @{r['commit']}" for r in S['repos']) + f""". 모두 보안 교육용으로 일부러 취약하게 만든 공개 저장소라 실제 운영 저장소와 경보 분포가 다릅니다. 도달·사용·미확인 정의는 SPEC.md에 있고 「미확인」은 안전이 아니라 소스에 쓰는 줄이 없다는 뜻입니다. 경보 수 {T['alerts']}는 (부품 버전×어드바이저리) 행 수이고, 아래 6장 재스캔 표의 기준 {RS_UNIQ}는 같은 패키지·어드바이저리의 버전 중복을 합친 고유 경보 수라 합계가 다릅니다.</p>
 <h2><span class=n>6</span>개선 순환 — 조치 적용 가지에서 재스캔</h2>
@@ -222,6 +224,8 @@ p3 = f"""<div class=brow>AI 문제해결방안 · 실행 증거</div>
 <h2><span class=n>7</span>입력→출력 한 건 (현업 적용 예시)</h2>
 <table><tr><th style="width:26%">입력</th><th>출력(경보 1건)</th></tr>
 <tr><td>저장소 경로 1개<br><span class=note>또는 CycloneDX SBOM 파일</span></td><td>순위 2 · adm-zip 0.4.7 · GHSA-j5f4-cc29-5x44 · 심각도 HIGH · <b>판정 도달</b> · 근거 <code>routes/index.js:270</code> (<code>zip.extractAllTo(...)</code>) · 조치 0.4.7 → 0.6.1 · 검증: 고쳐진 버전 0.6.1이 가지의 잠금 파일에 반영되어 재스캔에서 해당 경보 소멸</td></tr></table>
+<table style="font-size:7.3pt"><tr><th>순위</th><th>패키지</th><th>버전</th><th>경보</th><th>심각도</th><th>판정</th><th>근거 줄</th></tr>{RANK_ROWS}</table>
+<p class=cap>그림 2. 사용자가 받는 순위 보고서 화면 — nodejs-goof 실행 결과의 상위 5건(레포 evidence/runs-v1/nodejs-goof.ranking.md 그대로, 도달 판정마다 파일:줄)</p>
 <p><b>본선 현장 데이터 연결 칸.</b></p>
 <table><tr><th style="width:22%">칸</th><th>예선에서 확정한 것</th><th>본선에서 바꾸는 것</th></tr>
 <tr><td>입력 스키마</td><td>저장소 디렉터리 / CycloneDX JSON</td><td>계열사 저장소·사내 SBOM 파일 경로</td></tr>
@@ -244,13 +248,13 @@ p4 = f"""<div class=brow>AI 문제해결방안 · 효과, 한계, 일정</div>
 <li><b>Java(Maven·Gradle)는 미지원</b>입니다. SBOM 생성과 취약점 조회는 언어와 무관하지만 호출 근거를 찾는 소스 분석이 Python·JavaScript뿐이라 Java 저장소의 경보는 모두 「미확인」으로 남습니다. 본선 범위에서 Java 어댑터를 추가합니다(예선 시점 미구현).</li>
 <li>전이 의존성(다른 패키지가 부르는 경로)은 호출 그래프를 만들지 않아 「미확인」입니다. 동적 import·템플릿 속 호출은 보지 못합니다. JavaScript 분석은 구문 분석이 아니라 토큰 기반입니다.</li>
 <li>취약점 DB는 OSV 하나입니다. 취약 함수 이름은 어드바이저리 본문에서 뽑아서 일반 이름이면 오탐이 납니다.</li></ul>
-<h2><span class=n>10</span>일정과 본선 계획</h2>
-<table><tr><th style="width:24%">시점</th><th>마일스톤</th><th style="width:30%">확정 증거</th></tr>
-<tr><td>예선 제출 전</td><td>구조·시험·정답·재스캔 증거 확정(이 문서)</td><td>시험 {TESTS}건(pytest), 정답 {A1['total'] + AH['total']}건, 저장소 {len(S['repos'])}곳</td></tr>
-<tr><td>본선 시작 직후</td><td>현장 데이터 연결 어댑터 1개와 입력 스키마 확정</td><td>어댑터 시험 통과</td></tr>
-<tr><td>본선 중반</td><td>Java(Maven·Gradle) 소스 분석 어댑터 추가, 현장 저장소로 정답 라벨링 20건 추가, 오탐 심볼 검증 개선</td><td>일치율·정밀도 재측정 표</td></tr>
-<tr><td>본선 발표 전</td><td>조치 가지·재스캔 시연, 사람 승인 단계 연결</td><td>해소·남음·신규 경보 표</td></tr></table>
-<p>본선에서 새로 만드는 일은 데이터 연결, Java 어댑터, 정답 추가입니다. 도구 호출 구조와 시험 세트는 이미 확정되어 있습니다.</p>
+<h2><span class=n>10</span>일정·자원·목표치</h2>
+<table><tr><th style="width:25%">날짜</th><th>마일스톤</th><th style="width:30%">확정 증거</th></tr>
+<tr><td>2026-11-03 (예선 제출 내부 마감, 공고 마감 2026-11-04 23:59)</td><td>구조·시험·정답·재스캔 증거 확정(이 문서)</td><td>시험 {TESTS}건(pytest), 정답 {A1['total'] + AH['total']}건, 저장소 {len(S['repos'])}곳</td></tr>
+<tr><td>2026-11-24 ~ 11-25 (본선, 공고 원문 1박2일)</td><td>첫날 현장 데이터 연결 어댑터 1개와 입력 스키마 확정 → 현장 저장소로 정답 라벨 20건 추가, Java(Maven·Gradle) 소스 분석 어댑터 추가(예선 시점 미구현), 오탐 심볼 검증 개선</td><td>어댑터 시험 통과, 일치율·정밀도 재측정 표</td></tr>
+<tr><td>2026-11-25 (본선 발표 전)</td><td>조치 가지·재스캔 시연, 사람 승인 단계 연결</td><td>해소·남음·신규 경보 표</td></tr>
+<tr><td>합격 발표 11월 둘째 주 이후(공고)</td><td>본선 진출 시에만 위 두 줄 수행</td><td>—</td></tr></table>
+<p><b>투입 자원</b>: 1인, 로컬 머신, 무료 도구만(OSV 공개 DB·syft·git), 대상 코드는 읽기만. <b>목표치 3개</b>: ① 3분류 일치율 ≥80%(SPEC S2 — 동결 직후 값은 {FZ['rate']}%로 미달, 본선 추가 라벨 20건 포함 재측정) ② 현장 저장소 정답 라벨 추가 20건 ③ 조치 가지 재스캔 후 도달 경보 0(예선 결과 {rs_sum('reached','reached_after')}건 남음). 본선에서 새로 만드는 일은 데이터 연결, Java 어댑터, 정답 추가입니다. 도구 호출 구조와 시험 세트는 이미 확정되어 있습니다.</p>
 <h2><span class=n>11</span>재현 방법</h2>
 <p>레포 <code>{REPO}</code> (공개, 로그인 없이 열림). <b>실행은 표준 라이브러리만</b>(파이썬 3.9+, 스캔은 syft가 있으면 사용·없으면 잠금 파일 파서), <b>시험은 pytest</b>입니다. 새 클론에서 순서대로:</p>
 <ul><li><code>python3 -m pytest -q</code> — 시험 {TESTS}건, 오프라인, 1초 안팎.</li>
@@ -265,7 +269,7 @@ SOL = [p1, p2, p3, p4]
 # ───────── 1쪽 요약
 SUM = f"""<div class=brow>AI 문제해결방안 요약 · LOTTE AX Challenge 2026</div>
 <h1>경보 {T['alerts']}건 중 코드가 실제로 호출하는 {T['reached']}건을 근거 줄과 함께 먼저 올립니다</h1>
-<p class=lede>SBOM·취약점 스캔 결과의 영향도·우선순위 연결 구조와, 조치안 도출·재스캔 개선 순환을 도는 AI 에이전트 (롯데이노베이트)</p>
+<p class=lede>SBOM·취약점 스캔 결과의 영향도·우선순위 연결 구조와, 조치안 도출 및 개선(재스캔 순환)을 도는 AI 에이전트 (롯데이노베이트)</p>
 <div class=big><div><b>{T['alerts']} → {T['reached']}</b><span>공개 저장소 {len(S['repos'])}곳 경보 → 도달 경보</span></div><div><b>{FZ['rate']}%</b><span>정답 동결 직후 홀드아웃 {AH['total']}건 일치율(수정 뒤 {AH['rate']}%는 사후 수정)</span></div><div><b>{rs_sum('reached','reached_before')} → {rs_sum('reached','reached_after')}</b><span>조치 가지 재스캔 후 도달 경보 (패키지 {rs_sum('reached','packages_changed')}개 조치)</span></div></div>
 <h2>문제</h2><p>SBOM과 스캔 결과가 따로 나와 수백 건 경보를 사람이 하나씩 따집니다. 이번 {len(S['repos'])}곳에서 호출 근거가 있는 경보는 {pc(T['reached'], T['alerts'])}였습니다.</p>
 <h2>해법</h2><ul><li>SBOM 생성 → 취약점 조회 → <b>호출 근거 줄로 도달 판정</b> → 우선순위·조치안 → 조치 가지 적용 → 재스캔(최대 3바퀴)</li><li>판정과 고칠 버전 선택은 코드, AI는 설명 문장만. 근거 줄 없으면 「도달」 불가, 허용 밖 버전 숫자·안전 단정은 폐기</li><li>병합·배포는 사람이 승인</li></ul>
@@ -290,12 +294,16 @@ CAP = f"""<div class=brow>AI 보유역량 · LOTTE AX Challenge 2026</div>
 <tr><td>github.com/Ryugi62/scar-tissue</td><td>코딩 에이전트의 반복 실수를 가드레일로 바꿈</td><td>실패→규칙</td></tr>
 <tr><td>github.com/Ryugi62/receipts</td><td>AI 답변의 주장마다 위키백과 근거를 붙이는 검증 에이전트</td><td>근거 강제</td></tr>
 <tr><td>github.com/Ryugi62/closer-airwallex</td><td>Airwallex 에이전트 뱅킹 해커톤용 정산 마감 에이전트</td><td>사람 승인</td></tr></table>
+<h2>2-1. 운영 중인 공개 URL (2026-11-02 비로그인 요청 HTTP 200 실측)</h2>
+<table><tr><th style="width:42%">URL</th><th>사실 한 줄</th></tr>
+<tr><td><code>ryugi62.github.io/trifecta-gate/</code></td><td>AI 에이전트 도구 목록을 붙여 넣으면 유출 삼각형을 검사하는 데모(입력칸 있음), 마지막 갱신 2026-10-06, 위 trifecta-gate 레포의 공개 페이지</td></tr>
+<tr><td><code>ryugi62.github.io/justenough/</code></td><td>Midnight Korea Hackathon 1위 작품 데모 페이지, 마지막 갱신 2026-09-30</td></tr></table>
 <h2>3. 외부 심사 결과</h2>
 <ul><li>Midnight Korea Hackathon <b>1위</b>(38팀 중, 2026-09-29 주최 발표) — 레포 <code>github.com/Ryugi62/justenough</code> (시험 112건).</li>
 <li>Airwallex Agentic Banking Hackathon 서류 통과 후 빌드 단계 진행(2026-10-27 선발 통지).</li></ul>
 <h2>4. 에이전트가 틀렸을 때 구조로 고친 운영 기록</h2>
 <p>개인 운영 환경(에이전트가 일정·공모·코드를 대신 처리)에서 에이전트의 문제를 사건으로 기록하고 훅·검사 스크립트로 내린 이력이 2026-09-02부터 2026-10-30까지 <b>923건</b> 있습니다. 이번 구조의 「근거 줄 없으면 미확인」과 「AI 문장은 허용 목록 밖 숫자 폐기」도 이 기록에서 나온 설계입니다. 이 기록은 개인 비공개 저장소에 있어 <b>공개 링크가 없고 건수만 적었습니다</b>.</p>
-<p class=note>모든 항목의 날짜·건수는 2026-10-30 기준이며, 판정 정확도는 이 레포 evidence 폴더의 정답 파일로 재현할 수 있습니다.</p>"""
+<p class=note>모든 항목의 날짜·건수는 2026-10-30 기준(2-1항 URL만 2026-11-02)이며, 판정 정확도는 이 레포 evidence 폴더의 정답 파일로 재현할 수 있습니다.</p>"""
 
 
 def render(name, pages, label):

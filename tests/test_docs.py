@@ -71,3 +71,49 @@ def test_615_534_difference_is_explained():
 def test_repro_commands_extract_snapshot_into_data_and_note_syft_difference():
     text = alltext()
     assert "-C data" in text and "235" in text and "315" in text
+
+
+def test_v12_subtitle_matches_announcement_wording():
+    text = alltext()
+    assert "조치안 도출·개선" not in text
+    assert "조치안 도출 및 개선" in text
+
+
+def test_v12_first_paragraph_cites_task_and_repo_url_with_number():
+    import build_docs as b
+    lede = re.search(r"<p class=lede>(.*?)</p>", b.SOL[0], re.S).group(1)
+    assert b.REPO in lede and "연결 구조 설계" in lede and "조치안 도출 및 개선" in lede
+    assert re.search(r"\d", lede)
+
+
+def test_v12_comparison_table_names_issuer_product_with_source_types():
+    import build_docs as b
+    p1 = b.SOL[0]
+    assert "롯데이노베이트 자사" in p1 and "찾지 못" in p1
+    for t in ("뉴스", "특허", "채용공고", "정부과제", "제품 소개"):
+        assert t in p1, t
+
+
+def test_v12_schedule_has_dates_and_three_numeric_targets():
+    import build_docs as b
+    p4 = b.SOL[3]
+    for d in ("2026-11-03", "2026-11-04", "2026-11-24", "2026-11-25"):
+        assert d in p4, d
+    assert "80%" in p4 and "20건" in p4 and "재스캔" in p4
+
+
+def test_v12_has_screen_figure_from_real_ranking_file():
+    import build_docs as b
+    p3 = b.SOL[2]
+    assert "그림 2" in p3 and "routes/index.js:270" in p3 and "mongoose-db.js:3" in p3
+
+
+def test_v12_capability_sheet_has_live_urls_with_facts():
+    import build_docs as b
+    assert "ryugi62.github.io/justenough" in b.CAP and "ryugi62.github.io/trifecta-gate" in b.CAP
+    assert "2026-11-02" in b.CAP and "HTTP 200" in b.CAP
+
+
+def test_v12_version_label():
+    import build_docs as b
+    assert b.VER == "v1.2"
