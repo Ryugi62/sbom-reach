@@ -14,6 +14,7 @@ from ..application.review import review_reached
 from ..domain.evals import agreement, precision_by_flag
 from ..domain.models import Verdict
 from .gemini import GeminiLlm, load_key
+from .maven_sbom import MavenSbom
 from .osv_client import OsvVulnPort
 from .repo_source import RepoSource
 from .syft_runner import SyftSbom
@@ -27,12 +28,18 @@ SYFT = os.path.join(ROOT, "tools", "bin", "syft")
 
 def target_repo_dir(t):
     """targets.json의 path는 저장소 루트 기준 상대경로(scripts/clone_targets.py가 받아 둔다)."""
-    base = t["path"] if os.path.isabs(t["path"]) else os.path.join(ROOT, t["path"])
+    path = os.path.expanduser(t["path"])
+    base = path if os.path.isabs(path) else os.path.join(ROOT, path)
     return os.path.join(base, t["scan_dir"]) if t["scan_dir"] else base
 
 
-def targets():
-    return {t["name"]: t for t in json.load(open(os.path.join(EV, "targets.json"), encoding="utf-8"))}
+def targets(java: bool = True):
+    """targets.json(Python·JS 4곳) + targets-java.json(운영형 오픈소스 Java, 홈의 ~/untrusted 에 받는다)."""
+    out = {t["name"]: t for t in json.load(open(os.path.join(EV, "targets.json"), encoding="utf-8"))}
+    jp = os.path.join(EV, "targets-java.json")
+    if java and os.path.exists(jp):
+        out.update({t["name"]: t for t in json.load(open(jp, encoding="utf-8"))})
+    return out
 
 
 def overrides():
@@ -49,7 +56,8 @@ def common_names():
 
 def build(t, repo, trace):
     syft = SYFT if os.path.exists(SYFT) else "syft"
-    return ScanUseCase(SyftSbom(syft_path=syft, excludes=t["excludes"]),
+    sbom = MavenSbom(t["excludes"]) if t.get("language") == "Java" else SyftSbom(syft_path=syft, excludes=t["excludes"])
+    return ScanUseCase(sbom,
                        OsvVulnPort(cache_dir=os.path.join(ROOT, "data", "osv-cache"), overrides=overrides()),
                        RepoSource(t["excludes"]), trace, common_names())
 
@@ -189,7 +197,7 @@ def cmd_summary(a):
     from ..application.summary import summarize
     load = lambda p: json.load(open(p, encoding="utf-8"))
     rows = lambda p: [json.loads(x) for x in open(p, encoding="utf-8") if x.strip()]
-    tg = targets()
+    tg = targets(java=False)
     runs = {n: load(os.path.join(EV, "runs", f"{n}.json")) for n in tg}
     v0 = {n: load(os.path.join(EV, "runs-v0", f"{n}.json")) for n in tg}
     rs = {os.path.basename(p)[:-5]: load(p) for p in sorted(glob.glob(os.path.join(EV, "rescan", "*.json")))}

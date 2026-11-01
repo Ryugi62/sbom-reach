@@ -38,7 +38,30 @@ def normalize(name: str) -> str:
     return re.sub(r"[-_.]+", "-", name).lower()
 
 
+def _maven_prefixes(coord: str) -> Tuple[str, ...]:
+    """groupId:artifactId -> import 접두 후보. 이름 규칙 휴리스틱이라 안 맞으면 미확인이 된다(SPEC 비목표)."""
+    g, _, a = coord.partition(":")
+    last = g.rsplit(".", 1)[-1].lower()
+    toks = a.lower().split("-")
+    cands = []
+    rest = toks[:]
+    if rest and (rest[0] == last or rest[0] in last or last in rest[0]) and len(rest) > 1:
+        rest = rest[1:]
+    for t in (rest, toks):
+        c = f"{g}." + ".".join(t)
+        if c not in cands:
+            cands.append(c)
+    joined = f"{g}." + "".join(toks)
+    if joined not in cands:
+        cands.append(joined)
+    if a.lower() == last or g.endswith("." + a.lower()):
+        cands.append(g)
+    return tuple(cands)
+
+
 def modules_for(ecosystem: str, package: str) -> Tuple[str, ...]:
+    if ecosystem.lower() == "maven":
+        return _maven_prefixes(package)
     if ecosystem.lower() == "npm":
         return (package,)
     n = normalize(package)

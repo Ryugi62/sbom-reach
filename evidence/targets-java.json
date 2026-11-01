@@ -1,0 +1,29 @@
+[
+ {
+  "name": "openrefine",
+  "language": "Java",
+  "url": "https://github.com/OpenRefine/OpenRefine",
+  "commit": "ba887ca",
+  "path": "~/untrusted/OpenRefine",
+  "scan_dir": "",
+  "excludes": []
+ },
+ {
+  "name": "jeecgboot",
+  "language": "Java",
+  "url": "https://github.com/jeecgboot/JeecgBoot",
+  "commit": "56fb212",
+  "path": "~/untrusted/JeecgBoot",
+  "scan_dir": "jeecg-boot",
+  "excludes": []
+ },
+ {
+  "name": "dolphinscheduler",
+  "language": "Java",
+  "url": "https://github.com/apache/dolphinscheduler",
+  "commit": "ee47c37",
+  "path": "~/untrusted/dolphinscheduler",
+  "scan_dir": "",
+  "excludes": []
+ }
+]

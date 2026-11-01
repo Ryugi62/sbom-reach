@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from typing import AbstractSet, Dict, List, Tuple
+from typing import AbstractSet, Callable, Dict, List, Optional, Tuple
 
 from .models import Alert, Evidence, Judgement, Verdict
 from .packages import modules_for
@@ -16,6 +16,8 @@ class SourceIndex:
     refs: Dict[Tuple[str, str], List[Evidence]] = field(default_factory=dict)
     weak_refs: Dict[str, List[Evidence]] = field(default_factory=dict)   # 메서드·속성 이름 -> 받는 쪽 타입을 모르는 호출 줄
     mentions: Dict[str, List[Evidence]] = field(default_factory=dict)    # 문자열로만 나온 모듈 이름(설정 로딩 등)
+    # Java: finder(이름, 모듈 접두들, "class"|"call") -> 근거 줄. 어댑터가 붙인다(도메인은 I/O를 모른다)
+    finder: Optional[Callable[[str, Tuple[str, ...], str], List[Evidence]]] = None
 
 
 def _sym_name(sym: str) -> str:
@@ -112,6 +114,40 @@ def _product_only(evs: List[Evidence]) -> List[Evidence]:
     return [e for e in evs if is_product_path(e.path)]
 
 
+def _judge_java(alert: Alert, index: SourceIndex, mods, import_ev, common) -> Judgement:
+    """Java: 가져온(import) 클래스를 쓰면 강한 근거, 패키지를 import한 파일에서 같은 이름의 메서드 호출은 약한 근거(타입 추론 없음)."""
+    specific, generic = _split_names(alert.advisory.symbols, mods, common)
+    strong: List[Evidence] = []
+    weak: List[Evidence] = []
+    matched = set()
+    for n in sorted(specific):
+        if n[:1].isupper():
+            hits = index.finder(n, tuple(mods), "class")
+            if hits:
+                strong += hits
+                matched.add(n)
+        else:
+            hits = index.finder(n, tuple(mods), "call")
+            if hits:
+                weak += hits
+                matched.add(n)
+    nonprod = False
+    sp, wp = _product_only(strong), _product_only(weak)
+    if strong and not sp or weak and not wp:
+        nonprod = True
+    if sp:
+        return Judgement(alert, Verdict.REACHED, _dedupe(sp),
+                         "가져온 클래스 " + ", ".join(sorted(matched)) + " 를 쓰는 근거 줄이 있음", matched=tuple(sorted(matched)))
+    if wp:
+        return Judgement(alert, Verdict.REACHED, _dedupe(wp),
+                         "(약한 근거) 패키지를 import한 파일에 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음", weak=True,
+                         matched=tuple(sorted(matched)))
+    if nonprod:
+        return Judgement(alert, Verdict.USED, _dedupe(import_ev), "취약 심볼 사용 줄이 시험 코드에만 있어 도달이라 하지 않음")
+    return Judgement(alert, Verdict.USED, _dedupe(import_ev),
+                     "패키지는 import되나 취약 심볼 " + ", ".join(sorted(specific | generic)) + " 의 사용 근거 줄은 없음")
+
+
 def judge(alert: Alert, index: SourceIndex, common_names: AbstractSet[str] = frozenset()) -> Judgement:
     mods = modules_for(alert.component.ecosystem, alert.component.name)
     import_ev: List[Evidence] = []
@@ -131,6 +167,8 @@ def judge(alert: Alert, index: SourceIndex, common_names: AbstractSet[str] = fro
     if not names:
         return Judgement(alert, Verdict.USED, _dedupe(import_ev),
                          "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음")
+    if alert.component.ecosystem == "Maven" and index.finder is not None:
+        return _judge_java(alert, index, mods, import_ev, common_names)
     specific, generic = _split_names(alert.advisory.symbols, mods, common_names)
 
     def refs_for(ns) -> List[Evidence]:

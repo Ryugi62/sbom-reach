@@ -84,7 +84,8 @@ class ScanUseCase:
         comps, fallback = self.sbom.generate(repo)
         direct = self.sbom.direct_names(repo)
         status["sbom"] = "ok" if comps else "empty"
-        self._t("sbom", t0, tool_name=self.sbom.tool, components=len(comps), fallback=fallback)
+        self._t("sbom", t0, tool_name=self.sbom.tool, components=len(comps), fallback=fallback,
+                **({"pom_stat": self.sbom.stat} if getattr(self.sbom, "stat", None) else {}))
         if fallback:
             self.trace.record({"tool": "fallback", "stage": "sbom", "why": "syft 사용 불가 -> 잠금 파일 파서"})
         t0 = time.time()

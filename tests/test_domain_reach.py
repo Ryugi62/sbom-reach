@@ -187,3 +187,49 @@ def test_real_symbol_next_to_builtins_still_reached():
                       refs={("typeorm", "escapeComment"): [ev("a.js", 4, "typeorm.escapeComment(c)")]})
     j = judge(mk_alert("typeorm", eco="npm", symbols=("JSON.stringify", "require", "escapeComment"), version="0.2"), idx)
     assert j.verdict is Verdict.REACHED
+
+
+# ---- v1.3 Java (SPEC S13) ----
+def java_index(class_hits=None, call_hits=None, imports=None):
+    class_hits, call_hits = class_hits or {}, call_hits or {}
+
+    def finder(name, mods, kind):
+        return list((class_hits if kind == "class" else call_hits).get(name, []))
+    return SourceIndex(imports=imports or {"org.yaml.snakeyaml": [ev("src/main/java/A.java", 3, "import org.yaml.snakeyaml.Yaml;")]},
+                       finder=finder)
+
+
+def jalert(symbols, name="org.yaml:snakeyaml", version="1.30", summary="Deserialization in SnakeYAML"):
+    c = Component(name=name, version=version, ecosystem="Maven")
+    a = Advisory(id="GHSA-j", aliases=(), summary=summary, severity="HIGH", fixed_versions=("2.0",), symbols=tuple(symbols))
+    return Alert(c, a)
+
+
+def test_java_unseen_without_import():
+    j = judge(jalert(["Yaml"]), SourceIndex(finder=lambda *a: []))
+    assert j.verdict is Verdict.UNSEEN
+
+
+def test_java_class_use_is_reached_strong():
+    idx = java_index(class_hits={"Yaml": [ev("src/main/java/A.java", 10, "Yaml y = new Yaml();")]})
+    j = judge(jalert(["Yaml", "Constructor"]), idx)
+    assert j.verdict is Verdict.REACHED and not j.weak and j.matched == ("Yaml",)
+
+
+def test_java_call_name_only_is_reached_weak():
+    idx = java_index(call_hits={"load": [ev("src/main/java/A.java", 11, "y.load(x)")]})
+    j = judge(jalert(["Yaml.loadAs", "customLoad"], version="1.30"), idx)
+    assert j.verdict is Verdict.USED          # loadAs/customLoad 호출 줄이 없다
+    idx2 = java_index(call_hits={"customLoad": [ev("src/main/java/A.java", 11, "y.customLoad(x)")]})
+    j2 = judge(jalert(["Yaml.loadAs", "customLoad"]), idx2)
+    assert j2.verdict is Verdict.REACHED and j2.weak
+
+
+def test_java_hit_only_in_test_sources_is_used():
+    idx = java_index(class_hits={"Yaml": [ev("src/test/java/ATest.java", 10, "new Yaml()")]})
+    assert judge(jalert(["Yaml"]), idx).verdict is Verdict.USED
+
+
+def test_java_generic_method_names_do_not_make_it_reached():
+    idx = java_index(call_hits={"get": [ev("src/main/java/A.java", 11, "m.get(k)")]})
+    assert judge(jalert(["get"]), idx).verdict is Verdict.USED

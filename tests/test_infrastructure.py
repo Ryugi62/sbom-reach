@@ -196,10 +196,13 @@ def test_workcopy_noop_bump_returns_empty_without_crash(tmp_path):
 
 def test_targets_have_no_absolute_or_personal_paths():
     from sbomreach.infrastructure import cli
-    for t in cli.targets().values():
+    for t in cli.targets(java=False).values():
         assert not os.path.isabs(t["path"]) and "Users" not in t["path"]
         assert os.path.isabs(cli.target_repo_dir(t))
         assert cli.target_repo_dir(t).startswith(cli.ROOT)
+    for t in cli.targets().values():           # Java 대상은 홈의 ~/untrusted/ 아래(개인 경로 문자열 없이 ~ 로 적는다)
+        assert "Users" not in t["path"] and (t["path"].startswith("~/untrusted/") or not os.path.isabs(t["path"]))
+        assert os.path.isabs(cli.target_repo_dir(t))
 
 
 def test_workcopy_git_identity_is_not_personal():
@@ -210,3 +213,34 @@ def test_workcopy_git_identity_is_not_personal():
 def test_gemini_key_file_default_is_not_personal_path():
     from sbomreach.infrastructure import gemini
     assert "jarvis" not in gemini.ENV_FILE
+
+
+def test_read_sources_and_manifests_include_java_and_pom(tmp_path):
+    (tmp_path / "src/main/java/a").mkdir(parents=True)
+    (tmp_path / "src/main/java/a/A.java").write_text("package a;\nimport org.yaml.snakeyaml.Yaml;\nclass A{}\n")
+    (tmp_path / "target/classes").mkdir(parents=True)
+    (tmp_path / "target/classes/B.java").write_text("class B{}")
+    (tmp_path / "pom.xml").write_text("<project/>")
+    assert "src/main/java/a/A.java" in read_sources(str(tmp_path))
+    assert not any(k.startswith("target") for k in read_sources(str(tmp_path)))
+    assert "pom.xml" in read_manifests(str(tmp_path))
+
+
+def test_repo_source_indexes_java_with_finder(tmp_path):
+    from sbomreach.infrastructure.repo_source import RepoSource
+    (tmp_path / "A.java").write_text("import org.yaml.snakeyaml.Yaml;\nclass A { void f(){ new Yaml(); } }\n")
+    (tmp_path / "x.py").write_text("import yaml\nyaml.load(1)\n")
+    idx = RepoSource([]).index(str(tmp_path))
+    assert "yaml" in idx.imports and "org.yaml.snakeyaml" in idx.imports
+    assert idx.finder("Yaml", ("org.yaml.snakeyaml",), "class")
+
+
+def test_maven_sbom_reads_poms_and_reports_stat(tmp_path):
+    from sbomreach.infrastructure.maven_sbom import MavenSbom
+    (tmp_path / "pom.xml").write_text('<project><groupId>g</groupId><artifactId>a</artifactId><version>1</version><dependencies>'
+                                      '<dependency><groupId>org.yaml</groupId><artifactId>snakeyaml</artifactId><version>1.30</version></dependency>'
+                                      '</dependencies></project>')
+    s = MavenSbom()
+    comps, fb = s.generate(str(tmp_path))
+    assert [(c.name, c.version, c.ecosystem) for c in comps] == [("org.yaml:snakeyaml", "1.30", "Maven")] and fb is False
+    assert s.stat["resolved"] == 1 and "org.yaml:snakeyaml" in s.direct_names(str(tmp_path))

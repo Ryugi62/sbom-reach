@@ -4,9 +4,9 @@ from __future__ import annotations
 import os
 from typing import Dict, Iterable
 
-SKIP_DIRS = {".git", "node_modules", "venv", ".venv", "site-packages", "__pycache__", "dist", "build", ".tox"}
-SRC_EXT = (".py", ".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx")
-MANIFESTS = ("package.json", "package-lock.json")
+SKIP_DIRS = {".git", "node_modules", "venv", ".venv", "site-packages", "__pycache__", "dist", "build", ".tox", "target"}
+SRC_EXT = (".py", ".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx", ".java")
+MANIFESTS = ("package.json", "package-lock.json", "pom.xml")
 MAX_BYTES = 1_000_000
 
 
