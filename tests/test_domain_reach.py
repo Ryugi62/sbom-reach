@@ -171,3 +171,19 @@ def test_is_product_path():
 
 def test_generic_constant_still_has_common_words():
     assert {"get", "set", "parse", "load"} <= GENERIC
+
+
+# ---- v1.3 사후 수정(S10-④): 언어 내장·키워드는 취약 심볼 근거가 아니다 ----
+def test_language_builtins_are_not_vulnerable_symbols():
+    idx = SourceIndex(imports={"typeorm": [ev("a.js", 1, "require('typeorm')")]},
+                      weak_refs={"stringify": [ev("a.js", 9, "JSON.stringify(x)")]},
+                      refs={("typeorm", "require"): [ev("a.js", 2, "require('typeorm')")]})
+    j = judge(mk_alert("typeorm", eco="npm", symbols=("JSON.stringify", "require", "import", "ViewEntity.up"), version="0.2"), idx)
+    assert j.verdict is Verdict.USED
+
+
+def test_real_symbol_next_to_builtins_still_reached():
+    idx = SourceIndex(imports={"typeorm": [ev("a.js", 1)]},
+                      refs={("typeorm", "escapeComment"): [ev("a.js", 4, "typeorm.escapeComment(c)")]})
+    j = judge(mk_alert("typeorm", eco="npm", symbols=("JSON.stringify", "require", "escapeComment"), version="0.2"), idx)
+    assert j.verdict is Verdict.REACHED

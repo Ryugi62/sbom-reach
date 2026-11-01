@@ -30,11 +30,27 @@ GENERIC = {"get", "set", "filter", "find", "exclude", "parse", "load", "body", "
            "next", "create", "remove", "query", "value", "key", "text", "content", "file", "files", "form", "headers", "cookies"}
 
 
+# 언어 내장·키워드 — 어드바이저리 본문에 예시로 섞여 나오지만 취약 함수가 아니다(SPEC S10-④)
+BUILTIN_HEADS = {"JSON", "Object", "Array", "Math", "Promise", "Date", "String", "Number", "Boolean", "Buffer", "Symbol", "Map", "Set",
+                 "RegExp", "Error", "process", "console", "global", "window", "document", "Reflect", "Proxy",
+                 "str", "dict", "list", "int", "float", "bytes", "tuple", "os", "sys", "re", "json"}
+BUILTIN_NAMES = {"require", "import", "export", "module", "exports", "prototype", "constructor", "this", "self", "super",
+                 "dict", "str", "bytes", "list", "int", "float", "tuple", "set", "len", "print", "type", "object", "isinstance"}
+
+
+def _builtin_symbol(sym: str) -> bool:
+    t = sym.strip().rstrip("()").replace("::", ".")
+    head = t.split(".")[0]
+    return (len(t.split(".")) > 1 and head in BUILTIN_HEADS) or t in BUILTIN_NAMES or t.split(".")[-1] in BUILTIN_NAMES
+
+
 def _qualified(sym: str, mods) -> bool:
     s = sym.strip().rstrip("()").replace("::", ".")
     if "." not in s:
         return False
     head = s.split(".")[0]
+    if head in BUILTIN_HEADS:
+        return False
     return head not in ("_", "$") and head.lower() not in {m.lower() for m in mods}
 
 
@@ -81,7 +97,7 @@ def _split_names(alert_symbols, mods, common: AbstractSet[str]):
     specific, generic = set(), set()
     for s in alert_symbols:
         n = _sym_name(s)
-        if not n:
+        if not n or _builtin_symbol(s):
             continue
         low = n.lower()
         is_common = low in GENERIC or low in common
