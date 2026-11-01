@@ -1,0 +1,5 @@
+{"run_id": "jeecgboot-alerts", "seq": 1, "ts": "2026-11-02T08:20:56+0900", "tool": "sbom", "ms": 87, "tool_name": "pom.xml 해석기", "components": 67, "fallback": false, "pom_stat": {"poms": 29, "parse_errors": 0, "total_declared": 151, "test_scope": 4, "internal": 34, "unresolved": 43, "resolved": 67}}
+{"run_id": "jeecgboot-alerts", "seq": 2, "ts": "2026-11-02T08:20:57+0900", "tool": "source_index", "ms": 1024, "imported_modules": 2614, "referenced_symbols": 30}
+{"run_id": "jeecgboot-alerts", "seq": 3, "ts": "2026-11-02T08:20:57+0900", "tool": "vuln_lookup", "ms": 4, "alerts": 13, "incomplete": 0}
+{"run_id": "jeecgboot-alerts", "seq": 4, "ts": "2026-11-02T08:20:57+0900", "tool": "reach_judge", "ms": 1, "reached": 0, "used": 2, "unseen": 11}
+{"run_id": "jeecgboot-alerts", "seq": 5, "ts": "2026-11-02T08:20:57+0900", "tool": "rank", "ms": 0, "top": ["org.jsoup:jsoup:GHSA-65r4-943x-97jj:2.45", "org.jsoup:jsoup:GHSA-pmhh-3w7g-xqp8:1.4", "org.postgresql:postgresql:GHSA-24rp-q3w6-vc56:1.0"]}

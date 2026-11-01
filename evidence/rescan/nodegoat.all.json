@@ -23,8 +23,8 @@
       "GHSA-rv95-896h-c2vc"
      ],
      "direct": true,
-     "text": "express 4.16.4 → 4.20.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-qw6h-vgh9-j6wx, GHSA-rv95-896h-c2vc) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "경보 GHSA-qw6h-vgh9-j6wx 및 GHSA-rv95-896h-c2vc와 관련하여 패키지 express의 버전을 현재 4.16.4에서 4.20.0으로 올립니다. 판정은 도달입니다.",
+     "text_source": "llm"
     },
     {
      "package": "marked",
@@ -40,8 +40,8 @@
       "GHSA-x5pg-88wf-qq4p"
      ],
      "direct": true,
-     "text": "marked 0.3.5 → 4.0.10: package.json 직접 선언을 올립니다. 경보 6건(GHSA-5v2h-r2cx-5xgj, GHSA-7px7-7xjx-hxm8, GHSA-p9wx-2529-fp83 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "보안 운영 담당님, 패키지 marked의 버전을 현재 0.3.5에서 목표 4.0.10으로 올립니다. 본 조치는 GHSA-5v2h-r2cx-5xgj 외 5건의 경보에 대해 판정이 도달한 결과입니다.",
+     "text_source": "llm"
     },
     {
      "package": "body-parser",
@@ -54,8 +54,8 @@
       "GHSA-v422-hmwv-36x6"
      ],
      "direct": true,
-     "text": "body-parser 1.18.3 → 1.20.9: package.json 직접 선언을 올립니다. 경보 3건(GHSA-27r3-jxmh-p828, GHSA-qwcr-r2fm-qrc7, GHSA-v422-hmwv-36x6) 해소 대상, 판정 사용.",
-     "text_source": "template"
+     "text": "현재 사용 중인 `body-parser` 1.18.3 버전에서 세 건의 경보가 미확인되었으므로, 버전 숫자는 1.20.9로 올립니다. 본 조치는 제시된 사실만을 바탕으로 안내되었습니다.",
+     "text_source": "llm"
     },
     {
      "package": "mongodb",
@@ -66,8 +66,8 @@
       "GHSA-mh5c-679w-hh4r"
      ],
      "direct": true,
-     "text": "mongodb 2.2.36 → 3.1.13: package.json 직접 선언을 올립니다. 경보 1건(GHSA-mh5c-679w-hh4r) 해소 대상, 판정 사용.",
-     "text_source": "template"
+     "text": "경보 GHSA-mh5c-679w-hh4r이 발생한 mongodb 패키지의 현재 버전 2.2.36은 사용 판정 상태이므로, 목표 버전인 3.1.13으로 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "underscore",
@@ -79,8 +79,8 @@
       "GHSA-qpx9-hpmf-5gmw"
      ],
      "direct": true,
-     "text": "underscore 1.9.1 → 1.13.8: package.json 직접 선언을 올립니다. 경보 2건(GHSA-cf4h-3jhx-xvhq, GHSA-qpx9-hpmf-5gmw) 해소 대상, 판정 사용.",
-     "text_source": "template"
+     "text": "GHSA-cf4h-3jhx-xvhq 및 GHSA-qpx9-hpmf-5gmw 경보와 관련하여 현재 '사용' 판정된 underscore 패키지의 버전을 1.9.1에서 1.13.8로 올립니다. 보안 운영 담당자는 대상 패키지의 버전을 목표 버전으로 신속히 조치하시기 바랍니다.",
+     "text_source": "llm"
     },
     {
      "package": "brace-expansion",
@@ -98,8 +98,8 @@
       "GHSA-v6h2-p8h4-qcjw"
      ],
      "direct": false,
-     "text": "brace-expansion 1.1.11 → 1.1.21: overrides로 전이 의존 버전을 고정합니다. 경보 8건(GHSA-3jxr-9vmj-r5cp, GHSA-6j4f-fj2g-mc7p, GHSA-f886-m6hf-6m8v 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "보안 운영 담당자님께, 패키지 `brace-expansion`의 현재 버전 1.1.11을 목표 버전 1.1.21로 올립니다. 해당 경보의 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "braces",
@@ -110,8 +110,8 @@
       "GHSA-grv7-fg5c-xmjg"
      ],
      "direct": false,
-     "text": "braces 2.3.2 → 3.0.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-grv7-fg5c-xmjg) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 braces의 버전을 현재 2.3.2에서 목표 3.0.3으로 올립니다. 해당 경보 GHSA-grv7-fg5c-xmjg의 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "bson",
@@ -123,8 +123,8 @@
       "GHSA-v8w9-2789-6hhr"
      ],
      "direct": false,
-     "text": "bson 1.0.9 → 1.1.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-4jwp-vfvf-657p, GHSA-v8w9-2789-6hhr) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 bson의 버전을 현재 1.0.9에서 목표 1.1.4로 올립니다. 해당 경보(GHSA-4jwp-vfvf-657p, GHSA-v8w9-2789-6hhr)에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "cookie",
@@ -135,8 +135,8 @@
       "GHSA-pxg6-pf52-xh8x"
      ],
      "direct": false,
-     "text": "cookie 0.3.1 → 0.7.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-pxg6-pf52-xh8x) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "cookie 패키지를 경보 GHSA-pxg6-pf52-xh8x와 관련하여 판정 미확인 상태로 버전 0.7.0으로 올립니다. 현재 버전은 0.3.1입니다.",
+     "text_source": "llm"
     },
     {
      "package": "debug",
@@ -148,8 +148,8 @@
       "GHSA-gxpj-cx7g-858c"
      ],
      "direct": false,
-     "text": "debug 2.2.0 → 2.6.9: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-9vvw-cc9w-f27h, GHSA-gxpj-cx7g-858c) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "경보 GHSA-9vvw-cc9w-f27h와 GHSA-gxpj-cx7g-858c가 발생한 패키지 debug의 버전을 현재 2.2.0에서 2.6.9로 올립니다. 해당 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "debug",
@@ -160,8 +160,8 @@
       "GHSA-gxpj-cx7g-858c"
      ],
      "direct": false,
-     "text": "debug 4.1.1 → 4.3.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-gxpj-cx7g-858c) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "debug 패키지의 현재 버전 4.1.1에서 목표 버전 4.3.1로 올립니다. 현재 경보 GHSA-gxpj-cx7g-858c에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "decode-uri-component",
@@ -174,8 +174,8 @@
       "GHSA-w573-4hg7-7wgq"
      ],
      "direct": false,
-     "text": "decode-uri-component 0.2.0 → 0.5.1: overrides로 전이 의존 버전을 고정합니다. 경보 3건(GHSA-qr28-fpjm-wq7f, GHSA-vcc3-ghjq-m6fr, GHSA-w573-4hg7-7wgq) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "decode-uri-component 패키지의 현재 버전 0.2.0을 목표 버전 0.5.1로 올립니다. 해당 패키지의 판정은 미확인 상태이며 GHSA-qr28-fpjm-wq7f, GHSA-vcc3-ghjq-m6fr, GHSA-w573-4hg7-7wgq 경보가 발생했습니다.",
+     "text_source": "llm"
     },
     {
      "package": "fsevents",
@@ -187,8 +187,8 @@
       "MAL-2023-462"
      ],
      "direct": false,
-     "text": "fsevents 1.2.9 → 1.2.11: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-8r6j-v8pm-fqw3, MAL-2023-462) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 fsevents의 판정이 미확인 상태이므로 경보 GHSA-8r6j-v8pm-fqw3 및 MAL-2023-462에 대응하기 위해 현재 1.2.9 버전에서 1.2.11 버전으로 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "helmet-csp",
@@ -199,8 +199,8 @@
       "GHSA-c3m8-x3cg-qm2c"
      ],
      "direct": false,
-     "text": "helmet-csp 1.2.2 → 2.9.1: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c3m8-x3cg-qm2c) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "helmet-csp 패키지를 현재 1.2.2 버전에서 2.9.1 버전으로 올립니다.\n해당 건의 판정은 미확인 상태이며 GHSA-c3m8-x3cg-qm2c 경보가 발생했습니다.",
+     "text_source": "llm"
     },
     {
      "package": "i",
@@ -211,8 +211,8 @@
       "GHSA-x55w-vjjp-222r"
      ],
      "direct": false,
-     "text": "i 0.3.6 → 0.3.7: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-x55w-vjjp-222r) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "경보 GHSA-x55w-vjjp-222r이 발생한 패키지 i의 버전을 현재 0.3.6에서 0.3.7로 올립니다. 해당 패키지의 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "ini",
@@ -223,8 +223,8 @@
       "GHSA-qqgx-2p2h-9c37"
      ],
      "direct": false,
-     "text": "ini 1.3.5 → 1.3.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-qqgx-2p2h-9c37) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 1.3.5 버전인 패키지 ini를 목표 1.3.6 버전으로 올립니다. 경보 GHSA-qqgx-2p2h-9c37에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "kind-of",
@@ -235,8 +235,8 @@
       "GHSA-6c8f-qphg-qjgp"
      ],
      "direct": false,
-     "text": "kind-of 6.0.2 → 6.0.3: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-6c8f-qphg-qjgp) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "kind-of 패키지의 판정은 미확인 상태이며, 현재 6.0.2 버전에서 6.0.3 버전으로 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "micromatch",
@@ -247,8 +247,8 @@
       "GHSA-952p-6rrq-rcjv"
      ],
      "direct": false,
-     "text": "micromatch 3.1.10 → 4.0.8: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-952p-6rrq-rcjv) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "micromatch 패키지를 현재 3.1.10 버전에서 4.0.8 버전으로 올립니다. 해당 경보(GHSA-952p-6rrq-rcjv)에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "minimatch",
@@ -262,8 +262,8 @@
       "GHSA-f8q6-p94x-37v3"
      ],
      "direct": false,
-     "text": "minimatch 3.0.4 → 3.1.4: overrides로 전이 의존 버전을 고정합니다. 경보 4건(GHSA-23c5-xmqv-rm74, GHSA-3ppc-4f35-3m26, GHSA-7r86-cg39-jmmj 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "minimatch 패키지의 현재 버전 3.0.4에 대해 GHSA-23c5-xmqv-rm74 외 3건의 경보가 발생하여 판정 미확인 상태이므로, 목표 버전 3.1.4로 올립니다. 조치 시 버전 이동에 따른 영향 평가는 판정 미확인 상태임을 고려하여 진행하시기 바랍니다.",
+     "text_source": "llm"
     },
     {
      "package": "minimist",
@@ -275,8 +275,8 @@
       "GHSA-xvch-5gv4-984h"
      ],
      "direct": false,
-     "text": "minimist 0.0.10 → 0.2.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-vh95-rmgr-6w4m, GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "minimist 패키지의 경보 GHSA-vh95-rmgr-6w4m 및 GHSA-xvch-5gv4-984h에 대한 판정은 미확인 상태입니다. 현재 0.0.10 버전에서 목표 0.2.4 버전으로 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "minimist",
@@ -288,8 +288,8 @@
       "GHSA-xvch-5gv4-984h"
      ],
      "direct": false,
-     "text": "minimist 0.0.8 → 0.2.4: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-vh95-rmgr-6w4m, GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "보안 운영 담당님, 패키지 minimist를 현재 0.0.8 버전에서 0.2.4 버전으로 올립니다. 경보 GHSA-vh95-rmgr-6w4m과 GHSA-xvch-5gv4-984h에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "minimist",
@@ -301,8 +301,8 @@
       "GHSA-xvch-5gv4-984h"
      ],
      "direct": false,
-     "text": "minimist 1.2.0 → 1.2.6: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-vh95-rmgr-6w4m, GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 minimist의 판정이 미확인 상태이므로 현재 버전 1.2.0에서 목표 버전 1.2.6으로 올립니다. 경보로는 GHSA-vh95-rmgr-6w4m과 GHSA-xvch-5gv4-984h가 있습니다.",
+     "text_source": "llm"
     },
     {
      "package": "minimist",
@@ -313,8 +313,8 @@
       "GHSA-xvch-5gv4-984h"
      ],
      "direct": false,
-     "text": "minimist 1.2.5 → 1.2.6: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-xvch-5gv4-984h) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 minimist 1.2.5 버전을 목표 1.2.6 버전으로 올립니다. GHSA-xvch-5gv4-984h 경보의 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "mixin-deep",
@@ -325,8 +325,8 @@
       "GHSA-fhjf-83wg-r2j9"
      ],
      "direct": false,
-     "text": "mixin-deep 1.3.1 → 1.3.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-fhjf-83wg-r2j9) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "mixin-deep 패키지의 버전을 1.3.1에서 1.3.2로 올립니다. 현재 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "ms",
@@ -337,8 +337,8 @@
       "GHSA-w9mr-4mfr-499f"
      ],
      "direct": false,
-     "text": "ms 0.7.1 → 2.0.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-w9mr-4mfr-499f) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "보안 운영 담당님, ms 패키지를 현재 0.7.1 버전에서 2.0.0 버전으로 올립니다. 현재 해당 경보(GHSA-w9mr-4mfr-499f)의 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "nconf",
@@ -349,8 +349,8 @@
       "GHSA-6xwr-q98w-rvg7"
      ],
      "direct": false,
-     "text": "nconf 0.10.0 → 0.11.4: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-6xwr-q98w-rvg7) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 nconf 버전을 현재 0.10.0에서 0.11.4로 올립니다. 해당 경보 GHSA-6xwr-q98w-rvg7에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "nconf",
@@ -361,8 +361,8 @@
       "GHSA-6xwr-q98w-rvg7"
      ],
      "direct": false,
-     "text": "nconf 0.6.9 → 0.11.4: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-6xwr-q98w-rvg7) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "nconf 패키지 버전을 현재 0.6.9에서 0.11.4 버전으로 올립니다.\n경보 GHSA-6xwr-q98w-rvg7에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "on-headers",
@@ -373,8 +373,8 @@
       "GHSA-76c9-3jph-rj3q"
      ],
      "direct": false,
-     "text": "on-headers 1.0.1 → 1.1.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-76c9-3jph-rj3q) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "보안 운영 담당자님, 패키지 on-headers의 판정이 미확인된 현재 1.0.1 버전에서 목표 1.1.0 버전으로 올립니다. 관련 경보는 GHSA-76c9-3jph-rj3q입니다.",
+     "text_source": "llm"
     },
     {
      "package": "path-to-regexp",
@@ -386,8 +386,8 @@
       "GHSA-rhx6-c78j-4q9w"
      ],
      "direct": false,
-     "text": "path-to-regexp 0.1.7 → 0.1.12: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-37ch-88jc-xwx2, GHSA-rhx6-c78j-4q9w) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "path-to-regexp 패키지의 현재 버전 0.1.7에 대한 판정은 미확인 상태이며 GHSA-37ch-88jc-xwx2 및 GHSA-rhx6-c78j-4q9w 경보가 있습니다. 조치를 위해 목표 버전인 0.1.12로 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "proxy-addr",
@@ -398,8 +398,8 @@
       "GHSA-jqcg-44mw-7w3h"
      ],
      "direct": false,
-     "text": "proxy-addr 2.0.4 → 2.0.8: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-jqcg-44mw-7w3h) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 proxy-addr의 판정이 미확인이므로 현재 버전 2.0.4에서 목표 버전 2.0.8로 올립니다. 경보는 GHSA-jqcg-44mw-7w3h입니다.",
+     "text_source": "llm"
     },
     {
      "package": "qs",
@@ -412,8 +412,8 @@
       "GHSA-hrpp-h998-j3pp"
      ],
      "direct": false,
-     "text": "qs 6.5.2 → 6.16.0: overrides로 전이 의존 버전을 고정합니다. 경보 3건(GHSA-4mjr-xmp4-gh2g, GHSA-6rw7-vpxm-498p, GHSA-hrpp-h998-j3pp) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "보안 운영 담당님, 현재 미확인 판정을 받은 qs 패키지의 버전을 6.5.2에서 6.16.0 버전으로 올립니다. 관련 경보로는 GHSA-4mjr-xmp4-gh2g, GHSA-6rw7-vpxm-498p, GHSA-hrpp-h998-j3pp가 있습니다.",
+     "text_source": "llm"
     },
     {
      "package": "semver",
@@ -424,8 +424,8 @@
       "GHSA-c2qf-rxjj-qqgw"
      ],
      "direct": false,
-     "text": "semver 5.6.0 → 5.7.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c2qf-rxjj-qqgw) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 semver의 현재 5.6.0 버전을 목표 5.7.2 버전으로 올립니다. 해당 경보 GHSA-c2qf-rxjj-qqgw의 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "semver",
@@ -436,8 +436,8 @@
       "GHSA-c2qf-rxjj-qqgw"
      ],
      "direct": false,
-     "text": "semver 5.7.0 → 5.7.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c2qf-rxjj-qqgw) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "semver 패키지의 현재 버전 5.7.0에 대한 판정은 미확인이며 경보 GHSA-c2qf-rxjj-qqgw가 발생했습니다.\n목표 버전인 5.7.2로 버전 이동을 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "send",
@@ -448,8 +448,8 @@
       "GHSA-m6fv-jmcg-4jfg"
      ],
      "direct": false,
-     "text": "send 0.16.2 → 0.19.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-m6fv-jmcg-4jfg) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "send 패키지의 버전을 0.16.2에서 0.19.0으로 올립니다. GHSA-m6fv-jmcg-4jfg 경보에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "serve-static",
@@ -460,8 +460,8 @@
       "GHSA-cm22-4g7w-348p"
      ],
      "direct": false,
-     "text": "serve-static 1.13.2 → 1.16.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-cm22-4g7w-348p) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 serve-static의 버전을 현재 1.13.2에서 1.16.0으로 올립니다. 경보 GHSA-cm22-4g7w-348p에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "set-value",
@@ -473,8 +473,8 @@
       "GHSA-4jqc-8m5r-9rpr"
      ],
      "direct": false,
-     "text": "set-value 0.4.3 → 2.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-4g88-fppr-53pp, GHSA-4jqc-8m5r-9rpr) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "`set-value` 패키지의 현재 버전 0.4.3을 목표 버전 2.0.1로 올립니다. 경보 GHSA-4g88-fppr-53pp와 GHSA-4jqc-8m5r-9rpr에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "set-value",
@@ -486,8 +486,8 @@
       "GHSA-4jqc-8m5r-9rpr"
      ],
      "direct": false,
-     "text": "set-value 2.0.0 → 2.0.1: overrides로 전이 의존 버전을 고정합니다. 경보 2건(GHSA-4g88-fppr-53pp, GHSA-4jqc-8m5r-9rpr) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 set-value의 현재 버전 2.0.0에서 2.0.1로 올립니다. 경보 GHSA-4g88-fppr-53pp와 GHSA-4jqc-8m5r-9rpr에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "tar",
@@ -515,8 +515,8 @@
       "GHSA-w8wr-v893-vjvp"
      ],
      "direct": false,
-     "text": "tar 4.4.8 → 7.5.21: overrides로 전이 의존 버전을 고정합니다. 경보 18건(GHSA-23hp-3jrh-7fpw, GHSA-34x7-hfp2-rc4v, GHSA-3jfq-g458-7qm9 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 tar 패키지 4.4.8 버전을 7.5.21 버전으로 올립니다. 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "uglify-js",
@@ -527,8 +527,8 @@
       "GHSA-c9f4-xj24-8jqx"
      ],
      "direct": false,
-     "text": "uglify-js 2.4.24 → 2.6.0: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c9f4-xj24-8jqx) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 uglify-js를 현재 버전 2.4.24에서 2.6.0으로 올립니다. 해당 취약점(GHSA-c9f4-xj24-8jqx)에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "y18n",
@@ -539,8 +539,8 @@
       "GHSA-c4w7-xm78-47vh"
      ],
      "direct": false,
-     "text": "y18n 3.2.1 → 3.2.2: overrides로 전이 의존 버전을 고정합니다. 경보 1건(GHSA-c4w7-xm78-47vh) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 y18n의 버전을 현재 3.2.1에서 3.2.2로 올립니다. GHSA-c4w7-xm78-47vh 경보에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     }
    ]
   }
@@ -570,6 +570,6 @@
  },
  "after_incomplete": [],
  "reached_after_items": [],
- "llm_texts": 0,
+ "llm_texts": 40,
  "unfixed_alerts_after": 1
 }

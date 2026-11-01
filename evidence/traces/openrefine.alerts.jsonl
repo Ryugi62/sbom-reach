@@ -1,0 +1,5 @@
+{"run_id": "openrefine-alerts", "seq": 1, "ts": "2026-11-02T08:20:54+0900", "tool": "sbom", "ms": 47, "tool_name": "pom.xml 해석기", "components": 58, "fallback": false, "pom_stat": {"poms": 12, "parse_errors": 0, "total_declared": 175, "test_scope": 34, "internal": 19, "unresolved": 17, "resolved": 58}}
+{"run_id": "openrefine-alerts", "seq": 2, "ts": "2026-11-02T08:20:55+0900", "tool": "source_index", "ms": 1938, "imported_modules": 1532, "referenced_symbols": 23}
+{"run_id": "openrefine-alerts", "seq": 3, "ts": "2026-11-02T08:20:56+0900", "tool": "vuln_lookup", "ms": 4, "alerts": 8, "incomplete": 0}
+{"run_id": "openrefine-alerts", "seq": 4, "ts": "2026-11-02T08:20:56+0900", "tool": "reach_judge", "ms": 4, "reached": 0, "used": 3, "unseen": 5}
+{"run_id": "openrefine-alerts", "seq": 5, "ts": "2026-11-02T08:20:56+0900", "tool": "rank", "ms": 0, "top": ["org.eclipse.jetty:jetty-server:GHSA-9299-c6m4-mjhc:2.45", "org.eclipse.jetty:jetty-server:GHSA-7p3p-8qv8-m2vh:1.4", "org.eclipse.jetty:jetty-server:GHSA-g8m5-722r-8whq:1.4"]}

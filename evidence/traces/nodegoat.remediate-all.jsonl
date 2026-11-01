@@ -1,51 +1,96 @@
-{"run_id": "nodegoat-all", "seq": 1, "ts": "2026-10-30T08:13:27+0900", "tool": "sbom", "ms": 850, "tool_name": "syft", "components": 381, "fallback": false}
-{"run_id": "nodegoat-all", "seq": 2, "ts": "2026-10-30T08:13:27+0900", "tool": "source_index", "ms": 46, "imported_modules": 23, "referenced_symbols": 47}
-{"run_id": "nodegoat-all", "seq": 3, "ts": "2026-10-30T08:13:27+0900", "tool": "vuln_lookup", "ms": 25, "alerts": 90, "incomplete": 0}
-{"run_id": "nodegoat-all", "seq": 4, "ts": "2026-10-30T08:13:27+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
-{"run_id": "nodegoat-all", "seq": 5, "ts": "2026-10-30T08:13:27+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "express:GHSA-rv95-896h-c2vc:4.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0"]}
-{"run_id": "nodegoat-all", "seq": 6, "ts": "2026-10-30T08:13:28+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 7, "ts": "2026-10-30T08:13:28+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 8, "ts": "2026-10-30T08:13:28+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 9, "ts": "2026-10-30T08:13:29+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 10, "ts": "2026-10-30T08:13:29+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 11, "ts": "2026-10-30T08:13:29+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 12, "ts": "2026-10-30T08:13:30+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 13, "ts": "2026-10-30T08:13:30+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 14, "ts": "2026-10-30T08:13:30+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 15, "ts": "2026-10-30T08:13:31+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 16, "ts": "2026-10-30T08:13:31+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 17, "ts": "2026-10-30T08:13:32+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 18, "ts": "2026-10-30T08:13:32+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 19, "ts": "2026-10-30T08:13:32+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 20, "ts": "2026-10-30T08:13:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 21, "ts": "2026-10-30T08:13:33+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 22, "ts": "2026-10-30T08:13:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 23, "ts": "2026-10-30T08:13:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 24, "ts": "2026-10-30T08:13:34+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 25, "ts": "2026-10-30T08:13:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 26, "ts": "2026-10-30T08:13:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 27, "ts": "2026-10-30T08:13:35+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 28, "ts": "2026-10-30T08:13:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 29, "ts": "2026-10-30T08:13:36+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 30, "ts": "2026-10-30T08:13:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 31, "ts": "2026-10-30T08:13:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 32, "ts": "2026-10-30T08:13:37+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 33, "ts": "2026-10-30T08:13:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 34, "ts": "2026-10-30T08:13:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 35, "ts": "2026-10-30T08:13:38+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 36, "ts": "2026-10-30T08:13:39+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 37, "ts": "2026-10-30T08:13:39+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 38, "ts": "2026-10-30T08:13:40+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 39, "ts": "2026-10-30T08:13:40+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 40, "ts": "2026-10-30T08:14:20+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 41, "ts": "2026-10-30T08:14:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 42, "ts": "2026-10-30T08:14:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 43, "ts": "2026-10-30T08:14:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 44, "ts": "2026-10-30T08:14:22+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 45, "ts": "2026-10-30T08:14:22+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "nodegoat-all", "seq": 46, "ts": "2026-10-30T08:14:22+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 33}
-{"run_id": "nodegoat-all", "seq": 47, "ts": "2026-10-30T08:14:24+0900", "tool": "sbom", "ms": 1124, "tool_name": "syft", "components": 348, "fallback": false}
-{"run_id": "nodegoat-all", "seq": 48, "ts": "2026-10-30T08:14:24+0900", "tool": "source_index", "ms": 52, "imported_modules": 23, "referenced_symbols": 47}
-{"run_id": "nodegoat-all", "seq": 49, "ts": "2026-10-30T08:14:24+0900", "tool": "vuln_lookup", "ms": 25, "alerts": 42, "incomplete": 0}
-{"run_id": "nodegoat-all", "seq": 50, "ts": "2026-10-30T08:14:24+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 3, "unseen": 39}
-{"run_id": "nodegoat-all", "seq": 51, "ts": "2026-10-30T08:14:24+0900", "tool": "rank", "ms": 0, "top": ["body-parser:GHSA-27r3-jxmh-p828:2.45", "swig:GHSA-2rq5-699j-x7p6:2.45", "minimist:GHSA-xvch-5gv4-984h:1.0"]}
+{"run_id": "nodegoat-all", "seq": 1, "ts": "2026-11-02T08:27:36+0900", "tool": "sbom", "ms": 759, "tool_name": "syft", "components": 381, "fallback": false}
+{"run_id": "nodegoat-all", "seq": 2, "ts": "2026-11-02T08:27:36+0900", "tool": "source_index", "ms": 49, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat-all", "seq": 3, "ts": "2026-11-02T08:27:36+0900", "tool": "vuln_lookup", "ms": 26, "alerts": 90, "incomplete": 0}
+{"run_id": "nodegoat-all", "seq": 4, "ts": "2026-11-02T08:27:36+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
+{"run_id": "nodegoat-all", "seq": 5, "ts": "2026-11-02T08:27:36+0900", "tool": "rank", "ms": 0, "top": ["marked:GHSA-x5pg-88wf-qq4p:7.0", "express:GHSA-rv95-896h-c2vc:4.0", "marked:GHSA-vfvf-mqq8-rwqc:4.0"]}
+{"run_id": "nodegoat-all", "seq": 6, "ts": "2026-11-02T08:27:37+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 836}
+{"run_id": "nodegoat-all", "seq": 7, "ts": "2026-11-02T08:27:37+0900", "tool": "llm_explain", "package": "express", "ms": 840, "chars": 105}
+{"run_id": "nodegoat-all", "seq": 8, "ts": "2026-11-02T08:27:38+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 9, "ts": "2026-11-02T08:27:38+0900", "tool": "llm_explain", "package": "marked", "ms": 1, "chars": 109}
+{"run_id": "nodegoat-all", "seq": 10, "ts": "2026-11-02T08:27:42+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 861}
+{"run_id": "nodegoat-all", "seq": 11, "ts": "2026-11-02T08:27:42+0900", "tool": "llm_explain", "package": "body-parser", "ms": 4527, "chars": 103}
+{"run_id": "nodegoat-all", "seq": 12, "ts": "2026-11-02T08:27:46+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 749}
+{"run_id": "nodegoat-all", "seq": 13, "ts": "2026-11-02T08:27:46+0900", "tool": "llm_explain", "package": "mongodb", "ms": 4396, "chars": 89}
+{"run_id": "nodegoat-all", "seq": 14, "ts": "2026-11-02T08:27:51+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 952}
+{"run_id": "nodegoat-all", "seq": 15, "ts": "2026-11-02T08:27:51+0900", "tool": "llm_explain", "package": "underscore", "ms": 4713, "chars": 151}
+{"run_id": "nodegoat-all", "seq": 16, "ts": "2026-11-02T08:27:51+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 17, "ts": "2026-11-02T08:27:51+0900", "tool": "llm_explain", "package": "brace-expansion", "ms": 0, "chars": 91}
+{"run_id": "nodegoat-all", "seq": 18, "ts": "2026-11-02T08:27:51+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 19, "ts": "2026-11-02T08:27:51+0900", "tool": "llm_explain", "package": "braces", "ms": 0, "chars": 85}
+{"run_id": "nodegoat-all", "seq": 20, "ts": "2026-11-02T08:27:56+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 815}
+{"run_id": "nodegoat-all", "seq": 21, "ts": "2026-11-02T08:27:56+0900", "tool": "llm_explain", "package": "bson", "ms": 4373, "chars": 107}
+{"run_id": "nodegoat-all", "seq": 22, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 944}
+{"run_id": "nodegoat-all", "seq": 23, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_explain", "package": "cookie", "ms": 4639, "chars": 85}
+{"run_id": "nodegoat-all", "seq": 24, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 25, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_explain", "package": "debug", "ms": 0, "chars": 105}
+{"run_id": "nodegoat-all", "seq": 26, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 27, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_explain", "package": "debug", "ms": 0, "chars": 88}
+{"run_id": "nodegoat-all", "seq": 28, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 29, "ts": "2026-11-02T08:28:00+0900", "tool": "llm_explain", "package": "decode-uri-component", "ms": 0, "chars": 152}
+{"run_id": "nodegoat-all", "seq": 30, "ts": "2026-11-02T08:28:04+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 429, "attempt": 1, "detail": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,", "ms": 333}
+{"run_id": "nodegoat-all", "seq": 31, "ts": "2026-11-02T08:28:09+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 429, "attempt": 2, "detail": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,", "ms": 357}
+{"run_id": "nodegoat-all", "seq": 32, "ts": "2026-11-02T08:28:20+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 3, "ms": 885}
+{"run_id": "nodegoat-all", "seq": 33, "ts": "2026-11-02T08:28:20+0900", "tool": "llm_explain", "package": "fsevents", "ms": 20153, "chars": 106}
+{"run_id": "nodegoat-all", "seq": 34, "ts": "2026-11-02T08:28:27+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 2917}
+{"run_id": "nodegoat-all", "seq": 35, "ts": "2026-11-02T08:28:27+0900", "tool": "llm_explain", "package": "helmet-csp", "ms": 6542, "chars": 97}
+{"run_id": "nodegoat-all", "seq": 36, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 4007}
+{"run_id": "nodegoat-all", "seq": 37, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "i", "ms": 5601, "chars": 85}
+{"run_id": "nodegoat-all", "seq": 38, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 39, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "ini", "ms": 0, "chars": 83}
+{"run_id": "nodegoat-all", "seq": 40, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 41, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "kind-of", "ms": 0, "chars": 57}
+{"run_id": "nodegoat-all", "seq": 42, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 43, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "micromatch", "ms": 0, "chars": 93}
+{"run_id": "nodegoat-all", "seq": 44, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 45, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "minimatch", "ms": 0, "chars": 149}
+{"run_id": "nodegoat-all", "seq": 46, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 47, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "minimist", "ms": 0, "chars": 112}
+{"run_id": "nodegoat-all", "seq": 48, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 49, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "minimist", "ms": 0, "chars": 118}
+{"run_id": "nodegoat-all", "seq": 50, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 51, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "minimist", "ms": 0, "chars": 114}
+{"run_id": "nodegoat-all", "seq": 52, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 53, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "minimist", "ms": 0, "chars": 80}
+{"run_id": "nodegoat-all", "seq": 54, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "nodegoat-all", "seq": 55, "ts": "2026-11-02T08:28:32+0900", "tool": "llm_explain", "package": "mixin-deep", "ms": 0, "chars": 58}
+{"run_id": "nodegoat-all", "seq": 56, "ts": "2026-11-02T08:28:38+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 5179}
+{"run_id": "nodegoat-all", "seq": 57, "ts": "2026-11-02T08:28:38+0900", "tool": "llm_explain", "package": "ms", "ms": 5680, "chars": 95}
+{"run_id": "nodegoat-all", "seq": 58, "ts": "2026-11-02T08:28:44+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 5799}
+{"run_id": "nodegoat-all", "seq": 59, "ts": "2026-11-02T08:28:44+0900", "tool": "llm_explain", "package": "nconf", "ms": 5800, "chars": 84}
+{"run_id": "nodegoat-all", "seq": 60, "ts": "2026-11-02T08:28:49+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 4769}
+{"run_id": "nodegoat-all", "seq": 61, "ts": "2026-11-02T08:28:49+0900", "tool": "llm_explain", "package": "nconf", "ms": 4770, "chars": 84}
+{"run_id": "nodegoat-all", "seq": 62, "ts": "2026-11-02T08:28:54+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 5534}
+{"run_id": "nodegoat-all", "seq": 63, "ts": "2026-11-02T08:28:54+0900", "tool": "llm_explain", "package": "on-headers", "ms": 5535, "chars": 101}
+{"run_id": "nodegoat-all", "seq": 64, "ts": "2026-11-02T08:28:55+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 429, "attempt": 1, "detail": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,", "ms": 423}
+{"run_id": "nodegoat-all", "seq": 65, "ts": "2026-11-02T08:29:00+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 429, "attempt": 2, "detail": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,", "ms": 339}
+{"run_id": "nodegoat-all", "seq": 66, "ts": "2026-11-02T08:29:10+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 429, "attempt": 3, "detail": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,", "ms": 381}
+{"run_id": "nodegoat-all", "seq": 67, "ts": "2026-11-02T08:29:31+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 4, "ms": 1050}
+{"run_id": "nodegoat-all", "seq": 68, "ts": "2026-11-02T08:29:31+0900", "tool": "llm_explain", "package": "path-to-regexp", "ms": 37221, "chars": 128}
+{"run_id": "nodegoat-all", "seq": 69, "ts": "2026-11-02T08:29:37+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 1682}
+{"run_id": "nodegoat-all", "seq": 70, "ts": "2026-11-02T08:29:37+0900", "tool": "llm_explain", "package": "proxy-addr", "ms": 5133, "chars": 87}
+{"run_id": "nodegoat-all", "seq": 71, "ts": "2026-11-02T08:29:43+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 3194}
+{"run_id": "nodegoat-all", "seq": 72, "ts": "2026-11-02T08:29:43+0900", "tool": "llm_explain", "package": "qs", "ms": 6020, "chars": 139}
+{"run_id": "nodegoat-all", "seq": 73, "ts": "2026-11-02T08:29:46+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 2268}
+{"run_id": "nodegoat-all", "seq": 74, "ts": "2026-11-02T08:29:46+0900", "tool": "llm_explain", "package": "semver", "ms": 3584, "chars": 86}
+{"run_id": "nodegoat-all", "seq": 75, "ts": "2026-11-02T08:29:51+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 2948}
+{"run_id": "nodegoat-all", "seq": 76, "ts": "2026-11-02T08:29:51+0900", "tool": "llm_explain", "package": "semver", "ms": 5183, "chars": 96}
+{"run_id": "nodegoat-all", "seq": 77, "ts": "2026-11-02T08:29:55+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 2495}
+{"run_id": "nodegoat-all", "seq": 78, "ts": "2026-11-02T08:29:55+0900", "tool": "llm_explain", "package": "send", "ms": 4058, "chars": 79}
+{"run_id": "nodegoat-all", "seq": 79, "ts": "2026-11-02T08:30:00+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 2312}
+{"run_id": "nodegoat-all", "seq": 80, "ts": "2026-11-02T08:30:00+0900", "tool": "llm_explain", "package": "serve-static", "ms": 4319, "chars": 90}
+{"run_id": "nodegoat-all", "seq": 81, "ts": "2026-11-02T08:30:03+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 1115}
+{"run_id": "nodegoat-all", "seq": 82, "ts": "2026-11-02T08:30:03+0900", "tool": "llm_explain", "package": "set-value", "ms": 3306, "chars": 111}
+{"run_id": "nodegoat-all", "seq": 83, "ts": "2026-11-02T08:30:08+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 1473}
+{"run_id": "nodegoat-all", "seq": 84, "ts": "2026-11-02T08:30:08+0900", "tool": "llm_explain", "package": "set-value", "ms": 4858, "chars": 104}
+{"run_id": "nodegoat-all", "seq": 85, "ts": "2026-11-02T08:30:15+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 3877}
+{"run_id": "nodegoat-all", "seq": 86, "ts": "2026-11-02T08:30:15+0900", "tool": "llm_explain", "package": "tar", "ms": 6913, "chars": 53}
+{"run_id": "nodegoat-all", "seq": 87, "ts": "2026-11-02T08:30:18+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 2850}
+{"run_id": "nodegoat-all", "seq": 88, "ts": "2026-11-02T08:30:18+0900", "tool": "llm_explain", "package": "uglify-js", "ms": 3484, "chars": 90}
+{"run_id": "nodegoat-all", "seq": 89, "ts": "2026-11-02T08:30:24+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 3961}
+{"run_id": "nodegoat-all", "seq": 90, "ts": "2026-11-02T08:30:24+0900", "tool": "llm_explain", "package": "y18n", "ms": 5623, "chars": 79}
+{"run_id": "nodegoat-all", "seq": 91, "ts": "2026-11-02T08:30:24+0900", "tool": "apply_branch", "round": 1, "ecosystem": "npm", "bumps": 33}
+{"run_id": "nodegoat-all", "seq": 92, "ts": "2026-11-02T08:30:28+0900", "tool": "sbom", "ms": 1145, "tool_name": "syft", "components": 348, "fallback": false}
+{"run_id": "nodegoat-all", "seq": 93, "ts": "2026-11-02T08:30:28+0900", "tool": "source_index", "ms": 47, "imported_modules": 23, "referenced_symbols": 47}
+{"run_id": "nodegoat-all", "seq": 94, "ts": "2026-11-02T08:30:28+0900", "tool": "vuln_lookup", "ms": 69, "alerts": 42, "incomplete": 0}
+{"run_id": "nodegoat-all", "seq": 95, "ts": "2026-11-02T08:30:28+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 3, "unseen": 39}
+{"run_id": "nodegoat-all", "seq": 96, "ts": "2026-11-02T08:30:28+0900", "tool": "rank", "ms": 0, "top": ["body-parser:GHSA-27r3-jxmh-p828:2.45", "swig:GHSA-2rq5-699j-x7p6:2.45", "minimist:GHSA-xvch-5gv4-984h:1.0"]}

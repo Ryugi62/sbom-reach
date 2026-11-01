@@ -1,29 +1,47 @@
-{"run_id": "pygoat-all", "seq": 1, "ts": "2026-10-30T08:10:14+0900", "tool": "sbom", "ms": 738, "tool_name": "syft", "components": 38, "fallback": false}
-{"run_id": "pygoat-all", "seq": 2, "ts": "2026-10-30T08:10:14+0900", "tool": "source_index", "ms": 37, "imported_modules": 36, "referenced_symbols": 272}
-{"run_id": "pygoat-all", "seq": 3, "ts": "2026-10-30T08:10:14+0900", "tool": "vuln_lookup", "ms": 81, "alerts": 201, "incomplete": 0}
-{"run_id": "pygoat-all", "seq": 4, "ts": "2026-10-30T08:10:14+0900", "tool": "reach_judge", "ms": 1, "reached": 9, "used": 50, "unseen": 142}
-{"run_id": "pygoat-all", "seq": 5, "ts": "2026-10-30T08:10:14+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-9jmf-237g-qf46:7.0", "django:GHSA-m9g8-fxxm-xg86:7.0"]}
-{"run_id": "pygoat-all", "seq": 6, "ts": "2026-10-30T08:10:15+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 7, "ts": "2026-10-30T08:10:15+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 8, "ts": "2026-10-30T08:10:17+0900", "tool": "llm_explain", "package": "requests", "ms": 1265, "chars": 173}
-{"run_id": "pygoat-all", "seq": 9, "ts": "2026-10-30T08:10:18+0900", "tool": "llm_explain", "package": "django-allauth", "ms": 1419, "chars": 134}
-{"run_id": "pygoat-all", "seq": 10, "ts": "2026-10-30T08:10:19+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 11, "ts": "2026-10-30T08:10:20+0900", "tool": "llm_explain", "package": "certifi", "ms": 1278, "chars": 148}
-{"run_id": "pygoat-all", "seq": 12, "ts": "2026-10-30T08:10:21+0900", "tool": "llm_explain", "package": "cryptography", "ms": 1047, "chars": 91}
-{"run_id": "pygoat-all", "seq": 13, "ts": "2026-10-30T08:10:21+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 14, "ts": "2026-10-30T08:10:22+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 15, "ts": "2026-10-30T08:10:22+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 16, "ts": "2026-10-30T08:10:23+0900", "tool": "llm_explain", "package": "pillow", "ms": 1136, "chars": 100}
-{"run_id": "pygoat-all", "seq": 17, "ts": "2026-10-30T08:10:24+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 18, "ts": "2026-10-30T08:10:24+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 19, "ts": "2026-10-30T08:10:24+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 20, "ts": "2026-10-30T08:10:25+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 21, "ts": "2026-10-30T08:10:25+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 22, "ts": "2026-10-30T08:10:26+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 23, "ts": "2026-10-30T08:10:26+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "pygoat-all", "seq": 24, "ts": "2026-10-30T08:10:26+0900", "tool": "apply_branch", "round": 1, "ecosystem": "PyPI", "bumps": 17}
-{"run_id": "pygoat-all", "seq": 25, "ts": "2026-10-30T08:10:28+0900", "tool": "sbom", "ms": 1783, "tool_name": "syft", "components": 37, "fallback": false}
-{"run_id": "pygoat-all", "seq": 26, "ts": "2026-10-30T08:10:28+0900", "tool": "source_index", "ms": 38, "imported_modules": 36, "referenced_symbols": 272}
-{"run_id": "pygoat-all", "seq": 27, "ts": "2026-10-30T08:10:29+0900", "tool": "vuln_lookup", "ms": 2, "alerts": 2, "incomplete": 0}
-{"run_id": "pygoat-all", "seq": 28, "ts": "2026-10-30T08:10:29+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 0, "unseen": 2}
-{"run_id": "pygoat-all", "seq": 29, "ts": "2026-10-30T08:10:29+0900", "tool": "rank", "ms": 0, "top": ["cryptography:GHSA-g6cj-pr64-35w5:0.7", "certifi:PYSEC-2026-4320:0.3"]}
+{"run_id": "pygoat-all", "seq": 1, "ts": "2026-11-02T08:18:37+0900", "tool": "sbom", "ms": 756, "tool_name": "syft", "components": 38, "fallback": false}
+{"run_id": "pygoat-all", "seq": 2, "ts": "2026-11-02T08:18:37+0900", "tool": "source_index", "ms": 38, "imported_modules": 36, "referenced_symbols": 242}
+{"run_id": "pygoat-all", "seq": 3, "ts": "2026-11-02T08:18:37+0900", "tool": "vuln_lookup", "ms": 136, "alerts": 201, "incomplete": 0}
+{"run_id": "pygoat-all", "seq": 4, "ts": "2026-11-02T08:18:37+0900", "tool": "reach_judge", "ms": 2, "reached": 5, "used": 54, "unseen": 142}
+{"run_id": "pygoat-all", "seq": 5, "ts": "2026-11-02T08:18:37+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-8qcx-xf44-272x:4.0", "django:GHSA-qcgg-j2x8-h9g8:4.0"]}
+{"run_id": "pygoat-all", "seq": 6, "ts": "2026-11-02T08:18:38+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat-all", "seq": 7, "ts": "2026-11-02T08:18:38+0900", "tool": "llm_explain", "package": "django", "ms": 0, "chars": 63}
+{"run_id": "pygoat-all", "seq": 8, "ts": "2026-11-02T08:18:38+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat-all", "seq": 9, "ts": "2026-11-02T08:18:38+0900", "tool": "llm_explain", "package": "flask", "ms": 0, "chars": 90}
+{"run_id": "pygoat-all", "seq": 10, "ts": "2026-11-02T08:18:38+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat-all", "seq": 11, "ts": "2026-11-02T08:18:38+0900", "tool": "llm_explain", "package": "requests", "ms": 0, "chars": 69}
+{"run_id": "pygoat-all", "seq": 12, "ts": "2026-11-02T08:18:39+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 769}
+{"run_id": "pygoat-all", "seq": 13, "ts": "2026-11-02T08:18:39+0900", "tool": "llm_explain", "package": "django-allauth", "ms": 770, "chars": 135}
+{"run_id": "pygoat-all", "seq": 14, "ts": "2026-11-02T08:18:43+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 985}
+{"run_id": "pygoat-all", "seq": 15, "ts": "2026-11-02T08:18:43+0900", "tool": "llm_explain", "package": "black", "ms": 4725, "chars": 92}
+{"run_id": "pygoat-all", "seq": 16, "ts": "2026-11-02T08:18:48+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 796}
+{"run_id": "pygoat-all", "seq": 17, "ts": "2026-11-02T08:18:48+0900", "tool": "llm_explain", "package": "certifi", "ms": 4321, "chars": 75}
+{"run_id": "pygoat-all", "seq": 18, "ts": "2026-11-02T08:18:52+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 1007}
+{"run_id": "pygoat-all", "seq": 19, "ts": "2026-11-02T08:18:52+0900", "tool": "llm_explain", "package": "cryptography", "ms": 4721, "chars": 79}
+{"run_id": "pygoat-all", "seq": 20, "ts": "2026-11-02T08:18:57+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 897}
+{"run_id": "pygoat-all", "seq": 21, "ts": "2026-11-02T08:18:57+0900", "tool": "llm_explain", "package": "idna", "ms": 4399, "chars": 123}
+{"run_id": "pygoat-all", "seq": 22, "ts": "2026-11-02T08:19:01+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 1010}
+{"run_id": "pygoat-all", "seq": 23, "ts": "2026-11-02T08:19:01+0900", "tool": "llm_explain", "package": "jinja2", "ms": 4623, "chars": 91}
+{"run_id": "pygoat-all", "seq": 24, "ts": "2026-11-02T08:19:06+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 863}
+{"run_id": "pygoat-all", "seq": 25, "ts": "2026-11-02T08:19:06+0900", "tool": "llm_explain", "package": "oauthlib", "ms": 4366, "chars": 105}
+{"run_id": "pygoat-all", "seq": 26, "ts": "2026-11-02T08:19:10+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 775}
+{"run_id": "pygoat-all", "seq": 27, "ts": "2026-11-02T08:19:10+0900", "tool": "llm_explain", "package": "pillow", "ms": 4419, "chars": 80}
+{"run_id": "pygoat-all", "seq": 28, "ts": "2026-11-02T08:19:15+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 881}
+{"run_id": "pygoat-all", "seq": 29, "ts": "2026-11-02T08:19:15+0900", "tool": "llm_explain", "package": "pyjwt", "ms": 4616, "chars": 78}
+{"run_id": "pygoat-all", "seq": 30, "ts": "2026-11-02T08:19:19+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 1009}
+{"run_id": "pygoat-all", "seq": 31, "ts": "2026-11-02T08:19:19+0900", "tool": "llm_explain", "package": "pyyaml", "ms": 4637, "chars": 143}
+{"run_id": "pygoat-all", "seq": 32, "ts": "2026-11-02T08:19:24+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 871}
+{"run_id": "pygoat-all", "seq": 33, "ts": "2026-11-02T08:19:24+0900", "tool": "llm_explain", "package": "sqlparse", "ms": 4372, "chars": 119}
+{"run_id": "pygoat-all", "seq": 34, "ts": "2026-11-02T08:19:28+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 885}
+{"run_id": "pygoat-all", "seq": 35, "ts": "2026-11-02T08:19:28+0900", "tool": "llm_explain", "package": "urllib3", "ms": 4525, "chars": 101}
+{"run_id": "pygoat-all", "seq": 36, "ts": "2026-11-02T08:19:33+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 808}
+{"run_id": "pygoat-all", "seq": 37, "ts": "2026-11-02T08:19:33+0900", "tool": "llm_explain", "package": "werkzeug", "ms": 4432, "chars": 64}
+{"run_id": "pygoat-all", "seq": 38, "ts": "2026-11-02T08:19:37+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 861}
+{"run_id": "pygoat-all", "seq": 39, "ts": "2026-11-02T08:19:37+0900", "tool": "llm_explain", "package": "werkzeug", "ms": 4561, "chars": 104}
+{"run_id": "pygoat-all", "seq": 40, "ts": "2026-11-02T08:19:42+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 830}
+{"run_id": "pygoat-all", "seq": 41, "ts": "2026-11-02T08:19:42+0900", "tool": "llm_explain", "package": "zipp", "ms": 4473, "chars": 95}
+{"run_id": "pygoat-all", "seq": 42, "ts": "2026-11-02T08:19:42+0900", "tool": "apply_branch", "round": 1, "ecosystem": "PyPI", "bumps": 17}
+{"run_id": "pygoat-all", "seq": 43, "ts": "2026-11-02T08:19:43+0900", "tool": "sbom", "ms": 1126, "tool_name": "syft", "components": 37, "fallback": false}
+{"run_id": "pygoat-all", "seq": 44, "ts": "2026-11-02T08:19:43+0900", "tool": "source_index", "ms": 38, "imported_modules": 36, "referenced_symbols": 242}
+{"run_id": "pygoat-all", "seq": 45, "ts": "2026-11-02T08:19:43+0900", "tool": "vuln_lookup", "ms": 7, "alerts": 2, "incomplete": 0}
+{"run_id": "pygoat-all", "seq": 46, "ts": "2026-11-02T08:19:43+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 0, "unseen": 2}
+{"run_id": "pygoat-all", "seq": 47, "ts": "2026-11-02T08:19:43+0900", "tool": "rank", "ms": 0, "top": ["cryptography:GHSA-g6cj-pr64-35w5:0.7", "certifi:PYSEC-2026-4320:0.3"]}

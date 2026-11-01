@@ -1,0 +1,327 @@
+{
+ "name": "openrefine",
+ "repo": "/Users/ryugi62/untrusted/OpenRefine",
+ "sbom_tool": "pom.xml 해석기",
+ "fallback_used": false,
+ "components": 58,
+ "elapsed_sec": 4.67,
+ "stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "incomplete": [],
+ "counts": {
+  "alerts": 8,
+  "REACHED": 0,
+  "USED": 4,
+  "UNSEEN": 4,
+  "REACHED_weak": 0,
+  "REACHED_flagged": 0
+ },
+ "alerts": [
+  {
+   "rank": 1,
+   "score": 2.45,
+   "package": "org.eclipse.jetty:jetty-server",
+   "version": "10.0.19",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-9299-c6m4-mjhc",
+   "severity": "HIGH",
+   "fixed": [
+    "10.0.23",
+    "11.0.23"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 60,
+     "text": "import org.eclipse.jetty.server.HttpConfiguration;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 61,
+     "text": "import org.eclipse.jetty.server.HttpConnectionFactory;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 62,
+     "text": "import org.eclipse.jetty.server.Server;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 63,
+     "text": "import org.eclipse.jetty.server.ServerConnector;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 64,
+     "text": "import org.eclipse.jetty.server.handler.StatisticsHandler;"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "score": 1.4,
+   "package": "commons-lang:commons-lang",
+   "version": "2.6",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-j288-q9x7-2f5v",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "main/src/com/google/refine/operations/cell/KeyValueColumnizeOperation.java",
+     "line": 46,
+     "text": "import org.apache.commons.lang.Validate;"
+    },
+    {
+     "path": "main/src/com/google/refine/operations/cell/MassEditOperation.java",
+     "line": 48,
+     "text": "import org.apache.commons.lang.Validate;"
+    },
+    {
+     "path": "main/src/com/google/refine/operations/cell/MultiValuedCellJoinOperation.java",
+     "line": 44,
+     "text": "import org.apache.commons.lang.Validate;"
+    },
+    {
+     "path": "main/src/com/google/refine/operations/cell/MultiValuedCellSplitOperation.java",
+     "line": 47,
+     "text": "import org.apache.commons.lang.Validate;"
+    },
+    {
+     "path": "main/src/com/google/refine/operations/cell/TransposeColumnsIntoRowsOperation.java",
+     "line": 47,
+     "text": "import org.apache.commons.lang.Validate;"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 1.4,
+   "package": "org.eclipse.jetty:jetty-server",
+   "version": "10.0.19",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-7p3p-8qv8-m2vh",
+   "severity": "MODERATE",
+   "fixed": [
+    "12.0.35",
+    "12.1.9"
+   ],
+   "symbols": [
+    "HttpURI",
+    "Host",
+    "Forwarded"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Forwarded, Host, HttpURI 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 60,
+     "text": "import org.eclipse.jetty.server.HttpConfiguration;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 61,
+     "text": "import org.eclipse.jetty.server.HttpConnectionFactory;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 62,
+     "text": "import org.eclipse.jetty.server.Server;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 63,
+     "text": "import org.eclipse.jetty.server.ServerConnector;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 64,
+     "text": "import org.eclipse.jetty.server.handler.StatisticsHandler;"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "score": 1.4,
+   "package": "org.eclipse.jetty:jetty-server",
+   "version": "10.0.19",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-g8m5-722r-8whq",
+   "severity": "MODERATE",
+   "fixed": [
+    "12.0.9",
+    "10.0.24",
+    "11.0.24",
+    "9.4.56"
+   ],
+   "symbols": [
+    "ThreadLimitHandler.getRemote",
+    "ThreadLimitHandler",
+    "QoSHandler"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 QoSHandler, ThreadLimitHandler, getRemote 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 60,
+     "text": "import org.eclipse.jetty.server.HttpConfiguration;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 61,
+     "text": "import org.eclipse.jetty.server.HttpConnectionFactory;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 62,
+     "text": "import org.eclipse.jetty.server.Server;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 63,
+     "text": "import org.eclipse.jetty.server.ServerConnector;"
+    },
+    {
+     "path": "server/src/com/google/refine/Refine.java",
+     "line": 64,
+     "text": "import org.eclipse.jetty.server.handler.StatisticsHandler;"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "score": 0.4,
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-fhx5-2xqw-2cgm",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "ClientMessage.validateLocalFileName",
+    "DatabaseMetaData.getImportedKeys",
+    "getExportedKeys",
+    "getImportedKeys",
+    "java.sql",
+    "ResultSet.updateRow",
+    "allowLocalInfile"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 6,
+   "score": 0.4,
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-grfq-r75j-rw9x",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "character_set_client",
+    "character_set_results",
+    "session_track_system_variables",
+    "utf8",
+    "utf8mb3",
+    "utf8mb4"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 7,
+   "score": 0.4,
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-h599-m3w5-9m7x",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "OkPacket.parse",
+    "parseWithInfo",
+    "len",
+    "ArrayIndexOutOfBoundsException",
+    "ReadableByteBuf.checkLength",
+    "OutOfMemoryError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 8,
+   "score": 0.1,
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-4jq2-8v3c-97w8",
+   "severity": "LOW",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "XAResource.recover",
+    "gtrid_length",
+    "bqual_length",
+    "MariaDbPoolConnection",
+    "MariaDbPoolPinnedConnection",
+    "Xid",
+    "Xid.MAXGTRIDSIZE",
+    "Xid.MAXBQUALSIZE",
+    "NegativeArraySizeException",
+    "ArrayIndexOutOfBoundsException",
+    "XAException"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+{"run_id": "dolphinscheduler", "seq": 1, "ts": "2026-11-02T08:31:38+0900", "tool": "sbom", "ms": 442, "tool_name": "pom.xml 해석기", "components": 112, "fallback": false, "pom_stat": {"poms": 145, "parse_errors": 0, "total_declared": 711, "test_scope": 42, "internal": 460, "unresolved": 40, "resolved": 112}}
+{"run_id": "dolphinscheduler", "seq": 2, "ts": "2026-11-02T08:31:49+0900", "tool": "source_index", "ms": 11205, "imported_modules": 4040, "referenced_symbols": 672}
+{"run_id": "dolphinscheduler", "seq": 3, "ts": "2026-11-02T08:31:49+0900", "tool": "vuln_lookup", "ms": 412, "alerts": 80, "incomplete": 0}
+{"run_id": "dolphinscheduler", "seq": 4, "ts": "2026-11-02T08:31:51+0900", "tool": "reach_judge", "ms": 2156, "reached": 2, "used": 52, "unseen": 26}
+{"run_id": "dolphinscheduler", "seq": 5, "ts": "2026-11-02T08:31:51+0900", "tool": "rank", "ms": 3, "top": ["com.fasterxml.jackson.core:jackson-databind:GHSA-3wrr-7qpf-2prh:4.0", "com.fasterxml.jackson.core:jackson-databind:GHSA-3wrr-7qpf-2prh:4.0", "com.baomidou:mybatis-plus:GHSA-32qq-m9fh-f74w:3.5"]}

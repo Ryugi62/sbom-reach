@@ -74,8 +74,8 @@
       "GHSA-xxj9-f6rv-m3x4"
      ],
      "direct": true,
-     "text": "django 4.2 → 5.2.17: requirements 고정 버전을 올립니다. 경보 51건(GHSA-2mcm-79hx-8fxw, GHSA-33mw-q7rj-mjwj, GHSA-3h9f-r86x-qvjx 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "패키지 django의 버전을 현재 4.2에서 5.2.17로 올립니다. \n다수의 경보에 대해 판정 도달 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "flask",
@@ -86,8 +86,8 @@
       "GHSA-68rp-wp8r-4726"
      ],
      "direct": true,
-     "text": "flask 2.3.3 → 3.1.3: requirements 고정 버전을 올립니다. 경보 1건(GHSA-68rp-wp8r-4726) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "GHSA-68rp-wp8r-4726 경보와 관련하여 flask 패키지를 현재 2.3.3 버전에서 목표 3.1.3 버전으로 올립니다. 현재 판정은 도달 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "requests",
@@ -101,7 +101,7 @@
       "GHSA-j8r2-6x86-q33q"
      ],
      "direct": true,
-     "text": "requests 패키지의 현재 버전 2.28.2는 목표 버전 2.33.0에 도달했습니다. GHSA-9hjg-9r4m-mvj7, GHSA-9wx4-h78v-vm56, GHSA-gc5v-m9x4-r6x2, GHSA-j8r2-6x86-q33q 경보를 해결하기 위해 requests 패키지를 2.33.0으로 올립니다.",
+     "text": "requests 패키지의 현재 버전 2.28.2는 네 건의 경보에 대해 도달 판정 상태이므로 2.33.0 버전으로 올립니다.",
      "text_source": "llm"
     },
     {
@@ -115,7 +115,7 @@
       "GHSA-qhmc-3mvr-f2j4"
      ],
      "direct": true,
-     "text": "django-allauth 패키지는 현재 0.52.0 버전이 사용 중이며, 목표 버전 65.14.1로 올립니다. GHSA-2jpr-83rg-v67j, GHSA-8m3c-c723-h4p4, GHSA-qhmc-3mvr-f2j4 경보가 있습니다.",
+     "text": "현재 사용 중인 `django-allauth` 0.52.0 버전을 목표 65.14.1 버전으로 올립니다. 관련 경보로는 GHSA-2jpr-83rg-v67j, GHSA-8m3c-c723-h4p4, GHSA-qhmc-3mvr-f2j4가 있습니다.",
      "text_source": "llm"
     },
     {
@@ -129,8 +129,8 @@
       "PYSEC-2026-2120"
      ],
      "direct": true,
-     "text": "black 26.1.0 → 26.10.1: requirements 고정 버전을 올립니다. 경보 3건(GHSA-3936-cmfr-pm3m, GHSA-cg8m-r9f2-5wm2, PYSEC-2026-2120) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "black 패키지를 현재 26.1.0 버전에서 26.10.1 버전으로 올립니다. GHSA-3936-cmfr-pm3m 외 2건의 경보에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "certifi",
@@ -143,7 +143,7 @@
       "GHSA-xqr8-7jwr-rhp7"
      ],
      "direct": true,
-     "text": "certifi 패키지의 현재 버전은 2022.12.7이며, 목표 버전 2026.10.18로 올립니다. 이 패키지는 GHSA-248v-346w-9cwc, GHSA-6q48-6c7w-9gw2, GHSA-xqr8-7jwr-rhp7 경보와 관련하여 판정 미확인 상태입니다.",
+     "text": "패키지 certifi의 버전을 현재 2022.12.7에서 목표 2026.10.18로 올립니다. 해당 패키지의 영향은 미확인 상태입니다.",
      "text_source": "llm"
     },
     {
@@ -167,7 +167,7 @@
       "PYSEC-2026-3554"
      ],
      "direct": true,
-     "text": "cryptography 패키지를 39.0.1에서 49.0.0으로 올립니다. 현재 판정은 미확인이며, GHSA-3ww4-gg4f-jr7f 외 11개 경보가 있습니다.",
+     "text": "패키지 cryptography의 현재 버전 39.0.1을 목표 버전 49.0.0으로 올립니다. 해당 패키지의 취약점 판정은 미확인 상태입니다.",
      "text_source": "llm"
     },
     {
@@ -180,8 +180,8 @@
       "GHSA-jjg7-2v4v-x38h"
      ],
      "direct": true,
-     "text": "idna 3.4 → 3.15: requirements 고정 버전을 올립니다. 경보 2건(GHSA-65pc-fj4g-8rjx, GHSA-jjg7-2v4v-x38h) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 idna의 버전을 미확인 판정된 경보 GHSA-65pc-fj4g-8rjx 및 GHSA-jjg7-2v4v-x38h에 대응하여 현재 3.4에서 3.15로 올립니다. 본 조치안은 제공된 사실만을 바탕으로 작성되었습니다.",
+     "text_source": "llm"
     },
     {
      "package": "jinja2",
@@ -196,8 +196,8 @@
       "GHSA-q2x7-8rv6-6q7h"
      ],
      "direct": true,
-     "text": "jinja2 3.1.2 → 3.1.6: requirements 고정 버전을 올립니다. 경보 5건(GHSA-cpwx-vrp4-4pq7, GHSA-gmj6-6f8f-6699, GHSA-h5c8-rqwp-cp95 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 jinja2의 버전을 현재 3.1.2에서 3.1.6으로 올립니다. 해당 경보(GHSA-cpwx-vrp4-4pq7 외 4건)에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "oauthlib",
@@ -209,8 +209,8 @@
       "GHSA-xpv3-w29h-x7cv"
      ],
      "direct": true,
-     "text": "oauthlib 3.2.2 → 4.0.0: requirements 고정 버전을 올립니다. 경보 2건(GHSA-hj66-6f7g-4r5v, GHSA-xpv3-w29h-x7cv) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "패키지 oauthlib 버전을 현재 3.2.2에서 4.0.0으로 올립니다. GHSA-hj66-6f7g-4r5v 및 GHSA-xpv3-w29h-x7cv 경보에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "pillow",
@@ -280,7 +280,7 @@
       "GHSA-xvh5-g6gv-559v"
      ],
      "direct": true,
-     "text": "pillow 패키지의 현재 버전 12.1.0은 미확인 판정이며, 목표 버전 13.0.0으로 올립니다. 다수의 경보(GHSA-22hg-r758-rrw9 외 60개)가 확인되었습니다.",
+     "text": "패키지 pillow의 판정은 미확인 상태이며, 현재 버전 12.1.0에서 목표 버전 13.0.0으로 올립니다. 관련 경보는 60건이 존재합니다.",
      "text_source": "llm"
     },
     {
@@ -305,8 +305,8 @@
       "PYSEC-2025-183"
      ],
      "direct": true,
-     "text": "pyjwt 2.4.0 → 2.15.0: requirements 고정 버전을 올립니다. 경보 14건(GHSA-2gx3-rcp4-g85q, GHSA-42vr-xj54-vc7v, GHSA-752w-5fwx-jx9f 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 pyjwt 2.4.0 버전의 보안 판정은 미확인 상태이며, 목표 버전인 2.15.0으로 올립니다. 관련 경보는 총 14건이 존재합니다.",
+     "text_source": "llm"
     },
     {
      "package": "pyyaml",
@@ -319,8 +319,8 @@
       "GHSA-8q59-q68h-6hv4"
      ],
      "direct": true,
-     "text": "pyyaml 5.1 → 5.4: requirements 고정 버전을 올립니다. 경보 3건(GHSA-3pqx-4fqf-j49f, GHSA-6757-jp84-gxfx, GHSA-8q59-q68h-6hv4) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "보안 운영 담당자께서는 패키지 pyyaml의 버전을 현재 5.1에서 5.4로 올립니다. 해당 패키지의 판정은 미확인 상태이며 GHSA-3pqx-4fqf-j49f, GHSA-6757-jp84-gxfx, GHSA-8q59-q68h-6hv4 경보가 발생했습니다.",
+     "text_source": "llm"
     },
     {
      "package": "sqlparse",
@@ -338,8 +338,8 @@
       "GHSA-rrm6-wvj7-cwh2"
      ],
      "direct": true,
-     "text": "sqlparse 0.3.1 → 0.6.0: requirements 고정 버전을 올립니다. 경보 8건(GHSA-27jp-wm6q-gp25, GHSA-2m57-hf25-phgg, GHSA-3496-9g83-7v6x 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 0.3.1 버전인 `sqlparse` 패키지의 취약점 판정은 미확인 상태이며, 목표 0.6.0 버전으로 올립니다. 보안 운영 담당자는 경보(GHSA-27jp-wm6q-gp25 등 8건)를 참고하시기 바랍니다.",
+     "text_source": "llm"
     },
     {
      "package": "urllib3",
@@ -359,8 +359,8 @@
       "GHSA-vxq7-64xx-v4gw"
      ],
      "direct": true,
-     "text": "urllib3 1.26.9 → 2.8.0: requirements 고정 버전을 올립니다. 경보 10건(GHSA-2xpw-w6gg-jr37, GHSA-34jh-p97f-mpxf, GHSA-38jv-5279-wg99 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "urllib3 패키지의 현재 버전 1.26.9를 목표 버전 2.8.0으로 올립니다. 해당 판정은 미확인 상태이며, GHSA-2xpw-w6gg-jr37 등 10건의 경보가 존재합니다.",
+     "text_source": "llm"
     },
     {
      "package": "werkzeug",
@@ -380,8 +380,8 @@
       "GHSA-xg9f-g7g7-2323"
      ],
      "direct": true,
-     "text": "werkzeug 2.1.2 → 3.1.9: requirements 고정 버전을 올립니다. 경보 10건(GHSA-29vq-49wr-vm6x, GHSA-2g68-c3qc-8985, GHSA-87hc-h4r5-73f7 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 2.1.2 버전인 werkzeug 패키지를 목표 3.1.9 버전으로 올립니다. 해당 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "werkzeug",
@@ -399,8 +399,8 @@
       "GHSA-q34m-jh98-gwm2"
      ],
      "direct": true,
-     "text": "werkzeug 2.3.7 → 3.1.9: requirements 고정 버전을 올립니다. 경보 8건(GHSA-29vq-49wr-vm6x, GHSA-2g68-c3qc-8985, GHSA-87hc-h4r5-73f7 외) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "현재 werkzeug 2.3.7 버전의 취약점 판정은 미확인 상태이므로, 목표 버전인 3.1.9로 올립니다. 보안 운영 담당자께서는 해당 경보들에 대응하여 조치를 진행해 주시기 바랍니다.",
+     "text_source": "llm"
     },
     {
      "package": "zipp",
@@ -411,8 +411,8 @@
       "GHSA-jfmj-5v4g-7637"
      ],
      "direct": true,
-     "text": "zipp 3.8.0 → 3.19.1: requirements 고정 버전을 올립니다. 경보 1건(GHSA-jfmj-5v4g-7637) 해소 대상, 판정 미확인.",
-     "text_source": "template"
+     "text": "경보 GHSA-jfmj-5v4g-7637에 해당하는 zipp 패키지의 현재 버전 3.8.0을 목표 버전 3.19.1로 올립니다. 본 조치에 대한 판정은 미확인 상태입니다.",
+     "text_source": "llm"
     }
    ]
   }
@@ -430,9 +430,9 @@
   "resolved": 193,
   "remaining": 0,
   "new": 2,
-  "reached_before": 9,
+  "reached_before": 5,
   "reached_after": 0,
-  "used_before": 50,
+  "used_before": 54,
   "used_after": 0
  },
  "after_stage_status": {
@@ -444,6 +444,6 @@
  },
  "after_incomplete": [],
  "reached_after_items": [],
- "llm_texts": 5,
+ "llm_texts": 18,
  "unfixed_alerts_after": 0
 }

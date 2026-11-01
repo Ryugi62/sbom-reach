@@ -1,0 +1,3322 @@
+{
+ "name": "dolphinscheduler",
+ "repo": "/Users/ryugi62/untrusted/dolphinscheduler",
+ "sbom_tool": "pom.xml 해석기",
+ "fallback_used": false,
+ "components": 112,
+ "elapsed_sec": 14.35,
+ "stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "incomplete": [],
+ "counts": {
+  "alerts": 80,
+  "REACHED": 2,
+  "USED": 52,
+  "UNSEEN": 26,
+  "REACHED_weak": 0,
+  "REACHED_flagged": 0
+ },
+ "alerts": [
+  {
+   "rank": 1,
+   "score": 4.0,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-3wrr-7qpf-2prh",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "JsonNode",
+    "JsonNode.toString",
+    "toString"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "가져온 클래스 JsonNode 를 쓰는 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 134,
+     "text": "for (JsonNode jsonNode : list) {"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/utils/SensitivePropertyUtils.java",
+     "line": 357,
+     "text": "JsonNode localParamsNode = taskParamsNode.findValue(LOCAL_PARAMS);"
+    },
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/JSONUtils.java",
+     "line": 101,
+     "text": "public static JsonNode toJsonNode(Object obj) {"
+    },
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/JSONUtils.java",
+     "line": 231,
+     "text": "public static String findValue(JsonNode jsonNode, String fieldName) {"
+    },
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/JSONUtils.java",
+     "line": 232,
+     "text": "JsonNode node = jsonNode.findValue(fieldName);"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "score": 4.0,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-3wrr-7qpf-2prh",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "JsonNode",
+    "JsonNode.toString",
+    "toString"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "가져온 클래스 JsonNode 를 쓰는 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 134,
+     "text": "for (JsonNode jsonNode : list) {"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/utils/SensitivePropertyUtils.java",
+     "line": 357,
+     "text": "JsonNode localParamsNode = taskParamsNode.findValue(LOCAL_PARAMS);"
+    },
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/JSONUtils.java",
+     "line": 101,
+     "text": "public static JsonNode toJsonNode(Object obj) {"
+    },
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/JSONUtils.java",
+     "line": 231,
+     "text": "public static String findValue(JsonNode jsonNode, String fieldName) {"
+    },
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/JSONUtils.java",
+     "line": 232,
+     "text": "JsonNode node = jsonNode.findValue(fieldName);"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 3.5,
+   "package": "com.baomidou:mybatis-plus",
+   "version": "3.5.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-32qq-m9fh-f74w",
+   "severity": "CRITICAL",
+   "fixed": [
+    "3.5.3.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/security/AuthenticationType.java",
+     "line": 20,
+     "text": "import com.baomidou.mybatisplus.annotation.EnumValue;"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/security/LdapUserNotExistActionType.java",
+     "line": 20,
+     "text": "import com.baomidou.mybatisplus.annotation.EnumValue;"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/service/impl/AccessTokenServiceImpl.java",
+     "line": 44,
+     "text": "import com.baomidou.mybatisplus.core.metadata.IPage;"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/service/impl/AccessTokenServiceImpl.java",
+     "line": 45,
+     "text": "import com.baomidou.mybatisplus.extension.plugins.pagination.Page;"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/service/impl/AlertGroupServiceImpl.java",
+     "line": 52,
+     "text": "import com.baomidou.mybatisplus.core.metadata.IPage;"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "score": 2.45,
+   "package": "com.google.guava:guava",
+   "version": "31.1-jre",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-xxph-c9ww-hj94",
+   "severity": "HIGH",
+   "fixed": [
+    "33.7.2"
+   ],
+   "symbols": [
+    "CompactHashMap",
+    "CompactHashSet",
+    "MapMakerInternalMap",
+    "elementCount",
+    "initialCapacity",
+    "allocArrays",
+    "CompactHashing.MAX_SIZE",
+    "OutOfMemoryError",
+    "CompactHashMap.readObject",
+    "put",
+    "expectedSize",
+    "table",
+    "CompactHashSet.readObject",
+    "CompactLinkedHashMap",
+    "CompactLinkedHashSet",
+    "MapMaker",
+    "newSegment",
+    "Segment",
+    "newTable",
+    "AtomicDoubleArray",
+    "CompoundOrdering",
+    "AtomicDoubleArray.readObject",
+    "ImmutableLongArray.Builder",
+    "HashBiMap.readObject",
+    "ObjectInputStream.readObject",
+    "readObject",
+    "init"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 AtomicDoubleArray, Builder, CompactHashMap, CompactHashSet, CompactLinkedHashMap, CompactLinkedHashSet, CompoundOrdering, MAX_SIZE, MapMaker, MapMakerInternalMap, OutOfMemoryError, Segment, allocArrays, elementCount, expectedSize, init, initialCapacity, newSegment, newTable, put, readObject, table 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-pagerduty/src/main/java/org/apache/dolphinscheduler/plugin/alert/pagerduty/PagerDutySender.java",
+     "line": 42,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-slack/src/main/java/org/apache/dolphinscheduler/plugin/alert/slack/SlackSender.java",
+     "line": 45,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-webexteams/src/main/java/org/apache/dolphinscheduler/plugin/alert/webexteams/WebexTeamsDestination.java",
+     "line": 28,
+     "text": "import com.google.common.base.Functions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-webexteams/src/main/java/org/apache/dolphinscheduler/plugin/alert/webexteams/WebexTeamsSender.java",
+     "line": 42,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-server/src/main/java/org/apache/dolphinscheduler/alert/service/AbstractEventSender.java",
+     "line": 20,
+     "text": "import static com.google.common.base.Preconditions.checkNotNull;"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-57j2-w4cx-62h2",
+   "severity": "HIGH",
+   "fixed": [
+    "2.13.2.1",
+    "2.12.6.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-cxp5-3px4-pw24",
+   "severity": "HIGH",
+   "fixed": [
+    "2.21.7",
+    "2.18.11",
+    "2.22.3"
+   ],
+   "symbols": [
+    "equals"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 equals 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-j3rv-43j4-c7qm",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.8",
+    "3.1.4",
+    "2.21.4"
+   ],
+   "symbols": [
+    "PolymorphicTypeValidator",
+    "DatabindContext._resolveAndValidateGeneric",
+    "TypeFactory.constructFromCanonical",
+    "java.util.ArrayList",
+    "com.evil.Gadget",
+    "BasicPolymorphicTypeValidator",
+    "TemplatesImpl",
+    "Wrapper.value",
+    "com.evil.EvilGadget",
+    "cmd",
+    "InvalidTypeIdException",
+    "ArrayList",
+    "HashMap",
+    "Enum"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 ArrayList, BasicPolymorphicTypeValidator, Enum, EvilGadget, Gadget, HashMap, InvalidTypeIdException, PolymorphicTypeValidator, TemplatesImpl, _resolveAndValidateGeneric, cmd, constructFromCanonical, value 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-jjjh-jjxp-wpff",
+   "severity": "HIGH",
+   "fixed": [
+    "2.12.7.1",
+    "2.13.4.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-rgv9-q543-rqg4",
+   "severity": "HIGH",
+   "fixed": [
+    "2.12.7.1",
+    "2.13.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-rmj7-2vxq-3g9f",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "allowIfSubTypeIsArray",
+    "EvilType",
+    "BasicPolymorphicTypeValidator",
+    "PolymorphicTypeValidator"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BasicPolymorphicTypeValidator, EvilType, PolymorphicTypeValidator, allowIfSubTypeIsArray 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-wv8q-qhhj-9h54",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.11",
+    "2.21.7",
+    "2.22.3"
+   ],
+   "symbols": [
+    "TypeDeserializerBase._deserializers",
+    "TypeDeserializerBase._findDeserializer",
+    "typeId",
+    "_deserializers",
+    "defaultImpl"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 _deserializers, _findDeserializer, defaultImpl, typeId 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-7hhh-6rmp-j9qf",
+   "severity": "HIGH",
+   "fixed": [
+    "2.21.7",
+    "2.22.3",
+    "2.18.11"
+   ],
+   "symbols": [
+    "UTF8DataInputJsonParser._reportInvalidToken",
+    "StringBuilder",
+    "ErrorReportConfiguration.getMaxErrorTokenLength",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "NonBlockingUtf8JsonParserBase",
+    "DataInput",
+    "JsonFactory",
+    "maxDocumentLength",
+    "ReadConstrainedTextBuffer",
+    "maxStringLength",
+    "InputStream",
+    "OutOfMemoryError",
+    "maxErrorTokenLength",
+    "ParserMinimalBase"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 DataInput, InputStream, JsonFactory, NonBlockingUtf8JsonParserBase, OutOfMemoryError, ParserMinimalBase, ReadConstrainedTextBuffer, ReaderBasedJsonParser, StringBuilder, UTF8StreamJsonParser, _reportInvalidToken, getMaxErrorTokenLength, maxDocumentLength, maxErrorTokenLength, maxStringLength 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/pages/workflow/WorkflowDefinitionPage.java",
+     "line": 38,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.core.JsonGenerator;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.JsonParser;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 44,
+     "text": "import com.fasterxml.jackson.core.JsonProcessingException;"
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-h46c-h94j-95f3",
+   "severity": "HIGH",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/pages/workflow/WorkflowDefinitionPage.java",
+     "line": 38,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.core.JsonGenerator;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.JsonParser;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 44,
+     "text": "import com.fasterxml.jackson.core.JsonProcessingException;"
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-r7wm-3cxj-wff9",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.8",
+    "2.21.4"
+   ],
+   "symbols": [
+    "b0c428e6",
+    "validateIntegerLength",
+    "_setIntLength",
+    "_textBuffer.expandCurrentSegment",
+    "maxStringLength",
+    "maxNumberLength",
+    "_finishFloatFraction",
+    "NonBlockingUtf8JsonParserBase.java",
+    "tools.jackson.core",
+    "NonBlockingUtf8JsonParserBase",
+    "_finishNumberIntegralPart",
+    "JsonFactory.createNonBlockingByteArrayParser",
+    "createNonBlockingByteBufferParser",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "ParserBase._reportTooLongIntegral",
+    "StreamReadConstraints.getMaxNumberLength",
+    "endOfInput",
+    "JsonFactory",
+    "feedInput",
+    "_textBuffer",
+    "StreamConstraintsException",
+    "decodeToMono",
+    "Jackson2Tokenizer",
+    "_updateTokenToNA",
+    "JsonToken.NOT_AVAILABLE",
+    "_intLength",
+    "tonghuaroot"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Jackson2Tokenizer, JsonFactory, NOT_AVAILABLE, NonBlockingUtf8JsonParserBase, ReaderBasedJsonParser, StreamConstraintsException, UTF8StreamJsonParser, _finishFloatFraction, _finishNumberIntegralPart, _intLength, _reportTooLongIntegral, _setIntLength, _textBuffer, _updateTokenToNA, b0c428e6, core, createNonBlockingByteArrayParser, createNonBlockingByteBufferParser, decodeToMono, endOfInput, expandCurrentSegment, feedInput, getMaxNumberLength, java, maxNumberLength, maxStringLength, tonghuaroot, validateIntegerLength 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/pages/workflow/WorkflowDefinitionPage.java",
+     "line": 38,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.core.JsonGenerator;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.JsonParser;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 44,
+     "text": "import com.fasterxml.jackson.core.JsonProcessingException;"
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-cxp5-3px4-pw24",
+   "severity": "HIGH",
+   "fixed": [
+    "2.21.7",
+    "2.18.11",
+    "2.22.3"
+   ],
+   "symbols": [
+    "equals"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 equals 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-j3rv-43j4-c7qm",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.8",
+    "3.1.4",
+    "2.21.4"
+   ],
+   "symbols": [
+    "PolymorphicTypeValidator",
+    "DatabindContext._resolveAndValidateGeneric",
+    "TypeFactory.constructFromCanonical",
+    "java.util.ArrayList",
+    "com.evil.Gadget",
+    "BasicPolymorphicTypeValidator",
+    "TemplatesImpl",
+    "Wrapper.value",
+    "com.evil.EvilGadget",
+    "cmd",
+    "InvalidTypeIdException",
+    "ArrayList",
+    "HashMap",
+    "Enum"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 ArrayList, BasicPolymorphicTypeValidator, Enum, EvilGadget, Gadget, HashMap, InvalidTypeIdException, PolymorphicTypeValidator, TemplatesImpl, _resolveAndValidateGeneric, cmd, constructFromCanonical, value 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-jjjh-jjxp-wpff",
+   "severity": "HIGH",
+   "fixed": [
+    "2.12.7.1",
+    "2.13.4.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-rmj7-2vxq-3g9f",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "allowIfSubTypeIsArray",
+    "EvilType",
+    "BasicPolymorphicTypeValidator",
+    "PolymorphicTypeValidator"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BasicPolymorphicTypeValidator, EvilType, PolymorphicTypeValidator, allowIfSubTypeIsArray 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-wv8q-qhhj-9h54",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.11",
+    "2.21.7",
+    "2.22.3"
+   ],
+   "symbols": [
+    "TypeDeserializerBase._deserializers",
+    "TypeDeserializerBase._findDeserializer",
+    "typeId",
+    "_deserializers",
+    "defaultImpl"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 _deserializers, _findDeserializer, defaultImpl, typeId 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-7hhh-6rmp-j9qf",
+   "severity": "HIGH",
+   "fixed": [
+    "2.21.7",
+    "2.22.3",
+    "2.18.11"
+   ],
+   "symbols": [
+    "UTF8DataInputJsonParser._reportInvalidToken",
+    "StringBuilder",
+    "ErrorReportConfiguration.getMaxErrorTokenLength",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "NonBlockingUtf8JsonParserBase",
+    "DataInput",
+    "JsonFactory",
+    "maxDocumentLength",
+    "ReadConstrainedTextBuffer",
+    "maxStringLength",
+    "InputStream",
+    "OutOfMemoryError",
+    "maxErrorTokenLength",
+    "ParserMinimalBase"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 DataInput, InputStream, JsonFactory, NonBlockingUtf8JsonParserBase, OutOfMemoryError, ParserMinimalBase, ReadConstrainedTextBuffer, ReaderBasedJsonParser, StringBuilder, UTF8StreamJsonParser, _reportInvalidToken, getMaxErrorTokenLength, maxDocumentLength, maxErrorTokenLength, maxStringLength 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/pages/workflow/WorkflowDefinitionPage.java",
+     "line": 38,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.core.JsonGenerator;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.JsonParser;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 44,
+     "text": "import com.fasterxml.jackson.core.JsonProcessingException;"
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-h46c-h94j-95f3",
+   "severity": "HIGH",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/pages/workflow/WorkflowDefinitionPage.java",
+     "line": 38,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.core.JsonGenerator;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.JsonParser;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 44,
+     "text": "import com.fasterxml.jackson.core.JsonProcessingException;"
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "score": 2.45,
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-r7wm-3cxj-wff9",
+   "severity": "HIGH",
+   "fixed": [
+    "2.18.8",
+    "2.21.4"
+   ],
+   "symbols": [
+    "b0c428e6",
+    "validateIntegerLength",
+    "_setIntLength",
+    "_textBuffer.expandCurrentSegment",
+    "maxStringLength",
+    "maxNumberLength",
+    "_finishFloatFraction",
+    "NonBlockingUtf8JsonParserBase.java",
+    "tools.jackson.core",
+    "NonBlockingUtf8JsonParserBase",
+    "_finishNumberIntegralPart",
+    "JsonFactory.createNonBlockingByteArrayParser",
+    "createNonBlockingByteBufferParser",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "ParserBase._reportTooLongIntegral",
+    "StreamReadConstraints.getMaxNumberLength",
+    "endOfInput",
+    "JsonFactory",
+    "feedInput",
+    "_textBuffer",
+    "StreamConstraintsException",
+    "decodeToMono",
+    "Jackson2Tokenizer",
+    "_updateTokenToNA",
+    "JsonToken.NOT_AVAILABLE",
+    "_intLength",
+    "tonghuaroot"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Jackson2Tokenizer, JsonFactory, NOT_AVAILABLE, NonBlockingUtf8JsonParserBase, ReaderBasedJsonParser, StreamConstraintsException, UTF8StreamJsonParser, _finishFloatFraction, _finishNumberIntegralPart, _intLength, _reportTooLongIntegral, _setIntLength, _textBuffer, _updateTokenToNA, b0c428e6, core, createNonBlockingByteArrayParser, createNonBlockingByteBufferParser, decodeToMono, endOfInput, expandCurrentSegment, feedInput, getMaxNumberLength, java, maxNumberLength, maxStringLength, tonghuaroot, validateIntegerLength 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/pages/workflow/WorkflowDefinitionPage.java",
+     "line": 38,
+     "text": "import com.fasterxml.jackson.core.type.TypeReference;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.core.JsonGenerator;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.core.JsonParser;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 44,
+     "text": "import com.fasterxml.jackson.core.JsonProcessingException;"
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "score": 2.45,
+   "package": "commons-beanutils:commons-beanutils",
+   "version": "1.9.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-wxr5-93ph-8wr9",
+   "severity": "HIGH",
+   "fixed": [
+    "1.11.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-datasync/src/main/java/org/apache/dolphinscheduler/plugin/task/datasync/DatasyncHook.java",
+     "line": 41,
+     "text": "import org.apache.commons.beanutils.BeanUtils;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-dms/src/main/java/org/apache/dolphinscheduler/plugin/task/dms/DmsTask.java",
+     "line": 32,
+     "text": "import org.apache.commons.beanutils.BeanUtils;"
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "score": 2.45,
+   "package": "ch.qos.logback:logback-classic",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-vmq6-5m68-f53m",
+   "severity": "HIGH",
+   "fixed": [
+    "1.3.12",
+    "1.4.12",
+    "1.2.13"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-common/src/main/java/org/apache/dolphinscheduler/common/utils/LogUtils.java",
+     "line": 38,
+     "text": "import ch.qos.logback.classic.LoggerContext;"
+    },
+    {
+     "path": "dolphinscheduler-task-executor/src/main/java/org/apache/dolphinscheduler/task/executor/container/AbstractTaskExecutorContainer.java",
+     "line": 20,
+     "text": "import static ch.qos.logback.classic.ClassicConstants.FINALIZE_SESSION_MARKER;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/SensitiveDataConverter.java",
+     "line": 29,
+     "text": "import ch.qos.logback.classic.pattern.MessageConverter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/SensitiveDataConverter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.classic.spi.ILoggingEvent;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 28,
+     "text": "import ch.qos.logback.classic.spi.ILoggingEvent;"
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "score": 2.45,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-vmq6-5m68-f53m",
+   "severity": "HIGH",
+   "fixed": [
+    "1.3.12",
+    "1.4.12",
+    "1.2.13"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "score": 2.45,
+   "package": "io.grpc:grpc-netty-shaded",
+   "version": "1.41.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-prj3-ccx8-p6x4",
+   "severity": "HIGH",
+   "fixed": [
+    "1.75.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-registry/dolphinscheduler-registry-plugins/dolphinscheduler-registry-etcd/src/main/java/org/apache/dolphinscheduler/plugin/registry/etcd/EtcdKeepAliveLeaseManager.java",
+     "line": 30,
+     "text": "import io.grpc.stub.StreamObserver;"
+    },
+    {
+     "path": "dolphinscheduler-registry/dolphinscheduler-registry-plugins/dolphinscheduler-registry-etcd/src/main/java/org/apache/dolphinscheduler/plugin/registry/etcd/EtcdRegistry.java",
+     "line": 66,
+     "text": "import io.grpc.netty.GrpcSslContexts;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 40,
+     "text": "import io.grpc.ManagedChannel;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 41,
+     "text": "import io.grpc.Status;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 42,
+     "text": "import io.grpc.StatusRuntimeException;"
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "score": 2.45,
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-4gg5-vx3j-xwc7",
+   "severity": "HIGH",
+   "fixed": [
+    "3.16.3",
+    "3.19.6",
+    "3.20.3",
+    "3.21.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-registry/dolphinscheduler-registry-plugins/dolphinscheduler-registry-etcd/src/test/java/org/apache/dolphinscheduler/plugin/registry/etcd/EtcdRegistryEventTest.java",
+     "line": 27,
+     "text": "import com.google.protobuf.ByteString;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcParameters.java",
+     "line": 30,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 35,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 36,
+     "text": "import com.google.protobuf.DynamicMessage;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 37,
+     "text": "import com.google.protobuf.util.JsonFormat;"
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "score": 2.45,
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-735f-pc8j-v9w8",
+   "severity": "HIGH",
+   "fixed": [
+    "3.25.5",
+    "4.27.5",
+    "4.28.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-registry/dolphinscheduler-registry-plugins/dolphinscheduler-registry-etcd/src/test/java/org/apache/dolphinscheduler/plugin/registry/etcd/EtcdRegistryEventTest.java",
+     "line": 27,
+     "text": "import com.google.protobuf.ByteString;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcParameters.java",
+     "line": 30,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 35,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 36,
+     "text": "import com.google.protobuf.DynamicMessage;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 37,
+     "text": "import com.google.protobuf.util.JsonFormat;"
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "score": 2.45,
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-g5ww-5jh7-63cx",
+   "severity": "HIGH",
+   "fixed": [
+    "3.16.3",
+    "3.19.6",
+    "3.20.3",
+    "3.21.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-registry/dolphinscheduler-registry-plugins/dolphinscheduler-registry-etcd/src/test/java/org/apache/dolphinscheduler/plugin/registry/etcd/EtcdRegistryEventTest.java",
+     "line": 27,
+     "text": "import com.google.protobuf.ByteString;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcParameters.java",
+     "line": 30,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 35,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 36,
+     "text": "import com.google.protobuf.DynamicMessage;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 37,
+     "text": "import com.google.protobuf.util.JsonFormat;"
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "score": 1.4,
+   "package": "com.google.guava:guava",
+   "version": "31.1-jre",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-7g45-4rm6-3mm3",
+   "severity": "MODERATE",
+   "fixed": [
+    "32.0.0-android"
+   ],
+   "symbols": [
+    "FileBackedOutputStream"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 FileBackedOutputStream 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-pagerduty/src/main/java/org/apache/dolphinscheduler/plugin/alert/pagerduty/PagerDutySender.java",
+     "line": 42,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-slack/src/main/java/org/apache/dolphinscheduler/plugin/alert/slack/SlackSender.java",
+     "line": 45,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-webexteams/src/main/java/org/apache/dolphinscheduler/plugin/alert/webexteams/WebexTeamsDestination.java",
+     "line": 28,
+     "text": "import com.google.common.base.Functions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-webexteams/src/main/java/org/apache/dolphinscheduler/plugin/alert/webexteams/WebexTeamsSender.java",
+     "line": 42,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-server/src/main/java/org/apache/dolphinscheduler/alert/service/AbstractEventSender.java",
+     "line": 20,
+     "text": "import static com.google.common.base.Preconditions.checkNotNull;"
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-5gvw-p9qm-jgwh",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.21.5",
+    "2.18.9",
+    "2.22.1"
+   ],
+   "symbols": [
+    "UnwrappedPropertyHandler.processUnwrapped",
+    "prop.deserializeAndSet",
+    "processUnwrappedCreatorProperties",
+    "BeanDeserializer.deserializeWithUnwrapped",
+    "BeanDeserializer",
+    "PublicView",
+    "BuilderBasedDeserializer",
+    "processUnwrapped",
+    "MapperFeature.DEFAULT_VIEW_INCLUSION"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BeanDeserializer, BuilderBasedDeserializer, DEFAULT_VIEW_INCLUSION, PublicView, deserializeAndSet, deserializeWithUnwrapped, processUnwrapped, processUnwrappedCreatorProperties 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-5jmj-h7xm-6q6v",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.4",
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "BeanDeserializerBase.createContextual",
+    "_handleByNameInclusion",
+    "contextual",
+    "BeanPropertyMap",
+    "this._beanProperties",
+    "contextual._beanProperties"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BeanPropertyMap, _beanProperties, _handleByNameInclusion, contextual, createContextual 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-gx83-3vf8-gh7j",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "DefaultBaseTypeLimitingValidator",
+    "PolymorphicTypeValidator",
+    "Serializable",
+    "Closeable",
+    "AutoCloseable",
+    "Cloneable",
+    "Runnable",
+    "java.util.logging.Handler",
+    "javax.naming.Referenceable",
+    "javax.sql.DataSource",
+    "isSafeSubType",
+    "java.lang.Comparable",
+    "Comparable",
+    "java.lang.Object",
+    "activateDefaultTyping",
+    "BasicPolymorphicTypeValidator",
+    "javac",
+    "java.io.File",
+    "File",
+    "UnsafeBaseTypes.UNSAFE",
+    "java.lang.Iterable",
+    "java.util.EventListener"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 AutoCloseable, BasicPolymorphicTypeValidator, Cloneable, Closeable, Comparable, DataSource, DefaultBaseTypeLimitingValidator, EventListener, File, Handler, Iterable, Object, PolymorphicTypeValidator, Referenceable, Runnable, Serializable, UNSAFE, activateDefaultTyping, isSafeSubType, javac 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-hgj6-7826-r7m5",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "JDKFromStringDeserializer",
+    "InetSocketAddress",
+    "readValue"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 InetSocketAddress, JDKFromStringDeserializer, readValue 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-vvgp-rfg2-7rr6",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "java.net.InetSocketAddress",
+    "java.net.InetAddress",
+    "FromStringDeserializer.Std._deserialize",
+    "InetAddress",
+    "address.isUnresolved",
+    "InetAddress.getByName"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 InetAddress, InetSocketAddress, _deserialize, getByName, isUnresolved 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-wjgm-6hv5-3cvf",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "java.nio.file.Path",
+    "JDKFromStringDeserializer.NioPathHelper.deserialize",
+    "FileSystemNotFoundException",
+    "file",
+    "jar",
+    "Path",
+    "NioPathHelper.deserialize",
+    "readValue",
+    "getPath",
+    "newFileSystem",
+    "ValueInstantiationException",
+    "FileSystemProvider",
+    "ServiceLoader",
+    "evilscheme",
+    "javac",
+    "java",
+    "java.nio.file.FileSystemNotFoundException",
+    "StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "취약 심볼 사용 줄이 시험 코드에만 있어 도달이라 하지 않음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "score": 1.4,
+   "package": "com.azure:azure-identity",
+   "version": "1.7.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-m5vv-6r4h-3vj9",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.12.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/service/impl/CloudServiceImpl.java",
+     "line": 33,
+     "text": "import com.azure.identity.ClientSecretCredential;"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/service/impl/CloudServiceImpl.java",
+     "line": 34,
+     "text": "import com.azure.identity.ClientSecretCredentialBuilder;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-datafactory/src/main/java/org/apache/dolphinscheduler/plugin/task/datafactory/DatafactoryHook.java",
+     "line": 36,
+     "text": "import com.azure.identity.ClientSecretCredential;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-datafactory/src/main/java/org/apache/dolphinscheduler/plugin/task/datafactory/DatafactoryHook.java",
+     "line": 37,
+     "text": "import com.azure.identity.ClientSecretCredentialBuilder;"
+    },
+    {
+     "path": "dolphinscheduler-api/src/main/java/org/apache/dolphinscheduler/api/service/impl/CloudServiceImpl.java",
+     "line": 30,
+     "text": "import com.azure.core.http.rest.PagedIterable;"
+    }
+   ]
+  },
+  {
+   "rank": 38,
+   "score": 1.4,
+   "package": "org.apache.commons:commons-lang3",
+   "version": "3.17.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-j288-q9x7-2f5v",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.18.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/MailSender.java",
+     "line": 31,
+     "text": "import org.apache.commons.lang3.StringUtils;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 26,
+     "text": "import org.apache.commons.lang3.StringUtils;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/main/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSender.java",
+     "line": 27,
+     "text": "import org.apache.commons.lang3.StringUtils;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-prometheus/src/main/java/org/apache/dolphinscheduler/plugin/alert/prometheus/PrometheusAlertSender.java",
+     "line": 26,
+     "text": "import org.apache.commons.lang3.exception.ExceptionUtils;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-script/src/main/java/org/apache/dolphinscheduler/plugin/alert/script/ScriptSender.java",
+     "line": 23,
+     "text": "import org.apache.commons.lang3.StringUtils;"
+    }
+   ]
+  },
+  {
+   "rank": 39,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-5gvw-p9qm-jgwh",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.21.5",
+    "2.18.9",
+    "2.22.1"
+   ],
+   "symbols": [
+    "UnwrappedPropertyHandler.processUnwrapped",
+    "prop.deserializeAndSet",
+    "processUnwrappedCreatorProperties",
+    "BeanDeserializer.deserializeWithUnwrapped",
+    "BeanDeserializer",
+    "PublicView",
+    "BuilderBasedDeserializer",
+    "processUnwrapped",
+    "MapperFeature.DEFAULT_VIEW_INCLUSION"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BeanDeserializer, BuilderBasedDeserializer, DEFAULT_VIEW_INCLUSION, PublicView, deserializeAndSet, deserializeWithUnwrapped, processUnwrapped, processUnwrappedCreatorProperties 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-5jmj-h7xm-6q6v",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.1.4",
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "BeanDeserializerBase.createContextual",
+    "_handleByNameInclusion",
+    "contextual",
+    "BeanPropertyMap",
+    "this._beanProperties",
+    "contextual._beanProperties"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 BeanPropertyMap, _beanProperties, _handleByNameInclusion, contextual, createContextual 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 41,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-gx83-3vf8-gh7j",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "DefaultBaseTypeLimitingValidator",
+    "PolymorphicTypeValidator",
+    "Serializable",
+    "Closeable",
+    "AutoCloseable",
+    "Cloneable",
+    "Runnable",
+    "java.util.logging.Handler",
+    "javax.naming.Referenceable",
+    "javax.sql.DataSource",
+    "isSafeSubType",
+    "java.lang.Comparable",
+    "Comparable",
+    "java.lang.Object",
+    "activateDefaultTyping",
+    "BasicPolymorphicTypeValidator",
+    "javac",
+    "java.io.File",
+    "File",
+    "UnsafeBaseTypes.UNSAFE",
+    "java.lang.Iterable",
+    "java.util.EventListener"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 AutoCloseable, BasicPolymorphicTypeValidator, Cloneable, Closeable, Comparable, DataSource, DefaultBaseTypeLimitingValidator, EventListener, File, Handler, Iterable, Object, PolymorphicTypeValidator, Referenceable, Runnable, Serializable, UNSAFE, activateDefaultTyping, isSafeSubType, javac 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 42,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-hgj6-7826-r7m5",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "JDKFromStringDeserializer",
+    "InetSocketAddress",
+    "readValue"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 InetSocketAddress, JDKFromStringDeserializer, readValue 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 43,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-vvgp-rfg2-7rr6",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "java.net.InetSocketAddress",
+    "java.net.InetAddress",
+    "FromStringDeserializer.Std._deserialize",
+    "InetAddress",
+    "address.isUnresolved",
+    "InetAddress.getByName"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 InetAddress, InetSocketAddress, _deserialize, getByName, isUnresolved 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 44,
+   "score": 1.4,
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-wjgm-6hv5-3cvf",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "java.nio.file.Path",
+    "JDKFromStringDeserializer.NioPathHelper.deserialize",
+    "FileSystemNotFoundException",
+    "file",
+    "jar",
+    "Path",
+    "NioPathHelper.deserialize",
+    "readValue",
+    "getPath",
+    "newFileSystem",
+    "ValueInstantiationException",
+    "FileSystemProvider",
+    "ServiceLoader",
+    "evilscheme",
+    "javac",
+    "java",
+    "java.nio.file.FileSystemNotFoundException",
+    "StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "취약 심볼 사용 줄이 시험 코드에만 있어 도달이라 하지 않음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 41,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 42,
+     "text": "import com.fasterxml.jackson.databind.node.ArrayNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-email/src/main/java/org/apache/dolphinscheduler/plugin/alert/email/template/DefaultHTMLTemplate.java",
+     "line": 43,
+     "text": "import com.fasterxml.jackson.databind.node.ObjectNode;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-http/src/test/java/org/apache/dolphinscheduler/plugin/alert/http/HttpSenderTest.java",
+     "line": 45,
+     "text": "import com.fasterxml.jackson.databind.JsonNode;"
+    },
+    {
+     "path": "dolphinscheduler-api-test/dolphinscheduler-api-test-case/src/test/java/org/apache/dolphinscheduler/api/test/utils/JSONUtils.java",
+     "line": 20,
+     "text": "import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT;"
+    }
+   ]
+  },
+  {
+   "rank": 45,
+   "score": 1.4,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-25qh-j22f-pwp8",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.5.19",
+    "1.3.16"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 46,
+   "score": 1.4,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-pr98-23f8-jwxv",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.5.13",
+    "1.3.15"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "score": 1.4,
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-h4h5-3hr4-j3g2",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.21.7",
+    "3.20.3",
+    "3.19.6",
+    "3.16.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-registry/dolphinscheduler-registry-plugins/dolphinscheduler-registry-etcd/src/test/java/org/apache/dolphinscheduler/plugin/registry/etcd/EtcdRegistryEventTest.java",
+     "line": 27,
+     "text": "import com.google.protobuf.ByteString;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcParameters.java",
+     "line": 30,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 35,
+     "text": "import com.google.protobuf.Descriptors;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 36,
+     "text": "import com.google.protobuf.DynamicMessage;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-grpc/src/main/java/org/apache/dolphinscheduler/plugin/task/grpc/GrpcTask.java",
+     "line": 37,
+     "text": "import com.google.protobuf.util.JsonFormat;"
+    }
+   ]
+  },
+  {
+   "rank": 48,
+   "score": 1.4,
+   "package": "org.apache.sshd:sshd-sftp",
+   "version": "2.8.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-mjmq-gwgm-5qhm",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.9.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-remoteshell/src/main/java/org/apache/dolphinscheduler/plugin/task/remoteshell/RemoteExecutor.java",
+     "line": 34,
+     "text": "import org.apache.sshd.sftp.client.SftpClientFactory;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-remoteshell/src/main/java/org/apache/dolphinscheduler/plugin/task/remoteshell/RemoteExecutor.java",
+     "line": 35,
+     "text": "import org.apache.sshd.sftp.client.fs.SftpFileSystem;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-ssh/src/main/java/org/apache/dolphinscheduler/plugin/datasource/ssh/SSHUtils.java",
+     "line": 23,
+     "text": "import org.apache.sshd.client.SshClient;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-ssh/src/main/java/org/apache/dolphinscheduler/plugin/datasource/ssh/SSHUtils.java",
+     "line": 24,
+     "text": "import org.apache.sshd.client.session.ClientSession;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-ssh/src/main/java/org/apache/dolphinscheduler/plugin/datasource/ssh/SSHUtils.java",
+     "line": 25,
+     "text": "import org.apache.sshd.common.config.keys.loader.KeyPairResourceLoader;"
+    }
+   ]
+  },
+  {
+   "rank": 49,
+   "score": 1.0,
+   "package": "com.amazon.redshift:redshift-jdbc42",
+   "version": "2.1.0.9",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-wmmv-vvg5-993q",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.2.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 50,
+   "score": 1.0,
+   "package": "com.amazon.redshift:redshift-jdbc42",
+   "version": "2.1.0.9",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-x3wm-hffr-chwm",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.1.0.28"
+   ],
+   "symbols": [
+    "preferQueryMode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 51,
+   "score": 0.7,
+   "package": "org.springframework.ldap:spring-ldap-core",
+   "version": "2.4.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-jrv5-8w28-4265",
+   "severity": "HIGH",
+   "fixed": [
+    "4.0.4",
+    "3.3.8"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 52,
+   "score": 0.7,
+   "package": "com.mysql:mysql-connector-j",
+   "version": "8.0.33",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-m6vm-37g8-gqvh",
+   "severity": "HIGH",
+   "fixed": [
+    "8.2.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 53,
+   "score": 0.7,
+   "package": "org.postgresql:postgresql",
+   "version": "42.4.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-98qh-xjc8-98pq",
+   "severity": "HIGH",
+   "fixed": [
+    "42.7.11"
+   ],
+   "symbols": [
+    "loginTimeout",
+    "sslmode",
+    "scramMaxIterations"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 54,
+   "score": 0.7,
+   "package": "com.microsoft.sqlserver:mssql-jdbc",
+   "version": "11.2.1.jre8",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-m494-w24q-6f7w",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.4.jre11",
+    "11.2.4.jre11",
+    "12.2.1.jre11",
+    "12.6.5.jre11",
+    "12.8.2.jre11",
+    "12.10.2.jre11",
+    "13.2.1.jre11"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 55,
+   "score": 0.7,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-cmp6-m4wj-q63q",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [
+    "safeInstance",
+    "LZ4Factory.safeInstance",
+    "LZ4Factory.unsafeInstance",
+    "LZ4Factory.fastestJavaInstance",
+    "LZ4Factory.fastestInstance",
+    "nativeInstance",
+    "fastestJavaInstance",
+    "fastDecompressor",
+    "safeDecompressor"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 56,
+   "score": 0.7,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-vqf4-7m7x-wgfc",
+   "severity": "HIGH",
+   "fixed": [
+    "1.8.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 57,
+   "score": 0.7,
+   "package": "com.facebook.presto:presto-jdbc",
+   "version": "0.238.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-86q5-qcjc-7pv4",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 58,
+   "score": 0.7,
+   "package": "com.facebook.presto:presto-jdbc",
+   "version": "0.238.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-xm7x-f3w2-4hjm",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 59,
+   "score": 0.7,
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-7hpq-3g6w-pvhf",
+   "severity": "HIGH",
+   "fixed": [
+    "3.22.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 60,
+   "score": 0.7,
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-55g7-9cwv-5qfv",
+   "severity": "HIGH",
+   "fixed": [
+    "1.1.10.4"
+   ],
+   "symbols": [
+    "ExitOnOutOfMemoryError",
+    "CrashOnOutOfMemoryError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 61,
+   "score": 0.7,
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-gwq9-9ffj-mvrv",
+   "severity": "HIGH",
+   "fixed": [
+    "1.1.10.9"
+   ],
+   "symbols": [
+    "Snappy.uncompressCharArray",
+    "uncompressShortArray",
+    "uncompressIntArray",
+    "uncompressLongArray",
+    "uncompressFloatArray",
+    "uncompressDoubleArray",
+    "SnappyIOException"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 62,
+   "score": 0.7,
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-q233-g92q-qxp6",
+   "severity": "HIGH",
+   "fixed": [
+    "1.1.10.9"
+   ],
+   "symbols": [
+    "OutOfMemoryError",
+    "NegativeArraySizeException",
+    "Snappy.uncompressString",
+    "SnappyInputStream",
+    "SnappyFramedInputStream",
+    "maxChunkSize",
+    "Snappy.uncompressedLength"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 63,
+   "score": 0.4,
+   "package": "org.springframework.ldap:spring-ldap-core",
+   "version": "2.4.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-mqvr-2rp8-j7h4",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.2.8",
+    "2.4.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 64,
+   "score": 0.4,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-4v53-57pg-c464",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [
+    "LZ4BlockInputStream",
+    "compressedLen",
+    "LZ4Block",
+    "net.jpountz.lz4.LZ4BlockInputStream",
+    "refill",
+    "LZ4BlockOutputStream",
+    "acceptOversizedBlocks"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 65,
+   "score": 0.4,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-6cx8-rjf8-pr8g",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [
+    "net.jpountz.lz4.LZ4DecompressorWithLength",
+    "net.jpountz.lz4.LZ4FastDecompressor",
+    "getDecompressedLength",
+    "src.length",
+    "maxDestLen",
+    "destLen"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 66,
+   "score": 0.4,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-gm45-99xc-r7wv",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [
+    "LZ4FrameInputStream",
+    "net.jpountz.lz4.LZ4FrameInputStream.readHeader"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 67,
+   "score": 0.4,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-xx22-p4ch-683r",
+   "severity": "MODERATE",
+   "fixed": [],
+   "symbols": [
+    "off",
+    "len",
+    "bytes",
+    "XXHashJNI.XXH32_update",
+    "XXHashJNI.XXH64_update",
+    "SafeUtils.checkRange",
+    "GetPrimitiveArrayCritical",
+    "XXHashFactory.safeInstance"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 68,
+   "score": 0.4,
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-33g6-495w-v8j2",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.22.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 69,
+   "score": 0.4,
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-f686-hw9c-xw9c",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.20.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 70,
+   "score": 0.4,
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-qqj6-54q6-cxv6",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.3.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 71,
+   "score": 0.4,
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-xqrx-qh46-34m7",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.1.10.9"
+   ],
+   "symbols": [
+    "SnappyOutputStream.rawWrite",
+    "SnappyInputStream.rawRead",
+    "write",
+    "read",
+    "Snappy.arrayCopy",
+    "int"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 72,
+   "score": 0.35,
+   "package": "com.google.guava:guava",
+   "version": "31.1-jre",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-5mg8-w23w-74h3",
+   "severity": "LOW",
+   "fixed": [
+    "32.0.0-android"
+   ],
+   "symbols": [
+    "com.google.common.io.Files.createTempDir"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 createTempDir 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-pagerduty/src/main/java/org/apache/dolphinscheduler/plugin/alert/pagerduty/PagerDutySender.java",
+     "line": 42,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-slack/src/main/java/org/apache/dolphinscheduler/plugin/alert/slack/SlackSender.java",
+     "line": 45,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-webexteams/src/main/java/org/apache/dolphinscheduler/plugin/alert/webexteams/WebexTeamsDestination.java",
+     "line": 28,
+     "text": "import com.google.common.base.Functions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-plugins/dolphinscheduler-alert-webexteams/src/main/java/org/apache/dolphinscheduler/plugin/alert/webexteams/WebexTeamsSender.java",
+     "line": 42,
+     "text": "import com.google.common.base.Preconditions;"
+    },
+    {
+     "path": "dolphinscheduler-alert/dolphinscheduler-alert-server/src/main/java/org/apache/dolphinscheduler/alert/service/AbstractEventSender.java",
+     "line": 20,
+     "text": "import static com.google.common.base.Preconditions.checkNotNull;"
+    }
+   ]
+  },
+  {
+   "rank": 73,
+   "score": 0.35,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-6v67-2wr5-gvf4",
+   "severity": "LOW",
+   "fixed": [
+    "1.5.13",
+    "1.3.15"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 74,
+   "score": 0.35,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-jhq6-gfmj-v8fx",
+   "severity": "LOW",
+   "fixed": [
+    "1.5.34"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 75,
+   "score": 0.35,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-p47f-322f-whfh",
+   "severity": "LOW",
+   "fixed": [
+    "1.5.33"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 76,
+   "score": 0.35,
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-qqpg-mvqg-649v",
+   "severity": "LOW",
+   "fixed": [
+    "1.5.25"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogDiscriminator.java",
+     "line": 29,
+     "text": "import ch.qos.logback.core.sift.AbstractDiscriminator;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 30,
+     "text": "import ch.qos.logback.core.filter.Filter;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/log/TaskLogFilter.java",
+     "line": 31,
+     "text": "import ch.qos.logback.core.spi.FilterReply;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-api/src/main/java/org/apache/dolphinscheduler/plugin/task/api/utils/LogUtils.java",
+     "line": 54,
+     "text": "import ch.qos.logback.core.spi.AppenderAttachable;"
+    },
+    {
+     "path": "dolphinscheduler-task-plugin/dolphinscheduler-task-sql/src/test/java/org/apache/dolphinscheduler/plugin/task/sql/SqlTaskTest.java",
+     "line": 66,
+     "text": "import ch.qos.logback.core.read.ListAppender;"
+    }
+   ]
+  },
+  {
+   "rank": 77,
+   "score": 0.35,
+   "package": "org.apache.hadoop:hadoop-common",
+   "version": "3.2.4",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-f5fw-25gw-5m92",
+   "severity": "LOW",
+   "fixed": [
+    "3.4.0"
+   ],
+   "symbols": [
+    "RunJar.run"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 run 의 사용 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-api/src/main/java/org/apache/dolphinscheduler/plugin/datasource/api/utils/CommonUtils.java",
+     "line": 34,
+     "text": "import org.apache.hadoop.conf.Configuration;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-api/src/main/java/org/apache/dolphinscheduler/plugin/datasource/api/utils/CommonUtils.java",
+     "line": 35,
+     "text": "import org.apache.hadoop.security.UserGroupInformation;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-api/src/test/java/org/apache/dolphinscheduler/plugin/datasource/api/utils/CommonUtilsTest.java",
+     "line": 25,
+     "text": "import org.apache.hadoop.conf.Configuration;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-api/src/test/java/org/apache/dolphinscheduler/plugin/datasource/api/utils/CommonUtilsTest.java",
+     "line": 26,
+     "text": "import org.apache.hadoop.security.UserGroupInformation;"
+    },
+    {
+     "path": "dolphinscheduler-datasource-plugin/dolphinscheduler-datasource-hive/src/main/java/org/apache/dolphinscheduler/plugin/datasource/hive/security/UserGroupInformationFactory.java",
+     "line": 26,
+     "text": "import org.apache.hadoop.conf.Configuration;"
+    }
+   ]
+  },
+  {
+   "rank": 78,
+   "score": 0.1,
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-343h-94h5-c4wr",
+   "severity": "LOW",
+   "fixed": [],
+   "symbols": [
+    "LZ4BlockInputStream",
+    "refill",
+    "StackOverflowError",
+    "read",
+    "skip",
+    "net.jpountz.lz4.LZ4BlockInputStream.refill",
+    "Error",
+    "IOException",
+    "LZ4Block"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 79,
+   "score": 0.1,
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-gx6c-pv62-9mcf",
+   "severity": "LOW",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 80,
+   "score": 0.1,
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "advisory": "GHSA-q298-375f-5q63",
+   "severity": "LOW",
+   "fixed": [
+    "3.23.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  }
+ ]
+}

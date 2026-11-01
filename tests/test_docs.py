@@ -25,30 +25,32 @@ def test_repo_url_is_real_and_has_no_company_name():
     assert b.REPO in alltext()
 
 
-def test_holdout_is_not_called_pre_frozen_representative_and_both_values_are_shown():
+def test_v13_representative_value_is_holdout2_first_run_with_v12_comparison():
+    import build_docs as b
     text = alltext()
-    assert "대표값" not in text and "사전 동결한 홀드아웃" not in text
-    assert "78.4%" in text and "81.1%" in text and "사후 수정" in text
-    assert "22건" in text and "68.2%" in text and "95%" in text and "Wilson" in text
+    assert "첫 실행(대표값)" in text and "v1.2 판정기" in text and "사후 수정" in text
+    assert f"{b.H2_FIRST['reached_precision']}%" in text and f"{b.H2_V12['reached_precision']}%" in text
+    assert "Cohen kappa" in text and "정답 독립성" in text
+    assert "78.4%" in text and "81.1%" in text           # 홀드아웃1은 오염된 이력으로만 언급
 
 
-def test_ai_vs_code_split_and_trace_truth():
+def test_ai_role_truth_and_failure_cause_with_status_code():
     text = alltext()
-    assert "429" not in text           # trace에는 429가 없고 HTTPError뿐
-    assert "HTTPError" in text
-    assert "고칠 버전" in text and "코드가" in text and "설명 문장" in text
+    assert "429" in text and "RESOURCE_EXHAUSTED" in text and "HTTPError" in text
+    assert "코드 파이프라인" in text and "고칠 버전" in text and "설명 문장" in text and "사람 확인 필요" in text
+    assert "판정을 올리지 못함" in text or "올리지 못" in text
+
+
+def test_main_metric_is_alerts_to_open_not_money():
+    text = alltext()
+    assert "절감" not in text and "50,000원" not in text and "건당 15분" not in text
+    assert "열어 볼 경보 수" in text and "precision@" in text
 
 
 def test_test_count_is_computed_from_pytest_not_hardcoded():
     import build_docs as b
     assert isinstance(b.TESTS, int) and b.TESTS >= 130
     assert "120+" not in alltext() and f"{b.TESTS}건" in alltext()
-
-
-def test_cost_wording_and_missed_reach_item():
-    text = alltext()
-    assert "절감" not in text
-    assert "1차 분류 순서 조정" in text and "놓친 도달" in text
 
 
 def test_repro_section_mentions_four_repo_steps_and_stdlib_vs_pytest():
@@ -58,9 +60,25 @@ def test_repro_section_mentions_four_repo_steps_and_stdlib_vs_pytest():
     assert "Java" in text and "교육용" in text
 
 
-def test_private_count_is_declared_as_exception_in_header():
+def test_capability_page_proves_incidents_by_excerpt_and_drops_unsourced_claim():
     import build_docs as b
-    assert "비공개·건수만" in b.CAP.split("<h2>1.")[0]
+    assert "923" not in b.CAP and "서류 통과" not in b.CAP
+    assert "발췌" in b.CAP and b.CAP.count("<code>_system/") >= 3
+    for bad in ("@", "gmail"):
+        assert bad not in b.CAP.split("<h2>4.")[1]
+
+
+def test_elapsed_table_states_cache_premise_inside_the_same_table():
+    import build_docs as b
+    p3 = b.SOL[2]
+    t = p3[p3.index("<table>"):p3.index("</table>")]
+    assert "소요" in t and "캐시" in t
+
+
+def test_java_is_described_as_minimal_and_operational_repos_are_not_edu():
+    text = alltext()
+    assert "최소 어댑터" in text and "운영형 오픈소스" in text and "Gradle" in text
+    assert "Java(Maven·Gradle)는 미지원" not in text
 
 
 def test_615_534_difference_is_explained():
@@ -99,13 +117,13 @@ def test_v12_schedule_has_dates_and_three_numeric_targets():
     p4 = b.SOL[3]
     for d in ("2026-11-03", "2026-11-04", "2026-11-24", "2026-11-25"):
         assert d in p4, d
-    assert "80%" in p4 and "20건" in p4 and "재스캔" in p4
+    assert "70%" in p4 and "20건" in p4 and "재스캔" in p4
 
 
 def test_v12_has_screen_figure_from_real_ranking_file():
     import build_docs as b
-    p3 = b.SOL[2]
-    assert "그림 2" in p3 and "routes/index.js:270" in p3 and "mongoose-db.js:3" in p3
+    p4 = b.SOL[3]
+    assert "그림 2" in p4 and "routes/index.js:270" in p4 and "mongoose-db.js:3" in p4
 
 
 def test_v12_capability_sheet_has_live_urls_with_facts():
@@ -116,4 +134,4 @@ def test_v12_capability_sheet_has_live_urls_with_facts():
 
 def test_v12_version_label():
     import build_docs as b
-    assert b.VER == "v1.2"
+    assert b.VER == "v1.3"

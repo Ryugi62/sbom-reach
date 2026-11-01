@@ -1,5 +1,11 @@
-{"run_id": "pygoat", "seq": 1, "ts": "2026-10-30T08:07:48+0900", "tool": "sbom", "ms": 760, "tool_name": "syft", "components": 38, "fallback": false}
-{"run_id": "pygoat", "seq": 2, "ts": "2026-10-30T08:07:48+0900", "tool": "source_index", "ms": 36, "imported_modules": 36, "referenced_symbols": 272}
-{"run_id": "pygoat", "seq": 3, "ts": "2026-10-30T08:07:49+0900", "tool": "vuln_lookup", "ms": 92, "alerts": 201, "incomplete": 0}
-{"run_id": "pygoat", "seq": 4, "ts": "2026-10-30T08:07:49+0900", "tool": "reach_judge", "ms": 1, "reached": 9, "used": 50, "unseen": 142}
-{"run_id": "pygoat", "seq": 5, "ts": "2026-10-30T08:07:49+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-9jmf-237g-qf46:7.0", "django:GHSA-m9g8-fxxm-xg86:7.0"]}
+{"run_id": "pygoat", "seq": 1, "ts": "2026-11-02T08:31:27+0900", "tool": "sbom", "ms": 1111, "tool_name": "syft", "components": 38, "fallback": false}
+{"run_id": "pygoat", "seq": 2, "ts": "2026-11-02T08:31:27+0900", "tool": "source_index", "ms": 43, "imported_modules": 36, "referenced_symbols": 242}
+{"run_id": "pygoat", "seq": 3, "ts": "2026-11-02T08:31:27+0900", "tool": "vuln_lookup", "ms": 116, "alerts": 201, "incomplete": 0}
+{"run_id": "pygoat", "seq": 4, "ts": "2026-11-02T08:31:27+0900", "tool": "reach_judge", "ms": 2, "reached": 5, "used": 54, "unseen": 142}
+{"run_id": "pygoat", "seq": 5, "ts": "2026-11-02T08:31:27+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-8qcx-xf44-272x:4.0", "django:GHSA-qcgg-j2x8-h9g8:4.0"]}
+{"run_id": "pygoat", "seq": 1, "ts": "2026-11-02T08:31:27+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat", "seq": 2, "ts": "2026-11-02T08:31:27+0900", "tool": "llm_review", "package": "django", "advisory": "GHSA-8qcx-xf44-272x", "answer": "DOUBT"}
+{"run_id": "pygoat", "seq": 3, "ts": "2026-11-02T08:31:27+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat", "seq": 4, "ts": "2026-11-02T08:31:27+0900", "tool": "llm_review", "package": "django", "advisory": "GHSA-qcgg-j2x8-h9g8", "answer": "DOUBT"}
+{"run_id": "pygoat", "seq": 5, "ts": "2026-11-02T08:31:27+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat", "seq": 6, "ts": "2026-11-02T08:31:27+0900", "tool": "llm_review", "package": "requests", "advisory": "GHSA-j8r2-6x86-q33q", "answer": "CONFIRM"}

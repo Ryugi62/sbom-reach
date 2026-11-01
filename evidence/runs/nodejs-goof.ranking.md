@@ -13,10 +13,10 @@
 | 11 | marked | 0.3.5 | GHSA-vfvf-mqq8-rwqc | MODERATE | 도달 | app.js:76 |
 | 12 | mongoose | 4.2.4 | GHSA-664h-wqgq-64gw | MODERATE | 도달 | mongoose-db.js:3; mongoose-db.js:10 |
 | 13 | st | 0.2.4 | GHSA-72fg-jqhx-c68p | MODERATE | 도달 | app.js:72 |
-| 14 | typeorm | 0.2.24 | GHSA-2rp8-mm9q-fp49 | MODERATE | 도달 | mongoose-db.js:21; routes/index.js:312 |
-| 15 | validator | 13.5.2 | GHSA-xx4c-jj58-r7x6 | MODERATE | 도달 | routes/index.js:116; routes/index.js:117 |
-| 16 | express-fileupload | 0.0.5 | GHSA-9wcg-jrwf-8gg7 | CRITICAL | 사용 | app.js:22 |
-| 17 | lodash | 4.17.10 | GHSA-jf85-cpcp-j695 | CRITICAL | 사용 | routes/index.js:20 |
-| 18 | lodash | 4.17.4 | GHSA-jf85-cpcp-j695 | CRITICAL | 사용 | routes/index.js:20 |
-| 19 | mongoose | 4.2.4 | GHSA-8687-vv9j-hgph | CRITICAL | 사용 | mongoose-db.js:1; routes/index.js:2 |
-| 20 | mongoose | 4.2.4 | GHSA-9m93-w8w6-76hh | CRITICAL | 사용 | mongoose-db.js:1; routes/index.js:2 |
+| 14 | validator | 13.5.2 | GHSA-xx4c-jj58-r7x6 | MODERATE | 도달 | routes/index.js:116; routes/index.js:117 |
+| 15 | express-fileupload | 0.0.5 | GHSA-9wcg-jrwf-8gg7 | CRITICAL | 사용 | app.js:22 |
+| 16 | lodash | 4.17.10 | GHSA-jf85-cpcp-j695 | CRITICAL | 사용 | routes/index.js:20 |
+| 17 | lodash | 4.17.4 | GHSA-jf85-cpcp-j695 | CRITICAL | 사용 | routes/index.js:20 |
+| 18 | mongoose | 4.2.4 | GHSA-8687-vv9j-hgph | CRITICAL | 사용 | mongoose-db.js:1; routes/index.js:2 |
+| 19 | mongoose | 4.2.4 | GHSA-9m93-w8w6-76hh | CRITICAL | 사용 | mongoose-db.js:1; routes/index.js:2 |
+| 20 | mongoose | 4.2.4 | GHSA-vg7j-7cwx-8wgw | CRITICAL | 사용 | mongoose-db.js:1; routes/index.js:2 |

@@ -1,10 +1,10 @@
 {
  "name": "nodegoat",
- "repo": "untrusted/NodeGoat",
+ "repo": "/Users/ryugi62/dev/lotte-sbom-reach/untrusted/NodeGoat",
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 381,
- "elapsed_sec": 0.86,
+ "elapsed_sec": 0.96,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -18,7 +18,8 @@
   "REACHED": 4,
   "USED": 11,
   "UNSEEN": 75,
-  "REACHED_weak": 2
+  "REACHED_weak": 2,
+  "REACHED_flagged": 0
  },
  "alerts": [
   {
@@ -71,11 +72,6 @@
    "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
    "evidence": [
     {
-     "path": "test/e2e/integration/allocations_spec.js",
-     "line": 43,
-     "text": "cy.location().should((loc) => {"
-    },
-    {
      "path": "app/routes/index.js",
      "line": 72,
      "text": "return res.redirect(req.query.url);"
@@ -94,8 +90,21 @@
      "path": "app/routes/session.js",
      "line": 41,
      "text": "return res.redirect(\"/login\");"
+    },
+    {
+     "path": "app/routes/session.js",
+     "line": 117,
+     "text": "return res.redirect(user.isAdmin ? \"/benefits\" : \"/dashboard\");"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "약한 근거(타입 추론 없이 메서드 이름만 일치)"
+    ],
+    "llm": "CONFIRM",
+    "note": "제공된 근거 줄에서 `res.redirect` 함수를 실제로 호출하여 오픈 리다이렉트 취약점의 대상 기능을 사용하고 있습니다."
+   }
   },
   {
    "rank": 3,
@@ -447,7 +456,15 @@
      "line": 117,
      "text": "return res.redirect(user.isAdmin ? \"/benefits\" : \"/dashboard\");"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "약한 근거(타입 추론 없이 메서드 이름만 일치)"
+    ],
+    "llm": "CONFIRM",
+    "note": "근거 줄에서 사용자 입력(`req.query.url`)을 포함한 인자를 사용하여 실제 Express의 `res.redirect()` 함수를 호출하고 있습니다."
+   }
   },
   {
    "rank": 16,

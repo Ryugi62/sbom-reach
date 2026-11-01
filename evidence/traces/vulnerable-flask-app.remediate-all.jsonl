@@ -1,32 +1,47 @@
-{"run_id": "vulnerable-flask-app-all", "seq": 1, "ts": "2026-10-30T08:09:55+0900", "tool": "sbom", "ms": 839, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app-all", "seq": 2, "ts": "2026-10-30T08:09:55+0900", "tool": "source_index", "ms": 4, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app-all", "seq": 3, "ts": "2026-10-30T08:09:55+0900", "tool": "vuln_lookup", "ms": 96, "alerts": 89, "incomplete": 0}
-{"run_id": "vulnerable-flask-app-all", "seq": 4, "ts": "2026-10-30T08:09:55+0900", "tool": "reach_judge", "ms": 1, "reached": 6, "used": 48, "unseen": 35}
-{"run_id": "vulnerable-flask-app-all", "seq": 5, "ts": "2026-10-30T08:09:55+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-ffc3-869f-jxw9:10.0", "pyyaml:GHSA-rprw-h62v-c2w7:10.0", "pyjwt:GHSA-752w-5fwx-jx9f:7.0"]}
-{"run_id": "vulnerable-flask-app-all", "seq": 6, "ts": "2026-10-30T08:09:55+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 7, "ts": "2026-10-30T08:09:56+0900", "tool": "llm_explain", "package": "pyyaml", "ms": 1061, "chars": 100}
-{"run_id": "vulnerable-flask-app-all", "seq": 8, "ts": "2026-10-30T08:09:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 9, "ts": "2026-10-30T08:09:57+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 10, "ts": "2026-10-30T08:09:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 11, "ts": "2026-10-30T08:09:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 12, "ts": "2026-10-30T08:09:58+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 13, "ts": "2026-10-30T08:09:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 14, "ts": "2026-10-30T08:09:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 15, "ts": "2026-10-30T08:09:59+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 16, "ts": "2026-10-30T08:10:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 17, "ts": "2026-10-30T08:10:00+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 18, "ts": "2026-10-30T08:10:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 19, "ts": "2026-10-30T08:10:01+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 20, "ts": "2026-10-30T08:10:01+0900", "tool": "apply_branch", "round": 1, "ecosystem": "PyPI", "bumps": 14}
-{"run_id": "vulnerable-flask-app-all", "seq": 21, "ts": "2026-10-30T08:10:02+0900", "tool": "sbom", "ms": 989, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app-all", "seq": 22, "ts": "2026-10-30T08:10:02+0900", "tool": "source_index", "ms": 5, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app-all", "seq": 23, "ts": "2026-10-30T08:10:02+0900", "tool": "vuln_lookup", "ms": 13, "alerts": 4, "incomplete": 0}
-{"run_id": "vulnerable-flask-app-all", "seq": 24, "ts": "2026-10-30T08:10:02+0900", "tool": "reach_judge", "ms": 0, "reached": 1, "used": 1, "unseen": 2}
-{"run_id": "vulnerable-flask-app-all", "seq": 25, "ts": "2026-10-30T08:10:02+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-42vr-xj54-vc7v:4.0", "pyjwt:GHSA-x33g-cr3x-6449:1.4", "certifi:GHSA-6q48-6c7w-9gw2:1.0"]}
-{"run_id": "vulnerable-flask-app-all", "seq": 26, "ts": "2026-10-30T08:10:03+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-all", "seq": 27, "ts": "2026-10-30T08:10:03+0900", "tool": "apply_branch", "round": 2, "ecosystem": "PyPI", "bumps": 1}
-{"run_id": "vulnerable-flask-app-all", "seq": 28, "ts": "2026-10-30T08:10:04+0900", "tool": "sbom", "ms": 1268, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app-all", "seq": 29, "ts": "2026-10-30T08:10:04+0900", "tool": "source_index", "ms": 8, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app-all", "seq": 30, "ts": "2026-10-30T08:10:04+0900", "tool": "vuln_lookup", "ms": 3, "alerts": 2, "incomplete": 0}
-{"run_id": "vulnerable-flask-app-all", "seq": 31, "ts": "2026-10-30T08:10:04+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 0, "unseen": 2}
-{"run_id": "vulnerable-flask-app-all", "seq": 32, "ts": "2026-10-30T08:10:04+0900", "tool": "rank", "ms": 0, "top": ["certifi:GHSA-6q48-6c7w-9gw2:1.0", "gevent:GHSA-x7m3-jprg-wc5g:1.0"]}
+{"run_id": "vulnerable-flask-app-all", "seq": 1, "ts": "2026-11-02T08:17:36+0900", "tool": "sbom", "ms": 654, "tool_name": "syft", "components": 28, "fallback": false}
+{"run_id": "vulnerable-flask-app-all", "seq": 2, "ts": "2026-11-02T08:17:36+0900", "tool": "source_index", "ms": 4, "imported_modules": 14, "referenced_symbols": 57}
+{"run_id": "vulnerable-flask-app-all", "seq": 3, "ts": "2026-11-02T08:17:36+0900", "tool": "vuln_lookup", "ms": 23, "alerts": 89, "incomplete": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 4, "ts": "2026-11-02T08:17:36+0900", "tool": "reach_judge", "ms": 1, "reached": 5, "used": 49, "unseen": 35}
+{"run_id": "vulnerable-flask-app-all", "seq": 5, "ts": "2026-11-02T08:17:36+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-ffc3-869f-jxw9:10.0", "pyyaml:GHSA-rprw-h62v-c2w7:10.0", "pyjwt:GHSA-pxh4-856f-4h89:7.0"]}
+{"run_id": "vulnerable-flask-app-all", "seq": 6, "ts": "2026-11-02T08:17:36+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 7, "ts": "2026-11-02T08:17:36+0900", "tool": "llm_explain", "package": "pyjwt", "ms": 0, "chars": 80}
+{"run_id": "vulnerable-flask-app-all", "seq": 8, "ts": "2026-11-02T08:17:36+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 9, "ts": "2026-11-02T08:17:36+0900", "tool": "llm_explain", "package": "pyyaml", "ms": 0, "chars": 95}
+{"run_id": "vulnerable-flask-app-all", "seq": 10, "ts": "2026-11-02T08:17:36+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 11, "ts": "2026-11-02T08:17:36+0900", "tool": "llm_explain", "package": "tornado", "ms": 0, "chars": 52}
+{"run_id": "vulnerable-flask-app-all", "seq": 12, "ts": "2026-11-02T08:17:37+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 981}
+{"run_id": "vulnerable-flask-app-all", "seq": 13, "ts": "2026-11-02T08:17:37+0900", "tool": "llm_explain", "package": "flask", "ms": 981, "chars": 147}
+{"run_id": "vulnerable-flask-app-all", "seq": 14, "ts": "2026-11-02T08:17:41+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 979}
+{"run_id": "vulnerable-flask-app-all", "seq": 15, "ts": "2026-11-02T08:17:41+0900", "tool": "llm_explain", "package": "python-docx", "ms": 4508, "chars": 88}
+{"run_id": "vulnerable-flask-app-all", "seq": 16, "ts": "2026-11-02T08:17:46+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 879}
+{"run_id": "vulnerable-flask-app-all", "seq": 17, "ts": "2026-11-02T08:17:46+0900", "tool": "guardrail_block", "rule": "G3", "why": "안전 단정 표현 「안전하다」", "package": "werkzeug"}
+{"run_id": "vulnerable-flask-app-all", "seq": 18, "ts": "2026-11-02T08:17:50+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 870}
+{"run_id": "vulnerable-flask-app-all", "seq": 19, "ts": "2026-11-02T08:17:50+0900", "tool": "llm_explain", "package": "certifi", "ms": 4501, "chars": 113}
+{"run_id": "vulnerable-flask-app-all", "seq": 20, "ts": "2026-11-02T08:17:55+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 931}
+{"run_id": "vulnerable-flask-app-all", "seq": 21, "ts": "2026-11-02T08:17:55+0900", "tool": "llm_explain", "package": "gevent", "ms": 4571, "chars": 120}
+{"run_id": "vulnerable-flask-app-all", "seq": 22, "ts": "2026-11-02T08:17:59+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 835}
+{"run_id": "vulnerable-flask-app-all", "seq": 23, "ts": "2026-11-02T08:17:59+0900", "tool": "llm_explain", "package": "idna", "ms": 4414, "chars": 100}
+{"run_id": "vulnerable-flask-app-all", "seq": 24, "ts": "2026-11-02T08:18:04+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 915}
+{"run_id": "vulnerable-flask-app-all", "seq": 25, "ts": "2026-11-02T08:18:04+0900", "tool": "llm_explain", "package": "jinja2", "ms": 4588, "chars": 89}
+{"run_id": "vulnerable-flask-app-all", "seq": 26, "ts": "2026-11-02T08:18:08+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 846}
+{"run_id": "vulnerable-flask-app-all", "seq": 27, "ts": "2026-11-02T08:18:08+0900", "tool": "llm_explain", "package": "lxml", "ms": 4434, "chars": 96}
+{"run_id": "vulnerable-flask-app-all", "seq": 28, "ts": "2026-11-02T08:18:13+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 823}
+{"run_id": "vulnerable-flask-app-all", "seq": 29, "ts": "2026-11-02T08:18:13+0900", "tool": "llm_explain", "package": "requests", "ms": 4478, "chars": 99}
+{"run_id": "vulnerable-flask-app-all", "seq": 30, "ts": "2026-11-02T08:18:17+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 781}
+{"run_id": "vulnerable-flask-app-all", "seq": 31, "ts": "2026-11-02T08:18:17+0900", "tool": "llm_explain", "package": "sqlalchemy", "ms": 4467, "chars": 64}
+{"run_id": "vulnerable-flask-app-all", "seq": 32, "ts": "2026-11-02T08:18:22+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 858}
+{"run_id": "vulnerable-flask-app-all", "seq": 33, "ts": "2026-11-02T08:18:22+0900", "tool": "guardrail_block", "rule": "G3", "why": "안전 단정 표현 「안전하다」", "package": "urllib3"}
+{"run_id": "vulnerable-flask-app-all", "seq": 34, "ts": "2026-11-02T08:18:22+0900", "tool": "apply_branch", "round": 1, "ecosystem": "PyPI", "bumps": 14}
+{"run_id": "vulnerable-flask-app-all", "seq": 35, "ts": "2026-11-02T08:18:23+0900", "tool": "sbom", "ms": 793, "tool_name": "syft", "components": 28, "fallback": false}
+{"run_id": "vulnerable-flask-app-all", "seq": 36, "ts": "2026-11-02T08:18:23+0900", "tool": "source_index", "ms": 3, "imported_modules": 14, "referenced_symbols": 57}
+{"run_id": "vulnerable-flask-app-all", "seq": 37, "ts": "2026-11-02T08:18:23+0900", "tool": "vuln_lookup", "ms": 6, "alerts": 4, "incomplete": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 38, "ts": "2026-11-02T08:18:23+0900", "tool": "reach_judge", "ms": 0, "reached": 1, "used": 1, "unseen": 2}
+{"run_id": "vulnerable-flask-app-all", "seq": 39, "ts": "2026-11-02T08:18:23+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-42vr-xj54-vc7v:4.0", "pyjwt:GHSA-x33g-cr3x-6449:1.4", "certifi:GHSA-6q48-6c7w-9gw2:1.0"]}
+{"run_id": "vulnerable-flask-app-all", "seq": 40, "ts": "2026-11-02T08:18:23+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 41, "ts": "2026-11-02T08:18:23+0900", "tool": "llm_explain", "package": "pyjwt", "ms": 0, "chars": 109}
+{"run_id": "vulnerable-flask-app-all", "seq": 42, "ts": "2026-11-02T08:18:23+0900", "tool": "apply_branch", "round": 2, "ecosystem": "PyPI", "bumps": 1}
+{"run_id": "vulnerable-flask-app-all", "seq": 43, "ts": "2026-11-02T08:18:23+0900", "tool": "sbom", "ms": 690, "tool_name": "syft", "components": 28, "fallback": false}
+{"run_id": "vulnerable-flask-app-all", "seq": 44, "ts": "2026-11-02T08:18:23+0900", "tool": "source_index", "ms": 3, "imported_modules": 14, "referenced_symbols": 57}
+{"run_id": "vulnerable-flask-app-all", "seq": 45, "ts": "2026-11-02T08:18:23+0900", "tool": "vuln_lookup", "ms": 1, "alerts": 2, "incomplete": 0}
+{"run_id": "vulnerable-flask-app-all", "seq": 46, "ts": "2026-11-02T08:18:23+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 0, "unseen": 2}
+{"run_id": "vulnerable-flask-app-all", "seq": 47, "ts": "2026-11-02T08:18:23+0900", "tool": "rank", "ms": 0, "top": ["certifi:GHSA-6q48-6c7w-9gw2:1.0", "gevent:GHSA-x7m3-jprg-wc5g:1.0"]}

@@ -1,10 +1,10 @@
 {
  "name": "pygoat",
- "repo": "untrusted/pygoat",
+ "repo": "/Users/ryugi62/dev/lotte-sbom-reach/untrusted/pygoat",
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 38,
- "elapsed_sec": 0.89,
+ "elapsed_sec": 1.28,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -15,10 +15,11 @@
  "incomplete": [],
  "counts": {
   "alerts": 201,
-  "REACHED": 9,
-  "USED": 50,
+  "REACHED": 5,
+  "USED": 54,
   "UNSEEN": 142,
-  "REACHED_weak": 0
+  "REACHED_weak": 0,
+  "REACHED_flagged": 2
  },
  "alerts": [
   {
@@ -44,13 +45,8 @@
    "symbol_source": "auto",
    "verdict": "REACHED",
    "weak": false,
-   "reason": "취약 심볼 Q, _connector, exclude, filter, get 의 참조·호출 근거 줄이 있음",
+   "reason": "취약 심볼 Q, _connector 의 참조·호출 근거 줄이 있음",
    "evidence": [
-    {
-     "path": "introduction/tests.py",
-     "line": 66,
-     "text": "self.assertTrue(User.objects.filter(username=\"newbie\").exists())"
-    },
     {
      "path": "scoring/signals.py",
      "line": 72,
@@ -65,146 +61,6 @@
   },
   {
    "rank": 2,
-   "score": 7.0,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-9jmf-237g-qf46",
-   "severity": "HIGH",
-   "fixed": [
-    "5.0.7",
-    "4.2.14"
-   ],
-   "symbols": [
-    "django.core.files.storage.Storage",
-    "generate_filename",
-    "save",
-    "django.core"
-   ],
-   "symbol_source": "auto",
-   "verdict": "REACHED",
-   "weak": false,
-   "reason": "취약 심볼 Storage, core, generate_filename, save 의 참조·호출 근거 줄이 있음",
-   "evidence": [
-    {
-     "path": "introduction/migrations/0009_auto_20210517_2047.py",
-     "line": 18,
-     "text": "validators=[django.core.validators.MaxValueValidator(300)]"
-    },
-    {
-     "path": "scoring/migrations/0001_initial.py",
-     "line": 85,
-     "text": "django.core.validators.MinValueValidator(0.1),"
-    },
-    {
-     "path": "scoring/migrations/0001_initial.py",
-     "line": 86,
-     "text": "django.core.validators.MaxValueValidator(10.0),"
-    }
-   ]
-  },
-  {
-   "rank": 3,
-   "score": 7.0,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-m9g8-fxxm-xg86",
-   "severity": "HIGH",
-   "fixed": [
-    "5.0.10",
-    "5.1.4",
-    "4.2.17"
-   ],
-   "symbols": [
-    "django.db"
-   ],
-   "symbol_source": "auto",
-   "verdict": "REACHED",
-   "weak": false,
-   "reason": "취약 심볼 db 의 참조·호출 근거 줄이 있음",
-   "evidence": [
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 46,
-     "text": "on_delete=django.db.models.deletion.CASCADE,"
-    },
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 53,
-     "text": "on_delete=django.db.models.deletion.CASCADE,"
-    },
-    {
-     "path": "challenge/migrations/0007_labcategorymapping.py",
-     "line": 48,
-     "text": "on_delete=django.db.models.deletion.CASCADE,"
-    },
-    {
-     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
-     "line": 22,
-     "text": "on_delete=django.db.models.deletion.SET_NULL,"
-    },
-    {
-     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
-     "line": 33,
-     "text": "on_delete=django.db.models.deletion.SET_NULL,"
-    }
-   ]
-  },
-  {
-   "rank": 4,
-   "score": 7.0,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-qw25-v68c-qjf3",
-   "severity": "HIGH",
-   "fixed": [
-    "5.2.8",
-    "5.1.14",
-    "4.2.26"
-   ],
-   "symbols": [
-    "django.http.HttpResponseRedirect",
-    "django.http.HttpResponsePermanentRedirect",
-    "django.shortcuts.redirect",
-    "django.http",
-    "django.shortcuts"
-   ],
-   "symbol_source": "auto",
-   "verdict": "REACHED",
-   "weak": false,
-   "reason": "취약 심볼 HttpResponsePermanentRedirect, HttpResponseRedirect, http, redirect, shortcuts 의 참조·호출 근거 줄이 있음",
-   "evidence": [
-    {
-     "path": "challenge/views.py",
-     "line": 49,
-     "text": "return redirect(\"login\")"
-    },
-    {
-     "path": "challenge/views.py",
-     "line": 66,
-     "text": "return redirect(\"login\")"
-    },
-    {
-     "path": "challenge/views.py",
-     "line": 131,
-     "text": "return redirect(\"login\")"
-    },
-    {
-     "path": "introduction/views.py",
-     "line": 28,
-     "text": "return redirect(\"/\")"
-    },
-    {
-     "path": "introduction/views.py",
-     "line": 57,
-     "text": "return redirect(\"login\")"
-    }
-   ]
-  },
-  {
-   "rank": 5,
    "score": 4.0,
    "package": "django",
    "version": "4.2",
@@ -226,34 +82,42 @@
    "reason": "취약 심볼 CharField, DomainNameValidator, HttpResponse 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 21,
-     "text": "(\"name\", models.CharField(max_length=100)),"
+     "path": "challenge/models.py",
+     "line": 9,
+     "text": "name = models.CharField(max_length=100, unique=True)"
     },
     {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 23,
-     "text": "(\"docker_image\", models.CharField(max_length=100)),"
+     "path": "challenge/models.py",
+     "line": 11,
+     "text": "docker_image = models.CharField(max_length=100, unique=True)"
     },
     {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 28,
-     "text": "(\"flag\", models.CharField(max_length=100)),"
+     "path": "challenge/models.py",
+     "line": 17,
+     "text": "flag = models.CharField(max_length=100)"
     },
     {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 36,
-     "text": "(\"container_id\", models.CharField(max_length=100)),"
+     "path": "challenge/models.py",
+     "line": 56,
+     "text": "container_id = models.CharField(max_length=100)"
     },
     {
-     "path": "challenge/migrations/0003_alter_challenge_docker_image_alter_challenge_id_and_more.py",
-     "line": 16,
-     "text": "field=models.CharField(max_length=100, unique=True),"
+     "path": "challenge/models.py",
+     "line": 70,
+     "text": "name = models.CharField(max_length=100, unique=True)"
     }
-   ]
+   ],
+   "review": {
+    "flagged": true,
+    "reasons": [
+     "맞은 취약 심볼이 경보 제목에 없음"
+    ],
+    "llm": "DOUBT",
+    "note": "경보에서 다루는 DomainNameValidator 대신 일반적인 CharField만 사용하고 있어 취약한 기능을 호출하지 않습니다."
+   }
   },
   {
-   "rank": 6,
+   "rank": 3,
    "score": 4.0,
    "package": "django",
    "version": "4.2",
@@ -281,71 +145,19 @@
      "path": "introduction/forms.py",
      "line": 9,
      "text": "email = forms.EmailField(required=True)"
-    },
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 46,
-     "text": "on_delete=django.db.models.deletion.CASCADE,"
-    },
-    {
-     "path": "challenge/migrations/0001_initial.py",
-     "line": 53,
-     "text": "on_delete=django.db.models.deletion.CASCADE,"
-    },
-    {
-     "path": "challenge/migrations/0007_labcategorymapping.py",
-     "line": 48,
-     "text": "on_delete=django.db.models.deletion.CASCADE,"
-    },
-    {
-     "path": "challenge/migrations/0008_challenge_difficulty_lab_difficulty.py",
-     "line": 22,
-     "text": "on_delete=django.db.models.deletion.SET_NULL,"
     }
-   ]
+   ],
+   "review": {
+    "flagged": true,
+    "reasons": [
+     "맞은 취약 심볼이 경보 제목에 없음"
+    ],
+    "llm": "DOUBT",
+    "note": "근거 줄의 `forms.EmailField`는 이메일 필드 처리용이며 IPv6 검증 취약 기능과 무관합니다."
+   }
   },
   {
-   "rank": 7,
-   "score": 4.0,
-   "package": "django",
-   "version": "4.2",
-   "ecosystem": "PyPI",
-   "advisory": "GHSA-vrcr-9hj9-jcg6",
-   "severity": "MODERATE",
-   "fixed": [
-    "5.2.9",
-    "5.1.15",
-    "4.2.27"
-   ],
-   "symbols": [
-    "django.core.serializers.xml_serializer.getInnerText",
-    "Deserializer",
-    "django.core"
-   ],
-   "symbol_source": "auto",
-   "verdict": "REACHED",
-   "weak": false,
-   "reason": "취약 심볼 Deserializer, core, getInnerText 의 참조·호출 근거 줄이 있음",
-   "evidence": [
-    {
-     "path": "introduction/migrations/0009_auto_20210517_2047.py",
-     "line": 18,
-     "text": "validators=[django.core.validators.MaxValueValidator(300)]"
-    },
-    {
-     "path": "scoring/migrations/0001_initial.py",
-     "line": 85,
-     "text": "django.core.validators.MinValueValidator(0.1),"
-    },
-    {
-     "path": "scoring/migrations/0001_initial.py",
-     "line": 86,
-     "text": "django.core.validators.MaxValueValidator(10.0),"
-    }
-   ]
-  },
-  {
-   "rank": 8,
+   "rank": 4,
    "score": 4.0,
    "package": "requests",
    "version": "2.28.2",
@@ -373,10 +185,18 @@
      "line": 38,
      "text": "response = requests.get(traefik_url, timeout=5)"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "맞은 취약 심볼이 경보 제목에 없음"
+    ],
+    "llm": "CONFIRM",
+    "note": "근거 줄에서 requests.get 함수를 직접 호출하여 프록시 인증 헤더 유출 취약점과 관련된 코드가 실제로 사용되고 있음을 확인할 수 있습니다."
+   }
   },
   {
-   "rank": 9,
+   "rank": 5,
    "score": 3.5,
    "package": "django",
    "version": "4.2",
@@ -421,7 +241,7 @@
    ]
   },
   {
-   "rank": 10,
+   "rank": 6,
    "score": 3.5,
    "package": "django",
    "version": "4.2",
@@ -467,7 +287,7 @@
    ]
   },
   {
-   "rank": 11,
+   "rank": 7,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -513,7 +333,7 @@
    ]
   },
   {
-   "rank": 12,
+   "rank": 8,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -562,7 +382,7 @@
    ]
   },
   {
-   "rank": 13,
+   "rank": 9,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -610,7 +430,57 @@
    ]
   },
   {
-   "rank": 14,
+   "rank": 10,
+   "score": 2.45,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-9jmf-237g-qf46",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.7",
+    "4.2.14"
+   ],
+   "symbols": [
+    "django.core.files.storage.Storage",
+    "generate_filename",
+    "save",
+    "django.core"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Storage, core, generate_filename, save 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "challenge/admin.py",
+     "line": 1,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "challenge/apps.py",
+     "line": 1,
+     "text": "from django.apps import AppConfig"
+    },
+    {
+     "path": "challenge/management/commands/populate_challenges.py",
+     "line": 3,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/populate_labs.py",
+     "line": 1,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/startuplabs.py",
+     "line": 3,
+     "text": "from django.conf import settings"
+    }
+   ]
+  },
+  {
+   "rank": 11,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -657,7 +527,7 @@
    ]
   },
   {
-   "rank": 15,
+   "rank": 12,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -712,7 +582,7 @@
    ]
   },
   {
-   "rank": 16,
+   "rank": 13,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -760,7 +630,7 @@
    ]
   },
   {
-   "rank": 17,
+   "rank": 14,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -806,7 +676,7 @@
    ]
   },
   {
-   "rank": 18,
+   "rank": 15,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -855,7 +725,55 @@
    ]
   },
   {
-   "rank": 19,
+   "rank": 16,
+   "score": 2.45,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-m9g8-fxxm-xg86",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.10",
+    "5.1.4",
+    "4.2.17"
+   ],
+   "symbols": [
+    "django.db"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 db 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "challenge/admin.py",
+     "line": 1,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "challenge/apps.py",
+     "line": 1,
+     "text": "from django.apps import AppConfig"
+    },
+    {
+     "path": "challenge/management/commands/populate_challenges.py",
+     "line": 3,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/populate_labs.py",
+     "line": 1,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/startuplabs.py",
+     "line": 3,
+     "text": "from django.conf import settings"
+    }
+   ]
+  },
+  {
+   "rank": 17,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -903,7 +821,7 @@
    ]
   },
   {
-   "rank": 20,
+   "rank": 18,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -951,7 +869,7 @@
    ]
   },
   {
-   "rank": 21,
+   "rank": 19,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -996,7 +914,7 @@
    ]
   },
   {
-   "rank": 22,
+   "rank": 20,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -1044,7 +962,59 @@
    ]
   },
   {
-   "rank": 23,
+   "rank": 21,
+   "score": 2.45,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-qw25-v68c-qjf3",
+   "severity": "HIGH",
+   "fixed": [
+    "5.2.8",
+    "5.1.14",
+    "4.2.26"
+   ],
+   "symbols": [
+    "django.http.HttpResponseRedirect",
+    "django.http.HttpResponsePermanentRedirect",
+    "django.shortcuts.redirect",
+    "django.http",
+    "django.shortcuts"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "취약 심볼 redirect 은(는) 여러 패키지에 흔한 일반 이름이고 `모듈.이름`으로 특정되지 않아 호출 줄만으로 도달이라 하지 않음",
+   "evidence": [
+    {
+     "path": "challenge/admin.py",
+     "line": 1,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "challenge/apps.py",
+     "line": 1,
+     "text": "from django.apps import AppConfig"
+    },
+    {
+     "path": "challenge/management/commands/populate_challenges.py",
+     "line": 3,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/populate_labs.py",
+     "line": 1,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/startuplabs.py",
+     "line": 3,
+     "text": "from django.conf import settings"
+    }
+   ]
+  },
+  {
+   "rank": 22,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -1096,7 +1066,7 @@
    ]
   },
   {
-   "rank": 24,
+   "rank": 23,
    "score": 2.45,
    "package": "django",
    "version": "4.2",
@@ -1142,7 +1112,7 @@
    ]
   },
   {
-   "rank": 25,
+   "rank": 24,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1188,7 +1158,7 @@
    ]
   },
   {
-   "rank": 26,
+   "rank": 25,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1236,7 +1206,7 @@
    ]
   },
   {
-   "rank": 27,
+   "rank": 26,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1284,7 +1254,7 @@
    ]
   },
   {
-   "rank": 28,
+   "rank": 27,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1329,7 +1299,7 @@
    ]
   },
   {
-   "rank": 29,
+   "rank": 28,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1377,7 +1347,7 @@
    ]
   },
   {
-   "rank": 30,
+   "rank": 29,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1423,7 +1393,7 @@
    ]
   },
   {
-   "rank": 31,
+   "rank": 30,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1471,7 +1441,7 @@
    ]
   },
   {
-   "rank": 32,
+   "rank": 31,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1519,7 +1489,7 @@
    ]
   },
   {
-   "rank": 33,
+   "rank": 32,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1568,7 +1538,7 @@
    ]
   },
   {
-   "rank": 34,
+   "rank": 33,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1613,7 +1583,7 @@
    ]
   },
   {
-   "rank": 35,
+   "rank": 34,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1661,7 +1631,7 @@
    ]
   },
   {
-   "rank": 36,
+   "rank": 35,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1711,7 +1681,7 @@
    ]
   },
   {
-   "rank": 37,
+   "rank": 36,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1756,7 +1726,7 @@
    ]
   },
   {
-   "rank": 38,
+   "rank": 37,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1806,7 +1776,7 @@
    ]
   },
   {
-   "rank": 39,
+   "rank": 38,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1854,7 +1824,7 @@
    ]
   },
   {
-   "rank": 40,
+   "rank": 39,
    "score": 1.4,
    "package": "django",
    "version": "4.2",
@@ -1873,6 +1843,56 @@
    "verdict": "USED",
    "weak": false,
    "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "challenge/admin.py",
+     "line": 1,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "challenge/apps.py",
+     "line": 1,
+     "text": "from django.apps import AppConfig"
+    },
+    {
+     "path": "challenge/management/commands/populate_challenges.py",
+     "line": 3,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/populate_labs.py",
+     "line": 1,
+     "text": "from django.core.management.base import BaseCommand"
+    },
+    {
+     "path": "challenge/management/commands/startuplabs.py",
+     "line": 3,
+     "text": "from django.conf import settings"
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "score": 1.4,
+   "package": "django",
+   "version": "4.2",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-vrcr-9hj9-jcg6",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
+   ],
+   "symbols": [
+    "django.core.serializers.xml_serializer.getInnerText",
+    "Deserializer",
+    "django.core"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Deserializer, core, getInnerText 의 참조·호출 근거 줄은 없음",
    "evidence": [
     {
      "path": "challenge/admin.py",

@@ -5,13 +5,13 @@
   {
    "round": 1,
    "scope": "reached",
-   "packages_changed": 9,
+   "packages_changed": 8,
    "changed_files": [
     "package.json",
     "package-lock.json"
    ],
    "reached_after": 2,
-   "alerts_after": 180,
+   "alerts_after": 194,
    "plan": [
     {
      "package": "adm-zip",
@@ -29,8 +29,8 @@
       "GHSA-xcpc-8h2w-3j85"
      ],
      "direct": true,
-     "text": "adm-zip 0.4.7 → 0.6.1: package.json 직접 선언을 올립니다. 경보 8건(GHSA-3v6h-hqm4-2rg6, GHSA-7q85-xj36-vmfc, GHSA-8238-w5pm-2374 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "패키지 adm-zip의 버전을 현재 0.4.7에서 0.6.1로 올립니다. 경보 GHSA-3v6h-hqm4-2rg6, GHSA-7q85-xj36-vmfc, GHSA-8238-w5pm-2374, GHSA-c6fg-446q-cg94, GHSA-j5f4-cc29-5x44, GHSA-p634-w6r4-rjp2, GHSA-rcw4-f5rp-g42v, GHSA-xcpc-8h2w-3j85와 관련하여 판정은 도달입니다.",
+     "text_source": "llm"
     },
     {
      "package": "express",
@@ -42,8 +42,8 @@
       "GHSA-rv95-896h-c2vc"
      ],
      "direct": true,
-     "text": "express 4.12.4 → 4.20.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-qw6h-vgh9-j6wx, GHSA-rv95-896h-c2vc) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "express 패키지를 현재 버전 4.12.4에서 목표 버전 4.20.0으로 올립니다. GHSA-qw6h-vgh9-j6wx 및 GHSA-rv95-896h-c2vc 경보에 대해 판정 도달 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "marked",
@@ -59,8 +59,8 @@
       "GHSA-x5pg-88wf-qq4p"
      ],
      "direct": true,
-     "text": "marked 0.3.5 → 4.0.10: package.json 직접 선언을 올립니다. 경보 6건(GHSA-5v2h-r2cx-5xgj, GHSA-7px7-7xjx-hxm8, GHSA-p9wx-2529-fp83 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "보안 운영 담당님, 패키지 marked의 버전을 현재 0.3.5에서 목표 4.0.10으로 올립니다. 본 조치는 GHSA-5v2h-r2cx-5xgj 외 5건의 경보에 대해 판정이 도달한 결과입니다.",
+     "text_source": "llm"
     },
     {
      "package": "moment",
@@ -72,8 +72,8 @@
       "GHSA-8hfj-j24r-96c4"
      ],
      "direct": true,
-     "text": "moment 2.15.1 → 2.29.2: package.json 직접 선언을 올립니다. 경보 2건(GHSA-446m-mv8f-q348, GHSA-8hfj-j24r-96c4) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "moment 패키지를 현재 2.15.1 버전에서 목표 2.29.2 버전으로 올립니다. 해당 경보 GHSA-446m-mv8f-q348 및 GHSA-8hfj-j24r-96c4에 대해 판정 도달 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "mongoose",
@@ -92,8 +92,8 @@
       "GHSA-wpg9-53fq-2r8h"
      ],
      "direct": true,
-     "text": "mongoose 4.2.4 → 6.13.10: package.json 직접 선언을 올립니다. 경보 9건(GHSA-664h-wqgq-64gw, GHSA-8687-vv9j-hgph, GHSA-9m93-w8w6-76hh 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "현재 4.2.4 버전인 mongoose 패키지를 목표 6.13.10 버전으로 올립니다. 판정은 도달이며, 경보 9건이 확인되었습니다.",
+     "text_source": "llm"
     },
     {
      "package": "ms",
@@ -105,8 +105,8 @@
       "GHSA-w9mr-4mfr-499f"
      ],
      "direct": true,
-     "text": "ms 0.6.2 → 2.0.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-3fx5-fwvr-xrjg, GHSA-w9mr-4mfr-499f) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "패키지 ms의 현재 버전 0.6.2는 경보(GHSA-3fx5-fwvr-xrjg, GHSA-w9mr-4mfr-499f)에 도달 상태입니다. 목표 버전인 2.0.0으로 올립니다.",
+     "text_source": "llm"
     },
     {
      "package": "st",
@@ -118,24 +118,8 @@
       "GHSA-72fg-jqhx-c68p"
      ],
      "direct": true,
-     "text": "st 0.2.4 → 1.2.2: package.json 직접 선언을 올립니다. 경보 2건(GHSA-69rr-wvh9-6c4q, GHSA-72fg-jqhx-c68p) 해소 대상, 판정 도달.",
-     "text_source": "template"
-    },
-    {
-     "package": "typeorm",
-     "current": "0.2.24",
-     "target": "0.3.31",
-     "verdict": "REACHED",
-     "advisories": [
-      "GHSA-2rp8-mm9q-fp49",
-      "GHSA-9ggv-8w38-r7pm",
-      "GHSA-fx4w-v43j-vc45",
-      "GHSA-pf2j-9qmp-jqr2",
-      "GHSA-q2pj-6v73-8rgj"
-     ],
-     "direct": true,
-     "text": "typeorm 0.2.24 → 0.3.31: package.json 직접 선언을 올립니다. 경보 5건(GHSA-2rp8-mm9q-fp49, GHSA-9ggv-8w38-r7pm, GHSA-fx4w-v43j-vc45 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "경보 GHSA-69rr-wvh9-6c4q 및 GHSA-72fg-jqhx-c68p와 관련하여 패키지 st의 현재 0.2.4 버전을 목표 1.2.2 버전으로 올립니다. 해당 판정은 도달입니다.",
+     "text_source": "llm"
     },
     {
      "package": "validator",
@@ -149,8 +133,8 @@
       "GHSA-xx4c-jj58-r7x6"
      ],
      "direct": true,
-     "text": "validator 13.5.2 → 13.15.22: package.json 직접 선언을 올립니다. 경보 4건(GHSA-9965-vmph-33xx, GHSA-qgmg-gppg-76g5, GHSA-vghf-hv5q-vc2g 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "validator 패키지를 현재 13.5.2 버전에서 13.15.22 버전으로 올립니다. 해당 판정은 도달이며, 경보 GHSA-9965-vmph-33xx, GHSA-qgmg-gppg-76g5, GHSA-vghf-hv5q-vc2g, GHSA-xx4c-jj58-r7x6이(가) 확인되었습니다.",
+     "text_source": "llm"
     }
    ]
   },
@@ -163,7 +147,7 @@
     "package-lock.json"
    ],
    "reached_after": 1,
-   "alerts_after": 178,
+   "alerts_after": 192,
    "plan": [
     {
      "package": "moment",
@@ -175,8 +159,8 @@
       "GHSA-wc69-rhjr-hc9g"
      ],
      "direct": true,
-     "text": "moment 2.29.2 → 2.31.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-4p3w-j4w9-5jqw, GHSA-wc69-rhjr-hc9g) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "패키지 moment를 현재 버전 2.29.2에서 목표 버전 2.31.0으로 올립니다.\n경보 GHSA-4p3w-j4w9-5jqw 및 GHSA-wc69-rhjr-hc9g에 대한 판정은 도달입니다.",
+     "text_source": "llm"
     },
     {
      "package": "ms",
@@ -188,27 +172,27 @@
       "GHSA-w9mr-4mfr-499f"
      ],
      "direct": true,
-     "text": "ms 0.6.2 → 2.0.0: package.json 직접 선언을 올립니다. 경보 2건(GHSA-3fx5-fwvr-xrjg, GHSA-w9mr-4mfr-499f) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "패키지 ms의 현재 버전 0.6.2는 경보(GHSA-3fx5-fwvr-xrjg, GHSA-w9mr-4mfr-499f)에 도달 상태입니다. 목표 버전인 2.0.0으로 올립니다.",
+     "text_source": "llm"
     }
    ]
   }
  ],
- "packages_changed": 11,
+ "packages_changed": 10,
  "changed_files": [
   "package-lock.json",
   "package.json"
  ],
  "diff": {
   "before_total": 172,
-  "after_total": 121,
-  "resolved": 54,
-  "remaining": 118,
+  "after_total": 131,
+  "resolved": 44,
+  "remaining": 128,
   "new": 3,
-  "reached_before": 16,
+  "reached_before": 15,
   "reached_after": 1,
-  "used_before": 59,
-  "used_after": 36
+  "used_before": 60,
+  "used_after": 41
  },
  "after_stage_status": {
   "sbom": "ok",
@@ -221,6 +205,6 @@
  "reached_after_items": [
   "ms@0.6.2:GHSA-3fx5-fwvr-xrjg"
  ],
- "llm_texts": 0,
+ "llm_texts": 10,
  "unfixed_alerts_after": 5
 }

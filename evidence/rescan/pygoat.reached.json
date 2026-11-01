@@ -74,8 +74,8 @@
       "GHSA-xxj9-f6rv-m3x4"
      ],
      "direct": true,
-     "text": "django 4.2 → 5.2.17: requirements 고정 버전을 올립니다. 경보 51건(GHSA-2mcm-79hx-8fxw, GHSA-33mw-q7rj-mjwj, GHSA-3h9f-r86x-qvjx 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "패키지 django의 버전을 현재 4.2에서 5.2.17로 올립니다. \n다수의 경보에 대해 판정 도달 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "flask",
@@ -86,8 +86,8 @@
       "GHSA-68rp-wp8r-4726"
      ],
      "direct": true,
-     "text": "flask 2.3.3 → 3.1.3: requirements 고정 버전을 올립니다. 경보 1건(GHSA-68rp-wp8r-4726) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "GHSA-68rp-wp8r-4726 경보와 관련하여 flask 패키지를 현재 2.3.3 버전에서 목표 3.1.3 버전으로 올립니다. 현재 판정은 도달 상태입니다.",
+     "text_source": "llm"
     },
     {
      "package": "requests",
@@ -101,8 +101,8 @@
       "GHSA-j8r2-6x86-q33q"
      ],
      "direct": true,
-     "text": "requests 2.28.2 → 2.33.0: requirements 고정 버전을 올립니다. 경보 4건(GHSA-9hjg-9r4m-mvj7, GHSA-9wx4-h78v-vm56, GHSA-gc5v-m9x4-r6x2 외) 해소 대상, 판정 도달.",
-     "text_source": "template"
+     "text": "requests 패키지의 현재 버전 2.28.2는 네 건의 경보에 대해 도달 판정 상태이므로 2.33.0 버전으로 올립니다.",
+     "text_source": "llm"
     }
    ]
   }
@@ -120,9 +120,9 @@
   "resolved": 56,
   "remaining": 137,
   "new": 0,
-  "reached_before": 9,
+  "reached_before": 5,
   "reached_after": 0,
-  "used_before": 50,
+  "used_before": 54,
   "used_after": 3
  },
  "after_stage_status": {
@@ -134,6 +134,6 @@
  },
  "after_incomplete": [],
  "reached_after_items": [],
- "llm_texts": 0,
+ "llm_texts": 3,
  "unfixed_alerts_after": 1
 }

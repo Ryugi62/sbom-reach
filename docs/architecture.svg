@@ -10,7 +10,7 @@
 .ln{stroke:#334155;stroke-width:1.8;fill:none;marker-end:url(#a)}
 </style></defs>
 <rect width="1200" height="760" fill="#fff"/>
-<text x="24" y="32" class="h" style="font-size:20px">그림 1. SBOM 도달가능성 우선순위 에이전트 구조 (판정은 코드, LLM은 문장만)</text>
+<text x="24" y="32" class="h" style="font-size:20px">그림 1. SBOM 도달가능성 우선순위 파이프라인 구조 (판정은 코드, AI는 두 자리)</text>
 <text x="24" y="54" class="s">파랑 = 결정적 코드 · 주황 = LLM(Gemini) · 초록 = 가드레일 · 하늘 = 평가(Evals) · 빨강 = 실패 처리 · 점선 = 사람</text>
 
 <rect x="24" y="80" width="150" height="120" class="human"/>
@@ -23,16 +23,16 @@
 <text x="460" y="106" class="h">2 취약점 조회</text><text x="460" y="130" class="s">OSV(osv.dev) 부품별</text><text x="460" y="150" class="s">캐시 · 병렬 선조회</text><text x="460" y="170" class="s">출력: 경보 = 부품×어드바이저리</text>
 
 <rect x="674" y="80" width="250" height="120" class="code"/>
-<text x="690" y="106" class="h">3 도달가능성 판정</text><text x="690" y="130" class="s">소스 분석(Python ast · JS 토큰)</text><text x="690" y="150" class="s">취약 심볼 호출 근거 줄 → 도달</text><text x="690" y="170" class="s">import만 → 사용 · 없음 → 미확인</text>
+<text x="690" y="106" class="h">3 도달가능성 판정</text><text x="690" y="130" class="s">소스 분석(Python ast · JS 토큰 · Java import)</text><text x="690" y="150" class="s">취약 심볼 호출 근거 줄 → 도달</text><text x="690" y="170" class="s">import만 → 사용 · 없음 → 미확인</text>
 
 <rect x="964" y="80" width="212" height="120" class="code"/>
 <text x="980" y="106" class="h">4 우선순위</text><text x="980" y="130" class="s">점수 = 심각도 가중 × 도달 가중</text><text x="980" y="150" class="s">조치 계획: 패키지별 최저</text><text x="980" y="170" class="s">안전 버전(OSV 고침 버전)</text>
 
 <path d="M174 140 H214" class="ln"/><path d="M404 140 H444" class="ln"/><path d="M634 140 H674" class="ln"/><path d="M924 140 H964" class="ln"/>
 
-<rect x="964" y="250" width="212" height="110" class="llm"/>
-<text x="980" y="276" class="h">5 조치안 문장</text><text x="980" y="300" class="s">Gemini: 두 문장 이내 설명만</text><text x="980" y="320" class="s">판정·고칠 버전 결정은 코드(4)가 함</text><text x="980" y="340" class="s">실패 시 템플릿 문장</text>
-<path d="M1070 200 V250" class="ln"/>
+<rect x="964" y="250" width="212" height="130" class="llm"/>
+<text x="980" y="274" class="h">5 AI 두 자리(Gemini)</text><text x="980" y="296" class="s">① 조치안 두 문장 설명만</text><text x="980" y="314" class="s">② 약한 도달에 「사람 확인</text><text x="980" y="330" class="s">필요」 표시만 — 판정·순위 불변,</text><text x="980" y="346" class="s">도달로 올리기 불가(G1)</text><text x="980" y="364" class="s">실패 시 템플릿 / 표시 붙임</text>
+<path d="M1070 200 V250" class="ln"/><path d="M900 200 C900 232 1000 226 1010 250" class="ln" style="stroke-dasharray:5 4;stroke:#c2410c"/>
 
 <rect x="674" y="250" width="250" height="110" class="code"/>
 <text x="690" y="276" class="h">6 조치 적용 가지</text><text x="690" y="300" class="s">사본에서 git 가지 fix/sbomreach</text><text x="690" y="320" class="s">requirements·package.json 수정</text><text x="690" y="340" class="s">(npm: lock만 재생성, 스크립트 실행 없음)</text>
@@ -58,17 +58,17 @@
 
 <rect x="616" y="400" width="560" height="170" class="eval"/>
 <text x="632" y="426" class="h">평가 (Evals)</text>
-<text x="632" y="452" class="s">· 개발 Gold 66건 + 홀드아웃 37건 = 103건: 판정 3분류 일치율·도달 정밀도·재현율</text>
+<text x="632" y="452" class="s">· 홀드아웃2 33건(수정 코드보다 먼저 동결) 첫 실행값을 대표로 · 정답 일부 Gemini 독립 재판정(kappa)</text>
 <text x="632" y="472" class="s">· 단위 시험(pytest, 오프라인, 1초 미만) + 아키텍처 의존 방향 시험</text>
-<text x="632" y="492" class="s">· 목표 일치율 ≥80%: 홀드아웃 동결 직후 78.4%(미달), 수정 뒤 81.1%(사후 수정)</text>
-<text x="632" y="512" class="s">· 목표: 도달 경보 재스캔 후 0 · 거짓 도달 구조 차단</text>
+<text x="632" y="492" class="s">· 첫 실행 도달 정밀도 54.5%(v1.2 판정기 42.9%) · 확인 표시 제외 후 75% · 목표 70% 미달</text>
+<text x="632" y="512" class="s">· 열어 볼 경보 수(전체→도달→표시 제외) · precision@N · 도달 경보 재스캔 후 0</text>
 <text x="632" y="532" class="s">· trace: 도구 호출 1건 = JSONL 1줄(단계·건수·ms·가드레일 차단·대체 경로)</text>
-<text x="632" y="552" class="s">· 평가가 틀린 곳(인스턴스 메서드·설정 로딩)을 한계 표에 그대로 공개</text>
+<text x="632" y="552" class="s">· 틀린 곳(본문 속 예시 심볼·설정 로딩)을 한계 표에 그대로 공개</text>
 
 <rect x="24" y="600" width="1152" height="130" class="fail"/>
 <text x="40" y="626" class="h">실패 처리 (조용히 넘어가지 않는다)</text>
 <text x="40" y="652" class="s">OSV 조회 실패 → 최초 1 + 재시도 2회 → 그 부품을 incomplete로 표시, 보고서에 「스캔 미완」(깨끗하다고 말하지 않음)</text>
-<text x="40" y="674" class="s">syft 실행 불가 → 잠금 파일 파서로 대체하고 trace에 fallback 기록 · Gemini 호출 실패(HTTPError·키 없음) → 템플릿 문장으로 계속</text>
+<text x="40" y="674" class="s">syft 실행 불가 → 잠금 파일 파서로 대체하고 trace에 fallback 기록 · Gemini 실패 → 상태 코드·원문을 trace에 남기고 429·5xx 재시도, 끝내 실패하면 템플릿</text>
 <text x="40" y="696" class="s">소스 분석이 못 보는 것(동적 import·인스턴스 타입) → 「미확인」 또는 「약한 근거」 표시 · 조치 후 새 경보가 생기면 신규로 따로 집계</text>
 <text x="40" y="718" class="s">고쳐진 버전이 없는 경보 → 목표 버전 공란 + 「대체 패키지·호출 우회 검토」 문장</text>
 </svg>

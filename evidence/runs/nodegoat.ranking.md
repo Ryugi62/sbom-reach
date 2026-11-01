@@ -1,7 +1,7 @@
 | 순위 | 패키지 | 버전 | 경보 | 심각도 | 판정 | 근거 줄 |
 |---|---|---|---|---|---|---|
 | 1 | marked | 0.3.5 | GHSA-x5pg-88wf-qq4p | HIGH | 도달 | server.js:129 |
-| 2 | express | 4.16.4 | GHSA-rv95-896h-c2vc | MODERATE | 도달 | test/e2e/integration/allocations_spec.js:43; app/routes/index.js:72 |
+| 2 | express | 4.16.4 | GHSA-rv95-896h-c2vc | MODERATE | 도달 | app/routes/index.js:72; app/routes/session.js:28 |
 | 3 | marked | 0.3.5 | GHSA-vfvf-mqq8-rwqc | MODERATE | 도달 | server.js:129 |
 | 4 | underscore | 1.9.1 | GHSA-cf4h-3jhx-xvhq | CRITICAL | 사용 | config/config.js:1 |
 | 5 | body-parser | 1.18.3 | GHSA-27r3-jxmh-p828 | HIGH | 사용 | server.js:5 |

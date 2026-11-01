@@ -1,21 +1,5 @@
-{"run_id": "vulnerable-flask-app-reached", "seq": 1, "ts": "2026-10-30T08:09:47+0900", "tool": "sbom", "ms": 3315, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app-reached", "seq": 2, "ts": "2026-10-30T08:09:47+0900", "tool": "source_index", "ms": 5, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app-reached", "seq": 3, "ts": "2026-10-30T08:09:47+0900", "tool": "vuln_lookup", "ms": 49, "alerts": 89, "incomplete": 0}
-{"run_id": "vulnerable-flask-app-reached", "seq": 4, "ts": "2026-10-30T08:09:47+0900", "tool": "reach_judge", "ms": 0, "reached": 6, "used": 48, "unseen": 35}
-{"run_id": "vulnerable-flask-app-reached", "seq": 5, "ts": "2026-10-30T08:09:47+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-ffc3-869f-jxw9:10.0", "pyyaml:GHSA-rprw-h62v-c2w7:10.0", "pyjwt:GHSA-752w-5fwx-jx9f:7.0"]}
-{"run_id": "vulnerable-flask-app-reached", "seq": 6, "ts": "2026-10-30T08:09:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-reached", "seq": 7, "ts": "2026-10-30T08:09:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-reached", "seq": 8, "ts": "2026-10-30T08:09:48+0900", "tool": "fallback", "stage": "llm", "why": "HTTPError"}
-{"run_id": "vulnerable-flask-app-reached", "seq": 9, "ts": "2026-10-30T08:09:48+0900", "tool": "apply_branch", "round": 1, "ecosystem": "PyPI", "bumps": 3}
-{"run_id": "vulnerable-flask-app-reached", "seq": 10, "ts": "2026-10-30T08:09:49+0900", "tool": "sbom", "ms": 832, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app-reached", "seq": 11, "ts": "2026-10-30T08:09:49+0900", "tool": "source_index", "ms": 3, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app-reached", "seq": 12, "ts": "2026-10-30T08:09:49+0900", "tool": "vuln_lookup", "ms": 73, "alerts": 54, "incomplete": 0}
-{"run_id": "vulnerable-flask-app-reached", "seq": 13, "ts": "2026-10-30T08:09:49+0900", "tool": "reach_judge", "ms": 0, "reached": 1, "used": 18, "unseen": 35}
-{"run_id": "vulnerable-flask-app-reached", "seq": 14, "ts": "2026-10-30T08:09:49+0900", "tool": "rank", "ms": 0, "top": ["pyjwt:GHSA-42vr-xj54-vc7v:4.0", "flask:GHSA-562c-5r94-xh97:2.45", "flask:GHSA-5wv5-4vpf-pj6m:2.45"]}
-{"run_id": "vulnerable-flask-app-reached", "seq": 15, "ts": "2026-10-30T08:09:52+0900", "tool": "llm_explain", "package": "pyjwt", "ms": 2241, "chars": 105}
-{"run_id": "vulnerable-flask-app-reached", "seq": 16, "ts": "2026-10-30T08:09:52+0900", "tool": "apply_branch", "round": 2, "ecosystem": "PyPI", "bumps": 1}
-{"run_id": "vulnerable-flask-app-reached", "seq": 17, "ts": "2026-10-30T08:09:53+0900", "tool": "sbom", "ms": 867, "tool_name": "syft", "components": 28, "fallback": false}
-{"run_id": "vulnerable-flask-app-reached", "seq": 18, "ts": "2026-10-30T08:09:53+0900", "tool": "source_index", "ms": 3, "imported_modules": 14, "referenced_symbols": 62}
-{"run_id": "vulnerable-flask-app-reached", "seq": 19, "ts": "2026-10-30T08:09:53+0900", "tool": "vuln_lookup", "ms": 97, "alerts": 52, "incomplete": 0}
-{"run_id": "vulnerable-flask-app-reached", "seq": 20, "ts": "2026-10-30T08:09:53+0900", "tool": "reach_judge", "ms": 0, "reached": 0, "used": 17, "unseen": 35}
-{"run_id": "vulnerable-flask-app-reached", "seq": 21, "ts": "2026-10-30T08:09:53+0900", "tool": "rank", "ms": 0, "top": ["flask:GHSA-562c-5r94-xh97:2.45", "flask:GHSA-5wv5-4vpf-pj6m:2.45", "flask:GHSA-m2qf-hxjv-5gpq:2.45"]}
+{"run_id": "nodegoat-all", "seq": 4, "ts": "2026-11-02T08:27:36+0900", "tool": "reach_judge", "ms": 0, "reached": 4, "used": 11, "unseen": 75}
+{"run_id": "nodegoat-all", "seq": 30, "ts": "2026-11-02T08:28:04+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 429, "attempt": 1, "detail": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,", "ms": 333}
+{"run_id": "nodegoat-all", "seq": 6, "ts": "2026-11-02T08:27:37+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 836}
+{"run_id": "nodegoat-all", "seq": 7, "ts": "2026-11-02T08:27:37+0900", "tool": "llm_explain", "package": "express", "ms": 840, "chars": 105}
+{"run_id": "vulnerable-flask-app", "seq": 2, "ts": "2026-11-02T08:31:26+0900", "tool": "llm_review", "package": "pyjwt", "advisory": "GHSA-ffc3-869f-jxw9", "answer": "DOUBT"}

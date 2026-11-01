@@ -1,10 +1,10 @@
 {
  "name": "nodejs-goof",
- "repo": "untrusted/nodejs-goof",
+ "repo": "/Users/ryugi62/dev/lotte-sbom-reach/untrusted/nodejs-goof",
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 566,
- "elapsed_sec": 0.9,
+ "elapsed_sec": 1.02,
  "stage_status": {
   "sbom": "ok",
   "source": "ok",
@@ -15,10 +15,11 @@
  "incomplete": [],
  "counts": {
   "alerts": 235,
-  "REACHED": 16,
-  "USED": 59,
+  "REACHED": 15,
+  "USED": 60,
   "UNSEEN": 160,
-  "REACHED_weak": 3
+  "REACHED_weak": 2,
+  "REACHED_flagged": 0
  },
  "alerts": [
   {
@@ -41,7 +42,7 @@
    "symbol_source": "auto",
    "verdict": "REACHED",
    "weak": false,
-   "reason": "취약 심볼 Schema, path, schema 의 참조·호출 근거 줄이 있음",
+   "reason": "취약 심볼 Schema, schema 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
      "path": "mongoose-db.js",
@@ -76,7 +77,15 @@
      "line": 270,
      "text": "zip.extractAllTo(extracted_path, true);"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "맞은 취약 심볼이 경보 제목에 없음"
+    ],
+    "llm": "CONFIRM",
+    "note": "routes/index.js의 근거 줄에서 경보의 취약 기능인 extractAllTo를 실제로 호출하고 있습니다."
+   }
   },
   {
    "rank": 3,
@@ -107,7 +116,15 @@
      "line": 270,
      "text": "zip.extractAllTo(extracted_path, true);"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "맞은 취약 심볼이 경보 제목에 없음"
+    ],
+    "llm": "CONFIRM",
+    "note": "코드에서 실제로 취약한 심볼인 extractAllTo를 호출하여 압축 해제를 수행하고 있기 때문입니다."
+   }
   },
   {
    "rank": 4,
@@ -317,7 +334,15 @@
      "line": 132,
      "text": "return res.redirect('/')"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "약한 근거(타입 추론 없이 메서드 이름만 일치)"
+    ],
+    "llm": "CONFIRM",
+    "note": "근거 줄에서 `res.redirect` 함수를 실제로 호출하여 취약한 리다이렉트 기능을 사용하고 있습니다."
+   }
   },
   {
    "rank": 11,
@@ -369,7 +394,7 @@
    "symbol_source": "auto",
    "verdict": "REACHED",
    "weak": false,
-   "reason": "취약 심볼 $fullPath, $parentSchemaDocArray, Schema, model, prototype 의 참조·호출 근거 줄이 있음",
+   "reason": "취약 심볼 $fullPath, $parentSchemaDocArray, Schema, model 의 참조·호출 근거 줄이 있음",
    "evidence": [
     {
      "path": "mongoose-db.js",
@@ -427,48 +452,6 @@
   {
    "rank": 14,
    "score": 4.0,
-   "package": "typeorm",
-   "version": "0.2.24",
-   "ecosystem": "npm",
-   "advisory": "GHSA-2rp8-mm9q-fp49",
-   "severity": "MODERATE",
-   "fixed": [
-    "0.3.31",
-    "1.1.0"
-   ],
-   "symbols": [
-    "escapeComment",
-    "import",
-    "require",
-    "information_schema.CHECK_CONSTRAINTS",
-    "ViewEntity",
-    "pg_get_viewdef",
-    "JSON.stringify",
-    "id",
-    "user",
-    "down",
-    "up"
-   ],
-   "symbol_source": "auto",
-   "verdict": "REACHED",
-   "weak": true,
-   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
-   "evidence": [
-    {
-     "path": "mongoose-db.js",
-     "line": 21,
-     "text": "console.log(JSON.stringify(cfenv.getAppEnv()));"
-    },
-    {
-     "path": "routes/index.js",
-     "line": 312,
-     "text": "console.log(JSON.stringify(req.query));"
-    }
-   ]
-  },
-  {
-   "rank": 15,
-   "score": 4.0,
    "package": "validator",
    "version": "13.5.2",
    "ecosystem": "npm",
@@ -497,10 +480,18 @@
      "line": 117,
      "text": "profile.lastname = validator.rtrim(profile.lastname)"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "맞은 취약 심볼이 경보 제목에 없음"
+    ],
+    "llm": "CONFIRM",
+    "note": "저장소 코드는 실제 취약 심볼인 `validator.rtrim`을 호출하여 정규식 처리 관련 취약 기능을 사용하고 있습니다."
+   }
   },
   {
-   "rank": 16,
+   "rank": 15,
    "score": 3.5,
    "package": "express-fileupload",
    "version": "0.0.5",
@@ -524,7 +515,7 @@
    ]
   },
   {
-   "rank": 17,
+   "rank": 16,
    "score": 3.5,
    "package": "lodash",
    "version": "4.17.10",
@@ -551,7 +542,7 @@
    ]
   },
   {
-   "rank": 18,
+   "rank": 17,
    "score": 3.5,
    "package": "lodash",
    "version": "4.17.4",
@@ -578,7 +569,7 @@
    ]
   },
   {
-   "rank": 19,
+   "rank": 18,
    "score": 3.5,
    "package": "mongoose",
    "version": "4.2.4",
@@ -610,7 +601,7 @@
    ]
   },
   {
-   "rank": 20,
+   "rank": 19,
    "score": 3.5,
    "package": "mongoose",
    "version": "4.2.4",
@@ -641,7 +632,7 @@
    ]
   },
   {
-   "rank": 21,
+   "rank": 20,
    "score": 3.5,
    "package": "mongoose",
    "version": "4.2.4",
@@ -674,7 +665,7 @@
    ]
   },
   {
-   "rank": 22,
+   "rank": 21,
    "score": 3.5,
    "package": "typeorm",
    "version": "0.2.24",
@@ -705,7 +696,7 @@
    ]
   },
   {
-   "rank": 23,
+   "rank": 22,
    "score": 3.5,
    "package": "typeorm",
    "version": "0.2.24",
@@ -734,7 +725,7 @@
    ]
   },
   {
-   "rank": 24,
+   "rank": 23,
    "score": 2.45,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -761,7 +752,7 @@
    ]
   },
   {
-   "rank": 25,
+   "rank": 24,
    "score": 2.45,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -799,7 +790,7 @@
    ]
   },
   {
-   "rank": 26,
+   "rank": 25,
    "score": 2.45,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -823,7 +814,7 @@
    ]
   },
   {
-   "rank": 27,
+   "rank": 26,
    "score": 2.45,
    "package": "body-parser",
    "version": "1.9.0",
@@ -850,7 +841,7 @@
    ]
   },
   {
-   "rank": 28,
+   "rank": 27,
    "score": 2.45,
    "package": "body-parser",
    "version": "1.9.0",
@@ -874,7 +865,7 @@
    ]
   },
   {
-   "rank": 29,
+   "rank": 28,
    "score": 2.45,
    "package": "dustjs-linkedin",
    "version": "2.5.0",
@@ -898,7 +889,7 @@
    ]
   },
   {
-   "rank": 30,
+   "rank": 29,
    "score": 2.45,
    "package": "express-fileupload",
    "version": "0.0.5",
@@ -920,7 +911,7 @@
    ]
   },
   {
-   "rank": 31,
+   "rank": 30,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -947,7 +938,7 @@
    ]
   },
   {
-   "rank": 32,
+   "rank": 31,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -973,7 +964,7 @@
    ]
   },
   {
-   "rank": 33,
+   "rank": 32,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -1003,7 +994,7 @@
    ]
   },
   {
-   "rank": 34,
+   "rank": 33,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.10",
@@ -1036,7 +1027,7 @@
    ]
   },
   {
-   "rank": 35,
+   "rank": 34,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.21",
@@ -1069,7 +1060,7 @@
    ]
   },
   {
-   "rank": 36,
+   "rank": 35,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1096,7 +1087,7 @@
    ]
   },
   {
-   "rank": 37,
+   "rank": 36,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1122,7 +1113,7 @@
    ]
   },
   {
-   "rank": 38,
+   "rank": 37,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1152,7 +1143,7 @@
    ]
   },
   {
-   "rank": 39,
+   "rank": 38,
    "score": 2.45,
    "package": "lodash",
    "version": "4.17.4",
@@ -1185,7 +1176,7 @@
    ]
   },
   {
-   "rank": 40,
+   "rank": 39,
    "score": 2.45,
    "package": "marked",
    "version": "0.3.5",
@@ -1212,7 +1203,7 @@
    ]
   },
   {
-   "rank": 41,
+   "rank": 40,
    "score": 2.45,
    "package": "marked",
    "version": "0.3.5",
@@ -1239,7 +1230,7 @@
    ]
   },
   {
-   "rank": 42,
+   "rank": 41,
    "score": 2.45,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1271,7 +1262,7 @@
    ]
   },
   {
-   "rank": 43,
+   "rank": 42,
    "score": 2.45,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1303,7 +1294,7 @@
    ]
   },
   {
-   "rank": 44,
+   "rank": 43,
    "score": 2.45,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1345,7 +1336,7 @@
    ]
   },
   {
-   "rank": 45,
+   "rank": 44,
    "score": 2.45,
    "package": "typeorm",
    "version": "0.2.24",
@@ -1381,7 +1372,7 @@
    ]
   },
   {
-   "rank": 46,
+   "rank": 45,
    "score": 2.45,
    "package": "validator",
    "version": "13.5.2",
@@ -1405,7 +1396,7 @@
    ]
   },
   {
-   "rank": 47,
+   "rank": 46,
    "score": 1.4,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -1429,7 +1420,7 @@
    ]
   },
   {
-   "rank": 48,
+   "rank": 47,
    "score": 1.4,
    "package": "adm-zip",
    "version": "0.4.7",
@@ -1459,7 +1450,7 @@
    ]
   },
   {
-   "rank": 49,
+   "rank": 48,
    "score": 1.4,
    "package": "hbs",
    "version": "4.0.4",
@@ -1481,7 +1472,7 @@
    ]
   },
   {
-   "rank": 50,
+   "rank": 49,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1510,7 +1501,7 @@
    ]
   },
   {
-   "rank": 51,
+   "rank": 50,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1540,7 +1531,7 @@
    ]
   },
   {
-   "rank": 52,
+   "rank": 51,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1564,7 +1555,7 @@
    ]
   },
   {
-   "rank": 53,
+   "rank": 52,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.10",
@@ -1591,7 +1582,7 @@
    ]
   },
   {
-   "rank": 54,
+   "rank": 53,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.21",
@@ -1621,7 +1612,7 @@
    ]
   },
   {
-   "rank": 55,
+   "rank": 54,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.21",
@@ -1648,7 +1639,7 @@
    ]
   },
   {
-   "rank": 56,
+   "rank": 55,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1677,7 +1668,7 @@
    ]
   },
   {
-   "rank": 57,
+   "rank": 56,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1707,7 +1698,7 @@
    ]
   },
   {
-   "rank": 58,
+   "rank": 57,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1733,7 +1724,7 @@
    ]
   },
   {
-   "rank": 59,
+   "rank": 58,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1757,7 +1748,7 @@
    ]
   },
   {
-   "rank": 60,
+   "rank": 59,
    "score": 1.4,
    "package": "lodash",
    "version": "4.17.4",
@@ -1784,7 +1775,7 @@
    ]
   },
   {
-   "rank": 61,
+   "rank": 60,
    "score": 1.4,
    "package": "marked",
    "version": "0.3.5",
@@ -1808,7 +1799,7 @@
    ]
   },
   {
-   "rank": 62,
+   "rank": 61,
    "score": 1.4,
    "package": "marked",
    "version": "0.3.5",
@@ -1832,7 +1823,7 @@
    ]
   },
   {
-   "rank": 63,
+   "rank": 62,
    "score": 1.4,
    "package": "mongoose",
    "version": "4.2.4",
@@ -1864,7 +1855,7 @@
    ]
   },
   {
-   "rank": 64,
+   "rank": 63,
    "score": 1.4,
    "package": "morgan",
    "version": "1.10.0",
@@ -1893,7 +1884,7 @@
    ]
   },
   {
-   "rank": 65,
+   "rank": 64,
    "score": 1.4,
    "package": "morgan",
    "version": "1.10.0",
@@ -1920,7 +1911,7 @@
    ]
   },
   {
-   "rank": 66,
+   "rank": 65,
    "score": 1.4,
    "package": "morgan",
    "version": "1.10.0",
@@ -1948,7 +1939,7 @@
    ]
   },
   {
-   "rank": 67,
+   "rank": 66,
    "score": 1.4,
    "package": "ms",
    "version": "0.6.2",
@@ -1972,7 +1963,7 @@
    ]
   },
   {
-   "rank": 68,
+   "rank": 67,
    "score": 1.4,
    "package": "ms",
    "version": "0.7.1",
@@ -1996,7 +1987,7 @@
    ]
   },
   {
-   "rank": 69,
+   "rank": 68,
    "score": 1.4,
    "package": "ms",
    "version": "0.7.3",
@@ -2016,6 +2007,48 @@
      "path": "routes/index.js",
      "line": 7,
      "text": "var ms = require('ms');"
+    }
+   ]
+  },
+  {
+   "rank": 69,
+   "score": 1.4,
+   "package": "typeorm",
+   "version": "0.2.24",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2rp8-mm9q-fp49",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.3.31",
+    "1.1.0"
+   ],
+   "symbols": [
+    "escapeComment",
+    "import",
+    "require",
+    "information_schema.CHECK_CONSTRAINTS",
+    "ViewEntity",
+    "pg_get_viewdef",
+    "JSON.stringify",
+    "id",
+    "user",
+    "down",
+    "up"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 CHECK_CONSTRAINTS, ViewEntity, down, escapeComment, id, import, pg_get_viewdef, require, stringify, up, user 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "routes/users.js",
+     "line": 3,
+     "text": "var typeorm = require(\"typeorm\");"
+    },
+    {
+     "path": "typeorm-db.js",
+     "line": 1,
+     "text": "var typeorm = require(\"typeorm\");"
     }
    ]
   },
@@ -2264,7 +2297,15 @@
      "line": 132,
      "text": "return res.redirect('/')"
     }
-   ]
+   ],
+   "review": {
+    "flagged": false,
+    "reasons": [
+     "약한 근거(타입 추론 없이 메서드 이름만 일치)"
+    ],
+    "llm": "CONFIRM",
+    "note": "코드에서 실제로 `res.redirect()` 메서드를 호출하여 XSS 취약점과 관련된 기능을 사용하고 있습니다."
+   }
   },
   {
    "rank": 80,
