@@ -95,3 +95,16 @@ def precision_by_flag(gold: Dict[Key, str], pred: Dict[Key, str], flagged) -> Fl
             ur += 1
             utp += hit
     return FlagTable(r, tp, ur, utp, fr, ftp)
+
+
+def cohen_kappa(pairs) -> float:
+    """두 판정자의 라벨 쌍 [(a, b), ...] 의 Cohen kappa. 우연히 일치할 몫을 뺀 일치도."""
+    n = len(pairs)
+    if n == 0:
+        return 0.0
+    po = sum(1 for a, b in pairs if a == b) / n
+    ca, cb = Counter(a for a, _ in pairs), Counter(b for _, b in pairs)
+    pe = sum((ca[k] / n) * (cb[k] / n) for k in set(ca) | set(cb))
+    if pe >= 1.0:
+        return 1.0
+    return (po - pe) / (1 - pe)

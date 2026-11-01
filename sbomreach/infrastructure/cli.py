@@ -10,8 +10,10 @@ import time
 from ..application.explain import explain
 from ..application.pipeline import ScanUseCase, compare_scans, plan_remediation
 from ..application.report import alerts_to_dict, render_accuracy_md, render_flag_table_md, render_ranking_md, scan_to_dict
+from ..application.gold_check import build_prompt, context_lines, parse_label
 from ..application.review import review_reached
-from ..domain.evals import agreement, precision_by_flag
+from ..domain.evals import agreement, cohen_kappa, precision_by_flag
+from ..domain.packages import modules_for
 from ..domain.models import Verdict
 from .gemini import GeminiLlm, load_key
 from .maven_sbom import MavenSbom
@@ -192,6 +194,45 @@ def cmd_flagtable(a):
     print(md)
 
 
+def cmd_goldcheck(a):
+    """정답 n건을 Gemini에게 독립 재판정시켜 Cohen kappa를 낸다(도구 판정·원래 정답은 보여 주지 않는다)."""
+    import random
+    from .repo_files import read_sources
+    rows = [json.loads(x) for x in open(os.path.join(EV, a.gold), encoding="utf-8") if x.strip()]
+    rows = random.Random(7).sample(rows, min(a.n, len(rows)))
+    trace = JsonlTrace(os.path.join(EV, "traces", "goldcheck.jsonl"), run_id="goldcheck")
+    llm = make_llm(trace)
+    if llm is None:
+        raise SystemExit("GEMINI_API_KEY 없음")
+    tg, srcs, out = targets(), {}, []
+    for g in rows:
+        t = tg[g["repo"]]
+        if g["repo"] not in srcs:
+            srcs[g["repo"]] = read_sources(target_repo_dir(t), t["excludes"])
+        al = json.load(open(os.path.join(EV, "alerts", f'{g["repo"]}.json'), encoding="utf-8"))["alerts"]
+        x = next(y for y in al if y["package"] == g["package"] and y["version"] == g["version"] and y["advisory"] == g["advisory"])
+        names = sorted({s.strip().rstrip("()").replace("::", ".").split(".")[-1] for s in x["symbols"]} - {""})
+        lines = context_lines(srcs[g["repo"]], list(modules_for(x["ecosystem"], g["package"])), names)
+        label, why = parse_label(llm.complete(build_prompt(g["package"], g["version"], x["summary"], x["symbols"], lines)))
+        out.append({"repo": g["repo"], "package": g["package"], "advisory": g["advisory"], "claude": g["verdict"],
+                    "gemini": label, "gemini_reason": why})
+    json.dump(out, open(os.path.join(EV, a.out + ".json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    k = cohen_kappa([(r["claude"], r["gemini"]) for r in out])
+    agree = sum(r["claude"] == r["gemini"] for r in out)
+    md = [f"# 정답 독립 재판정 — 다른 모델(Gemini {llm.model})", "",
+          f"대상 {len(out)}건({a.gold} 에서 고정 난수 7로 추출) · 일치 {agree}건 = {agree / len(out) * 100:.1f}% · **Cohen kappa = {k:.2f}**",
+          "", "| 정답(Claude)＼재판정(Gemini) | REACHED | USED | UNSEEN | 판독불가 |", "|---|---|---|---|---|"]
+    for c in ("REACHED", "USED", "UNSEEN"):
+        md.append(f"| {c} | " + " | ".join(str(sum(1 for r in out if r["claude"] == c and r["gemini"] == k2)) for k2 in ("REACHED", "USED", "UNSEEN", "UNPARSED")) + " |")
+    md += ["", "다르게 본 건:", ""]
+    for r in out:
+        if r["claude"] != r["gemini"]:
+            md.append(f'- {r["repo"]} {r["package"]} {r["advisory"]}: Claude {r["claude"]} · Gemini {r["gemini"]} — {r["gemini_reason"]}')
+    md += ["", "한계: 두 모델 모두 AI다. 사람 검산을 대신하지 못한다. Gemini에게는 글자 검색으로 찾은 줄만 줬다(도구 판정·원래 정답은 숨김)."]
+    open(os.path.join(EV, a.out), "w", encoding="utf-8").write("\n".join(md) + "\n")
+    print("\n".join(md[:6]))
+
+
 def cmd_summary(a):
     import glob
     from ..application.summary import summarize
@@ -220,6 +261,11 @@ def main(argv=None):
             s.add_argument("--max-rounds", type=int, default=3)
         s.set_defaults(fn=f)
     sub.add_parser("summary").set_defaults(fn=cmd_summary)
+    gc = sub.add_parser("goldcheck")
+    gc.add_argument("--gold", default="gold-holdout2.jsonl")
+    gc.add_argument("--n", type=int, default=30)
+    gc.add_argument("--out", default="kappa.md")
+    gc.set_defaults(fn=cmd_goldcheck)
     f = sub.add_parser("flagtable")
     f.add_argument("--gold", nargs="+", required=True)
     f.add_argument("--out", default="review-flag.md")

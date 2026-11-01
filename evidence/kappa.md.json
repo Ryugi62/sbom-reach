@@ -1,0 +1,242 @@
+[
+ {
+  "repo": "nodejs-goof",
+  "package": "lodash",
+  "advisory": "GHSA-r5fr-rjxr-66jc",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 lodash를 require하여 사용하고 있지만, 취약한 기능인 _.template이나 관련 심볼을 호출하는 코드는 발견되지 않습니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-5mf9-h53q-7mhq",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 Django 패키지를 임포트하여 사용하고 있으나, 취약점과 관련된 `MultiPartParser` 심볼은 호출하거나 참조하지 않기 때문입니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "express",
+  "advisory": "GHSA-rv95-896h-c2vc",
+  "claude": "REACHED",
+  "gemini": "REACHED",
+  "gemini_reason": "저장소 코드가 취약한 심볼인 `res.redirect`를 직접 호출하고 있기 때문에 취약점에 도달할 수 있습니다."
+ },
+ {
+  "repo": "vulnerable-flask-app",
+  "package": "requests",
+  "advisory": "GHSA-9hjg-9r4m-mvj7",
+  "claude": "UNSEEN",
+  "gemini": "USED",
+  "gemini_reason": "requests 패키지를 import하여 사용하고 있으나, 취약한 .netrc 자격 증명 유출 기능은 직접 호출하거나 참조하지 않습니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-9jmf-237g-qf46",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 django 패키지를 임포트하여 사용하고 있으나, 검색 결과에서 나타난 save 메서드들은 Django 모델 및 폼의 save 기능이며 취약점으로 지목된 파일 스토리지 관련 심볼(`django.core.files.storage.Storage`, `generate_filename`, 파일 저장 관련 `save`)은 호출되지 않기 때문입니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-m9g8-fxxm-xg86",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 django 패키지를 임포트하여 사용하고 있으나, 어드바이저리가 지목한 Oracle 환경에서의 HasKey 취약 기능은 호출하지 않기 때문입니다."
+ },
+ {
+  "repo": "vulnerable-flask-app",
+  "package": "tornado",
+  "advisory": "GHSA-pr2v-jx2c-wg9f",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 tornado 패키지를 import하여 사용하고 있으나, 어드바이저리가 지목한 취약한 기능(reason, set_status, HTTPError 등)을 호출하는 코드는 소스에서 발견되지 않았습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "st",
+  "advisory": "GHSA-72fg-jqhx-c68p",
+  "claude": "REACHED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 `st` 패키지를 임포트하여 사용하고 있지만, 어드바이저리가 지목한 취약한 리다이렉트 기능을 직접 호출하거나 설정하는 코드는 확인되지 않습니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-qcgg-j2x8-h9g8",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 Django 패키지를 임포트하여 사용하고 있으나, 어드바이저리가 지목한 IPv6 검증 관련 취약 함수나 속성은 직접 호출하지 않기 때문입니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "adm-zip",
+  "advisory": "GHSA-rcw4-f5rp-g42v",
+  "claude": "REACHED",
+  "gemini": "REACHED",
+  "gemini_reason": "저장소 코드가 취약점과 관련된 `extractAllTo` 함수를 직접 호출하고 있습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "typeorm",
+  "advisory": "GHSA-2rp8-mm9q-fp49",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 typeorm 패키지를 임포트하여 사용하고 있으나, 어드바이저리가 지목한 취약한 기능이나 마이그레이션 관련 코드는 호출하지 않기 때문입니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "path-to-regexp",
+  "advisory": "GHSA-rhx6-c78j-4q9w",
+  "claude": "UNSEEN",
+  "gemini": "UNSEEN",
+  "gemini_reason": "저장소 소스 코드에서 해당 패키지를 참조하는 코드를 전혀 찾을 수 없습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "ms",
+  "advisory": "GHSA-3fx5-fwvr-xrjg",
+  "claude": "REACHED",
+  "gemini": "REACHED",
+  "gemini_reason": "저장소 코드에서 취약한 패키지 `ms`를 불러와 `ms(period)` 형태로 직접 호출하고 있습니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-3h9f-r86x-qvjx",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 django 패키지를 사용하고 있으나, 어드바이저리가 지목한 취약한 캐시 미들웨어(`UpdateCacheMiddleware`, `cache_page`)는 소스 코드 내에서 호출되거나 참조되지 않기 때문입니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "lodash",
+  "advisory": "GHSA-35jh-r3h4-6jhm",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "패키지를 import하여 사용하고 있으나, 어드바이저리가 지목한 취약 함수를 직접 호출하는 코드는 확인되지 않습니다."
+ },
+ {
+  "repo": "vulnerable-flask-app",
+  "package": "werkzeug",
+  "advisory": "GHSA-j544-7q9p-6xp8",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 `werkzeug` 패키지를 임포트하여 사용하고 있으나, 경로 traversal 취약점이 발생하는 특정 기능의 호출은 확인되지 않습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "marked",
+  "advisory": "GHSA-vfvf-mqq8-rwqc",
+  "claude": "REACHED",
+  "gemini": "REACHED",
+  "gemini_reason": "저장소 코드가 취약한 `marked` 패키지를 임포트하여 직접 호출하고 있으며 `sanitize` 옵션을 설정하여 취약 기능과 상호작용하고 있습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "minimatch",
+  "advisory": "GHSA-23c5-xmqv-rm74",
+  "claude": "UNSEEN",
+  "gemini": "UNSEEN",
+  "gemini_reason": "저장소 소스 파일 어디에서도 취약한 패키지인 minimatch를 임포트하거나 사용하는 코드가 발견되지 않았습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "adm-zip",
+  "advisory": "GHSA-8238-w5pm-2374",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 `adm-zip` 패키지를 임포트하여 사용하고 있으나, 취약한 비동기 압축 해제 기능이나 심볼을 호출하는 코드는 확인되지 않습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "ejs",
+  "advisory": "GHSA-6x77-rpqf-j6mw",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 ejs 패키지를 사용하고 설정하지만, 어드바이저리가 지목한 취약 심볼인 `ejs.renderFile`을 직접 호출하는 코드는 확인되지 않습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "mongoose",
+  "advisory": "GHSA-664h-wqgq-64gw",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 mongoose 패키지를 임포트하여 사용하고 있으나, 취약한 업데이트 캐스팅이나 `__proto__` 경로 관련 코드는 직접 호출되지 않습니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-x7q2-wr7g-xqmf",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 Django 패키지를 임포트하여 사용하고 있으나, 취약한 인증 백엔드 함수인 `ModelBackend.authenticate`를 직접 호출하거나 참조하는 코드는 확인되지 않습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "body-parser",
+  "advisory": "GHSA-27r3-jxmh-p828",
+  "claude": "REACHED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 'body-parser' 패키지를 불러와 사용하고 있지만, 어드바이저리가 지목한 취약한 'gzip' 기능이나 관련 코드를 직접 호출하는 흔적은 소스 코드에서 확인되지 않습니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-8qcx-xf44-272x",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 Django 패키지를 임포트하여 사용하고 있으나, 어드바이저리가 지목한 취약 기능인 DomainNameValidator나 HttpResponse는 직접 호출하거나 참조하지 않기 때문입니다."
+ },
+ {
+  "repo": "nodegoat",
+  "package": "minimist",
+  "advisory": "GHSA-xvch-5gv4-984h",
+  "claude": "UNSEEN",
+  "gemini": "UNSEEN",
+  "gemini_reason": "저장소 소스에서 해당 패키지나 취약한 심볼을 참조하는 코드를 전혀 찾을 수 없습니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "mongoose",
+  "advisory": "GHSA-h8hf-x3f4-xwgp",
+  "claude": "USED",
+  "gemini": "REACHED",
+  "gemini_reason": "저장소 코드가 `mongoose.Schema`를 직접 참조하여 스키마를 정의하고 있으므로 취약한 기능에 도달합니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "flask",
+  "advisory": "GHSA-68rp-wp8r-4726",
+  "claude": "REACHED",
+  "gemini": "REACHED",
+  "gemini_reason": "저장소 코드가 Flask의 취약한 `session` 객체를 직접 사용하고 있어 어드바이저리가 지목한 취약 기능에 도달합니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-rrqc-c2jx-6jgv",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 Django 패키지를 임포트하여 사용하고 있으나, 취약점과 관련된 사용자 이메일 열거 기능이나 인증 관련 코드는 직접 호출하거나 참조하지 않기 때문입니다."
+ },
+ {
+  "repo": "pygoat",
+  "package": "django",
+  "advisory": "GHSA-vrcr-9hj9-jcg6",
+  "claude": "USED",
+  "gemini": "USED",
+  "gemini_reason": "저장소가 Django 패키지를 임포트하여 사용하고 있으나, XML 직렬화 및 취약한 `getInnerText`나 `Deserializer` 기능은 호출하지 않기 때문입니다."
+ },
+ {
+  "repo": "nodejs-goof",
+  "package": "handlebars",
+  "advisory": "GHSA-442j-39wm-28r2",
+  "claude": "UNSEEN",
+  "gemini": "UNSEEN",
+  "gemini_reason": "저장소 소스에서 해당 패키지나 취약한 심볼을 사용하는 코드를 전혀 찾을 수 없습니다."
+ }
+]
