@@ -38,9 +38,31 @@ def normalize(name: str) -> str:
     return re.sub(r"[-_.]+", "-", name).lower()
 
 
+# groupId와 import 접두가 다른 흔한 Maven 부품(자주 나오는 것만 — 목록 밖은 아래 이름 규칙)
+MAVEN_ALIASES = {
+    "com.fasterxml.jackson.core:jackson-databind": ("com.fasterxml.jackson.databind",),
+    "com.fasterxml.jackson.core:jackson-core": ("com.fasterxml.jackson.core",),
+    "com.fasterxml.jackson.core:jackson-annotations": ("com.fasterxml.jackson.annotation",),
+    "com.google.guava:guava": ("com.google.common",),
+    "commons-lang:commons-lang": ("org.apache.commons.lang",),
+    "commons-io:commons-io": ("org.apache.commons.io",),
+    "commons-beanutils:commons-beanutils": ("org.apache.commons.beanutils",),
+    "commons-fileupload:commons-fileupload": ("org.apache.commons.fileupload",),
+    "commons-codec:commons-codec": ("org.apache.commons.codec",),
+    "commons-collections:commons-collections": ("org.apache.commons.collections",),
+    "org.apache.httpcomponents:httpclient": ("org.apache.http",),
+    "mysql:mysql-connector-java": ("com.mysql",),
+    "com.squareup.okhttp3:okhttp": ("okhttp3",),
+    "log4j:log4j": ("org.apache.log4j",),
+    "org.slf4j:slf4j-api": ("org.slf4j",),
+}
+
+
 def _maven_prefixes(coord: str) -> Tuple[str, ...]:
     """groupId:artifactId -> import 접두 후보. 이름 규칙 휴리스틱이라 안 맞으면 미확인이 된다(SPEC 비목표)."""
     g, _, a = coord.partition(":")
+    if coord.lower() in MAVEN_ALIASES:
+        return MAVEN_ALIASES[coord.lower()]
     last = g.rsplit(".", 1)[-1].lower()
     toks = a.lower().split("-")
     cands = []
@@ -54,8 +76,8 @@ def _maven_prefixes(coord: str) -> Tuple[str, ...]:
     joined = f"{g}." + "".join(toks)
     if joined not in cands:
         cands.append(joined)
-    if a.lower() == last or g.endswith("." + a.lower()):
-        cands.append(g)
+    if a.lower() == last or g.endswith("." + a.lower()) or toks[0] == last:
+        cands.append(g)      # artifact 이름이 group 끝 조각과 같거나 그것으로 시작하면 group 자체가 패키지 뿌리인 경우가 많다
     return tuple(cands)
 
 

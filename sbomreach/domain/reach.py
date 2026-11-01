@@ -29,7 +29,11 @@ GENERIC = {"get", "set", "filter", "find", "exclude", "parse", "load", "body", "
            "close", "open", "read", "write", "run", "start", "stop", "init", "format", "join", "split", "keys", "values",
            "items", "name", "type", "id", "path", "url", "size", "length", "index", "count", "map", "push", "pop", "then",
            "catch", "call", "apply", "bind", "send", "end", "on", "emit", "use", "render", "request", "response", "args",
-           "next", "create", "remove", "query", "value", "key", "text", "content", "file", "files", "form", "headers", "cookies"}
+           "next", "create", "remove", "query", "value", "key", "text", "content", "file", "files", "form", "headers", "cookies",
+           # Java에서 흔한 메서드 이름
+           "put", "equals", "hashcode", "tostring", "deserialize", "serialize", "readvalue", "writevalue", "contains", "containskey",
+           "size", "isempty", "append", "getclass", "getmessage", "valueof", "of", "builder", "build", "newinstance", "toarray",
+           "iterator", "flush", "accept", "apply", "test", "compare", "compareto", "clone"}
 
 
 # 언어 내장·키워드 — 어드바이저리 본문에 예시로 섞여 나오지만 취약 함수가 아니다(SPEC S10-④)

@@ -54,3 +54,13 @@ def test_names_inside_comments_and_strings_do_not_count():
     idx = analyze_java({"a/A.java": SRC})
     lines = [e.line for e in idx.finder("Yaml", ("org.yaml.snakeyaml",), "class")]
     assert 8 not in lines and 10 in lines    # 8번 줄 문자열 속 Yaml 은 제외
+
+
+def test_modules_for_maven_alias_table_and_group_fallback():
+    # 사후 수정(Java 정답 첫 실행 뒤): groupId와 import 접두가 다른 흔한 부품, 그리고 artifact 첫 토큰이 group 끝 조각과 같은 경우
+    assert "com.fasterxml.jackson.databind" in modules_for("Maven", "com.fasterxml.jackson.core:jackson-databind")
+    assert "com.fasterxml.jackson.core" in modules_for("Maven", "com.fasterxml.jackson.core:jackson-core")
+    assert "com.google.common" in modules_for("Maven", "com.google.guava:guava")
+    assert "org.apache.hadoop" in modules_for("Maven", "org.apache.hadoop:hadoop-common")
+    assert "org.jsoup" in modules_for("Maven", "org.jsoup:jsoup")
+    assert "org.apache.commons.beanutils" in modules_for("Maven", "commons-beanutils:commons-beanutils")

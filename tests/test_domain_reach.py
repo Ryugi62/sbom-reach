@@ -233,3 +233,10 @@ def test_java_hit_only_in_test_sources_is_used():
 def test_java_generic_method_names_do_not_make_it_reached():
     idx = java_index(call_hits={"get": [ev("src/main/java/A.java", 11, "m.get(k)")]})
     assert judge(jalert(["get"]), idx).verdict is Verdict.USED
+
+
+def test_java_common_method_names_never_make_reached():
+    # 사후 수정(Java 첫 실행 뒤): put·equals·deserialize·readValue 같은 흔한 메서드 이름은 호출 줄이 있어도 근거가 아니다
+    for name in ["put", "equals", "deserialize", "readValue", "toString", "close", "size"]:
+        idx = java_index(call_hits={name: [ev("src/main/java/A.java", 11, f"x.{name}(y)")]})
+        assert judge(jalert([name, "Zzz.other"]), idx).verdict is Verdict.USED, name
