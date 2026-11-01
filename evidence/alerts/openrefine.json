@@ -1,0 +1,196 @@
+{
+ "target": "openrefine",
+ "commit": "ba887ca",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "commons-lang:commons-lang",
+   "version": "2.6",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-j288-q9x7-2f5v",
+   "aliases": [
+    "CVE-2025-48924"
+   ],
+   "severity": "MODERATE",
+   "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.eclipse.jetty:jetty-server",
+   "version": "10.0.19",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-7p3p-8qv8-m2vh",
+   "aliases": [
+    "CVE-2026-6790"
+   ],
+   "severity": "MODERATE",
+   "summary": "Eclipse Jetty: HTTP Authority/Host mismatch",
+   "fixed": [
+    "12.0.35",
+    "12.1.9"
+   ],
+   "symbols": [
+    "HttpURI",
+    "Host",
+    "Forwarded"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.eclipse.jetty:jetty-server",
+   "version": "10.0.19",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-9299-c6m4-mjhc",
+   "aliases": [
+    "CVE-2024-7708"
+   ],
+   "severity": "HIGH",
+   "summary": "Eclipse Jetty: DoS attack triggering OutOfMemory with 100-Continue requests",
+   "fixed": [
+    "10.0.23",
+    "11.0.23"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.eclipse.jetty:jetty-server",
+   "version": "10.0.19",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-g8m5-722r-8whq",
+   "aliases": [
+    "CVE-2024-8184"
+   ],
+   "severity": "MODERATE",
+   "summary": "Eclipse Jetty's ThreadLimitHandler.getRemote() vulnerable to remote DoS attacks",
+   "fixed": [
+    "12.0.9",
+    "10.0.24",
+    "11.0.24",
+    "9.4.56"
+   ],
+   "symbols": [
+    "ThreadLimitHandler.getRemote",
+    "ThreadLimitHandler",
+    "QoSHandler"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-4jq2-8v3c-97w8",
+   "aliases": [
+    "CVE-2026-119280"
+   ],
+   "severity": "LOW",
+   "summary": "MariaDB Connector/J: XA recover() trusted server-supplied gtrid and bqual lengths",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "XAResource.recover",
+    "gtrid_length",
+    "bqual_length",
+    "MariaDbPoolConnection",
+    "MariaDbPoolPinnedConnection",
+    "Xid",
+    "Xid.MAXGTRIDSIZE",
+    "Xid.MAXBQUALSIZE",
+    "NegativeArraySizeException",
+    "ArrayIndexOutOfBoundsException",
+    "XAException"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-fhx5-2xqw-2cgm",
+   "aliases": [
+    "CVE-2026-119210"
+   ],
+   "severity": "MODERATE",
+   "summary": "MariaDB Connector/J: LOAD DATA LOCAL INFILE file check could be satisfied by text inside quoted identifiers, letting a malicious server read client files",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "ClientMessage.validateLocalFileName",
+    "DatabaseMetaData.getImportedKeys",
+    "getExportedKeys",
+    "getImportedKeys",
+    "java.sql",
+    "ResultSet.updateRow",
+    "allowLocalInfile"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-grfq-r75j-rw9x",
+   "aliases": [
+    "CVE-2026-119281"
+   ],
+   "severity": "MODERATE",
+   "summary": "MariaDB Connector/J: Server could switch character_set_results away from UTF-8 without the client noticing",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "character_set_client",
+    "character_set_results",
+    "session_track_system_variables",
+    "utf8",
+    "utf8mb3",
+    "utf8mb4"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.mariadb.jdbc:mariadb-java-client",
+   "version": "3.5.10",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-h599-m3w5-9m7x",
+   "aliases": [
+    "CVE-2026-119276"
+   ],
+   "severity": "MODERATE",
+   "summary": "MariaDB Connector/J: Rogue server can drive large heap allocations from server-declared lengths in OK packets",
+   "fixed": [
+    "3.3.7",
+    "3.4.5",
+    "3.5.11"
+   ],
+   "symbols": [
+    "OkPacket.parse",
+    "parseWithInfo",
+    "len",
+    "ArrayIndexOutOfBoundsException",
+    "ReadableByteBuf.checkLength",
+    "OutOfMemoryError"
+   ],
+   "symbol_source": "auto"
+  }
+ ]
+}

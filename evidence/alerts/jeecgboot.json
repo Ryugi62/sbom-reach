@@ -1,0 +1,261 @@
+{
+ "target": "jeecgboot",
+ "commit": "56fb212",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "com.microsoft.sqlserver:mssql-jdbc",
+   "version": "12.6.1.jre8",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-m494-w24q-6f7w",
+   "aliases": [
+    "CVE-2025-59250"
+   ],
+   "severity": "HIGH",
+   "summary": "JDBC Driver for SQL Server has improper input validation issue",
+   "fixed": [
+    "10.2.4.jre11",
+    "11.2.4.jre11",
+    "12.2.1.jre11",
+    "12.6.5.jre11",
+    "12.8.2.jre11",
+    "12.10.2.jre11",
+    "13.2.1.jre11"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.squareup.okhttp3:okhttp",
+   "version": "4.4.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-3cqm-mf7h-prrj",
+   "aliases": [
+    "A-171980069",
+    "ASB-A-171980069",
+    "CVE-2021-0341"
+   ],
+   "severity": "HIGH",
+   "summary": "Square OkHttp can accept the wrong certificate",
+   "fixed": [
+    "4.9.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "commons-fileupload:commons-fileupload",
+   "version": "1.5",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-vv7r-c36w-3prj",
+   "aliases": [
+    "CVE-2025-48976"
+   ],
+   "severity": "HIGH",
+   "summary": "Apache Commons FileUpload, Apache Commons FileUpload: FileUpload DoS via part headers",
+   "fixed": [
+    "1.6.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "commons-lang:commons-lang",
+   "version": "2.6",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-j288-q9x7-2f5v",
+   "aliases": [
+    "CVE-2025-48924"
+   ],
+   "severity": "MODERATE",
+   "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "mysql:mysql-connector-java",
+   "version": "8.0.27",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-g76j-4cxx-23h9",
+   "aliases": [
+    "CVE-2022-21363"
+   ],
+   "severity": "MODERATE",
+   "summary": "Improper Handling of Insufficient Permissions or Privileges in MySQL Connectors Java",
+   "fixed": [
+    "8.0.28"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "mysql:mysql-connector-java",
+   "version": "8.0.27",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-m6vm-37g8-gqvh",
+   "aliases": [
+    "CVE-2023-22102"
+   ],
+   "severity": "HIGH",
+   "summary": "MySQL Connectors takeover vulnerability",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.jsoup:jsoup",
+   "version": "1.22.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-65r4-943x-97jj",
+   "aliases": [
+    "CVE-2026-75140"
+   ],
+   "severity": "HIGH",
+   "summary": "jsoup XmlTreeBuilder vulnerable to memory exhaustion through deeply nested namespace declarations",
+   "fixed": [
+    "1.23.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.jsoup:jsoup",
+   "version": "1.22.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-pmhh-3w7g-xqp8",
+   "aliases": [
+    "CVE-2026-71497"
+   ],
+   "severity": "MODERATE",
+   "summary": "jsoup: Cleaner may expose markup with custom raw-text elements",
+   "fixed": [
+    "1.23.1"
+   ],
+   "symbols": [
+    "Safelist",
+    "style"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.postgresql:postgresql",
+   "version": "42.2.25",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-24rp-q3w6-vc56",
+   "aliases": [
+    "BIT-postgresql-jdbc-driver-2024-1597",
+    "CVE-2024-1597"
+   ],
+   "severity": "CRITICAL",
+   "summary": "org.postgresql:postgresql vulnerable to SQL Injection via line comment generation",
+   "fixed": [
+    "42.2.28",
+    "42.3.9",
+    "42.4.4",
+    "42.5.5",
+    "42.6.1",
+    "42.7.2"
+   ],
+   "symbols": [
+    "extended"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.postgresql:postgresql",
+   "version": "42.2.25",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-562r-vg33-8x8h",
+   "aliases": [
+    "BIT-postgresql-jdbc-driver-2022-41946",
+    "CVE-2022-41946"
+   ],
+   "severity": "MODERATE",
+   "summary": "TemporaryFolder on unix-like systems does not limit access to created files",
+   "fixed": [
+    "42.2.27",
+    "42.3.8",
+    "42.4.3",
+    "42.5.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.postgresql:postgresql",
+   "version": "42.2.25",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-673j-qm5f-xpv8",
+   "aliases": [
+    "BIT-postgresql-jdbc-driver-2022-26520",
+    "CVE-2022-26520",
+    "GHSA-727h-hrw8-jg8q"
+   ],
+   "severity": "MODERATE",
+   "summary": "pgjdbc Arbitrary File Write Vulnerability",
+   "fixed": [
+    "42.3.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.postgresql:postgresql",
+   "version": "42.2.25",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-98qh-xjc8-98pq",
+   "aliases": [
+    "BIT-postgresql-jdbc-driver-2026-42198",
+    "CVE-2026-42198"
+   ],
+   "severity": "HIGH",
+   "summary": "pgjdbc: Unbounded PBKDF2 iterations in SCRAM authentication allows CPU exhaustion DoS",
+   "fixed": [
+    "42.7.11"
+   ],
+   "symbols": [
+    "loginTimeout",
+    "sslmode",
+    "scramMaxIterations"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.postgresql:postgresql",
+   "version": "42.2.25",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-r38f-c4h4-hqq2",
+   "aliases": [
+    "BIT-postgresql-jdbc-driver-2022-31197",
+    "CVE-2022-31197"
+   ],
+   "severity": "HIGH",
+   "summary": "PostgreSQL JDBC Driver SQL Injection in ResultSet.refreshRow() with malicious column names",
+   "fixed": [
+    "42.2.26",
+    "42.4.1",
+    "42.3.7"
+   ],
+   "symbols": [
+    "java.sql.ResultRow.refreshRow",
+    "ResultSet.refreshRow",
+    "refreshRow"
+   ],
+   "symbol_source": "auto"
+  }
+ ]
+}

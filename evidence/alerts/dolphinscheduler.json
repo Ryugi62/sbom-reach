@@ -1,0 +1,1836 @@
+{
+ "target": "dolphinscheduler",
+ "commit": "ee47c37",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "ch.qos.logback:logback-classic",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-vmq6-5m68-f53m",
+   "aliases": [
+    "CVE-2023-6378"
+   ],
+   "severity": "HIGH",
+   "summary": "logback serialization vulnerability",
+   "fixed": [
+    "1.3.12",
+    "1.4.12",
+    "1.2.13"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-25qh-j22f-pwp8",
+   "aliases": [
+    "CVE-2025-11226"
+   ],
+   "severity": "MODERATE",
+   "summary": "QOS.CH logback-core is vulnerable to Arbitrary Code Execution through file processing",
+   "fixed": [
+    "1.5.19",
+    "1.3.16"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-6v67-2wr5-gvf4",
+   "aliases": [
+    "CVE-2024-12801"
+   ],
+   "severity": "LOW",
+   "summary": "QOS.CH logback-core Server-Side Request Forgery vulnerability",
+   "fixed": [
+    "1.5.13",
+    "1.3.15"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-jhq6-gfmj-v8fx",
+   "aliases": [
+    "CVE-2026-10532"
+   ],
+   "severity": "LOW",
+   "summary": "Logback vulnerable to Object Injection through HardenedObjectInputStream modules",
+   "fixed": [
+    "1.5.34"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-p47f-322f-whfh",
+   "aliases": [
+    "CVE-2026-9828"
+   ],
+   "severity": "LOW",
+   "summary": "QOS.CH Sarl logback logback-core has a deserialization of untrusted data vulnerability",
+   "fixed": [
+    "1.5.33"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-pr98-23f8-jwxv",
+   "aliases": [
+    "CVE-2024-12798"
+   ],
+   "severity": "MODERATE",
+   "summary": "QOS.CH logback-core Expression Language Injection vulnerability",
+   "fixed": [
+    "1.5.13",
+    "1.3.15"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-qqpg-mvqg-649v",
+   "aliases": [
+    "CVE-2026-1225"
+   ],
+   "severity": "LOW",
+   "summary": "Logback allows an attacker to instantiate classes already present on the class path",
+   "fixed": [
+    "1.5.25"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "ch.qos.logback:logback-core",
+   "version": "1.2.11",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-vmq6-5m68-f53m",
+   "aliases": [
+    "CVE-2023-6378"
+   ],
+   "severity": "HIGH",
+   "summary": "logback serialization vulnerability",
+   "fixed": [
+    "1.3.12",
+    "1.4.12",
+    "1.2.13"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.amazon.redshift:redshift-jdbc42",
+   "version": "2.1.0.9",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-wmmv-vvg5-993q",
+   "aliases": [
+    "CVE-2026-8178"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Amazon Redshift Vulnerable to Remote Code Execution via Unsafe Class Loading",
+   "fixed": [
+    "2.2.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.amazon.redshift:redshift-jdbc42",
+   "version": "2.1.0.9",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-x3wm-hffr-chwm",
+   "aliases": [
+    "CVE-2024-32888"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Amazon JDBC Driver for Redshift SQL Injection via line comment generation",
+   "fixed": [
+    "2.1.0.28"
+   ],
+   "symbols": [
+    "preferQueryMode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.azure:azure-identity",
+   "version": "1.7.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-m5vv-6r4h-3vj9",
+   "aliases": [
+    "CVE-2024-35255",
+    "GO-2024-2918",
+    "PYSEC-2026-1209"
+   ],
+   "severity": "MODERATE",
+   "summary": "Azure Identity Libraries and Microsoft Authentication Library Elevation of Privilege Vulnerability",
+   "fixed": [
+    "1.12.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.baomidou:mybatis-plus",
+   "version": "3.5.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-32qq-m9fh-f74w",
+   "aliases": [
+    "CVE-2023-25330"
+   ],
+   "severity": "CRITICAL",
+   "summary": "MyBatis-Plus vulnerable to SQL injection via TenantPlugin",
+   "fixed": [
+    "3.5.3.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.facebook.presto:presto-jdbc",
+   "version": "0.238.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-86q5-qcjc-7pv4",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Presto JDBC Server-Side Request Forgery by nextUri",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.facebook.presto:presto-jdbc",
+   "version": "0.238.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-xm7x-f3w2-4hjm",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "Presto JDBC Server-Side Request Forgery by redirect",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-7hhh-6rmp-j9qf",
+   "aliases": [
+    "CVE-2026-89425"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-core: UTF8DataInputJsonParser._reportInvalidToken() missing maxErrorTokenLength limit -> unbounded StringBuilder growth (DoS)",
+   "fixed": [
+    "2.21.7",
+    "2.22.3",
+    "2.18.11"
+   ],
+   "symbols": [
+    "UTF8DataInputJsonParser._reportInvalidToken",
+    "StringBuilder",
+    "ErrorReportConfiguration.getMaxErrorTokenLength",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "NonBlockingUtf8JsonParserBase",
+    "DataInput",
+    "JsonFactory",
+    "maxDocumentLength",
+    "ReadConstrainedTextBuffer",
+    "maxStringLength",
+    "InputStream",
+    "OutOfMemoryError",
+    "maxErrorTokenLength",
+    "ParserMinimalBase"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-h46c-h94j-95f3",
+   "aliases": [
+    "CVE-2025-52999"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-core can throw a StackoverflowError when processing deeply nested data",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-r7wm-3cxj-wff9",
+   "aliases": [
+    "CVE-2026-68494"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+   "fixed": [
+    "2.18.8",
+    "2.21.4"
+   ],
+   "symbols": [
+    "b0c428e6",
+    "validateIntegerLength",
+    "_setIntLength",
+    "_textBuffer.expandCurrentSegment",
+    "maxStringLength",
+    "maxNumberLength",
+    "_finishFloatFraction",
+    "NonBlockingUtf8JsonParserBase.java",
+    "tools.jackson.core",
+    "NonBlockingUtf8JsonParserBase",
+    "_finishNumberIntegralPart",
+    "JsonFactory.createNonBlockingByteArrayParser",
+    "createNonBlockingByteBufferParser",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "ParserBase._reportTooLongIntegral",
+    "StreamReadConstraints.getMaxNumberLength",
+    "endOfInput",
+    "JsonFactory",
+    "feedInput",
+    "_textBuffer",
+    "StreamConstraintsException",
+    "decodeToMono",
+    "Jackson2Tokenizer",
+    "_updateTokenToNA",
+    "JsonToken.NOT_AVAILABLE",
+    "_intLength",
+    "tonghuaroot"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-7hhh-6rmp-j9qf",
+   "aliases": [
+    "CVE-2026-89425"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-core: UTF8DataInputJsonParser._reportInvalidToken() missing maxErrorTokenLength limit -> unbounded StringBuilder growth (DoS)",
+   "fixed": [
+    "2.21.7",
+    "2.22.3",
+    "2.18.11"
+   ],
+   "symbols": [
+    "UTF8DataInputJsonParser._reportInvalidToken",
+    "StringBuilder",
+    "ErrorReportConfiguration.getMaxErrorTokenLength",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "NonBlockingUtf8JsonParserBase",
+    "DataInput",
+    "JsonFactory",
+    "maxDocumentLength",
+    "ReadConstrainedTextBuffer",
+    "maxStringLength",
+    "InputStream",
+    "OutOfMemoryError",
+    "maxErrorTokenLength",
+    "ParserMinimalBase"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-h46c-h94j-95f3",
+   "aliases": [
+    "CVE-2025-52999"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-core can throw a StackoverflowError when processing deeply nested data",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-core",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-r7wm-3cxj-wff9",
+   "aliases": [
+    "CVE-2026-68494"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+   "fixed": [
+    "2.18.8",
+    "2.21.4"
+   ],
+   "symbols": [
+    "b0c428e6",
+    "validateIntegerLength",
+    "_setIntLength",
+    "_textBuffer.expandCurrentSegment",
+    "maxStringLength",
+    "maxNumberLength",
+    "_finishFloatFraction",
+    "NonBlockingUtf8JsonParserBase.java",
+    "tools.jackson.core",
+    "NonBlockingUtf8JsonParserBase",
+    "_finishNumberIntegralPart",
+    "JsonFactory.createNonBlockingByteArrayParser",
+    "createNonBlockingByteBufferParser",
+    "UTF8StreamJsonParser",
+    "ReaderBasedJsonParser",
+    "ParserBase._reportTooLongIntegral",
+    "StreamReadConstraints.getMaxNumberLength",
+    "endOfInput",
+    "JsonFactory",
+    "feedInput",
+    "_textBuffer",
+    "StreamConstraintsException",
+    "decodeToMono",
+    "Jackson2Tokenizer",
+    "_updateTokenToNA",
+    "JsonToken.NOT_AVAILABLE",
+    "_intLength",
+    "tonghuaroot"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-3wrr-7qpf-2prh",
+   "aliases": [
+    "CVE-2026-50193"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Deeply nested JsonNode throws StackOverflowError for toString()",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "JsonNode",
+    "JsonNode.toString",
+    "toString"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-57j2-w4cx-62h2",
+   "aliases": [
+    "CVE-2020-36518"
+   ],
+   "severity": "HIGH",
+   "summary": "Deeply nested json in jackson-databind",
+   "fixed": [
+    "2.13.2.1",
+    "2.12.6.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-5gvw-p9qm-jgwh",
+   "aliases": [
+    "CVE-2026-59889"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+   "fixed": [
+    "2.21.5",
+    "2.18.9",
+    "2.22.1"
+   ],
+   "symbols": [
+    "UnwrappedPropertyHandler.processUnwrapped",
+    "prop.deserializeAndSet",
+    "processUnwrappedCreatorProperties",
+    "BeanDeserializer.deserializeWithUnwrapped",
+    "BeanDeserializer",
+    "PublicView",
+    "BuilderBasedDeserializer",
+    "processUnwrapped",
+    "MapperFeature.DEFAULT_VIEW_INCLUSION"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-5jmj-h7xm-6q6v",
+   "aliases": [
+    "CVE-2026-54515"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties",
+   "fixed": [
+    "3.1.4",
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "BeanDeserializerBase.createContextual",
+    "_handleByNameInclusion",
+    "contextual",
+    "BeanPropertyMap",
+    "this._beanProperties",
+    "contextual._beanProperties"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-cxp5-3px4-pw24",
+   "aliases": [
+    "CVE-2026-91777"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind quadratic forward-reference completion ",
+   "fixed": [
+    "2.21.7",
+    "2.18.11",
+    "2.22.3"
+   ],
+   "symbols": [
+    "equals"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-gx83-3vf8-gh7j",
+   "aliases": [
+    "CVE-2026-83557"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "DefaultBaseTypeLimitingValidator",
+    "PolymorphicTypeValidator",
+    "Serializable",
+    "Closeable",
+    "AutoCloseable",
+    "Cloneable",
+    "Runnable",
+    "java.util.logging.Handler",
+    "javax.naming.Referenceable",
+    "javax.sql.DataSource",
+    "isSafeSubType",
+    "java.lang.Comparable",
+    "Comparable",
+    "java.lang.Object",
+    "activateDefaultTyping",
+    "BasicPolymorphicTypeValidator",
+    "javac",
+    "java.io.File",
+    "File",
+    "UnsafeBaseTypes.UNSAFE",
+    "java.lang.Iterable",
+    "java.util.EventListener"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-hgj6-7826-r7m5",
+   "aliases": [
+    "CVE-2026-54514"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "JDKFromStringDeserializer",
+    "InetSocketAddress",
+    "readValue"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-j3rv-43j4-c7qm",
+   "aliases": [
+    "CVE-2026-54512"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+   "fixed": [
+    "2.18.8",
+    "3.1.4",
+    "2.21.4"
+   ],
+   "symbols": [
+    "PolymorphicTypeValidator",
+    "DatabindContext._resolveAndValidateGeneric",
+    "TypeFactory.constructFromCanonical",
+    "java.util.ArrayList",
+    "com.evil.Gadget",
+    "BasicPolymorphicTypeValidator",
+    "TemplatesImpl",
+    "Wrapper.value",
+    "com.evil.EvilGadget",
+    "cmd",
+    "InvalidTypeIdException",
+    "ArrayList",
+    "HashMap",
+    "Enum"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-jjjh-jjxp-wpff",
+   "aliases": [
+    "CVE-2022-42003"
+   ],
+   "severity": "HIGH",
+   "summary": "Uncontrolled Resource Consumption in Jackson-databind",
+   "fixed": [
+    "2.12.7.1",
+    "2.13.4.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-rgv9-q543-rqg4",
+   "aliases": [
+    "CVE-2022-42004"
+   ],
+   "severity": "HIGH",
+   "summary": "Uncontrolled Resource Consumption in FasterXML jackson-databind",
+   "fixed": [
+    "2.12.7.1",
+    "2.13.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-rmj7-2vxq-3g9f",
+   "aliases": [
+    "CVE-2026-54513"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "allowIfSubTypeIsArray",
+    "EvilType",
+    "BasicPolymorphicTypeValidator",
+    "PolymorphicTypeValidator"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-vvgp-rfg2-7rr6",
+   "aliases": [
+    "CVE-2026-77310"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+   "fixed": [
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "java.net.InetSocketAddress",
+    "java.net.InetAddress",
+    "FromStringDeserializer.Std._deserialize",
+    "InetAddress",
+    "address.isUnresolved",
+    "InetAddress.getByName"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-wjgm-6hv5-3cvf",
+   "aliases": [
+    "CVE-2026-19032"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "java.nio.file.Path",
+    "JDKFromStringDeserializer.NioPathHelper.deserialize",
+    "FileSystemNotFoundException",
+    "file",
+    "jar",
+    "Path",
+    "NioPathHelper.deserialize",
+    "readValue",
+    "getPath",
+    "newFileSystem",
+    "ValueInstantiationException",
+    "FileSystemProvider",
+    "ServiceLoader",
+    "evilscheme",
+    "javac",
+    "java",
+    "java.nio.file.FileSystemNotFoundException",
+    "StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-wv8q-qhhj-9h54",
+   "aliases": [
+    "CVE-2026-91776"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind retains every unknown raw type ID ",
+   "fixed": [
+    "2.18.11",
+    "2.21.7",
+    "2.22.3"
+   ],
+   "symbols": [
+    "TypeDeserializerBase._deserializers",
+    "TypeDeserializerBase._findDeserializer",
+    "typeId",
+    "_deserializers",
+    "defaultImpl"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-3wrr-7qpf-2prh",
+   "aliases": [
+    "CVE-2026-50193"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Deeply nested JsonNode throws StackOverflowError for toString()",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "JsonNode",
+    "JsonNode.toString",
+    "toString"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-5gvw-p9qm-jgwh",
+   "aliases": [
+    "CVE-2026-59889"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+   "fixed": [
+    "2.21.5",
+    "2.18.9",
+    "2.22.1"
+   ],
+   "symbols": [
+    "UnwrappedPropertyHandler.processUnwrapped",
+    "prop.deserializeAndSet",
+    "processUnwrappedCreatorProperties",
+    "BeanDeserializer.deserializeWithUnwrapped",
+    "BeanDeserializer",
+    "PublicView",
+    "BuilderBasedDeserializer",
+    "processUnwrapped",
+    "MapperFeature.DEFAULT_VIEW_INCLUSION"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-5jmj-h7xm-6q6v",
+   "aliases": [
+    "CVE-2026-54515"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties",
+   "fixed": [
+    "3.1.4",
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "BeanDeserializerBase.createContextual",
+    "_handleByNameInclusion",
+    "contextual",
+    "BeanPropertyMap",
+    "this._beanProperties",
+    "contextual._beanProperties"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-cxp5-3px4-pw24",
+   "aliases": [
+    "CVE-2026-91777"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind quadratic forward-reference completion ",
+   "fixed": [
+    "2.21.7",
+    "2.18.11",
+    "2.22.3"
+   ],
+   "symbols": [
+    "equals"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-gx83-3vf8-gh7j",
+   "aliases": [
+    "CVE-2026-83557"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "DefaultBaseTypeLimitingValidator",
+    "PolymorphicTypeValidator",
+    "Serializable",
+    "Closeable",
+    "AutoCloseable",
+    "Cloneable",
+    "Runnable",
+    "java.util.logging.Handler",
+    "javax.naming.Referenceable",
+    "javax.sql.DataSource",
+    "isSafeSubType",
+    "java.lang.Comparable",
+    "Comparable",
+    "java.lang.Object",
+    "activateDefaultTyping",
+    "BasicPolymorphicTypeValidator",
+    "javac",
+    "java.io.File",
+    "File",
+    "UnsafeBaseTypes.UNSAFE",
+    "java.lang.Iterable",
+    "java.util.EventListener"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-hgj6-7826-r7m5",
+   "aliases": [
+    "CVE-2026-54514"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "JDKFromStringDeserializer",
+    "InetSocketAddress",
+    "readValue"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-j3rv-43j4-c7qm",
+   "aliases": [
+    "CVE-2026-54512"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+   "fixed": [
+    "2.18.8",
+    "3.1.4",
+    "2.21.4"
+   ],
+   "symbols": [
+    "PolymorphicTypeValidator",
+    "DatabindContext._resolveAndValidateGeneric",
+    "TypeFactory.constructFromCanonical",
+    "java.util.ArrayList",
+    "com.evil.Gadget",
+    "BasicPolymorphicTypeValidator",
+    "TemplatesImpl",
+    "Wrapper.value",
+    "com.evil.EvilGadget",
+    "cmd",
+    "InvalidTypeIdException",
+    "ArrayList",
+    "HashMap",
+    "Enum"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-jjjh-jjxp-wpff",
+   "aliases": [
+    "CVE-2022-42003"
+   ],
+   "severity": "HIGH",
+   "summary": "Uncontrolled Resource Consumption in Jackson-databind",
+   "fixed": [
+    "2.12.7.1",
+    "2.13.4.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-rmj7-2vxq-3g9f",
+   "aliases": [
+    "CVE-2026-54513"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+   "fixed": [
+    "2.18.8",
+    "2.21.4",
+    "3.1.4"
+   ],
+   "symbols": [
+    "allowIfSubTypeIsArray",
+    "EvilType",
+    "BasicPolymorphicTypeValidator",
+    "PolymorphicTypeValidator"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-vvgp-rfg2-7rr6",
+   "aliases": [
+    "CVE-2026-77310"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+   "fixed": [
+    "2.18.9",
+    "2.21.5",
+    "2.22.1"
+   ],
+   "symbols": [
+    "java.net.InetSocketAddress",
+    "java.net.InetAddress",
+    "FromStringDeserializer.Std._deserialize",
+    "InetAddress",
+    "address.isUnresolved",
+    "InetAddress.getByName"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-wjgm-6hv5-3cvf",
+   "aliases": [
+    "CVE-2026-19032"
+   ],
+   "severity": "MODERATE",
+   "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+   "fixed": [
+    "2.18.10",
+    "2.21.6",
+    "2.22.2"
+   ],
+   "symbols": [
+    "java.nio.file.Path",
+    "JDKFromStringDeserializer.NioPathHelper.deserialize",
+    "FileSystemNotFoundException",
+    "file",
+    "jar",
+    "Path",
+    "NioPathHelper.deserialize",
+    "readValue",
+    "getPath",
+    "newFileSystem",
+    "ValueInstantiationException",
+    "FileSystemProvider",
+    "ServiceLoader",
+    "evilscheme",
+    "javac",
+    "java",
+    "java.nio.file.FileSystemNotFoundException",
+    "StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.fasterxml.jackson.core:jackson-databind",
+   "version": "2.13.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-wv8q-qhhj-9h54",
+   "aliases": [
+    "CVE-2026-91776"
+   ],
+   "severity": "HIGH",
+   "summary": "jackson-databind retains every unknown raw type ID ",
+   "fixed": [
+    "2.18.11",
+    "2.21.7",
+    "2.22.3"
+   ],
+   "symbols": [
+    "TypeDeserializerBase._deserializers",
+    "TypeDeserializerBase._findDeserializer",
+    "typeId",
+    "_deserializers",
+    "defaultImpl"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.google.guava:guava",
+   "version": "31.1-jre",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-5mg8-w23w-74h3",
+   "aliases": [
+    "CVE-2020-8908",
+    "SNYK-JAVA-COMGOOGLEGUAVA-1015415"
+   ],
+   "severity": "LOW",
+   "summary": "Information Disclosure in Guava",
+   "fixed": [
+    "32.0.0-android"
+   ],
+   "symbols": [
+    "com.google.common.io.Files.createTempDir"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.google.guava:guava",
+   "version": "31.1-jre",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-7g45-4rm6-3mm3",
+   "aliases": [
+    "CVE-2023-2976"
+   ],
+   "severity": "MODERATE",
+   "summary": "Guava vulnerable to insecure use of temporary directory",
+   "fixed": [
+    "32.0.0-android"
+   ],
+   "symbols": [
+    "FileBackedOutputStream"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.google.guava:guava",
+   "version": "31.1-jre",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-xxph-c9ww-hj94",
+   "aliases": [
+    "CVE-2026-102554"
+   ],
+   "severity": "HIGH",
+   "summary": "Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation",
+   "fixed": [
+    "33.7.2"
+   ],
+   "symbols": [
+    "CompactHashMap",
+    "CompactHashSet",
+    "MapMakerInternalMap",
+    "elementCount",
+    "initialCapacity",
+    "allocArrays",
+    "CompactHashing.MAX_SIZE",
+    "OutOfMemoryError",
+    "CompactHashMap.readObject",
+    "put",
+    "expectedSize",
+    "table",
+    "CompactHashSet.readObject",
+    "CompactLinkedHashMap",
+    "CompactLinkedHashSet",
+    "MapMaker",
+    "newSegment",
+    "Segment",
+    "newTable",
+    "AtomicDoubleArray",
+    "CompoundOrdering",
+    "AtomicDoubleArray.readObject",
+    "ImmutableLongArray.Builder",
+    "HashBiMap.readObject",
+    "ObjectInputStream.readObject",
+    "readObject",
+    "init"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-4gg5-vx3j-xwc7",
+   "aliases": [
+    "CVE-2022-3510"
+   ],
+   "severity": "HIGH",
+   "summary": "Protobuf Java vulnerable to Uncontrolled Resource Consumption",
+   "fixed": [
+    "3.16.3",
+    "3.19.6",
+    "3.20.3",
+    "3.21.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-735f-pc8j-v9w8",
+   "aliases": [
+    "CVE-2024-7254"
+   ],
+   "severity": "HIGH",
+   "summary": "protobuf-java has potential Denial of Service issue",
+   "fixed": [
+    "3.25.5",
+    "4.27.5",
+    "4.28.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-g5ww-5jh7-63cx",
+   "aliases": [
+    "CVE-2022-3509"
+   ],
+   "severity": "HIGH",
+   "summary": "Protobuf Java vulnerable to Uncontrolled Resource Consumption",
+   "fixed": [
+    "3.16.3",
+    "3.19.6",
+    "3.20.3",
+    "3.21.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.google.protobuf:protobuf-java",
+   "version": "3.17.2",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-h4h5-3hr4-j3g2",
+   "aliases": [
+    "CVE-2022-3171"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobuf-java has a potential Denial of Service issue",
+   "fixed": [
+    "3.21.7",
+    "3.20.3",
+    "3.19.6",
+    "3.16.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.microsoft.sqlserver:mssql-jdbc",
+   "version": "11.2.1.jre8",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-m494-w24q-6f7w",
+   "aliases": [
+    "CVE-2025-59250"
+   ],
+   "severity": "HIGH",
+   "summary": "JDBC Driver for SQL Server has improper input validation issue",
+   "fixed": [
+    "10.2.4.jre11",
+    "11.2.4.jre11",
+    "12.2.1.jre11",
+    "12.6.5.jre11",
+    "12.8.2.jre11",
+    "12.10.2.jre11",
+    "13.2.1.jre11"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "com.mysql:mysql-connector-j",
+   "version": "8.0.33",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-m6vm-37g8-gqvh",
+   "aliases": [
+    "CVE-2023-22102"
+   ],
+   "severity": "HIGH",
+   "summary": "MySQL Connectors takeover vulnerability",
+   "fixed": [
+    "8.2.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "commons-beanutils:commons-beanutils",
+   "version": "1.9.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-wxr5-93ph-8wr9",
+   "aliases": [
+    "CVE-2025-48734"
+   ],
+   "severity": "HIGH",
+   "summary": "Apache Commons Improper Access Control vulnerability",
+   "fixed": [
+    "1.11.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "io.grpc:grpc-netty-shaded",
+   "version": "1.41.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-prj3-ccx8-p6x4",
+   "aliases": [
+    "CVE-2025-55163"
+   ],
+   "severity": "HIGH",
+   "summary": "Netty affected by MadeYouReset HTTP/2 DDoS vulnerability",
+   "fixed": [
+    "1.75.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-33g6-495w-v8j2",
+   "aliases": [
+    "CVE-2025-24790"
+   ],
+   "severity": "MODERATE",
+   "summary": "Snowflake JDBC uses insecure temporary credential cache file permissions",
+   "fixed": [
+    "3.22.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-7hpq-3g6w-pvhf",
+   "aliases": [
+    "CVE-2025-24789"
+   ],
+   "severity": "HIGH",
+   "summary": "Snowflake JDBC allows an untrusted search path on Windows",
+   "fixed": [
+    "3.22.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-f686-hw9c-xw9c",
+   "aliases": [
+    "CVE-2024-43382"
+   ],
+   "severity": "MODERATE",
+   "summary": "Snowflake JDBC Security Advisory",
+   "fixed": [
+    "3.20.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-gx6c-pv62-9mcf",
+   "aliases": [
+    "CVE-2026-3293"
+   ],
+   "severity": "LOW",
+   "summary": "Snowflake JDBC Driver is Vulnerable to Uncontrolled Resource Consumption through SdkProxyRoutePlanner",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-q298-375f-5q63",
+   "aliases": [
+    "CVE-2025-27496"
+   ],
+   "severity": "LOW",
+   "summary": "Snowflake JDBC Driver client-side encryption key in DEBUG logs",
+   "fixed": [
+    "3.23.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "net.snowflake:snowflake-jdbc",
+   "version": "3.13.29",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-qqj6-54q6-cxv6",
+   "aliases": [
+    "CVE-2026-86597",
+    "GO-2026-6665",
+    "PYSEC-2026-4301"
+   ],
+   "severity": "MODERATE",
+   "summary": "Snowflake drivers writes sensitive information to logs",
+   "fixed": [
+    "4.3.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.apache.commons:commons-lang3",
+   "version": "3.17.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-j288-q9x7-2f5v",
+   "aliases": [
+    "CVE-2025-48924"
+   ],
+   "severity": "MODERATE",
+   "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs",
+   "fixed": [
+    "3.18.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.apache.hadoop:hadoop-common",
+   "version": "3.2.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-f5fw-25gw-5m92",
+   "aliases": [
+    "CVE-2024-23454"
+   ],
+   "severity": "LOW",
+   "summary": "Apache Hadoop: Temporary File Local Information Disclosure",
+   "fixed": [
+    "3.4.0"
+   ],
+   "symbols": [
+    "RunJar.run"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.apache.sshd:sshd-sftp",
+   "version": "2.8.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-mjmq-gwgm-5qhm",
+   "aliases": [
+    "CVE-2023-35887"
+   ],
+   "severity": "MODERATE",
+   "summary": "Apache MINA SSHD information disclosure vulnerability",
+   "fixed": [
+    "2.9.3"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-343h-94h5-c4wr",
+   "aliases": [
+    "CVE-2026-106449"
+   ],
+   "severity": "LOW",
+   "summary": "yawkat LZ4 Java: LZ4BlockInputStream with stopOnEmptyBlock=false recurses once per empty block, causing StackOverflowError",
+   "fixed": [],
+   "symbols": [
+    "LZ4BlockInputStream",
+    "refill",
+    "StackOverflowError",
+    "read",
+    "skip",
+    "net.jpountz.lz4.LZ4BlockInputStream.refill",
+    "Error",
+    "IOException",
+    "LZ4Block"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-4v53-57pg-c464",
+   "aliases": [
+    "CVE-2026-106452"
+   ],
+   "severity": "MODERATE",
+   "summary": "yawkat LZ4 Java: LZ4BlockInputStream allocates an unvalidated compressed length from the stream header",
+   "fixed": [],
+   "symbols": [
+    "LZ4BlockInputStream",
+    "compressedLen",
+    "LZ4Block",
+    "net.jpountz.lz4.LZ4BlockInputStream",
+    "refill",
+    "LZ4BlockOutputStream",
+    "acceptOversizedBlocks"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-6cx8-rjf8-pr8g",
+   "aliases": [
+    "CVE-2026-106453"
+   ],
+   "severity": "MODERATE",
+   "summary": "yawkat LZ4 Java: LZ4DecompressorWithLength allocates the unvalidated size from the 4-byte length header, so a 5-byte input triggers a 1 GiB allocation and OutOfMemoryError",
+   "fixed": [],
+   "symbols": [
+    "net.jpountz.lz4.LZ4DecompressorWithLength",
+    "net.jpountz.lz4.LZ4FastDecompressor",
+    "getDecompressedLength",
+    "src.length",
+    "maxDestLen",
+    "destLen"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-cmp6-m4wj-q63q",
+   "aliases": [
+    "CVE-2025-66566"
+   ],
+   "severity": "HIGH",
+   "summary": "yawkat LZ4 Java has a possible information leak in Java safe decompressor",
+   "fixed": [],
+   "symbols": [
+    "safeInstance",
+    "LZ4Factory.safeInstance",
+    "LZ4Factory.unsafeInstance",
+    "LZ4Factory.fastestJavaInstance",
+    "LZ4Factory.fastestInstance",
+    "nativeInstance",
+    "fastestJavaInstance",
+    "fastDecompressor",
+    "safeDecompressor"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-gm45-99xc-r7wv",
+   "aliases": [
+    "CVE-2026-106450"
+   ],
+   "severity": "MODERATE",
+   "summary": "yawkat LZ4 Java: LZ4FrameInputStream reallocates block buffers for every frame, allowing CPU and GC amplification from small inputs",
+   "fixed": [],
+   "symbols": [
+    "LZ4FrameInputStream",
+    "net.jpountz.lz4.LZ4FrameInputStream.readHeader"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-vqf4-7m7x-wgfc",
+   "aliases": [
+    "CVE-2025-12183"
+   ],
+   "severity": "HIGH",
+   "summary": "LZ4 Java Compression has Out-of-bounds memory operations which can cause DoS",
+   "fixed": [
+    "1.8.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.lz4:lz4-java",
+   "version": "1.4.0",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-xx22-p4ch-683r",
+   "aliases": [
+    "CVE-2026-59949"
+   ],
+   "severity": "MODERATE",
+   "summary": "LZ4 Java: Native XXHash implementations can crash the JVM when passed invalid byte array ranges",
+   "fixed": [],
+   "symbols": [
+    "off",
+    "len",
+    "bytes",
+    "XXHashJNI.XXH32_update",
+    "XXHashJNI.XXH64_update",
+    "SafeUtils.checkRange",
+    "GetPrimitiveArrayCritical",
+    "XXHashFactory.safeInstance"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.postgresql:postgresql",
+   "version": "42.4.4",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-98qh-xjc8-98pq",
+   "aliases": [
+    "BIT-postgresql-jdbc-driver-2026-42198",
+    "CVE-2026-42198"
+   ],
+   "severity": "HIGH",
+   "summary": "pgjdbc: Unbounded PBKDF2 iterations in SCRAM authentication allows CPU exhaustion DoS",
+   "fixed": [
+    "42.7.11"
+   ],
+   "symbols": [
+    "loginTimeout",
+    "sslmode",
+    "scramMaxIterations"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.springframework.ldap:spring-ldap-core",
+   "version": "2.4.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-jrv5-8w28-4265",
+   "aliases": [
+    "CVE-2026-41720"
+   ],
+   "severity": "HIGH",
+   "summary": "Spring LDAP has Authentication Bypass with Empty Password",
+   "fixed": [
+    "4.0.4",
+    "3.3.8"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.springframework.ldap:spring-ldap-core",
+   "version": "2.4.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-mqvr-2rp8-j7h4",
+   "aliases": [
+    "CVE-2024-38829"
+   ],
+   "severity": "MODERATE",
+   "summary": "Spring LDAP data exposure vulnerability",
+   "fixed": [
+    "3.2.8",
+    "2.4.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-55g7-9cwv-5qfv",
+   "aliases": [
+    "CVE-2023-43642"
+   ],
+   "severity": "HIGH",
+   "summary": "snappy-java's missing upper bound check on chunk length can lead to Denial of Service (DoS) impact",
+   "fixed": [
+    "1.1.10.4"
+   ],
+   "symbols": [
+    "ExitOnOutOfMemoryError",
+    "CrashOnOutOfMemoryError"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-gwq9-9ffj-mvrv",
+   "aliases": [
+    "CVE-2026-93451"
+   ],
+   "severity": "HIGH",
+   "summary": "snappy-java: Heap buffer overflow in Snappy.uncompress*Array typed-array methods",
+   "fixed": [
+    "1.1.10.9"
+   ],
+   "symbols": [
+    "Snappy.uncompressCharArray",
+    "uncompressShortArray",
+    "uncompressIntArray",
+    "uncompressLongArray",
+    "uncompressFloatArray",
+    "uncompressDoubleArray",
+    "SnappyIOException"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-q233-g92q-qxp6",
+   "aliases": [
+    "CVE-2026-108106"
+   ],
+   "severity": "HIGH",
+   "summary": "snappy-java: Unbounded memory allocation from attacker-declared uncompressed lengtha",
+   "fixed": [
+    "1.1.10.9"
+   ],
+   "symbols": [
+    "OutOfMemoryError",
+    "NegativeArraySizeException",
+    "Snappy.uncompressString",
+    "SnappyInputStream",
+    "SnappyFramedInputStream",
+    "maxChunkSize",
+    "Snappy.uncompressedLength"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "org.xerial.snappy:snappy-java",
+   "version": "1.1.10.1",
+   "ecosystem": "Maven",
+   "direct": true,
+   "advisory": "GHSA-xqrx-qh46-34m7",
+   "aliases": [
+    "CVE-2026-116590"
+   ],
+   "severity": "MODERATE",
+   "summary": "snappy-java: JVM crash from unchecked ranges in Snappy.arrayCopy and SnappyOutputStream.rawWrite",
+   "fixed": [
+    "1.1.10.9"
+   ],
+   "symbols": [
+    "SnappyOutputStream.rawWrite",
+    "SnappyInputStream.rawRead",
+    "write",
+    "read",
+    "Snappy.arrayCopy",
+    "int"
+   ],
+   "symbol_source": "auto"
+  }
+ ]
+}
