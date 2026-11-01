@@ -55,3 +55,43 @@ def wilson(k: int, n: int, z: float = 1.96) -> Tuple[float, float]:
     c = (p + z * z / (2 * n)) / d
     h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
     return max(0.0, c - h), min(1.0, c + h)
+
+
+@dataclass
+class FlagTable:
+    reached: int
+    tp: int
+    unflagged_reached: int
+    unflagged_tp: int
+    flagged_reached: int
+    flagged_tp: int
+
+    @staticmethod
+    def _p(tp: int, n: int) -> float:
+        return tp / n if n else 0.0
+
+    @property
+    def precision(self) -> float:
+        return self._p(self.tp, self.reached)
+
+    @property
+    def unflagged_precision(self) -> float:
+        return self._p(self.unflagged_tp, self.unflagged_reached)
+
+
+def precision_by_flag(gold: Dict[Key, str], pred: Dict[Key, str], flagged) -> FlagTable:
+    """도달로 판정된 것 중 정답도 도달인 비율을, 「사람 확인 필요」 표시 전(전체)과 후(표시 없는 것만)로 나란히."""
+    r = tp = ur = utp = fr = ftp = 0
+    for k, p in pred.items():
+        if p != "REACHED" or k not in gold:
+            continue
+        hit = gold[k] == "REACHED"
+        r += 1
+        tp += hit
+        if k in flagged:
+            fr += 1
+            ftp += hit
+        else:
+            ur += 1
+            utp += hit
+    return FlagTable(r, tp, ur, utp, fr, ftp)

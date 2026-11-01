@@ -21,7 +21,7 @@ def alerts_to_dict(res: ScanResult) -> List[Dict]:
     return rows
 
 
-def scan_to_dict(res: ScanResult, name: str) -> Dict:
+def scan_to_dict(res: ScanResult, name: str, reviews: Optional[Dict] = None) -> Dict:
     rank_of = {id(r.judgement): r for r in res.ranked}
     alerts = []
     for r in res.ranked:
@@ -31,12 +31,16 @@ def scan_to_dict(res: ScanResult, name: str) -> Dict:
                        "advisory": a.id, "severity": a.severity, "fixed": list(a.fixed_versions), "symbols": list(a.symbols),
                        "symbol_source": a.symbol_source, "verdict": j.verdict.value, "weak": j.weak, "reason": j.reason,
                        "evidence": [{"path": e.path, "line": e.line, "text": e.text} for e in j.evidence]})
+        rv = (reviews or {}).get(j.alert.key)
+        if rv is not None:
+            alerts[-1]["review"] = {"flagged": rv.flagged, "reasons": list(rv.reasons), "llm": rv.llm, "note": rv.note}
     return {"name": name, "repo": res.repo, "sbom_tool": res.sbom_tool, "fallback_used": res.fallback_used,
             "components": len(res.components), "elapsed_sec": res.elapsed, "stage_status": res.stage_status,
             "incomplete": [f"{c.name}@{c.version}" for c in res.incomplete],
             "counts": {"alerts": len(res.judgements), "REACHED": res.count(Verdict.REACHED),
                        "USED": res.count(Verdict.USED), "UNSEEN": res.count(Verdict.UNSEEN),
-                       "REACHED_weak": sum(1 for j in res.judgements if j.weak)},
+                       "REACHED_weak": sum(1 for j in res.judgements if j.weak),
+                       "REACHED_flagged": sum(1 for v in (reviews or {}).values() if v.flagged)},
             "alerts": alerts}
 
 
@@ -60,4 +64,14 @@ def render_accuracy_md(a: Agreement) -> str:
     out += ["", "| 저장소 | 일치/정답 |", "|---|---|"]
     for repo, (m, t) in sorted(a.per_repo.items()):
         out.append(f"| {repo} | {m}/{t} |")
+    return "\n".join(out)
+
+
+def render_flag_table_md(title_rows) -> str:
+    """title_rows: [(정답 묶음 이름, FlagTable)] — 표시 전(전체 도달) vs 후(표시 없는 도달만)."""
+    out = ["| 정답 묶음 | 도달 판정 | 정답도 도달 | 정밀도(표시 전) | 표시 붙은 것 | 그중 정답 도달 | 표시 없는 도달 | 정답도 도달 | 정밀도(표시 후) |",
+           "|---|---|---|---|---|---|---|---|---|"]
+    for name, t in title_rows:
+        out.append(f"| {name} | {t.reached} | {t.tp} | {t.precision * 100:.1f}% | {t.flagged_reached} | {t.flagged_tp} | "
+                   f"{t.unflagged_reached} | {t.unflagged_tp} | {t.unflagged_precision * 100:.1f}% |")
     return "\n".join(out)

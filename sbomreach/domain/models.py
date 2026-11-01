@@ -60,6 +60,7 @@ class Judgement:
     evidence: Tuple[Evidence, ...]
     reason: str
     weak: bool = False   # 메서드 이름만 일치한 약한 근거(타입 추론 없음)
+    matched: Tuple[str, ...] = ()   # 근거 줄과 맞아떨어진 취약 심볼 이름(판정 보조 표시가 읽는다)
 
     def __post_init__(self):
         if self.verdict is Verdict.REACHED and not self.evidence:

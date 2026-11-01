@@ -9,8 +9,9 @@ import time
 
 from ..application.explain import explain
 from ..application.pipeline import ScanUseCase, compare_scans, plan_remediation
-from ..application.report import alerts_to_dict, render_accuracy_md, render_ranking_md, scan_to_dict
-from ..domain.evals import agreement
+from ..application.report import alerts_to_dict, render_accuracy_md, render_flag_table_md, render_ranking_md, scan_to_dict
+from ..application.review import review_reached
+from ..domain.evals import agreement, precision_by_flag
 from ..domain.models import Verdict
 from .gemini import GeminiLlm, load_key
 from .osv_client import OsvVulnPort
@@ -71,12 +72,23 @@ def cmd_alerts(a):
     print(a.target, "alerts", len(res.judgements), "components", len(res.components), "->", out)
 
 
+def make_llm(trace):
+    key = load_key()
+    return GeminiLlm(key, trace=trace, cache_path=os.path.join(ROOT, "data", "llm-cache.json")) if key else None
+
+
 def cmd_scan(a):
     t = targets()[a.target]
     repo = target_repo_dir(t)
     os.makedirs(os.path.join(EV, "traces"), exist_ok=True)
-    res = scan_target(t, repo, a.target, os.path.join(EV, "traces", f"{a.target}.jsonl"))
-    d = scan_to_dict(res, a.target)
+    tp = os.path.join(EV, "traces", f"{a.target}.jsonl")
+    res = scan_target(t, repo, a.target, tp)
+    reviews = None
+    if a.review:   # SPEC S12: 판정은 이미 끝났다. LLM은 표시만 붙이고 판정 필드를 만들 수 없다
+        trace = JsonlTrace(tp, run_id=a.target)
+        llm = make_llm(trace)
+        reviews = review_reached(res.judgements, llm, trace, common_names()) if llm else {}
+    d = scan_to_dict(res, a.target, reviews)
     os.makedirs(os.path.join(EV, "runs"), exist_ok=True)
     json.dump(d, open(os.path.join(EV, "runs", f"{a.target}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     open(os.path.join(EV, "runs", f"{a.target}.ranking.md"), "w", encoding="utf-8").write(render_ranking_md(res, 20))
@@ -91,8 +103,7 @@ def cmd_remediate(a):
         os.remove(tp)
     trace = JsonlTrace(tp, run_id=f"{a.target}-{a.scope}")
     before = build(t, repo, trace).run(repo)
-    key = None if a.no_llm else load_key()
-    llm = GeminiLlm(key) if key else None
+    llm = None if a.no_llm else make_llm(trace)
     wc = make_workcopy(repo, os.path.join(ROOT, "work", f"{a.target}-{a.scope}"), name="repo")
     cur, rounds, all_changed = before, [], []
     for n in range(1, a.max_rounds + 1):
@@ -152,6 +163,27 @@ def cmd_eval(a):
     print(md)
 
 
+def cmd_flagtable(a):
+    rows = []
+    for gname in a.gold:
+        gold = {}
+        for line in open(os.path.join(EV, gname), encoding="utf-8"):
+            if line.strip():
+                g = json.loads(line)
+                gold[(g["repo"], f'{g["package"].lower()}@{g["version"]}|{g["advisory"]}')] = g["verdict"]
+        pred, flagged = {}, set()
+        for name in targets():
+            for x in json.load(open(os.path.join(EV, "runs", f"{name}.json"), encoding="utf-8"))["alerts"]:
+                k = (name, f'{x["package"].lower()}@{x["version"]}|{x["advisory"]}')
+                pred[k] = x["verdict"]
+                if (x.get("review") or {}).get("flagged"):
+                    flagged.add(k)
+        rows.append((gname.replace(".jsonl", ""), precision_by_flag(gold, pred, flagged)))
+    md = render_flag_table_md(rows)
+    open(os.path.join(EV, a.out), "w", encoding="utf-8").write(md + "\n")
+    print(md)
+
+
 def cmd_summary(a):
     import glob
     from ..application.summary import summarize
@@ -172,12 +204,18 @@ def main(argv=None):
     for n, f in (("alerts", cmd_alerts), ("scan", cmd_scan), ("remediate", cmd_remediate)):
         s = sub.add_parser(n)
         s.add_argument("--target", required=True)
+        if n == "scan":
+            s.add_argument("--review", action="store_true", help="REACHED 후보에 LLM 판정 보조 표시(판정 불변)")
         if n == "remediate":
             s.add_argument("--scope", default="reached", choices=["reached", "reached+used", "all"])
             s.add_argument("--no-llm", action="store_true")
             s.add_argument("--max-rounds", type=int, default=3)
         s.set_defaults(fn=f)
     sub.add_parser("summary").set_defaults(fn=cmd_summary)
+    f = sub.add_parser("flagtable")
+    f.add_argument("--gold", nargs="+", required=True)
+    f.add_argument("--out", default="review-flag.md")
+    f.set_defaults(fn=cmd_flagtable)
     e = sub.add_parser("eval")
     e.add_argument("--gold", default="gold.jsonl")
     e.add_argument("--out", default="accuracy.md")

@@ -145,15 +145,17 @@ def judge(alert: Alert, index: SourceIndex, common_names: AbstractSet[str] = fro
     if hits_s:
         prod = _product_only(hits_s)
         if prod:
+            got = tuple(sorted(n for n in specific if any(index.refs.get((m, n)) for m in mods)))
             return Judgement(alert, Verdict.REACHED, _dedupe(prod),
-                             "취약 심볼 " + ", ".join(sorted(specific)) + " 의 참조·호출 근거 줄이 있음")
+                             "취약 심볼 " + ", ".join(sorted(specific)) + " 의 참조·호출 근거 줄이 있음", matched=got)
         nonprod_seen = True
     weak = _weak_hits(names_q, mods, index)
     if weak:
         prod = _product_only(weak)
         if prod:
             return Judgement(alert, Verdict.REACHED, _dedupe(prod),
-                             "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음", weak=True)
+                             "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음", weak=True,
+                             matched=tuple(sorted({_sym_name(x) for x in names_q if index.weak_refs.get(_sym_name(x))})))
         nonprod_seen = True
     if nonprod_seen:
         return Judgement(alert, Verdict.USED, _dedupe(import_ev),
