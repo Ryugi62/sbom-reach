@@ -1,6 +1,6 @@
 {
  "name": "openrefine",
- "repo": "/Users/ryugi62/untrusted/OpenRefine",
+ "repo": "~/untrusted/OpenRefine",
  "sbom_tool": "pom.xml 해석기",
  "fallback_used": false,
  "components": 58,

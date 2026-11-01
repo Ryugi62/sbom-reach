@@ -1,6 +1,6 @@
 {
  "name": "nodegoat",
- "repo": "/Users/ryugi62/dev/lotte-sbom-reach/untrusted/NodeGoat",
+ "repo": "untrusted/NodeGoat",
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 381,

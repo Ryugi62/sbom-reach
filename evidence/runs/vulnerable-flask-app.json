@@ -1,6 +1,6 @@
 {
  "name": "vulnerable-flask-app",
- "repo": "/Users/ryugi62/dev/lotte-sbom-reach/untrusted/Vulnerable-Flask-App/app",
+ "repo": "untrusted/Vulnerable-Flask-App/app",
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 28,

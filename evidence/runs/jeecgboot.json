@@ -1,6 +1,6 @@
 {
  "name": "jeecgboot",
- "repo": "/Users/ryugi62/untrusted/JeecgBoot/jeecg-boot",
+ "repo": "~/untrusted/JeecgBoot/jeecg-boot",
  "sbom_tool": "pom.xml 해석기",
  "fallback_used": false,
  "components": 67,

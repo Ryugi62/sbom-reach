@@ -1,6 +1,6 @@
 {
  "name": "pygoat",
- "repo": "/Users/ryugi62/dev/lotte-sbom-reach/untrusted/pygoat",
+ "repo": "untrusted/pygoat",
  "sbom_tool": "syft",
  "fallback_used": false,
  "components": 38,
