@@ -8,3 +8,4 @@ data/osv-cache/
 docs/_*.html
 untrusted/
 docs/out/
+data/llm-cache.json

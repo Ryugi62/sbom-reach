@@ -69,8 +69,10 @@ def dedupe_advisories(advs: List[Advisory]) -> List[Advisory]:
 
 
 class ScanUseCase:
-    def __init__(self, sbom: SbomPort, vulns: VulnPort, source: SourcePort, trace: TracePort):
+    def __init__(self, sbom: SbomPort, vulns: VulnPort, source: SourcePort, trace: TracePort,
+                 common_names: frozenset = frozenset()):
         self.sbom, self.vulns, self.source, self.trace = sbom, vulns, source, trace
+        self.common_names = common_names
 
     def _t(self, tool: str, t0: float, **kw):
         self.trace.record({"tool": tool, "ms": round((time.time() - t0) * 1000), **kw})
@@ -112,7 +114,7 @@ class ScanUseCase:
         status["scan"] = "incomplete" if incomplete else "ok"
         self._t("vuln_lookup", t0, alerts=len(alerts), incomplete=len(incomplete))
         t0 = time.time()
-        judgements = [judge(a, index) for a in alerts]
+        judgements = [judge(a, index, self.common_names) for a in alerts]
         status["reach"] = "ok"
         self._t("reach_judge", t0, reached=sum(j.verdict is Verdict.REACHED for j in judgements),
                 used=sum(j.verdict is Verdict.USED for j in judgements),

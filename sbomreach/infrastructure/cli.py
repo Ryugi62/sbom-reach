@@ -38,11 +38,19 @@ def overrides():
     return json.load(open(os.path.join(ROOT, "data", "symbol_overrides.json"), encoding="utf-8"))
 
 
+def common_names():
+    """data/generic_names.json (scripts/build_generic_names.py). 없으면 빈 사전 = v1.2 동작."""
+    try:
+        return frozenset(json.load(open(os.path.join(ROOT, "data", "generic_names.json"), encoding="utf-8"))["names"])
+    except (OSError, ValueError, KeyError):
+        return frozenset()
+
+
 def build(t, repo, trace):
     syft = SYFT if os.path.exists(SYFT) else "syft"
     return ScanUseCase(SyftSbom(syft_path=syft, excludes=t["excludes"]),
                        OsvVulnPort(cache_dir=os.path.join(ROOT, "data", "osv-cache"), overrides=overrides()),
-                       RepoSource(t["excludes"]), trace)
+                       RepoSource(t["excludes"]), trace, common_names())
 
 
 def scan_target(t, repo, tag, trace_path):

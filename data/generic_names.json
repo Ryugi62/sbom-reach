@@ -1,0 +1,29 @@
+{
+"min_packages": 3,
+"names": [
+"__init__",
+"a",
+"authorization",
+"decode",
+"encode",
+"filter",
+"format",
+"id",
+"k",
+"length",
+"load",
+"n",
+"parse",
+"path",
+"prototype",
+"rangeerror",
+"readthedocs",
+"redirect",
+"request",
+"size",
+"text",
+"valueerror",
+"while",
+"x"
+]
+}

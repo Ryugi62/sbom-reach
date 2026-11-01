@@ -17,6 +17,7 @@ class _V(ast.NodeVisitor):
         self.path, self.lines, self.idx = path, lines, idx
         self.bind: Dict[str, Tuple] = {}
         self.inst: Dict[str, str] = {}   # 변수 -> 그 변수가 담은 객체의 모듈 뿌리
+        self._inner = set()              # 속성 사슬의 중간 노드 id — 이름 풀이 경로일 뿐 근거가 아니다
 
     def ev(self, node) -> Evidence:
         n = node.lineno
@@ -65,6 +66,11 @@ class _V(ast.NodeVisitor):
             self.idx.mentions.setdefault(v.split(".")[0], []).append(self.ev(node))
 
     def visit_Attribute(self, node):
+        if isinstance(node.value, ast.Attribute):
+            self._inner.add(id(node.value))
+        if id(node) in self._inner:
+            self.generic_visit(node)
+            return
         base = node
         while isinstance(base, ast.Attribute):
             base = base.value

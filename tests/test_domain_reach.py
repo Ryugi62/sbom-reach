@@ -107,3 +107,67 @@ def test_string_mention_gives_used_not_unseen():
     al = mk_alert(name="django-allauth", symbols=(), version="0.52.0")
     j = judge(al, idx)
     assert j.verdict is Verdict.USED and "문자열" in j.reason
+
+
+# ---- v1.3: 일반 이름 심볼 오탐 검증 (SPEC S10) ----
+from sbomreach.domain.reach import GENERIC, is_product_path
+
+COMMON = frozenset({"decode", "session", "charfield"})
+
+
+def test_generic_only_hit_is_not_reached():
+    # 취약 심볼이 흔한 일반 이름(decode)뿐이고 모듈.이름으로 특정되지 않았다 -> 호출 줄이 있어도 USED
+    idx = SourceIndex(imports={"jwt": [ev("a.py", 1, "import jwt")]},
+                      refs={("jwt", "decode"): [ev("a.py", 9, "jwt.decode(t)")]})
+    j = judge(mk_alert("PyJWT", symbols=("decode", "key_bytes", "PyJWK", "load_pem"), version="1.5"), idx, common_names=COMMON)
+    assert j.verdict is Verdict.USED
+    assert "일반 이름" in j.reason
+
+
+def test_module_qualified_generic_name_stays_reached():
+    # 어드바이저리가 jwt.decode 로 특정했으면 decode 도 근거가 된다(모듈.이름)
+    idx = SourceIndex(imports={"jwt": [ev("a.py", 1)]},
+                      refs={("jwt", "decode"): [ev("a.py", 9, "jwt.decode(t)")]})
+    j = judge(mk_alert("PyJWT", symbols=("jwt.decode", "PyJWK"), version="1.5"), idx, common_names=COMMON)
+    assert j.verdict is Verdict.REACHED
+
+
+def test_specific_name_alongside_generic_is_reached():
+    idx = SourceIndex(imports={"jwt": [ev("a.py", 1)]},
+                      refs={("jwt", "get_unverified_header"): [ev("a.py", 7, "jwt.get_unverified_header(t)")]})
+    j = judge(mk_alert("PyJWT", symbols=("decode", "get_unverified_header"), version="1.5"), idx, common_names=COMMON)
+    assert j.verdict is Verdict.REACHED
+
+
+def test_entry_point_library_named_symbol_stays_reached():
+    # 단일 진입점 라이브러리(ms, marked): 심볼 이름이 모듈 이름과 같다
+    idx = SourceIndex(imports={"ms": [ev("a.js", 1)]}, refs={("ms", "ms"): [ev("a.js", 5, "ms(p)")]})
+    j = judge(mk_alert("ms", eco="npm", symbols=("ms",), version="0.6.2"), idx, common_names=COMMON)
+    assert j.verdict is Verdict.REACHED
+
+
+def test_hits_only_in_test_or_migration_paths_are_not_reached():
+    idx = SourceIndex(imports={"yaml": [ev("app/a.py", 1)]},
+                      refs={("yaml", "load"): [ev("tests/test_a.py", 9, "yaml.load(x)"), ev("app/migrations/0001.py", 3, "yaml.load(y)")]})
+    j = judge(mk_alert(), idx)
+    assert j.verdict is Verdict.USED
+    assert "시험" in j.reason
+
+
+def test_product_hit_survives_when_mixed_with_test_hits():
+    idx = SourceIndex(imports={"yaml": [ev("app/a.py", 1)]},
+                      refs={("yaml", "load"): [ev("tests/test_a.py", 9), ev("app/a.py", 12, "yaml.load(x)")]})
+    j = judge(mk_alert(), idx)
+    assert j.verdict is Verdict.REACHED and [e.path for e in j.evidence] == ["app/a.py"]
+
+
+def test_is_product_path():
+    for p in ["tests/a.py", "app/test_x.py", "src/x_test.py", "a/__tests__/b.js", "test/e2e/a.js", "x/migrations/0001_initial.py",
+              "web/a.spec.js", "web/a.test.ts", "cypress/e2e/a.js", "conftest.py"]:
+        assert not is_product_path(p), p
+    for p in ["app/app.py", "routes/index.js", "server.js", "introduction/views.py", "src/main/java/a/B.java"]:
+        assert is_product_path(p), p
+
+
+def test_generic_constant_still_has_common_words():
+    assert {"get", "set", "parse", "load"} <= GENERIC

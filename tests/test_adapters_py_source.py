@@ -61,9 +61,10 @@ def test_relative_import_ignored():
     assert idx.imports == {} and idx.refs == {}
 
 
-def test_nested_attribute_chain_records_each_attr():
+def test_nested_attribute_chain_records_last_attr_only():
+    # v1.3(SPEC S10-①): 사슬 중간 이름(utils)은 근거가 아니다 — 마지막 이름만
     idx = analyze_python({"n.py": "import django\ndjango.utils.html.mark_safe('x')\n"})
-    assert ("django", "mark_safe") in idx.refs and ("django", "utils") in idx.refs
+    assert ("django", "mark_safe") in idx.refs and ("django", "utils") not in idx.refs
 
 
 def test_instance_attribute_is_ref_of_module():
@@ -80,3 +81,11 @@ def test_string_mentions_of_dotted_names():
 def test_weak_refs_python_attribute_on_unresolved_receiver():
     idx = analyze_python({"w.py": "def f(request):\n    return request.body\n"})
     assert idx.weak_refs["body"][0].line == 2
+
+
+def test_only_last_name_of_attribute_chain_is_a_reference():
+    # SPEC S10-①: django.db.models.deletion.CASCADE 의 db·models·deletion 은 이름 풀이 경로일 뿐 근거가 아니다
+    idx = analyze_python({"a.py": "import django\nx = django.db.models.deletion.CASCADE\nimport os\nos.path.join('a')\n"})
+    assert ("django", "CASCADE") in idx.refs
+    assert ("django", "db") not in idx.refs and ("django", "models") not in idx.refs and ("django", "deletion") not in idx.refs
+    assert ("os", "join") in idx.refs and ("os", "path") not in idx.refs

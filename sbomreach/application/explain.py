@@ -30,7 +30,8 @@ def explain(r: Remediation, llm: Optional[LlmPort], verdict: Verdict, trace: Tra
     try:
         text = llm.complete(prompt).strip()
     except Exception as e:  # 네트워크·429·키 없음 등 — 문장 생성은 보조라 템플릿으로 계속
-        trace.record({"tool": "fallback", "stage": "llm", "why": type(e).__name__})
+        trace.record({"tool": "fallback", "stage": "llm", "why": type(e).__name__, "status": getattr(e, "status", None),
+                      "detail": str(getattr(e, "body", e))[:160]})
         return replace(r, text=base, text_source="template")
     chk = guardrails.check_llm_text(text, {r.current, r.target}, verdict)
     if not chk.ok:

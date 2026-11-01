@@ -31,7 +31,12 @@ SBOM(소프트웨어 부품 목록)과 취약점 스캔 결과는 따로 나와 
 | S5 | 시험 ≥40건이 네트워크 없이 10초 안에 통과한다. 도메인 계층은 표준 라이브러리 밖을 import하지 않는다(시험으로 집행) | `python3 -m pytest` |
 | S6 | 가드레일 ≥3개가 코드로 집행되고 각각 시험이 있다. 실행마다 도구 호출 trace(JSONL)를 남긴다 | `tests/test_guardrails.py`, `evidence/trace-sample.jsonl` |
 | S7 | 저장소 1개 종단 실행 ≤120초(네트워크 캐시 적중 기준) | 실행 로그의 elapsed |
-| S8 | 「건당 분 절감」「인건비 단가」는 **가정값**이라 출력 첫 줄에 「가정」을 붙인다 | 시험 `test_effect_labelled_assumption` |
+| S8 | 「건당 분 절감」「인건비 단가」는 **가정값**이라 출력 첫 줄에 「가정」을 붙인다. v1.3부터 효과의 주 지표는 금액이 아니라 「사람이 열어 볼 경보 수」(전체 → 도달 N)와 precision@N이다 | 시험 `test_effect_labelled_assumption`, `test_alert_reduction` |
+| S9 (v1.3) | LLM 호출 실패는 상태 코드·예외 원문(키 가림)을 trace에 남긴다. 429·5xx는 간격을 두고 재시도하고, 같은 입력은 디스크 캐시로 다시 부르지 않는다. 조치안 문장 채택률(채택/요청)을 실행마다 센다 | 시험 `test_llm_client.py`, `evidence/llm-adoption.md` |
+| S10 (v1.3) | 일반 이름 심볼 오탐을 결정적 규칙 3개로 막는다: ①이름 풀이는 속성 사슬의 **마지막 이름**만 근거로 센다(`django.db.models` 의 `db` 는 근거가 아니다) ②근거 줄이 시험·마이그레이션 경로뿐이면 `REACHED`가 될 수 없다(`USED`) ③어드바이저리 심볼이 여러 패키지에 흔한 일반 이름(`data/generic_names.json`, OSV 캐시에서 계산)뿐이고 `모듈.이름` 형태로 특정되지 않았으면 `USED` | 시험 `test_domain_reach.py` |
+| S11 (v1.3) | 정답 동결 → 수정 → 첫 실행. 새 홀드아웃(`gold-holdout2.jsonl`)은 수정 코드보다 먼저 커밋한다. 정답 일부는 다른 모델(Gemini)이 독립 재판정해 Cohen kappa를 낸다 | `evidence/accuracy-v1.3-holdout2.md`, `evidence/kappa.md` |
+| S12 (v1.3) | LLM 판정 보조는 한 자리뿐이다: `REACHED` 중 약한 근거·일반 이름 판정만 LLM이 근거 줄을 읽고 「사람 확인 필요」 표시를 붙인다. 표시는 판정·우선순위를 바꾸지 못하고 `USED`·`UNSEEN`을 `REACHED`로 올리는 호출 경로가 없다(G1 유지). 표시 전후 precision을 Evals 표로 낸다 | 시험 `test_review_flag.py`, `evidence/review-flag.md` |
+| S13 (v1.3) | Java(Maven) 최소 어댑터: `pom.xml`의 부품 목록(속성·dependencyManagement·저장소 내 부모 pom 해석, 외부 BOM 미해석분은 개수로 보고)과 `import`·호출 근거 줄. 교육용이 아닌 운영형 오픈소스 Java 저장소 ≥1에서 끝까지 돈다 | 시험 `test_adapters_maven.py`, `test_adapters_java_source.py`, `evidence/java/` |
 
 ## 4. Given / When / Then
 - G: requirements.txt에 `PyYAML==5.1`이 있고 소스에 `yaml.load(x)`가 있다 · W: 스캔 · T: 해당 Alert 판정 `REACHED`, Evidence에 그 파일·줄이 있다.
@@ -51,7 +56,14 @@ SBOM(소프트웨어 부품 목록)과 취약점 스캔 결과는 따로 나와 
 - adapters: syft/CycloneDX 파서, OSV 응답 파서, Python·JS 소스 분석기, 매니페스트 편집, Gemini 프롬프트.
 - infrastructure: HTTP, 프로세스 실행, 파일, trace 기록기, CLI.
 
+## 5-1. Evals 지표 (v1.3)
+- 도달 정밀도·재현율(정답 대비), 3분류 일치율(Wilson 95% 구간), **사람이 열어 볼 경보 수 N**(전체 경보 → `REACHED`)와 precision@N(= `REACHED` 중 정답도 도달인 비율).
+- 판정 보조 표시 전후: 표시 없는 `REACHED`만 남겼을 때 정밀도 vs 전체.
+- 대표값은 **정답을 동결한 뒤 수정 판정기를 처음 돌린 값**이다. 개발셋(`gold.jsonl`)·홀드아웃1은 이미 판정기를 고치는 데 쓰여 대표값이 아니다.
+
 ## 6. 비목표 (하지 않는 것 — 허위 방지)
+- Java: Gradle·외부 BOM(예: spring-boot-starter-parent)이 정하는 버전은 읽지 않는다(개수만 보고). import 접두는 groupId·artifactId 이름 규칙으로 맞추는 휴리스틱이라 안 맞으면 `UNSEEN`이다. 컴파일·타입 추론·리플렉션은 없다.
+- LLM은 판정을 올리지 못한다. 「사람 확인 필요」 표시는 도달 목록을 줄이는 쪽의 정보일 뿐 `REACHED`를 `USED`로 내리지도 않는다(순위는 그대로).
 - 전이 의존의 패키지 간 호출 그래프는 만들지 않는다. 전이 의존은 `UNSEEN`이며 「안전」이 아니다.
 - 동적 import·리플렉션·템플릿 문자열 속 호출은 못 본다. JS 분석은 정규식 기반(구문 분석 아님)이라 주석·문자열 제거 후 토큰 매칭이다.
 - Python 호출 분석은 `ast` 기반 이름 해석(별칭 import 포함)이다. 인스턴스 메서드 타입 추론은 하지 않는다.
