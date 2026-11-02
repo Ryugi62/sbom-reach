@@ -1,0 +1,938 @@
+{
+ "target": "healthchecks",
+ "commit": "59471f4",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-3h9f-r86x-qvjx",
+   "aliases": [
+    "BIT-django-2026-48588",
+    "CVE-2026-48588",
+    "PYSEC-2026-2090"
+   ],
+   "severity": "LOW",
+   "summary": "Django: cache middleware may expose private responses when unrelated request cookies are present",
+   "fixed": [
+    "5.2.16",
+    "6.0.7"
+   ],
+   "symbols": [
+    "UpdateCacheMiddleware",
+    "cache_page"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-6w2r-r2m5-xq5w",
+   "aliases": [
+    "BIT-django-2025-57833",
+    "CVE-2025-57833",
+    "PYSEC-2025-105"
+   ],
+   "severity": "HIGH",
+   "summary": "Django is subject to SQL injection through its column aliases",
+   "fixed": [
+    "4.2.24",
+    "5.1.12",
+    "5.2.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-7xr5-9hcq-chf9",
+   "aliases": [
+    "BIT-django-2025-48432",
+    "CVE-2025-48432",
+    "PYSEC-2025-47"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django Improper Output Neutralization for Logs vulnerability",
+   "fixed": [
+    "5.2.2",
+    "5.1.10",
+    "4.2.22"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-8cjm-8mp7-r2xf",
+   "aliases": [
+    "BIT-django-2026-8404",
+    "CVE-2026-8404",
+    "PYSEC-2026-201"
+   ],
+   "severity": "LOW",
+   "summary": "Django: UpdateCacheMiddleware may disclose cached responses due to case-sensitive Cache-Control handling",
+   "fixed": [
+    "5.2.15",
+    "6.0.6"
+   ],
+   "symbols": [
+    "django.middleware.cache.UpdateCacheMiddleware",
+    "django.middleware"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-8j24-cjrq-gr2m",
+   "aliases": [
+    "BIT-django-2025-32873",
+    "CVE-2025-32873",
+    "PYSEC-2025-37"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django has a denial-of-service possibility in strip_tags()",
+   "fixed": [
+    "4.2.21",
+    "5.1.9",
+    "5.2.1"
+   ],
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-8qcx-xf44-272x",
+   "aliases": [
+    "BIT-django-2026-53878",
+    "CVE-2026-53878",
+    "PYSEC-2026-2092"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django: DomainNameValidator permits newline characters that may enable HTTP header injection",
+   "fixed": [
+    "5.2.16",
+    "6.0.7"
+   ],
+   "symbols": [
+    "DomainNameValidator",
+    "CharField",
+    "HttpResponse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-923m-gv2p-w5qp",
+   "aliases": [
+    "BIT-django-2026-48587",
+    "CVE-2026-48587",
+    "PYSEC-2026-198"
+   ],
+   "severity": "LOW",
+   "summary": "Django: has_vary_header may expose cached responses when Vary values contain whitespace",
+   "fixed": [
+    "5.2.15",
+    "6.0.6"
+   ],
+   "symbols": [
+    "django.utils.cache.has_vary_header",
+    "Vary",
+    "django.utils"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-crhf-3pfg-w68w",
+   "aliases": [
+    "BIT-django-2026-53877",
+    "CVE-2026-53877",
+    "PYSEC-2026-2091"
+   ],
+   "severity": "MODERATE",
+   "summary": " Django: GDALRaster may over-read heap memory when constructed from bytes",
+   "fixed": [
+    "5.2.16",
+    "6.0.7"
+   ],
+   "symbols": [
+    "django.contrib.gis.gdal.GDALRaster",
+    "vsi_buffer",
+    "django.contrib"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-frmv-pr5f-9mcr",
+   "aliases": [
+    "BIT-django-2025-64459",
+    "CVE-2025-64459",
+    "PYSEC-2025-108"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Django vulnerable to SQL injection via _connector keyword argument in QuerySet and Q objects.",
+   "fixed": [
+    "5.2.8",
+    "5.1.14",
+    "4.2.26"
+   ],
+   "symbols": [
+    "QuerySet.filter",
+    "QuerySet.exclude",
+    "QuerySet.get",
+    "Q",
+    "_connector"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-h7pc-vwp9-298g",
+   "aliases": [
+    "BIT-django-2026-6873",
+    "CVE-2026-6873",
+    "PYSEC-2026-199"
+   ],
+   "severity": "LOW",
+   "summary": "Django: signed cookies are vulnerable to salt namespace collisions",
+   "fixed": [
+    "5.2.15",
+    "6.0.6"
+   ],
+   "symbols": [
+    "django.http.HttpRequest.get_signed_cookie",
+    "django.http"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-hpr9-3m2g-3j9p",
+   "aliases": [
+    "BIT-django-2025-59681",
+    "CVE-2025-59681",
+    "PYSEC-2025-106"
+   ],
+   "severity": "HIGH",
+   "summary": "Django vulnerable to SQL injection in column aliases",
+   "fixed": [
+    "4.2.25",
+    "5.1.13",
+    "5.2.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-p3fp-8748-vqfq",
+   "aliases": [
+    "BIT-django-2025-26699",
+    "CVE-2025-26699",
+    "PYSEC-2025-13"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django vulnerable to Allocation of Resources Without Limits or Throttling",
+   "fixed": [
+    "4.2.20",
+    "5.0.13",
+    "5.1.7"
+   ],
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-q238-5cxm-5c9h",
+   "aliases": [
+    "BIT-django-2026-15830",
+    "CVE-2026-15830",
+    "PYSEC-2026-3717"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django GeoDjango vulnerable to denial of service through deeply nested geometry collections",
+   "fixed": [
+    "5.2.17",
+    "6.0.8",
+    "6.1.1"
+   ],
+   "symbols": [
+    "django.contrib.gis.geos.GEOSGeometry",
+    "django.contrib.gis.forms.GeometryField",
+    "django.contrib"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-q95w-c7qg-hrff",
+   "aliases": [
+    "BIT-django-2025-59682",
+    "CVE-2025-59682",
+    "PYSEC-2026-1296"
+   ],
+   "severity": "LOW",
+   "summary": "Django vulnerable to partial directory traversal via archives",
+   "fixed": [
+    "4.2.25",
+    "5.1.13",
+    "5.2.7"
+   ],
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-qw25-v68c-qjf3",
+   "aliases": [
+    "BIT-django-2025-64458",
+    "CVE-2025-64458",
+    "PYSEC-2025-107"
+   ],
+   "severity": "HIGH",
+   "summary": "Django has a denial-of-service vulnerability in HttpResponseRedirect and HttpResponsePermanentRedirect on Windows",
+   "fixed": [
+    "5.2.8",
+    "5.1.14",
+    "4.2.26"
+   ],
+   "symbols": [
+    "django.http.HttpResponseRedirect",
+    "django.http.HttpResponsePermanentRedirect",
+    "django.shortcuts.redirect",
+    "django.http",
+    "django.shortcuts"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-rqw2-ghq9-44m7",
+   "aliases": [
+    "BIT-django-2025-13372",
+    "CVE-2025-13372",
+    "PYSEC-2025-104"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django is vulnerable to SQL injection in column aliases",
+   "fixed": [
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
+   ],
+   "symbols": [
+    "FilteredRelation",
+    "QuerySet.annotate",
+    "QuerySet.alias"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-vrcr-9hj9-jcg6",
+   "aliases": [
+    "BIT-django-2025-64460",
+    "CVE-2025-64460",
+    "PYSEC-2025-109"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django is vulnerable to DoS via XML serializer text extraction",
+   "fixed": [
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
+   ],
+   "symbols": [
+    "django.core.serializers.xml_serializer.getInnerText",
+    "Deserializer",
+    "django.core"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-wqfg-m96j-85vm",
+   "aliases": [
+    "BIT-django-2025-27556",
+    "CVE-2025-27556",
+    "PYSEC-2025-14"
+   ],
+   "severity": "MODERATE",
+   "summary": "Django Potential Denial of Service (DoS) on Windows ",
+   "fixed": [
+    "5.0.14",
+    "5.1.8"
+   ],
+   "symbols": [
+    "django.contrib",
+    "django.views"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-wvqv-fj8w-qmhm",
+   "aliases": [
+    "BIT-django-2026-15307",
+    "CVE-2026-15307",
+    "PYSEC-2026-4035"
+   ],
+   "severity": "HIGH",
+   "summary": "Django GeoDjango spatial lookups allow file writes and outbound requests through GDAL raster parsing",
+   "fixed": [
+    "5.2.17",
+    "6.0.8"
+   ],
+   "symbols": [
+    "django.contrib.gis.gdal.GDALRaster",
+    "GeometryField",
+    "RasterField",
+    "dict",
+    "str",
+    "django.contrib"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-2gx3-rcp4-g85q",
+   "aliases": [
+    "CVE-2026-101917",
+    "PYSEC-2026-4140"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: PyJWKClient still amplifies unauthenticated JWKS fetches on unknown kid values (incomplete fix of CVE-2026-48524)",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "kid",
+    "master",
+    "ba4853a",
+    "PyJWKClient"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-42vr-xj54-vc7v",
+   "aliases": [
+    "CVE-2026-101918",
+    "PYSEC-2026-4141"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: Unauthenticated RecursionError DoS in pre-verification payload parse (PyJWKClient.get_signing_key_from_jwt / verify_signature=False)",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [
+    "json.loads",
+    "PyJWT._decode_payload",
+    "except",
+    "ValueError",
+    "RecursionError",
+    "DecodeError",
+    "InvalidTokenError",
+    "PyJWTError",
+    "kid",
+    "PyJWS._load",
+    "CHANGELOG.rst",
+    "PyJWKClient.fetch_data",
+    "try",
+    "master",
+    "jwt.DecodeError",
+    "_verify_signature",
+    "get_signing_key_from_jwt",
+    "fetch_data",
+    "PyJWKClientError",
+    "fix.patch",
+    "scopegrep",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "patched_versions",
+    "triage"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-752w-5fwx-jx9f",
+   "aliases": [
+    "CVE-2026-32597",
+    "PYSEC-2026-120"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT accepts unknown `crit` header extensions",
+   "fixed": [
+    "2.12.0"
+   ],
+   "symbols": [
+    "crit",
+    "cnf",
+    "_validate_headers",
+    "decode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-993g-76c3-p5m4",
+   "aliases": [
+    "CVE-2026-48522",
+    "PYSEC-2026-175"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWKClient: missing scheme allowlist enables CVE-2024-21643-class SSRF + token forgery via file://, ftp://, data: schemes",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [
+    "uri",
+    "urllib.request.urlopen",
+    "OpenerDirector",
+    "HTTPHandler",
+    "HTTPSHandler",
+    "FTPHandler",
+    "FileHandler",
+    "DataHandler",
+    "jku",
+    "json.load",
+    "jwt.decode",
+    "fetch",
+    "http.DefaultTransport",
+    "HttpDocumentRetriever",
+    "PyJWKClient.__init__",
+    "PyJWKClientError",
+    "pyjwt.encode",
+    "pyjwt.get_unverified_header",
+    "pyjwt.decode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-9v7f-9g4p-ffgj",
+   "aliases": [
+    "CVE-2026-102267",
+    "PYSEC-2026-4144"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT: PyJWKClient follows redirects when fetching JWKS",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "PyJWKClient",
+    "kid",
+    "master"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-ffc3-869f-jxw9",
+   "aliases": [
+    "CVE-2026-102268",
+    "PYSEC-2026-4145"
+   ],
+   "severity": "CRITICAL",
+   "summary": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jwt.decode",
+    "PyJWK",
+    "cryptography",
+    "is_pem_format",
+    "cryptography.load_pem_public_key",
+    "HMACAlgorithm.prepare_key",
+    "key_bytes",
+    "load_pem_public_key",
+    "superadmin",
+    "InvalidKeyError",
+    "InvalidAlgorithmError",
+    "enforce_minimum_key_length"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-fhv5-28vv-h8m8",
+   "aliases": [
+    "CVE-2026-48524",
+    "PYSEC-2026-177"
+   ],
+   "severity": "LOW",
+   "summary": "PyJWKClient unbounded JWKS endpoint requests via attacker-controlled kid values (DoS)",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-hxm8-2xgr-2p9m",
+   "aliases": [
+    "CVE-2026-102269",
+    "PYSEC-2026-4147"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: Non-canonical signature segments enable raw-token revocation bypass",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jti",
+    "master",
+    "e6f48401001609a8f99e71fcaf355fb895d508a8"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-jq35-7prp-9v3f",
+   "aliases": [
+    "CVE-2026-48523",
+    "PYSEC-2026-176"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: Algorithm allow-list bypass when decoding with `PyJWK` / `PyJWKClient` keys",
+   "fixed": [
+    "2.13.0",
+    "2.12.1"
+   ],
+   "symbols": [
+    "PyJWK",
+    "PyJWKClient",
+    "jwt.decode",
+    "jwt.decode_complete",
+    "alg",
+    "algorithms",
+    "_verify_signature",
+    "key.Algorithm",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "ab8176abe21e550dbc1c9a6bb7e78ad80853bfb1"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-jwrc-g2q2-pq5p",
+   "aliases": [
+    "CVE-2026-102270",
+    "PYSEC-2026-4148"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: ReDoS vulnerability when calling the `is_pem_format` function.",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "is_pem_format"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-p4g4-x82p-q773",
+   "aliases": [
+    "CVE-2026-102271",
+    "PYSEC-2026-4149"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "HMACAlgorithm.prepare_key",
+    "is_pem_format",
+    "is_ssh_key",
+    "startswith",
+    "prepare_key",
+    "PyJWK",
+    "PyJWKClient",
+    "alg",
+    "load_der_public_key",
+    "load_der_private_key",
+    "load_der_x509_certificate",
+    "hmac",
+    "jwt.decode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-pxh4-856f-4h89",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "HMACAlgorithm.from_jwk",
+    "k",
+    "PyJWK",
+    "PyJWKSet",
+    "PyJWKClient",
+    "kid",
+    "HMACAlgorithm.prepare_key",
+    "from_jwk",
+    "InsecureKeyLengthWarning",
+    "PyJWT",
+    "pyjwt",
+    "master",
+    "prepare_key",
+    "_verify_signature",
+    "PyJWK.__init__",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "CHANGELOG.rst",
+    "test_hmac_prepare_key_rejects_empty_key",
+    "test_hmac_from_jwk_should_raise_exception_if_empty_json",
+    "jwt.decode",
+    "sub",
+    "HMACAlgorithm",
+    "test_hmac_from_jwk_rejects_empty_k",
+    "oct",
+    "af8181ca0bec5e6b372fbba9afbe23702b787ceb"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-w6j9-cwv2-h6wq",
+   "aliases": [
+    "CVE-2026-102274",
+    "PYSEC-2026-4152"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "RSAAlgorithm.from_jwk",
+    "ValueError",
+    "PyJWKSet",
+    "PyJWT",
+    "PyJWK.__init__",
+    "PyJWKSet.__init__",
+    "master",
+    "d",
+    "e",
+    "n",
+    "p",
+    "q",
+    "dp",
+    "dq",
+    "qi",
+    "from_jwk",
+    "cryptography",
+    "jwt.exceptions.PyJWTError",
+    "PyJWKSet.from_dict",
+    "from_json",
+    "PyJWK.from_dict",
+    "PyJWKClient.get_jwk_set",
+    "PyJWKClient",
+    "good_jwk",
+    "InvalidKeyError",
+    "PyJWTError",
+    "created_at",
+    "PyJWK"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-w7vc-732c-9m39",
+   "aliases": [
+    "CVE-2026-48525",
+    "PYSEC-2026-178"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT: Unauthenticated DoS via unbounded Base64URL decoding of unused payload segment in b64=false detached JWS",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [
+    "detached_payload",
+    "PyJWS.decode",
+    "PyJWS.decode_complete",
+    "_load",
+    "decode_complete",
+    "crit",
+    "payload_segment",
+    "b64",
+    "DecodeError",
+    "pyjwt.readthedocs"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-x33g-cr3x-6449",
+   "aliases": [
+    "CVE-2026-102275",
+    "PYSEC-2026-4183"
+   ],
+   "severity": "MODERATE",
+   "summary": "PyJWT accepts inconsistent OKP x/d JWKs, causing public/private key identity confusion",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [
+    "x",
+    "d",
+    "OKPAlgorithm.from_jwk",
+    "cnf.jkt",
+    "PyJWK.from_dict",
+    "master",
+    "patched_versions",
+    "InvalidKeyError"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "GHSA-xgmm-8j9v-c9wx",
+   "aliases": [
+    "CVE-2026-48526",
+    "PYSEC-2026-179"
+   ],
+   "severity": "HIGH",
+   "summary": "PyJWT: Public-key JWK accepted as HMAC secret enables forged HS256 tokens when mixed families are allowed",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "direct": true,
+   "advisory": "PYSEC-2025-183",
+   "aliases": [
+    "CVE-2025-45768"
+   ],
+   "severity": "HIGH",
+   "summary": "",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none"
+  }
+ ]
+}

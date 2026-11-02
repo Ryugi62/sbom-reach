@@ -1,0 +1,5 @@
+{"run_id": "healthchecks", "seq": 1, "ts": "2026-11-03T00:24:12+0900", "tool": "sbom", "ms": 1659, "tool_name": "syft", "components": 15, "fallback": false}
+{"run_id": "healthchecks", "seq": 2, "ts": "2026-11-03T00:24:13+0900", "tool": "source_index", "ms": 343, "imported_modules": 55, "referenced_symbols": 1123}
+{"run_id": "healthchecks", "seq": 3, "ts": "2026-11-03T00:24:13+0900", "tool": "vuln_lookup", "ms": 19, "alerts": 36, "incomplete": 0}
+{"run_id": "healthchecks", "seq": 4, "ts": "2026-11-03T00:24:13+0900", "tool": "reach_judge", "ms": 3, "reached": 8, "used": 28, "unseen": 0}
+{"run_id": "healthchecks", "seq": 5, "ts": "2026-11-03T00:24:13+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-qw25-v68c-qjf3:7.0", "pyjwt:GHSA-pxh4-856f-4h89:7.0"]}

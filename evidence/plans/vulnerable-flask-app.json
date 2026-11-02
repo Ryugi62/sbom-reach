@@ -1,0 +1,53 @@
+{
+ "target": "vulnerable-flask-app",
+ "plan_source": "llm",
+ "violations": [
+  "rescan 누락 — 조치할 패키지가 있어 기본 rescan을 덧붙임"
+ ],
+ "context": {
+  "detected": [
+   "PyPI"
+  ],
+  "weak_alerts": 0,
+  "packages_to_fix": 3
+ },
+ "calls": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "PyPI"
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "PyPI"
+   },
+   "result": {
+    "components": 28,
+    "alerts": 89
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   },
+   "result": {
+    "required": true,
+    "scope": "reached",
+    "packages_to_fix": 3
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 89
+}

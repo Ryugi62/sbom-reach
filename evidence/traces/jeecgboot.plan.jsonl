@@ -1,0 +1,8 @@
+{"run_id": "jeecgboot-plan", "seq": 1, "ts": "2026-11-03T00:33:41+0900", "tool": "sbom", "ms": 155, "tool_name": "pom.xml 해석기", "components": 67, "fallback": false, "pom_stat": {"poms": 29, "parse_errors": 0, "total_declared": 151, "test_scope": 4, "internal": 34, "unresolved": 43, "resolved": 67}}
+{"run_id": "jeecgboot-plan", "seq": 2, "ts": "2026-11-03T00:33:42+0900", "tool": "source_index", "ms": 1500, "imported_modules": 2614, "referenced_symbols": 30}
+{"run_id": "jeecgboot-plan", "seq": 3, "ts": "2026-11-03T00:33:42+0900", "tool": "vuln_lookup", "ms": 17, "alerts": 13, "incomplete": 0}
+{"run_id": "jeecgboot-plan", "seq": 4, "ts": "2026-11-03T00:33:42+0900", "tool": "reach_judge", "ms": 2, "reached": 0, "used": 4, "unseen": 9}
+{"run_id": "jeecgboot-plan", "seq": 5, "ts": "2026-11-03T00:33:42+0900", "tool": "rank", "ms": 0, "top": ["commons-fileupload:commons-fileupload:GHSA-vv7r-c36w-3prj:2.45", "org.jsoup:jsoup:GHSA-65r4-943x-97jj:2.45", "commons-lang:commons-lang:GHSA-j288-q9x7-2f5v:1.4"]}
+{"run_id": "jeecgboot-plan", "seq": 6, "ts": "2026-11-03T00:33:42+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "jeecgboot-plan", "seq": 7, "ts": "2026-11-03T00:33:42+0900", "tool": "plan", "source": "llm", "calls": 1, "violations": 0}
+{"run_id": "jeecgboot-plan", "seq": 8, "ts": "2026-11-03T00:33:42+0900", "tool": "plan_step", "step": 1, "call": "select_adapter", "args": {"ecosystem": "Maven"}, "ok": true, "result": {"components": 67, "alerts": 13}}

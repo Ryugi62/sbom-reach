@@ -1,0 +1,53 @@
+{
+ "target": "dolphinscheduler",
+ "plan_source": "llm",
+ "violations": [
+  "rescan 누락 — 조치할 패키지가 있어 기본 rescan을 덧붙임"
+ ],
+ "context": {
+  "detected": [
+   "Maven"
+  ],
+  "weak_alerts": 0,
+  "packages_to_fix": 2
+ },
+ "calls": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "Maven"
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "Maven"
+   },
+   "result": {
+    "components": 112,
+    "alerts": 80
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   },
+   "result": {
+    "required": true,
+    "scope": "reached",
+    "packages_to_fix": 2
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 80
+}

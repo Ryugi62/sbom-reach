@@ -14,7 +14,10 @@ from ..application.gold_check import build_prompt, context_lines, parse_label
 from ..application.review import review_reached
 from ..domain.evals import agreement, cohen_kappa, precision_by_flag
 from ..domain.packages import modules_for
-from ..domain.models import Verdict
+from ..domain.models import Component, Verdict
+from ..application.planner import Planner, execute
+from ..domain.planning import PlanContext
+from .context_reader import read_window
 from .gemini import GeminiLlm, load_key
 from .maven_sbom import MavenSbom
 from .osv_client import OsvVulnPort
@@ -35,12 +38,15 @@ def target_repo_dir(t):
     return os.path.join(base, t["scan_dir"]) if t["scan_dir"] else base
 
 
-def targets(java: bool = True):
-    """targets.json(Python·JS 4곳) + targets-java.json(운영형 오픈소스 Java, 홈의 ~/untrusted 에 받는다)."""
+def targets(java: bool = True, ops: bool = True):
+    """targets.json(Python·JS 4곳) + targets-java.json(운영형 오픈소스 Java) + targets-ops.json(운영형 Python·JS, v1.4). 모두 홈의 ~/untrusted 에 받는다."""
     out = {t["name"]: t for t in json.load(open(os.path.join(EV, "targets.json"), encoding="utf-8"))}
     jp = os.path.join(EV, "targets-java.json")
     if java and os.path.exists(jp):
         out.update({t["name"]: t for t in json.load(open(jp, encoding="utf-8"))})
+    op = os.path.join(EV, "targets-ops.json")
+    if ops and os.path.exists(op):
+        out.update({t["name"]: t for t in json.load(open(op, encoding="utf-8"))})
     return out
 
 
@@ -99,6 +105,7 @@ def cmd_scan(a):
         llm = make_llm(trace)
         reviews = review_reached(res.judgements, llm, trace, common_names()) if llm else {}
     d = scan_to_dict(res, a.target, reviews)
+    d["repo"] = t["path"]   # 개인 홈 경로를 증거 파일에 남기지 않는다(targets.json의 표기 그대로)
     os.makedirs(os.path.join(EV, "runs"), exist_ok=True)
     json.dump(d, open(os.path.join(EV, "runs", f"{a.target}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     open(os.path.join(EV, "runs", f"{a.target}.ranking.md"), "w", encoding="utf-8").write(render_ranking_md(res, 20))
@@ -154,6 +161,54 @@ def cmd_remediate(a):
     os.makedirs(os.path.join(EV, "rescan"), exist_ok=True)
     json.dump(out, open(os.path.join(EV, "rescan", f"{a.target}.{a.scope}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(a.target, a.scope, "라운드", len(rounds), "패키지 조치", out["packages_changed"], d.__dict__)
+
+
+def cmd_plan(a):
+    """판정이 끝난 스캔 결과 위에서 에이전트 계획 단계를 돌린다(SPEC S18). 판정 목록은 전후 비교로 불변을 확인한다."""
+    names = list(targets()) if a.target == "all" else [a.target]
+    os.makedirs(os.path.join(EV, "plans"), exist_ok=True)
+    for name in names:
+        t = targets()[name]
+        repo = target_repo_dir(t)
+        if not os.path.isdir(repo):
+            print(name, "건너뜀: 저장소 없음")
+            continue
+        tp = os.path.join(EV, "traces", f"{name}.plan.jsonl")
+        if os.path.exists(tp):
+            os.remove(tp)
+        trace = JsonlTrace(tp, run_id=f"{name}-plan")
+        res = build(t, repo, trace).run(repo)
+        order = ("PyPI", "npm", "Maven")
+        detected = tuple(e for e in order if any(c.ecosystem == e for c in res.components))
+        key = lambda j: f"{j.alert.component.name}@{j.alert.component.version}|{j.alert.advisory.id}"
+        weak = [j for j in res.judgements if j.verdict is Verdict.REACHED and j.weak]
+        ctx = PlanContext(detected, tuple(key(j) for j in weak), len(plan_remediation(res, "reached", res.direct_names)))
+        before = [(j.alert.key, j.verdict.value) for j in res.judgements]
+        llm = None
+        if not a.no_llm:
+            k = load_key()
+            llm = GeminiLlm(k, trace=trace, cache_path=os.path.join(ROOT, "data", "llm-cache.json"), max_tokens=900) if k else None
+        plan = Planner(llm, trace).plan(ctx)
+        by_key = {key(j): j for j in weak}
+
+        def sel(ecosystem):
+            return {"components": sum(c.ecosystem == ecosystem for c in res.components),
+                    "alerts": sum(j.alert.component.ecosystem == ecosystem for j in res.judgements)}
+
+        def insp(alert, radius):
+            ev = by_key[alert].evidence[0]
+            return {"file": ev.path, "line": ev.line, "window": read_window(repo, ev.path, ev.line, radius)}
+
+        def rsc(scope):
+            return {"required": True, "scope": scope, "packages_to_fix": ctx.remediation_count}
+        out = execute(plan, {"select_adapter": sel, "inspect_context": insp, "rescan": rsc}, trace)
+        after = [(j.alert.key, j.verdict.value) for j in res.judgements]
+        d = {"target": name, "plan_source": plan.source, "violations": list(plan.violations),
+             "context": {"detected": list(ctx.detected), "weak_alerts": len(ctx.weak_keys), "packages_to_fix": ctx.remediation_count},
+             "calls": [{"tool": c.tool, "args": dict(c.args)} for c in plan.calls], "results": out,
+             "verdicts_unchanged": before == after, "alerts": len(before)}
+        json.dump(d, open(os.path.join(EV, "plans", f"{name}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        print(name, plan.source, "호출", len(plan.calls), "위반", len(plan.violations), "판정불변", d["verdicts_unchanged"])
 
 
 def cmd_eval(a):
@@ -238,13 +293,36 @@ def cmd_summary(a):
     from ..application.summary import summarize
     load = lambda p: json.load(open(p, encoding="utf-8"))
     rows = lambda p: [json.loads(x) for x in open(p, encoding="utf-8") if x.strip()]
-    tg = targets(java=False)
+    tg = targets(java=False, ops=False)
     runs = {n: load(os.path.join(EV, "runs", f"{n}.json")) for n in tg}
     v0 = {n: load(os.path.join(EV, "runs-v0", f"{n}.json")) for n in tg}
     rs = {os.path.basename(p)[:-5]: load(p) for p in sorted(glob.glob(os.path.join(EV, "rescan", "*.json")))}
     out = summarize(tg, runs, rs, rows(os.path.join(EV, "gold.jsonl")), rows(os.path.join(EV, "gold-holdout.jsonl")), v0)
     json.dump(out, open(os.path.join(EV, "summary.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(json.dumps(out["totals"], ensure_ascii=False), out["accuracy"]["v1_holdout"]["rate"])
+
+
+def cmd_adapters(a):
+    """S17: 입력 형식별 작은 픽스처를 실제 SBOM 단계에 넣어 읽힌 개수를 센다 → evidence/adapter-matrix.md."""
+    import tempfile
+    from ..application.adapter_matrix import render_matrix_md, run_probes
+    syft = SYFT if os.path.exists(SYFT) else "syft"
+
+    def sbom_fn(kind, root):
+        if kind == "maven":
+            s = MavenSbom()
+            comps, _ = s.generate(root)
+            return len(comps), s.stat.get("unresolved", 0)
+        comps, _ = SyftSbom(syft_path="/nonexistent/syft" if kind == "fallback" else syft).generate(root)
+        return len(comps), 0
+
+    osv = OsvVulnPort(cache_dir=os.path.join(ROOT, "data", "osv-cache"), overrides={})
+    adv = None if a.offline else (lambda n, v, e: len(osv.advisories(Component(n, v, e))))
+    with tempfile.TemporaryDirectory() as td:
+        rows = run_probes(sbom_fn, td, adv)
+    md = render_matrix_md(rows)
+    open(os.path.join(EV, "adapter-matrix.md"), "w", encoding="utf-8").write(md)
+    print(md)
 
 
 def main(argv=None):
@@ -260,7 +338,14 @@ def main(argv=None):
             s.add_argument("--no-llm", action="store_true")
             s.add_argument("--max-rounds", type=int, default=3)
         s.set_defaults(fn=f)
+    pl = sub.add_parser("plan")
+    pl.add_argument("--target", required=True, help="이름 또는 all")
+    pl.add_argument("--no-llm", action="store_true")
+    pl.set_defaults(fn=cmd_plan)
     sub.add_parser("summary").set_defaults(fn=cmd_summary)
+    ad = sub.add_parser("adapters")
+    ad.add_argument("--offline", action="store_true", help="공개 DB 조회를 건너뛴다(그 칸은 미실측으로 표시)")
+    ad.set_defaults(fn=cmd_adapters)
     gc = sub.add_parser("goldcheck")
     gc.add_argument("--gold", default="gold-holdout2.jsonl")
     gc.add_argument("--n", type=int, default=30)

@@ -1,0 +1,24 @@
+[
+ {
+  "name": "healthchecks",
+  "language": "Python",
+  "kind": "operating",
+  "url": "https://github.com/healthchecks/healthchecks",
+  "commit": "59471f4",
+  "path": "~/untrusted/healthchecks",
+  "scan_dir": "",
+  "excludes": [],
+  "note": "2025-02-27 시점 스냅샷"
+ },
+ {
+  "name": "uptime-kuma",
+  "language": "JavaScript",
+  "kind": "operating",
+  "url": "https://github.com/louislam/uptime-kuma",
+  "commit": "c7d7fdd",
+  "path": "~/untrusted/uptime-kuma",
+  "scan_dir": "",
+  "excludes": [],
+  "note": "2025-02-28 시점 스냅샷"
+ }
+]

@@ -1,0 +1,135 @@
+{
+ "versions": {
+  "osv-scanner": "osv-scanner version: 2.7.0",
+  "grype": "Version:             0.121.0",
+  "trivy": "Version: 0.76.1"
+ },
+ "per_repo": {
+  "vulnerable-flask-app": {
+   "osv-scanner": {
+    "count": 91,
+    "error": ""
+   },
+   "grype": {
+    "count": 84,
+    "error": ""
+   },
+   "trivy": {
+    "count": 84,
+    "error": ""
+   }
+  },
+  "pygoat": {
+   "osv-scanner": {
+    "count": 275,
+    "error": ""
+   },
+   "grype": {
+    "count": 198,
+    "error": ""
+   },
+   "trivy": {
+    "count": 198,
+    "error": ""
+   }
+  },
+  "nodejs-goof": {
+   "osv-scanner": {
+    "count": 269,
+    "error": ""
+   },
+   "grype": {
+    "count": 237,
+    "error": ""
+   },
+   "trivy": {
+    "count": 245,
+    "error": ""
+   }
+  },
+  "nodegoat": {
+   "osv-scanner": {
+    "count": 206,
+    "error": ""
+   },
+   "grype": {
+    "count": 92,
+    "error": ""
+   },
+   "trivy": {
+    "count": 94,
+    "error": ""
+   }
+  },
+  "openrefine": {
+   "osv-scanner": {
+    "count": 28,
+    "error": ""
+   },
+   "grype": {
+    "count": 22,
+    "error": ""
+   },
+   "trivy": {
+    "count": 15,
+    "error": "Maven Central 429로 원격 pom 해석 생략(--offline-scan), 전이 의존 일부 누락 가능"
+   }
+  },
+  "jeecgboot": {
+   "osv-scanner": {
+    "count": 276,
+    "error": ""
+   },
+   "grype": {
+    "count": 14,
+    "error": ""
+   },
+   "trivy": {
+    "count": 14,
+    "error": "Maven Central 429로 원격 pom 해석 생략(--offline-scan), 전이 의존 일부 누락 가능"
+   }
+  },
+  "dolphinscheduler": {
+   "osv-scanner": {
+    "count": 376,
+    "error": ""
+   },
+   "grype": {
+    "count": 129,
+    "error": ""
+   },
+   "trivy": {
+    "count": 127,
+    "error": "Maven Central 429로 원격 pom 해석 생략(--offline-scan), 전이 의존 일부 누락 가능"
+   }
+  },
+  "healthchecks": {
+   "osv-scanner": {
+    "count": 42,
+    "error": ""
+   },
+   "grype": {
+    "count": 35,
+    "error": ""
+   },
+   "trivy": {
+    "count": 35,
+    "error": ""
+   }
+  },
+  "uptime-kuma": {
+   "osv-scanner": {
+    "count": 370,
+    "error": ""
+   },
+   "grype": {
+    "count": 204,
+    "error": ""
+   },
+   "trivy": {
+    "count": 203,
+    "error": ""
+   }
+  }
+ }
+}

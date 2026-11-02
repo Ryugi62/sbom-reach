@@ -1,0 +1,6972 @@
+{
+ "name": "uptime-kuma",
+ "repo": "~/untrusted/uptime-kuma",
+ "sbom_tool": "syft",
+ "fallback_used": false,
+ "components": 661,
+ "elapsed_sec": 1.59,
+ "stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "incomplete": [],
+ "counts": {
+  "alerts": 204,
+  "REACHED": 54,
+  "USED": 60,
+  "UNSEEN": 90,
+  "REACHED_weak": 7,
+  "REACHED_flagged": 0
+ },
+ "alerts": [
+  {
+   "rank": 1,
+   "score": 10.0,
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-66mm-25pp-rfff",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.2.1",
+    "1.8.8"
+   ],
+   "symbols": [
+    "$clone",
+    "evaluateTransformExpression",
+    "proc.arguments.forEach",
+    "Array.prototype.forEach"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "server/model/monitor.js",
+     "line": 1557,
+     "text": "notifications.forEach(row => {"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 1564,
+     "text": "tags.forEach(row => {"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 1577,
+     "text": "monitorData.forEach((monitor, index) => {"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 1581,
+     "text": "monitorData.forEach((monitor, index) => {"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 1585,
+     "text": "monitorData.forEach((monitor, index) => {"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3g43-6gmg-66jw",
+   "severity": "HIGH",
+   "fixed": [
+    "1.15.2",
+    "0.31.1"
+   ],
+   "symbols": [
+    "Object.prototype.transformResponse",
+    "Object.prototype",
+    "auth",
+    "transformResponse",
+    "mergeConfig",
+    "transformData",
+    "validator.assertOptions",
+    "auth.username",
+    "auth.password",
+    "this.auth.password",
+    "this.url",
+    "assertOptions",
+    "qs",
+    "minimist",
+    "lodash",
+    "this.auth.username",
+    "this.headers.Authorization",
+    "hasOwnProperty",
+    "defaultToConfig2",
+    "axios.get",
+    "pollutedTransform",
+    "computeConfigValue"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 assertOptions, auth, computeConfigValue, defaultToConfig2, get, hasOwnProperty, lodash, mergeConfig, minimist, password, pollutedTransform, qs, transformData, transformResponse, username 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-43fc-jf86-j433",
+   "severity": "HIGH",
+   "fixed": [
+    "1.13.5",
+    "0.30.3"
+   ],
+   "symbols": [
+    "mergeConfig",
+    "JSON.parse",
+    "prop",
+    "Object.keys",
+    "Object.prototype",
+    "Axios._request",
+    "Axios.getUri",
+    "post",
+    "poc.mjs",
+    "axios.get",
+    "computeConfigValue"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 _request, computeConfigValue, get, getUri, mergeConfig, mjs, post, prop 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4hjh-wcwx-xvwj",
+   "severity": "HIGH",
+   "fixed": [
+    "1.12.0",
+    "0.30.2"
+   ],
+   "symbols": [
+    "Buffer",
+    "Blob",
+    "maxContentLength",
+    "maxBodyLength",
+    "axios",
+    "fromDataURI",
+    "config.maxContentLength",
+    "config.maxBodyLength",
+    "totalResponseBytes",
+    "Buffer.from",
+    "axios.get",
+    "axios.create"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Blob, Buffer, axios, create, fromDataURI, get, maxBodyLength, maxContentLength, totalResponseBytes 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6chq-wfr3-2hj9",
+   "severity": "HIGH",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "Authorization",
+    "axios.post"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 post 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/46elks.js",
+     "line": 26,
+     "text": "await axios.post(url, data, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 41,
+     "text": "await axios.post(notification.alertaApiEndpoint, postData, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 53,
+     "text": "await axios.post(notification.alertaApiEndpoint, datadup, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 57,
+     "text": "await axios.post(notification.alertaApiEndpoint, datadup, config);"
+    },
+    {
+     "path": "server/notification-providers/alertnow.js",
+     "line": 44,
+     "text": "await axios.post(notification.alertNowWebhookURL, data);"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-j5f8-grm9-p9fc",
+   "severity": "HIGH",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "setProxy",
+    "beforeRedirects.proxy",
+    "afca61a",
+    "isRedirect",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 afca61a, get, isRedirect, proxy, setProxy 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p92q-9vqr-4j8v",
+   "severity": "HIGH",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "config.proxy",
+    "setProxy",
+    "afca61a",
+    "removeProxyAuthorization",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 afca61a, get, proxy, removeProxyAuthorization, setProxy 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pf86-5x62-jrwf",
+   "severity": "HIGH",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "hasOwnProperty",
+    "Axios._request",
+    "mergeConfig",
+    "this.defaults",
+    "transformResponse",
+    "parseReviver",
+    "defaults",
+    "mergeMap",
+    "this.parseReviver",
+    "responseType",
+    "assertOptions",
+    "server_gadget1.mjs",
+    "poc_parsereviver.mjs",
+    "transport",
+    "config1",
+    "hasOwnProp",
+    "transport.request",
+    "options.hostname",
+    "options.port",
+    "options.path",
+    "options.auth",
+    "options.headers",
+    "server_gadget2.mjs",
+    "poc_transport.mjs",
+    "transformRequest",
+    "Object.prototype.transformRequest",
+    "defaultToConfig2",
+    "transformData",
+    "config.transport",
+    "lookup",
+    "httpVersion",
+    "http2Options",
+    "family",
+    "formSerializer",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 _request, assertOptions, auth, config1, defaultToConfig2, defaults, family, formSerializer, get, hasOwnProp, hasOwnProperty, hostname, http2Options, httpVersion, lookup, mergeConfig, mergeMap, mjs, parseReviver, port, responseType, transformData, transformRequest, transformResponse, transport 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/uptime-kuma-server.js",
+     "line": 82,
+     "text": "axios.defaults.headers.common[\"User-Agent\"] = this.getUserAgent();"
+    },
+    {
+     "path": "server/uptime-kuma-server.js",
+     "line": 85,
+     "text": "axios.defaults.timeout = 300 * 1000;"
+    },
+    {
+     "path": "src/mixins/public.js",
+     "line": 8,
+     "text": "axios.defaults.baseURL = location.protocol + \"//\" + getDevContainerServerHostname();"
+    },
+    {
+     "path": "src/mixins/public.js",
+     "line": 10,
+     "text": "axios.defaults.baseURL = location.protocol + \"//\" + location.hostname + \":3001\";"
+    },
+    {
+     "path": "src/mixins/public.js",
+     "line": 49,
+     "text": "return axios.defaults.baseURL;"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pmwg-cvhr-8vh7",
+   "severity": "HIGH",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "normalizeNoProxyHost",
+    "localhost",
+    "setProxy",
+    "shouldBypassProxy",
+    "lo",
+    "Host",
+    "Set.has",
+    "parseNoProxyEntry",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Host, get, lo, localhost, normalizeNoProxyHost, parseNoProxyEntry, setProxy, shouldBypassProxy 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "score": 7.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-x97p-jq2g-jp4f",
+   "severity": "HIGH",
+   "fixed": [
+    "0.34.0",
+    "1.20.0"
+   ],
+   "symbols": [
+    "visitor",
+    "maxDepth",
+    "dots",
+    "indexes",
+    "metaTokens",
+    "Blob",
+    "Object.prototype",
+    "axios.toFormData",
+    "transformRequest",
+    "formSerializer",
+    "toFormData",
+    "utils.toFlatObject",
+    "toFlatObject",
+    "formSerializer.maxDepth",
+    "hasOwnProperty",
+    "Object.prototype.visitor",
+    "own",
+    "hasOwnProp",
+    "destObj",
+    "utils.hasOwnProp",
+    "mergeConfig",
+    "poc.mjs",
+    "key",
+    "path",
+    "exposedHelpers",
+    "defaultVisitor",
+    "convertValue",
+    "isVisitable",
+    "helpers.defaultVisitor",
+    "Object.prototype.maxDepth",
+    "user.name",
+    "axios.post"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Blob, convertValue, defaultVisitor, destObj, dots, exposedHelpers, formSerializer, hasOwnProp, hasOwnProperty, indexes, isVisitable, maxDepth, mergeConfig, metaTokens, mjs, own, post, toFlatObject, toFormData, transformRequest, visitor 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/46elks.js",
+     "line": 26,
+     "text": "await axios.post(url, data, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 41,
+     "text": "await axios.post(notification.alertaApiEndpoint, postData, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 53,
+     "text": "await axios.post(notification.alertaApiEndpoint, datadup, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 57,
+     "text": "await axios.post(notification.alertaApiEndpoint, datadup, config);"
+    },
+    {
+     "path": "server/notification-providers/alertnow.js",
+     "line": 44,
+     "text": "await axios.post(notification.alertNowWebhookURL, data);"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "score": 7.0,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wmfp-5q7x-987x",
+   "severity": "HIGH",
+   "fixed": [
+    "10.25.0"
+   ],
+   "symbols": [
+    "layout",
+    "render",
+    "include",
+    "require.resolve",
+    "type",
+    "fs"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 307,
+     "text": "resolver.resolve(hostname, rrtype, (err, records) => {"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "score": 7.0,
+   "package": "nanoid",
+   "version": "3.3.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-28wg-ghj8-5hjv",
+   "severity": "HIGH",
+   "fixed": [
+    "3.3.16",
+    "5.1.16"
+   ],
+   "symbols": [
+    "customAlphabet",
+    "nanoid"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 customAlphabet, nanoid 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/socket-handlers/api-key-socket-handler.js",
+     "line": 22,
+     "text": "let clearKey = nanoid(40);"
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "score": 7.0,
+   "package": "nanoid",
+   "version": "3.3.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xwg4-73v4-xw9w",
+   "severity": "HIGH",
+   "fixed": [
+    "3.3.12",
+    "5.1.11"
+   ],
+   "symbols": [
+    "size",
+    "nanoid",
+    "fillPool",
+    "poolOffset"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 fillPool, nanoid, poolOffset 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/socket-handlers/api-key-socket-handler.js",
+     "line": 22,
+     "text": "let clearKey = nanoid(40);"
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "score": 7.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2x7j-588g-ccc2",
+   "severity": "HIGH",
+   "fixed": [
+    "9.1.0"
+   ],
+   "symbols": [
+    "To",
+    "Cc",
+    "Bcc",
+    "From",
+    "addressparser",
+    "Array.prototype.concat",
+    "_handleAddress",
+    "_parseAddresses",
+    "getEnvelope",
+    "concat",
+    "maxRecipients",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Bcc, Cc, From, To, _handleAddress, _parseAddresses, addressparser, concat, createTransport, getEnvelope, maxRecipients 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "score": 7.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r7g4-qg5f-qqm2",
+   "severity": "HIGH",
+   "fixed": [
+    "8.0.8"
+   ],
+   "symbols": [
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 createTransport 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "score": 7.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rcmh-qjqh-p98v",
+   "severity": "HIGH",
+   "fixed": [
+    "7.0.11"
+   ],
+   "symbols": [
+    "data.group",
+    "nodemailer.createTransport",
+    "buildDeepGroup"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 buildDeepGroup, createTransport, group 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "score": 7.0,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8qq5-rm4j-mr97",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.3"
+   ],
+   "symbols": [
+    "linkpath",
+    "Link",
+    "SymbolicLink",
+    "preservePaths",
+    "entry.linkpath",
+    "path.resolve",
+    "this.cwd",
+    "fs.symlink",
+    "tar.Header",
+    "tar.x"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Header, Link, SymbolicLink, cwd, linkpath, preservePaths, resolve, symlink, x 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "score": 7.0,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9ppj-qmqm-q256",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.11"
+   ],
+   "symbols": [
+    "tar",
+    "cwd",
+    "tar.x",
+    "linkpath",
+    "stripAbsolutePath",
+    "poc.cjs",
+    "readlink"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 cjs, cwd, linkpath, readlink, stripAbsolutePath, tar, x 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "score": 7.0,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qffp-2rhf-9h96",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.10"
+   ],
+   "symbols": [
+    "tar",
+    "cwd",
+    "tar.x",
+    "stripAbsolutePath",
+    "poc.cjs"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 cjs, cwd, stripAbsolutePath, tar, x 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "score": 7.0,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r292-9mhp-454m",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.21"
+   ],
+   "symbols": [
+    "tar",
+    "mapHas",
+    "filesFilter",
+    "path.dirname",
+    "L",
+    "x",
+    "maxMetaEntrySize",
+    "RangeError",
+    "Unpack",
+    "maxDepth",
+    "tar.t",
+    "pipe",
+    "uncaughtException",
+    "Unpack.maxDepth",
+    "await",
+    "dirname",
+    "while",
+    "Header",
+    "Parser",
+    "mkdir",
+    "tar.x",
+    "tar.gz"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Header, L, Parser, Unpack, await, dirname, filesFilter, gz, mapHas, maxDepth, maxMetaEntrySize, mkdir, pipe, t, tar, uncaughtException, x 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3p68-rc4w-qgx5",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.0",
+    "0.31.0"
+   ],
+   "symbols": [
+    "localhost",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 get, localhost 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-62hf-57xw-28j9",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "stack",
+    "build",
+    "toFormData",
+    "FormData",
+    "AxiosURLSearchParams",
+    "buildURL",
+    "params",
+    "URLSearchParams",
+    "forEach",
+    "axios.post"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 AxiosURLSearchParams, FormData, URLSearchParams, buildURL, forEach, params, post, stack, toFormData 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/46elks.js",
+     "line": 26,
+     "text": "await axios.post(url, data, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 41,
+     "text": "await axios.post(notification.alertaApiEndpoint, postData, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 53,
+     "text": "await axios.post(notification.alertaApiEndpoint, datadup, config);"
+    },
+    {
+     "path": "server/notification-providers/alerta.js",
+     "line": 57,
+     "text": "await axios.post(notification.alertaApiEndpoint, datadup, config);"
+    },
+    {
+     "path": "server/notification-providers/alertnow.js",
+     "line": 44,
+     "text": "await axios.post(notification.alertNowWebhookURL, data);"
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7q8q-rj6j-mhjq",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.33.0",
+    "1.18.0"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "auth",
+    "paramsSerializer",
+    "username",
+    "password",
+    "encode",
+    "serialize",
+    "paramsSerializer.serialize",
+    "axios.getUri",
+    "axios.get",
+    "getMergedValue",
+    "buildURL"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 auth, buildURL, get, getMergedValue, getUri, paramsSerializer, password, username 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-898c-q2cr-xwhg",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "_.merge",
+    "merge",
+    "hasOwnProperty",
+    "Object.defineProperty",
+    "descriptor.get",
+    "descriptor.set",
+    "Object.prototype.get",
+    "Object.prototype.set",
+    "TypeError",
+    "Object.prototype.common",
+    "Object.prototype.delete",
+    "AxiosError",
+    "error.isAxiosError",
+    "targetKey",
+    "forEach",
+    "mergeConfig",
+    "lodash.merge",
+    "axios.request",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 AxiosError, TypeError, forEach, get, hasOwnProperty, isAxiosError, merge, mergeConfig, request, targetKey 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9fr6-4gfg-395g",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.34.0",
+    "1.20.0"
+   ],
+   "symbols": [
+    "method",
+    "Object.prototype",
+    "Object.prototype.method",
+    "config.method",
+    "mergeConfig",
+    "this.defaults",
+    "this.defaults.method",
+    "axios.get",
+    "config",
+    "this.defaults.allowAbsoluteUrls",
+    "baseURL",
+    "allowAbsoluteUrls",
+    "axios.create",
+    "confirmed",
+    "axios.request",
+    "axios.VERSION",
+    "runRequest",
+    "runCase"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 VERSION, allowAbsoluteUrls, baseURL, config, confirmed, create, defaults, get, mergeConfig, method, request, runCase, runRequest 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/uptime-kuma-server.js",
+     "line": 82,
+     "text": "axios.defaults.headers.common[\"User-Agent\"] = this.getUserAgent();"
+    },
+    {
+     "path": "server/uptime-kuma-server.js",
+     "line": 85,
+     "text": "axios.defaults.timeout = 300 * 1000;"
+    },
+    {
+     "path": "src/mixins/public.js",
+     "line": 8,
+     "text": "axios.defaults.baseURL = location.protocol + \"//\" + getDevContainerServerHostname();"
+    },
+    {
+     "path": "src/mixins/public.js",
+     "line": 10,
+     "text": "axios.defaults.baseURL = location.protocol + \"//\" + location.hostname + \":3001\";"
+    },
+    {
+     "path": "src/mixins/public.js",
+     "line": 49,
+     "text": "return axios.defaults.baseURL;"
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fvcv-3m26-pcqx",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.0",
+    "0.31.0"
+   ],
+   "symbols": [
+    "qs",
+    "minimist",
+    "ini",
+    "Object.prototype",
+    "axios.get",
+    "setRequestHeader"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 get, ini, minimist, qs, setRequestHeader 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m7pr-hjqh-92cm",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 get 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mmx7-hfxf-jppx",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.18.0",
+    "0.33.0"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "axios.get",
+    "axios.delete",
+    "axios.head",
+    "axios.options",
+    "proxy",
+    "paramsSerializer",
+    "resolveConfig",
+    "mergeConfig",
+    "Object.prototype.data",
+    "hasOwnProp",
+    "config.proxy",
+    "config.paramsSerializer",
+    "config.data",
+    "own",
+    "setProxy",
+    "Object.prototype.proxy",
+    "Object.prototype.paramsSerializer",
+    "bodyless"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 bodyless, delete, get, hasOwnProp, head, mergeConfig, options, own, paramsSerializer, proxy, resolveConfig, setProxy 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pmv8-rq9r-6j72",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.33.0",
+    "1.18.0"
+   ],
+   "symbols": [
+    "formDataToJSON",
+    "axios.formToJSON",
+    "FormData",
+    "formToJSON",
+    "transformRequest",
+    "toFormData",
+    "maxDepth",
+    "parsePropPath",
+    "buildPath",
+    "index.d.cts",
+    "AxiosError",
+    "RangeError",
+    "v1.x"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w9j2-pvgh-6h63",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "validateStatus",
+    "Object.prototype",
+    "mergeDirectKeys",
+    "in",
+    "Object.prototype.validateStatus",
+    "defaultToConfig2",
+    "hasOwnProperty",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 defaultToConfig2, get, hasOwnProperty, in, mergeDirectKeys, validateStatus 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "score": 4.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xx6v-rp6x-q39c",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "withXSRFToken",
+    "isURLSameOrigin",
+    "hasStandardBrowserEnv",
+    "Object.prototype.withXSRFToken",
+    "axios.get"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 get, hasStandardBrowserEnv, isURLSameOrigin, withXSRFToken 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 24,
+     "text": "const res = await axios.get(UPDATE_CHECKER_LATEST_VERSION_URL);"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 664,
+     "text": "let res = await axios.get(steamApiUrl, {"
+    },
+    {
+     "path": "server/notification-providers/bitrix24.js",
+     "line": 22,
+     "text": "await axios.get(`${notification.bitrix24WebhookURL}/im.notify.system.add.json`, { params });"
+    },
+    {
+     "path": "server/notification-providers/call-me-bot.js",
+     "line": 15,
+     "text": "await axios.get(url.toString());"
+    },
+    {
+     "path": "server/notification-providers/smsc.js",
+     "line": 34,
+     "text": "let resp = await axios.get(url + getArray.join(\"&\"), config);"
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "score": 4.0,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8xx9-69p8-7jp3",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "renderLimit",
+    "parseAndRenderSync",
+    "N",
+    "memoryLimit",
+    "Render.renderTemplates",
+    "for",
+    "renderTemplates",
+    "this.templates",
+    "renderLimit.check",
+    "Infinity",
+    "templates"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "server/model/monitor.js",
+     "line": 854,
+     "text": "await monitorType.check(this, bean, UptimeKumaServer.getInstance());"
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "score": 4.0,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9x9p-qf8f-mvjg",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "Context.spawn",
+    "Context",
+    "ownPropertyOnly",
+    "opts.ownPropertyOnly",
+    "RenderOptions.ownPropertyOnly",
+    "parseAndRender",
+    "where",
+    "reject",
+    "group_by",
+    "find",
+    "find_index",
+    "has",
+    "spawn",
+    "RenderOptions",
+    "this.opts",
+    "childCtx.readProperty",
+    "opts",
+    "render",
+    "this.ownPropertyOnly",
+    "this.opts.ownPropertyOnly",
+    "readJSProperty"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "server/embedded-mariadb.js",
+     "line": 93,
+     "text": "this.childProcess = childProcess.spawn(this.exec, ["
+    },
+    {
+     "path": "server/monitor-types/tailscale-ping.js",
+     "line": 30,
+     "text": "let res = await childProcessAsync.spawn(\"tailscale\", [ \"ping\", \"--c\", \"1\", hostname ], {"
+    },
+    {
+     "path": "server/notification-providers/apprise.js",
+     "line": 18,
+     "text": "const s = await childProcessAsync.spawn(\"apprise\", args, {"
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "score": 4.0,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v273-448j-v4qj",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.25.5"
+   ],
+   "symbols": [
+    "renderFile",
+    "parseFile",
+    "liquidjs",
+    "Liquid",
+    "candidates",
+    "LookupType.Root",
+    "enforceRoot",
+    "contains",
+    "include",
+    "render",
+    "layout"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Liquid, Root, candidates, enforceRoot, include, layout, liquidjs, parseFile, renderFile 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 57,
+     "text": "const engine = new Liquid();"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 32,
+     "text": "const engine = new Liquid();"
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "score": 4.0,
+   "package": "mysql2",
+   "version": "3.11.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rgwj-5xj2-c3m3",
+   "severity": "MODERATE",
+   "fixed": [
+    "3.23.1"
+   ],
+   "symbols": [
+    "handleCompressedPacket",
+    "maxOutputLength",
+    "buffer.kMaxLength",
+    "Number.MAX_SAFE_INTEGER",
+    "packet.readInt24",
+    "mysql2",
+    "zlib.inflate",
+    "err",
+    "mysql.createServer",
+    "Packets.Handshake",
+    "connection.writeOk"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "extra/simple-dns-server.js",
+     "line": 9,
+     "text": "const server = dns2.createServer({"
+    },
+    {
+     "path": "extra/simple-mqtt-server.js",
+     "line": 8,
+     "text": "server = require(\"net\").createServer(this.aedes.handle);"
+    },
+    {
+     "path": "server/uptime-kuma-server.js",
+     "line": 91,
+     "text": "this.httpServer = https.createServer({"
+    },
+    {
+     "path": "server/uptime-kuma-server.js",
+     "line": 98,
+     "text": "this.httpServer = http.createServer(this.app);"
+    },
+    {
+     "path": "server/utils/simple-migration-server.js",
+     "line": 37,
+     "text": "this.server = http.createServer(this.app);"
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-268h-hp4c-crq3",
+   "severity": "MODERATE",
+   "fixed": [
+    "8.0.9"
+   ],
+   "symbols": [
+    "list",
+    "mimeFuncs.foldLines",
+    "list.help.comment",
+    "list.unsubscribe.comment",
+    "list.subscribe.comment",
+    "list.post.comment",
+    "list.owner.comment",
+    "list.archive.comment",
+    "list.id.comment",
+    "value.comment",
+    "options.prepared",
+    "foldLines",
+    "comment",
+    "subject",
+    "nodemailer",
+    "_getListHeaders",
+    "streamTransport",
+    "Subject",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Subject, _getListHeaders, comment, createTransport, foldLines, nodemailer, prepared, streamTransport, subject 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6vj9-mwq6-2f5v",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.0.2"
+   ],
+   "symbols": [
+    "servername",
+    "host",
+    "tls.servername",
+    "nodemailer",
+    "resolveHostname",
+    "options.servername",
+    "formatDNSValue",
+    "SMTPConnection.connect",
+    "opts",
+    "_resolveAndConnect",
+    "opts.servername",
+    "tls.connect",
+    "attacker.test",
+    "openssl.cnf",
+    "victim.test",
+    "DnsCacheValue",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 DnsCacheValue, _resolveAndConnect, cnf, connect, createTransport, formatDNSValue, host, nodemailer, opts, resolveHostname, servername 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 38,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8m3c-c648-2xjj",
+   "severity": "MODERATE",
+   "fixed": [
+    "9.1.1"
+   ],
+   "symbols": [
+    "disableFileAccess",
+    "disableUrlAccess",
+    "text",
+    "path",
+    "href",
+    "MailMessage.resolveAll",
+    "_convertDataImages",
+    "shared.resolveContent",
+    "MailMessage",
+    "mail.data",
+    "resolveContentValue",
+    "options.disableUrlAccess",
+    "options.disableFileAccess",
+    "nmfetch",
+    "fs.createReadStream",
+    "resolveAll",
+    "transporter.sendMail",
+    "resolveContent",
+    "efd6e29c10c6e0c25c57bd2f2a71302838235a4f",
+    "compile",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 MailMessage, _convertDataImages, compile, createReadStream, createTransport, disableFileAccess, disableUrlAccess, efd6e29c10c6e0c25c57bd2f2a71302838235a4f, href, nmfetch, resolveAll, resolveContent, resolveContentValue, sendMail 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 39,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8vvx-rff5-p5rq",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.0.2"
+   ],
+   "symbols": [
+    "nodemailer",
+    "to",
+    "cc",
+    "bcc",
+    "MimeNodeAddressInput",
+    "MimeNode._parseAddresses",
+    "addressparser",
+    "Tokenizer",
+    "Array.prototype.toString",
+    "join",
+    "toString",
+    "sendMail",
+    "maxRecipients",
+    "jsonTransport",
+    "_parseAddresses",
+    "str",
+    "getEnvelope",
+    "poc.mjs",
+    "depth",
+    "JSON.parse",
+    "_handleAddress",
+    "_depth",
+    "replyTo",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 MimeNodeAddressInput, Tokenizer, _depth, _handleAddress, _parseAddresses, addressparser, bcc, cc, createTransport, depth, getEnvelope, jsonTransport, maxRecipients, mjs, nodemailer, replyTo, sendMail, to 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-cc9r-2j5m-2m83",
+   "severity": "MODERATE",
+   "fixed": [
+    "9.1.0"
+   ],
+   "symbols": [
+    "comevil.com",
+    "aiosmtpd",
+    "Tokenizer.operators",
+    "_handleAddress",
+    "noBreak",
+    "evil.com",
+    "x",
+    "getEnvelope",
+    "R8_comment_glue",
+    "email.policy.default",
+    "InvalidHeaderDefect",
+    "startsWith",
+    "addressparser",
+    "email.utils.getaddresses",
+    "url.domainToASCII",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 InvalidHeaderDefect, R8_comment_glue, _handleAddress, addressparser, aiosmtpd, com, createTransport, default, domainToASCII, getEnvelope, getaddresses, noBreak, operators, startsWith 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 41,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g73g-hqqh-jr95",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.0.13"
+   ],
+   "symbols": [
+    "_handleAddress",
+    "joins",
+    "_recoverAddrSpec",
+    "envelope.to",
+    "jsonTransport",
+    "streamTransport",
+    "aiosmtpd",
+    "Tokenizer.checkChar",
+    "operatorExpecting",
+    "address",
+    "state",
+    "text",
+    "x",
+    "master",
+    "sendMail",
+    "email.utils.parseaddr",
+    "email.policy.default",
+    "addressparser",
+    "To",
+    "Cc",
+    "Bcc",
+    "From",
+    "MimeNode._parseAddresses",
+    "to",
+    "cc",
+    "bcc",
+    "from",
+    "replyTo",
+    "envelope",
+    "Tokenizer.operatorExpecting",
+    "data.address",
+    "Mailbox",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Bcc, Cc, From, Mailbox, To, _handleAddress, _parseAddresses, _recoverAddrSpec, address, addressparser, aiosmtpd, bcc, cc, checkChar, createTransport, default, envelope, from, joins, jsonTransport, master, operatorExpecting, parseaddr, replyTo, sendMail, state, streamTransport, to 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 42,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mm7p-fcc7-pg87",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.0.7"
+   ],
+   "symbols": [
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 createTransport 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 43,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vvjj-xcjg-gr5g",
+   "severity": "MODERATE",
+   "fixed": [
+    "8.0.5"
+   ],
+   "symbols": [
+    "_sendCommand",
+    "envelope.from",
+    "envelope.to",
+    "envelope.size",
+    "size",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 _sendCommand, createTransport, from, to 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 44,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wmmp-3585-3rmp",
+   "severity": "MODERATE",
+   "fixed": [
+    "9.1.0"
+   ],
+   "symbols": [
+    "url.domainToASCII",
+    "idna",
+    "_normalizeAddress",
+    "punycode",
+    "getEnvelope",
+    "_setEnvelope",
+    "_convertAddresses",
+    "company.com",
+    "a",
+    "idna_convert",
+    "punycode.toASCII",
+    "domainToUnicode",
+    "aiosmtpd",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 _convertAddresses, _normalizeAddress, _setEnvelope, aiosmtpd, com, createTransport, domainToASCII, domainToUnicode, getEnvelope, idna, idna_convert, punycode, toASCII 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 45,
+   "score": 4.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wqvq-jvpq-h66f",
+   "severity": "MODERATE",
+   "fixed": [
+    "8.0.9"
+   ],
+   "symbols": [
+    "disableFileAccess",
+    "disableUrlAccess",
+    "MimeNode._getStream",
+    "jsonTransport",
+    "mail.normalize",
+    "text",
+    "shared.resolveContent",
+    "path",
+    "text.href",
+    "attachDataUrls",
+    "_convertDataImages",
+    "JSONTransport",
+    "mail.data",
+    "resolveAll",
+    "watchHtml",
+    "amp",
+    "icalEvent",
+    "resolveContent",
+    "MimeNode",
+    "mail.resolveContent",
+    "createTransport",
+    "streamTransport",
+    "nodemailer",
+    "d78b63b",
+    "href",
+    "html.path",
+    "html.href",
+    "nodemailer.createTransport",
+    "sendMail"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 JSONTransport, MimeNode, _convertDataImages, _getStream, amp, attachDataUrls, createTransport, d78b63b, disableFileAccess, disableUrlAccess, href, icalEvent, jsonTransport, nodemailer, normalize, resolveAll, resolveContent, sendMail, streamTransport, watchHtml 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 46,
+   "score": 4.0,
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 TypeError, handleRequestAsync, isBuffer, isRegExp, parse, plainObjects, qs, stringify 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 72,
+     "text": "data: qs.stringify(params),"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 27,
+     "text": "await axios.post(url, qs.stringify(testMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 35,
+     "text": "await axios.post(url, qs.stringify(downMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 43,
+     "text": "await axios.post(url, qs.stringify(upMessage), config);"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "score": 4.0,
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6pq8-jhm2-2vcw",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.1"
+   ],
+   "symbols": [
+    "obj",
+    "toString",
+    "Array.prototype.join",
+    "ToPrimitive",
+    "Object.prototype.valueOf",
+    "qs.stringify",
+    "extended",
+    "JSON.parse",
+    "TypeError",
+    "allowPrototypes",
+    "stringify",
+    "encodeValuesOnly",
+    "valueOf",
+    "qs.parse",
+    "plainObjects",
+    "maybeMap",
+    "join",
+    "arrayFormat",
+    "indices",
+    "skipNulls",
+    "strictNullHandling",
+    "isNonNullishPrimitive",
+    "isBuffer",
+    "Object.prototype.toString",
+    "http.createServer"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 ToPrimitive, TypeError, allowPrototypes, arrayFormat, createServer, encodeValuesOnly, extended, indices, isBuffer, isNonNullishPrimitive, maybeMap, obj, parse, plainObjects, skipNulls, strictNullHandling, stringify 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 72,
+     "text": "data: qs.stringify(params),"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 27,
+     "text": "await axios.post(url, qs.stringify(testMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 35,
+     "text": "await axios.post(url, qs.stringify(downMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 43,
+     "text": "await axios.post(url, qs.stringify(upMessage), config);"
+    }
+   ]
+  },
+  {
+   "rank": 48,
+   "score": 4.0,
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 TypeError, handleRequestAsync, isBuffer, isRegExp, parse, plainObjects, qs, stringify 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 72,
+     "text": "data: qs.stringify(params),"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 27,
+     "text": "await axios.post(url, qs.stringify(testMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 35,
+     "text": "await axios.post(url, qs.stringify(downMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 43,
+     "text": "await axios.post(url, qs.stringify(upMessage), config);"
+    }
+   ]
+  },
+  {
+   "rank": 49,
+   "score": 4.0,
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6pq8-jhm2-2vcw",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.16.1"
+   ],
+   "symbols": [
+    "obj",
+    "toString",
+    "Array.prototype.join",
+    "ToPrimitive",
+    "Object.prototype.valueOf",
+    "qs.stringify",
+    "extended",
+    "JSON.parse",
+    "TypeError",
+    "allowPrototypes",
+    "stringify",
+    "encodeValuesOnly",
+    "valueOf",
+    "qs.parse",
+    "plainObjects",
+    "maybeMap",
+    "join",
+    "arrayFormat",
+    "indices",
+    "skipNulls",
+    "strictNullHandling",
+    "isNonNullishPrimitive",
+    "isBuffer",
+    "Object.prototype.toString",
+    "http.createServer"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 ToPrimitive, TypeError, allowPrototypes, arrayFormat, createServer, encodeValuesOnly, extended, indices, isBuffer, isNonNullishPrimitive, maybeMap, obj, parse, plainObjects, skipNulls, strictNullHandling, stringify 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 72,
+     "text": "data: qs.stringify(params),"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 27,
+     "text": "await axios.post(url, qs.stringify(testMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 35,
+     "text": "await axios.post(url, qs.stringify(downMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 43,
+     "text": "await axios.post(url, qs.stringify(upMessage), config);"
+    }
+   ]
+  },
+  {
+   "rank": 50,
+   "score": 4.0,
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q8mj-m7cp-5q26",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.15.2"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "TypeError",
+    "skipNulls",
+    "strictNullHandling",
+    "encodeValuesOnly",
+    "utils.encode",
+    "str.length",
+    "main",
+    "maybeMap"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 TypeError, encodeValuesOnly, main, maybeMap, skipNulls, strictNullHandling, stringify 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 72,
+     "text": "data: qs.stringify(params),"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 27,
+     "text": "await axios.post(url, qs.stringify(testMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 35,
+     "text": "await axios.post(url, qs.stringify(downMessage), config);"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 43,
+     "text": "await axios.post(url, qs.stringify(upMessage), config);"
+    }
+   ]
+  },
+  {
+   "rank": 51,
+   "score": 4.0,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gvwx-54wh-qm9j",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.17"
+   ],
+   "symbols": [
+    "L",
+    "K",
+    "x",
+    "entry.path",
+    "fs.lstat",
+    "fs.open",
+    "FSReqCallback",
+    "tar.x",
+    "uncaughtException",
+    "tar.extract",
+    "tar.t",
+    "tar.Parser",
+    "bsdtar",
+    "tarfile",
+    "parseKVLine",
+    "v",
+    "Header",
+    "ReadEntry",
+    "entry.linkpath",
+    "fs.symlink",
+    "fs.link",
+    "fs.mkdir",
+    "path.join",
+    "tarfile.list",
+    "path",
+    "linkpath",
+    "entry.header.atime"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 FSReqCallback, Header, L, Parser, ReadEntry, atime, bsdtar, extract, link, linkpath, lstat, mkdir, parseKVLine, symlink, t, tarfile, uncaughtException, v, x 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 52,
+   "score": 4.0,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vmf3-w455-68vh",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.16"
+   ],
+   "symbols": [
+    "tar",
+    "L",
+    "K",
+    "x",
+    "size",
+    "tarfile",
+    "ex",
+    "gex",
+    "remain",
+    "N",
+    "g",
+    "tar.list",
+    "tar.extract",
+    "tar.x",
+    "tar.Parse",
+    "tar.Unpack",
+    "Parser",
+    "e2e.mjs",
+    "file_b",
+    "ExtendedHeader",
+    "GlobalExtendedHeader",
+    "NextFileHasLongPath",
+    "NextFileHasLongLinkpath",
+    "Header.decode",
+    "pax_size",
+    "listEntries"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 ExtendedHeader, GlobalExtendedHeader, L, NextFileHasLongLinkpath, NextFileHasLongPath, Parse, Parser, Unpack, ex, extract, file_b, g, gex, listEntries, mjs, pax_size, remain, tar, tarfile, x 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 40,
+     "text": "const tarStream = tar.x({"
+    }
+   ]
+  },
+  {
+   "rank": 53,
+   "score": 3.5,
+   "package": "form-data",
+   "version": "4.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fjxv-7rqg-78g4",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.5.4",
+    "3.0.4",
+    "4.0.4"
+   ],
+   "symbols": [
+    "Math.random",
+    "undici",
+    "parrot409"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 parrot409, random, undici 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 3,
+     "text": "const FormData = require(\"form-data\");"
+    }
+   ]
+  },
+  {
+   "rank": 54,
+   "score": 3.5,
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2943-5xfg-gq5f",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.2.1",
+    "1.8.8"
+   ],
+   "symbols": [
+    "hasOwnProperty",
+    "environment.lookup"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 hasOwnProperty, lookup 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/monitor-types/mongodb.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "server/monitor-types/mqtt.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.js",
+     "line": 21,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.ts",
+     "line": 20,
+     "text": "import * as jsonata from \"jsonata\";"
+    }
+   ]
+  },
+  {
+   "rank": 55,
+   "score": 3.5,
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8gq3-vp5j-2grp",
+   "severity": "CRITICAL",
+   "fixed": [
+    "1.8.8",
+    "2.2.0"
+   ],
+   "symbols": [
+    "hasOwnProperty",
+    "lookup"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 hasOwnProperty, lookup 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/monitor-types/mongodb.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "server/monitor-types/mqtt.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.js",
+     "line": 21,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.ts",
+     "line": 20,
+     "text": "import * as jsonata from \"jsonata\";"
+    }
+   ]
+  },
+  {
+   "rank": 56,
+   "score": 3.5,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gf2q-c269-pqgc",
+   "severity": "CRITICAL",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "this.loader.lookup",
+    "this.readFile",
+    "this.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 lookup, parse, readFile 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 57,
+   "score": 3.5,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xq3m-2v4x-88gg",
+   "severity": "CRITICAL",
+   "fixed": [
+    "8.0.1",
+    "7.5.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 58,
+   "score": 3.5,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-23hp-3jrh-7fpw",
+   "severity": "CRITICAL",
+   "fixed": [
+    "7.5.19"
+   ],
+   "symbols": [
+    "maxReadSize",
+    "Unpack"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Unpack, maxReadSize 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 3,
+     "text": "const tar = require(\"tar\");"
+    }
+   ]
+  },
+  {
+   "rank": 59,
+   "score": 2.45,
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "advisory": "GHSA-5375-pq7m-f5r2",
+   "severity": "HIGH",
+   "fixed": [
+    "1.9.16",
+    "1.10.12",
+    "1.11.4",
+    "1.12.7",
+    "1.13.5",
+    "1.14.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 16,
+     "text": "const grpc = require(\"@grpc/grpc-js\");"
+    }
+   ]
+  },
+  {
+   "rank": 60,
+   "score": 2.45,
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "advisory": "GHSA-99f4-grh7-6pcq",
+   "severity": "HIGH",
+   "fixed": [
+    "1.9.16",
+    "1.10.12",
+    "1.11.4",
+    "1.12.7",
+    "1.13.5",
+    "1.14.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 16,
+     "text": "const grpc = require(\"@grpc/grpc-js\");"
+    }
+   ]
+  },
+  {
+   "rank": 61,
+   "score": 2.45,
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m9gg-hp2v-232j",
+   "severity": "HIGH",
+   "fixed": [
+    "1.13.6",
+    "1.14.5"
+   ],
+   "symbols": [
+    "requireClientCertificate",
+    "getAuthContext",
+    "require_client_certificate"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 getAuthContext, requireClientCertificate, require_client_certificate 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 16,
+     "text": "const grpc = require(\"@grpc/grpc-js\");"
+    }
+   ]
+  },
+  {
+   "rank": 62,
+   "score": 2.45,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hfxv-24rg-xrqf",
+   "severity": "HIGH",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "document.cookie",
+    "xsrfCookieName",
+    "cookies.read",
+    "vulnerableRead",
+    "cookiesRead",
+    "escapeRegExp"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 cookie, cookiesRead, escapeRegExp, read, vulnerableRead, xsrfCookieName 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/docker.js",
+     "line": 1,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/modules/axios-ntlm/lib/ntlmClient.js",
+     "line": 62,
+     "text": "var axios_1 = __importDefault(require(\"axios\"));"
+    },
+    {
+     "path": "server/monitor-types/rabbitmq.js",
+     "line": 4,
+     "text": "const axios = require(\"axios\");"
+    }
+   ]
+  },
+  {
+   "rank": 63,
+   "score": 2.45,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jr5f-v2jv-69x6",
+   "severity": "HIGH",
+   "fixed": [
+    "1.8.2",
+    "0.30.0"
+   ],
+   "symbols": [
+    "baseURL",
+    "attacker.test",
+    "axios.create"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 baseURL, create, test 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/docker.js",
+     "line": 1,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/modules/axios-ntlm/lib/ntlmClient.js",
+     "line": 62,
+     "text": "var axios_1 = __importDefault(require(\"axios\"));"
+    },
+    {
+     "path": "server/monitor-types/rabbitmq.js",
+     "line": 4,
+     "text": "const axios = require(\"axios\");"
+    }
+   ]
+  },
+  {
+   "rank": 64,
+   "score": 2.45,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-pjwm-pj3p-43mv",
+   "severity": "HIGH",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/docker.js",
+     "line": 1,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/modules/axios-ntlm/lib/ntlmClient.js",
+     "line": 62,
+     "text": "var axios_1 = __importDefault(require(\"axios\"));"
+    },
+    {
+     "path": "server/monitor-types/rabbitmq.js",
+     "line": 4,
+     "text": "const axios = require(\"axios\");"
+    }
+   ]
+  },
+  {
+   "rank": 65,
+   "score": 2.45,
+   "package": "form-data",
+   "version": "4.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hmw2-7cc7-3qxx",
+   "severity": "HIGH",
+   "fixed": [
+    "2.5.6",
+    "3.0.5",
+    "4.0.6"
+   ],
+   "symbols": [
+    "field",
+    "filename",
+    "_multiPartHeader",
+    "_getContentDisposition",
+    "is_admin",
+    "role",
+    "append"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "취약 심볼 append 은(는) 여러 패키지에 흔한 일반 이름이고 `모듈.이름`으로 특정되지 않아 호출 줄만으로 도달이라 하지 않음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 3,
+     "text": "const FormData = require(\"form-data\");"
+    }
+   ]
+  },
+  {
+   "rank": 66,
+   "score": 2.45,
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-86vw-mfpg-wwv9",
+   "severity": "HIGH",
+   "fixed": [
+    "2.2.0",
+    "1.8.9"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/monitor-types/mongodb.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "server/monitor-types/mqtt.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.js",
+     "line": 21,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.ts",
+     "line": 20,
+     "text": "import * as jsonata from \"jsonata\";"
+    }
+   ]
+  },
+  {
+   "rank": 67,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4r6h-5v86-94p3",
+   "severity": "HIGH",
+   "fixed": [
+    "10.27.2"
+   ],
+   "symbols": [
+    "join",
+    "memoryLimit",
+    "concat",
+    "array.length",
+    "replace",
+    "replace_first",
+    "date",
+    "array_to_sentence_string",
+    "split"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 array_to_sentence_string, concat, date, join, length, memoryLimit, replace, replace_first, split 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 68,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4rc3-7j7w-m548",
+   "severity": "HIGH",
+   "fixed": [
+    "10.25.7"
+   ],
+   "symbols": [
+    "a",
+    "getBlockRender",
+    "renderChild"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 a, getBlockRender, renderChild 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 69,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-56p5-8mhr-2fph",
+   "severity": "HIGH",
+   "fixed": [
+    "10.25.3"
+   ],
+   "symbols": [
+    "link.liquid"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 liquid 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 70,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6q5m-63h6-5x4v",
+   "severity": "HIGH",
+   "fixed": [
+    "10.25.1"
+   ],
+   "symbols": [
+    "replace_first",
+    "String.prototype.replace",
+    "memoryLimit",
+    "$",
+    "replace",
+    "replace_last"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 $, memoryLimit, replace, replace_first, replace_last 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 71,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9r5m-9576-7f6x",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [
+    "memoryLimit",
+    "replace",
+    "Limiter.use",
+    "count",
+    "this.base",
+    "append"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 append, base, count, memoryLimit, replace, use 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 72,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g357-x5c3-c72p",
+   "severity": "HIGH",
+   "fixed": [
+    "10.27.1"
+   ],
+   "symbols": [
+    "pop",
+    "memoryLimit",
+    "renderLimit",
+    "shift",
+    "unshift",
+    "compact",
+    "concat",
+    "reverse",
+    "sample",
+    "slice",
+    "map",
+    "sortBy",
+    "where",
+    "group_by",
+    "uniq",
+    "a8fd734b5",
+    "this.context.memoryLimit",
+    "render"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 a8fd734b5, compact, concat, group_by, map, memoryLimit, pop, render, renderLimit, reverse, sample, shift, slice, sortBy, uniq, unshift, where 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 73,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hh27-hf48-9f5q",
+   "severity": "HIGH",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "date",
+    "pad",
+    "padStart",
+    "memoryLimit",
+    "renderLimit",
+    "strftime",
+    "width",
+    "this.context.memoryLimit",
+    "replace",
+    "user_supplied_format",
+    "date_to_xmlschema",
+    "date_to_rfc822",
+    "date_to_string",
+    "date_to_long_string",
+    "String.prototype.repeat",
+    "padWidth",
+    "N"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 N, date, date_to_long_string, date_to_rfc822, date_to_string, date_to_xmlschema, memoryLimit, pad, padStart, padWidth, renderLimit, repeat, replace, strftime, user_supplied_format, width 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 74,
+   "score": 2.45,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r7g9-xpmj-5fcq",
+   "severity": "HIGH",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "strip_html",
+    "str.length",
+    "String.prototype.replace",
+    "memoryLimit",
+    "Infinity",
+    "replace"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Infinity, length, memoryLimit, replace, strip_html 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 75,
+   "score": 2.45,
+   "package": "mysql2",
+   "version": "3.11.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3f6p-5ww8-9rcr",
+   "severity": "HIGH",
+   "fixed": [
+    "3.22.0"
+   ],
+   "symbols": [
+    "mysql_clear_password",
+    "caching_sha2_password",
+    "standardAuthPlugins"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 caching_sha2_password, mysql_clear_password, standardAuthPlugins 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/database.js",
+     "line": 8,
+     "text": "const mysql = require(\"mysql2/promise\");"
+    },
+    {
+     "path": "server/embedded-mariadb.js",
+     "line": 4,
+     "text": "const mysql = require(\"mysql2\");"
+    },
+    {
+     "path": "server/setup-database.js",
+     "line": 8,
+     "text": "const mysql = require(\"mysql2/promise\");"
+    },
+    {
+     "path": "server/util-server.js",
+     "line": 13,
+     "text": "const mysql = require(\"mysql2\");"
+    }
+   ]
+  },
+  {
+   "rank": 76,
+   "score": 2.45,
+   "package": "nanoid",
+   "version": "3.3.8",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2v37-7h3g-55p8",
+   "severity": "HIGH",
+   "fixed": [
+    "3.3.18",
+    "5.1.6"
+   ],
+   "symbols": [
+    "customAlphabet",
+    "customRandom"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 customAlphabet, customRandom 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/socket-handlers/api-key-socket-handler.js",
+     "line": 4,
+     "text": "const { nanoid } = require(\"nanoid\");"
+    }
+   ]
+  },
+  {
+   "rank": 77,
+   "score": 2.45,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p6gq-j5cr-w38f",
+   "severity": "HIGH",
+   "fixed": [
+    "9.0.1"
+   ],
+   "symbols": [
+    "raw",
+    "disableFileAccess",
+    "disableUrlAccess",
+    "nodemailer",
+    "text",
+    "watchHtml",
+    "amp",
+    "icalEvent",
+    "MailComposer.compile",
+    "normalize",
+    "MimeNode",
+    "_createMixed",
+    "_createAlternative",
+    "_createRelated",
+    "_createContentNode",
+    "this.disableFileAccess",
+    "this.disableUrlAccess",
+    "createChild",
+    "appendChild",
+    "setRaw",
+    "_getStream",
+    "fs.createReadStream",
+    "nmfetch",
+    "mail.data",
+    "mail.raw",
+    "createReadStream",
+    "compile",
+    "to",
+    "rootNode",
+    "streamTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 MimeNode, _createAlternative, _createContentNode, _createMixed, _createRelated, _getStream, amp, appendChild, compile, createChild, createReadStream, data, disableFileAccess, disableUrlAccess, icalEvent, nmfetch, nodemailer, normalize, raw, rootNode, setRaw, streamTransport, text, to, watchHtml 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 78,
+   "score": 2.45,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v53p-9fqp-m79j",
+   "severity": "HIGH",
+   "fixed": [
+    "10.0.6"
+   ],
+   "symbols": [
+    "addressparser",
+    "to",
+    "from",
+    "cc"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 addressparser, cc, from, to 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 79,
+   "score": 2.45,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-66ff-xgx4-vchm",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "toObject",
+    "bytes"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 bytes, toObject 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 80,
+   "score": 2.45,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-685m-2w69-288q",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 81,
+   "score": 2.45,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-75px-5xx7-5xc7",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "Object.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 prototype 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 82,
+   "score": 2.45,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jvwf-75h9-cwgg",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "parse",
+    "Root.load",
+    "Root.loadSync",
+    "Root.fromJSON"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "취약 심볼 load, parse 은(는) 여러 패키지에 흔한 일반 이름이고 `모듈.이름`으로 특정되지 않아 호출 줄만으로 도달이라 하지 않음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 83,
+   "score": 2.45,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wcpc-wj8m-hjx6",
+   "severity": "HIGH",
+   "fixed": [
+    "7.6.1",
+    "8.4.1"
+   ],
+   "symbols": [
+    "toObject",
+    "google.protobuf.Any",
+    "Any",
+    "type_url"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Any, toObject, type_url 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 84,
+   "score": 2.45,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-34x7-hfp2-rc4v",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.7"
+   ],
+   "symbols": [
+    "this.cwd",
+    "tar.extract",
+    "tarHeader"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 cwd, extract, tarHeader 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 3,
+     "text": "const tar = require(\"tar\");"
+    }
+   ]
+  },
+  {
+   "rank": 85,
+   "score": 2.45,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-83g3-92jg-28cx",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.8"
+   ],
+   "symbols": [
+    "tar.extract",
+    "tar",
+    "preservePaths",
+    "exfil",
+    "mkdir"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 exfil, extract, mkdir, preservePaths, tar 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 3,
+     "text": "const tar = require(\"tar\");"
+    }
+   ]
+  },
+  {
+   "rank": 86,
+   "score": 2.45,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8x88-c5mf-7j5w",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.18"
+   ],
+   "symbols": [
+    "tar.replace",
+    "poc.mjs"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 mjs, replace 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 3,
+     "text": "const tar = require(\"tar\");"
+    }
+   ]
+  },
+  {
+   "rank": 87,
+   "score": 2.45,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r6q2-hw4h-h46w",
+   "severity": "HIGH",
+   "fixed": [
+    "7.5.4"
+   ],
+   "symbols": [
+    "ss",
+    "PathReservations",
+    "SymbolicLink",
+    "tar.Header",
+    "tar.Unpack"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Header, PathReservations, SymbolicLink, Unpack, ss 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 3,
+     "text": "const tar = require(\"tar\");"
+    }
+   ]
+  },
+  {
+   "rank": 88,
+   "score": 1.4,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-42h9-826w-cgv3",
+   "severity": "MODERATE",
+   "fixed": [
+    "0.33.0",
+    "1.18.0"
+   ],
+   "symbols": [
+    "formDataToJSON",
+    "axios.formToJSON",
+    "formToJSON",
+    "FormData",
+    "transformRequest",
+    "toFormData",
+    "maxDepth",
+    "parsePropPath",
+    "buildPath",
+    "AxiosError",
+    "shouldBypassProxy",
+    "isIPv4Loopback",
+    "isIPv6Loopback"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 AxiosError, FormData, buildPath, formDataToJSON, formToJSON, isIPv4Loopback, isIPv6Loopback, maxDepth, parsePropPath, shouldBypassProxy, toFormData, transformRequest 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/docker.js",
+     "line": 1,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/modules/axios-ntlm/lib/ntlmClient.js",
+     "line": 62,
+     "text": "var axios_1 = __importDefault(require(\"axios\"));"
+    },
+    {
+     "path": "server/monitor-types/rabbitmq.js",
+     "line": 4,
+     "text": "const axios = require(\"axios\");"
+    }
+   ]
+  },
+  {
+   "rank": 89,
+   "score": 1.4,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-5c9x-8gcm-mpgx",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/docker.js",
+     "line": 1,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/modules/axios-ntlm/lib/ntlmClient.js",
+     "line": 62,
+     "text": "var axios_1 = __importDefault(require(\"axios\"));"
+    },
+    {
+     "path": "server/monitor-types/rabbitmq.js",
+     "line": 4,
+     "text": "const axios = require(\"axios\");"
+    }
+   ]
+  },
+  {
+   "rank": 90,
+   "score": 1.4,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vf2m-468p-8v99",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/check-version.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/docker.js",
+     "line": 1,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/model/monitor.js",
+     "line": 2,
+     "text": "const axios = require(\"axios\");"
+    },
+    {
+     "path": "server/modules/axios-ntlm/lib/ntlmClient.js",
+     "line": 62,
+     "text": "var axios_1 = __importDefault(require(\"axios\"));"
+    },
+    {
+     "path": "server/monitor-types/rabbitmq.js",
+     "line": 4,
+     "text": "const axios = require(\"axios\");"
+    }
+   ]
+  },
+  {
+   "rank": 91,
+   "score": 1.4,
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-663r-x48j-fg8p",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.8.8",
+    "2.2.1"
+   ],
+   "symbols": [
+    "createFrame"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 createFrame 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/monitor-types/mongodb.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "server/monitor-types/mqtt.js",
+     "line": 4,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.js",
+     "line": 21,
+     "text": "const jsonata = require(\"jsonata\");"
+    },
+    {
+     "path": "src/util.ts",
+     "line": 20,
+     "text": "import * as jsonata from \"jsonata\";"
+    }
+   ]
+  },
+  {
+   "rank": 92,
+   "score": 1.4,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2qv6-9wx5-cwv4",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "strip_html",
+    "onerror",
+    "onload",
+    "s",
+    "img",
+    "liquidjs",
+    "outputEscape",
+    "escape"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 escape, img, liquidjs, onerror, onload, outputEscape, s, strip_html 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 93,
+   "score": 1.4,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fwxr-j5w2-587m",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.27.2"
+   ],
+   "symbols": [
+    "ownPropertyOnly",
+    "Array.prototype",
+    "readJSProperty"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 ownPropertyOnly, prototype, readJSProperty 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 94,
+   "score": 1.4,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rv5g-f82m-qrvv",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.25.4"
+   ],
+   "symbols": [
+    "sort_natural",
+    "ownPropertyOnly",
+    "readJSProperty",
+    "hasOwnProperty",
+    "sort",
+    "apiKey"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 apiKey, hasOwnProperty, ownPropertyOnly, readJSProperty, sort, sort_natural 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 95,
+   "score": 1.4,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-39m8-27wv-hr27",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.0.10"
+   ],
+   "symbols": [
+    "parseHeaders",
+    "lines",
+    "checkHeaders",
+    "cacheTreshold",
+    "rawHeaders",
+    "splice"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 cacheTreshold, checkHeaders, lines, parseHeaders, rawHeaders, splice 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 96,
+   "score": 1.4,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4ffr-jq9g-5ffx",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.0.13"
+   ],
+   "symbols": [
+    "SMTPConnection._actionEHLO",
+    "nodemailer",
+    "_onData",
+    "_processResponse",
+    "_actionEHLO",
+    "ignoreTLS",
+    "maxResponseSize",
+    "RegExp.prototype.test",
+    "f2d82fa",
+    "test",
+    "includes"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 _actionEHLO, _onData, _processResponse, f2d82fa, ignoreTLS, includes, maxResponseSize, nodemailer, test 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 97,
+   "score": 1.4,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4g23-2xm8-66gc",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.0.10"
+   ],
+   "symbols": [
+    "_onData",
+    "lastIndexOf",
+    "slice",
+    "greetingTimeout",
+    "socketTimeout",
+    "isPartialResponse",
+    "maxSize",
+    "maxLength",
+    "onData"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 _onData, greetingTimeout, isPartialResponse, lastIndexOf, maxLength, maxSize, onData, slice, socketTimeout 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 98,
+   "score": 1.4,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-85x2-q946-cp5h",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.1.4"
+   ],
+   "symbols": [
+    "evil.com",
+    "good.com",
+    "email._header_value_parser.get_address_list"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 com, get_address_list 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 99,
+   "score": 1.4,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8c8m-p3m8-cjg8",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.1.4"
+   ],
+   "symbols": [
+    "email._header_value_parser.get_address_list",
+    "Victim"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Victim, get_address_list 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 100,
+   "score": 1.4,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m943-m63m-w62w",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.1.4"
+   ],
+   "symbols": [
+    "email._header_value_parser.get_address_list"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 get_address_list 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 1,
+     "text": "const nodemailer = require(\"nodemailer\");"
+    }
+   ]
+  },
+  {
+   "rank": 101,
+   "score": 1.4,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2pr8-phx7-x9h3",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "fromObject",
+    "toObject"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 fromObject, toObject 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 102,
+   "score": 1.4,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f38q-mgvj-vph7",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.6.3",
+    "8.6.0"
+   ],
+   "symbols": [
+    "hasOwnProperty",
+    "$type",
+    "rpcCall",
+    "verify",
+    "toObject"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 $type, hasOwnProperty, rpcCall, toObject, verify 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 103,
+   "score": 1.4,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fx83-v9x8-x52w",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "instanceof"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 instanceof, prototype 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 104,
+   "score": 1.4,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jggg-4jg4-v7c6",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.8",
+    "8.2.0"
+   ],
+   "symbols": [
+    "Root.fromJSON",
+    "Namespace.addJSON",
+    "nested"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 addJSON, fromJSON, nested 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 105,
+   "score": 1.4,
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q6x5-8v7m-xcrf",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 17,
+     "text": "const protojs = require(\"protobufjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 106,
+   "score": 1.4,
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 arrayLimit, parameterLimit, parse 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 5,
+     "text": "const qs = require(\"qs\");"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 3,
+     "text": "const qs = require(\"qs\");"
+    }
+   ]
+  },
+  {
+   "rank": 107,
+   "score": 1.4,
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 arrayLimit, parameterLimit, parse 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 5,
+     "text": "const qs = require(\"qs\");"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 3,
+     "text": "const qs = require(\"qs\");"
+    }
+   ]
+  },
+  {
+   "rank": 108,
+   "score": 1.4,
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w8wr-v893-vjvp",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.5.18"
+   ],
+   "symbols": [
+    "parseKV",
+    "path",
+    "linkpath",
+    "tar.extract"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 extract, linkpath, parseKV, path 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "extra/download-dist.js",
+     "line": 3,
+     "text": "const tar = require(\"tar\");"
+    }
+   ]
+  },
+  {
+   "rank": 109,
+   "score": 1.0,
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xhjh-pmcv-23jw",
+   "severity": "LOW",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "encode",
+    "charMap",
+    "buildURL",
+    "AxiosURLSearchParams.toString",
+    "paramsSerializer",
+    "AxiosURLSearchParams",
+    "paramsSerializer.encode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "server/server.js",
+     "line": 505,
+     "text": "let encodedSecret = base32.encode(newSecret);"
+    }
+   ]
+  },
+  {
+   "rank": 110,
+   "score": 1.0,
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m7jm-9gc2-mpf2",
+   "severity": "CRITICAL",
+   "fixed": [
+    "5.3.5",
+    "4.5.4"
+   ],
+   "symbols": [
+    "RegExp",
+    "t",
+    "addExternalEntities",
+    "validateEntityName",
+    "result.root.text",
+    "innerHTML"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 111,
+   "score": 1.0,
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c7w3-x93f-qmm8",
+   "severity": "LOW",
+   "fixed": [
+    "8.0.4"
+   ],
+   "symbols": [
+    "envelope.size",
+    "envelope",
+    "sendMail",
+    "size",
+    "from",
+    "to",
+    "dsn.ret",
+    "dsn.envid",
+    "dsn.orcpt",
+    "encodeXText",
+    "MimeNode.setEnvelope",
+    "_sendCommand",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 _sendCommand, createTransport, encodeXText, envelope, envid, from, orcpt, ret, sendMail, setEnvelope, to 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 69,
+     "text": "let transporter = nodemailer.createTransport(config);"
+    }
+   ]
+  },
+  {
+   "rank": 112,
+   "score": 1.0,
+   "package": "proxy-addr",
+   "version": "2.0.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jqcg-44mw-7w3h",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.0.8"
+   ],
+   "symbols": [
+    "req.ip",
+    "req.ips"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 113,
+   "score": 0.7,
+   "package": "body-parser",
+   "version": "1.20.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-27r3-jxmh-p828",
+   "severity": "HIGH",
+   "fixed": [
+    "2.4.0",
+    "1.20.9"
+   ],
+   "symbols": [
+    "gzip"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 114,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3jxr-9vmj-r5cp",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.7",
+    "1.1.16",
+    "2.1.2"
+   ],
+   "symbols": [
+    "expand_",
+    "post",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 115,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6j4f-fj2g-mc7p",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.10",
+    "3.0.7",
+    "2.1.5",
+    "1.1.19"
+   ],
+   "symbols": [
+    "parseCommaParts",
+    "expand_",
+    "post",
+    "push.apply",
+    "Function.prototype.apply",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "minimatch.braceExpand",
+    "a"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 116,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mh99-v99m-4gvg",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.8",
+    "3.0.3",
+    "2.1.3",
+    "1.1.17"
+   ],
+   "symbols": [
+    "expand",
+    "max",
+    "N",
+    "expand_",
+    "minimatch",
+    "glob",
+    "maxLength",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 117,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qhr7-859c-m2p7",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.11",
+    "3.0.8",
+    "2.1.6",
+    "1.1.20"
+   ],
+   "symbols": [
+    "expand_",
+    "m.post",
+    "parseCommaParts",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "maxDepth"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 118,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rgw5-rvv9-x895",
+   "severity": "HIGH",
+   "fixed": [
+    "1.1.18",
+    "2.1.4",
+    "3.0.6",
+    "5.0.9"
+   ],
+   "symbols": [
+    "maxLength",
+    "expand",
+    "combine",
+    "expand_",
+    "values",
+    "A",
+    "expandSequence",
+    "max"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 119,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3jxr-9vmj-r5cp",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.7",
+    "1.1.16",
+    "2.1.2"
+   ],
+   "symbols": [
+    "expand_",
+    "post",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 120,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6j4f-fj2g-mc7p",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.10",
+    "3.0.7",
+    "2.1.5",
+    "1.1.19"
+   ],
+   "symbols": [
+    "parseCommaParts",
+    "expand_",
+    "post",
+    "push.apply",
+    "Function.prototype.apply",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "minimatch.braceExpand",
+    "a"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 121,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mh99-v99m-4gvg",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.8",
+    "3.0.3",
+    "2.1.3",
+    "1.1.17"
+   ],
+   "symbols": [
+    "expand",
+    "max",
+    "N",
+    "expand_",
+    "minimatch",
+    "glob",
+    "maxLength",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 122,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qhr7-859c-m2p7",
+   "severity": "HIGH",
+   "fixed": [
+    "5.0.11",
+    "3.0.8",
+    "2.1.6",
+    "1.1.20"
+   ],
+   "symbols": [
+    "expand_",
+    "m.post",
+    "parseCommaParts",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "maxDepth"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 123,
+   "score": 0.7,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rgw5-rvv9-x895",
+   "severity": "HIGH",
+   "fixed": [
+    "1.1.18",
+    "2.1.4",
+    "3.0.6",
+    "5.0.9"
+   ],
+   "symbols": [
+    "maxLength",
+    "expand",
+    "combine",
+    "expand_",
+    "values",
+    "A",
+    "expandSequence",
+    "max"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 124,
+   "score": 0.7,
+   "package": "compression",
+   "version": "1.7.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vc2v-76pw-4v95",
+   "severity": "HIGH",
+   "fixed": [
+    "1.8.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 125,
+   "score": 0.7,
+   "package": "engine.io",
+   "version": "6.6.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2gc4-cqfq-p2gv",
+   "severity": "HIGH",
+   "fixed": [
+    "6.6.10"
+   ],
+   "symbols": [
+    "sid"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 126,
+   "score": 0.7,
+   "package": "engine.io",
+   "version": "6.6.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gr94-w7qr-f4j3",
+   "severity": "HIGH",
+   "fixed": [
+    "6.6.7"
+   ],
+   "symbols": [
+    "TypeError",
+    "webtransport"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 127,
+   "score": 0.7,
+   "package": "engine.io",
+   "version": "6.6.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r635-g3xr-vw7x",
+   "severity": "HIGH",
+   "fixed": [
+    "6.6.7"
+   ],
+   "symbols": [
+    "engine.io"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 128,
+   "score": 0.7,
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8gc5-j5rx-235r",
+   "severity": "HIGH",
+   "fixed": [
+    "5.5.6",
+    "4.5.5"
+   ],
+   "symbols": [
+    "maxTotalExpansions",
+    "maxExpandedLength",
+    "maxEntityCount",
+    "maxEntitySize",
+    "replaceEntitiesValue",
+    "entityExpansionCount",
+    "currentExpandedLength",
+    "lastEntities",
+    "num_dec",
+    "num_hex"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 129,
+   "score": 0.7,
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jmr7-xgp7-cmfj",
+   "severity": "HIGH",
+   "fixed": [
+    "4.5.4",
+    "5.3.6"
+   ],
+   "symbols": [
+    "replaceEntitiesValue",
+    "val.replace"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 130,
+   "score": 0.7,
+   "package": "glob",
+   "version": "10.3.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-5j98-mcp5-4vw2",
+   "severity": "HIGH",
+   "fixed": [
+    "11.1.0",
+    "10.5.0"
+   ],
+   "symbols": [
+    "foregroundChild",
+    "glob",
+    "globSync",
+    "$",
+    "injected_poc"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 131,
+   "score": 0.7,
+   "package": "hoek",
+   "version": "6.1.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-c429-5p7v-vgjp",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [
+    "clone"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 132,
+   "score": 0.7,
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mwp4-54f8-5fhr",
+   "severity": "HIGH",
+   "fixed": [
+    "10.3.1"
+   ],
+   "symbols": [
+    "Address4",
+    "inet_aton",
+    "getaddrinfo",
+    "correctForm",
+    "isPrivate",
+    "Address4.parse",
+    "isLoopback",
+    "isLinkLocal",
+    "isCGNAT",
+    "isInSubnet",
+    "isHostInSubnet",
+    "Address6",
+    "parse",
+    "AddressError",
+    "Address4.isValid",
+    "isValid",
+    "isBlocked"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 133,
+   "score": 0.7,
+   "package": "jws",
+   "version": "3.2.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-869p-cjfg-cm3x",
+   "severity": "HIGH",
+   "fixed": [
+    "3.2.3",
+    "4.0.1"
+   ],
+   "symbols": [
+    "jws.createVerify",
+    "jws.verify"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 134,
+   "score": 0.7,
+   "package": "jws",
+   "version": "4.0.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-869p-cjfg-cm3x",
+   "severity": "HIGH",
+   "fixed": [
+    "3.2.3",
+    "4.0.1"
+   ],
+   "symbols": [
+    "jws.createVerify",
+    "jws.verify"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 135,
+   "score": 0.7,
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "severity": "HIGH",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 136,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-23c5-xmqv-rm74",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.4"
+   ],
+   "symbols": [
+    "minimatch",
+    "AST.toRegExpSource",
+    "a",
+    "z",
+    "this.set",
+    "matchOne",
+    "time_total"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 137,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3ppc-4f35-3m26",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.1",
+    "9.0.6",
+    "8.0.5",
+    "7.4.7",
+    "6.2.1",
+    "5.1.7",
+    "4.2.4",
+    "3.1.3"
+   ],
+   "symbols": [
+    "minimatch",
+    "X"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 138,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7r86-cg39-jmmj",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.3"
+   ],
+   "symbols": [
+    "matchOne",
+    "n",
+    "k",
+    "minimatch",
+    "time_total"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 139,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-23c5-xmqv-rm74",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.4"
+   ],
+   "symbols": [
+    "minimatch",
+    "AST.toRegExpSource",
+    "a",
+    "z",
+    "this.set",
+    "matchOne",
+    "time_total"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 140,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3ppc-4f35-3m26",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.1",
+    "9.0.6",
+    "8.0.5",
+    "7.4.7",
+    "6.2.1",
+    "5.1.7",
+    "4.2.4",
+    "3.1.3"
+   ],
+   "symbols": [
+    "minimatch",
+    "X"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 141,
+   "score": 0.7,
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-7r86-cg39-jmmj",
+   "severity": "HIGH",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.3"
+   ],
+   "symbols": [
+    "matchOne",
+    "n",
+    "k",
+    "minimatch",
+    "time_total"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 142,
+   "score": 0.7,
+   "package": "path-to-regexp",
+   "version": "0.1.12",
+   "ecosystem": "npm",
+   "advisory": "GHSA-37ch-88jc-xwx2",
+   "severity": "HIGH",
+   "fixed": [
+    "0.1.13"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 143,
+   "score": 0.7,
+   "package": "socket.io-parser",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2m8v-j782-fhvr",
+   "severity": "HIGH",
+   "fixed": [
+    "4.2.7",
+    "3.4.5",
+    "3.3.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 144,
+   "score": 0.7,
+   "package": "socket.io-parser",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-677m-j7p3-52f9",
+   "severity": "HIGH",
+   "fixed": [
+    "3.3.5",
+    "3.4.4",
+    "4.2.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 145,
+   "score": 0.7,
+   "package": "underscore",
+   "version": "1.13.7",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qpx9-hpmf-5gmw",
+   "severity": "HIGH",
+   "fixed": [
+    "1.13.8"
+   ],
+   "symbols": [
+    "_.flatten",
+    "_.isEqual",
+    "JSON.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 146,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2m5v-pch6-74hx",
+   "severity": "HIGH",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "Agent",
+    "Pool",
+    "tls",
+    "checkServerIdentity",
+    "request",
+    "fetch",
+    "setGlobalDispatcher",
+    "EnvHttpProxyAgent",
+    "connect",
+    "BalancedPool",
+    "requestTls",
+    "proxyTls"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 147,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f269-vfmq-vjvj",
+   "severity": "HIGH",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 148,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-qrxm-fqhp-jwvm",
+   "severity": "HIGH",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "AssertionError",
+    "fetch"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 149,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rfgv-xxqx-mfg5",
+   "severity": "HIGH",
+   "fixed": [
+    "6.28.1",
+    "7.29.1",
+    "8.10.2"
+   ],
+   "symbols": [
+    "TypeError",
+    "queueMicrotask",
+    "try",
+    "catch"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 150,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v9p9-hfj2-hcw8",
+   "severity": "HIGH",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "server_max_window_bits",
+    "isValidClientWindowBits",
+    "createInflateRaw"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 151,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vrm6-8vpv-qv8q",
+   "severity": "HIGH",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "PerMessageDeflate.decompress"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 152,
+   "score": 0.7,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vxpw-j846-p89q",
+   "severity": "HIGH",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [
+    "maxPayloadSize",
+    "WebSocketStream"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 153,
+   "score": 0.7,
+   "package": "ws",
+   "version": "7.5.10",
+   "ecosystem": "npm",
+   "advisory": "GHSA-96hv-2xvq-fx4p",
+   "severity": "HIGH",
+   "fixed": [
+    "5.2.5",
+    "6.2.4",
+    "7.5.11",
+    "8.21.0"
+   ],
+   "symbols": [
+    "maxPayload",
+    "ws.on",
+    "ws.send"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 154,
+   "score": 0.7,
+   "package": "ws",
+   "version": "8.17.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-96hv-2xvq-fx4p",
+   "severity": "HIGH",
+   "fixed": [
+    "5.2.5",
+    "6.2.4",
+    "7.5.11",
+    "8.21.0"
+   ],
+   "symbols": [
+    "maxPayload",
+    "ws.on",
+    "ws.send"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 155,
+   "score": 0.7,
+   "package": "ws",
+   "version": "8.18.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-96hv-2xvq-fx4p",
+   "severity": "HIGH",
+   "fixed": [
+    "5.2.5",
+    "6.2.4",
+    "7.5.11",
+    "8.21.0"
+   ],
+   "symbols": [
+    "maxPayload",
+    "ws.on",
+    "ws.send"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 156,
+   "score": 0.4,
+   "package": "@protobufjs/utf8",
+   "version": "1.1.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q6x5-8v7m-xcrf",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.1.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 157,
+   "score": 0.4,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f886-m6hf-6m8v",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.5",
+    "3.0.2",
+    "2.0.3",
+    "1.1.13"
+   ],
+   "symbols": [
+    "test",
+    "RangeError",
+    "expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 158,
+   "score": 0.4,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q2hr-2g5m-vwhr",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.12",
+    "3.0.9",
+    "2.1.7",
+    "1.1.21"
+   ],
+   "symbols": [
+    "n",
+    "escClose",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 159,
+   "score": 0.4,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f886-m6hf-6m8v",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.5",
+    "3.0.2",
+    "2.0.3",
+    "1.1.13"
+   ],
+   "symbols": [
+    "test",
+    "RangeError",
+    "expand"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 160,
+   "score": 0.4,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q2hr-2g5m-vwhr",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.12",
+    "3.0.9",
+    "2.1.7",
+    "1.1.21"
+   ],
+   "symbols": [
+    "n",
+    "escClose",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 161,
+   "score": 0.4,
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-gh4j-gqv2-49f6",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.7.0"
+   ],
+   "symbols": [
+    "replaceEntitiesValue"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 162,
+   "score": 0.4,
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-jp2q-39xq-3w4g",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.5.5",
+    "5.5.7"
+   ],
+   "symbols": [
+    "DocTypeReader",
+    "maxEntityCount",
+    "maxEntitySize",
+    "OptionsBuilder.normalizeProcessEntities",
+    "DocTypeReader.readDocType",
+    "DocTypeReader.readEntityExp"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 163,
+   "score": 0.4,
+   "package": "follow-redirects",
+   "version": "1.15.9",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r4q5-vmmm-2653",
+   "severity": "MODERATE",
+   "fixed": [
+    "1.16.0"
+   ],
+   "symbols": [
+    "authorization",
+    "cookie",
+    "Token",
+    "evil.com",
+    "sensitiveHeaders"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 164,
+   "score": 0.4,
+   "package": "glob",
+   "version": "10.3.16",
+   "ecosystem": "npm",
+   "advisory": "GHSA-3g3m-2fjr-6pw4",
+   "severity": "MODERATE",
+   "fixed": [
+    "14.0.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 165,
+   "score": 0.4,
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-h3mg-xc3c-68pw",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.7.1"
+   ],
+   "symbols": [
+    "Address6.isValid",
+    "RangeError",
+    "AddressError",
+    "isValid",
+    "parse",
+    "parseMessage",
+    "match",
+    "join",
+    "replace",
+    "Address6",
+    "fromAddressAndMask",
+    "fromAddressAndWildcardMask",
+    "fromWildcard",
+    "fromAddress4Nat64",
+    "toAddress4Nat64",
+    "fromURL",
+    "fromArpa",
+    "fromBigInt",
+    "fromByteArray",
+    "fromAddress4",
+    "try",
+    "catch",
+    "Address4",
+    "ipaddress"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 166,
+   "score": 0.4,
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-j6r3-76f7-8jcv",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.7.1"
+   ],
+   "symbols": [
+    "isInSubnet",
+    "isHostInSubnet",
+    "Address4",
+    "Address6",
+    "is",
+    "n",
+    "v4",
+    "Address6.fromAddress4",
+    "to4",
+    "toAddress4Nat64"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 167,
+   "score": 0.4,
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rpw4-54j3-4h4q",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.5.1"
+   ],
+   "symbols": [
+    "Address6.isLinkLocal",
+    "getType",
+    "getScope",
+    "isLinkLocal",
+    "isHostInSubnet",
+    "Address4.isLinkLocal",
+    "isValid",
+    "isPrivate",
+    "ipaddress",
+    "ipv6_addr_type",
+    "isTeredo",
+    "isBlocked"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 168,
+   "score": 0.4,
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-rxp7-6hxx-x8q5",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.7.4"
+   ],
+   "symbols": [
+    "Address6.isValid",
+    "AddressError",
+    "m",
+    "$",
+    "Address6",
+    "isValid",
+    "fromAddressAndMask",
+    "fromAddressAndWildcardMask",
+    "fromAddress4Nat64",
+    "toAddress4Nat64",
+    "fromWildcard",
+    "fromURL",
+    "fromArpa",
+    "Address4"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 169,
+   "score": 0.4,
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v2v4-37r5-5v8g",
+   "severity": "MODERATE",
+   "fixed": [
+    "10.1.1"
+   ],
+   "symbols": [
+    "Address6.group",
+    "Address6.link",
+    "AddressError.parseMessage",
+    "Address6",
+    "parseMessage",
+    "innerHTML",
+    "v6.helpers.spanAll",
+    "this.address",
+    "group",
+    "helpers.simpleGroup",
+    "link",
+    "prefix",
+    "className",
+    "onmouseover",
+    "parse4in6",
+    "String.replace",
+    "spanAll",
+    "n",
+    "isValid",
+    "correctForm",
+    "isInSubnet",
+    "bigInt",
+    "AddressError",
+    "Address6.isValid"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 170,
+   "score": 0.4,
+   "package": "joi",
+   "version": "14.3.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-q7cg-457f-vx79",
+   "severity": "MODERATE",
+   "fixed": [
+    "18.2.1",
+    "17.13.4"
+   ],
+   "symbols": [
+    "link",
+    "validate",
+    "validateAsync",
+    "RangeError",
+    "ValidationError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 171,
+   "score": 0.4,
+   "package": "joi",
+   "version": "14.3.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-wr44-6hxh-3jwq",
+   "severity": "MODERATE",
+   "fixed": [
+    "17.13.8",
+    "18.2.9"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 172,
+   "score": 0.4,
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 173,
+   "score": 0.4,
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 174,
+   "score": 0.4,
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g3hv-75wg-m249",
+   "severity": "MODERATE",
+   "fixed": [
+    "11.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 175,
+   "score": 0.4,
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g3hv-75wg-m249",
+   "severity": "MODERATE",
+   "fixed": [
+    "11.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 176,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-2mjp-6q6p-2qxm",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "undici.request",
+    "undici.Client"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 177,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4992-7rv2-5pvq",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "upgrade",
+    "client.request",
+    "sanitizeUpgrade"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 178,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-4qv8-2p9j-2685",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "EventSource",
+    "maxEventSize",
+    "maxResponseSize"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 179,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-8xcm-r25x-g524",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.28.0",
+    "7.29.0",
+    "8.9.0"
+   ],
+   "symbols": [
+    "interceptors.retry"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 180,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-9fm3-97px-rjf6",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "globalThis.WebSocket",
+    "socket.write"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 181,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g9mf-h72j-4rw9",
+   "severity": "MODERATE",
+   "fixed": [
+    "7.18.2",
+    "6.23.0"
+   ],
+   "symbols": [
+    "fetch"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 182,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-m8rv-5g2x-5cg5",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.28.0",
+    "7.29.0",
+    "8.9.0"
+   ],
+   "symbols": [
+    "request",
+    "stream",
+    "pipeline",
+    "dispatch",
+    "body.type",
+    "isValidHeaderValue",
+    "Blob",
+    "fetch",
+    "Headers",
+    "upgrade"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 183,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-p88m-4jfj-68fv",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [
+    "parseSetCookie",
+    "qsUnescape",
+    "Location",
+    "parseCookie",
+    "getSetCookies"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 184,
+   "score": 0.4,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v3r7-h72x-cjcm",
+   "severity": "MODERATE",
+   "fixed": [
+    "6.28.0",
+    "7.29.0",
+    "8.9.0"
+   ],
+   "symbols": [
+    "setCookie",
+    "validateCookieDomain",
+    "validateCookiePath",
+    "domain",
+    "unparsed",
+    "HttpOnly",
+    "Secure"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 185,
+   "score": 0.4,
+   "package": "uptime-kuma",
+   "version": "2.0.0-beta.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-hx7h-9vf7-5xhg",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.0.0-beta.2"
+   ],
+   "symbols": [
+    "notification",
+    "pushdeer",
+    "whapi",
+    "downtime",
+    "uptime-kuma.git"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 186,
+   "score": 0.4,
+   "package": "uuid",
+   "version": "8.3.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w5hq-g745-h8pq",
+   "severity": "MODERATE",
+   "fixed": [
+    "11.1.1",
+    "12.0.1",
+    "13.0.1"
+   ],
+   "symbols": [
+    "v3",
+    "v5",
+    "v6",
+    "uuid",
+    "buf",
+    "offset",
+    "v4",
+    "v1",
+    "v7",
+    "RangeError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 187,
+   "score": 0.4,
+   "package": "uuid",
+   "version": "9.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w5hq-g745-h8pq",
+   "severity": "MODERATE",
+   "fixed": [
+    "11.1.1",
+    "12.0.1",
+    "13.0.1"
+   ],
+   "symbols": [
+    "v3",
+    "v5",
+    "v6",
+    "uuid",
+    "buf",
+    "offset",
+    "v4",
+    "v1",
+    "v7",
+    "RangeError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 188,
+   "score": 0.4,
+   "package": "ws",
+   "version": "8.17.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-58qx-3vcg-4xpx",
+   "severity": "MODERATE",
+   "fixed": [
+    "8.20.1"
+   ],
+   "symbols": [
+    "websocket.close",
+    "TypedArray",
+    "ws.on",
+    "ws.close"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 189,
+   "score": 0.4,
+   "package": "ws",
+   "version": "8.18.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-58qx-3vcg-4xpx",
+   "severity": "MODERATE",
+   "fixed": [
+    "8.20.1"
+   ],
+   "symbols": [
+    "websocket.close",
+    "TypedArray",
+    "ws.on",
+    "ws.close"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 190,
+   "score": 0.35,
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "advisory": "GHSA-f596-whhp-79r4",
+   "severity": "LOW",
+   "fixed": [
+    "1.13.6",
+    "1.14.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "server/util-server.js",
+     "line": 16,
+     "text": "const grpc = require(\"@grpc/grpc-js\");"
+    }
+   ]
+  },
+  {
+   "rank": 191,
+   "score": 0.35,
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-mmg9-6m6j-jqqx",
+   "severity": "LOW",
+   "fixed": [
+    "10.25.3"
+   ],
+   "symbols": [
+    "replace",
+    "memoryLimit",
+    "memoryLimit.use",
+    "str",
+    "pattern",
+    "a",
+    "Limiter",
+    "use",
+    "Infinity",
+    "split"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Infinity, Limiter, a, memoryLimit, pattern, replace, split, str, use 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/smtp.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    },
+    {
+     "path": "server/notification-providers/webhook.js",
+     "line": 4,
+     "text": "const { Liquid } = require(\"liquidjs\");"
+    }
+   ]
+  },
+  {
+   "rank": 192,
+   "score": 0.35,
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w7fw-mjwx-w883",
+   "severity": "LOW",
+   "fixed": [
+    "6.14.2"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "comma",
+    "parseArrayValue",
+    "utils.combine",
+    "currentArrayLength",
+    "throwOnLimitExceeded",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 arrayLimit, combine, comma, currentArrayLength, parse, parseArrayValue, throwOnLimitExceeded 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 5,
+     "text": "const qs = require(\"qs\");"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 3,
+     "text": "const qs = require(\"qs\");"
+    }
+   ]
+  },
+  {
+   "rank": 193,
+   "score": 0.35,
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "advisory": "GHSA-w7fw-mjwx-w883",
+   "severity": "LOW",
+   "fixed": [
+    "6.14.2"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "comma",
+    "parseArrayValue",
+    "utils.combine",
+    "currentArrayLength",
+    "throwOnLimitExceeded",
+    "qs.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 arrayLimit, combine, comma, currentArrayLength, parse, parseArrayValue, throwOnLimitExceeded 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "server/notification-providers/aliyun-sms.js",
+     "line": 5,
+     "text": "const qs = require(\"qs\");"
+    },
+    {
+     "path": "server/notification-providers/linenotify.js",
+     "line": 3,
+     "text": "const qs = require(\"qs\");"
+    }
+   ]
+  },
+  {
+   "rank": 194,
+   "score": 0.1,
+   "package": "@smithy/config-resolver",
+   "version": "4.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-6475-r3vj-m8vf",
+   "severity": "LOW",
+   "fixed": [
+    "4.4.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 195,
+   "score": 0.1,
+   "package": "@tootallnate/once",
+   "version": "1.1.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-vpq2-c234-7xj6",
+   "severity": "LOW",
+   "fixed": [
+    "3.0.1",
+    "2.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 196,
+   "score": 0.1,
+   "package": "body-parser",
+   "version": "1.20.3",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v422-hmwv-36x6",
+   "severity": "LOW",
+   "fixed": [
+    "1.20.6",
+    "2.3.0"
+   ],
+   "symbols": [
+    "limit",
+    "NaN",
+    "bytes.parse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 197,
+   "score": 0.1,
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v6h2-p8h4-qcjw",
+   "severity": "LOW",
+   "fixed": [
+    "2.0.2",
+    "1.1.12",
+    "3.0.1",
+    "4.0.1"
+   ],
+   "symbols": [
+    "a5b98a4f30d7813266b221435e1eaaf25a1b0ac5"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 198,
+   "score": 0.1,
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-v6h2-p8h4-qcjw",
+   "severity": "LOW",
+   "fixed": [
+    "2.0.2",
+    "1.1.12",
+    "3.0.1",
+    "4.0.1"
+   ],
+   "symbols": [
+    "a5b98a4f30d7813266b221435e1eaaf25a1b0ac5"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 199,
+   "score": 0.1,
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-fj3w-jwp8-x2g3",
+   "severity": "LOW",
+   "fixed": [
+    "5.3.8",
+    "4.5.4"
+   ],
+   "symbols": [
+    "arrToStr"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 200,
+   "score": 0.1,
+   "package": "on-headers",
+   "version": "1.0.2",
+   "ecosystem": "npm",
+   "advisory": "GHSA-76c9-3jph-rj3q",
+   "severity": "LOW",
+   "fixed": [
+    "1.1.0"
+   ],
+   "symbols": [
+    "response.writeHead"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 201,
+   "score": 0.1,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-35p6-xmwp-9g52",
+   "severity": "LOW",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 202,
+   "score": 0.1,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-cxrh-j4jr-qwg3",
+   "severity": "LOW",
+   "fixed": [
+    "5.29.0",
+    "6.21.2",
+    "7.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 203,
+   "score": 0.1,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-g8m3-5g58-fq7m",
+   "severity": "LOW",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [
+    "SameSite",
+    "Strict",
+    "Lax",
+    "fetch",
+    "sameSite"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  },
+  {
+   "rank": 204,
+   "score": 0.1,
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "advisory": "GHSA-r53p-7pc4-xj5r",
+   "severity": "LOW",
+   "fixed": [
+    "6.28.1",
+    "7.29.1",
+    "8.10.2"
+   ],
+   "symbols": [
+    "interceptors.retry",
+    "Range"
+   ],
+   "symbol_source": "auto",
+   "verdict": "UNSEEN",
+   "weak": false,
+   "reason": "소스에 이 패키지의 import 근거 줄이 없음 — 전이 의존이거나 동적 로딩일 수 있어 안전하다는 뜻이 아님",
+   "evidence": []
+  }
+ ]
+}

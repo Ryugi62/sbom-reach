@@ -1,0 +1,147 @@
+{
+ "target": "nodejs-goof",
+ "plan_source": "llm",
+ "violations": [],
+ "context": {
+  "detected": [
+   "npm"
+  ],
+  "weak_alerts": 2,
+  "packages_to_fix": 8
+ },
+ "calls": [
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.12.4|GHSA-qw6h-vgh9-j6wx",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.12.4|GHSA-rv95-896h-c2vc",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "npm"
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.12.4|GHSA-qw6h-vgh9-j6wx",
+    "radius": 3
+   },
+   "result": {
+    "file": "routes/index.js",
+    "line": 29,
+    "window": [
+     {
+      "line": 26,
+      "text": "  console.log(`User logged in: ${username}`)"
+     },
+     {
+      "line": 27,
+      "text": ""
+     },
+     {
+      "line": 28,
+      "text": "  if (redirectPage) {"
+     },
+     {
+      "line": 29,
+      "text": "      return res.redirect(redirectPage)"
+     },
+     {
+      "line": 30,
+      "text": "  } else {"
+     },
+     {
+      "line": 31,
+      "text": "      return res.redirect('/admin')"
+     },
+     {
+      "line": 32,
+      "text": "  }"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.12.4|GHSA-rv95-896h-c2vc",
+    "radius": 3
+   },
+   "result": {
+    "file": "routes/index.js",
+    "line": 29,
+    "window": [
+     {
+      "line": 26,
+      "text": "  console.log(`User logged in: ${username}`)"
+     },
+     {
+      "line": 27,
+      "text": ""
+     },
+     {
+      "line": 28,
+      "text": "  if (redirectPage) {"
+     },
+     {
+      "line": 29,
+      "text": "      return res.redirect(redirectPage)"
+     },
+     {
+      "line": 30,
+      "text": "  } else {"
+     },
+     {
+      "line": 31,
+      "text": "      return res.redirect('/admin')"
+     },
+     {
+      "line": 32,
+      "text": "  }"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "npm"
+   },
+   "result": {
+    "components": 566,
+    "alerts": 235
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   },
+   "result": {
+    "required": true,
+    "scope": "reached",
+    "packages_to_fix": 8
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 235
+}

@@ -1,0 +1,8 @@
+{"run_id": "openrefine-plan", "seq": 1, "ts": "2026-11-03T00:33:37+0900", "tool": "sbom", "ms": 87, "tool_name": "pom.xml 해석기", "components": 58, "fallback": false, "pom_stat": {"poms": 12, "parse_errors": 0, "total_declared": 175, "test_scope": 34, "internal": 19, "unresolved": 17, "resolved": 58}}
+{"run_id": "openrefine-plan", "seq": 2, "ts": "2026-11-03T00:33:40+0900", "tool": "source_index", "ms": 2588, "imported_modules": 1532, "referenced_symbols": 23}
+{"run_id": "openrefine-plan", "seq": 3, "ts": "2026-11-03T00:33:40+0900", "tool": "vuln_lookup", "ms": 11, "alerts": 8, "incomplete": 0}
+{"run_id": "openrefine-plan", "seq": 4, "ts": "2026-11-03T00:33:40+0900", "tool": "reach_judge", "ms": 5, "reached": 0, "used": 4, "unseen": 4}
+{"run_id": "openrefine-plan", "seq": 5, "ts": "2026-11-03T00:33:40+0900", "tool": "rank", "ms": 0, "top": ["org.eclipse.jetty:jetty-server:GHSA-9299-c6m4-mjhc:2.45", "commons-lang:commons-lang:GHSA-j288-q9x7-2f5v:1.4", "org.eclipse.jetty:jetty-server:GHSA-7p3p-8qv8-m2vh:1.4"]}
+{"run_id": "openrefine-plan", "seq": 6, "ts": "2026-11-03T00:33:41+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": 200, "attempt": 1, "ms": 776}
+{"run_id": "openrefine-plan", "seq": 7, "ts": "2026-11-03T00:33:41+0900", "tool": "plan", "source": "llm", "calls": 1, "violations": 0}
+{"run_id": "openrefine-plan", "seq": 8, "ts": "2026-11-03T00:33:41+0900", "tool": "plan_step", "step": 1, "call": "select_adapter", "args": {"ecosystem": "Maven"}, "ok": true, "result": {"components": 58, "alerts": 8}}

@@ -1,0 +1,1588 @@
+{
+ "name": "healthchecks",
+ "repo": "~/untrusted/healthchecks",
+ "sbom_tool": "syft",
+ "fallback_used": false,
+ "components": 15,
+ "elapsed_sec": 2.02,
+ "stage_status": {
+  "sbom": "ok",
+  "source": "ok",
+  "scan": "ok",
+  "reach": "ok",
+  "rank": "ok"
+ },
+ "incomplete": [],
+ "counts": {
+  "alerts": 36,
+  "REACHED": 8,
+  "USED": 28,
+  "UNSEEN": 0,
+  "REACHED_weak": 4,
+  "REACHED_flagged": 0
+ },
+ "alerts": [
+  {
+   "rank": 1,
+   "score": 10.0,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-frmv-pr5f-9mcr",
+   "severity": "CRITICAL",
+   "fixed": [
+    "5.2.8",
+    "5.1.14",
+    "4.2.26"
+   ],
+   "symbols": [
+    "QuerySet.filter",
+    "QuerySet.exclude",
+    "QuerySet.get",
+    "Q",
+    "_connector"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 Q, _connector 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/management/commands/sendinactivitynotices.py",
+     "line": 21,
+     "text": "recent_signup = Q(user__date_joined__gt=YEAR_AGO)"
+    },
+    {
+     "path": "hc/accounts/management/commands/sendinactivitynotices.py",
+     "line": 22,
+     "text": "recent_login = Q(user__last_login__gt=YEAR_AGO)"
+    },
+    {
+     "path": "hc/accounts/management/commands/sendinactivitynotices.py",
+     "line": 23,
+     "text": "recent_activity = Q(user__profile__last_active_date__gt=YEAR_AGO)"
+    },
+    {
+     "path": "hc/accounts/models.py",
+     "line": 193,
+     "text": "is_owner = Q(owner_id=self.user_id)"
+    },
+    {
+     "path": "hc/accounts/models.py",
+     "line": 194,
+     "text": "is_member = Q(member__user_id=self.user_id)"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "score": 7.0,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-qw25-v68c-qjf3",
+   "severity": "HIGH",
+   "fixed": [
+    "5.2.8",
+    "5.1.14",
+    "4.2.26"
+   ],
+   "symbols": [
+    "django.http.HttpResponseRedirect",
+    "django.http.HttpResponsePermanentRedirect",
+    "django.shortcuts.redirect",
+    "django.http",
+    "django.shortcuts"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 HttpResponsePermanentRedirect, HttpResponseRedirect, http, shortcuts 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 201,
+     "text": "def login(self, r: HttpRequest, qs: QuerySet[Profile]) -> HttpResponseRedirect:"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "score": 7.0,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-pxh4-856f-4h89",
+   "severity": "HIGH",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "HMACAlgorithm.from_jwk",
+    "k",
+    "PyJWK",
+    "PyJWKSet",
+    "PyJWKClient",
+    "kid",
+    "HMACAlgorithm.prepare_key",
+    "from_jwk",
+    "InsecureKeyLengthWarning",
+    "PyJWT",
+    "pyjwt",
+    "master",
+    "prepare_key",
+    "_verify_signature",
+    "PyJWK.__init__",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "CHANGELOG.rst",
+    "test_hmac_prepare_key_rejects_empty_key",
+    "test_hmac_from_jwk_should_raise_exception_if_empty_json",
+    "jwt.decode",
+    "sub",
+    "HMACAlgorithm",
+    "test_hmac_from_jwk_rejects_empty_k",
+    "oct",
+    "af8181ca0bec5e6b372fbba9afbe23702b787ceb"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 33,
+     "text": "super(SignupForm, self).__init__(request.POST)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 66,
+     "text": "super(EmailLoginForm, self).__init__(request.POST if request else None)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 182,
+     "text": "super(TotpForm, self).__init__(post)"
+    },
+    {
+     "path": "hc/api/management/commands/sendalerts.py",
+     "line": 60,
+     "text": "super().__init__(*args, **kwargs)"
+    },
+    {
+     "path": "hc/api/transports.py",
+     "line": 877,
+     "text": "super().__init__(message, permanent=True)"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "score": 4.0,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8qcx-xf44-272x",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.16",
+    "6.0.7"
+   ],
+   "symbols": [
+    "DomainNameValidator",
+    "CharField",
+    "HttpResponse"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 CharField, DomainNameValidator, HttpResponse 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 29,
+     "text": "tz = forms.CharField(required=False)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 90,
+     "text": "password = forms.CharField()"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 110,
+     "text": "tz = forms.CharField()"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 134,
+     "text": "password = forms.CharField(min_length=8)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 160,
+     "text": "name = forms.CharField(max_length=60)"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "score": 4.0,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-rqw2-ghq9-44m7",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
+   ],
+   "symbols": [
+    "FilteredRelation",
+    "QuerySet.annotate",
+    "QuerySet.alias"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": false,
+   "reason": "취약 심볼 FilteredRelation, alias, annotate 의 참조·호출 근거 줄이 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/management/commands/pruneusers.py",
+     "line": 30,
+     "text": "q = q.annotate(n_teams=Count(\"memberships\"))"
+    },
+    {
+     "path": "hc/front/views.py",
+     "line": 258,
+     "text": "channels = project.channel_set.annotate(is_group=is_group)"
+    },
+    {
+     "path": "hc/front/views.py",
+     "line": 1234,
+     "text": "channels = project.channel_set.annotate(n_checks=Count(\"checks\"))"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "score": 4.0,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-993g-76c3-p5m4",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [
+    "uri",
+    "urllib.request.urlopen",
+    "OpenerDirector",
+    "HTTPHandler",
+    "HTTPSHandler",
+    "FTPHandler",
+    "FileHandler",
+    "DataHandler",
+    "jku",
+    "json.load",
+    "jwt.decode",
+    "fetch",
+    "http.DefaultTransport",
+    "HttpDocumentRetriever",
+    "PyJWKClient.__init__",
+    "PyJWKClientError",
+    "pyjwt.encode",
+    "pyjwt.get_unverified_header",
+    "pyjwt.decode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 33,
+     "text": "super(SignupForm, self).__init__(request.POST)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 66,
+     "text": "super(EmailLoginForm, self).__init__(request.POST if request else None)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 182,
+     "text": "super(TotpForm, self).__init__(post)"
+    },
+    {
+     "path": "hc/api/management/commands/sendalerts.py",
+     "line": 60,
+     "text": "super().__init__(*args, **kwargs)"
+    },
+    {
+     "path": "hc/api/transports.py",
+     "line": 877,
+     "text": "super().__init__(message, permanent=True)"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "score": 4.0,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-w6j9-cwv2-h6wq",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "RSAAlgorithm.from_jwk",
+    "ValueError",
+    "PyJWKSet",
+    "PyJWT",
+    "PyJWK.__init__",
+    "PyJWKSet.__init__",
+    "master",
+    "d",
+    "e",
+    "n",
+    "p",
+    "q",
+    "dp",
+    "dq",
+    "qi",
+    "from_jwk",
+    "cryptography",
+    "jwt.exceptions.PyJWTError",
+    "PyJWKSet.from_dict",
+    "from_json",
+    "PyJWK.from_dict",
+    "PyJWKClient.get_jwk_set",
+    "PyJWKClient",
+    "good_jwk",
+    "InvalidKeyError",
+    "PyJWTError",
+    "created_at",
+    "PyJWK"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 33,
+     "text": "super(SignupForm, self).__init__(request.POST)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 66,
+     "text": "super(EmailLoginForm, self).__init__(request.POST if request else None)"
+    },
+    {
+     "path": "hc/accounts/forms.py",
+     "line": 182,
+     "text": "super(TotpForm, self).__init__(post)"
+    },
+    {
+     "path": "hc/api/management/commands/sendalerts.py",
+     "line": 60,
+     "text": "super().__init__(*args, **kwargs)"
+    },
+    {
+     "path": "hc/api/transports.py",
+     "line": 877,
+     "text": "super().__init__(message, permanent=True)"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "score": 4.0,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-w7vc-732c-9m39",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [
+    "detached_payload",
+    "PyJWS.decode",
+    "PyJWS.decode_complete",
+    "_load",
+    "decode_complete",
+    "crit",
+    "payload_segment",
+    "b64",
+    "DecodeError",
+    "pyjwt.readthedocs"
+   ],
+   "symbol_source": "auto",
+   "verdict": "REACHED",
+   "weak": true,
+   "reason": "(약한 근거) 패키지 import가 있고 취약 메서드 이름과 같은 호출이 있음 — 타입 추론 없음, 같은 이름의 다른 객체일 수 있음",
+   "evidence": [
+    {
+     "path": "hc/api/decorators.py",
+     "line": 41,
+     "text": "request.json = json.loads(request.body.decode())"
+    },
+    {
+     "path": "hc/api/management/commands/smtpd.py",
+     "line": 77,
+     "text": "data_str = data.decode(errors=\"replace\")"
+    },
+    {
+     "path": "hc/api/management/commands/submitchallenge.py",
+     "line": 34,
+     "text": "reply = json.loads(reply_bytes.decode())"
+    },
+    {
+     "path": "hc/api/management/commands/submitchallenge.py",
+     "line": 39,
+     "text": "return reply_bytes.decode()"
+    },
+    {
+     "path": "hc/api/models.py",
+     "line": 493,
+     "text": "body_lowercase = body.decode(errors=\"replace\").lower()"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "score": 3.5,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-ffc3-869f-jxw9",
+   "severity": "CRITICAL",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jwt.decode",
+    "PyJWK",
+    "cryptography",
+    "is_pem_format",
+    "cryptography.load_pem_public_key",
+    "HMACAlgorithm.prepare_key",
+    "key_bytes",
+    "load_pem_public_key",
+    "superadmin",
+    "InvalidKeyError",
+    "InvalidAlgorithmError",
+    "enforce_minimum_key_length"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 InvalidAlgorithmError, InvalidKeyError, PyJWK, cryptography, decode, enforce_minimum_key_length, is_pem_format, key_bytes, load_pem_public_key, prepare_key, superadmin 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "score": 2.45,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-6w2r-r2m5-xq5w",
+   "severity": "HIGH",
+   "fixed": [
+    "4.2.24",
+    "5.1.12",
+    "5.2.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "score": 2.45,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-hpr9-3m2g-3j9p",
+   "severity": "HIGH",
+   "fixed": [
+    "4.2.25",
+    "5.1.13",
+    "5.2.7"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "score": 2.45,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-wvqv-fj8w-qmhm",
+   "severity": "HIGH",
+   "fixed": [
+    "5.2.17",
+    "6.0.8"
+   ],
+   "symbols": [
+    "django.contrib.gis.gdal.GDALRaster",
+    "GeometryField",
+    "RasterField",
+    "dict",
+    "str",
+    "django.contrib"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 GDALRaster, GeometryField, RasterField, contrib, dict, str 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-752w-5fwx-jx9f",
+   "severity": "HIGH",
+   "fixed": [
+    "2.12.0"
+   ],
+   "symbols": [
+    "crit",
+    "cnf",
+    "_validate_headers",
+    "decode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 _validate_headers, cnf, crit, decode 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-9v7f-9g4p-ffgj",
+   "severity": "HIGH",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "PyJWKClient",
+    "kid",
+    "master"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 PyJWKClient, kid, master 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-p4g4-x82p-q773",
+   "severity": "HIGH",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "HMACAlgorithm.prepare_key",
+    "is_pem_format",
+    "is_ssh_key",
+    "startswith",
+    "prepare_key",
+    "PyJWK",
+    "PyJWKClient",
+    "alg",
+    "load_der_public_key",
+    "load_der_private_key",
+    "load_der_x509_certificate",
+    "hmac",
+    "jwt.decode"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 PyJWK, PyJWKClient, alg, decode, hmac, is_pem_format, is_ssh_key, load_der_private_key, load_der_public_key, load_der_x509_certificate, prepare_key, startswith 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-xgmm-8j9v-c9wx",
+   "severity": "HIGH",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "score": 2.45,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "PYSEC-2025-183",
+   "severity": "HIGH",
+   "fixed": [],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-7xr5-9hcq-chf9",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.2",
+    "5.1.10",
+    "4.2.22"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8j24-cjrq-gr2m",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.2.21",
+    "5.1.9",
+    "5.2.1"
+   ],
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-crhf-3pfg-w68w",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.16",
+    "6.0.7"
+   ],
+   "symbols": [
+    "django.contrib.gis.gdal.GDALRaster",
+    "vsi_buffer",
+    "django.contrib"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 GDALRaster, contrib, vsi_buffer 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-p3fp-8748-vqfq",
+   "severity": "MODERATE",
+   "fixed": [
+    "4.2.20",
+    "5.0.13",
+    "5.1.7"
+   ],
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-q238-5cxm-5c9h",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.17",
+    "6.0.8",
+    "6.1.1"
+   ],
+   "symbols": [
+    "django.contrib.gis.geos.GEOSGeometry",
+    "django.contrib.gis.forms.GeometryField",
+    "django.contrib"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 GEOSGeometry, GeometryField, contrib 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-vrcr-9hj9-jcg6",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.2.9",
+    "5.1.15",
+    "4.2.27"
+   ],
+   "symbols": [
+    "django.core.serializers.xml_serializer.getInnerText",
+    "Deserializer",
+    "django.core"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Deserializer, core, getInnerText 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "score": 1.4,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-wqfg-m96j-85vm",
+   "severity": "MODERATE",
+   "fixed": [
+    "5.0.14",
+    "5.1.8"
+   ],
+   "symbols": [
+    "django.contrib",
+    "django.views"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 contrib, views 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-2gx3-rcp4-g85q",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "kid",
+    "master",
+    "ba4853a",
+    "PyJWKClient"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 PyJWKClient, ba4853a, kid, master 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-42vr-xj54-vc7v",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [
+    "json.loads",
+    "PyJWT._decode_payload",
+    "except",
+    "ValueError",
+    "RecursionError",
+    "DecodeError",
+    "InvalidTokenError",
+    "PyJWTError",
+    "kid",
+    "PyJWS._load",
+    "CHANGELOG.rst",
+    "PyJWKClient.fetch_data",
+    "try",
+    "master",
+    "jwt.DecodeError",
+    "_verify_signature",
+    "get_signing_key_from_jwt",
+    "fetch_data",
+    "PyJWKClientError",
+    "fix.patch",
+    "scopegrep",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "patched_versions",
+    "triage"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 DecodeError, InvalidTokenError, PyJWKClientError, PyJWTError, RecursionError, ValueError, _decode_payload, _load, _verify_signature, except, fetch_data, get_signing_key_from_jwt, kid, loads, master, patch, patched_versions, rst, scopegrep, triage, try 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-hxm8-2xgr-2p9m",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "jti",
+    "master",
+    "e6f48401001609a8f99e71fcaf355fb895d508a8"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 e6f48401001609a8f99e71fcaf355fb895d508a8, jti, master 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-jq35-7prp-9v3f",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.13.0",
+    "2.12.1"
+   ],
+   "symbols": [
+    "PyJWK",
+    "PyJWKClient",
+    "jwt.decode",
+    "jwt.decode_complete",
+    "alg",
+    "algorithms",
+    "_verify_signature",
+    "key.Algorithm",
+    "PyJWKClient.get_signing_key_from_jwt",
+    "ab8176abe21e550dbc1c9a6bb7e78ad80853bfb1"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Algorithm, PyJWK, PyJWKClient, _verify_signature, ab8176abe21e550dbc1c9a6bb7e78ad80853bfb1, alg, algorithms, decode, decode_complete, get_signing_key_from_jwt 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-jwrc-g2q2-pq5p",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.14.0"
+   ],
+   "symbols": [
+    "is_pem_format"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 is_pem_format 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "score": 1.4,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-x33g-cr3x-6449",
+   "severity": "MODERATE",
+   "fixed": [
+    "2.15.0"
+   ],
+   "symbols": [
+    "x",
+    "d",
+    "OKPAlgorithm.from_jwk",
+    "cnf.jkt",
+    "PyJWK.from_dict",
+    "master",
+    "patched_versions",
+    "InvalidKeyError"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 InvalidKeyError, d, from_dict, from_jwk, jkt, master, patched_versions, x 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "score": 0.35,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-3h9f-r86x-qvjx",
+   "severity": "LOW",
+   "fixed": [
+    "5.2.16",
+    "6.0.7"
+   ],
+   "symbols": [
+    "UpdateCacheMiddleware",
+    "cache_page"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 UpdateCacheMiddleware, cache_page 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "score": 0.35,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-8cjm-8mp7-r2xf",
+   "severity": "LOW",
+   "fixed": [
+    "5.2.15",
+    "6.0.6"
+   ],
+   "symbols": [
+    "django.middleware.cache.UpdateCacheMiddleware",
+    "django.middleware"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 UpdateCacheMiddleware, middleware 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "score": 0.35,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-923m-gv2p-w5qp",
+   "severity": "LOW",
+   "fixed": [
+    "5.2.15",
+    "6.0.6"
+   ],
+   "symbols": [
+    "django.utils.cache.has_vary_header",
+    "Vary",
+    "django.utils"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 Vary, has_vary_header, utils 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "score": 0.35,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-h7pc-vwp9-298g",
+   "severity": "LOW",
+   "fixed": [
+    "5.2.15",
+    "6.0.6"
+   ],
+   "symbols": [
+    "django.http.HttpRequest.get_signed_cookie",
+    "django.http"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 get_signed_cookie, http 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "score": 0.35,
+   "package": "django",
+   "version": "5.1.6",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-q95w-c7qg-hrff",
+   "severity": "LOW",
+   "fixed": [
+    "4.2.25",
+    "5.1.13",
+    "5.2.7"
+   ],
+   "symbols": [
+    "django.utils"
+   ],
+   "symbol_source": "auto",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "패키지는 import되나 취약 심볼 utils 의 참조·호출 근거 줄은 없음",
+   "evidence": [
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 7,
+     "text": "from django.contrib import admin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 8,
+     "text": "from django.contrib.admin import ModelAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 9,
+     "text": "from django.contrib.auth import login as auth_login"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 10,
+     "text": "from django.contrib.auth.admin import UserAdmin"
+    },
+    {
+     "path": "hc/accounts/admin.py",
+     "line": 11,
+     "text": "from django.contrib.auth.models import User"
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "score": 0.35,
+   "package": "pyjwt",
+   "version": "2.10.1",
+   "ecosystem": "PyPI",
+   "advisory": "GHSA-fhv5-28vv-h8m8",
+   "severity": "LOW",
+   "fixed": [
+    "2.13.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none",
+   "verdict": "USED",
+   "weak": false,
+   "reason": "import 근거는 있으나 어드바이저리에서 취약 심볼을 특정하지 못해 호출 여부를 판정할 수 없음",
+   "evidence": [
+    {
+     "path": "hc/lib/github.py",
+     "line": 3,
+     "text": "import jwt"
+    }
+   ]
+  }
+ ]
+}

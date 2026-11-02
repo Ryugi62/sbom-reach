@@ -1,0 +1,5 @@
+{"run_id": "uptime-kuma-alerts", "seq": 1, "ts": "2026-11-02T09:42:52+0900", "tool": "sbom", "ms": 1090, "tool_name": "syft", "components": 661, "fallback": false}
+{"run_id": "uptime-kuma-alerts", "seq": 2, "ts": "2026-11-02T09:42:53+0900", "tool": "source_index", "ms": 341, "imported_modules": 118, "referenced_symbols": 264}
+{"run_id": "uptime-kuma-alerts", "seq": 3, "ts": "2026-11-02T09:43:17+0900", "tool": "vuln_lookup", "ms": 149, "alerts": 204, "incomplete": 0}
+{"run_id": "uptime-kuma-alerts", "seq": 4, "ts": "2026-11-02T09:43:17+0900", "tool": "reach_judge", "ms": 3, "reached": 54, "used": 60, "unseen": 90}
+{"run_id": "uptime-kuma-alerts", "seq": 5, "ts": "2026-11-02T09:43:17+0900", "tool": "rank", "ms": 0, "top": ["jsonata:GHSA-66mm-25pp-rfff:10.0", "axios:GHSA-3g43-6gmg-66jw:7.0", "axios:GHSA-43fc-jf86-j433:7.0"]}

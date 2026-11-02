@@ -206,6 +206,13 @@ REM_ROWS = []
 for _p in glob.glob(os.path.join(EVD, "traces", "*.remediate-*.jsonl")):
     REM_ROWS += rows_of(_p)
 LS = llm_stats(REM_ROWS)
+_pl = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(os.path.join(EVD, "plans", "*.json")))]
+PL = {"n": len(_pl), "llm": sum(d["plan_source"] == "llm" for d in _pl), "viol": sum(len(d["violations"]) for d in _pl),
+      "calls": sum(len(d["calls"]) for d in _pl), "cap": 6, "unchanged": sum(d["verdicts_unchanged"] for d in _pl)}
+_sc = json.load(open(os.path.join(EVD, "scanner-compare.json"), encoding="utf-8")) if os.path.exists(os.path.join(EVD, "scanner-compare.json")) else {"per_repo": {}}
+_SEVEN = [t["name"] for t in json.load(open(os.path.join(EVD, "targets.json"), encoding="utf-8"))] + [t["name"] for t in JT]
+SC = {tool: sum(_sc["per_repo"][n][tool]["count"] for n in _SEVEN) for tool in ("osv-scanner", "grype", "trivy")}
+SC_LINES = sum(len(a["evidence"]) for n in _SEVEN for a in RUNS[n]["alerts"] if a["verdict"] == "REACHED")
 REV_ROWS = []
 for _p in glob.glob(os.path.join(EVD, "traces", "*.jsonl")):
     if ".remediate-" not in _p and "alerts" not in _p and "goldcheck" not in _p:
@@ -248,21 +255,21 @@ SIMILAR = """<table><tr><th style="width:23%">서비스</th><th style="width:44%
 NALL, RALL, FLAG, UNFL = RA["alerts"], RA["reached"], RA["flagged"], RA["unflagged"]
 p1 = f"""<div class=brow>AI 문제해결방안 · LOTTE AX Challenge 2026 · 롯데이노베이트</div>
 <h1>SBOM·취약점 스캔 결과의 영향도·우선순위 연결 구조 설계,<br>그리고 조치안 도출 및 개선을 돌리는 코드 파이프라인과 AI 보조</h1>
-<p class=lede>과제 「SBOM 생성과 취약점 스캔 결과의 영향도·우선순위 연결 구조 설계」「AI 에이전트 기반 조치안 도출 및 개선」에 대한 작동 프로토타입입니다 — 공개 레포 <code>{REPO}</code>(비로그인 열림, 시험 {TESTS}건)에서 경보 {NALL}건 중 코드가 실제로 호출하는 {RALL}건을 근거 줄과 함께 먼저 올리고, 그중 근거가 약해 보이는 {FLAG}건에는 「사람 확인 필요」를 붙여 사람이 먼저 열 {UNFL}건으로 좁힙니다. 도달 판정과 고칠 버전은 코드가 하고, AI(Gemini)는 <b>두 자리</b>만 맡습니다: ① 조치안 설명 문장 ② 약한 도달 판정에 「사람 확인 필요」 표시(판정을 올리지 못함).</p>
+<p class=lede>과제 「SBOM 생성과 취약점 스캔 결과의 영향도·우선순위 연결 구조 설계」「AI 에이전트 기반 조치안 도출 및 개선」에 대한 작동 프로토타입입니다 — 공개 레포 <code>{REPO}</code>(비로그인 열림, 시험 {TESTS}건)에서 경보 {NALL}건 중 코드가 실제로 호출하는 {RALL}건을 근거 줄과 함께 먼저 올리고, 그중 근거가 약해 보이는 {FLAG}건에는 「사람 확인 필요」를 붙여 사람이 먼저 열 {UNFL}건으로 좁힙니다. 도달 판정과 고칠 버전은 코드가 하고, AI(Gemini)는 <b>세 자리</b>만 맡습니다: ① 조치안 설명 문장 ② 약한 도달 판정에 「사람 확인 필요」 표시 ③ 다음에 부를 도구 고르기(허용 도구 3종, 판정은 바꾸지 못함).</p>
 <div class=big><div><b>{NALL} → {RALL} → {UNFL}</b><span>사람이 열어 볼 경보 수: 전체 → 도달 → 「확인 필요」 표시 제외. 표시 제외 {RA['unflagged_labeled']}건 중 정답도 도달 {RA['unflagged_tp']}건(precision@{UNFL} {RA['precision_unflagged']}%, 정답 있는 것만)</span></div>
 <div><b>{H2_FIRST['reached_precision']}%</b><span>새 홀드아웃2({H2_FIRST['total']}건) 첫 실행 도달 정밀도(대표값). 같은 정답에 v1.2 판정기는 {H2_V12['reached_precision']}%. 표시 제외 후 {FT2.unflagged_precision * 100:.0f}%</span></div>
 <div><b>{LS['adopted']}/{LS['requested']}</b><span>AI 조치안 문장 채택(v1.2는 7/187). 실패 원인을 trace에 남기고 고친 뒤 재실행</span></div></div>
 <h2><span class=n>1</span>문제와 해법</h2>
 <p><b>문제.</b> SBOM(부품 목록)과 취약점 스캔은 따로 나오고, 보안 운영 담당은 수백 건 경보를 하나씩 열어 「우리 코드가 이 함수를 부르나」를 사람이 따집니다. 실행한 {len(PYJS) + len(JAVA)}곳 합계 {NALL}건 중 {pc(T['unseen'] + J_TOT['UNSEEN'], NALL)}는 소스에 그 패키지를 쓰는 줄이 없었고, 호출 근거가 있는 것은 {pc(RALL, NALL)}였습니다.</p>
 <p><b>해법.</b> 파이프라인이 ① 저장소에서 SBOM 생성 → ② 알려진 취약점 조회 → ③ 취약 함수 호출 여부를 <b>근거 줄</b>로 판정(도달·사용·미확인) → ④ 심각도×도달 가중으로 우선순위와 <b>고칠 버전</b>(OSV가 알려 준 고침 버전 중 최저)을 코드가 정함 → ⑤ AI가 조치안 설명 문장을 쓰고, 도달 중 약한 근거에 「사람 확인 필요」를 붙임 → ⑥ 조치를 별도 git 가지에 적용 → ⑦ 재스캔으로 경보 감소를 측정(도달이 남으면 최대 3바퀴). 병합·배포는 하지 않고 사람이 승인합니다.</p>
-<p><b>코드와 AI의 역할 — 실체에 맞게.</b> 도구를 부르는 순서·판정·우선순위·고칠 버전은 모두 코드라서, 이것은 「모델이 계획을 세우는 자율 에이전트」가 아니라 <b>코드 파이프라인 위에 AI 두 자리를 얹은 구조</b>입니다. AI 자리 ①은 버전 숫자 허용 목록(G2)·판정 뒤집기 금지(G3)를 어기면 문장을 버립니다. 자리 ②는 결과 타입에 판정 필드가 없고 사용·미확인을 도달로 올리는 호출 경로가 없어(G1 유지, 시험 test_review_flag) 도달 목록을 <b>좁히는 정보</b>만 줍니다.</p>
+<p><b>코드와 AI의 역할 — 실체에 맞게.</b> 판정·우선순위·고칠 버전은 모두 코드입니다. 모델은 판정이 끝난 뒤 <b>다음에 부를 도구를 고르는 계획 단계</b>를 맡습니다: 허용 도구 3종(어댑터 순서·약한 근거 경보의 주변 줄 열기·재스캔 범위), 인자 스키마, 호출 ≤{PL['cap']}건을 어기면 그 호출을 버리고 trace에 남기며, 모델이 실패하면 결정적 기본 계획으로 돕니다(저장소 {PL['n']}곳 실행: 모델 계획 {PL['llm']}곳, 위반 기록 {PL['viol']}건, 판정 변경 0). 자리 ①은 버전 숫자 허용 목록(G2)·판정 뒤집기 금지(G3)를 어기면 문장을 버리고, 자리 ②는 결과 타입에 판정 필드가 없어(G1 유지) 판정을 올리지 못하고 도달 목록을 <b>좁히는 정보</b>만 줍니다. 계획이 정하는 것은 순서와 깊이이고, 조치할 패키지가 있으면 모델이 빼도 재스캔은 들어갑니다.</p>
 <h2><span class=n>2</span>같은 문제를 푸는 기존 서비스와 다른 점</h2>
 {SIMILAR}
-<p class=note>위 서비스의 수치는 각 벤더의 공개 문서·자사 벤치마크이며 독립 검증값이 아닙니다. 우리 수치는 아래 공개 저장소와 정답 파일로 재현할 수 있습니다.</p>
+<p class=note><b>같은 고정 커밋 {len(_SEVEN)}곳을 무료 도구로 직접 돌린 개수 비교</b>: osv-scanner {SC['osv-scanner']}건 · grype {SC['grype']}건 · trivy {SC['trivy']}건(Java 3곳은 Maven Central 429로 원격 pom 해석을 생략해 일부 누락 가능)이 경보로 나오고, 우리는 그중 사람이 볼 경보 {RALL}건에 근거 {SC_LINES}줄을 붙입니다(개수 비교이며 정밀도 비교 아님, 표는 레포 evidence/scanner-compare.md). 위 서비스의 수치는 각 벤더의 공개 문서·자사 벤치마크이며 독립 검증값이 아닙니다. 우리 수치는 아래 공개 저장소와 정답 파일로 재현할 수 있습니다.</p>
 <h2><span class=n>3</span>과제 문구와 구조도의 대응</h2>
 <table><tr><th style="width:42%">과제 문구</th><th>구조도(그림 1) 노드</th><th>산출물</th></tr>
 <tr><td>SBOM 생성과 취약점 스캔 결과의 영향도·우선순위 <b>연결</b> 구조 설계</td><td>1 SBOM → 2 조회 → <b>3 도달 판정</b> → 4 우선순위</td><td>경보별 판정·근거 줄·점수</td></tr>
-<tr><td>AI 에이전트 기반 <b>조치안 도출</b></td><td>4 조치 계획 → 5 AI 두 자리(설명 문장·확인 표시)</td><td>패키지별 현재→목표 버전·설명</td></tr>
+<tr><td>AI 에이전트 기반 <b>조치안 도출</b></td><td>4 조치 계획 → 5 AI 세 자리(설명 문장·확인 표시·도구 계획)</td><td>패키지별 현재→목표 버전·설명</td></tr>
 <tr><td>… 및 <b>개선</b></td><td>6 조치 가지 → 7 재스캔 → (순환)</td><td>해소·남음·신규 경보 수</td></tr></table>"""
 
 p2 = f"""<div class=brow>AI 문제해결방안 · 구조와 평가</div>
@@ -272,7 +279,8 @@ p2 = f"""<div class=brow>AI 문제해결방안 · 구조와 평가</div>
 <table><tr><th style="width:11%">규칙</th><th style="width:56%">내용(코드로 집행)</th><th>시험</th></tr>
 <tr><td>G1</td><td>근거 줄이 없는 「도달」은 판정 객체를 만들 수 없다. AI 표시 결과 타입에는 판정 필드가 없다</td><td>test_reached_requires_evidence, test_review_flag</td></tr>
 <tr><td>G2·G3</td><td>AI 문장의 버전 숫자는 허용 목록만, 「안전합니다」류 단정·판정 뒤집기는 폐기 후 템플릿</td><td>test_domain_guardrails</td></tr>
-<tr><td>G4~G6</td><td>허용 명령만 실행(대상 코드 실행·설치 차단) / AI 입력 키·이메일 마스킹 / 조회 미완이면 「경보 0 = 깨끗함」 금지</td><td>test_g4~g6</td></tr></table>
+<tr><td>G4~G6</td><td>허용 명령만 실행(대상 코드 실행·설치 차단) / AI 입력 키·이메일 마스킹 / 조회 미완이면 「경보 0 = 깨끗함」 금지</td><td>test_g4~g6</td></tr><
+<tr><td>G7</td><td>계획 단계: 허용 도구 3종·인자 스키마·호출 ≤6 밖은 폐기하고 trace, 모델 실패 시 기본 계획. 계획 객체에 판정·버전 필드 없음</td><td>test_planning</td></tr>/table>
 <p><b>평가(Evals).</b> 정답은 <b>사람이 아니라 AI(Claude)가 소스 줄을 직접 열어 작성</b>했고 사람 검산 전입니다. 개발셋 66건·홀드아웃1 37건은 판정기를 고치는 데 쓰여 대표값에서 뺍니다(홀드아웃1의 v1.2 값 동결 직후 78.4%·수정 뒤 81.1%는 사후 수정이었음). 대신 <b>수정 코드를 쓰기 전에 새 홀드아웃2 {H2_FIRST['total']}건을 동결·커밋</b>하고 처음 돌린 값을 대표값으로 씁니다. 같은 정답에 v1.2 판정기를 돌린 값을 나란히 둡니다.</p>
 <table><tr><th>정답 묶음 · 판정기</th><th class=r>건수</th><th class=r>3분류 일치</th><th class=r>도달 정밀도</th><th class=r>도달 재현율</th></tr>
 <tr><td>홀드아웃2 · v1.2 판정기(비교용)</td><td class=r>{H2_V12['total']}</td><td class=r>{H2_V12['matched']} ({H2_V12['rate']}%)</td><td class=r>{H2_V12['reached_precision']}%</td><td class=r>{H2_V12['reached_recall']}%</td></tr>
@@ -334,7 +342,7 @@ SUM = f"""<div class=brow>AI 문제해결방안 요약 · LOTTE AX Challenge 202
 <p class=lede>SBOM·취약점 스캔 결과의 영향도·우선순위 연결 구조와, 조치안 도출 및 개선(재스캔 순환)을 돌리는 코드 파이프라인과 AI 보조 (롯데이노베이트)</p>
 <div class=big><div><b>{NALL} → {RALL} → {UNFL}</b><span>전체 경보 → 도달 → 「확인 필요」 표시 제외. 운영형 Java 3곳 포함 {len(PYJS) + len(JAVA)}곳</span></div><div><b>{H2_FIRST['reached_precision']}%</b><span>새 홀드아웃2 첫 실행 도달 정밀도(v1.2 판정기 {H2_V12['reached_precision']}%), 표시 제외 후 {FT2.unflagged_precision * 100:.0f}%</span></div><div><b>{rs_sum('reached','reached_before')} → {rs_sum('reached','reached_after')}</b><span>조치 가지 재스캔 후 도달 경보 (패키지 {rs_sum('reached','packages_changed')}개 조치)</span></div></div>
 <h2>문제</h2><p>SBOM과 스캔 결과가 따로 나와 수백 건 경보를 사람이 하나씩 따집니다. 이번 {len(PYJS) + len(JAVA)}곳에서 호출 근거가 있는 경보는 {pc(RALL, NALL)}였습니다.</p>
-<h2>해법</h2><ul><li>SBOM 생성 → 취약점 조회 → <b>호출 근거 줄로 도달 판정</b> → 우선순위·조치안 → 조치 가지 적용 → 재스캔(최대 3바퀴). Python·JavaScript·Java(Maven 최소 어댑터)</li><li>판정과 고칠 버전은 코드. AI는 두 자리: 조치안 설명 문장(채택 {LS['adopted']}/{LS['requested']}), 약한 도달 판정에 「사람 확인 필요」 표시(판정을 올리지 못함)</li><li>병합·배포는 사람이 승인</li></ul>
+<h2>해법</h2><ul><li>SBOM 생성 → 취약점 조회 → <b>호출 근거 줄로 도달 판정</b> → 우선순위·조치안 → 조치 가지 적용 → 재스캔(최대 3바퀴). Python·JavaScript·Java(Maven 최소 어댑터)</li><li>판정과 고칠 버전은 코드. AI는 세 자리: 조치안 설명 문장(채택 {LS['adopted']}/{LS['requested']}), 약한 도달 판정에 「사람 확인 필요」 표시, 다음 도구 고르기(판정은 바꾸지 못함)</li><li>병합·배포는 사람이 승인</li></ul>
 <h2>구조</h2><img class=fig src="architecture.svg" style="width:100%">
 <h2>다른 점</h2><p>기존 도달성 도구(Endor Labs·Snyk·Semgrep)는 호출 그래프·데이터플로를 상용으로 제공합니다. 이 도구는 ① 판정마다 근거 줄 ② 조치 후 재스캔 감소를 한 출력에 ③ 정답 일치율과 틀린 곳 공개(다른 AI 재판정 kappa {KAP_K:.2f}) ④ 로컬·무료 도구만으로 재현을 더합니다.</p>
 <h2>한계</h2><p>정답은 AI가 작성했고 사람 검산 전입니다. 홀드아웃2 {H2_FIRST['total']}건 첫 실행 일치 {H2_FIRST['rate']}%·도달 정밀도 {H2_FIRST['reached_precision']}%(목표 70% 미달). Java는 pom.xml 직접 선언만(Gradle·외부 BOM·전이 의존 제외). Python·JS 대상 4곳은 교육용 취약 저장소. 전이 의존은 「미확인」. 효과는 금액이 아니라 사람이 열어 볼 경보 수로만 냈습니다.</p>"""
@@ -399,9 +407,9 @@ def render(name, pages, label):
 
 if __name__ == "__main__":
     res = {}
-    res["해결방안"] = render(f"AI문제해결방안_{VER}", SOL, f"AI 문제해결방안 {VER}")
-    res["요약"] = render(f"AI문제해결방안_요약1쪽_{VER}", [SUM], f"AI 문제해결방안 요약 {VER}")
-    res["역량"] = render(f"AI보유역량_{VER}", [CAP], f"AI 보유역량 {VER}")
+    res["해결방안"] = render(f"AI문제해결방안_{VER}", SOL, "AI 문제해결방안")
+    res["요약"] = render(f"AI문제해결방안_요약1쪽_{VER}", [SUM], "AI 문제해결방안 요약")
+    res["역량"] = render(f"AI보유역량_{VER}", [CAP], "AI 보유역량")
     fail = [k for k, v in res.items() if v[2]]
     if fail:
         sys.exit("넘침: " + ",".join(fail))

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+import re
 from collections import Counter
 from dataclasses import dataclass, field
 from typing import Dict, Tuple
@@ -108,3 +109,43 @@ def cohen_kappa(pairs) -> float:
     if pe >= 1.0:
         return 1.0
     return (po - pe) / (1 - pe)
+
+
+FP_WEAK = "약한 근거(같은 이름 메서드, 받는 쪽 타입 모름)"
+FP_CLASS = "클래스 이름 참조(취약 멤버 호출 아님)"
+FP_NAME = "함수·속성 이름 일치"
+_MATCHED = re.compile(r"(?:취약 심볼|가져온 클래스) (.+?) (?:의|를) ")
+
+
+def classify_false_positive(alert: dict) -> str:
+    """도달로 판정됐지만 정답이 도달이 아닌 경보를 결정적 규칙으로 유형에 넣는다(S15). 판정 이유 문장에 적힌 일치 이름만 본다."""
+    if alert.get("weak"):
+        return FP_WEAK
+    m = _MATCHED.search(alert.get("reason") or "")
+    names = [n.strip() for n in m.group(1).split(",")] if m else []
+    if any(n[:1].isupper() for n in names):
+        return FP_CLASS
+    return FP_NAME
+
+
+@dataclass
+class FpRow:
+    type: str
+    count: int
+    flagged: int
+    share: float
+
+
+def fp_breakdown(gold: Dict[Key, str], alerts: Dict[Key, tuple]) -> list:
+    """alerts: 키 -> (경보 dict, 「사람 확인 필요」 표시 여부). 오탐 = 도구 도달 ∧ 정답 도달 아님. 큰 유형부터."""
+    cnt: Counter = Counter()
+    flg: Counter = Counter()
+    for k, g in gold.items():
+        a = alerts.get(k)
+        if not a or a[0].get("verdict") != "REACHED" or g == "REACHED":
+            continue
+        t = classify_false_positive(a[0])
+        cnt[t] += 1
+        flg[t] += bool(a[1])
+    total = sum(cnt.values())
+    return [FpRow(t, n, flg[t], n / total) for t, n in sorted(cnt.items(), key=lambda x: (-x[1], x[0]))]

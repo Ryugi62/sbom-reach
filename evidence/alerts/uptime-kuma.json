@@ -1,0 +1,5267 @@
+{
+ "target": "uptime-kuma",
+ "commit": "c7d7fdd",
+ "incomplete": [],
+ "alerts": [
+  {
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-5375-pq7m-f5r2",
+   "aliases": [
+    "CVE-2026-48068"
+   ],
+   "severity": "HIGH",
+   "summary": "@grpc/grpc-js: A malformed request can cause a server crash",
+   "fixed": [
+    "1.9.16",
+    "1.10.12",
+    "1.11.4",
+    "1.12.7",
+    "1.13.5",
+    "1.14.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-99f4-grh7-6pcq",
+   "aliases": [
+    "CVE-2026-48069"
+   ],
+   "severity": "HIGH",
+   "summary": "@grpc/grpc-js: An incoming malformed compressed message can cause a client or server crash",
+   "fixed": [
+    "1.9.16",
+    "1.10.12",
+    "1.11.4",
+    "1.12.7",
+    "1.13.5",
+    "1.14.4"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-f596-whhp-79r4",
+   "aliases": [
+    "CVE-2026-101915"
+   ],
+   "severity": "LOW",
+   "summary": "@grpc/grpc-js: The server transmits some error messages thrown by method handlers to the client in status messages",
+   "fixed": [
+    "1.13.6",
+    "1.14.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "@grpc/grpc-js",
+   "version": "1.8.22",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-m9gg-hp2v-232j",
+   "aliases": [
+    "CVE-2026-101916"
+   ],
+   "severity": "HIGH",
+   "summary": "@grpc/grpc-js: In certain configurations, getAuthContext can return unauthorized certificates as though they were authorized",
+   "fixed": [
+    "1.13.6",
+    "1.14.5"
+   ],
+   "symbols": [
+    "requireClientCertificate",
+    "getAuthContext",
+    "require_client_certificate"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "@protobufjs/utf8",
+   "version": "1.1.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q6x5-8v7m-xcrf",
+   "aliases": [
+    "CVE-2026-44288"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobufjs has overlong UTF-8 decoding",
+   "fixed": [
+    "1.1.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "@smithy/config-resolver",
+   "version": "4.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6475-r3vj-m8vf",
+   "aliases": [],
+   "severity": "LOW",
+   "summary": "AWS SDK for JavaScript v3 adopted defense in depth enhancement for region parameter value",
+   "fixed": [
+    "4.4.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "@tootallnate/once",
+   "version": "1.1.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vpq2-c234-7xj6",
+   "aliases": [
+    "CVE-2026-3449"
+   ],
+   "severity": "LOW",
+   "summary": "@tootallnate/once vulnerable to Incorrect Control Flow Scoping",
+   "fixed": [
+    "3.0.1",
+    "2.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3g43-6gmg-66jw",
+   "aliases": [
+    "CVE-2026-44495"
+   ],
+   "severity": "HIGH",
+   "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+   "fixed": [
+    "1.15.2",
+    "0.31.1"
+   ],
+   "symbols": [
+    "Object.prototype.transformResponse",
+    "Object.prototype",
+    "auth",
+    "transformResponse",
+    "mergeConfig",
+    "transformData",
+    "validator.assertOptions",
+    "auth.username",
+    "auth.password",
+    "this.auth.password",
+    "this.url",
+    "assertOptions",
+    "qs",
+    "minimist",
+    "lodash",
+    "this.auth.username",
+    "this.headers.Authorization",
+    "hasOwnProperty",
+    "defaultToConfig2",
+    "axios.get",
+    "pollutedTransform",
+    "computeConfigValue"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3p68-rc4w-qgx5",
+   "aliases": [
+    "CVE-2025-62718"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+   "fixed": [
+    "1.15.0",
+    "0.31.0"
+   ],
+   "symbols": [
+    "localhost",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-42h9-826w-cgv3",
+   "aliases": [
+    "CVE-2026-67313"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: Excessive recursion in formDataToJSON can cause denial of service",
+   "fixed": [
+    "0.33.0",
+    "1.18.0"
+   ],
+   "symbols": [
+    "formDataToJSON",
+    "axios.formToJSON",
+    "formToJSON",
+    "FormData",
+    "transformRequest",
+    "toFormData",
+    "maxDepth",
+    "parsePropPath",
+    "buildPath",
+    "AxiosError",
+    "shouldBypassProxy",
+    "isIPv4Loopback",
+    "isIPv6Loopback"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-43fc-jf86-j433",
+   "aliases": [
+    "CVE-2026-25639"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+   "fixed": [
+    "1.13.5",
+    "0.30.3"
+   ],
+   "symbols": [
+    "mergeConfig",
+    "JSON.parse",
+    "prop",
+    "Object.keys",
+    "Object.prototype",
+    "Axios._request",
+    "Axios.getUri",
+    "post",
+    "poc.mjs",
+    "axios.get",
+    "computeConfigValue"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4hjh-wcwx-xvwj",
+   "aliases": [
+    "CVE-2025-58754"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios is vulnerable to DoS attack through lack of data size check",
+   "fixed": [
+    "1.12.0",
+    "0.30.2"
+   ],
+   "symbols": [
+    "Buffer",
+    "Blob",
+    "maxContentLength",
+    "maxBodyLength",
+    "axios",
+    "fromDataURI",
+    "config.maxContentLength",
+    "config.maxBodyLength",
+    "totalResponseBytes",
+    "Buffer.from",
+    "axios.get",
+    "axios.create"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-5c9x-8gcm-mpgx",
+   "aliases": [
+    "CVE-2026-42034"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-62hf-57xw-28j9",
+   "aliases": [
+    "CVE-2026-42039"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "stack",
+    "build",
+    "toFormData",
+    "FormData",
+    "AxiosURLSearchParams",
+    "buildURL",
+    "params",
+    "URLSearchParams",
+    "forEach",
+    "axios.post"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6chq-wfr3-2hj9",
+   "aliases": [
+    "CVE-2026-42035"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Header Injection via Prototype Pollution",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "Authorization",
+    "axios.post"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-7q8q-rj6j-mhjq",
+   "aliases": [
+    "CVE-2026-67319"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: Nested axios option objects can consume polluted prototype values",
+   "fixed": [
+    "0.33.0",
+    "1.18.0"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "auth",
+    "paramsSerializer",
+    "username",
+    "password",
+    "encode",
+    "serialize",
+    "paramsSerializer.serialize",
+    "axios.getUri",
+    "axios.get",
+    "getMergedValue",
+    "buildURL"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-898c-q2cr-xwhg",
+   "aliases": [
+    "CVE-2026-44490"
+   ],
+   "severity": "MODERATE",
+   "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "_.merge",
+    "merge",
+    "hasOwnProperty",
+    "Object.defineProperty",
+    "descriptor.get",
+    "descriptor.set",
+    "Object.prototype.get",
+    "Object.prototype.set",
+    "TypeError",
+    "Object.prototype.common",
+    "Object.prototype.delete",
+    "AxiosError",
+    "error.isAxiosError",
+    "targetKey",
+    "forEach",
+    "mergeConfig",
+    "lodash.merge",
+    "axios.request",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9fr6-4gfg-395g",
+   "aliases": [
+    "CVE-2026-101902"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Method",
+   "fixed": [
+    "0.34.0",
+    "1.20.0"
+   ],
+   "symbols": [
+    "method",
+    "Object.prototype",
+    "Object.prototype.method",
+    "config.method",
+    "mergeConfig",
+    "this.defaults",
+    "this.defaults.method",
+    "axios.get",
+    "config",
+    "this.defaults.allowAbsoluteUrls",
+    "baseURL",
+    "allowAbsoluteUrls",
+    "axios.create",
+    "confirmed",
+    "axios.request",
+    "axios.VERSION",
+    "runRequest",
+    "runCase"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-fvcv-3m26-pcqx",
+   "aliases": [
+    "CVE-2026-40175"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+   "fixed": [
+    "1.15.0",
+    "0.31.0"
+   ],
+   "symbols": [
+    "qs",
+    "minimist",
+    "ini",
+    "Object.prototype",
+    "axios.get",
+    "setRequestHeader"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-hfxv-24rg-xrqf",
+   "aliases": [
+    "CVE-2026-44496"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "document.cookie",
+    "xsrfCookieName",
+    "cookies.read",
+    "vulnerableRead",
+    "cookiesRead",
+    "escapeRegExp"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-j5f8-grm9-p9fc",
+   "aliases": [
+    "CVE-2026-44486"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "setProxy",
+    "beforeRedirects.proxy",
+    "afca61a",
+    "isRedirect",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jr5f-v2jv-69x6",
+   "aliases": [
+    "CVE-2025-27152"
+   ],
+   "severity": "HIGH",
+   "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+   "fixed": [
+    "1.8.2",
+    "0.30.0"
+   ],
+   "symbols": [
+    "baseURL",
+    "attacker.test",
+    "axios.create"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-m7pr-hjqh-92cm",
+   "aliases": [
+    "CVE-2026-42038"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-mmx7-hfxf-jppx",
+   "aliases": [
+    "CVE-2026-67316"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: Prototype pollution gadgets can alter axios request construction",
+   "fixed": [
+    "1.18.0",
+    "0.33.0"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "axios.get",
+    "axios.delete",
+    "axios.head",
+    "axios.options",
+    "proxy",
+    "paramsSerializer",
+    "resolveConfig",
+    "mergeConfig",
+    "Object.prototype.data",
+    "hasOwnProp",
+    "config.proxy",
+    "config.paramsSerializer",
+    "config.data",
+    "own",
+    "setProxy",
+    "Object.prototype.proxy",
+    "Object.prototype.paramsSerializer",
+    "bodyless"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-p92q-9vqr-4j8v",
+   "aliases": [
+    "CVE-2026-44487"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [
+    "config.proxy",
+    "setProxy",
+    "afca61a",
+    "removeProxyAuthorization",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-pf86-5x62-jrwf",
+   "aliases": [
+    "CVE-2026-42033"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "hasOwnProperty",
+    "Axios._request",
+    "mergeConfig",
+    "this.defaults",
+    "transformResponse",
+    "parseReviver",
+    "defaults",
+    "mergeMap",
+    "this.parseReviver",
+    "responseType",
+    "assertOptions",
+    "server_gadget1.mjs",
+    "poc_parsereviver.mjs",
+    "transport",
+    "config1",
+    "hasOwnProp",
+    "transport.request",
+    "options.hostname",
+    "options.port",
+    "options.path",
+    "options.auth",
+    "options.headers",
+    "server_gadget2.mjs",
+    "poc_transport.mjs",
+    "transformRequest",
+    "Object.prototype.transformRequest",
+    "defaultToConfig2",
+    "transformData",
+    "config.transport",
+    "lookup",
+    "httpVersion",
+    "http2Options",
+    "family",
+    "formSerializer",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-pjwm-pj3p-43mv",
+   "aliases": [
+    "CVE-2026-44492"
+   ],
+   "severity": "HIGH",
+   "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+   "fixed": [
+    "1.16.0",
+    "0.32.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-pmv8-rq9r-6j72",
+   "aliases": [
+    "CVE-2026-67312"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: Deep formToJSON Key Recursion Can Cause Denial of Service",
+   "fixed": [
+    "0.33.0",
+    "1.18.0"
+   ],
+   "symbols": [
+    "formDataToJSON",
+    "axios.formToJSON",
+    "FormData",
+    "formToJSON",
+    "transformRequest",
+    "toFormData",
+    "maxDepth",
+    "parsePropPath",
+    "buildPath",
+    "index.d.cts",
+    "AxiosError",
+    "RangeError",
+    "v1.x"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-pmwg-cvhr-8vh7",
+   "aliases": [
+    "CVE-2026-42043"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Incomplete Fix for CVE-2025-62718 — NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "normalizeNoProxyHost",
+    "localhost",
+    "setProxy",
+    "shouldBypassProxy",
+    "lo",
+    "Host",
+    "Set.has",
+    "parseNoProxyEntry",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vf2m-468p-8v99",
+   "aliases": [
+    "CVE-2026-42036"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w9j2-pvgh-6h63",
+   "aliases": [
+    "CVE-2026-42041"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "validateStatus",
+    "Object.prototype",
+    "mergeDirectKeys",
+    "in",
+    "Object.prototype.validateStatus",
+    "defaultToConfig2",
+    "hasOwnProperty",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-x97p-jq2g-jp4f",
+   "aliases": [
+    "CVE-2026-101909"
+   ],
+   "severity": "HIGH",
+   "summary": "Axios: Prototype Pollution Gadget in axios toFormData Options",
+   "fixed": [
+    "0.34.0",
+    "1.20.0"
+   ],
+   "symbols": [
+    "visitor",
+    "maxDepth",
+    "dots",
+    "indexes",
+    "metaTokens",
+    "Blob",
+    "Object.prototype",
+    "axios.toFormData",
+    "transformRequest",
+    "formSerializer",
+    "toFormData",
+    "utils.toFlatObject",
+    "toFlatObject",
+    "formSerializer.maxDepth",
+    "hasOwnProperty",
+    "Object.prototype.visitor",
+    "own",
+    "hasOwnProp",
+    "destObj",
+    "utils.hasOwnProp",
+    "mergeConfig",
+    "poc.mjs",
+    "key",
+    "path",
+    "exposedHelpers",
+    "defaultVisitor",
+    "convertValue",
+    "isVisitable",
+    "helpers.defaultVisitor",
+    "Object.prototype.maxDepth",
+    "user.name",
+    "axios.post"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xhjh-pmcv-23jw",
+   "aliases": [
+    "CVE-2026-42040"
+   ],
+   "severity": "LOW",
+   "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "encode",
+    "charMap",
+    "buildURL",
+    "AxiosURLSearchParams.toString",
+    "paramsSerializer",
+    "AxiosURLSearchParams",
+    "paramsSerializer.encode"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "axios",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xx6v-rp6x-q39c",
+   "aliases": [
+    "CVE-2026-42042"
+   ],
+   "severity": "MODERATE",
+   "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+   "fixed": [
+    "1.15.1",
+    "0.31.1"
+   ],
+   "symbols": [
+    "withXSRFToken",
+    "isURLSameOrigin",
+    "hasStandardBrowserEnv",
+    "Object.prototype.withXSRFToken",
+    "axios.get"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "body-parser",
+   "version": "1.20.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-27r3-jxmh-p828",
+   "aliases": [
+    "CVE-2026-111181"
+   ],
+   "severity": "HIGH",
+   "summary": "body-parser vulnerable to Denial of Service via trailing bytes after a compressed request body",
+   "fixed": [
+    "2.4.0",
+    "1.20.9"
+   ],
+   "symbols": [
+    "gzip"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "body-parser",
+   "version": "1.20.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v422-hmwv-36x6",
+   "aliases": [
+    "CVE-2026-12590"
+   ],
+   "severity": "LOW",
+   "summary": "body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement",
+   "fixed": [
+    "1.20.6",
+    "2.3.0"
+   ],
+   "symbols": [
+    "limit",
+    "NaN",
+    "bytes.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3jxr-9vmj-r5cp",
+   "aliases": [
+    "CVE-2026-13149"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+   "fixed": [
+    "5.0.7",
+    "1.1.16",
+    "2.1.2"
+   ],
+   "symbols": [
+    "expand_",
+    "post",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6j4f-fj2g-mc7p",
+   "aliases": [
+    "CVE-2026-102276"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+   "fixed": [
+    "5.0.10",
+    "3.0.7",
+    "2.1.5",
+    "1.1.19"
+   ],
+   "symbols": [
+    "parseCommaParts",
+    "expand_",
+    "post",
+    "push.apply",
+    "Function.prototype.apply",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "minimatch.braceExpand",
+    "a"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f886-m6hf-6m8v",
+   "aliases": [
+    "CVE-2026-33750"
+   ],
+   "severity": "MODERATE",
+   "summary": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+   "fixed": [
+    "5.0.5",
+    "3.0.2",
+    "2.0.3",
+    "1.1.13"
+   ],
+   "symbols": [
+    "test",
+    "RangeError",
+    "expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-mh99-v99m-4gvg",
+   "aliases": [
+    "CVE-2026-14257"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+   "fixed": [
+    "5.0.8",
+    "3.0.3",
+    "2.1.3",
+    "1.1.17"
+   ],
+   "symbols": [
+    "expand",
+    "max",
+    "N",
+    "expand_",
+    "minimatch",
+    "glob",
+    "maxLength",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q2hr-2g5m-vwhr",
+   "aliases": [
+    "CVE-2026-102277"
+   ],
+   "severity": "MODERATE",
+   "summary": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+   "fixed": [
+    "5.0.12",
+    "3.0.9",
+    "2.1.7",
+    "1.1.21"
+   ],
+   "symbols": [
+    "n",
+    "escClose",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qhr7-859c-m2p7",
+   "aliases": [
+    "CVE-2026-102278"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+   "fixed": [
+    "5.0.11",
+    "3.0.8",
+    "2.1.6",
+    "1.1.20"
+   ],
+   "symbols": [
+    "expand_",
+    "m.post",
+    "parseCommaParts",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "maxDepth"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rgw5-rvv9-x895",
+   "aliases": [
+    "CVE-2026-69152"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+   "fixed": [
+    "1.1.18",
+    "2.1.4",
+    "3.0.6",
+    "5.0.9"
+   ],
+   "symbols": [
+    "maxLength",
+    "expand",
+    "combine",
+    "expand_",
+    "values",
+    "A",
+    "expandSequence",
+    "max"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "1.1.11",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v6h2-p8h4-qcjw",
+   "aliases": [
+    "CVE-2025-5889"
+   ],
+   "severity": "LOW",
+   "summary": "brace-expansion Regular Expression Denial of Service vulnerability",
+   "fixed": [
+    "2.0.2",
+    "1.1.12",
+    "3.0.1",
+    "4.0.1"
+   ],
+   "symbols": [
+    "a5b98a4f30d7813266b221435e1eaaf25a1b0ac5"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3jxr-9vmj-r5cp",
+   "aliases": [
+    "CVE-2026-13149"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+   "fixed": [
+    "5.0.7",
+    "1.1.16",
+    "2.1.2"
+   ],
+   "symbols": [
+    "expand_",
+    "post",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-6j4f-fj2g-mc7p",
+   "aliases": [
+    "CVE-2026-102276"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+   "fixed": [
+    "5.0.10",
+    "3.0.7",
+    "2.1.5",
+    "1.1.19"
+   ],
+   "symbols": [
+    "parseCommaParts",
+    "expand_",
+    "post",
+    "push.apply",
+    "Function.prototype.apply",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "minimatch.braceExpand",
+    "a"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f886-m6hf-6m8v",
+   "aliases": [
+    "CVE-2026-33750"
+   ],
+   "severity": "MODERATE",
+   "summary": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+   "fixed": [
+    "5.0.5",
+    "3.0.2",
+    "2.0.3",
+    "1.1.13"
+   ],
+   "symbols": [
+    "test",
+    "RangeError",
+    "expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-mh99-v99m-4gvg",
+   "aliases": [
+    "CVE-2026-14257"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+   "fixed": [
+    "5.0.8",
+    "3.0.3",
+    "2.1.3",
+    "1.1.17"
+   ],
+   "symbols": [
+    "expand",
+    "max",
+    "N",
+    "expand_",
+    "minimatch",
+    "glob",
+    "maxLength",
+    "brace-expansion.expand"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q2hr-2g5m-vwhr",
+   "aliases": [
+    "CVE-2026-102277"
+   ],
+   "severity": "MODERATE",
+   "summary": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+   "fixed": [
+    "5.0.12",
+    "3.0.9",
+    "2.1.7",
+    "1.1.21"
+   ],
+   "symbols": [
+    "n",
+    "escClose",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qhr7-859c-m2p7",
+   "aliases": [
+    "CVE-2026-102278"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+   "fixed": [
+    "5.0.11",
+    "3.0.8",
+    "2.1.6",
+    "1.1.20"
+   ],
+   "symbols": [
+    "expand_",
+    "m.post",
+    "parseCommaParts",
+    "max",
+    "maxLength",
+    "expand",
+    "minimatch",
+    "glob",
+    "RangeError",
+    "maxDepth"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rgw5-rvv9-x895",
+   "aliases": [
+    "CVE-2026-69152"
+   ],
+   "severity": "HIGH",
+   "summary": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+   "fixed": [
+    "1.1.18",
+    "2.1.4",
+    "3.0.6",
+    "5.0.9"
+   ],
+   "symbols": [
+    "maxLength",
+    "expand",
+    "combine",
+    "expand_",
+    "values",
+    "A",
+    "expandSequence",
+    "max"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "brace-expansion",
+   "version": "2.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v6h2-p8h4-qcjw",
+   "aliases": [
+    "CVE-2025-5889"
+   ],
+   "severity": "LOW",
+   "summary": "brace-expansion Regular Expression Denial of Service vulnerability",
+   "fixed": [
+    "2.0.2",
+    "1.1.12",
+    "3.0.1",
+    "4.0.1"
+   ],
+   "symbols": [
+    "a5b98a4f30d7813266b221435e1eaaf25a1b0ac5"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "compression",
+   "version": "1.7.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vc2v-76pw-4v95",
+   "aliases": [
+    "CVE-2026-87776"
+   ],
+   "severity": "HIGH",
+   "summary": "compression vulnerable to Denial of Service via memory leak on premature response close",
+   "fixed": [
+    "1.8.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "engine.io",
+   "version": "6.6.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2gc4-cqfq-p2gv",
+   "aliases": [
+    "CVE-2026-102599"
+   ],
+   "severity": "HIGH",
+   "summary": "Socket.IO: Engine.IO Protocol Revision Mismatch DoS",
+   "fixed": [
+    "6.6.10"
+   ],
+   "symbols": [
+    "sid"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "engine.io",
+   "version": "6.6.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-gr94-w7qr-f4j3",
+   "aliases": [
+    "CVE-2026-59724"
+   ],
+   "severity": "HIGH",
+   "summary": "Socket.IO: Engine.IO WebTransport SID DoS",
+   "fixed": [
+    "6.6.7"
+   ],
+   "symbols": [
+    "TypeError",
+    "webtransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "engine.io",
+   "version": "6.6.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-r635-g3xr-vw7x",
+   "aliases": [
+    "CVE-2026-59725"
+   ],
+   "severity": "HIGH",
+   "summary": "Socket.IO: Engine.IO Polling Transport Connection Exhaustion",
+   "fixed": [
+    "6.6.7"
+   ],
+   "symbols": [
+    "engine.io"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-8gc5-j5rx-235r",
+   "aliases": [
+    "CVE-2026-33036"
+   ],
+   "severity": "HIGH",
+   "summary": "fast-xml-parser affected by numeric entity expansion bypassing all entity expansion limits (incomplete fix for CVE-2026-26278)",
+   "fixed": [
+    "5.5.6",
+    "4.5.5"
+   ],
+   "symbols": [
+    "maxTotalExpansions",
+    "maxExpandedLength",
+    "maxEntityCount",
+    "maxEntitySize",
+    "replaceEntitiesValue",
+    "entityExpansionCount",
+    "currentExpandedLength",
+    "lastEntities",
+    "num_dec",
+    "num_hex"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-fj3w-jwp8-x2g3",
+   "aliases": [
+    "CVE-2026-27942"
+   ],
+   "severity": "LOW",
+   "summary": "fast-xml-parser has stack overflow in XMLBuilder with preserveOrder",
+   "fixed": [
+    "5.3.8",
+    "4.5.4"
+   ],
+   "symbols": [
+    "arrToStr"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-gh4j-gqv2-49f6",
+   "aliases": [
+    "CVE-2026-41650"
+   ],
+   "severity": "MODERATE",
+   "summary": "fast-xml-parser XMLBuilder: XML Comment and CDATA Injection via Unescaped Delimiters",
+   "fixed": [
+    "5.7.0"
+   ],
+   "symbols": [
+    "replaceEntitiesValue"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-jmr7-xgp7-cmfj",
+   "aliases": [
+    "CVE-2026-26278"
+   ],
+   "severity": "HIGH",
+   "summary": "fast-xml-parser affected by DoS through entity expansion in DOCTYPE (no expansion limit)",
+   "fixed": [
+    "4.5.4",
+    "5.3.6"
+   ],
+   "symbols": [
+    "replaceEntitiesValue",
+    "val.replace"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-jp2q-39xq-3w4g",
+   "aliases": [
+    "CVE-2026-33349"
+   ],
+   "severity": "MODERATE",
+   "summary": "Entity Expansion Limits Bypassed When Set to Zero Due to JavaScript Falsy Evaluation in fast-xml-parser",
+   "fixed": [
+    "4.5.5",
+    "5.5.7"
+   ],
+   "symbols": [
+    "DocTypeReader",
+    "maxEntityCount",
+    "maxEntitySize",
+    "OptionsBuilder.normalizeProcessEntities",
+    "DocTypeReader.readDocType",
+    "DocTypeReader.readEntityExp"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "fast-xml-parser",
+   "version": "4.4.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-m7jm-9gc2-mpf2",
+   "aliases": [
+    "CVE-2026-25896"
+   ],
+   "severity": "CRITICAL",
+   "summary": "fast-xml-parser has an entity encoding bypass via regex injection in DOCTYPE entity names",
+   "fixed": [
+    "5.3.5",
+    "4.5.4"
+   ],
+   "symbols": [
+    "RegExp",
+    "t",
+    "addExternalEntities",
+    "validateEntityName",
+    "result.root.text",
+    "innerHTML"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "follow-redirects",
+   "version": "1.15.9",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-r4q5-vmmm-2653",
+   "aliases": [
+    "CVE-2026-40895"
+   ],
+   "severity": "MODERATE",
+   "summary": "follow-redirects leaks Custom Authentication Headers to Cross-Domain Redirect Targets",
+   "fixed": [
+    "1.16.0"
+   ],
+   "symbols": [
+    "authorization",
+    "cookie",
+    "Token",
+    "evil.com",
+    "sensitiveHeaders"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "form-data",
+   "version": "4.0.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-fjxv-7rqg-78g4",
+   "aliases": [
+    "CVE-2025-7783"
+   ],
+   "severity": "CRITICAL",
+   "summary": "form-data uses unsafe random function in form-data for choosing boundary",
+   "fixed": [
+    "2.5.4",
+    "3.0.4",
+    "4.0.4"
+   ],
+   "symbols": [
+    "Math.random",
+    "undici",
+    "parrot409"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "form-data",
+   "version": "4.0.2",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-hmw2-7cc7-3qxx",
+   "aliases": [
+    "CVE-2026-12143"
+   ],
+   "severity": "HIGH",
+   "summary": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+   "fixed": [
+    "2.5.6",
+    "3.0.5",
+    "4.0.6"
+   ],
+   "symbols": [
+    "field",
+    "filename",
+    "_multiPartHeader",
+    "_getContentDisposition",
+    "is_admin",
+    "role",
+    "append"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "glob",
+   "version": "10.3.16",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3g3m-2fjr-6pw4",
+   "aliases": [
+    "CVE-2026-118773"
+   ],
+   "severity": "MODERATE",
+   "summary": "Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal",
+   "fixed": [
+    "14.0.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "glob",
+   "version": "10.3.16",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-5j98-mcp5-4vw2",
+   "aliases": [
+    "CVE-2025-64756"
+   ],
+   "severity": "HIGH",
+   "summary": "glob CLI: Command injection via -c/--cmd executes matches with shell:true",
+   "fixed": [
+    "11.1.0",
+    "10.5.0"
+   ],
+   "symbols": [
+    "foregroundChild",
+    "glob",
+    "globSync",
+    "$",
+    "injected_poc"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "hoek",
+   "version": "6.1.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-c429-5p7v-vgjp",
+   "aliases": [
+    "CVE-2020-36604"
+   ],
+   "severity": "HIGH",
+   "summary": "hoek subject to prototype pollution via the clone function.",
+   "fixed": [],
+   "symbols": [
+    "clone"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-h3mg-xc3c-68pw",
+   "aliases": [
+    "CVE-2026-101911"
+   ],
+   "severity": "MODERATE",
+   "summary": "ip-address: Address6 builds a parse diagnostic proportional to the input with no length bound, allowing a single long string to stall or crash the process",
+   "fixed": [
+    "10.7.1"
+   ],
+   "symbols": [
+    "Address6.isValid",
+    "RangeError",
+    "AddressError",
+    "isValid",
+    "parse",
+    "parseMessage",
+    "match",
+    "join",
+    "replace",
+    "Address6",
+    "fromAddressAndMask",
+    "fromAddressAndWildcardMask",
+    "fromWildcard",
+    "fromAddress4Nat64",
+    "toAddress4Nat64",
+    "fromURL",
+    "fromArpa",
+    "fromBigInt",
+    "fromByteArray",
+    "fromAddress4",
+    "try",
+    "catch",
+    "Address4",
+    "ipaddress"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-j6r3-76f7-8jcv",
+   "aliases": [
+    "CVE-2026-101912"
+   ],
+   "severity": "MODERATE",
+   "summary": "ip-address: isInSubnet() and isHostInSubnet() compare addresses of different families as if they shared an address space, allowing an allowlist check to admit an address outside its range",
+   "fixed": [
+    "10.7.1"
+   ],
+   "symbols": [
+    "isInSubnet",
+    "isHostInSubnet",
+    "Address4",
+    "Address6",
+    "is",
+    "n",
+    "v4",
+    "Address6.fromAddress4",
+    "to4",
+    "toAddress4Nat64"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-mwp4-54f8-5fhr",
+   "aliases": [
+    "CVE-2026-69192"
+   ],
+   "severity": "HIGH",
+   "summary": "ip-address: Address4 decodes leading-zero octets as decimal while resolvers decode them as octal, allowing SSRF and trust-boundary bypass",
+   "fixed": [
+    "10.3.1"
+   ],
+   "symbols": [
+    "Address4",
+    "inet_aton",
+    "getaddrinfo",
+    "correctForm",
+    "isPrivate",
+    "Address4.parse",
+    "isLoopback",
+    "isLinkLocal",
+    "isCGNAT",
+    "isInSubnet",
+    "isHostInSubnet",
+    "Address6",
+    "parse",
+    "AddressError",
+    "Address4.isValid",
+    "isValid",
+    "isBlocked"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rpw4-54j3-4h4q",
+   "aliases": [
+    "CVE-2026-101913"
+   ],
+   "severity": "MODERATE",
+   "summary": "ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass to on-link hosts",
+   "fixed": [
+    "10.5.1"
+   ],
+   "symbols": [
+    "Address6.isLinkLocal",
+    "getType",
+    "getScope",
+    "isLinkLocal",
+    "isHostInSubnet",
+    "Address4.isLinkLocal",
+    "isValid",
+    "isPrivate",
+    "ipaddress",
+    "ipv6_addr_type",
+    "isTeredo",
+    "isBlocked"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rxp7-6hxx-x8q5",
+   "aliases": [
+    "CVE-2026-111997"
+   ],
+   "severity": "MODERATE",
+   "summary": "ip-address: Address6 matches a zone identifier in quadratic time ahead of its length limit, allowing a single long string to stall the process",
+   "fixed": [
+    "10.7.4"
+   ],
+   "symbols": [
+    "Address6.isValid",
+    "AddressError",
+    "m",
+    "$",
+    "Address6",
+    "isValid",
+    "fromAddressAndMask",
+    "fromAddressAndWildcardMask",
+    "fromAddress4Nat64",
+    "toAddress4Nat64",
+    "fromWildcard",
+    "fromURL",
+    "fromArpa",
+    "Address4"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ip-address",
+   "version": "9.0.5",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v2v4-37r5-5v8g",
+   "aliases": [
+    "CVE-2026-42338"
+   ],
+   "severity": "MODERATE",
+   "summary": "ip-address has XSS in Address6 HTML-emitting methods",
+   "fixed": [
+    "10.1.1"
+   ],
+   "symbols": [
+    "Address6.group",
+    "Address6.link",
+    "AddressError.parseMessage",
+    "Address6",
+    "parseMessage",
+    "innerHTML",
+    "v6.helpers.spanAll",
+    "this.address",
+    "group",
+    "helpers.simpleGroup",
+    "link",
+    "prefix",
+    "className",
+    "onmouseover",
+    "parse4in6",
+    "String.replace",
+    "spanAll",
+    "n",
+    "isValid",
+    "correctForm",
+    "isInSubnet",
+    "bigInt",
+    "AddressError",
+    "Address6.isValid"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "joi",
+   "version": "14.3.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-q7cg-457f-vx79",
+   "aliases": [
+    "CVE-2026-48038"
+   ],
+   "severity": "MODERATE",
+   "summary": "joi has an uncaught RangeError on deeply nested input through recursive `link()` schemas",
+   "fixed": [
+    "18.2.1",
+    "17.13.4"
+   ],
+   "symbols": [
+    "link",
+    "validate",
+    "validateAsync",
+    "RangeError",
+    "ValidationError"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "joi",
+   "version": "14.3.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-wr44-6hxh-3jwq",
+   "aliases": [
+    "CVE-2026-90771"
+   ],
+   "severity": "MODERATE",
+   "summary": "joi messages compilation allows prototype replacement through __proto__ error codes",
+   "fixed": [
+    "17.13.8",
+    "18.2.9"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-2943-5xfg-gq5f",
+   "aliases": [
+    "CVE-2026-77414"
+   ],
+   "severity": "CRITICAL",
+   "summary": "JSONata vulnerable to Arbitrary Code Execution via crafted JSONata expressions",
+   "fixed": [
+    "2.2.1",
+    "1.8.8"
+   ],
+   "symbols": [
+    "hasOwnProperty",
+    "environment.lookup"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-663r-x48j-fg8p",
+   "aliases": [
+    "CVE-2026-12208"
+   ],
+   "severity": "MODERATE",
+   "summary": "jsonata: Function Binding Prototype Pollution via hasOwnProperty Override",
+   "fixed": [
+    "1.8.8",
+    "2.2.1"
+   ],
+   "symbols": [
+    "createFrame"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-66mm-25pp-rfff",
+   "aliases": [
+    "CVE-2026-77415"
+   ],
+   "severity": "CRITICAL",
+   "summary": "JSONata vulnerable to Arbitrary Code Execution via crafted JSONata expressions",
+   "fixed": [
+    "2.2.1",
+    "1.8.8"
+   ],
+   "symbols": [
+    "$clone",
+    "evaluateTransformExpression",
+    "proc.arguments.forEach",
+    "Array.prototype.forEach"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-86vw-mfpg-wwv9",
+   "aliases": [
+    "CVE-2026-52746"
+   ],
+   "severity": "HIGH",
+   "summary": "jsonata: Malicious inputs to \"$toMillis\" function can cause resource exhaustion",
+   "fixed": [
+    "2.2.0",
+    "1.8.9"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "jsonata",
+   "version": "2.0.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8gq3-vp5j-2grp",
+   "aliases": [
+    "CVE-2026-77413"
+   ],
+   "severity": "CRITICAL",
+   "summary": "JSONata: Arbitrary Code Execution via crafted JSONata expressions",
+   "fixed": [
+    "1.8.8",
+    "2.2.0"
+   ],
+   "symbols": [
+    "hasOwnProperty",
+    "lookup"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jws",
+   "version": "3.2.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-869p-cjfg-cm3x",
+   "aliases": [
+    "CVE-2025-65945"
+   ],
+   "severity": "HIGH",
+   "summary": "auth0/node-jws Improperly Verifies HMAC Signature",
+   "fixed": [
+    "3.2.3",
+    "4.0.1"
+   ],
+   "symbols": [
+    "jws.createVerify",
+    "jws.verify"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "jws",
+   "version": "4.0.0",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-869p-cjfg-cm3x",
+   "aliases": [
+    "CVE-2025-65945"
+   ],
+   "severity": "HIGH",
+   "summary": "auth0/node-jws Improperly Verifies HMAC Signature",
+   "fixed": [
+    "3.2.3",
+    "4.0.1"
+   ],
+   "symbols": [
+    "jws.createVerify",
+    "jws.verify"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-2qv6-9wx5-cwv4",
+   "aliases": [
+    "CVE-2026-44644"
+   ],
+   "severity": "MODERATE",
+   "summary": "LiquidJS's strip_html filter bypass via newline characters in HTML tags enables XSS",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "strip_html",
+    "onerror",
+    "onload",
+    "s",
+    "img",
+    "liquidjs",
+    "outputEscape",
+    "escape"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4r6h-5v86-94p3",
+   "aliases": [
+    "CVE-2026-69222"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS: Uncontrolled Resource Consumption in `join` filter allows template authors to bypass `memoryLimit` and crash the process",
+   "fixed": [
+    "10.27.2"
+   ],
+   "symbols": [
+    "join",
+    "memoryLimit",
+    "concat",
+    "array.length",
+    "replace",
+    "replace_first",
+    "date",
+    "array_to_sentence_string",
+    "split"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4rc3-7j7w-m548",
+   "aliases": [
+    "CVE-2026-41311"
+   ],
+   "severity": "HIGH",
+   "summary": "liquidjs has a Denial of Service via circular block reference in layout",
+   "fixed": [
+    "10.25.7"
+   ],
+   "symbols": [
+    "a",
+    "getBlockRender",
+    "renderChild"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-56p5-8mhr-2fph",
+   "aliases": [
+    "CVE-2026-35525"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS: Root restriction bypass for partial and layout loading through symlinked templates",
+   "fixed": [
+    "10.25.3"
+   ],
+   "symbols": [
+    "link.liquid"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6q5m-63h6-5x4v",
+   "aliases": [
+    "CVE-2026-33287"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS has Exponential Memory Amplification through its replace_first Filter $& Pattern",
+   "fixed": [
+    "10.25.1"
+   ],
+   "symbols": [
+    "replace_first",
+    "String.prototype.replace",
+    "memoryLimit",
+    "$",
+    "replace",
+    "replace_last"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8xx9-69p8-7jp3",
+   "aliases": [
+    "CVE-2026-44645"
+   ],
+   "severity": "MODERATE",
+   "summary": "LiquidJS has a renderLimit DoS guard bypass via empty `{% for %}` body",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "renderLimit",
+    "parseAndRenderSync",
+    "N",
+    "memoryLimit",
+    "Render.renderTemplates",
+    "for",
+    "renderTemplates",
+    "this.templates",
+    "renderLimit.check",
+    "Infinity",
+    "templates"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9r5m-9576-7f6x",
+   "aliases": [
+    "CVE-2026-33285"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS: memoryLimit Bypass through Negative Range Values Leads to Process Crash",
+   "fixed": [],
+   "symbols": [
+    "memoryLimit",
+    "replace",
+    "Limiter.use",
+    "count",
+    "this.base",
+    "append"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9x9p-qf8f-mvjg",
+   "aliases": [
+    "CVE-2026-44646"
+   ],
+   "severity": "MODERATE",
+   "summary": "LiquidJS's `{% render %}` tag silently bypasses per-render `ownPropertyOnly:true` via `Context.spawn()`",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "Context.spawn",
+    "Context",
+    "ownPropertyOnly",
+    "opts.ownPropertyOnly",
+    "RenderOptions.ownPropertyOnly",
+    "parseAndRender",
+    "where",
+    "reject",
+    "group_by",
+    "find",
+    "find_index",
+    "has",
+    "spawn",
+    "RenderOptions",
+    "this.opts",
+    "childCtx.readProperty",
+    "opts",
+    "render",
+    "this.ownPropertyOnly",
+    "this.opts.ownPropertyOnly",
+    "readJSProperty"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-fwxr-j5w2-587m",
+   "aliases": [
+    "CVE-2026-106120"
+   ],
+   "severity": "MODERATE",
+   "summary": "LiquidJS: ownPropertyOnly bypass for inherited array indices in first/last/join/reverse/slice/compact, `.first`/`.last`, negative index, and for-loop iteration",
+   "fixed": [
+    "10.27.2"
+   ],
+   "symbols": [
+    "ownPropertyOnly",
+    "Array.prototype",
+    "readJSProperty"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-g357-x5c3-c72p",
+   "aliases": [
+    "CVE-2026-55575"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS: `pop` filter bypasses `memoryLimit` accounting that its array-filter siblings enforce",
+   "fixed": [
+    "10.27.1"
+   ],
+   "symbols": [
+    "pop",
+    "memoryLimit",
+    "renderLimit",
+    "shift",
+    "unshift",
+    "compact",
+    "concat",
+    "reverse",
+    "sample",
+    "slice",
+    "map",
+    "sortBy",
+    "where",
+    "group_by",
+    "uniq",
+    "a8fd734b5",
+    "this.context.memoryLimit",
+    "render"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-gf2q-c269-pqgc",
+   "aliases": [
+    "CVE-2026-45618"
+   ],
+   "severity": "CRITICAL",
+   "summary": "LiquidJS is Vulnerable to Remote Code Execution",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "this.loader.lookup",
+    "this.readFile",
+    "this.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-hh27-hf48-9f5q",
+   "aliases": [
+    "CVE-2026-45357"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS has a memory and render limit bypass via unbounded width padding in `date` filter (strftime)",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "date",
+    "pad",
+    "padStart",
+    "memoryLimit",
+    "renderLimit",
+    "strftime",
+    "width",
+    "this.context.memoryLimit",
+    "replace",
+    "user_supplied_format",
+    "date_to_xmlschema",
+    "date_to_rfc822",
+    "date_to_string",
+    "date_to_long_string",
+    "String.prototype.repeat",
+    "padWidth",
+    "N"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-mmg9-6m6j-jqqx",
+   "aliases": [
+    "CVE-2026-34166"
+   ],
+   "severity": "LOW",
+   "summary": "LiquidJS Has Memory Limit Bypass via Quadratic Amplification in `replace` Filter",
+   "fixed": [
+    "10.25.3"
+   ],
+   "symbols": [
+    "replace",
+    "memoryLimit",
+    "memoryLimit.use",
+    "str",
+    "pattern",
+    "a",
+    "Limiter",
+    "use",
+    "Infinity",
+    "split"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r7g9-xpmj-5fcq",
+   "aliases": [
+    "CVE-2026-45617"
+   ],
+   "severity": "HIGH",
+   "summary": "LiquidJS Vulnerable to ReDoS via Quadratic Backtracking in `strip_html` Filter Regex",
+   "fixed": [
+    "10.26.0"
+   ],
+   "symbols": [
+    "strip_html",
+    "str.length",
+    "String.prototype.replace",
+    "memoryLimit",
+    "Infinity",
+    "replace"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rv5g-f82m-qrvv",
+   "aliases": [
+    "CVE-2026-39412"
+   ],
+   "severity": "MODERATE",
+   "summary": "LiquidJS: ownPropertyOnly bypass via sort_natural filter — prototype property information disclosure through sorting side-channel",
+   "fixed": [
+    "10.25.4"
+   ],
+   "symbols": [
+    "sort_natural",
+    "ownPropertyOnly",
+    "readJSProperty",
+    "hasOwnProperty",
+    "sort",
+    "apiKey"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-v273-448j-v4qj",
+   "aliases": [
+    "CVE-2026-39859"
+   ],
+   "severity": "MODERATE",
+   "summary": "LiquidJS: `renderFile()` / `parseFile()` bypass configured `root` and allow arbitrary file read",
+   "fixed": [
+    "10.25.5"
+   ],
+   "symbols": [
+    "renderFile",
+    "parseFile",
+    "liquidjs",
+    "Liquid",
+    "candidates",
+    "LookupType.Root",
+    "enforceRoot",
+    "contains",
+    "include",
+    "render",
+    "layout"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "liquidjs",
+   "version": "10.21.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-wmfp-5q7x-987x",
+   "aliases": [
+    "CVE-2026-30952"
+   ],
+   "severity": "HIGH",
+   "summary": "liquidjs has a path traversal fallback vulnerability",
+   "fixed": [
+    "10.25.0"
+   ],
+   "symbols": [
+    "layout",
+    "render",
+    "include",
+    "require.resolve",
+    "type",
+    "fs"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f23m-r3pf-42rh",
+   "aliases": [
+    "CVE-2026-2950"
+   ],
+   "severity": "MODERATE",
+   "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit",
+    "Object.prototype",
+    "Number.prototype",
+    "String.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-r5fr-rjxr-66jc",
+   "aliases": [
+    "CVE-2026-4800"
+   ],
+   "severity": "HIGH",
+   "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+   "fixed": [
+    "4.18.0"
+   ],
+   "symbols": [
+    "_.template",
+    "variable",
+    "options.imports",
+    "assignInWith",
+    "Object.prototype",
+    "importsKeys",
+    "reForbiddenIdentifierChars",
+    "assignWith"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "lodash",
+   "version": "4.17.21",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-xxjr-mmjv-4gpg",
+   "aliases": [
+    "CVE-2025-13465"
+   ],
+   "severity": "MODERATE",
+   "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+   "fixed": [
+    "4.17.23"
+   ],
+   "symbols": [
+    "_.unset",
+    "_.omit"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-23c5-xmqv-rm74",
+   "aliases": [
+    "CVE-2026-27904"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.4"
+   ],
+   "symbols": [
+    "minimatch",
+    "AST.toRegExpSource",
+    "a",
+    "z",
+    "this.set",
+    "matchOne",
+    "time_total"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3ppc-4f35-3m26",
+   "aliases": [
+    "CVE-2026-26996"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+   "fixed": [
+    "10.2.1",
+    "9.0.6",
+    "8.0.5",
+    "7.4.7",
+    "6.2.1",
+    "5.1.7",
+    "4.2.4",
+    "3.1.3"
+   ],
+   "symbols": [
+    "minimatch",
+    "X"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7r86-cg39-jmmj",
+   "aliases": [
+    "CVE-2026-27903"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.3"
+   ],
+   "symbols": [
+    "matchOne",
+    "n",
+    "k",
+    "minimatch",
+    "time_total"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "3.1.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-g3hv-75wg-m249",
+   "aliases": [
+    "CVE-2026-118764"
+   ],
+   "severity": "MODERATE",
+   "summary": "minimatch has potential denial of service via globparts amplification",
+   "fixed": [
+    "11.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-23c5-xmqv-rm74",
+   "aliases": [
+    "CVE-2026-27904"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.4"
+   ],
+   "symbols": [
+    "minimatch",
+    "AST.toRegExpSource",
+    "a",
+    "z",
+    "this.set",
+    "matchOne",
+    "time_total"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-3ppc-4f35-3m26",
+   "aliases": [
+    "CVE-2026-26996"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+   "fixed": [
+    "10.2.1",
+    "9.0.6",
+    "8.0.5",
+    "7.4.7",
+    "6.2.1",
+    "5.1.7",
+    "4.2.4",
+    "3.1.3"
+   ],
+   "symbols": [
+    "minimatch",
+    "X"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-7r86-cg39-jmmj",
+   "aliases": [
+    "CVE-2026-27903"
+   ],
+   "severity": "HIGH",
+   "summary": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+   "fixed": [
+    "10.2.3",
+    "9.0.7",
+    "8.0.6",
+    "7.4.8",
+    "6.2.2",
+    "5.1.8",
+    "4.2.5",
+    "3.1.3"
+   ],
+   "symbols": [
+    "matchOne",
+    "n",
+    "k",
+    "minimatch",
+    "time_total"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "minimatch",
+   "version": "9.0.3",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-g3hv-75wg-m249",
+   "aliases": [
+    "CVE-2026-118764"
+   ],
+   "severity": "MODERATE",
+   "summary": "minimatch has potential denial of service via globparts amplification",
+   "fixed": [
+    "11.0.1"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "mysql2",
+   "version": "3.11.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-3f6p-5ww8-9rcr",
+   "aliases": [],
+   "severity": "HIGH",
+   "summary": "MySQL2: Auth Plugin Downgrade to mysql_clear_password Leaks Plaintext Credentials",
+   "fixed": [
+    "3.22.0"
+   ],
+   "symbols": [
+    "mysql_clear_password",
+    "caching_sha2_password",
+    "standardAuthPlugins"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "mysql2",
+   "version": "3.11.5",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rgwj-5xj2-c3m3",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "MySQL2: Unbounded zlib inflate in compressed MySQL protocol handler allows decompression-bomb DoS",
+   "fixed": [
+    "3.23.1"
+   ],
+   "symbols": [
+    "handleCompressedPacket",
+    "maxOutputLength",
+    "buffer.kMaxLength",
+    "Number.MAX_SAFE_INTEGER",
+    "packet.readInt24",
+    "mysql2",
+    "zlib.inflate",
+    "err",
+    "mysql.createServer",
+    "Packets.Handshake",
+    "connection.writeOk"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nanoid",
+   "version": "3.3.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-28wg-ghj8-5hjv",
+   "aliases": [
+    "CVE-2026-67214"
+   ],
+   "severity": "HIGH",
+   "summary": "nanoid: non-secure generators can loop indefinitely with negative size",
+   "fixed": [
+    "3.3.16",
+    "5.1.16"
+   ],
+   "symbols": [
+    "customAlphabet",
+    "nanoid"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nanoid",
+   "version": "3.3.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-2v37-7h3g-55p8",
+   "aliases": [
+    "CVE-2026-67213"
+   ],
+   "severity": "HIGH",
+   "summary": "nanoid: custom generators can loop indefinitely when size is zero",
+   "fixed": [
+    "3.3.18",
+    "5.1.6"
+   ],
+   "symbols": [
+    "customAlphabet",
+    "customRandom"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nanoid",
+   "version": "3.3.8",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xwg4-73v4-xw9w",
+   "aliases": [
+    "CVE-2026-73086"
+   ],
+   "severity": "HIGH",
+   "summary": "nanoid: Integer Overflow or Wraparound",
+   "fixed": [
+    "3.3.12",
+    "5.1.11"
+   ],
+   "symbols": [
+    "size",
+    "nanoid",
+    "fillPool",
+    "poolOffset"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-268h-hp4c-crq3",
+   "aliases": [
+    "CVE-2026-82661"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: CRLF injection in Nodemailer List-* header comments allows arbitrary message header injection",
+   "fixed": [
+    "8.0.9"
+   ],
+   "symbols": [
+    "list",
+    "mimeFuncs.foldLines",
+    "list.help.comment",
+    "list.unsubscribe.comment",
+    "list.subscribe.comment",
+    "list.post.comment",
+    "list.owner.comment",
+    "list.archive.comment",
+    "list.id.comment",
+    "value.comment",
+    "options.prepared",
+    "foldLines",
+    "comment",
+    "subject",
+    "nodemailer",
+    "_getListHeaders",
+    "streamTransport",
+    "Subject",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-2x7j-588g-ccc2",
+   "aliases": [
+    "CVE-2026-92596"
+   ],
+   "severity": "HIGH",
+   "summary": "Nodemailer: Quadratic (O(n²)) time complexity in addressparser allows remote denial of service via a crafted address list",
+   "fixed": [
+    "9.1.0"
+   ],
+   "symbols": [
+    "To",
+    "Cc",
+    "Bcc",
+    "From",
+    "addressparser",
+    "Array.prototype.concat",
+    "_handleAddress",
+    "_parseAddresses",
+    "getEnvelope",
+    "concat",
+    "maxRecipients",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-39m8-27wv-hr27",
+   "aliases": [
+    "CVE-2026-110871"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Quadratic (O(n^2)) DKIM header unfolding lets a large folded header cause remote denial of service during signing",
+   "fixed": [
+    "10.0.10"
+   ],
+   "symbols": [
+    "parseHeaders",
+    "lines",
+    "checkHeaders",
+    "cacheTreshold",
+    "rawHeaders",
+    "splice"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4ffr-jq9g-5ffx",
+   "aliases": [
+    "CVE-2026-110869"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Quadratic backtracking in SMTP AUTH mechanism detection regexes allows pre-auth remote denial of service",
+   "fixed": [
+    "10.0.13"
+   ],
+   "symbols": [
+    "SMTPConnection._actionEHLO",
+    "nodemailer",
+    "_onData",
+    "_processResponse",
+    "_actionEHLO",
+    "ignoreTLS",
+    "maxResponseSize",
+    "RegExp.prototype.test",
+    "f2d82fa",
+    "test",
+    "includes"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4g23-2xm8-66gc",
+   "aliases": [
+    "CVE-2026-110872"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Quadratic (O(n^2)) SMTP client reply parsing lets a malicious server or MITM cause a pre-auth remote denial of service",
+   "fixed": [
+    "10.0.10"
+   ],
+   "symbols": [
+    "_onData",
+    "lastIndexOf",
+    "slice",
+    "greetingTimeout",
+    "socketTimeout",
+    "isPartialResponse",
+    "maxSize",
+    "maxLength",
+    "onData"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6vj9-mwq6-2f5v",
+   "aliases": [
+    "CVE-2026-100701"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Process-global DNS cache reuses TLS `servername` across transports, enabling cross-tenant SMTP credential disclosure",
+   "fixed": [
+    "10.0.2"
+   ],
+   "symbols": [
+    "servername",
+    "host",
+    "tls.servername",
+    "nodemailer",
+    "resolveHostname",
+    "options.servername",
+    "formatDNSValue",
+    "SMTPConnection.connect",
+    "opts",
+    "_resolveAndConnect",
+    "opts.servername",
+    "tls.connect",
+    "attacker.test",
+    "openssl.cnf",
+    "victim.test",
+    "DnsCacheValue",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-85x2-q946-cp5h",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: A \">\" inside a quoted local part ends an angle-addr early in addressparser, delivering to a domain the header does not name",
+   "fixed": [
+    "10.1.4"
+   ],
+   "symbols": [
+    "evil.com",
+    "good.com",
+    "email._header_value_parser.get_address_list"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8c8m-p3m8-cjg8",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: A nested comment ends early in addressparser, releasing the rest of the comment as a recipient",
+   "fixed": [
+    "10.1.4"
+   ],
+   "symbols": [
+    "email._header_value_parser.get_address_list",
+    "Victim"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8m3c-c648-2xjj",
+   "aliases": [
+    "CVE-2026-92595"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: resolveContent() on a MailMessage bypasses disableFileAccess/disableUrlAccess when called with the legacy signature",
+   "fixed": [
+    "9.1.1"
+   ],
+   "symbols": [
+    "disableFileAccess",
+    "disableUrlAccess",
+    "text",
+    "path",
+    "href",
+    "MailMessage.resolveAll",
+    "_convertDataImages",
+    "shared.resolveContent",
+    "MailMessage",
+    "mail.data",
+    "resolveContentValue",
+    "options.disableUrlAccess",
+    "options.disableFileAccess",
+    "nmfetch",
+    "fs.createReadStream",
+    "resolveAll",
+    "transporter.sendMail",
+    "resolveContent",
+    "efd6e29c10c6e0c25c57bd2f2a71302838235a4f",
+    "compile",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8vvx-rff5-p5rq",
+   "aliases": [
+    "CVE-2026-100702"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Nested structured recipient arrays bypass the parser depth limit and cause stack exhaustion DoS",
+   "fixed": [
+    "10.0.2"
+   ],
+   "symbols": [
+    "nodemailer",
+    "to",
+    "cc",
+    "bcc",
+    "MimeNodeAddressInput",
+    "MimeNode._parseAddresses",
+    "addressparser",
+    "Tokenizer",
+    "Array.prototype.toString",
+    "join",
+    "toString",
+    "sendMail",
+    "maxRecipients",
+    "jsonTransport",
+    "_parseAddresses",
+    "str",
+    "getEnvelope",
+    "poc.mjs",
+    "depth",
+    "JSON.parse",
+    "_handleAddress",
+    "_depth",
+    "replyTo",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-c7w3-x93f-qmm8",
+   "aliases": [
+    "CVE-2026-82854"
+   ],
+   "severity": "LOW",
+   "summary": "Nodemailer has SMTP command injection due to unsanitized `envelope.size` parameter",
+   "fixed": [
+    "8.0.4"
+   ],
+   "symbols": [
+    "envelope.size",
+    "envelope",
+    "sendMail",
+    "size",
+    "from",
+    "to",
+    "dsn.ret",
+    "dsn.envid",
+    "dsn.orcpt",
+    "encodeXText",
+    "MimeNode.setEnvelope",
+    "_sendCommand",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-cc9r-2j5m-2m83",
+   "aliases": [
+    "CVE-2026-92597"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Recipient-domain validation bypass via RFC 5322 comment mis-parsing leads to email delivery to an attacker-controlled domain",
+   "fixed": [
+    "9.1.0"
+   ],
+   "symbols": [
+    "comevil.com",
+    "aiosmtpd",
+    "Tokenizer.operators",
+    "_handleAddress",
+    "noBreak",
+    "evil.com",
+    "x",
+    "getEnvelope",
+    "R8_comment_glue",
+    "email.policy.default",
+    "InvalidHeaderDefect",
+    "startsWith",
+    "addressparser",
+    "email.utils.getaddresses",
+    "url.domainToASCII",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-g73g-hqqh-jr95",
+   "aliases": [
+    "CVE-2026-110870"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: RFC 5322 comment inside an angle-bracket address is never stripped",
+   "fixed": [
+    "10.0.13"
+   ],
+   "symbols": [
+    "_handleAddress",
+    "joins",
+    "_recoverAddrSpec",
+    "envelope.to",
+    "jsonTransport",
+    "streamTransport",
+    "aiosmtpd",
+    "Tokenizer.checkChar",
+    "operatorExpecting",
+    "address",
+    "state",
+    "text",
+    "x",
+    "master",
+    "sendMail",
+    "email.utils.parseaddr",
+    "email.policy.default",
+    "addressparser",
+    "To",
+    "Cc",
+    "Bcc",
+    "From",
+    "MimeNode._parseAddresses",
+    "to",
+    "cc",
+    "bcc",
+    "from",
+    "replyTo",
+    "envelope",
+    "Tokenizer.operatorExpecting",
+    "data.address",
+    "Mailbox",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-m943-m63m-w62w",
+   "aliases": [],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: A \";\" inside a quoted string or comment ends an address group early in addressparser, turning display text into a recipient",
+   "fixed": [
+    "10.1.4"
+   ],
+   "symbols": [
+    "email._header_value_parser.get_address_list"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-mm7p-fcc7-pg87",
+   "aliases": [
+    "CVE-2025-13033"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: Email to an unintended domain can occur due to Interpretation Conflict",
+   "fixed": [
+    "7.0.7"
+   ],
+   "symbols": [
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-p6gq-j5cr-w38f",
+   "aliases": [
+    "CVE-2026-82659"
+   ],
+   "severity": "HIGH",
+   "summary": "Nodemailer: Message-level raw option bypasses disableFileAccess/disableUrlAccess, enabling arbitrary file read and full-response SSRF in the delivered message",
+   "fixed": [
+    "9.0.1"
+   ],
+   "symbols": [
+    "raw",
+    "disableFileAccess",
+    "disableUrlAccess",
+    "nodemailer",
+    "text",
+    "watchHtml",
+    "amp",
+    "icalEvent",
+    "MailComposer.compile",
+    "normalize",
+    "MimeNode",
+    "_createMixed",
+    "_createAlternative",
+    "_createRelated",
+    "_createContentNode",
+    "this.disableFileAccess",
+    "this.disableUrlAccess",
+    "createChild",
+    "appendChild",
+    "setRaw",
+    "_getStream",
+    "fs.createReadStream",
+    "nmfetch",
+    "mail.data",
+    "mail.raw",
+    "createReadStream",
+    "compile",
+    "to",
+    "rootNode",
+    "streamTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r7g4-qg5f-qqm2",
+   "aliases": [
+    "CVE-2026-82662"
+   ],
+   "severity": "HIGH",
+   "summary": "Nodemailer: Improper TLS Certificate Validation in OAuth2 Token Fetch Enables Credential Interception",
+   "fixed": [
+    "8.0.8"
+   ],
+   "symbols": [
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-rcmh-qjqh-p98v",
+   "aliases": [
+    "CVE-2025-14874"
+   ],
+   "severity": "HIGH",
+   "summary": "Nodemailer’s addressparser is vulnerable to DoS caused by recursive calls",
+   "fixed": [
+    "7.0.11"
+   ],
+   "symbols": [
+    "data.group",
+    "nodemailer.createTransport",
+    "buildDeepGroup"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-v53p-9fqp-m79j",
+   "aliases": [
+    "CVE-2026-100700"
+   ],
+   "severity": "HIGH",
+   "summary": "Nodemailer: Quadratic backtracking in the addressparser free-text fallback allows remote denial of service",
+   "fixed": [
+    "10.0.6"
+   ],
+   "symbols": [
+    "addressparser",
+    "to",
+    "from",
+    "cc"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vvjj-xcjg-gr5g",
+   "aliases": [
+    "CVE-2026-82853"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer Vulnerable to SMTP Command Injection via CRLF in Transport name Option (EHLO/HELO) ",
+   "fixed": [
+    "8.0.5"
+   ],
+   "symbols": [
+    "_sendCommand",
+    "envelope.from",
+    "envelope.to",
+    "envelope.size",
+    "size",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-wmmp-3585-3rmp",
+   "aliases": [
+    "CVE-2026-92598"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer: IDN/Punycode domain allow-list bypass leads to email delivery to an attacker-controlled domain",
+   "fixed": [
+    "9.1.0"
+   ],
+   "symbols": [
+    "url.domainToASCII",
+    "idna",
+    "_normalizeAddress",
+    "punycode",
+    "getEnvelope",
+    "_setEnvelope",
+    "_convertAddresses",
+    "company.com",
+    "a",
+    "idna_convert",
+    "punycode.toASCII",
+    "domainToUnicode",
+    "aiosmtpd",
+    "nodemailer.createTransport"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "nodemailer",
+   "version": "6.9.16",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-wqvq-jvpq-h66f",
+   "aliases": [
+    "CVE-2026-82660"
+   ],
+   "severity": "MODERATE",
+   "summary": "Nodemailer jsonTransport bypasses disableFileAccess and disableUrlAccess during message normalization",
+   "fixed": [
+    "8.0.9"
+   ],
+   "symbols": [
+    "disableFileAccess",
+    "disableUrlAccess",
+    "MimeNode._getStream",
+    "jsonTransport",
+    "mail.normalize",
+    "text",
+    "shared.resolveContent",
+    "path",
+    "text.href",
+    "attachDataUrls",
+    "_convertDataImages",
+    "JSONTransport",
+    "mail.data",
+    "resolveAll",
+    "watchHtml",
+    "amp",
+    "icalEvent",
+    "resolveContent",
+    "MimeNode",
+    "mail.resolveContent",
+    "createTransport",
+    "streamTransport",
+    "nodemailer",
+    "d78b63b",
+    "href",
+    "html.path",
+    "html.href",
+    "nodemailer.createTransport",
+    "sendMail"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "on-headers",
+   "version": "1.0.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-76c9-3jph-rj3q",
+   "aliases": [
+    "CVE-2025-7339"
+   ],
+   "severity": "LOW",
+   "summary": "on-headers is vulnerable to http response header manipulation",
+   "fixed": [
+    "1.1.0"
+   ],
+   "symbols": [
+    "response.writeHead"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "path-to-regexp",
+   "version": "0.1.12",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-37ch-88jc-xwx2",
+   "aliases": [
+    "CVE-2024-45296",
+    "CVE-2026-4867",
+    "GHSA-9wv6-86v2-598j"
+   ],
+   "severity": "HIGH",
+   "summary": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters",
+   "fixed": [
+    "0.1.13"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-2pr8-phx7-x9h3",
+   "aliases": [
+    "CVE-2026-44294"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobuf.js: Denial of service from crafted field names in generated code",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "fromObject",
+    "toObject"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-66ff-xgx4-vchm",
+   "aliases": [
+    "CVE-2026-44293"
+   ],
+   "severity": "HIGH",
+   "summary": "protobuf.js: Code injection through bytes field defaults in generated toObject code",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "toObject",
+    "bytes"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-685m-2w69-288q",
+   "aliases": [
+    "CVE-2026-44289"
+   ],
+   "severity": "HIGH",
+   "summary": "protobuf.js: Denial of service through unbounded protobuf recursion",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-75px-5xx7-5xc7",
+   "aliases": [
+    "CVE-2026-44291"
+   ],
+   "severity": "HIGH",
+   "summary": "protobuf.js: Code generation gadget after prototype pollution",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "Object.prototype"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-f38q-mgvj-vph7",
+   "aliases": [
+    "CVE-2026-54269"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobufjs : Schema-derived names can shadow runtime-significant properties",
+   "fixed": [
+    "7.6.3",
+    "8.6.0"
+   ],
+   "symbols": [
+    "hasOwnProperty",
+    "$type",
+    "rpcCall",
+    "verify",
+    "toObject"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-fx83-v9x8-x52w",
+   "aliases": [
+    "CVE-2026-44292"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobuf.js: Prototype injection in generated message constructors",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "Object.prototype",
+    "instanceof"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jggg-4jg4-v7c6",
+   "aliases": [
+    "CVE-2026-45740"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobufjs: Denial of Service via unbounded recursive JSON descriptor expansion",
+   "fixed": [
+    "7.5.8",
+    "8.2.0"
+   ],
+   "symbols": [
+    "Root.fromJSON",
+    "Namespace.addJSON",
+    "nested"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-jvwf-75h9-cwgg",
+   "aliases": [
+    "CVE-2026-44290"
+   ],
+   "severity": "HIGH",
+   "summary": "protobuf.js: Process-wide denial of service through unsafe option paths",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [
+    "parse",
+    "Root.load",
+    "Root.loadSync",
+    "Root.fromJSON"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-q6x5-8v7m-xcrf",
+   "aliases": [
+    "CVE-2026-44288"
+   ],
+   "severity": "MODERATE",
+   "summary": "protobufjs has overlong UTF-8 decoding",
+   "fixed": [
+    "7.5.6",
+    "8.0.2"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-wcpc-wj8m-hjx6",
+   "aliases": [
+    "CVE-2026-48712"
+   ],
+   "severity": "HIGH",
+   "summary": "protobufjs: Denial of service through unbounded Any expansion during JSON conversion",
+   "fixed": [
+    "7.6.1",
+    "8.4.1"
+   ],
+   "symbols": [
+    "toObject",
+    "google.protobuf.Any",
+    "Any",
+    "type_url"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "protobufjs",
+   "version": "7.2.6",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-xq3m-2v4x-88gg",
+   "aliases": [
+    "CVE-2026-41242"
+   ],
+   "severity": "CRITICAL",
+   "summary": "Arbitrary code execution in protobufjs",
+   "fixed": [
+    "8.0.1",
+    "7.5.5"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "proxy-addr",
+   "version": "2.0.7",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-jqcg-44mw-7w3h",
+   "aliases": [
+    "CVE-2026-90711"
+   ],
+   "severity": "CRITICAL",
+   "summary": "proxy-addr vulnerable to IP spoofing via IPv4-mapped IPv6 trust subnet",
+   "fixed": [
+    "2.0.8"
+   ],
+   "symbols": [
+    "req.ip",
+    "req.ips"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "aliases": [
+    "CVE-2026-82417"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs: Denial of Service via Attacker Controlled isBuffer",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6pq8-jhm2-2vcw",
+   "aliases": [
+    "CVE-2026-110816"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs : qs.stringify with arrayFormat 'comma' throws an uncaught TypeError on array elements carrying a non-callable own toString (DoS)",
+   "fixed": [
+    "6.16.1"
+   ],
+   "symbols": [
+    "obj",
+    "toString",
+    "Array.prototype.join",
+    "ToPrimitive",
+    "Object.prototype.valueOf",
+    "qs.stringify",
+    "extended",
+    "JSON.parse",
+    "TypeError",
+    "allowPrototypes",
+    "stringify",
+    "encodeValuesOnly",
+    "valueOf",
+    "qs.parse",
+    "plainObjects",
+    "maybeMap",
+    "join",
+    "arrayFormat",
+    "indices",
+    "skipNulls",
+    "strictNullHandling",
+    "isNonNullishPrimitive",
+    "isBuffer",
+    "Object.prototype.toString",
+    "http.createServer"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "aliases": [
+    "CVE-2025-15284"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit",
+    "qs.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.10.4",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w7fw-mjwx-w883",
+   "aliases": [
+    "CVE-2026-2391"
+   ],
+   "severity": "LOW",
+   "summary": "qs's arrayLimit bypass in comma parsing allows denial of service",
+   "fixed": [
+    "6.14.2"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "comma",
+    "parseArrayValue",
+    "utils.combine",
+    "currentArrayLength",
+    "throwOnLimitExceeded",
+    "qs.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-4mjr-xmp4-gh2g",
+   "aliases": [
+    "CVE-2026-82417"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs: Denial of Service via Attacker Controlled isBuffer",
+   "fixed": [
+    "6.16.0"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "utils.isBuffer",
+    "constructor.isBuffer",
+    "qs",
+    "TypeError",
+    "qs.parse",
+    "parse",
+    "stringify",
+    "JSON.parse",
+    "plainObjects",
+    "obj.constructor.isBuffer",
+    "isBuffer",
+    "utils.isRegExp",
+    "Object.prototype.toString",
+    "handleRequestAsync"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6pq8-jhm2-2vcw",
+   "aliases": [
+    "CVE-2026-110816"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs : qs.stringify with arrayFormat 'comma' throws an uncaught TypeError on array elements carrying a non-callable own toString (DoS)",
+   "fixed": [
+    "6.16.1"
+   ],
+   "symbols": [
+    "obj",
+    "toString",
+    "Array.prototype.join",
+    "ToPrimitive",
+    "Object.prototype.valueOf",
+    "qs.stringify",
+    "extended",
+    "JSON.parse",
+    "TypeError",
+    "allowPrototypes",
+    "stringify",
+    "encodeValuesOnly",
+    "valueOf",
+    "qs.parse",
+    "plainObjects",
+    "maybeMap",
+    "join",
+    "arrayFormat",
+    "indices",
+    "skipNulls",
+    "strictNullHandling",
+    "isNonNullishPrimitive",
+    "isBuffer",
+    "Object.prototype.toString",
+    "http.createServer"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-6rw7-vpxm-498p",
+   "aliases": [
+    "CVE-2025-15284"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion",
+   "fixed": [
+    "6.14.1"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "parameterLimit",
+    "options.arrayLimit",
+    "qs.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-q8mj-m7cp-5q26",
+   "aliases": [
+    "CVE-2026-8723"
+   ],
+   "severity": "MODERATE",
+   "summary": "qs has a remotely triggerable DoS: qs.stringify crashes with TypeError on null/undefined entries in comma-format arrays when encodeValuesOnly is set",
+   "fixed": [
+    "6.15.2"
+   ],
+   "symbols": [
+    "qs.stringify",
+    "TypeError",
+    "skipNulls",
+    "strictNullHandling",
+    "encodeValuesOnly",
+    "utils.encode",
+    "str.length",
+    "main",
+    "maybeMap"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "qs",
+   "version": "6.13.0",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w7fw-mjwx-w883",
+   "aliases": [
+    "CVE-2026-2391"
+   ],
+   "severity": "LOW",
+   "summary": "qs's arrayLimit bypass in comma parsing allows denial of service",
+   "fixed": [
+    "6.14.2"
+   ],
+   "symbols": [
+    "arrayLimit",
+    "comma",
+    "parseArrayValue",
+    "utils.combine",
+    "currentArrayLength",
+    "throwOnLimitExceeded",
+    "qs.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "socket.io-parser",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2m8v-j782-fhvr",
+   "aliases": [
+    "CVE-2026-69185"
+   ],
+   "severity": "HIGH",
+   "summary": "Socket.IO: Zero-attachment Memory Exhaustion",
+   "fixed": [
+    "4.2.7",
+    "3.4.5",
+    "3.3.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "socket.io-parser",
+   "version": "4.2.4",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-677m-j7p3-52f9",
+   "aliases": [
+    "CVE-2026-33151"
+   ],
+   "severity": "HIGH",
+   "summary": "socket.io allows an unbounded number of binary attachments",
+   "fixed": [
+    "3.3.5",
+    "3.4.4",
+    "4.2.6"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-23hp-3jrh-7fpw",
+   "aliases": [
+    "CVE-2026-59873"
+   ],
+   "severity": "CRITICAL",
+   "summary": "node-tar: Decompression/parse DoS via unlimited input",
+   "fixed": [
+    "7.5.19"
+   ],
+   "symbols": [
+    "maxReadSize",
+    "Unpack"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-34x7-hfp2-rc4v",
+   "aliases": [
+    "CVE-2026-24842"
+   ],
+   "severity": "HIGH",
+   "summary": "node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal",
+   "fixed": [
+    "7.5.7"
+   ],
+   "symbols": [
+    "this.cwd",
+    "tar.extract",
+    "tarHeader"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-83g3-92jg-28cx",
+   "aliases": [
+    "CVE-2026-26960"
+   ],
+   "severity": "HIGH",
+   "summary": "Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction",
+   "fixed": [
+    "7.5.8"
+   ],
+   "symbols": [
+    "tar.extract",
+    "tar",
+    "preservePaths",
+    "exfil",
+    "mkdir"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8qq5-rm4j-mr97",
+   "aliases": [
+    "CVE-2026-23745"
+   ],
+   "severity": "HIGH",
+   "summary": "node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization",
+   "fixed": [
+    "7.5.3"
+   ],
+   "symbols": [
+    "linkpath",
+    "Link",
+    "SymbolicLink",
+    "preservePaths",
+    "entry.linkpath",
+    "path.resolve",
+    "this.cwd",
+    "fs.symlink",
+    "tar.Header",
+    "tar.x"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-8x88-c5mf-7j5w",
+   "aliases": [
+    "CVE-2026-59874"
+   ],
+   "severity": "HIGH",
+   "summary": "node-tar: Negative tar entry size causes infinite loop in archive replace",
+   "fixed": [
+    "7.5.18"
+   ],
+   "symbols": [
+    "tar.replace",
+    "poc.mjs"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-9ppj-qmqm-q256",
+   "aliases": [
+    "CVE-2026-31802"
+   ],
+   "severity": "HIGH",
+   "summary": "node-tar Symlink Path Traversal via Drive-Relative Linkpath",
+   "fixed": [
+    "7.5.11"
+   ],
+   "symbols": [
+    "tar",
+    "cwd",
+    "tar.x",
+    "linkpath",
+    "stripAbsolutePath",
+    "poc.cjs",
+    "readlink"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-gvwx-54wh-qm9j",
+   "aliases": [
+    "CVE-2026-59875"
+   ],
+   "severity": "MODERATE",
+   "summary": "node-tar: Uncaught Exception DoS via NUL byte in PAX path/linkpath records",
+   "fixed": [
+    "7.5.17"
+   ],
+   "symbols": [
+    "L",
+    "K",
+    "x",
+    "entry.path",
+    "fs.lstat",
+    "fs.open",
+    "FSReqCallback",
+    "tar.x",
+    "uncaughtException",
+    "tar.extract",
+    "tar.t",
+    "tar.Parser",
+    "bsdtar",
+    "tarfile",
+    "parseKVLine",
+    "v",
+    "Header",
+    "ReadEntry",
+    "entry.linkpath",
+    "fs.symlink",
+    "fs.link",
+    "fs.mkdir",
+    "path.join",
+    "tarfile.list",
+    "path",
+    "linkpath",
+    "entry.header.atime"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-qffp-2rhf-9h96",
+   "aliases": [
+    "CVE-2026-29786"
+   ],
+   "severity": "HIGH",
+   "summary": "tar has Hardlink Path Traversal via Drive-Relative Linkpath",
+   "fixed": [
+    "7.5.10"
+   ],
+   "symbols": [
+    "tar",
+    "cwd",
+    "tar.x",
+    "stripAbsolutePath",
+    "poc.cjs"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r292-9mhp-454m",
+   "aliases": [
+    "CVE-2026-73566"
+   ],
+   "severity": "HIGH",
+   "summary": "node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection",
+   "fixed": [
+    "7.5.21"
+   ],
+   "symbols": [
+    "tar",
+    "mapHas",
+    "filesFilter",
+    "path.dirname",
+    "L",
+    "x",
+    "maxMetaEntrySize",
+    "RangeError",
+    "Unpack",
+    "maxDepth",
+    "tar.t",
+    "pipe",
+    "uncaughtException",
+    "Unpack.maxDepth",
+    "await",
+    "dirname",
+    "while",
+    "Header",
+    "Parser",
+    "mkdir",
+    "tar.x",
+    "tar.gz"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-r6q2-hw4h-h46w",
+   "aliases": [
+    "CVE-2026-23950"
+   ],
+   "severity": "HIGH",
+   "summary": "Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS",
+   "fixed": [
+    "7.5.4"
+   ],
+   "symbols": [
+    "ss",
+    "PathReservations",
+    "SymbolicLink",
+    "tar.Header",
+    "tar.Unpack"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-vmf3-w455-68vh",
+   "aliases": [
+    "CVE-2026-53655"
+   ],
+   "severity": "MODERATE",
+   "summary": "node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling)",
+   "fixed": [
+    "7.5.16"
+   ],
+   "symbols": [
+    "tar",
+    "L",
+    "K",
+    "x",
+    "size",
+    "tarfile",
+    "ex",
+    "gex",
+    "remain",
+    "N",
+    "g",
+    "tar.list",
+    "tar.extract",
+    "tar.x",
+    "tar.Parse",
+    "tar.Unpack",
+    "Parser",
+    "e2e.mjs",
+    "file_b",
+    "ExtendedHeader",
+    "GlobalExtendedHeader",
+    "NextFileHasLongPath",
+    "NextFileHasLongLinkpath",
+    "Header.decode",
+    "pax_size",
+    "listEntries"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "tar",
+   "version": "6.2.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-w8wr-v893-vjvp",
+   "aliases": [
+    "CVE-2026-59871"
+   ],
+   "severity": "MODERATE",
+   "summary": "node-tar: Process crash via PAX numeric path type confusion",
+   "fixed": [
+    "7.5.18"
+   ],
+   "symbols": [
+    "parseKV",
+    "path",
+    "linkpath",
+    "tar.extract"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "underscore",
+   "version": "1.13.7",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qpx9-hpmf-5gmw",
+   "aliases": [
+    "CVE-2026-27601"
+   ],
+   "severity": "HIGH",
+   "summary": "Underscore has unlimited recursion in _.flatten and _.isEqual, potential for DoS attack",
+   "fixed": [
+    "1.13.8"
+   ],
+   "symbols": [
+    "_.flatten",
+    "_.isEqual",
+    "JSON.parse"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2m5v-pch6-74hx",
+   "aliases": [
+    "CVE-2026-109383"
+   ],
+   "severity": "HIGH",
+   "summary": "undici vulnerable to TLS certificate validation bypass via dropped tls options in Agent",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "Agent",
+    "Pool",
+    "tls",
+    "checkServerIdentity",
+    "request",
+    "fetch",
+    "setGlobalDispatcher",
+    "EnvHttpProxyAgent",
+    "connect",
+    "BalancedPool",
+    "requestTls",
+    "proxyTls"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-2mjp-6q6p-2qxm",
+   "aliases": [
+    "CVE-2026-1525"
+   ],
+   "severity": "MODERATE",
+   "summary": "Undici has an HTTP Request/Response Smuggling issue",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "undici.request",
+    "undici.Client"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-35p6-xmwp-9g52",
+   "aliases": [
+    "CVE-2026-6733"
+   ],
+   "severity": "LOW",
+   "summary": "undici vulnerable to HTTP response queue poisoning via keep-alive socket reuse",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4992-7rv2-5pvq",
+   "aliases": [
+    "CVE-2026-1527"
+   ],
+   "severity": "MODERATE",
+   "summary": "Undici has CRLF Injection in undici via `upgrade` option",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "upgrade",
+    "client.request",
+    "sanitizeUpgrade"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-4qv8-2p9j-2685",
+   "aliases": [
+    "CVE-2026-109924"
+   ],
+   "severity": "MODERATE",
+   "summary": "undici vulnerable to Denial of Service via unbounded memory in the EventSource parser",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "EventSource",
+    "maxEventSize",
+    "maxResponseSize"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-8xcm-r25x-g524",
+   "aliases": [
+    "CVE-2026-16728"
+   ],
+   "severity": "MODERATE",
+   "summary": "undici vulnerable to downstream response desynchronization via retry interceptor",
+   "fixed": [
+    "6.28.0",
+    "7.29.0",
+    "8.9.0"
+   ],
+   "symbols": [
+    "interceptors.retry"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-9fm3-97px-rjf6",
+   "aliases": [
+    "CVE-2026-109932"
+   ],
+   "severity": "MODERATE",
+   "summary": "undici WebSocket client vulnerable to Denial of Service via unbounded automatic PONG buffering",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "globalThis.WebSocket",
+    "socket.write"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-cxrh-j4jr-qwg3",
+   "aliases": [
+    "CVE-2025-47279"
+   ],
+   "severity": "LOW",
+   "summary": "undici Denial of Service attack via bad certificate data",
+   "fixed": [
+    "5.29.0",
+    "6.21.2",
+    "7.5.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-f269-vfmq-vjvj",
+   "aliases": [
+    "CVE-2026-1528"
+   ],
+   "severity": "HIGH",
+   "summary": "Undici: Malicious WebSocket 64-bit length overflows parser and crashes the client",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [],
+   "symbol_source": "none"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-g8m3-5g58-fq7m",
+   "aliases": [
+    "CVE-2026-11525"
+   ],
+   "severity": "LOW",
+   "summary": "undici vulnerable to Set-Cookie SameSite attribute downgrade via permissive substring matching",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [
+    "SameSite",
+    "Strict",
+    "Lax",
+    "fetch",
+    "sameSite"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-g9mf-h72j-4rw9",
+   "aliases": [
+    "CVE-2026-22036"
+   ],
+   "severity": "MODERATE",
+   "summary": "Undici has an unbounded decompression chain in HTTP responses on Node.js Fetch API via Content-Encoding leads to resource exhaustion",
+   "fixed": [
+    "7.18.2",
+    "6.23.0"
+   ],
+   "symbols": [
+    "fetch"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-m8rv-5g2x-5cg5",
+   "aliases": [
+    "CVE-2026-15157"
+   ],
+   "severity": "MODERATE",
+   "summary": "undici vulnerable to CRLF Injection via blob-like body 'type' property",
+   "fixed": [
+    "6.28.0",
+    "7.29.0",
+    "8.9.0"
+   ],
+   "symbols": [
+    "request",
+    "stream",
+    "pipeline",
+    "dispatch",
+    "body.type",
+    "isValidHeaderValue",
+    "Blob",
+    "fetch",
+    "Headers",
+    "upgrade"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-p88m-4jfj-68fv",
+   "aliases": [
+    "CVE-2026-9679"
+   ],
+   "severity": "MODERATE",
+   "summary": "undici vulnerable to HTTP header injection via Set-Cookie percent-decoding",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [
+    "parseSetCookie",
+    "qsUnescape",
+    "Location",
+    "parseCookie",
+    "getSetCookies"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-qrxm-fqhp-jwvm",
+   "aliases": [
+    "CVE-2026-87018"
+   ],
+   "severity": "HIGH",
+   "summary": "undici vulnerable to Denial of Service via TLS 1.2 certificate-changing renegotiation",
+   "fixed": [
+    "6.29.1",
+    "7.30.1",
+    "8.12.2"
+   ],
+   "symbols": [
+    "AssertionError",
+    "fetch"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-r53p-7pc4-xj5r",
+   "aliases": [
+    "CVE-2026-18540"
+   ],
+   "severity": "LOW",
+   "summary": "undici vulnerable to downstream response splitting via retry interceptor",
+   "fixed": [
+    "6.28.1",
+    "7.29.1",
+    "8.10.2"
+   ],
+   "symbols": [
+    "interceptors.retry",
+    "Range"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-rfgv-xxqx-mfg5",
+   "aliases": [
+    "CVE-2026-19534"
+   ],
+   "severity": "HIGH",
+   "summary": "undici vulnerable to Denial of Service via unrequested WebSocket subprotocol",
+   "fixed": [
+    "6.28.1",
+    "7.29.1",
+    "8.10.2"
+   ],
+   "symbols": [
+    "TypeError",
+    "queueMicrotask",
+    "try",
+    "catch"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v3r7-h72x-cjcm",
+   "aliases": [
+    "CVE-2026-16729"
+   ],
+   "severity": "MODERATE",
+   "summary": "undici vulnerable to cookie attribute injection via unsanitized domain and unparsed setCookie fields",
+   "fixed": [
+    "6.28.0",
+    "7.29.0",
+    "8.9.0"
+   ],
+   "symbols": [
+    "setCookie",
+    "validateCookieDomain",
+    "validateCookiePath",
+    "domain",
+    "unparsed",
+    "HttpOnly",
+    "Secure"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-v9p9-hfj2-hcw8",
+   "aliases": [
+    "CVE-2026-2229"
+   ],
+   "severity": "HIGH",
+   "summary": "Undici has Unhandled Exception in WebSocket Client Due to Invalid server_max_window_bits Validation",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "server_max_window_bits",
+    "isValidClientWindowBits",
+    "createInflateRaw"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vrm6-8vpv-qv8q",
+   "aliases": [
+    "CVE-2026-1526"
+   ],
+   "severity": "HIGH",
+   "summary": "Undici has Unbounded Memory Consumption in WebSocket permessage-deflate Decompression",
+   "fixed": [
+    "6.24.0",
+    "7.24.0"
+   ],
+   "symbols": [
+    "PerMessageDeflate.decompress"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "undici",
+   "version": "6.21.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-vxpw-j846-p89q",
+   "aliases": [
+    "CVE-2026-12151"
+   ],
+   "severity": "HIGH",
+   "summary": "undici WebSocket client vulnerable to denial of service via fragment count bypass",
+   "fixed": [
+    "6.27.0",
+    "7.28.0",
+    "8.5.0"
+   ],
+   "symbols": [
+    "maxPayloadSize",
+    "WebSocketStream"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "uptime-kuma",
+   "version": "2.0.0-beta.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-hx7h-9vf7-5xhg",
+   "aliases": [
+    "CVE-2025-26042"
+   ],
+   "severity": "MODERATE",
+   "summary": "Uptime Kuma's Regular Expression in pushdeeer and whapi file Leads to ReDoS Vulnerability Due to Catastrophic Backtracking",
+   "fixed": [
+    "2.0.0-beta.2"
+   ],
+   "symbols": [
+    "notification",
+    "pushdeer",
+    "whapi",
+    "downtime",
+    "uptime-kuma.git"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "uuid",
+   "version": "8.3.2",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-w5hq-g745-h8pq",
+   "aliases": [
+    "CVE-2026-41907",
+    "CVE-2026-41988"
+   ],
+   "severity": "MODERATE",
+   "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+   "fixed": [
+    "11.1.1",
+    "12.0.1",
+    "13.0.1"
+   ],
+   "symbols": [
+    "v3",
+    "v5",
+    "v6",
+    "uuid",
+    "buf",
+    "offset",
+    "v4",
+    "v1",
+    "v7",
+    "RangeError"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "uuid",
+   "version": "9.0.1",
+   "ecosystem": "npm",
+   "direct": false,
+   "advisory": "GHSA-w5hq-g745-h8pq",
+   "aliases": [
+    "CVE-2026-41907",
+    "CVE-2026-41988"
+   ],
+   "severity": "MODERATE",
+   "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+   "fixed": [
+    "11.1.1",
+    "12.0.1",
+    "13.0.1"
+   ],
+   "symbols": [
+    "v3",
+    "v5",
+    "v6",
+    "uuid",
+    "buf",
+    "offset",
+    "v4",
+    "v1",
+    "v7",
+    "RangeError"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ws",
+   "version": "7.5.10",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-96hv-2xvq-fx4p",
+   "aliases": [
+    "CVE-2026-48779"
+   ],
+   "severity": "HIGH",
+   "summary": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+   "fixed": [
+    "5.2.5",
+    "6.2.4",
+    "7.5.11",
+    "8.21.0"
+   ],
+   "symbols": [
+    "maxPayload",
+    "ws.on",
+    "ws.send"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ws",
+   "version": "8.17.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-58qx-3vcg-4xpx",
+   "aliases": [
+    "CVE-2026-45736"
+   ],
+   "severity": "MODERATE",
+   "summary": "ws: Uninitialized memory disclosure",
+   "fixed": [
+    "8.20.1"
+   ],
+   "symbols": [
+    "websocket.close",
+    "TypedArray",
+    "ws.on",
+    "ws.close"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ws",
+   "version": "8.17.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-96hv-2xvq-fx4p",
+   "aliases": [
+    "CVE-2026-48779"
+   ],
+   "severity": "HIGH",
+   "summary": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+   "fixed": [
+    "5.2.5",
+    "6.2.4",
+    "7.5.11",
+    "8.21.0"
+   ],
+   "symbols": [
+    "maxPayload",
+    "ws.on",
+    "ws.send"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ws",
+   "version": "8.18.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-58qx-3vcg-4xpx",
+   "aliases": [
+    "CVE-2026-45736"
+   ],
+   "severity": "MODERATE",
+   "summary": "ws: Uninitialized memory disclosure",
+   "fixed": [
+    "8.20.1"
+   ],
+   "symbols": [
+    "websocket.close",
+    "TypedArray",
+    "ws.on",
+    "ws.close"
+   ],
+   "symbol_source": "auto"
+  },
+  {
+   "package": "ws",
+   "version": "8.18.1",
+   "ecosystem": "npm",
+   "direct": true,
+   "advisory": "GHSA-96hv-2xvq-fx4p",
+   "aliases": [
+    "CVE-2026-48779"
+   ],
+   "severity": "HIGH",
+   "summary": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+   "fixed": [
+    "5.2.5",
+    "6.2.4",
+    "7.5.11",
+    "8.21.0"
+   ],
+   "symbols": [
+    "maxPayload",
+    "ws.on",
+    "ws.send"
+   ],
+   "symbol_source": "auto"
+  }
+ ]
+}

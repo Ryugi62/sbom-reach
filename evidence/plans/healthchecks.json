@@ -1,0 +1,243 @@
+{
+ "target": "healthchecks",
+ "plan_source": "llm",
+ "violations": [],
+ "context": {
+  "detected": [
+   "PyPI"
+  ],
+  "weak_alerts": 4,
+  "packages_to_fix": 2
+ },
+ "calls": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "PyPI"
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-993g-76c3-p5m4",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-pxh4-856f-4h89",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-w6j9-cwv2-h6wq",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-w7vc-732c-9m39",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "PyPI"
+   },
+   "result": {
+    "components": 15,
+    "alerts": 36
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-993g-76c3-p5m4",
+    "radius": 3
+   },
+   "result": {
+    "file": "hc/accounts/forms.py",
+    "line": 33,
+    "window": [
+     {
+      "line": 30,
+      "text": ""
+     },
+     {
+      "line": 31,
+      "text": "    def __init__(self, request: HttpRequest):"
+     },
+     {
+      "line": 32,
+      "text": "        self.request = request"
+     },
+     {
+      "line": 33,
+      "text": "        super(SignupForm, self).__init__(request.POST)"
+     },
+     {
+      "line": 34,
+      "text": ""
+     },
+     {
+      "line": 35,
+      "text": "    def clean_identity(self) -> str:"
+     },
+     {
+      "line": 36,
+      "text": "        if not TokenBucket.authorize_auth_ip(self.request):"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-pxh4-856f-4h89",
+    "radius": 3
+   },
+   "result": {
+    "file": "hc/accounts/forms.py",
+    "line": 33,
+    "window": [
+     {
+      "line": 30,
+      "text": ""
+     },
+     {
+      "line": 31,
+      "text": "    def __init__(self, request: HttpRequest):"
+     },
+     {
+      "line": 32,
+      "text": "        self.request = request"
+     },
+     {
+      "line": 33,
+      "text": "        super(SignupForm, self).__init__(request.POST)"
+     },
+     {
+      "line": 34,
+      "text": ""
+     },
+     {
+      "line": 35,
+      "text": "    def clean_identity(self) -> str:"
+     },
+     {
+      "line": 36,
+      "text": "        if not TokenBucket.authorize_auth_ip(self.request):"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-w6j9-cwv2-h6wq",
+    "radius": 3
+   },
+   "result": {
+    "file": "hc/accounts/forms.py",
+    "line": 33,
+    "window": [
+     {
+      "line": 30,
+      "text": ""
+     },
+     {
+      "line": 31,
+      "text": "    def __init__(self, request: HttpRequest):"
+     },
+     {
+      "line": 32,
+      "text": "        self.request = request"
+     },
+     {
+      "line": 33,
+      "text": "        super(SignupForm, self).__init__(request.POST)"
+     },
+     {
+      "line": 34,
+      "text": ""
+     },
+     {
+      "line": 35,
+      "text": "    def clean_identity(self) -> str:"
+     },
+     {
+      "line": 36,
+      "text": "        if not TokenBucket.authorize_auth_ip(self.request):"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "pyjwt@2.10.1|GHSA-w7vc-732c-9m39",
+    "radius": 3
+   },
+   "result": {
+    "file": "hc/api/decorators.py",
+    "line": 41,
+    "window": [
+     {
+      "line": 38,
+      "text": "        # so views can avoid parsing it again."
+     },
+     {
+      "line": 39,
+      "text": "        if request.method == \"POST\" and request.body:"
+     },
+     {
+      "line": 40,
+      "text": "            try:"
+     },
+     {
+      "line": 41,
+      "text": "                request.json = json.loads(request.body.decode())"
+     },
+     {
+      "line": 42,
+      "text": "            except ValueError:"
+     },
+     {
+      "line": 43,
+      "text": "                return error(\"could not parse request body\")"
+     },
+     {
+      "line": 44,
+      "text": "            if not isinstance(request.json, dict):"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   },
+   "result": {
+    "required": true,
+    "scope": "reached",
+    "packages_to_fix": 2
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 36
+}

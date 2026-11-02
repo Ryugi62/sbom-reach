@@ -135,3 +135,22 @@ def test_v12_capability_sheet_has_live_urls_with_facts():
 def test_v12_version_label():
     import build_docs as b
     assert b.VER == "v1.3"
+
+
+def test_v15_docs_describe_planning_step_and_no_version_footer():
+    """S18: 문서는 AI가 세 자리(계획 포함)임을 밝히고, 쪽 머리글에 내부 버전 표기가 없다."""
+    import build_docs as b
+    text = alltext()
+    assert "세 자리" in text and "두 자리" not in text
+    assert "계획 단계" in text and "허용 도구 3종" in text and "판정 변경 0" in text
+    assert "G7" in text
+    import inspect
+    src = inspect.getsource(b)
+    assert 'f"AI 문제해결방안 {VER}"' not in src and 'f"AI 보유역량 {VER}"' not in src
+
+
+def test_v15_docs_cite_scanner_comparison_numbers():
+    import build_docs as b
+    text = alltext()
+    assert "osv-scanner" in text and "grype" in text and "trivy" in text
+    assert str(b.SC["osv-scanner"]) in text and "개수 비교이며 정밀도 비교 아님" in text

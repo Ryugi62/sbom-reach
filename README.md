@@ -12,6 +12,8 @@ mkdir -p data && tar xzf evidence/osv-snapshot-2026-10-30.tar.gz -C data   # OSV
 python3 -m sbomreach.infrastructure.cli scan --target nodejs-goof      # 대상: evidence/targets.json의 name
 python3 -m sbomreach.infrastructure.cli remediate --target nodejs-goof --scope reached
 python3 -m sbomreach.infrastructure.cli eval --gold gold-holdout.jsonl --out accuracy-v1-holdout.md
+python3 -m sbomreach.infrastructure.cli plan --target all              # 에이전트 계획 단계(S18): 도구 선택만, 판정 불변 → evidence/plans/
+python3 scripts/compare_scanners.py                                   # osv-scanner·grype·trivy 경보 수 비교(S19) → evidence/scanner-compare.md (바이너리는 tools/scanners/)
 python3 -m sbomreach.infrastructure.cli summary                        # evidence/summary.json
 ```
 `evidence/targets.json`의 `path`는 저장소 루트 기준 상대경로다. 조치안 문장(Gemini)은 `GEMINI_API_KEY` 환경변수나 `SBOMREACH_ENV_FILE`(기본 `~/.config/sbomreach/gemini.env`)에 키가 있을 때만 쓰고, 없으면 템플릿 문장으로 계속한다. syft는 `tools/bin/syft` 또는 PATH. syft 없이 돌리면 잠금 파일 파서로 대체되어 부품·경보 수가 달라진다(nodejs-goof 경보 235 → 315, 도달 16은 같음).

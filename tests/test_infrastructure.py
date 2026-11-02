@@ -196,7 +196,7 @@ def test_workcopy_noop_bump_returns_empty_without_crash(tmp_path):
 
 def test_targets_have_no_absolute_or_personal_paths():
     from sbomreach.infrastructure import cli
-    for t in cli.targets(java=False).values():
+    for t in cli.targets(java=False, ops=False).values():
         assert not os.path.isabs(t["path"]) and "Users" not in t["path"]
         assert os.path.isabs(cli.target_repo_dir(t))
         assert cli.target_repo_dir(t).startswith(cli.ROOT)
@@ -244,3 +244,13 @@ def test_maven_sbom_reads_poms_and_reports_stat(tmp_path):
     comps, fb = s.generate(str(tmp_path))
     assert [(c.name, c.version, c.ecosystem) for c in comps] == [("org.yaml:snakeyaml", "1.30", "Maven")] and fb is False
     assert s.stat["resolved"] == 1 and "org.yaml:snakeyaml" in s.direct_names(str(tmp_path))
+
+
+def test_ops_targets_cover_python_and_javascript_non_educational():
+    """S14 (v1.4): 운영형 오픈소스 Python 1곳·JS 1곳 이상, 고정 커밋, 개인 경로 없음. 기본 4곳 목록(java=False, ops=False)은 그대로."""
+    from sbomreach.infrastructure import cli
+    ops = {n: t for n, t in cli.targets(ops=True).items() if t.get("kind") == "operating"}
+    assert {t["language"] for t in ops.values()} >= {"Python", "JavaScript"}
+    for t in ops.values():
+        assert len(t["commit"]) >= 7 and "Users" not in t["path"] and t["path"].startswith("~/untrusted/")
+    assert set(cli.targets(java=False, ops=False)) == {"vulnerable-flask-app", "pygoat", "nodejs-goof", "nodegoat"}

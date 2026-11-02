@@ -1,0 +1,246 @@
+{
+ "target": "uptime-kuma",
+ "plan_source": "llm",
+ "violations": [
+  "rescan 누락 — 조치할 패키지가 있어 기본 rescan을 덧붙임",
+  "호출 8건 > 상한 6 — 잘라냄"
+ ],
+ "context": {
+  "detected": [
+   "npm"
+  ],
+  "weak_alerts": 7,
+  "packages_to_fix": 9
+ },
+ "calls": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "npm"
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "axios@0.28.1|GHSA-pmv8-rq9r-6j72",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "axios@0.28.1|GHSA-xhjh-pmcv-23jw",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "jsonata@2.0.6|GHSA-66mm-25pp-rfff",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "liquidjs@10.21.0|GHSA-8xx9-69p8-7jp3",
+    "radius": 3
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "npm"
+   },
+   "result": {
+    "components": 661,
+    "alerts": 204
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   },
+   "result": {
+    "required": true,
+    "scope": "reached",
+    "packages_to_fix": 9
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "axios@0.28.1|GHSA-pmv8-rq9r-6j72",
+    "radius": 3
+   },
+   "result": {
+    "file": "extra/download-dist.js",
+    "line": 40,
+    "window": [
+     {
+      "line": 37,
+      "text": "                fs.renameSync(\"./dist\", \"./dist-backup\");"
+     },
+     {
+      "line": 38,
+      "text": "            }"
+     },
+     {
+      "line": 39,
+      "text": ""
+     },
+     {
+      "line": 40,
+      "text": "            const tarStream = tar.x({"
+     },
+     {
+      "line": 41,
+      "text": "                cwd: \"./\","
+     },
+     {
+      "line": 42,
+      "text": "            });"
+     },
+     {
+      "line": 43,
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "axios@0.28.1|GHSA-xhjh-pmcv-23jw",
+    "radius": 3
+   },
+   "result": {
+    "file": "server/server.js",
+    "line": 505,
+    "window": [
+     {
+      "line": 502,
+      "text": ""
+     },
+     {
+      "line": 503,
+      "text": "                if (user.twofa_status === 0) {"
+     },
+     {
+      "line": 504,
+      "text": "                    let newSecret = genSecret();"
+     },
+     {
+      "line": 505,
+      "text": "                    let encodedSecret = base32.encode(newSecret);"
+     },
+     {
+      "line": 506,
+      "text": ""
+     },
+     {
+      "line": 507,
+      "text": "                    // Google authenticator doesn't like equal signs"
+     },
+     {
+      "line": 508,
+      "text": "                    // The fix is found at https://github.com/guyht/notp"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "jsonata@2.0.6|GHSA-66mm-25pp-rfff",
+    "radius": 3
+   },
+   "result": {
+    "file": "server/model/monitor.js",
+    "line": 1557,
+    "window": [
+     {
+      "line": 1554,
+      "text": "            const forceInactiveStatuses = await Promise.all(monitorData.map(monitor => Monitor.isParentActive(monitor.id)));"
+     },
+     {
+      "line": 1555,
+      "text": "            const paths = await Promise.all(monitorData.map(monitor => Monitor.getAllPath(monitor.id, monitor.name)));"
+     },
+     {
+      "line": 1556,
+      "text": ""
+     },
+     {
+      "line": 1557,
+      "text": "            notifications.forEach(row => {"
+     },
+     {
+      "line": 1558,
+      "text": "                if (!notificationsMap.has(row.monitor_id)) {"
+     },
+     {
+      "line": 1559,
+      "text": "                    notificationsMap.set(row.monitor_id, {});"
+     },
+     {
+      "line": 1560,
+      "text": "                }"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "liquidjs@10.21.0|GHSA-8xx9-69p8-7jp3",
+    "radius": 3
+   },
+   "result": {
+    "file": "server/model/monitor.js",
+    "line": 854,
+    "window": [
+     {
+      "line": 851,
+      "text": "                } else if (this.type in UptimeKumaServer.monitorTypeList) {"
+     },
+     {
+      "line": 852,
+      "text": "                    let startTime = dayjs().valueOf();"
+     },
+     {
+      "line": 853,
+      "text": "                    const monitorType = UptimeKumaServer.monitorTypeList[this.type];"
+     },
+     {
+      "line": 854,
+      "text": "                    await monitorType.check(this, bean, UptimeKumaServer.getInstance());"
+     },
+     {
+      "line": 855,
+      "text": "                    if (!bean.ping) {"
+     },
+     {
+      "line": 856,
+      "text": "                        bean.ping = dayjs().valueOf() - startTime;"
+     },
+     {
+      "line": 857,
+      "text": "                    }"
+     }
+    ]
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 204
+}

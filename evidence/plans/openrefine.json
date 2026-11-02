@@ -1,0 +1,34 @@
+{
+ "target": "openrefine",
+ "plan_source": "llm",
+ "violations": [],
+ "context": {
+  "detected": [
+   "Maven"
+  ],
+  "weak_alerts": 0,
+  "packages_to_fix": 0
+ },
+ "calls": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "Maven"
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "Maven"
+   },
+   "result": {
+    "components": 58,
+    "alerts": 8
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 8
+}

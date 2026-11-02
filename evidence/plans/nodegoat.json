@@ -1,0 +1,147 @@
+{
+ "target": "nodegoat",
+ "plan_source": "llm",
+ "violations": [],
+ "context": {
+  "detected": [
+   "npm"
+  ],
+  "weak_alerts": 2,
+  "packages_to_fix": 2
+ },
+ "calls": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "npm"
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.16.4|GHSA-qw6h-vgh9-j6wx",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.16.4|GHSA-rv95-896h-c2vc",
+    "radius": 3
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   }
+  }
+ ],
+ "results": [
+  {
+   "tool": "select_adapter",
+   "args": {
+    "ecosystem": "npm"
+   },
+   "result": {
+    "components": 381,
+    "alerts": 90
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.16.4|GHSA-qw6h-vgh9-j6wx",
+    "radius": 3
+   },
+   "result": {
+    "file": "app/routes/index.js",
+    "line": 72,
+    "window": [
+     {
+      "line": 69,
+      "text": "    // Handle redirect for learning resources link"
+     },
+     {
+      "line": 70,
+      "text": "    app.get(\"/learn\", isLoggedIn, (req, res) => {"
+     },
+     {
+      "line": 71,
+      "text": "        // Insecure way to handle redirects by taking redirect url from query string"
+     },
+     {
+      "line": 72,
+      "text": "        return res.redirect(req.query.url);"
+     },
+     {
+      "line": 73,
+      "text": "    });"
+     },
+     {
+      "line": 74,
+      "text": ""
+     },
+     {
+      "line": 75,
+      "text": "    // Research Page"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "inspect_context",
+   "args": {
+    "alert": "express@4.16.4|GHSA-rv95-896h-c2vc",
+    "radius": 3
+   },
+   "result": {
+    "file": "app/routes/index.js",
+    "line": 72,
+    "window": [
+     {
+      "line": 69,
+      "text": "    // Handle redirect for learning resources link"
+     },
+     {
+      "line": 70,
+      "text": "    app.get(\"/learn\", isLoggedIn, (req, res) => {"
+     },
+     {
+      "line": 71,
+      "text": "        // Insecure way to handle redirects by taking redirect url from query string"
+     },
+     {
+      "line": 72,
+      "text": "        return res.redirect(req.query.url);"
+     },
+     {
+      "line": 73,
+      "text": "    });"
+     },
+     {
+      "line": 74,
+      "text": ""
+     },
+     {
+      "line": 75,
+      "text": "    // Research Page"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "rescan",
+   "args": {
+    "scope": "reached"
+   },
+   "result": {
+    "required": true,
+    "scope": "reached",
+    "packages_to_fix": 2
+   }
+  }
+ ],
+ "verdicts_unchanged": true,
+ "alerts": 90
+}

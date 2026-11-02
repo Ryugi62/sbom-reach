@@ -1,0 +1,10 @@
+{"run_id": "pygoat-plan", "seq": 1, "ts": "2026-11-03T00:33:31+0900", "tool": "sbom", "ms": 1189, "tool_name": "syft", "components": 38, "fallback": false}
+{"run_id": "pygoat-plan", "seq": 2, "ts": "2026-11-03T00:33:31+0900", "tool": "source_index", "ms": 56, "imported_modules": 36, "referenced_symbols": 242}
+{"run_id": "pygoat-plan", "seq": 3, "ts": "2026-11-03T00:33:32+0900", "tool": "vuln_lookup", "ms": 130, "alerts": 201, "incomplete": 0}
+{"run_id": "pygoat-plan", "seq": 4, "ts": "2026-11-03T00:33:32+0900", "tool": "reach_judge", "ms": 2, "reached": 5, "used": 54, "unseen": 142}
+{"run_id": "pygoat-plan", "seq": 5, "ts": "2026-11-03T00:33:32+0900", "tool": "rank", "ms": 0, "top": ["django:GHSA-frmv-pr5f-9mcr:10.0", "django:GHSA-8qcx-xf44-272x:4.0", "django:GHSA-qcgg-j2x8-h9g8:4.0"]}
+{"run_id": "pygoat-plan", "seq": 6, "ts": "2026-11-03T00:33:32+0900", "tool": "llm_call", "model": "gemini-3.5-flash-lite", "status": "cache", "attempt": 0}
+{"run_id": "pygoat-plan", "seq": 7, "ts": "2026-11-03T00:33:32+0900", "tool": "plan", "source": "llm", "calls": 2, "violations": 1}
+{"run_id": "pygoat-plan", "seq": 8, "ts": "2026-11-03T00:33:32+0900", "tool": "plan_violation", "detail": "rescan 누락 — 조치할 패키지가 있어 기본 rescan을 덧붙임"}
+{"run_id": "pygoat-plan", "seq": 9, "ts": "2026-11-03T00:33:32+0900", "tool": "plan_step", "step": 1, "call": "select_adapter", "args": {"ecosystem": "PyPI"}, "ok": true, "result": {"components": 38, "alerts": 201}}
+{"run_id": "pygoat-plan", "seq": 10, "ts": "2026-11-03T00:33:32+0900", "tool": "plan_step", "step": 2, "call": "rescan", "args": {"scope": "reached"}, "ok": true, "result": {"required": true, "scope": "reached", "packages_to_fix": 3}}
