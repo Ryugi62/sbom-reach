@@ -25,3 +25,24 @@ def test_clone_plan_refuses_path_escape():
     except ValueError:
         return
     raise AssertionError("path escape not refused")
+
+
+def test_clone_plan_accepts_home_untrusted_for_java_and_ops_targets():
+    m = load()
+    plan = m.plan([{"name": "x", "url": "https://github.com/a/B", "commit": "abc1234", "path": "~/untrusted/B"}], "/r", home="/h")
+    assert plan[0] == (["git", "clone", "--no-checkout", "https://github.com/a/B", "/h/untrusted/B"], None)
+
+
+def test_clone_plan_refuses_home_escape():
+    m = load()
+    try:
+        m.plan([{"name": "x", "url": "u", "commit": "c", "path": "~/other/B"}], "/r", home="/h")
+    except ValueError:
+        return
+    raise AssertionError("home escape not refused")
+
+
+def test_all_target_files_are_collected():
+    m = load()
+    names = {t["name"] for t in m.all_targets(os.path.join(HERE, "..", "evidence"))}
+    assert len(names) == 9 and {"openrefine", "healthchecks", "nodegoat"} <= names

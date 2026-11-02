@@ -11,7 +11,7 @@
    "used": 49,
    "unseen": 35,
    "reached_weak": 0,
-   "elapsed_sec": 1.01,
+   "elapsed_sec": 1.5,
    "stage_status": {
     "sbom": "ok",
     "source": "ok",
@@ -32,7 +32,7 @@
    "used": 54,
    "unseen": 142,
    "reached_weak": 0,
-   "elapsed_sec": 1.02,
+   "elapsed_sec": 1.28,
    "stage_status": {
     "sbom": "ok",
     "source": "ok",
@@ -53,7 +53,7 @@
    "used": 60,
    "unseen": 160,
    "reached_weak": 2,
-   "elapsed_sec": 0.9,
+   "elapsed_sec": 1.02,
    "stage_status": {
     "sbom": "ok",
     "source": "ok",
@@ -74,7 +74,7 @@
    "used": 11,
    "unseen": 75,
    "reached_weak": 2,
-   "elapsed_sec": 1.32,
+   "elapsed_sec": 0.96,
    "stage_status": {
     "sbom": "ok",
     "source": "ok",
@@ -333,7 +333,7 @@
  "effect": {
   "label": "가정: 건당 15분 · 시간당 50000원은 실측이 아니라 입력값",
   "minutes_saved": 8790,
-  "hours_saved": 146.5,
-  "cost_saved": 7325000
- }
+  "hours_saved": 146.5
+ },
+ "scope": "Python·JS 교육용 저장소 4곳 요약(Java 3곳·운영형 2곳은 evidence/runs/ 등 별도 파일). 금액 환산은 하지 않음"
 }

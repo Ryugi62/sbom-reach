@@ -51,5 +51,5 @@ def summarize(targets: Dict[str, dict], runs: Dict[str, dict], rescans: Dict[str
             "accuracy": {"v0_dev": accuracy_block(dev, runs_v0), "v1_dev": accuracy_block(dev, runs),
                          "v1_holdout": accuracy_block(hold, runs)},
             "rescan": rs,
-            "effect": {"label": eff.label, "minutes_saved": eff.minutes_saved, "hours_saved": round(eff.minutes_saved / 60, 1),
-                       "cost_saved": round(eff.cost_saved)}}
+            "effect": {"label": eff.label, "minutes_saved": eff.minutes_saved, "hours_saved": round(eff.minutes_saved / 60, 1)},
+            "scope": "Python·JS 교육용 저장소 4곳 요약(Java 3곳·운영형 2곳은 evidence/runs/ 등 별도 파일). 금액 환산은 하지 않음"}

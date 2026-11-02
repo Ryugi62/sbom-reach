@@ -16,3 +16,9 @@ def test_summarize_numbers_and_assumption_label():
     assert s["totals"]["alerts"] == 2 and s["accuracy"]["v1_dev"]["rate"] == 50.0
     assert s["rescan"]["r.reached"]["reached_after"] == 0
     assert s["effect"]["label"].startswith("가정") and s["effect"]["minutes_saved"] == 15
+
+
+def test_summary_has_no_money_field_and_states_scope():
+    s = summarize({"r": {"language": "Python", "url": "u", "commit": "c"}}, RUN, RS, GOLD, GOLD, RUN)
+    assert "cost_saved" not in s["effect"]
+    assert s["scope"].startswith("Python·JS 교육용")

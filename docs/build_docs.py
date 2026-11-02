@@ -245,7 +245,7 @@ J_COMP = sum(RUNS[n]["components"] for n in JAVA)
 INC_N = 948
 
 SIMILAR = """<table><tr><th style="width:23%">서비스</th><th style="width:44%">방식(공개 문서 기준)</th><th>우리가 다른 점</th></tr>
-<tr><td>Endor Labs<br><span class=note>endorlabs.com/learn/benchmarking-endor-labs-vs-snyks-github-apps</span></td><td>호출 그래프로 취약 함수가 실제 호출되는지 판정, EPSS 결합(상용 SaaS, 수치는 자사 벤치마크)</td><td rowspan=5>① 판정마다 <b>근거 줄(파일:줄)</b>을 붙이고 근거가 없으면 「도달」이라 하지 못하게 코드로 막음 ② 조치 후 <b>재스캔 감소를 같은 출력에</b> 냄 ③ 정답 103건(AI가 작성)과의 <b>일치율·틀린 곳을 공개</b> ④ 로컬·무료 도구만으로 재현</td></tr>
+<tr><td>Endor Labs<br><span class=note>endorlabs.com/learn/benchmarking-endor-labs-vs-snyks-github-apps</span></td><td>호출 그래프로 취약 함수가 실제 호출되는지 판정, EPSS 결합(상용 SaaS, 수치는 자사 벤치마크)</td><td rowspan=5>① 판정마다 <b>근거 줄(파일:줄)</b>을 붙이고 근거가 없으면 「도달」이라 하지 못하게 코드로 막음 ② 조치 후 <b>재스캔 감소를 같은 출력에</b> 냄 ③ 정답 166건(AI가 작성)과의 <b>일치율·틀린 곳을 공개</b> ④ 로컬·무료 도구만으로 재현</td></tr>
 <tr><td>Snyk Reachability<br><span class=note>docs.snyk.io/manage-risk/prioritize-issues-for-fixing/reachability</span></td><td>애플리케이션과 의존성의 호출 그래프를 분석(문서상 CLI·IDE 연동에서는 미지원)</td></tr>
 <tr><td>Semgrep Supply Chain<br><span class=note>semgrep.dev/docs/faq/comparisons/endor-labs</span></td><td>직접 의존성에 대한 데이터플로 도달성(벤더 자체 주장)</td></tr>
 <tr><td>래브라도 SCM<br><span class=note>m.boannews.com/html/detail.html?idx=132104</span></td><td>국내 SBOM 교환·취약점 이슈 파악 플랫폼(공개 기사에서 도달성 판정은 확인하지 못함)</td></tr>
@@ -279,8 +279,8 @@ p2 = f"""<div class=brow>AI 문제해결방안 · 구조와 평가</div>
 <table><tr><th style="width:11%">규칙</th><th style="width:56%">내용(코드로 집행)</th><th>시험</th></tr>
 <tr><td>G1</td><td>근거 줄이 없는 「도달」은 판정 객체를 만들 수 없다. AI 표시 결과 타입에는 판정 필드가 없다</td><td>test_reached_requires_evidence, test_review_flag</td></tr>
 <tr><td>G2·G3</td><td>AI 문장의 버전 숫자는 허용 목록만, 「안전합니다」류 단정·판정 뒤집기는 폐기 후 템플릿</td><td>test_domain_guardrails</td></tr>
-<tr><td>G4~G6</td><td>허용 명령만 실행(대상 코드 실행·설치 차단) / AI 입력 키·이메일 마스킹 / 조회 미완이면 「경보 0 = 깨끗함」 금지</td><td>test_g4~g6</td></tr><
-<tr><td>G7</td><td>계획 단계: 허용 도구 3종·인자 스키마·호출 ≤6 밖은 폐기하고 trace, 모델 실패 시 기본 계획. 계획 객체에 판정·버전 필드 없음</td><td>test_planning</td></tr>/table>
+<tr><td>G4~G6</td><td>허용 명령만 실행(대상 코드 실행·설치 차단) / AI 입력 키·이메일 마스킹 / 조회 미완이면 「경보 0 = 깨끗함」 금지</td><td>test_g4~g6</td></tr>
+<tr><td>G7</td><td>계획 단계: 허용 도구 3종·인자 스키마·호출 ≤6 밖은 폐기하고 trace, 모델 실패 시 기본 계획. 계획 객체에 판정·버전 필드 없음</td><td>test_planning</td></tr></table>
 <p><b>평가(Evals).</b> 정답은 <b>사람이 아니라 AI(Claude)가 소스 줄을 직접 열어 작성</b>했고 사람 검산 전입니다. 개발셋 66건·홀드아웃1 37건은 판정기를 고치는 데 쓰여 대표값에서 뺍니다(홀드아웃1의 v1.2 값 동결 직후 78.4%·수정 뒤 81.1%는 사후 수정이었음). 대신 <b>수정 코드를 쓰기 전에 새 홀드아웃2 {H2_FIRST['total']}건을 동결·커밋</b>하고 처음 돌린 값을 대표값으로 씁니다. 같은 정답에 v1.2 판정기를 돌린 값을 나란히 둡니다.</p>
 <table><tr><th>정답 묶음 · 판정기</th><th class=r>건수</th><th class=r>3분류 일치</th><th class=r>도달 정밀도</th><th class=r>도달 재현율</th></tr>
 <tr><td>홀드아웃2 · v1.2 판정기(비교용)</td><td class=r>{H2_V12['total']}</td><td class=r>{H2_V12['matched']} ({H2_V12['rate']}%)</td><td class=r>{H2_V12['reached_precision']}%</td><td class=r>{H2_V12['reached_recall']}%</td></tr>
@@ -354,7 +354,7 @@ CAP = f"""<div class=brow>AI 보유역량 · LOTTE AX Challenge 2026</div>
 <p class=lede>모든 항목은 공개 링크나 숫자로 확인할 수 있습니다. 4항은 개인 운영 기록이라 공개 링크가 없으므로 날짜·원인·고친 장치 파일명을 발췌 3건으로 직접 보입니다(개인정보·계정 없음).</p>
 <h2>1. 이번 과제의 작동 프로토타입</h2>
 <table><tr><th style="width:24%">항목</th><th>내용</th></tr>
-<tr><td>레포</td><td><code>{REPO}</code> — SBOM 생성부터 도달 판정·조치 가지·재스캔까지 도는 에이전트, 시험 {TESTS}건, 정답 {A1['total'] + AH['total']}건</td></tr>
+<tr><td>레포</td><td><code>{REPO}</code> — SBOM 생성부터 도달 판정·조치 가지·재스캔까지 도는 에이전트, 시험 {TESTS}건, 정답 {A1['total'] + AH['total'] + H2_FIRST['total'] + JV_FIRST['total']}건</td></tr>
 <tr><td>실행 기록</td><td>공개 저장소 {len(PYJS) + len(JAVA)}곳(Python·JavaScript·운영형 Java 3곳) 경보 {NALL}건 판정, 새 홀드아웃2 첫 실행 도달 정밀도 {H2_FIRST['reached_precision']}%(v1.2 판정기 {H2_V12['reached_precision']}%), 사람이 먼저 열 경보 {NALL} → {RALL} → {UNFL}, AI 문장 채택 {LS['adopted']}/{LS['requested']}</td></tr>
 <tr><td>사용한 AI</td><td>Gemini(조치안 설명 문장·약한 도달 판정에 확인 표시·정답 독립 재판정), 코드 작성·정답 작성 Claude. 판정·고칠 버전 결정은 코드가 함</td></tr></table>
 <h2>2. 에이전트를 만든 다른 공개 레포 (모두 비로그인으로 열림)</h2>

@@ -5,7 +5,7 @@
 ## 1. 목적
 SBOM(소프트웨어 부품 목록)과 취약점 스캔 결과는 따로 나와 경보가 수백 건이 된다. 보안 운영 담당은 그중 **이 저장소의 코드가 실제로 호출하는 것**을 하나씩 손으로 따진다. 이 도구는 (1) 저장소에서 SBOM을 만들고 (2) 알려진 취약점을 붙이고 (3) 취약 함수가 소스에서 호출되는지 **근거 줄(파일:줄)** 로 판정하고 (4) 급한 순서와 조치안(버전 올림)을 내고 (5) 조치를 적용한 가지(branch)에서 다시 스캔해 경보가 실제로 줄었는지 숫자로 확인한다.
 
-핵심 원칙: **판정은 결정적 코드가 한다. LLM은 조치안 문장만 쓰고 판정·버전 숫자를 바꾸지 못한다.** 근거 줄이 없으면 「도달」이라 하지 않는다.
+핵심 원칙: **판정은 결정적 코드가 한다. LLM은 세 자리(조치안 설명 문장 · 약한 도달 근거의 「사람 확인 필요」 표시 · 판정 뒤 다음에 부를 도구 계획)에만 쓰이고 판정·버전 숫자를 바꾸지 못한다.** 근거 줄이 없으면 「도달」이라 하지 않는다.
 
 ## 2. 유비쿼터스 언어 (코드 이름과 일치)
 | 용어 | 뜻 |
@@ -27,22 +27,22 @@ SBOM(소프트웨어 부품 목록)과 취약점 스캔 결과는 따로 나와 
 | S1 | 공개 저장소 ≥3, 언어 ≥2(Python·JavaScript)에서 SBOM → 스캔 → 판정 → 우선순위 → 조치 → 재스캔이 끝까지 돈다 | `evidence/runs/*.json` 의 `stage_status` 전부 ok |
 | S2 | Gold ≥30건(저장소당 ≥8건)과 도구 판정의 3분류(도달·사용·미확인) 일치율 표를 낸다. 목표 ≥80%, 못 미치면 못 미친 그대로 표에 쓴다. 홀드아웃은 **정답 동결 직후 첫 실행값**(78.4%, 미달)을 기준값으로 하고, 이후 판정기 수정 결과(81.1%)는 사후 수정으로 병기한다 | `evidence/accuracy.md` |
 | S3 | 모든 `REACHED` 판정은 근거 줄 ≥1을 갖는다(거짓 도달 0의 구조적 보장) | 시험 `test_reached_requires_evidence` |
-| S4 | 조치 적용 가지에서 재스캔한 뒤 `REACHED` 경보가 저장소마다 감소(목표 0)하고, 전체 경보 감소 수를 낸다. 조치로 올린 패키지 수도 같이 낸다 | `evidence/rescan.md` |
+| S4 | 조치 적용 가지에서 재스캔한 뒤 `REACHED` 경보가 저장소마다 감소(목표 0)하고, 전체 경보 감소 수를 낸다. 조치로 올린 패키지 수도 같이 낸다 | `evidence/rescan/`(JSON, 요약 `evidence/summary.json`) |
 | S5 | 시험 ≥40건이 네트워크 없이 10초 안에 통과한다. 도메인 계층은 표준 라이브러리 밖을 import하지 않는다(시험으로 집행) | `python3 -m pytest` |
 | S6 | 가드레일 ≥3개가 코드로 집행되고 각각 시험이 있다. 실행마다 도구 호출 trace(JSONL)를 남긴다 | `tests/test_guardrails.py`, `evidence/trace-sample.jsonl` |
 | S7 | 저장소 1개 종단 실행 ≤120초(네트워크 캐시 적중 기준) | 실행 로그의 elapsed |
 | S8 | 「건당 분 절감」「인건비 단가」는 **가정값**이라 출력 첫 줄에 「가정」을 붙인다. v1.3부터 효과의 주 지표는 금액이 아니라 「사람이 열어 볼 경보 수」(전체 → 도달 N)와 precision@N이다 | 시험 `test_effect_labelled_assumption`, `test_alert_reduction` |
-| S9 (v1.3) | LLM 호출 실패는 상태 코드·예외 원문(키 가림)을 trace에 남긴다. 429·5xx는 간격을 두고 재시도하고, 같은 입력은 디스크 캐시로 다시 부르지 않는다. 조치안 문장 채택률(채택/요청)을 실행마다 센다 | 시험 `test_llm_client.py`, `evidence/llm-adoption.md` |
+| S9 (v1.3) | LLM 호출 실패는 상태 코드·예외 원문(키 가림)을 trace에 남긴다. 429·5xx는 간격을 두고 재시도하고, 같은 입력은 디스크 캐시로 다시 부르지 않는다. 조치안 문장 채택률(채택/요청)을 실행마다 센다 | 시험 `test_llm_client.py`, 채택률 표 파일은 아직 만들지 않았다(미작성). 값은 `evidence/rescan/*.json`의 `llm_texts`와 trace에 있다 |
 | S10 (v1.3) | 일반 이름 심볼 오탐을 결정적 규칙 3개로 막는다: ①이름 풀이는 속성 사슬의 **마지막 이름**만 근거로 센다(`django.db.models` 의 `db` 는 근거가 아니다) ②근거 줄이 시험·마이그레이션 경로뿐이면 `REACHED`가 될 수 없다(`USED`) ③어드바이저리 심볼이 여러 패키지에 흔한 일반 이름(`data/generic_names.json`, OSV 캐시에서 계산)뿐이고 `모듈.이름` 형태로 특정되지 않았으면 `USED` | 시험 `test_domain_reach.py` |
 | S11 (v1.3) | 정답 동결 → 수정 → 첫 실행. 새 홀드아웃(`gold-holdout2.jsonl`)은 수정 코드보다 먼저 커밋한다. 정답 일부는 다른 모델(Gemini)이 독립 재판정해 Cohen kappa를 낸다 | `evidence/accuracy-v1.3-holdout2.md`, `evidence/kappa.md` |
 | S12 (v1.3) | LLM 판정 보조는 한 자리뿐이다: `REACHED` 중 약한 근거·일반 이름 판정만 LLM이 근거 줄을 읽고 「사람 확인 필요」 표시를 붙인다. 표시는 판정·우선순위를 바꾸지 못하고 `USED`·`UNSEEN`을 `REACHED`로 올리는 호출 경로가 없다(G1 유지). 표시 전후 precision을 Evals 표로 낸다 | 시험 `test_review_flag.py`, `evidence/review-flag.md` |
 | S13 (v1.3) | Java(Maven) 최소 어댑터: `pom.xml`의 부품 목록(속성·dependencyManagement·저장소 내 부모 pom 해석, 외부 BOM 미해석분은 개수로 보고)과 `import`·호출 근거 줄. 교육용이 아닌 운영형 오픈소스 Java 저장소 ≥1에서 끝까지 돈다 | 시험 `test_adapters_maven.py`, `test_adapters_java_source.py`, `evidence/java/` |
-| S14 (v1.4) | 운영형 오픈소스 Python 1곳·JavaScript 1곳 이상을 교육용이 아닌 저장소로 추가 실행한다(`evidence/targets-ops.json`, 고정 커밋). 정답(`gold-ops.jsonl`)은 **도구 판정을 보기 전에** 경보 목록(`alerts`)만 보고 소스 줄을 열어 동결·커밋한 뒤 처음 돌린 값을 대표값으로 쓴다 | 시험 `test_infrastructure.py`(대상 파일 규약), `evidence/accuracy-ops-first.md` |
-| S15 (v1.4) | 오탐(도구 도달 ∧ 정답 도달 아님)을 **결정적 규칙**으로 유형별로 센다: ①약한 근거(같은 이름 메서드, 받는 쪽 타입 모름) ②클래스 이름 참조(대문자로 시작하는 취약 심볼만 일치, 취약 멤버 호출 아님) ③함수·속성 이름 일치. 표의 첫 줄은 가장 큰 유형이고, 유형마다 「사람 확인 필요」 표시가 붙은 수를 같이 낸다 | 시험 `test_fp_types.py`, `evidence/fp-types.md` |
+| S14 (v1.4) | 운영형 오픈소스 Python 1곳·JavaScript 1곳 이상을 교육용이 아닌 저장소로 추가 실행한다(`evidence/targets-ops.json`, 고정 커밋). 정답(`gold-ops.jsonl`)은 **도구 판정을 보기 전에** 경보 목록(`alerts`)만 보고 소스 줄을 열어 동결·커밋한 뒤 처음 돌린 값을 대표값으로 쓴다 | 시험 `test_infrastructure.py`(대상 파일 규약), 운영형 Python·JS 2곳은 정답 미작성이라 정밀도 미측정(미작성: `gold-ops.jsonl`, `accuracy-ops-first.md`). 실행 결과는 `evidence/runs/` |
+| S15 (v1.4) | 오탐(도구 도달 ∧ 정답 도달 아님)을 **결정적 규칙**으로 유형별로 센다: ①약한 근거(같은 이름 메서드, 받는 쪽 타입 모름) ②클래스 이름 참조(대문자로 시작하는 취약 심볼만 일치, 취약 멤버 호출 아님) ③함수·속성 이름 일치. 표의 첫 줄은 가장 큰 유형이고, 유형마다 「사람 확인 필요」 표시가 붙은 수를 같이 낸다 | 시험 `test_fp_types.py`, 오탐 유형 표 파일은 아직 만들지 않았다(미작성). 규칙 시험만 있다 |
 | S16 (v1.4) | 건당 처리 시간 민감도: 가정값(5·10·20분)마다 「전체 경보를 모두 여는 시간」과 「먼저 열 경보 N건만 여는 시간」을 시간으로 낸다. 입력이 가정이므로 각 줄에 「가정」을 붙이고, 나머지 경보가 안전하다는 뜻이 아님을 같은 줄에 적는다 | 시험 `test_effect.py` |
 | S17 (v1.4) | 사내 환경 입력 어댑터 표(읽는다/못 읽는다/어떻게)의 칸은 **작은 픽스처로 실제 실행해 얻은 결과**만 쓴다(`evidence/adapter-matrix.md`). 실행하지 못한 칸은 「미실측」이라 적는다 | 시험 `test_adapter_matrix.py` |
-| S18 (v1.5) | **에이전트 계획 단계**: 판정이 끝난 뒤 LLM이 「다음에 부를 도구」만 고른다. 도구는 화이트리스트 3개(`select_adapter` 생태계 어댑터 순서 · `inspect_context` 약한 근거 경보의 근거 줄 주변 열기 · `rescan` 조치 뒤 재스캔 범위). 인자는 스키마(허용 값 목록·정수 범위)에 맞아야 하고, 한 계획의 호출은 ≤6건이다. 스키마 밖 호출·감지되지 않은 생태계·약한 근거가 아닌 경보·판정/버전 숫자 필드는 버리고 trace에 `plan_violation`을 남긴다. 조치할 패키지가 있으면 LLM이 빼도 `rescan`이 들어간다(검증 생략 불가), 감지된 생태계는 LLM이 빼도 전부 들어간다(누락 불가). LLM 실패·파싱 실패는 결정적 기본 계획으로 떨어지고 `fallback`을 남긴다. 계획 실행 전후 판정 목록은 같다(변경 0). 저장소 6곳에서 실행해 계획 trace 기록률 100%, LLM 계획 채택·기본 계획 전환 수를 낸다 | 시험 `test_planning.py` ≥14건(첫 실행 red 출력 보존), `evidence/plan-runs.md`, `evidence/traces/*.plan.jsonl` |
-| S19 (v1.5) | **상용·오픈소스 스캐너 비교**: 같은 고정 커밋 저장소 6곳에서 osv-scanner·grype·trivy 중 설치된 것의 경보 수(패키지×버전×취약점 id 고유 건수)를 실측해 「그들은 경보 N건 · 우리는 사람이 볼 경보 M건 + 근거 줄 K줄」 표를 낸다. M은 `evidence/runs/*.json`의 `REACHED` 수와 일치해야 하고(시험), 설치하지 못한 도구는 숫자 대신 오류 원문을 적는다(지어내지 않음). 무료·단일 바이너리만 쓰며 결제 0 | 시험 `test_scanner_compare.py` ≥8건, `evidence/scanner-compare.md` |
+| S18 (v1.5) | **에이전트 계획 단계**: 판정이 끝난 뒤 LLM이 「다음에 부를 도구」만 고른다. 도구는 화이트리스트 3개(`select_adapter` 생태계 어댑터 순서 · `inspect_context` 약한 근거 경보의 근거 줄 주변 열기 · `rescan` 조치 뒤 재스캔 범위). 인자는 스키마(허용 값 목록·정수 범위)에 맞아야 하고, 한 계획의 호출은 ≤6건이다. 스키마 밖 호출·감지되지 않은 생태계·약한 근거가 아닌 경보·판정/버전 숫자 필드는 버리고 trace에 `plan_violation`을 남긴다. 조치할 패키지가 있으면 LLM이 빼도 `rescan`이 들어간다(검증 생략 불가), 감지된 생태계는 LLM이 빼도 전부 들어간다(누락 불가). LLM 실패·파싱 실패는 결정적 기본 계획으로 떨어지고 `fallback`을 남긴다. 계획 실행 전후 판정 목록은 같다(변경 0). 저장소 9곳(교육용 Python·JS 4, 운영형 Java 3, 운영형 Python·JS 2)에서 실행해 계획 trace 기록률 100%, LLM 계획 채택·기본 계획 전환 수를 낸다 | 시험 `test_planning.py` ≥14건(첫 실행 red 출력 보존), `evidence/plans/*.json`(저장소별 계획·위반 기록), `evidence/traces/*.plan.jsonl` |
+| S19 (v1.5) | **상용·오픈소스 스캐너 비교**: 같은 고정 커밋 저장소 9곳에서 osv-scanner·grype·trivy 중 설치된 것의 경보 수(패키지×버전×취약점 id 고유 건수)를 실측해 「그들은 경보 N건 · 우리는 사람이 볼 경보 M건 + 근거 줄 K줄」 표를 낸다. M은 `evidence/runs*/*.json`의 `REACHED` 수와 일치해야 하고(시험), 설치하지 못한 도구는 숫자 대신 오류 원문을 적는다(지어내지 않음). 무료·단일 바이너리만 쓰며 결제 0 | 시험 `test_scanner_compare.py` ≥8건, `evidence/scanner-compare.md` |
 
 ## 4. Given / When / Then
 - G: requirements.txt에 `PyYAML==5.1`이 있고 소스에 `yaml.load(x)`가 있다 · W: 스캔 · T: 해당 Alert 판정 `REACHED`, Evidence에 그 파일·줄이 있다.
